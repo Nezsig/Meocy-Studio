@@ -19,19 +19,19 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'Commercial photography · Milan · since 2017',
+    eyebrow: 'Commercial photography · Milan · since 2008',
     titleA: 'Images made to',
     titleB: 'sell what you make.',
-    lead: 'We photograph products, food and collections for brands that sell online. You send us what you sell — we return a complete, channel-ready set of images, on a fixed price agreed before we start.',
+    lead: 'We photograph products, food and collections for brands that sell online. Send us what you sell, or we come to your location — you get a complete, channel-ready set of images on a fixed price agreed before we start.',
     ctaPrimary: 'Get a fixed price',
     ctaSecondary: 'See selected work',
     stats: [
     { value: '420+', label: 'Shoots delivered' },
-    { value: '9 yrs', label: 'Studio in Milan' },
+    { value: 'Photographer', label: 'since 2008' },
     { value: '4 days', label: 'Average turnaround' },
     { value: '96%', label: 'Clients who rebook' }],
 
-    studioCaption: 'Our studio, Via Tortona — one room, white cyclorama, tethered to your screen.'
+    studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.'
   },
 
   clients: { label: 'Selected clients' },
@@ -87,7 +87,7 @@ export const en = {
     },
     {
       title: 'Shoot day',
-      body: 'In our Milan studio or at your location. Join in person, or watch the live tethered feed from anywhere.',
+      body: 'At your location or with shipped products. Join in person, or watch the live tethered feed from anywhere.',
       duration: 'Half or full day'
     },
     {
@@ -124,9 +124,9 @@ export const en = {
   },
 
   equipment: {
-    eyebrow: 'The studio',
-    title: 'One room.\nEverything owned.',
-    lead: 'A compact, controlled studio — white cyclorama, professional lighting, and a colour-calibrated finishing station. Nothing rented, no surprise line on your invoice.',
+    eyebrow: 'What we bring',
+    title: 'Full kit.\nNothing rented.',
+    lead: 'Professional-grade camera, lighting, and editing setup. Everything we own is maintained and colour-calibrated. We carry the essentials on every shoot, and we quote openly if we need to rent anything extra for your brief.',
     groups: {
       camera: 'Camera',
       lenses: 'Lenses',
@@ -137,7 +137,7 @@ export const en = {
       power: 'Power',
       post: 'Post-production'
     },
-    note: 'Everything is maintained and colour-calibrated in-house. If a brief needs something we do not own, we rent it and quote it openly before the shoot.'
+    note: 'Everything is colour-calibrated in-house. If a brief needs something we do not own, we rent it and quote it openly before the shoot.'
   },
 
   estimator: {
@@ -184,49 +184,50 @@ export const en = {
   packages: {
     eyebrow: 'Packages',
     title: 'Three ways to work with us.',
-    lead: 'Start where you are. Most brands begin with Signature and grow into Campaign once the first set of images pays for itself.',
+    lead: 'Start where you are. Most brands begin with Gold and grow from there as your content needs expand.',
     best: 'Most booked',
     volume: 'Volume',
     delivery: 'Delivery',
     from: 'from',
     choose: (name: string) => `Choose ${name}`,
     tiers: {
-      essential: {
-        name: 'Essential',
-        tagline: 'For a first catalogue or a small drop.',
-        shots: 'Up to 15 final images',
-        turnaround: '5 working days',
+      silver: {
+        name: 'Silver',
+        tagline: 'Travel / Shop / Products',
+        shots: '40 photos included',
+        turnaround: '2 weeks',
         includes: [
-        'Half day in studio',
-        'One lighting setup',
-        'Standard retouching',
-        'Web + social exports']
+        '4 hours on-location',
+        '1 video, 30 seconds',
+        'Up to 10 outfits or products',
+        'Behind-the-scenes (optional)',
+        'Additional outfit: €25 each']
 
       },
-      signature: {
-        name: 'Signature',
-        tagline: 'Our most requested. Campaign-ready in a day.',
-        shots: 'Up to 40 final images',
-        turnaround: '4 working days',
+      gold: {
+        name: 'Gold',
+        tagline: 'Shop and Outdoor',
+        shots: '75 photos included',
+        turnaround: '2 weeks',
         includes: [
-        'Full day in studio or on location',
-        'Three lighting setups',
-        'Art direction + shot list',
-        'Advanced retouching',
-        'Vertical video clips']
+        '6 hours on-location',
+        '2 locations in one day',
+        '1 video + €100 per extra video',
+        'Up to 20 outfits or products',
+        'Behind-the-scenes included']
 
       },
-      campaign: {
-        name: 'Campaign',
-        tagline: 'Full production, motion included.',
-        shots: '80+ final images',
-        turnaround: '7 working days',
+      platinum: {
+        name: 'Platinum',
+        tagline: 'Content Sprint',
+        shots: '100 photos included',
+        turnaround: '3 weeks',
         includes: [
-        'Two shoot days',
-        'Talent casting + styling',
-        'Set design',
-        'Motion and stills together',
-        'Usage rights for paid media']
+        '8 hours on-location',
+        '2 locations in one day',
+        '10 videos (5 voice-over, 5 music)',
+        'Professional color grading',
+        'Instagram Reels + TikTok optimized']
 
       }
     }
@@ -239,11 +240,11 @@ export const en = {
     items: [
     {
       q: 'What does a shoot actually cost?',
-      a: 'Most projects land between €690 and €3,200 depending on the number of final images, whether we need talent, and how much set building is involved. The estimator above uses the same maths we use to write your quote.'
+      a: 'Packages run €400–€1,000 depending on the scope, hours, locations, and video needs. The estimator above uses the same maths we use to write your quote.'
     },
     {
-      q: 'Do I need to send my products to Milan?',
-      a: 'Usually yes, and we handle the rest. Ship to the studio at least three days before the shoot. We photograph, repack and return everything insured. For fragile or oversized items we come to you.'
+      q: 'Can I send my products, or do you come to me?',
+      a: 'Both. We can photograph your products if you ship them to us in Milan. Or we come to your shop, studio, or location and photograph on-site. Tell us your preference when you book.'
     },
     {
       q: 'Can I be there during the shoot?',
@@ -251,7 +252,7 @@ export const en = {
     },
     {
       q: 'What formats do I get?',
-      a: 'Full-resolution TIFF or JPEG masters, plus ready-to-post crops for your store, Instagram and paid ads. Marketplace-safe cut-outs on white are included in every package.'
+      a: 'Full-resolution TIFF or JPEG masters, plus ready-to-post crops for your store, Instagram and paid ads. Marketplace-safe cut-outs are included in every package.'
     },
     {
       q: 'How far ahead should I book?',
@@ -267,8 +268,8 @@ export const en = {
   booking: {
     titleA: "Let's put a date",
     titleB: 'in the diary.',
-    lead: 'Tell us what you sell and when you need the images. We reply within one working day with a shot list and a fixed price — no call required unless you want one.',
-    studioLabel: 'Studio',
+    lead: 'Tell us what you sell, where you want to shoot, and when you need the images. We reply within one working day with a shot list and a fixed price — no call required unless you want one.',
+    studioLabel: 'Location',
     languagesLabel: 'Languages',
     languagesValue: 'English · Français · Italiano',
     formTitle: 'Request a date',
@@ -289,7 +290,7 @@ export const en = {
   },
 
   footer: {
-    tagline: 'Commercial photography for brands that sell. Milan, since 2017.',
+    tagline: 'Commercial photography for brands that sell. Milan-based, working since 2008.',
     rights: 'All rights reserved.'
   }
 };

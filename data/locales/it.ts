@@ -21,20 +21,20 @@ export const it: Dict = {
   },
 
   hero: {
-    eyebrow: 'Fotografia commerciale · Milano · dal 2017',
+    eyebrow: 'Fotografia commerciale · Milano · dal 2008',
     titleA: 'Immagini fatte per',
     titleB: 'vendere ciò che crei.',
-    lead: "Fotografiamo prodotti, cibo e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare.",
+    lead: "Fotografiamo prodotti, cibo e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi, oppure veniamo da te — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare.",
     ctaPrimary: 'Ottieni un prezzo fisso',
     ctaSecondary: 'Guarda i lavori',
     stats: [
     { value: '420+', label: 'Shooting consegnati' },
-    { value: '9 anni', label: 'Studio a Milano' },
+    { value: 'Fotografo', label: 'dal 2008' },
     { value: '4 giorni', label: 'Tempo medio' },
     { value: '96%', label: 'Clienti che tornano' }],
 
     studioCaption:
-    'Il nostro studio, Via Tortona — una sala, fondale bianco, collegata al tuo schermo.'
+    'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.'
   },
 
   clients: { label: 'Clienti selezionati' },
@@ -90,7 +90,7 @@ export const it: Dict = {
     },
     {
       title: 'Giorno di shooting',
-      body: 'Nel nostro studio a Milano o da te. Partecipa di persona, oppure segui il collegamento live ovunque tu sia.',
+      body: 'In location tua, oppure con i tuoi prodotti spediti a noi. Partecipa di persona, oppure segui il collegamento live ovunque tu sia.',
       duration: 'Mezza o intera giornata'
     },
     {
@@ -127,9 +127,9 @@ export const it: Dict = {
   },
 
   equipment: {
-    eyebrow: 'Lo studio',
-    title: 'Una sala.\nTutto di proprietà.',
-    lead: 'Uno studio compatto e controllato — fondale bianco, illuminazione professionale e una postazione di finitura calibrata. Nulla a noleggio, nessuna voce a sorpresa in fattura.',
+    eyebrow: 'Quello che portiamo',
+    title: 'Kit completo.\nNulla a noleggio.',
+    lead: 'Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.',
     groups: {
       camera: 'Corpi macchina',
       lenses: 'Ottiche',
@@ -140,7 +140,7 @@ export const it: Dict = {
       power: 'Alimentazione',
       post: 'Post-produzione'
     },
-    note: 'Tutto è manutenuto e calibrato internamente. Se un brief richiede qualcosa che non abbiamo, lo noleggiamo e lo indichiamo apertamente prima dello shooting.'
+    note: 'Tutto è calibrato internamente. Se un brief richiede qualcosa che non abbiamo, lo noleggiamo e lo indichiamo apertamente prima dello shooting.'
   },
 
   estimator: {
@@ -185,84 +185,85 @@ export const it: Dict = {
   },
 
   packages: {
-    eyebrow: 'Pacchetti',
-    title: 'Tre modi di lavorare insieme.',
-    lead: 'Parti da dove sei. La maggior parte dei brand inizia con Signature e passa a Campaign quando il primo set si ripaga da solo.',
-    best: 'Il più scelto',
-    volume: 'Volume',
-    delivery: 'Consegna',
-    from: 'da',
+    eyebrow: ‘Pacchetti’,
+    title: ‘Tre modi di lavorare insieme.’,
+    lead: ‘Parti da dove sei. La maggior parte dei brand inizia con Gold e cresce da lì.’,
+    best: ‘Il più scelto’,
+    volume: ‘Volume’,
+    delivery: ‘Consegna’,
+    from: ‘da’,
     choose: (name: string) => `Scegli ${name}`,
     tiers: {
-      essential: {
-        name: 'Essential',
-        tagline: 'Per un primo catalogo o un piccolo drop.',
-        shots: 'Fino a 15 immagini finali',
-        turnaround: '5 giorni lavorativi',
+      silver: {
+        name: ‘Silver’,
+        tagline: ‘Viaggio / Negozio / Prodotti’,
+        shots: ‘40 foto incluse’,
+        turnaround: ‘2 settimane’,
         includes: [
-        'Mezza giornata in studio',
-        'Uno schema luci',
-        'Ritocco standard',
-        'Export web + social']
+        ‘4 ore in loco’,
+        ‘1 video, 30 secondi’,
+        ‘Fino a 10 outfit o prodotti’,
+        ‘Behind-the-scenes (facoltativo)’,
+        ‘Outfit extra: €25 ognuno’]
 
       },
-      signature: {
-        name: 'Signature',
-        tagline: 'Il più richiesto. Pronto per la campagna in un giorno.',
-        shots: 'Fino a 40 immagini finali',
-        turnaround: '4 giorni lavorativi',
+      gold: {
+        name: ‘Gold’,
+        tagline: ‘Negozio e all’aperto’,
+        shots: ‘75 foto incluse’,
+        turnaround: ‘2 settimane’,
         includes: [
-        'Giornata intera in studio o in loco',
-        'Tre schemi luci',
-        'Art direction + shot list',
-        'Ritocco avanzato',
-        'Clip video verticali']
+        ‘6 ore in loco’,
+        ‘2 location in un giorno’,
+        ‘1 video + €100 a video extra’,
+        ‘Fino a 20 outfit o prodotti’,
+        ‘Behind-the-scenes incluso’]
 
       },
-      campaign: {
-        name: 'Campaign',
-        tagline: 'Produzione completa, video incluso.',
-        shots: '80+ immagini finali',
-        turnaround: '7 giorni lavorativi',
+      platinum: {
+        name: ‘Platinum’,
+        tagline: ‘Content Sprint’,
+        shots: ‘100 foto incluse’,
+        turnaround: ‘3 settimane’,
         includes: [
-        'Due giornate di shooting',
-        'Casting + styling',
-        'Set design',
-        'Foto e video insieme',
-        'Diritti d’uso per il paid']
+        ‘8 ore in loco’,
+        ‘2 location in un giorno’,
+        ‘10 video (5 voice-over, 5 musica)’,
+        ‘Colore grading professionale’,
+        ‘Instagram Reels + TikTok ottimizzato’]
 
       }
     }
   },
 
   faq: {
-    title: 'Le domande che riceviamo ogni settimana.',
-    leadBefore: 'Ancora dubbi? Scrivi a',
-    leadAfter: 'e una persona risponde entro un giorno lavorativo.',
+    title: ‘Le domande che riceviamo ogni settimana.’,
+    leadBefore: ‘Ancora dubbi? Scrivi a’,
+    leadAfter: ‘e una persona risponde entro un giorno lavorativo.’,
     items: [
     {
-      q: 'Quanto costa davvero uno shooting?',
-      a: 'La maggior parte dei progetti si colloca tra 690 € e 3.200 € in base al numero di immagini finali, all’eventuale casting e alla costruzione del set. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi.'
+      q: ‘Quanto costa davvero uno shooting?’,
+      a: ‘I pacchetti vanno da 400 € a 1.000 € in base a scope, ore, location e video richiesti. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi.’
     },
     {
-      q: 'Devo spedire i prodotti a Milano?',
-      a: 'Di solito sì, al resto pensiamo noi. Spedisci allo studio almeno tre giorni prima. Fotografiamo, riconfezioniamo e restituiamo tutto assicurato. Per oggetti fragili o ingombranti veniamo noi da te.'
+      q: ‘Posso spedire i prodotti o vieni da me?’,
+      a: ‘Entrambi. Puoi spedirci i prodotti a Milano e fotograferemo lì. Oppure veniamo noi nel tuo negozio, studio o location. Diccelo quando prenoti.’
     },
     {
-      q: 'Posso essere presente allo shooting?',
-      a: 'Sempre benvenuto. Se non puoi spostarti, attiviamo un collegamento live per approvare gli scatti in tempo reale dalla tua scrivania.'
+      q: ‘Posso essere presente allo shooting?’,
+      a: ‘Sempre benvenuto. Se non puoi spostarti, attiviamo un collegamento live per approvare gli scatti in tempo reale dalla tua scrivania.’
     },
     {
-      q: 'Quali formati ricevo?',
-      a: 'Master TIFF o JPEG a piena risoluzione, più tagli pronti per shop, Instagram e campagne. Gli scontorni su bianco per i marketplace sono inclusi in ogni pacchetto.'
+      q: ‘Quali formati ricevo?’,
+      a: ‘Master TIFF o JPEG a piena risoluzione, più tagli pronti per shop, Instagram e campagne. Gli scontorni per i marketplace sono inclusi in ogni pacchetto.’
     },
     {
-      q: 'Con quanto anticipo conviene prenotare?',
-      a: 'Due o tre settimane sono comode. Ogni mese teniamo alcuni slot express per i lanci che non possono aspettare.'
+      q: ‘Con quanto anticipo conviene prenotare?’,
+      a: ‘Due o tre settimane sono comode. Ogni mese teniamo alcuni slot express per i lanci che non possono aspettare.’
     },
     {
-      q: 'In quali lingue lavorate?',
-      a: 'Inglese, francese e italiano — sul set e in ogni documento che ricevi.'
+      q: ‘In quali lingue lavorate?’,
+      a: ‘Inglese, francese e italiano — sul set e in ogni documento che ricevi.’
     }]
 
   },
@@ -270,8 +271,8 @@ export const it: Dict = {
   booking: {
     titleA: 'Mettiamo una data',
     titleB: 'in agenda.',
-    lead: 'Raccontaci cosa vendi e quando ti servono le immagini. Rispondiamo entro un giorno lavorativo con shot list e prezzo fisso — nessuna call obbligatoria.',
-    studioLabel: 'Studio',
+    lead: 'Raccontaci cosa vendi, dove vuoi fotografare e quando ti servono le immagini. Rispondiamo entro un giorno lavorativo con shot list e prezzo fisso — nessuna call obbligatoria.',
+    studioLabel: 'Location',
     languagesLabel: 'Lingue',
     languagesValue: 'English · Français · Italiano',
     formTitle: 'Richiedi una data',
@@ -292,7 +293,7 @@ export const it: Dict = {
   },
 
   footer: {
-    tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2017.',
+    tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2008.',
     rights: 'Tutti i diritti riservati.'
   }
 };

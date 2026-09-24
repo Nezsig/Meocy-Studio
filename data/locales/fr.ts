@@ -21,20 +21,20 @@ export const fr: Dict = {
   },
 
   hero: {
-    eyebrow: 'Photographie commerciale · Milan · depuis 2017',
+    eyebrow: 'Photographie commerciale · Milan · depuis 2008',
     titleA: 'Des images faites pour',
     titleB: 'vendre ce que vous créez.',
-    lead: "Nous photographions produits, gastronomie et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer.",
+    lead: "Nous photographions produits, gastronomie et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits, ou nous venons chez vous — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer.",
     ctaPrimary: 'Obtenir un prix fixe',
     ctaSecondary: 'Voir les travaux',
     stats: [
     { value: '420+', label: 'Séances livrées' },
-    { value: '9 ans', label: 'Studio à Milan' },
+    { value: 'Photographe', label: 'depuis 2008' },
     { value: '4 jours', label: 'Délai moyen' },
     { value: '96%', label: 'Clients qui reviennent' }],
 
     studioCaption:
-    'Notre studio, Via Tortona — une salle, fond blanc, connectée à votre écran en direct.'
+    'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.'
   },
 
   clients: { label: 'Clients sélectionnés' },
@@ -90,7 +90,7 @@ export const fr: Dict = {
     },
     {
       title: 'Jour de shooting',
-      body: "Dans notre studio à Milan ou chez vous. Venez sur place, ou suivez le flux en direct où que vous soyez.",
+      body: "Chez vous en location, ou avec vos produits expédiés chez nous. Venez sur place, ou suivez le flux en direct où que vous soyez.",
       duration: 'Demi-journée ou journée'
     },
     {
@@ -127,9 +127,9 @@ export const fr: Dict = {
   },
 
   equipment: {
-    eyebrow: 'Le studio',
-    title: 'Une salle.\nTout en propre.',
-    lead: "Un studio compact et maîtrisé — fond blanc, éclairage professionnel et un poste de finition calibré. Rien de loué, aucune ligne surprise sur votre facture.",
+    eyebrow: 'Ce que nous apportons',
+    title: 'Kit complet.\nRien de loué.',
+    lead: "Appareil photographique professionnel, éclairage et poste de finition calibré. Tout ce que nous avons est nôtre et entretenu. Nous apportons l'essentiel à chaque séance, et nous quotons ouvertement si quelque chose d'extra est nécessaire pour votre brief.",
     groups: {
       camera: 'Boîtiers',
       lenses: 'Optiques',
@@ -140,7 +140,7 @@ export const fr: Dict = {
       power: 'Énergie',
       post: 'Post-production'
     },
-    note: "Tout est entretenu et calibré en interne. Si un brief demande un matériel que nous n'avons pas, nous le louons et l'indiquons clairement avant la séance."
+    note: "Tout est calibré en interne. Si un brief demande un matériel que nous n'avons pas, nous le louons et l'indiquons clairement avant la séance."
   },
 
   estimator: {
@@ -187,112 +187,113 @@ export const fr: Dict = {
   packages: {
     eyebrow: 'Formules',
     title: 'Trois façons de travailler ensemble.',
-    lead: "Commencez là où vous en êtes. La plupart des marques débutent avec Signature et passent à Campaign une fois la première série rentabilisée.",
+    lead: "Commencez là où vous en êtes. La plupart des marques débutent avec Gold et grandissent à partir de là.",
     best: 'La plus choisie',
     volume: 'Volume',
     delivery: 'Livraison',
     from: 'à partir de',
     choose: (name: string) => `Choisir ${name}`,
     tiers: {
-      essential: {
-        name: 'Essential',
-        tagline: 'Pour un premier catalogue ou une petite série.',
-        shots: "Jusqu'à 15 images finales",
-        turnaround: '5 jours ouvrés',
+      silver: {
+        name: 'Silver',
+        tagline: 'Voyage / Magasin / Produits',
+        shots: '40 photos incluses',
+        turnaround: '2 semaines',
         includes: [
-        'Demi-journée en studio',
-        'Un schéma de lumière',
-        'Retouche standard',
-        'Exports web + réseaux']
+        '4 heures en location',
+        '1 vidéo, 30 secondes',
+        'Jusqu\'à 10 tenues ou produits',
+        'Making-of (optionnel)',
+        'Tenue supplémentaire : 25 € chacune']
 
       },
-      signature: {
-        name: 'Signature',
-        tagline: 'La plus demandée. Prête pour la campagne en un jour.',
-        shots: "Jusqu'à 40 images finales",
-        turnaround: '4 jours ouvrés',
+      gold: {
+        name: 'Gold',
+        tagline: 'Magasin et plein air',
+        shots: '75 photos incluses',
+        turnaround: '2 semaines',
         includes: [
-        'Journée complète en studio ou sur place',
-        'Trois schémas de lumière',
-        'Direction artistique + plan de prise de vue',
-        'Retouche avancée',
-        'Clips vidéo verticaux']
+        '6 heures en location',
+        '2 lieux en un jour',
+        '1 vidéo + 100 € par vidéo supplémentaire',
+        'Jusqu\'à 20 tenues ou produits',
+        'Making-of inclus']
 
       },
-      campaign: {
-        name: 'Campaign',
-        tagline: 'Production complète, vidéo incluse.',
-        shots: '80+ images finales',
-        turnaround: '7 jours ouvrés',
+      platinum: {
+        name: 'Platinum',
+        tagline: 'Content Sprint',
+        shots: '100 photos incluses',
+        turnaround: '3 semaines',
         includes: [
-        'Deux jours de prise de vue',
-        'Casting + stylisme',
-        'Conception du décor',
-        'Photo et vidéo ensemble',
-        "Droits d'usage pour la publicité"]
+        '8 heures en location',
+        '2 lieux en un jour',
+        '10 vidéos (5 voice-over, 5 musique)',
+        'Étalonnage couleur professionnel',
+        'Instagram Reels + TikTok optimisé']
 
       }
     }
   },
 
   faq: {
-    title: 'Les questions qui reviennent chaque semaine.',
-    leadBefore: 'Un doute ? Écrivez à',
-    leadAfter: 'et une personne vous répond sous un jour ouvré.',
+    title: ‘Les questions qui reviennent chaque semaine.’,
+    leadBefore: ‘Un doute ? Écrivez à’,
+    leadAfter: ‘et une personne vous répond sous un jour ouvré.’,
     items: [
     {
-      q: 'Combien coûte réellement une séance ?',
-      a: "La plupart des projets se situent entre 690 € et 3 200 € selon le nombre d'images finales, le recours à des talents et l'ampleur du décor. L'estimateur ci-dessus utilise le même calcul que nos devis."
+      q: ‘Combien coûte réellement une séance ?’,
+      a: "Les formules vont de 400 € à 1 000 € selon la portée, les heures, les lieux et les besoins vidéo. L’estimateur ci-dessus utilise le même calcul que nos devis."
     },
     {
-      q: 'Dois-je envoyer mes produits à Milan ?',
-      a: "En général oui, et nous gérons le reste. Expédiez au studio au moins trois jours avant. Nous photographions, remballons et renvoyons le tout assuré. Pour les pièces fragiles ou volumineuses, nous venons à vous."
+      q: ‘Puis-je envoyer mes produits ou venez-vous chez moi ?’,
+      a: "Les deux. Vous pouvez nous envoyer vos produits à Milan et nous les photographierons ici. Ou nous venons dans votre magasin, studio ou lieu. Dites-nous votre préférence quand vous réservez."
     },
     {
-      q: 'Puis-je assister à la séance ?',
+      q: ‘Puis-je assister à la séance ?’,
       a: "Toujours avec plaisir. Si vous ne pouvez pas vous déplacer, un flux en direct vous permet de valider les images depuis votre bureau."
     },
     {
-      q: 'Quels formats vais-je recevoir ?',
-      a: "Des masters TIFF ou JPEG pleine résolution, ainsi que des cadrages prêts à publier pour votre boutique, Instagram et vos campagnes. Les détourages sur blanc sont inclus dans chaque formule."
+      q: ‘Quels formats vais-je recevoir ?’,
+      a: "Des masters TIFF ou JPEG pleine résolution, ainsi que des cadrages prêts à publier pour votre boutique, Instagram et vos campagnes. Les détourages pour les marketplaces sont inclus dans chaque formule."
     },
     {
-      q: 'Combien de temps à l’avance faut-il réserver ?',
+      q: ‘Combien de temps à l’avance faut-il réserver ?’,
       a: "Deux à trois semaines sont confortables. Nous gardons chaque mois quelques créneaux express pour les lancements urgents."
     },
     {
-      q: 'Dans quelles langues travaillez-vous ?',
-      a: 'Anglais, français et italien — sur le plateau comme dans chaque document que vous recevez.'
+      q: ‘Dans quelles langues travaillez-vous ?’,
+      a: ‘Anglais, français et italien — sur le plateau comme dans chaque document que vous recevez.’
     }]
 
   },
 
   booking: {
-    titleA: 'Fixons une date',
-    titleB: 'dans l’agenda.',
-    lead: "Dites-nous ce que vous vendez et quand vous avez besoin des images. Nous répondons sous un jour ouvré avec un plan de prise de vue et un prix fixe — sans appel obligatoire.",
-    studioLabel: 'Studio',
-    languagesLabel: 'Langues',
-    languagesValue: 'English · Français · Italiano',
-    formTitle: 'Demander une date',
-    name: 'Votre nom',
-    namePlaceholder: 'Giulia Rossi',
-    email: 'E-mail',
-    emailPlaceholder: 'vous@marque.com',
-    brief: 'Que photographions-nous ?',
-    briefPlaceholder: '24 produits de soin pour un lancement de boutique en octobre.',
-    error: 'Merci d’indiquer votre nom et un e-mail valide pour que nous puissions répondre.',
-    submit: 'Envoyer le brief',
-    sending: 'Envoi',
-    disclaimer: 'Sans engagement. Nous gardons votre date 48 heures.',
-    sentTitle: 'Brief bien reçu.',
+    titleA: ‘Fixons une date’,
+    titleB: ‘dans l’agenda.’,
+    lead: "Dites-nous ce que vous vendez, où vous voulez photographier et quand vous avez besoin des images. Nous répondons sous un jour ouvré avec un plan de prise de vue et un prix fixe — sans appel obligatoire.",
+    studioLabel: ‘Lieu’,
+    languagesLabel: ‘Langues’,
+    languagesValue: ‘English · Français · Italiano’,
+    formTitle: ‘Demander une date’,
+    name: ‘Votre nom’,
+    namePlaceholder: ‘Giulia Rossi’,
+    email: ‘E-mail’,
+    emailPlaceholder: ‘vous@marque.com’,
+    brief: ‘Que photographions-nous ?’,
+    briefPlaceholder: ‘24 produits de soin pour un lancement de boutique en octobre.’,
+    error: ‘Merci d’indiquer votre nom et un e-mail valide pour que nous puissions répondre.’,
+    submit: ‘Envoyer le brief’,
+    sending: ‘Envoi’,
+    disclaimer: ‘Sans engagement. Nous gardons votre date 48 heures.’,
+    sentTitle: ‘Brief bien reçu.’,
     sentBody: (name: string, email: string) =>
     `Merci ${name} — une confirmation part vers ${email}. Vous recevrez le plan de prise de vue et le prix fixe sous un jour ouvré.`,
-    again: 'Envoyer un autre brief'
+    again: ‘Envoyer un autre brief’
   },
 
   footer: {
-    tagline: 'Photographie commerciale pour les marques qui vendent. Milan, depuis 2017.',
+    tagline: 'Photographie commerciale pour les marques qui vendent. Milan-based, depuis 2008.',
     rights: 'Tous droits réservés.'
   }
 };

@@ -14,12 +14,11 @@ export const images = {
 };
 
 export const studioContact = {
-  email: 'studio@meocy.com',
-  phone: '+39 02 1234 5678',
-  phoneHref: 'tel:+390212345678',
-  instagram: '@meocy.studio',
-  address: 'Via Tortona 27, 20144 Milano',
-  vat: 'P.IVA 09876543210'
+  email: 'hello@meocy.com',
+  phone: '+39 379 105 1000',
+  phoneHref: 'tel:+393791051000',
+  instagram: '@chamila.eu',
+  address: 'Viale Renato Serra 14, 20148 Milano'
 };
 
 export const projects: ProjectMeta[] = [
@@ -56,9 +55,9 @@ export const projects: ProjectMeta[] = [
 
 
 export const packageMeta: PackageMeta[] = [
-{ id: 'essential', priceFrom: 690, best: false },
-{ id: 'signature', priceFrom: 1480, best: true },
-{ id: 'campaign', priceFrom: 3200, best: false }];
+{ id: 'silver', priceFrom: 400, best: false },
+{ id: 'gold', priceFrom: 750, best: true },
+{ id: 'platinum', priceFrom: 1000, best: false }];
 
 
 export const equipmentGroups: EquipmentGroupMeta[] = [
