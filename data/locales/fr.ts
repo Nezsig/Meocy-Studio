@@ -238,43 +238,43 @@ export const fr: Dict = {
 
   faq: {
     title: ‘Les questions qui reviennent chaque semaine.’,
-    leadBefore: ‘Un doute ? Écrivez à’,
-    leadAfter: ‘et une personne vous répond sous un jour ouvré.’,
+    leadBefore: ‘Un doute ? Ecrivez a’,
+    leadAfter: ‘et une personne vous repond sous un jour ouvre.’,
     items: [
     {
-      q: ‘Combien coûte réellement une séance ?’,
-      a: "Les formules vont de 400 € à 1 000 € selon la portée, les heures, les lieux et les besoins vidéo. L’estimateur ci-dessus utilise le même calcul que nos devis."
+      q: ‘Combien coute reellement une seance ?’,
+      a: "Les formules vont de 400 € a 1 000 € selon la portee, les heures, les lieux et les besoins video. L\’estimateur ci-dessus utilise le meme calcul que nos devis."
     },
     {
       q: ‘Puis-je envoyer mes produits ou venez-vous chez moi ?’,
-      a: "Les deux. Vous pouvez nous envoyer vos produits à Milan et nous les photographierons ici. Ou nous venons dans votre magasin, studio ou lieu. Dites-nous votre préférence quand vous réservez."
+      a: "Les deux. Vous pouvez nous envoyer vos produits a Milan et nous les photographierons ici. Ou nous venons dans votre magasin, studio ou lieu. Dites-nous votre preference quand vous reservez."
     },
     {
-      q: ‘Puis-je assister à la séance ?’,
-      a: "Toujours avec plaisir. Si vous ne pouvez pas vous déplacer, un flux en direct vous permet de valider les images depuis votre bureau."
+      q: ‘Puis-je assister a la seance ?’,
+      a: "Toujours avec plaisir. Si vous ne pouvez pas vous deplacer, un flux en direct vous permet de valider les images depuis votre bureau."
     },
     {
       q: ‘Quels formats vais-je recevoir ?’,
-      a: "Des masters TIFF ou JPEG pleine résolution, ainsi que des cadrages prêts à publier pour votre boutique, Instagram et vos campagnes. Les détourages pour les marketplaces sont inclus dans chaque formule."
+      a: "Des masters TIFF ou JPEG pleine resolution, ainsi que des cadrages prets a publier pour votre boutique, Instagram et vos campagnes. Les detourages pour les marketplaces sont inclus dans chaque formule."
     },
     {
-      q: ‘Combien de temps à l’avance faut-il réserver ?’,
-      a: "Deux à trois semaines sont confortables. Nous gardons chaque mois quelques créneaux express pour les lancements urgents."
+      q: ‘Combien de temps a l\’avance faut-il reserver ?’,
+      a: "Deux a trois semaines sont confortables. Nous gardons chaque mois quelques creneaux express pour les lancements urgents."
     },
     {
       q: ‘Dans quelles langues travaillez-vous ?’,
-      a: ‘Anglais, français et italien — sur le plateau comme dans chaque document que vous recevez.’
+      a: ‘Anglais, francais et italien — sur le plateau comme dans chaque document que vous recevez.’
     }]
 
   },
 
   booking: {
     titleA: ‘Fixons une date’,
-    titleB: ‘dans l’agenda.’,
-    lead: "Dites-nous ce que vous vendez, où vous voulez photographier et quand vous avez besoin des images. Nous répondons sous un jour ouvré avec un plan de prise de vue et un prix fixe — sans appel obligatoire.",
+    titleB: ‘dans l\’agenda.’,
+    lead: "Dites-nous ce que vous vendez, ou vous voulez photographier et quand vous avez besoin des images. Nous repondons sous un jour ouvre avec un plan de prise de vue et un prix fixe — sans appel obligatoire.",
     studioLabel: ‘Lieu’,
     languagesLabel: ‘Langues’,
-    languagesValue: ‘English · Français · Italiano’,
+    languagesValue: ‘English · Francais · Italiano’,
     formTitle: ‘Demander une date’,
     name: ‘Votre nom’,
     namePlaceholder: ‘Giulia Rossi’,
@@ -282,7 +282,7 @@ export const fr: Dict = {
     emailPlaceholder: ‘vous@marque.com’,
     brief: ‘Que photographions-nous ?’,
     briefPlaceholder: ‘24 produits de soin pour un lancement de boutique en octobre.’,
-    error: ‘Merci d’indiquer votre nom et un e-mail valide pour que nous puissions répondre.’,
+    error: ‘Merci d\’indiquer votre nom et un e-mail valide pour que nous puissions repondre.’,
     submit: ‘Envoyer le brief’,
     sending: ‘Envoi’,
     disclaimer: ‘Sans engagement. Nous gardons votre date 48 heures.’,

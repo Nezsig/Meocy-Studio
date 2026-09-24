@@ -128,8 +128,8 @@ export const it: Dict = {
 
   equipment: {
     eyebrow: 'Quello che portiamo',
-    title: 'Kit completo.\nNulla a noleggio.',
-    lead: 'Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.',
+    title: 'Kit completo.\\nNulla a noleggio.',
+    lead: 'Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l\'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.',
     groups: {
       camera: 'Corpi macchina',
       lenses: 'Ottiche',
