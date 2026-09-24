@@ -60,7 +60,7 @@ export function estimate({ category, images, onLocation, addOns }: EstimateInput
     days: images > 55 ? 2 : 1,
     express: addOns.includes('express'),
     large: images > 40,
-    recommended: subtotal > 2600 ? 'campaign' : subtotal > 1150 ? 'signature' : 'essential',
+    recommended: subtotal > 1500 ? 'platinum' : subtotal > 700 ? 'gold' : 'silver',
     lines
   };
 }

@@ -52,7 +52,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-3 pt-6 text-[13px] text-slate2 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} MEOCY Studio · {studioContact.vat} · {t.footer.rights}
+            © {new Date().getFullYear()} MEOCY Studio · {t.footer.rights}
           </p>
           <p>{studioContact.address}, Italia</p>
         </div>

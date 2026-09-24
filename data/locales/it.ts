@@ -76,7 +76,7 @@ export const it: Dict = {
   process: {
     eyebrow: 'Dal primo messaggio ai file finali',
     title: 'Saprai sempre cosa succede dopo.',
-    lead: 'Niente gergo, nessuna fattura a sorpresa. Quattro passaggi, tempi fissi, una sola persona che segue il progetto dall’inizio alla fine.',
+    lead: "Niente gergo, nessuna fattura a sorpresa. Quattro passaggi, tempi fissi, una sola persona che segue il progetto dall'inizio alla fine.",
     steps: [
     {
       title: 'Raccontaci cosa vendi',
@@ -129,7 +129,7 @@ export const it: Dict = {
   equipment: {
     eyebrow: 'Quello che portiamo',
     title: 'Kit completo.\\nNulla a noleggio.',
-    lead: 'Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l\'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.',
+    lead: "Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.",
     groups: {
       camera: 'Corpi macchina',
       lenses: 'Ottiche',
@@ -185,85 +185,85 @@ export const it: Dict = {
   },
 
   packages: {
-    eyebrow: ‘Pacchetti’,
-    title: ‘Tre modi di lavorare insieme.’,
-    lead: ‘Parti da dove sei. La maggior parte dei brand inizia con Gold e cresce da lì.’,
-    best: ‘Il più scelto’,
-    volume: ‘Volume’,
-    delivery: ‘Consegna’,
-    from: ‘da’,
+    eyebrow: 'Pacchetti',
+    title: 'Tre modi di lavorare insieme.',
+    lead: 'Parti da dove sei. La maggior parte dei brand inizia con Gold e cresce da lì.',
+    best: 'Il più scelto',
+    volume: 'Volume',
+    delivery: 'Consegna',
+    from: 'da',
     choose: (name: string) => `Scegli ${name}`,
     tiers: {
       silver: {
-        name: ‘Silver’,
-        tagline: ‘Viaggio / Negozio / Prodotti’,
-        shots: ‘40 foto incluse’,
-        turnaround: ‘2 settimane’,
+        name: 'Silver',
+        tagline: 'Viaggio / Negozio / Prodotti',
+        shots: '40 foto incluse',
+        turnaround: '2 settimane',
         includes: [
-        ‘4 ore in loco’,
-        ‘1 video, 30 secondi’,
-        ‘Fino a 10 outfit o prodotti’,
-        ‘Behind-the-scenes (facoltativo)’,
-        ‘Outfit extra: €25 ognuno’]
+        '4 ore in loco',
+        '1 video, 30 secondi',
+        'Fino a 10 outfit o prodotti',
+        'Behind-the-scenes (facoltativo)',
+        'Outfit extra: €25 ognuno']
 
       },
       gold: {
-        name: ‘Gold’,
-        tagline: ‘Negozio e all’aperto’,
-        shots: ‘75 foto incluse’,
-        turnaround: ‘2 settimane’,
+        name: 'Gold',
+        tagline: "Negozio e all'aperto",
+        shots: '75 foto incluse',
+        turnaround: '2 settimane',
         includes: [
-        ‘6 ore in loco’,
-        ‘2 location in un giorno’,
-        ‘1 video + €100 a video extra’,
-        ‘Fino a 20 outfit o prodotti’,
-        ‘Behind-the-scenes incluso’]
+        '6 ore in loco',
+        '2 location in un giorno',
+        '1 video + €100 a video extra',
+        'Fino a 20 outfit o prodotti',
+        'Behind-the-scenes incluso']
 
       },
       platinum: {
-        name: ‘Platinum’,
-        tagline: ‘Content Sprint’,
-        shots: ‘100 foto incluse’,
-        turnaround: ‘3 settimane’,
+        name: 'Platinum',
+        tagline: 'Content Sprint',
+        shots: '100 foto incluse',
+        turnaround: '3 settimane',
         includes: [
-        ‘8 ore in loco’,
-        ‘2 location in un giorno’,
-        ‘10 video (5 voice-over, 5 musica)’,
-        ‘Colore grading professionale’,
-        ‘Instagram Reels + TikTok ottimizzato’]
+        '8 ore in loco',
+        '2 location in un giorno',
+        '10 video (5 voice-over, 5 musica)',
+        'Colore grading professionale',
+        'Instagram Reels + TikTok ottimizzato']
 
       }
     }
   },
 
   faq: {
-    title: ‘Le domande che riceviamo ogni settimana.’,
-    leadBefore: ‘Ancora dubbi? Scrivi a’,
-    leadAfter: ‘e una persona risponde entro un giorno lavorativo.’,
+    title: 'Le domande che riceviamo ogni settimana.',
+    leadBefore: 'Ancora dubbi? Scrivi a',
+    leadAfter: 'e una persona risponde entro un giorno lavorativo.',
     items: [
     {
-      q: ‘Quanto costa davvero uno shooting?’,
-      a: ‘I pacchetti vanno da 400 € a 1.000 € in base a scope, ore, location e video richiesti. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi.’
+      q: 'Quanto costa davvero uno shooting?',
+      a: 'I pacchetti vanno da 400 € a 1.000 € in base a scope, ore, location e video richiesti. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi.'
     },
     {
-      q: ‘Posso spedire i prodotti o vieni da me?’,
-      a: ‘Entrambi. Puoi spedirci i prodotti a Milano e fotograferemo lì. Oppure veniamo noi nel tuo negozio, studio o location. Diccelo quando prenoti.’
+      q: 'Posso spedire i prodotti o vieni da me?',
+      a: 'Entrambi. Puoi spedirci i prodotti a Milano e fotograferemo lì. Oppure veniamo noi nel tuo negozio, studio o location. Diccelo quando prenoti.'
     },
     {
-      q: ‘Posso essere presente allo shooting?’,
-      a: ‘Sempre benvenuto. Se non puoi spostarti, attiviamo un collegamento live per approvare gli scatti in tempo reale dalla tua scrivania.’
+      q: 'Posso essere presente allo shooting?',
+      a: 'Sempre benvenuto. Se non puoi spostarti, attiviamo un collegamento live per approvare gli scatti in tempo reale dalla tua scrivania.'
     },
     {
-      q: ‘Quali formati ricevo?’,
-      a: ‘Master TIFF o JPEG a piena risoluzione, più tagli pronti per shop, Instagram e campagne. Gli scontorni per i marketplace sono inclusi in ogni pacchetto.’
+      q: 'Quali formati ricevo?',
+      a: 'Master TIFF o JPEG a piena risoluzione, più tagli pronti per shop, Instagram e campagne. Gli scontorni per i marketplace sono inclusi in ogni pacchetto.'
     },
     {
-      q: ‘Con quanto anticipo conviene prenotare?’,
-      a: ‘Due o tre settimane sono comode. Ogni mese teniamo alcuni slot express per i lanci che non possono aspettare.’
+      q: 'Con quanto anticipo conviene prenotare?',
+      a: 'Due o tre settimane sono comode. Ogni mese teniamo alcuni slot express per i lanci che non possono aspettare.'
     },
     {
-      q: ‘In quali lingue lavorate?’,
-      a: ‘Inglese, francese e italiano — sul set e in ogni documento che ricevi.’
+      q: 'In quali lingue lavorate?',
+      a: 'Inglese, francese e italiano — sul set e in ogni documento che ricevi.'
     }]
 
   },
