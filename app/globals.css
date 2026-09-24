@@ -1,0 +1,68 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --ink: #0b0b0c;
+  --paper: #f6f5f2;
+  --accent: #c8f169;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-feature-settings: 'cv11', 'ss01';
+  font-variant-numeric: tabular-nums;
+}
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+.tracking-tighter-display {
+  letter-spacing: -0.045em;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  border: 4px solid var(--paper);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+input[type='range']::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border: 4px solid var(--paper);
+  border-radius: 999px;
+  background: var(--ink);
+  cursor: pointer;
+}
+input[type='range']:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
