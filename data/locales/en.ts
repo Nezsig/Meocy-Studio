@@ -22,14 +22,14 @@ export const en = {
     eyebrow: 'Commercial photography · Milan · since 2008',
     titleA: 'Images made to',
     titleB: 'sell what you make.',
-    lead: 'We photograph products, food and collections for brands that sell online. Send us what you sell, or we come to your location — you get a complete, channel-ready set of images on a fixed price agreed before we start.',
+    lead: 'We photograph products, food, clothing and collections for brands that sell online. Send us what you sell, or we come to your location — you get a complete, channel-ready set of images on a fixed price agreed before we start. Newly rebranded, now taking on new brands.',
     ctaPrimary: 'Get a fixed price',
     ctaSecondary: 'See selected work',
     stats: [
     { value: 'Milan · Paris', label: 'Where we shoot' },
+    { value: 'EN · IT · FR', label: 'We work in 3 languages' },
     { value: 'Photographer', label: 'since 2008' },
-    { value: '4 days', label: 'Average turnaround' },
-    { value: '96%', label: 'Clients who rebook' }],
+    { value: 'Fixed price', label: 'Agreed before we start' }],
 
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.'
   },
@@ -152,8 +152,8 @@ export const en = {
       brand: 'Brand'
     },
     countLabel: 'How many final images?',
-    countMin: '5 — a small drop',
-    countMax: '80 — a full catalogue',
+    countMin: '0 — base only',
+    countMax: '80 — full catalogue',
     whereLabel: 'Where?',
     whereStudio: 'Our Studio',
     whereStudioNote: 'Full control of the light',
@@ -162,8 +162,7 @@ export const en = {
     addOnLegend: 'Anything else?',
     addOns: {
       simpleVideo: { label: 'Simple video', description: '1 setup, one location, no lighting change' },
-      styledVideo: { label: 'Styled video', description: 'Lighting setups' },
-      extraPhotos: { label: 'Extra 10 edited photos', description: 'Editing & marketplace cutouts' },
+      styledVideo: { label: 'Social media commercial video', description: 'Lighting setups, 2 hours recording time' },
       express: { label: 'Express delivery', description: '48h' }
     },
     resultLabel: 'Your estimate',

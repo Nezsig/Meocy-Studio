@@ -24,14 +24,14 @@ export const fr: Dict = {
     eyebrow: 'Photographie commerciale · Milan · depuis 2008',
     titleA: 'Des images faites pour',
     titleB: 'vendre ce que vous créez.',
-    lead: "Nous photographions produits, gastronomie et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits, ou nous venons chez vous — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer.",
+    lead: "Nous photographions produits, gastronomie, vêtements et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits, ou nous venons chez vous — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer. Nouvelle identité, maintenant ouverts à de nouveaux projets.",
     ctaPrimary: 'Obtenir un prix fixe',
     ctaSecondary: 'Voir les travaux',
     stats: [
     { value: 'Milan · Paris', label: 'Où nous travaillons' },
+    { value: 'EN · IT · FR', label: 'Nous travaillons en 3 langues' },
     { value: 'Photographe', label: 'depuis 2008' },
-    { value: '4 jours', label: 'Délai moyen' },
-    { value: '96%', label: 'Clients qui reviennent' }],
+    { value: 'Prix fixe', label: 'Convenu avant de commencer' }],
 
     studioCaption:
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.'
@@ -155,8 +155,8 @@ export const fr: Dict = {
       brand: 'Marque'
     },
     countLabel: "Combien d'images finales ?",
-    countMin: '5 — une petite série',
-    countMax: '80 — un catalogue complet',
+    countMin: '0 — tarif de base',
+    countMax: '80 — catalogue complet',
     whereLabel: 'Où ?',
     whereStudio: 'Notre Studio',
     whereStudioNote: 'Maîtrise totale de la lumière',
@@ -165,8 +165,7 @@ export const fr: Dict = {
     addOnLegend: 'Autre chose ?',
     addOns: {
       simpleVideo: { label: 'Vidéo simple', description: '1 setup, une location, pas de changement d\'éclairage' },
-      styledVideo: { label: 'Vidéo stylisée', description: 'Setups d\'éclairage' },
-      extraPhotos: { label: '10 photos supplémentaires retouchées', description: 'Retouche & détourages marketplace' },
+      styledVideo: { label: 'Vidéo commerciale pour réseaux sociaux', description: 'Setups d\'éclairage, 2 heures d\'enregistrement' },
       express: { label: 'Livraison express', description: '48h' }
     },
     resultLabel: 'Votre estimation',

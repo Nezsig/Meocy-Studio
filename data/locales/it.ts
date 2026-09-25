@@ -24,14 +24,14 @@ export const it: Dict = {
     eyebrow: 'Fotografia commerciale · Milano · dal 2008',
     titleA: 'Immagini fatte per',
     titleB: 'vendere ciò che crei.',
-    lead: "Fotografiamo prodotti, cibo e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi, oppure veniamo da te — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare.",
+    lead: "Fotografiamo prodotti, cibo, abbigliamento e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi, oppure veniamo da te — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare. Nuovo brand, ora aperto a nuovi progetti.",
     ctaPrimary: 'Ottieni un prezzo fisso',
     ctaSecondary: 'Guarda i lavori',
     stats: [
     { value: 'Milano · Parigi', label: 'Dove fotografiamo' },
+    { value: 'EN · IT · FR', label: 'Lavoriamo in 3 lingue' },
     { value: 'Fotografo', label: 'dal 2008' },
-    { value: '4 giorni', label: 'Tempo medio' },
-    { value: '96%', label: 'Clienti che tornano' }],
+    { value: 'Prezzo fisso', label: 'Concordato prima di iniziare' }],
 
     studioCaption:
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.'
@@ -155,8 +155,8 @@ export const it: Dict = {
       brand: 'Brand'
     },
     countLabel: 'Quante immagini finali?',
-    countMin: '5 — un piccolo drop',
-    countMax: '80 — un catalogo completo',
+    countMin: '0 — solo base',
+    countMax: '80 — catalogo completo',
     whereLabel: 'Dove?',
     whereStudio: 'Il nostro Studio',
     whereStudioNote: 'Controllo totale della luce',
@@ -165,8 +165,7 @@ export const it: Dict = {
     addOnLegend: 'Serve altro?',
     addOns: {
       simpleVideo: { label: 'Video semplice', description: '1 setup, una location, nessun cambio luci' },
-      styledVideo: { label: 'Video stilizzato', description: 'Setup di illuminazione' },
-      extraPhotos: { label: '10 foto extra ritoccate', description: 'Ritocco & scontorni per marketplace' },
+      styledVideo: { label: 'Video commerciale per social', description: 'Setup di illuminazione, 2 ore di ripresa' },
       express: { label: 'Consegna express', description: '48h' }
     },
     resultLabel: 'La tua stima',

@@ -1,6 +1,6 @@
 import type { ShootCategory } from '../types/site';
 
-export type AddOnId = 'simpleVideo' | 'styledVideo' | 'extraPhotos' | 'express';
+export type AddOnId = 'simpleVideo' | 'styledVideo' | 'express';
 
 export interface EstimateInput {
   category: ShootCategory;
@@ -23,12 +23,11 @@ export interface EstimateResult {
   lines: EstimateLine[];
 }
 
-export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'extraPhotos', 'express'];
+export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'express'];
 
 export const addOnPrices: Record<AddOnId, number> = {
   simpleVideo: 100,
   styledVideo: 250,
-  extraPhotos: 80,
   express: 150
 };
 

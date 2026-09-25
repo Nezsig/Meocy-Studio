@@ -102,7 +102,7 @@ export function Estimator() {
               <input
                 id="image-count"
                 type="range"
-                min={5}
+                min={0}
                 max={80}
                 step={5}
                 value={count}
