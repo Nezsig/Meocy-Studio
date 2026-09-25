@@ -74,7 +74,7 @@ export function Estimator() {
                     className={`rounded-xl px-3 py-3 text-[14px] font-medium transition-colors duration-150 ease-smooth ${
                     isProduct ? (
                       category === c ?
-                      'bg-ink text-chalk' :
+                      'bg-ink text-chalk ring-2 ring-accent' :
                       'bg-chalk text-slate2 ring-1 ring-ink/8 hover:text-ink'
                     ) : (
                       'bg-chalk text-slate2/40 ring-1 ring-ink/8 opacity-50 cursor-not-allowed'
@@ -92,10 +92,10 @@ export function Estimator() {
                 <label
                   htmlFor="image-count"
                   className="text-[12.5px] font-semibold uppercase tracking-[0.16em] text-slate2">
-                  
+
                   {t.estimator.countLabel}
                 </label>
-                <span className="font-display text-[1.9rem] leading-none tracking-tighter-display">
+                <span className="font-display text-[1.9rem] leading-none tracking-tighter-display text-accent font-bold">
                   {count}
                 </span>
               </div>
@@ -109,7 +109,7 @@ export function Estimator() {
                 onChange={(e) => setCount(Number(e.target.value))}
                 className="mt-4 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-mist" />
               
-              <div className="mt-2 flex justify-between text-[12px] text-slate2">
+              <div className="mt-2 flex justify-between text-[12px] font-medium text-slate1">
                 <span>{t.estimator.countMin}</span>
                 <span>{t.estimator.countMax}</span>
               </div>
