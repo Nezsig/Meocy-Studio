@@ -82,16 +82,6 @@ export const equipmentGroups: EquipmentGroupMeta[] = [
 { id: 'post', items: ['Mac Studio', 'ASUS PA278QV calibrated'] }];
 
 
-export const testimonialMeta: TestimonialMeta[] = [
-{ id: 't1', name: 'Giulia Ferrante', company: 'Casa Ambra' },
-{ id: 't2', name: 'Marco Alberti', company: 'Studio Marconi' },
-{ id: 't3', name: 'Elena Bassi', company: 'Trattoria Nove' }];
+export const testimonialMeta: TestimonialMeta[] = [];
 
-
-export const clients = [
-'CASA AMBRA',
-'NORD AUDIO',
-'TRATTORIA NOVE',
-'STUDIO MARCONI',
-'VERDE MILANO',
-'ATELIER SETTE'];
+export const clients: string[] = [];

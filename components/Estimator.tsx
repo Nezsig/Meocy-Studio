@@ -62,21 +62,28 @@ export function Estimator() {
                 {t.estimator.categoryLegend}
               </legend>
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {categories.map((c) =>
-                <button
-                  key={c}
-                  type="button"
-                  aria-pressed={category === c}
-                  onClick={() => setCategory(c)}
-                  className={`rounded-xl px-3 py-3 text-[14px] font-medium transition-colors duration-150 ease-smooth ${
-                  category === c ?
-                  'bg-ink text-chalk' :
-                  'bg-chalk text-slate2 ring-1 ring-ink/8 hover:text-ink'}`
-                  }>
-                  
+                {categories.map((c) => {
+                  const isProduct = c === 'product';
+                  return (
+                  <button
+                    key={c}
+                    type="button"
+                    disabled={!isProduct}
+                    aria-pressed={category === c}
+                    onClick={() => isProduct && setCategory(c)}
+                    className={`rounded-xl px-3 py-3 text-[14px] font-medium transition-colors duration-150 ease-smooth ${
+                    isProduct ? (
+                      category === c ?
+                      'bg-ink text-chalk' :
+                      'bg-chalk text-slate2 ring-1 ring-ink/8 hover:text-ink'
+                    ) : (
+                      'bg-chalk text-slate2/40 ring-1 ring-ink/8 opacity-50 cursor-not-allowed'
+                    )}`
+                    }>
                     {t.estimator.categories[c]}
                   </button>
-                )}
+                  );
+                })}
               </div>
             </fieldset>
 
@@ -181,11 +188,8 @@ export function Estimator() {
               {t.estimator.resultLabel}
             </p>
             <p className="mt-4 font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">
-              {euro(result.low, lang)}
-              <span className="text-chalk/35"> – </span>
-              {euro(result.high, lang)}
+              {euro(result.total, lang)}
             </p>
-            <p className="mt-2 text-[13.5px] text-chalk/50">{t.estimator.vat}</p>
 
             <ul className="mt-7 space-y-2.5">
               {result.lines.map((l) =>

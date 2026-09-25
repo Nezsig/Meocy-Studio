@@ -28,7 +28,7 @@ export const it: Dict = {
     ctaPrimary: 'Ottieni un prezzo fisso',
     ctaSecondary: 'Guarda i lavori',
     stats: [
-    { value: '420+', label: 'Shooting consegnati' },
+    { value: 'Milano · Parigi', label: 'Dove fotografiamo' },
     { value: 'Fotografo', label: 'dal 2008' },
     { value: '4 giorni', label: 'Tempo medio' },
     { value: '96%', label: 'Clienti che tornano' }],
@@ -158,19 +158,18 @@ export const it: Dict = {
     countMin: '5 — un piccolo drop',
     countMax: '80 — un catalogo completo',
     whereLabel: 'Dove?',
-    whereStudio: 'Il nostro studio a Milano',
+    whereStudio: 'Il nostro Studio',
     whereStudioNote: 'Controllo totale della luce',
     whereLocation: 'Da te',
     whereLocationNote: 'Portiamo lo studio con noi',
     addOnLegend: 'Serve altro?',
     addOns: {
-      model: { label: 'Casting talent', description: 'Selezioniamo, ingaggiamo e paghiamo noi.' },
-      styling: { label: 'Styling & set', description: 'Props, superfici, guardaroba.' },
-      video: { label: 'Clip video verticali', description: '6–10 clip dallo stesso set.' },
-      express: { label: 'Consegna express', description: 'File ritoccati entro 48 ore.' }
+      simpleVideo: { label: 'Video semplice', description: '1 setup, una location, nessun cambio luci' },
+      styledVideo: { label: 'Video stilizzato', description: 'Setup di illuminazione' },
+      extraPhotos: { label: '10 foto extra ritoccate', description: 'Ritocco & scontorni per marketplace' },
+      express: { label: 'Consegna express', description: '48h' }
     },
     resultLabel: 'La tua stima',
-    vat: 'IVA esclusa. Fissato per iscritto prima di iniziare.',
     lineStudio: (category: string) => `Shooting ${category.toLowerCase()} — studio e luci`,
     lineImages: (count: number) => `${count} immagini finali ritoccate`,
     lineLocation: 'Troupe e trasporto attrezzatura in loco',

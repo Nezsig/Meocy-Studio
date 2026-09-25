@@ -28,7 +28,7 @@ export const fr: Dict = {
     ctaPrimary: 'Obtenir un prix fixe',
     ctaSecondary: 'Voir les travaux',
     stats: [
-    { value: '420+', label: 'Séances livrées' },
+    { value: 'Milan · Paris', label: 'Où nous travaillons' },
     { value: 'Photographe', label: 'depuis 2008' },
     { value: '4 jours', label: 'Délai moyen' },
     { value: '96%', label: 'Clients qui reviennent' }],
@@ -158,19 +158,18 @@ export const fr: Dict = {
     countMin: '5 — une petite série',
     countMax: '80 — un catalogue complet',
     whereLabel: 'Où ?',
-    whereStudio: 'Notre studio à Milan',
+    whereStudio: 'Notre Studio',
     whereStudioNote: 'Maîtrise totale de la lumière',
     whereLocation: 'Chez vous',
     whereLocationNote: 'Nous emportons le studio',
     addOnLegend: 'Autre chose ?',
     addOns: {
-      model: { label: 'Casting de talents', description: 'Nous castons, réservons et rémunérons.' },
-      styling: { label: 'Stylisme & décors', description: 'Accessoires, surfaces, garde-robe.' },
-      video: { label: 'Clips vidéo verticaux', description: '6 à 10 clips issus du même plateau.' },
-      express: { label: 'Livraison express', description: 'Fichiers retouchés sous 48 heures.' }
+      simpleVideo: { label: 'Vidéo simple', description: '1 setup, une location, pas de changement d\'éclairage' },
+      styledVideo: { label: 'Vidéo stylisée', description: 'Setups d\'éclairage' },
+      extraPhotos: { label: '10 photos supplémentaires retouchées', description: 'Retouche & détourages marketplace' },
+      express: { label: 'Livraison express', description: '48h' }
     },
     resultLabel: 'Votre estimation',
-    vat: 'Hors TVA. Fixé par écrit avant de commencer.',
     lineStudio: (category: string) => `Séance ${category.toLowerCase()} — studio & éclairage`,
     lineImages: (count: number) => `${count} images finales retouchées`,
     lineLocation: 'Équipe et transport du matériel sur place',

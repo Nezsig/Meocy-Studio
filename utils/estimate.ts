@@ -1,6 +1,6 @@
 import type { ShootCategory } from '../types/site';
 
-export type AddOnId = 'model' | 'styling' | 'video' | 'express';
+export type AddOnId = 'simpleVideo' | 'styledVideo' | 'extraPhotos' | 'express';
 
 export interface EstimateInput {
   category: ShootCategory;
@@ -15,8 +15,7 @@ export interface EstimateLine {
 }
 
 export interface EstimateResult {
-  low: number;
-  high: number;
+  total: number;
   days: number;
   express: boolean;
   large: boolean;
@@ -24,20 +23,20 @@ export interface EstimateResult {
   lines: EstimateLine[];
 }
 
-export const addOnIds: AddOnId[] = ['model', 'styling', 'video', 'express'];
+export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'extraPhotos', 'express'];
 
 export const addOnPrices: Record<AddOnId, number> = {
-  model: 650,
-  styling: 480,
-  video: 540,
-  express: 390
+  simpleVideo: 100,
+  styledVideo: 250,
+  extraPhotos: 80,
+  express: 150
 };
 
 const baseByCategory: Record<ShootCategory, {base: number;perImage: number;}> = {
-  product: { base: 420, perImage: 22 },
-  restaurant: { base: 520, perImage: 26 },
-  fashion: { base: 780, perImage: 30 },
-  brand: { base: 900, perImage: 34 }
+  product: { base: 500, perImage: 10 },
+  restaurant: { base: 500, perImage: 10 },
+  fashion: { base: 500, perImage: 10 },
+  brand: { base: 500, perImage: 10 }
 };
 
 export function estimate({ category, images, onLocation, addOns }: EstimateInput): EstimateResult {
@@ -51,16 +50,14 @@ export function estimate({ category, images, onLocation, addOns }: EstimateInput
   addOns.forEach((id) => lines.push({ key: id, amount: addOnPrices[id] }));
 
   const subtotal = lines.reduce((sum, l) => sum + l.amount, 0);
-  const low = Math.round(subtotal * 0.95 / 10) * 10;
-  const high = Math.round(subtotal * 1.12 / 10) * 10;
+  const total = Math.round(subtotal / 10) * 10;
 
   return {
-    low,
-    high,
+    total,
     days: images > 55 ? 2 : 1,
     express: addOns.includes('express'),
     large: images > 40,
-    recommended: subtotal > 1500 ? 'platinum' : subtotal > 700 ? 'gold' : 'silver',
+    recommended: subtotal > 1000 ? 'platinum' : subtotal > 750 ? 'gold' : 'silver',
     lines
   };
 }

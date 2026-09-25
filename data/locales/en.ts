@@ -26,7 +26,7 @@ export const en = {
     ctaPrimary: 'Get a fixed price',
     ctaSecondary: 'See selected work',
     stats: [
-    { value: '420+', label: 'Shoots delivered' },
+    { value: 'Milan · Paris', label: 'Where we shoot' },
     { value: 'Photographer', label: 'since 2008' },
     { value: '4 days', label: 'Average turnaround' },
     { value: '96%', label: 'Clients who rebook' }],
@@ -155,19 +155,18 @@ export const en = {
     countMin: '5 — a small drop',
     countMax: '80 — a full catalogue',
     whereLabel: 'Where?',
-    whereStudio: 'Our Milan studio',
+    whereStudio: 'Our Studio',
     whereStudioNote: 'Full control of the light',
     whereLocation: 'Your location',
     whereLocationNote: 'We pack the studio into a van',
     addOnLegend: 'Anything else?',
     addOns: {
-      model: { label: 'Talent casting', description: 'We cast, book and pay the talent.' },
-      styling: { label: 'Styling & set build', description: 'Props, surfaces, wardrobe.' },
-      video: { label: 'Vertical video clips', description: '6–10 short clips from the same set.' },
-      express: { label: 'Express delivery', description: 'Retouched files back in 48 hours.' }
+      simpleVideo: { label: 'Simple video', description: '1 setup, one location, no lighting change' },
+      styledVideo: { label: 'Styled video', description: 'Lighting setups' },
+      extraPhotos: { label: 'Extra 10 edited photos', description: 'Editing & marketplace cutouts' },
+      express: { label: 'Express delivery', description: '48h' }
     },
     resultLabel: 'Your estimate',
-    vat: 'Excluding VAT. Fixed in writing before we start.',
     lineStudio: (category: string) => `${category} shoot — studio time & lighting`,
     lineImages: (count: number) => `${count} final retouched images`,
     lineLocation: 'On-location crew & kit transport',
