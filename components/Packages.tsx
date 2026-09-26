@@ -8,6 +8,12 @@ import { euro } from '../utils/estimate';
 export function Packages() {
   const { t, lang } = useLanguage();
 
+  const originalPrices: Record<string, { original: number; discount: string }> = {
+    silver: { original: 750, discount: '33% OFF' },
+    gold: { original: 1000, discount: '25% OFF' },
+    platinum: { original: 1500, discount: '33% OFF' }
+  };
+
   return (
     <section id="packages" className="scroll-mt-24 py-24 sm:py-32">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
@@ -49,13 +55,23 @@ export function Packages() {
                   {tier.tagline}
                 </p>
 
-                <p className="mt-6 font-display text-[2.6rem] leading-none tracking-tighter-display">
+                {originalPrices[p.id] && (
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className={`line-through font-sans text-[16px] ${p.best ? 'text-chalk/40' : 'text-slate2/50'}`}>
+                    {euro(originalPrices[p.id].original, lang)}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-ink">
+                    {originalPrices[p.id].discount}
+                  </span>
+                </div>
+                )}
+                <p className="mt-2 font-display text-[2.6rem] leading-none tracking-tighter-display">
                   {euro(p.priceFrom, lang)}
                   <span
                     className={`ml-2 font-sans text-[13px] font-medium tracking-normal ${
                     p.best ? 'text-chalk/50' : 'text-slate2'}`
                     }>
-                    
+
                     {t.packages.from}
                   </span>
                 </p>

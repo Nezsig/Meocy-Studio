@@ -6,7 +6,7 @@ import type {
 '../types/site';
 
 export const images = {
-  studio: "/ba09e101-6a56-4900-8126-2f06336b2cb1.jpg"
+  studio: "/product-studio.jpg"
 };
 
 export const studioContact = {
@@ -46,8 +46,6 @@ export const equipmentGroups: EquipmentGroupMeta[] = [
 {
   id: 'videoLight',
   items: [
-  'Godox AD600Pro',
-  'Godox AD300Pro',
   'GVM 300W',
   'GVM 150W']
 
@@ -55,6 +53,8 @@ export const equipmentGroups: EquipmentGroupMeta[] = [
 {
   id: 'photographyLight',
   items: [
+  'Godox AD600Pro',
+  'Godox AD300Pro',
   '3× Speedlight',
   '120cm Octabox',
   '80cm Octabox']
