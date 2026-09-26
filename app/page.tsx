@@ -1,6 +1,5 @@
 import { Nav } from '../components/Nav';
 import { Hero } from '../components/Hero';
-import { Work } from '../components/Work';
 import { Process } from '../components/Process';
 import { HowItWorks } from '../components/HowItWorks';
 import { Equipment } from '../components/Equipment';
@@ -16,7 +15,6 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
-        <Work />
         <Process />
         <HowItWorks />
         <Equipment />

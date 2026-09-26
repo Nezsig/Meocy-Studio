@@ -5,7 +5,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 const linkOrder = [
-{ href: '#work', key: 'work' },
 { href: '#process', key: 'approach' },
 { href: '#equipment', key: 'studio' },
 { href: '#estimator', key: 'pricing' },
@@ -38,11 +37,11 @@ export function Nav() {
           aria-label="Primary"
           className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
           
-          <a href="#top" className="flex items-baseline gap-2">
-            <span className="text-[17px] font-semibold tracking-tighter-display">MEOCY</span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-slate2">
-              Studio
-            </span>
+          <a href="#top" className="flex items-center gap-2">
+            <img
+              src="/meocy-logo.png"
+              alt="MEOCY Studio"
+              className="h-9 w-auto object-contain" />
           </a>
 
           <ul className="hidden items-center gap-0.5 lg:flex">

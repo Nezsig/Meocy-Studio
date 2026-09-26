@@ -37,35 +37,17 @@ export function Hero() {
               <a
                 href="#estimator"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[15px] font-medium text-chalk transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-                
+
                 {t.hero.ctaPrimary}
                 <ArrowRightIcon
                   size={17}
                   className="transition-transform duration-200 ease-smooth group-hover:translate-x-1" />
-                
-              </a>
-              <a
-                href="#work"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-chalk px-6 py-3.5 text-[15px] font-medium text-ink transition-colors duration-150 ease-smooth hover:border-ink/40">
-                
-                {t.hero.ctaSecondary}
-              </a>
-            </div>
-          </motion.div>
 
-          <motion.figure {...rise(0.1)} className="lg:pb-2">
-            <div className="overflow-hidden rounded-xl2 bg-mist ring-1 ring-ink/5">
-              <img
-                src={images.studio}
-                alt="A small photography studio room with a white paper backdrop, one softbox and a camera on a tripod"
-                className="aspect-[4/3] w-full object-cover" />
-              
+              </a>
             </div>
-            <figcaption className="mt-3 flex items-start gap-3 text-[13px] leading-relaxed text-slate2">
-              <span className="mt-2 h-px w-6 flex-none bg-accent" />
-              {t.hero.studioCaption}
-            </figcaption>
-          </motion.figure>
+
+            <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-slate2">{t.hero.studioCaption}</p>
+          </motion.div>
         </div>
 
         <motion.dl

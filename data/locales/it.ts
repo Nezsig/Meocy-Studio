@@ -7,7 +7,6 @@ export const it: Dict = {
 
   nav: {
     links: {
-      work: 'Lavori',
       approach: 'Metodo',
       studio: 'Studio',
       pricing: 'Prezzi',
@@ -26,10 +25,9 @@ export const it: Dict = {
     titleB: 'vendere ciò che crei.',
     lead: "Fotografiamo prodotti, cibo, abbigliamento e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi, oppure veniamo da te — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare. Nuovo brand, ora aperto a nuovi progetti.",
     ctaPrimary: 'Ottieni un prezzo fisso',
-    ctaSecondary: 'Guarda i lavori',
     stats: [
     { value: 'Milano · Parigi', label: 'Dove fotografiamo' },
-    { value: 'EN · IT · FR', label: 'Lavoriamo in 3 lingue' },
+    { value: 'Foto + Video', label: 'Un team, entrambi' },
     { value: 'Fotografo', label: 'dal 2008' },
     { value: 'Prezzo fisso', label: 'Concordato prima di iniziare' }],
 
@@ -38,40 +36,6 @@ export const it: Dict = {
   },
 
   clients: { label: 'Clienti selezionati' },
-
-  work: {
-    eyebrow: 'Lavori selezionati',
-    title: 'Fotografie per vendere,\nnon per un portfolio.',
-    lead: 'Un breve resoconto di commesse recenti — la richiesta, ciò che abbiamo consegnato e cosa è cambiato.',
-    scopeLabel: 'Lavorazione',
-    outcomeLabel: 'Risultato',
-    projects: {
-      ambra: {
-        title: 'Ambra Eau de Parfum',
-        sector: 'Profumo · campagna di lancio',
-        scope: '22 immagini, una giornata in studio, scontorni su bianco e tre tagli lifestyle.',
-        outcome: 'Lancio esaurito in nove giorni'
-      },
-      nord: {
-        title: 'Everyday Carry',
-        sector: 'Audio consumer · catalogo',
-        scope: '48 immagini su sei referenze, pensate per scontorni puliti su ogni marketplace.',
-        outcome: 'Conversione delle schede +18%'
-      },
-      marconi: {
-        title: 'Sartoria Autunno',
-        sector: 'Moda · lookbook',
-        scope: '40 look fotografati in una sola giornata, consegnati in quattro.',
-        outcome: 'Ordini wholesale aperti due settimane prima'
-      },
-      nove: {
-        title: 'Primi Piatti',
-        sector: 'Ristorante · menù & delivery',
-        scope: '30 piatti illuminati come la sala in cui vengono serviti, più clip verticali.',
-        outcome: 'Ordini delivery +31%'
-      }
-    }
-  },
 
   process: {
     eyebrow: 'Dal primo messaggio ai file finali',
@@ -223,12 +187,12 @@ export const it: Dict = {
       platinum: {
         name: 'Platinum',
         tagline: 'Content Sprint',
-        shots: '100 foto incluse',
+        shots: '50 foto incluse',
         turnaround: '3 settimane',
         includes: [
         '8 ore in loco',
         '2 location in un giorno',
-        '10 video (5 voice-over, 5 musica)',
+        '5 video',
         'Colore grading professionale',
         'Instagram Reels + TikTok ottimizzato']
 
@@ -243,23 +207,23 @@ export const it: Dict = {
     items: [
     {
       q: 'Quanto costa davvero uno shooting?',
-      a: 'I pacchetti vanno da 400 € a 1.000 € in base a scope, ore, location e video richiesti. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi.'
+      a: 'I pacchetti vanno da €500 a €1.000 in base a scope, ore, location e video richiesti. Il calcolatore qui sopra usa la stessa matematica dei nostri preventivi — e ogni prezzo è fissato per iscritto prima di iniziare.'
     },
     {
       q: 'Posso spedire i prodotti o vieni da me?',
-      a: 'Entrambi. Puoi spedirci i prodotti a Milano e fotograferemo lì. Oppure veniamo noi nel tuo negozio, studio o location. Diccelo quando prenoti.'
+      a: 'Entrambi. Spediscici i prodotti e li fotograferemo in studio, oppure veniamo nella tua location a Milano e oltre. Come è più facile — il prezzo è concordato comunque allo stesso modo.'
     },
     {
       q: 'Posso essere presente allo shooting?',
-      a: 'Sempre benvenuto. Se non puoi spostarti, attiviamo un collegamento live per approvare gli scatti in tempo reale dalla tua scrivania.'
+      a: 'Per gli shooting in location sei benvenuto a partecipare, oppure puoi mandare qualcuno di fiducia per rappresentarti. Per gli shooting di prodotti in studio, ti teniamo aggiornato con una diretta, così puoi approvare gli scatti in tempo reale senza viaggiare.'
     },
     {
       q: 'Quali formati ricevo?',
-      a: 'Master TIFF o JPEG a piena risoluzione, più tagli pronti per shop, Instagram e campagne. Gli scontorni per i marketplace sono inclusi in ogni pacchetto.'
+      a: 'File ad alta risoluzione pronti per la stampa, più versioni web-optimize dimensionate per il tuo negozio, listing marketplace e social. Diccelo dove vivranno le immagini e consegniamo i tagli giusti.'
     },
     {
       q: 'Con quanto anticipo conviene prenotare?',
-      a: 'Due o tre settimane sono comode. Ogni mese teniamo alcuni slot express per i lanci che non possono aspettare.'
+      a: 'Una settimana di preavviso è ideale, anche se spesso riusciamo a incastrare lavori più piccoli prima. Invia il tuo brief attraverso il modulo e confirmeremo la data più vicina che riusciamo a garantire.'
     },
     {
       q: 'In quali lingue lavorate?',

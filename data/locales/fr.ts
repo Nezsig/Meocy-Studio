@@ -7,7 +7,6 @@ export const fr: Dict = {
 
   nav: {
     links: {
-      work: 'Travaux',
       approach: 'Méthode',
       studio: 'Studio',
       pricing: 'Tarifs',
@@ -26,10 +25,9 @@ export const fr: Dict = {
     titleB: 'vendre ce que vous créez.',
     lead: "Nous photographions produits, gastronomie, vêtements et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits, ou nous venons chez vous — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer. Nouvelle identité, maintenant ouverts à de nouveaux projets.",
     ctaPrimary: 'Obtenir un prix fixe',
-    ctaSecondary: 'Voir les travaux',
     stats: [
     { value: 'Milan · Paris', label: 'Où nous travaillons' },
-    { value: 'EN · IT · FR', label: 'Nous travaillons en 3 langues' },
+    { value: 'Photo + Vidéo', label: 'Une équipe, les deux' },
     { value: 'Photographe', label: 'depuis 2008' },
     { value: 'Prix fixe', label: 'Convenu avant de commencer' }],
 
@@ -38,40 +36,6 @@ export const fr: Dict = {
   },
 
   clients: { label: 'Clients sélectionnés' },
-
-  work: {
-    eyebrow: 'Travaux sélectionnés',
-    title: 'Photographié pour vendre,\npas pour un portfolio.',
-    lead: "Un court aperçu de commandes récentes — la demande, ce que nous avons livré, et ce que cela a changé.",
-    scopeLabel: 'Prestation',
-    outcomeLabel: 'Résultat',
-    projects: {
-      ambra: {
-        title: 'Ambra Eau de Parfum',
-        sector: 'Parfum · campagne de lancement',
-        scope: "22 images, une journée en studio, détourages sur blanc et trois cadrages lifestyle.",
-        outcome: 'Lancement épuisé en neuf jours'
-      },
-      nord: {
-        title: 'Everyday Carry',
-        sector: 'Audio grand public · catalogue',
-        scope: '48 images sur six références, pensées pour un détourage net sur chaque marketplace.',
-        outcome: 'Conversion des fiches +18%'
-      },
-      marconi: {
-        title: 'Tailoring Automne',
-        sector: 'Mode · lookbook',
-        scope: '40 silhouettes photographiées en une journée, livrées en quatre.',
-        outcome: 'Commandes wholesale ouvertes deux semaines plus tôt'
-      },
-      nove: {
-        title: 'Primi Piatti',
-        sector: 'Restaurant · carte & livraison',
-        scope: '30 plats éclairés comme la salle où ils sont servis, plus des clips verticaux.',
-        outcome: 'Commandes en livraison +31%'
-      }
-    }
-  },
 
   process: {
     eyebrow: 'Du premier message aux fichiers finaux',
@@ -223,12 +187,12 @@ export const fr: Dict = {
       platinum: {
         name: 'Platinum',
         tagline: 'Content Sprint',
-        shots: '100 photos incluses',
+        shots: '50 photos incluses',
         turnaround: '3 semaines',
         includes: [
         '8 heures en location',
         '2 lieux en un jour',
-        '10 vidéos (5 voice-over, 5 musique)',
+        '5 vidéos',
         'Étalonnage couleur professionnel',
         'Instagram Reels + TikTok optimisé']
 
@@ -243,27 +207,27 @@ export const fr: Dict = {
     items: [
     {
       q: 'Combien coute reellement une seance ?',
-      a: "Les formules vont de 400 € a 1 000 € selon la portee, les heures, les lieux et les besoins video. L\'estimateur ci-dessus utilise le meme calcul que nos devis."
+      a: "Les formules vont de €500 a €1 000 selon la portee, les heures, les lieux et les besoins video. L\'estimateur ci-dessus utilise le meme calcul que nos devis — et chaque prix est fixe par ecrit avant de commencer."
     },
     {
       q: 'Puis-je envoyer mes produits ou venez-vous chez moi ?',
-      a: "Les deux. Vous pouvez nous envoyer vos produits a Milan et nous les photographierons ici. Ou nous venons dans votre magasin, studio ou lieu. Dites-nous votre preference quand vous reservez."
+      a: "Envoyez-nous vos produits et nous les photographierons en studio, ou nous venons a votre location a Milan et au-dela. Comme c\'est plus facile — le prix est convenu d\'avance de toute facon."
     },
     {
       q: 'Puis-je assister a la seance ?',
-      a: "Toujours avec plaisir. Si vous ne pouvez pas vous deplacer, un flux en direct vous permet de valider les images depuis votre bureau."
+      a: "Pour les seances en location, vous etes bienvenu a vous joindre, ou envoyez quelqu\'un en qui vous avez confiance pour vous representer. Pour les seances de produits en studio, nous vous tenons informe avec une diffusion en direct, afin que vous puissiez approuver les images en temps reel sans voyager."
     },
     {
       q: 'Quels formats vais-je recevoir ?',
-      a: "Des masters TIFF ou JPEG pleine resolution, ainsi que des cadrages prets a publier pour votre boutique, Instagram et vos campagnes. Les detourages pour les marketplaces sont inclus dans chaque formule."
+      a: "Fichiers haute resolution prets pour l\'impression, plus des versions optimisees pour le web dimensionnees pour votre boutique, listes de places de marche et canaux sociaux. Dites-nous ou vivront les images et nous livrons les bons cadrages."
     },
     {
       q: 'Combien de temps a l\'avance faut-il reserver ?',
-      a: "Deux a trois semaines sont confortables. Nous gardons chaque mois quelques creneaux express pour les lancements urgents."
+      a: "Un preavis d\'une semaine est ideal, bien que nous puissions souvent integrer des petits travaux plus tot. Envoyez votre brief via le formulaire et nous confirmerons la date la plus proche que nous pouvons garantir."
     },
     {
       q: 'Dans quelles langues travaillez-vous ?',
-      a: 'Anglais, francais et italien — sur le plateau comme dans chaque document que vous recevez.'
+      a: 'Anglais, francais et italien — sur le plateau et dans chaque document que vous recevez.'
     }]
 
   },

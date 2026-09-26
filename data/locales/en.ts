@@ -5,7 +5,6 @@ export const en = {
 
   nav: {
     links: {
-      work: 'Work',
       approach: 'Approach',
       studio: 'Studio',
       pricing: 'Pricing',
@@ -24,10 +23,9 @@ export const en = {
     titleB: 'sell what you make.',
     lead: 'We photograph products, food, clothing and collections for brands that sell online. Send us what you sell, or we come to your location — you get a complete, channel-ready set of images on a fixed price agreed before we start. Newly rebranded, now taking on new brands.',
     ctaPrimary: 'Get a fixed price',
-    ctaSecondary: 'See selected work',
     stats: [
     { value: 'Milan · Paris', label: 'Where we shoot' },
-    { value: 'EN · IT · FR', label: 'We work in 3 languages' },
+    { value: 'Photo + Video', label: 'One team, both' },
     { value: 'Photographer', label: 'since 2008' },
     { value: 'Fixed price', label: 'Agreed before we start' }],
 
@@ -35,40 +33,6 @@ export const en = {
   },
 
   clients: { label: 'Selected clients' },
-
-  work: {
-    eyebrow: 'Selected work',
-    title: 'Shot for shelves,\nnot for portfolios.',
-    lead: 'A short record of recent commissions — what we were asked for, what we delivered, and what it changed.',
-    scopeLabel: 'Scope',
-    outcomeLabel: 'Outcome',
-    projects: {
-      ambra: {
-        title: 'Ambra Eau de Parfum',
-        sector: 'Fragrance · launch campaign',
-        scope: '22 images, one studio day, cut-outs on white plus three lifestyle crops.',
-        outcome: 'Launch sold out in nine days'
-      },
-      nord: {
-        title: 'Everyday Carry',
-        sector: 'Consumer audio · catalogue',
-        scope: '48 images across six SKUs, built for clean cut-outs on every marketplace.',
-        outcome: 'Listing conversion +18%'
-      },
-      marconi: {
-        title: 'Autumn Tailoring',
-        sector: 'Fashion · lookbook',
-        scope: '40 looks photographed in a single studio day, delivered in four.',
-        outcome: 'Wholesale orders opened two weeks early'
-      },
-      nove: {
-        title: 'Primi Piatti',
-        sector: 'Restaurant · menu & delivery',
-        scope: '30 dishes lit to match the room they are served in, plus vertical clips.',
-        outcome: 'Delivery orders +31%'
-      }
-    }
-  },
 
   process: {
     eyebrow: 'From first message to final files',
@@ -220,12 +184,12 @@ export const en = {
       platinum: {
         name: 'Platinum',
         tagline: 'Content Sprint',
-        shots: '100 photos included',
+        shots: '50 photos included',
         turnaround: '3 weeks',
         includes: [
         '8 hours on-location',
         '2 locations in one day',
-        '10 videos (5 voice-over, 5 music)',
+        '5 videos',
         'Professional color grading',
         'Instagram Reels + TikTok optimized']
 
@@ -240,23 +204,23 @@ export const en = {
     items: [
     {
       q: 'What does a shoot actually cost?',
-      a: 'Packages run €400–€1,000 depending on the scope, hours, locations, and video needs. The estimator above uses the same maths we use to write your quote.'
+      a: 'Packages run €500–€1,000 depending on scope, hours, locations and video needs. The estimator above uses the same maths we use to write your quote — and every price is fixed in writing before we start.'
     },
     {
       q: 'Can I send my products, or do you come to me?',
-      a: 'Both. We can photograph your products if you ship them to us in Milan. Or we come to your shop, studio, or location and photograph on-site. Tell us your preference when you book.'
+      a: 'Both. Ship us your products and we shoot them in the studio, or we come to your location in Milan and beyond. Whichever is easier — the price is agreed upfront either way.'
     },
     {
       q: 'Can I be there during the shoot?',
-      a: 'Always welcome. If you cannot travel, we run a live tethered stream so you can approve frames in real time from your desk.'
+      a: 'For on-location shoots you\'re welcome to join, or send someone you trust to represent you. For studio product shoots we keep you in the loop with a live stream, so you can approve frames in real time without travelling.'
     },
     {
       q: 'What formats do I get?',
-      a: 'Full-resolution TIFF or JPEG masters, plus ready-to-post crops for your store, Instagram and paid ads. Marketplace-safe cut-outs are included in every package.'
+      a: 'High-resolution files ready for print, plus web-optimised versions sized for your store, marketplace listings and social channels. Tell us where the images will live and we deliver the right crops.'
     },
     {
       q: 'How far ahead should I book?',
-      a: 'Two to three weeks is comfortable. We hold a small number of express slots each month for launches that cannot wait.'
+      a: 'A week\'s notice is ideal, though we can often fit smaller jobs in sooner. Send your brief through the form and we\'ll confirm the earliest date we can hold.'
     },
     {
       q: 'Which languages do you work in?',
