@@ -37,14 +37,11 @@ export function Nav() {
           aria-label="Primary"
           className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
           
-          <a href="#top" className="flex flex-col items-start gap-0.5">
+          <a href="#top" className="flex items-center">
             <img
               src="/meocy-logo.png"
               alt="MEOCY Studio"
               className="h-[72px] w-auto object-contain" />
-            <span className="text-[8px] font-medium uppercase tracking-[0.24em] text-ink">
-              Studio
-            </span>
           </a>
 
           <ul className="hidden items-center gap-0.5 lg:flex">
