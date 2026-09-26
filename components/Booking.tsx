@@ -9,7 +9,7 @@ import { TimePicker } from './TimePicker';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 export function Booking() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [status, setStatus] = useState<Status>('idle');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -17,14 +17,37 @@ export function Booking() {
   const [preferredDate, setPreferredDate] = useState<string | null>(null);
   const [preferredTime, setPreferredTime] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.includes('@') || name.trim().length < 2 || !preferredDate || !preferredTime) {
       setStatus('error');
       return;
     }
     setStatus('sending');
-    window.setTimeout(() => setStatus('sent'), 900);
+
+    try {
+      const response = await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          date: preferredDate,
+          time: preferredTime,
+          brief,
+          locale: lang,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('sent');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Booking error:', err);
+      setStatus('error');
+    }
   };
 
   const fieldClass =
