@@ -243,6 +243,8 @@ export const en = {
     emailPlaceholder: 'you@brand.com',
     brief: 'What are we shooting?',
     briefPlaceholder: '24 skincare products for a new shop launch in October.',
+    dateLabel: 'Pick a date',
+    timeLabel: 'Pick a time',
     error: 'Please add your name and a valid email so we can reply.',
     submit: 'Send brief',
     sending: 'Sending',

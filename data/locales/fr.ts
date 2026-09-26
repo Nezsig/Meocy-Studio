@@ -246,6 +246,8 @@ export const fr: Dict = {
     emailPlaceholder: 'vous@marque.com',
     brief: 'Que photographions-nous ?',
     briefPlaceholder: '24 produits de soin pour un lancement de boutique en octobre.',
+    dateLabel: 'Choisissez une date',
+    timeLabel: 'Choisissez une heure',
     error: 'Merci d\'indiquer votre nom et un e-mail valide pour que nous puissions repondre.',
     submit: 'Envoyer le brief',
     sending: 'Envoi',

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { ArrowRightIcon, CheckCircle2Icon, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { studioContact } from '../data/site';
+import { DatePicker } from './DatePicker';
+import { TimePicker } from './TimePicker';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
@@ -12,10 +14,12 @@ export function Booking() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [brief, setBrief] = useState('');
+  const [preferredDate, setPreferredDate] = useState<string | null>(null);
+  const [preferredTime, setPreferredTime] = useState<string | null>(null);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.includes('@') || name.trim().length < 2) {
+    if (!email.includes('@') || name.trim().length < 2 || !preferredDate || !preferredTime) {
       setStatus('error');
       return;
     }
@@ -67,9 +71,11 @@ export function Booking() {
                 setName('');
                 setEmail('');
                 setBrief('');
+                setPreferredDate(null);
+                setPreferredTime(null);
               }}
               className="mt-6 text-[14px] font-medium text-ink underline decoration-accent decoration-2 underline-offset-4">
-              
+
                 {t.booking.again}
               </button>
             </div> :
@@ -124,8 +130,20 @@ export function Booking() {
                   onChange={(e) => setBrief(e.target.value)}
                   className={`${fieldClass} resize-none`}
                   placeholder={t.booking.briefPlaceholder} />
-                
+
                 </div>
+              </div>
+
+              <div className="mt-6 space-y-6">
+                <DatePicker
+                  selectedDate={preferredDate}
+                  onSelectDate={setPreferredDate}
+                  label={t.booking.dateLabel} />
+
+                <TimePicker
+                  selectedTime={preferredTime}
+                  onSelectTime={setPreferredTime}
+                  label={t.booking.timeLabel} />
               </div>
 
               {status === 'error' &&

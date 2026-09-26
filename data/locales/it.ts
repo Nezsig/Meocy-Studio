@@ -246,6 +246,8 @@ export const it: Dict = {
     emailPlaceholder: 'tu@brand.com',
     brief: 'Cosa fotografiamo?',
     briefPlaceholder: '24 prodotti skincare per il lancio dello shop a ottobre.',
+    dateLabel: 'Scegli una data',
+    timeLabel: 'Scegli un orario',
     error: 'Inserisci nome ed email validi così possiamo risponderti.',
     submit: 'Invia il brief',
     sending: 'Invio',

@@ -8,4 +8,4 @@ export type { Dict };
 
 export const locales: Record<LanguageCode, Dict> = { en, fr, it };
 
-export const languageOrder: LanguageCode[] = ['en', 'fr', 'it'];
+export const languageOrder: LanguageCode[] = ['en', 'it', 'fr'];
