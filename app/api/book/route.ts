@@ -1,84 +1,39 @@
 import { Resend } from 'resend';
-import { confirmationEmailEN, confirmationEmailIT, confirmationEmailFR, notificationEmail } from '../../../lib/emails';
-
-const STUDIO_EMAIL = 'hello@meocy.com';
+import { NextResponse } from 'next/server';
+import { buildConfirmationEmail, buildNotificationEmail, subjects, type Locale } from '../../../lib/emails';
 
 export const runtime = 'nodejs';
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const body = await request.json();
-    const { name, email, date, time, brief, locale } = body;
-
-    // Validate required fields
-    if (!name || !email || !date || !time) {
-      return Response.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+    const b = await req.json();
+    if (!b?.name || !b?.email) {
+      return NextResponse.json({ error: 'Missing name or email' }, { status: 400 });
     }
+    const locale: Locale = (b.locale === 'en' || b.locale === 'fr') ? b.locale : 'it';
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return Response.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
-    }
-
-    // Select confirmation email template based on locale
-    let confirmationHTML = confirmationEmailEN(name, date, time);
-    if (locale === 'it') {
-      confirmationHTML = confirmationEmailIT(name, date, time);
-    } else if (locale === 'fr') {
-      confirmationHTML = confirmationEmailFR(name, date, time);
-    }
-
-    // Send confirmation email to client
-    const clientEmailResult = await resend.emails.send({
+    // 1) Confirmation to the client (in their language)
+    await resend.emails.send({
       from: 'MEOCY STUDIO <hello@meocy.com>',
-      to: email,
-      subject: locale === 'it'
-        ? 'Richiesta di shooting ricevuta'
-        : locale === 'fr'
-          ? 'Demande de séance reçue'
-          : 'Booking request received',
-      html: confirmationHTML,
+      to: b.email,
+      replyTo: 'hello@meocy.com',
+      subject: subjects[locale],
+      html: buildConfirmationEmail(b, locale),
     });
 
-    // Send notification email to studio
-    const studioEmailResult = await resend.emails.send({
-      from: 'MEOCY STUDIO <noreply@meocy.com>',
-      to: STUDIO_EMAIL,
-      subject: `New Booking Request from ${name}`,
-      html: notificationEmail(name, email, date, time, brief || '', locale),
+    // 2) Notification to Chamila (reply goes straight to the client)
+    await resend.emails.send({
+      from: 'MEOCY STUDIO <hello@meocy.com>',
+      to: ['hello@meocy.com', 'meocystudio@gmail.com'],
+      replyTo: b.email,
+      subject: `New booking — ${b.name}${b.brand ? ' · ' + b.brand : ''}`,
+      html: buildNotificationEmail(b),
     });
 
-    // Check if both emails were sent successfully
-    if (clientEmailResult.error || studioEmailResult.error) {
-      console.error('Email send errors:', {
-        client: clientEmailResult.error,
-        studio: studioEmailResult.error,
-      });
-      return Response.json(
-        { error: 'Failed to send emails' },
-        { status: 500 }
-      );
-    }
-
-    return Response.json({
-      success: true,
-      message: 'Booking request sent successfully',
-      clientEmail: clientEmailResult.data?.id,
-      studioEmail: studioEmailResult.data?.id,
-    });
-  } catch (error) {
-    console.error('Booking API error:', error);
-    return Response.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    console.error('book route error', e);
+    return NextResponse.json({ error: 'Failed to send' }, { status: 500 });
   }
 }
