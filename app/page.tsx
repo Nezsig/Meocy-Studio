@@ -1,9 +1,8 @@
 import { Nav } from '../components/Nav';
 import { Hero } from '../components/Hero';
-import { ClientStrip } from '../components/ClientStrip';
 import { Work } from '../components/Work';
 import { Process } from '../components/Process';
-import { Testimonials } from '../components/Testimonials';
+import { HowItWorks } from '../components/HowItWorks';
 import { Equipment } from '../components/Equipment';
 import { Estimator } from '../components/Estimator';
 import { Packages } from '../components/Packages';
@@ -17,10 +16,9 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
-        <ClientStrip />
         <Work />
         <Process />
-        <Testimonials />
+        <HowItWorks />
         <Equipment />
         <Estimator />
         <Packages />

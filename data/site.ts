@@ -6,7 +6,7 @@ import type {
 '../types/site';
 
 export const images = {
-  studio: "/product-studio.jpg"
+  studio: "/about-tripod.jpg"
 };
 
 export const studioContact = {
