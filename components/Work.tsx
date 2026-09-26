@@ -9,8 +9,8 @@ export function Work() {
   const { t } = useLanguage();
   const reduce = useReducedMotion();
 
-  const featured = projects.find((p) => p.featured) as ProjectMeta;
-  const rest = projects.filter((p) => !p.featured);
+  const featured = projects.find((p) => p.featured);
+  const rest = featured ? projects.filter((p) => !p.featured) : projects;
   const copy = t.work.projects as Record<
     string,
     {title: string;sector: string;scope: string;outcome: string;}>;
@@ -35,16 +35,17 @@ export function Work() {
         <p className="mt-4 text-[16.5px] leading-relaxed text-slate2">{t.work.lead}</p>
       </div>
 
+      {featured && featured.image && (
       <motion.article
         {...appear(0)}
         className="mt-12 grid overflow-hidden rounded-xl2 bg-chalk ring-1 ring-ink/8 shadow-lift lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)]">
-        
+
         <div className="bg-paper">
           <img
             src={featured.image}
             alt={copy[featured.id].title}
             className="h-full w-full object-cover" />
-          
+
         </div>
         <div className="flex flex-col p-7 sm:p-10">
           <div className="flex items-center gap-3">
@@ -70,8 +71,9 @@ export function Work() {
           </p>
         </div>
       </motion.article>
+      )}
 
-      <div className="mt-5 grid gap-5 md:grid-cols-3">
+      <div className={`${featured && featured.image ? 'mt-5' : ''} grid gap-5 md:grid-cols-3`}>
         {rest.map((p, i) =>
         <motion.article
           key={p.id}
