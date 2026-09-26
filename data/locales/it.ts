@@ -20,10 +20,10 @@ export const it: Dict = {
   },
 
   hero: {
-    eyebrow: 'Fotografia commerciale · Milano · dal 2008',
-    titleA: 'Immagini fatte per',
+    eyebrow: 'Foto e video per brand che vendono online · Milano · dal 2008',
+    titleA: 'Contenuti fatti per',
     titleB: 'vendere ciò che crei.',
-    lead: "Fotografiamo prodotti, cibo, abbigliamento e collezioni per i brand che vendono online. Tu ci mandi ciò che vendi, oppure veniamo da te — noi consegniamo un set completo, pronto per ogni canale, a un prezzo fissato prima di iniziare. Nuovo brand, ora aperto a nuovi progetti.",
+    lead: "Le foto e i video di cui il tuo brand ha bisogno per vendere online — scatti di prodotto, reel pronti per i social e contenuti per campagne, per il tuo shop, le tue ads e i tuoi canali social. Inviaci ciò che vendi, o veniamo noi da te. Un unico team per foto e video, a un prezzo fisso concordato prima di iniziare. Brand da poco rinnovato, ora accettiamo nuovi clienti.",
     ctaPrimary: 'Ottieni un prezzo fisso',
     stats: [
     { value: 'Milano · Parigi', label: 'Dove fotografiamo' },

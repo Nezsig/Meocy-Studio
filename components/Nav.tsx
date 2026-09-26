@@ -41,7 +41,7 @@ export function Nav() {
             <img
               src="/meocy-logo.png"
               alt="MEOCY Studio"
-              className="h-[60px] w-auto object-contain" />
+              className="h-[72px] w-auto object-contain" />
           </a>
 
           <ul className="hidden items-center gap-0.5 lg:flex">

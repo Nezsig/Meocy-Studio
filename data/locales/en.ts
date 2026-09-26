@@ -18,10 +18,10 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'Commercial photography · Milan · since 2008',
-    titleA: 'Images made to',
+    eyebrow: 'Photo & video for brands that sell online · Milan · since 2008',
+    titleA: 'Content made to',
     titleB: 'sell what you make.',
-    lead: 'We photograph products, food, clothing and collections for brands that sell online. Send us what you sell, or we come to your location — you get a complete, channel-ready set of images on a fixed price agreed before we start. Newly rebranded, now taking on new brands.',
+    lead: 'The photos and videos your brand needs to sell online — product shots, social-ready reels, and campaign content for your store, ads and social channels. Send us what you sell, or we come to your location. One team for both photo and video, on a fixed price agreed before we start. Newly rebranded, now taking on new brands.',
     ctaPrimary: 'Get a fixed price',
     stats: [
     { value: 'Milan · Paris', label: 'Where we shoot' },

@@ -20,10 +20,10 @@ export const fr: Dict = {
   },
 
   hero: {
-    eyebrow: 'Photographie commerciale · Milan · depuis 2008',
-    titleA: 'Des images faites pour',
+    eyebrow: 'Photo & vidéo pour les marques qui vendent en ligne · Milan · depuis 2008',
+    titleA: 'Du contenu fait pour',
     titleB: 'vendre ce que vous créez.',
-    lead: "Nous photographions produits, gastronomie, vêtements et collections pour les marques qui vendent en ligne. Vous nous envoyez vos produits, ou nous venons chez vous — nous livrons une série complète, prête pour tous vos canaux, à un prix fixé avant de commencer. Nouvelle identité, maintenant ouverts à de nouveaux projets.",
+    lead: "Les photos et vidéos dont votre marque a besoin pour vendre en ligne — photos de produits, reels prêts pour les réseaux et contenus de campagne, pour votre boutique, vos publicités et vos réseaux sociaux. Envoyez-nous ce que vous vendez, ou nous venons à vous. Une seule équipe pour la photo et la vidéo, à un prix fixe convenu avant de commencer. Marque récemment renouvelée, nous accueillons de nouveaux clients.",
     ctaPrimary: 'Obtenir un prix fixe',
     stats: [
     { value: 'Milan · Paris', label: 'Où nous travaillons' },
