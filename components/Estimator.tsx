@@ -15,6 +15,14 @@ export function Estimator() {
   const [onLocation, setOnLocation] = useState(false);
   const [addOns, setAddOns] = useState<AddOnId[]>([]);
 
+  const isProductCategory = category === 'product';
+  const handleCategoryChange = (c: ShootCategory) => {
+    setCategory(c);
+    if (c !== 'product' && !onLocation) {
+      setOnLocation(true);
+    }
+  };
+
   const result = useMemo(
     () => estimate({ category, images: count, onLocation, addOns }),
     [category, count, onLocation, addOns]
@@ -63,22 +71,17 @@ export function Estimator() {
               </legend>
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {categories.map((c) => {
-                  const isProduct = c === 'product';
                   return (
                   <button
                     key={c}
                     type="button"
-                    disabled={!isProduct}
                     aria-pressed={category === c}
-                    onClick={() => isProduct && setCategory(c)}
+                    onClick={() => handleCategoryChange(c)}
                     className={`rounded-xl px-3 py-3 text-[14px] font-medium transition-colors duration-150 ease-smooth ${
-                    isProduct ? (
-                      category === c ?
+                    category === c ?
                       'bg-ink text-chalk ring-2 ring-accent' :
                       'bg-chalk text-slate2 ring-1 ring-ink/8 hover:text-ink'
-                    ) : (
-                      'bg-chalk text-slate2/40 ring-1 ring-ink/8 opacity-50 cursor-not-allowed'
-                    )}`
+                    }`
                     }>
                     {t.estimator.categories[c]}
                   </button>
@@ -104,7 +107,7 @@ export function Estimator() {
                 type="range"
                 min={0}
                 max={80}
-                step={5}
+                step={10}
                 value={count}
                 onChange={(e) => setCount(Number(e.target.value))}
                 className="mt-4 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-mist" />
@@ -127,20 +130,26 @@ export function Estimator() {
                   title: t.estimator.whereLocation,
                   note: t.estimator.whereLocationNote
                 }].
-                map((o) =>
-                <button
-                  key={o.title}
-                  type="button"
-                  aria-pressed={onLocation === o.v}
-                  onClick={() => setOnLocation(o.v)}
-                  className={`rounded-xl bg-chalk p-4 text-left transition-shadow duration-150 ease-smooth ${
-                  onLocation === o.v ? 'ring-2 ring-ink' : 'ring-1 ring-ink/8 hover:ring-ink/25'}`
-                  }>
-                  
-                    <span className="block text-[14.5px] font-medium text-ink">{o.title}</span>
-                    <span className="mt-0.5 block text-[12.5px] text-slate2">{o.note}</span>
-                  </button>
-                )}
+                map((o) => {
+                  const isStudio = o.v === false;
+                  const isDisabled = isStudio && !isProductCategory;
+                  return (
+                  <button
+                    key={o.title}
+                    type="button"
+                    disabled={isDisabled}
+                    aria-pressed={onLocation === o.v}
+                    onClick={() => !isDisabled && setOnLocation(o.v)}
+                    className={`rounded-xl bg-chalk p-4 text-left transition-shadow duration-150 ease-smooth ${
+                    isDisabled ? 'opacity-50 cursor-not-allowed' : ''} ${
+                    onLocation === o.v ? 'ring-2 ring-ink' : 'ring-1 ring-ink/8 hover:ring-ink/25'}`
+                    }>
+
+                      <span className="block text-[14.5px] font-medium text-ink">{o.title}</span>
+                      <span className="mt-0.5 block text-[12.5px] text-slate2">{o.note}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
