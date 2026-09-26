@@ -13,11 +13,16 @@ export function Footer() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="flex flex-col gap-8 border-b border-mist pb-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <img
-              src="/meocy-logo.png"
-              alt="MEOCY Studio"
-              className="h-14 w-auto object-contain" />
-            <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-slate2">
+            <div className="flex flex-col items-start gap-1">
+              <img
+                src="/meocy-logo.png"
+                alt="MEOCY Studio"
+                className="h-14 w-auto object-contain" />
+              <span className="text-[8px] font-medium uppercase tracking-[0.24em] text-slate2">
+                Studio
+              </span>
+            </div>
+            <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-slate2">
               {t.footer.tagline}
             </p>
           </div>

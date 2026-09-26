@@ -95,15 +95,16 @@ export const it: Dict = {
     title: 'Kit completo.\\nNulla a noleggio.',
     lead: "Macchina fotografica professionale, illuminazione e postazione di finitura calibrata. Tutto quello che abbiamo è nostro e manutenuto. Portiamo l'essenziale a ogni shooting, e quotizziamo apertamente se serve noleggiare qualcosa di extra per il tuo brief.",
     groups: {
-      camera: 'Corpi macchina',
-      lenses: 'Ottiche',
-      videoLight: 'Luce video',
-      photographyLight: 'Luce fotografica',
-      support: 'Supporti',
-      aerial: 'Aereo',
-      storage: 'Archiviazione',
-      power: 'Alimentazione',
-      post: 'Post-produzione'
+      camerasLenses: 'Fotocamere e obiettivi',
+      lightingPhoto: 'Illuminazione — Foto',
+      lightingVideo: 'Illuminazione — Video',
+      supportGrip: 'Supporti e attrezzatura'
+    },
+    items: {
+      camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
+      lightingVideo: ['GVM 300W LED', '150W LED light'],
+      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes']
     },
     note: 'Tutto è calibrato internamente. Se un brief richiede qualcosa che non abbiamo, lo noleggiamo e lo indichiamo apertamente prima dello shooting.'
   },

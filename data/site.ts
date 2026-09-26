@@ -41,30 +41,10 @@ export const packageMeta: PackageMeta[] = [
 
 
 export const equipmentGroups: EquipmentGroupMeta[] = [
-{ id: 'camera', items: ['Sony A6700', 'Sony FX30'] },
-{ id: 'lenses', items: ['85mm f/1.4', '50mm f/1.4', '33mm f/1.4'] },
-{
-  id: 'videoLight',
-  items: [
-  'GVM 300W',
-  'GVM 150W']
-
-},
-{
-  id: 'photographyLight',
-  items: [
-  'Godox AD600Pro',
-  'Godox AD300Pro',
-  '3× Speedlight',
-  '120cm Octabox',
-  '80cm Octabox']
-
-},
-{ id: 'support', items: ['Photo & video tripods', 'Ronin RS Mini Pro'] },
-{ id: 'aerial', items: ['DJI Mini 3 Pro'] },
-{ id: 'storage', items: ['128GB V90 SD', '128GB V60 SD', '256GB SD', '8TB backup'] },
-{ id: 'power', items: ['3× spare batteries', '2× 20.000mAh', 'EcoFlow 60.000mAh'] },
-{ id: 'post', items: ['Mac Studio', 'ASUS PA278QV calibrated'] }];
+{ id: 'camerasLenses', items: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'] },
+{ id: 'lightingPhoto', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
+{ id: 'lightingVideo', items: ['GVM 300W LED', '150W LED light'] },
+{ id: 'supportGrip', items: ['Tripods', 'Light stands', '120cm & 85cm softboxes'] }];
 
 
 export const testimonialMeta: TestimonialMeta[] = [];

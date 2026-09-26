@@ -95,15 +95,16 @@ export const fr: Dict = {
     title: 'Kit complet.\nRien de loué.',
     lead: "Appareil photographique professionnel, éclairage et poste de finition calibré. Tout ce que nous avons est nôtre et entretenu. Nous apportons l'essentiel à chaque séance, et nous quotons ouvertement si quelque chose d'extra est nécessaire pour votre brief.",
     groups: {
-      camera: 'Boîtiers',
-      lenses: 'Optiques',
-      videoLight: 'Lumière vidéo',
-      photographyLight: 'Lumière photo',
-      support: 'Supports',
-      aerial: 'Aérien',
-      storage: 'Stockage',
-      power: 'Énergie',
-      post: 'Post-production'
+      camerasLenses: 'Appareils & objectifs',
+      lightingPhoto: 'Éclairage — Photo',
+      lightingVideo: 'Éclairage — Vidéo',
+      supportGrip: 'Supports & accessoires'
+    },
+    items: {
+      camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
+      lightingVideo: ['GVM 300W LED', '150W LED light'],
+      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes']
     },
     note: "Tout est calibré en interne. Si un brief demande un matériel que nous n'avons pas, nous le louons et l'indiquons clairement avant la séance."
   },

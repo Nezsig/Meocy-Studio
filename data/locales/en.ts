@@ -92,15 +92,16 @@ export const en = {
     title: 'Full kit.\nNothing rented.',
     lead: 'Professional-grade camera, lighting, and editing setup. Everything we own is maintained and colour-calibrated. We carry the essentials on every shoot, and we quote openly if we need to rent anything extra for your brief.',
     groups: {
-      camera: 'Camera',
-      lenses: 'Lenses',
-      videoLight: 'Video light',
-      photographyLight: 'Photography light',
-      support: 'Support',
-      aerial: 'Aerial',
-      storage: 'Storage',
-      power: 'Power',
-      post: 'Post-production'
+      camerasLenses: 'Cameras & lenses',
+      lightingPhoto: 'Lighting — Photography',
+      lightingVideo: 'Lighting — Video',
+      supportGrip: 'Support & grip'
+    },
+    items: {
+      camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
+      lightingVideo: ['GVM 300W LED', '150W LED light'],
+      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes']
     },
     note: 'Everything is colour-calibrated in-house. If a brief needs something we do not own, we rent it and quote it openly before the shoot.'
   },
