@@ -6,11 +6,7 @@ import type {
 '../types/site';
 
 export const images = {
-  studio: "/ba09e101-6a56-4900-8126-2f06336b2cb1.jpg",
-  packshotBottle: "/d2da95f9-3086-41e2-bf51-fcb5a5b55a14.jpg",
-
-  packshotObject: "/89d9f10f-8560-43f7-b7e1-be63bd471714.jpg"
-
+  studio: "/ba09e101-6a56-4900-8126-2f06336b2cb1.jpg"
 };
 
 export const studioContact = {
@@ -22,22 +18,6 @@ export const studioContact = {
 };
 
 export const projects: ProjectMeta[] = [
-{
-  id: 'ambra',
-  client: 'Casa Ambra',
-  year: '2025',
-  category: 'product',
-  featured: true,
-  image: images.packshotBottle
-},
-{
-  id: 'nord',
-  client: 'Nord Audio',
-  year: '2025',
-  category: 'product',
-  featured: false,
-  image: images.packshotObject
-},
 {
   id: 'marconi',
   client: 'Studio Marconi',
@@ -55,7 +35,7 @@ export const projects: ProjectMeta[] = [
 
 
 export const packageMeta: PackageMeta[] = [
-{ id: 'silver', priceFrom: 400, best: false },
+{ id: 'silver', priceFrom: 500, best: false },
 { id: 'gold', priceFrom: 750, best: true },
 { id: 'platinum', priceFrom: 1000, best: false }];
 
@@ -64,12 +44,17 @@ export const equipmentGroups: EquipmentGroupMeta[] = [
 { id: 'camera', items: ['Sony A6700', 'Sony FX30'] },
 { id: 'lenses', items: ['85mm f/1.4', '50mm f/1.4', '33mm f/1.4'] },
 {
-  id: 'lighting',
+  id: 'videoLight',
   items: [
   'Godox AD600Pro',
   'Godox AD300Pro',
   'GVM 300W',
-  'GVM 150W',
+  'GVM 150W']
+
+},
+{
+  id: 'photographyLight',
+  items: [
   '3× Speedlight',
   '120cm Octabox',
   '80cm Octabox']

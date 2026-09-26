@@ -133,7 +133,8 @@ export const fr: Dict = {
     groups: {
       camera: 'Boîtiers',
       lenses: 'Optiques',
-      lighting: 'Éclairage',
+      videoLight: 'Lumière vidéo',
+      photographyLight: 'Lumière photo',
       support: 'Supports',
       aerial: 'Aérien',
       storage: 'Stockage',
@@ -166,6 +167,7 @@ export const fr: Dict = {
     addOns: {
       simpleVideo: { label: 'Vidéo simple', description: '1 setup, une location, pas de changement d\'éclairage' },
       styledVideo: { label: 'Vidéo commerciale pour réseaux sociaux', description: 'Setups d\'éclairage, 2 heures d\'enregistrement' },
+      socialPack: { label: 'Pack vidéo réseaux sociaux', description: '4 vidéos courtes, moins de 20 secondes chacune — prêtes pour Reels, TikTok et pubs' },
       express: { label: 'Livraison express', description: '48h' }
     },
     resultLabel: 'Votre estimation',

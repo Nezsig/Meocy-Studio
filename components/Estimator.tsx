@@ -160,6 +160,7 @@ export function Estimator() {
               <div className="mt-4 grid gap-2 sm:grid-cols-2">
                 {addOnIds.map((id) => {
                   const on = addOns.includes(id);
+                  const isSocialPack = id === 'socialPack';
                   return (
                     <button
                       key={id}
@@ -169,18 +170,27 @@ export function Estimator() {
                       className={`flex items-start gap-3 rounded-xl bg-chalk p-4 text-left transition-shadow duration-150 ease-smooth ${
                       on ? 'ring-2 ring-ink' : 'ring-1 ring-ink/8 hover:ring-ink/25'}`
                       }>
-                      
+
                       <span
                         className={`mt-0.5 grid h-5 w-5 flex-none place-items-center rounded-md transition-colors duration-150 ease-smooth ${
                         on ? 'bg-ink text-chalk' : 'bg-paper text-transparent ring-1 ring-ink/12'}`
                         }>
-                        
+
                         <CheckIcon size={13} strokeWidth={3} />
                       </span>
-                      <span>
-                        <span className="block text-[14.5px] font-medium text-ink">
-                          {t.estimator.addOns[id].label}
-                        </span>
+                      <span className="flex-1">
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="block text-[14.5px] font-medium text-ink">
+                            {t.estimator.addOns[id].label}
+                          </span>
+                          {isSocialPack && (
+                            <span className="inline-flex items-center gap-1.5 text-[11px]">
+                              <span className="line-through text-slate2">{euro(1000, lang)}</span>
+                              <span className="text-accent font-bold">{euro(500, lang)}</span>
+                              <span className="bg-accent text-ink px-1.5 py-0.5 rounded text-[10px] font-semibold">50% OFF</span>
+                            </span>
+                          )}
+                        </div>
                         <span className="mt-0.5 block text-[12.5px] text-slate2">
                           {t.estimator.addOns[id].description}
                         </span>
@@ -201,12 +211,22 @@ export function Estimator() {
             </p>
 
             <ul className="mt-7 space-y-2.5">
-              {result.lines.map((l) =>
-              <li key={l.key} className="flex items-baseline justify-between gap-4 text-[14px]">
+              {result.lines.map((l) => {
+                const isLocationFree = l.key === 'location' && l.amount === 0;
+                return (
+                <li key={l.key} className="flex items-baseline justify-between gap-4 text-[14px]">
                   <span className="text-chalk/60">{lineLabel(l.key)}</span>
-                  <span className="flex-none font-medium tabular-nums">{euro(l.amount, lang)}</span>
+                  {isLocationFree ? (
+                    <span className="flex-none font-medium tabular-nums flex items-center gap-2">
+                      <span className="line-through text-chalk/40">{euro(340, lang)}</span>
+                      <span className="text-accent font-semibold">{lang === 'en' ? 'Free' : lang === 'it' ? 'Gratis' : 'Offert'}</span>
+                    </span>
+                  ) : (
+                    <span className="flex-none font-medium tabular-nums">{euro(l.amount, lang)}</span>
+                  )}
                 </li>
-              )}
+                );
+              })}
             </ul>
 
             <div className="mt-7 grid grid-cols-2 gap-3">

@@ -1,6 +1,6 @@
 import type { ShootCategory } from '../types/site';
 
-export type AddOnId = 'simpleVideo' | 'styledVideo' | 'express';
+export type AddOnId = 'simpleVideo' | 'styledVideo' | 'express' | 'socialPack';
 
 export interface EstimateInput {
   category: ShootCategory;
@@ -23,11 +23,12 @@ export interface EstimateResult {
   lines: EstimateLine[];
 }
 
-export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'express'];
+export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'socialPack', 'express'];
 
 export const addOnPrices: Record<AddOnId, number> = {
   simpleVideo: 100,
   styledVideo: 250,
+  socialPack: 500,
   express: 150
 };
 
@@ -45,7 +46,7 @@ export function estimate({ category, images, onLocation, addOns }: EstimateInput
   { key: 'images', amount: images * cfg.perImage }];
 
 
-  if (onLocation) lines.push({ key: 'location', amount: 340 });
+  if (onLocation) lines.push({ key: 'location', amount: 0 });
   addOns.forEach((id) => lines.push({ key: id, amount: addOnPrices[id] }));
 
   const subtotal = lines.reduce((sum, l) => sum + l.amount, 0);

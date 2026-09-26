@@ -130,7 +130,8 @@ export const en = {
     groups: {
       camera: 'Camera',
       lenses: 'Lenses',
-      lighting: 'Lighting',
+      videoLight: 'Video light',
+      photographyLight: 'Photography light',
       support: 'Support',
       aerial: 'Aerial',
       storage: 'Storage',
@@ -163,6 +164,7 @@ export const en = {
     addOns: {
       simpleVideo: { label: 'Simple video', description: '1 setup, one location, no lighting change' },
       styledVideo: { label: 'Social media commercial video', description: 'Lighting setups, 2 hours recording time' },
+      socialPack: { label: 'Social media video pack', description: '4 short videos, under 20 seconds each — ready for Reels, TikTok & ads' },
       express: { label: 'Express delivery', description: '48h' }
     },
     resultLabel: 'Your estimate',
