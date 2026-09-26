@@ -16,7 +16,7 @@ export function Footer() {
             <img
               src="/meocy-logo.png"
               alt="MEOCY Studio"
-              className="h-12 w-auto object-contain" />
+              className="h-14 w-auto object-contain" />
             <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-slate2">
               {t.footer.tagline}
             </p>

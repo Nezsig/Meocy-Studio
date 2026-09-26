@@ -8,7 +8,7 @@ export function Process() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="process" className="scroll-mt-24 bg-ink py-24 text-chalk sm:py-32">
+    <section id="process" className="scroll-mt-24 mt-12 bg-ink py-24 text-chalk sm:py-32 md:mt-16">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:items-end">
           <div>
