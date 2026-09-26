@@ -32,9 +32,13 @@ export function Booking() {
         body: JSON.stringify({
           name,
           email,
-          date: preferredDate,
-          time: preferredTime,
-          brief,
+          brand: '',
+          package: '',
+          shootType: '',
+          where: '',
+          preferredDate,
+          preferredTime,
+          specialRequests: brief,
           locale: lang,
         }),
       });
