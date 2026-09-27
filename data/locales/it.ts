@@ -170,7 +170,7 @@ export const it: Dict = {
       pack: ['4 video brevi commerciali (meno di 20s) — Reels, TikTok e ads', '25 foto ritoccate — incluse', 'Cambio location', 'Cambio luci a ogni location', 'Shooting di 6 ore', 'Voce del modello', 'Musica royalty-free']
     },
     packExpiry: 'Offerta valida fino al 31 dicembre',
-    bannerText: '50% di sconto sul pacchetto video social — valido fino al 31 dicembre'
+    bannerText: '50% di sconto sul pacchetto video social — valido fino al 31 dicembre',
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'foto ritoccate finali — incluse',
     linePhotosQuote: 'Le foto per i video commerciali vengono quotate separatamente.',
