@@ -16,6 +16,8 @@ export function Booking() {
   const [brief, setBrief] = useState('');
   const [preferredDate, setPreferredDate] = useState<string | null>(null);
   const [preferredTime, setPreferredTime] = useState<string | null>(null);
+  const [successName, setSuccessName] = useState('');
+  const [successEmail, setSuccessEmail] = useState('');
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +45,9 @@ export function Booking() {
         }),
       });
 
-      if (response.ok) {
+      if (response && response.ok) {
+        setSuccessName(name || '');
+        setSuccessEmail(email || '');
         setStatus('sent');
       } else {
         setStatus('error');
@@ -89,17 +93,23 @@ export function Booking() {
                 {t.booking.sentTitle}
               </h3>
               <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-slate2">
-                {t.booking.sentBody(name.split(' ')[0], email)}
+                {t.booking.sentBody(successName?.split(' ')?.[0] || 'there', successEmail)}
               </p>
               <button
               type="button"
               onClick={() => {
-                setStatus('idle');
-                setName('');
-                setEmail('');
-                setBrief('');
-                setPreferredDate(null);
-                setPreferredTime(null);
+                try {
+                  setStatus('idle');
+                  setName('');
+                  setEmail('');
+                  setBrief('');
+                  setPreferredDate(null);
+                  setPreferredTime(null);
+                  setSuccessName('');
+                  setSuccessEmail('');
+                } catch (err) {
+                  console.error('Reset error:', err);
+                }
               }}
               className="mt-6 text-[14px] font-medium text-ink underline decoration-accent decoration-2 underline-offset-4">
 
