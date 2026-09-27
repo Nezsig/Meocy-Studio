@@ -10,6 +10,7 @@ import { Booking } from '../components/Booking';
 import { Footer } from '../components/Footer';
 
 export default function Page() {
+  // Video estimator rebuild - 2026-09-27
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
       <Nav />
