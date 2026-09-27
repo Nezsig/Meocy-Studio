@@ -47,27 +47,27 @@ export const en = {
 
   process: {
     eyebrow: 'From first message to final files',
-    title: 'You will always know what happens next.',
-    lead: 'No jargon, no surprise invoices. Four steps, fixed timings, one person looking after the project from start to finish.',
+    title: 'You\'ll always know what\'s next.',
+    lead: 'Every shoot is planned in advance — down to the timing — so nothing is left to chance and no one\'s time is wasted. Four clear steps, one person with you the whole way.',
     steps: [
     {
       title: 'Tell us what you sell',
-      body: 'A short call or a form. We look at your products, your channels, and the images you wish you had.',
+      body: 'A quick call or form. We look at your products, where you sell, and the photos you wish you had.',
       duration: '20 minutes'
     },
     {
-      title: 'We send a shot list',
-      body: 'Every frame planned before anyone touches a camera — angles, props, light, and where each image will be used.',
+      title: 'We plan everything first',
+      body: 'Before the shoot we agree the full plan: what we shoot, where, how it\'s lit, and the timing. If it helps, we visit your location beforehand — so on the day, nothing is a surprise.',
       duration: '2 days'
     },
     {
       title: 'Shoot day',
-      body: 'At your location or with shipped products. Join in person, or watch the live tethered feed from anywhere.',
+      body: 'Because it\'s all planned, the day runs to schedule — saving your time and ours. At your place, or with products you send us. Come along, or watch the live feed from anywhere.',
       duration: 'Half or full day'
     },
     {
-      title: 'Selects, retouch, deliver',
-      body: 'You choose favourites in a private gallery. We retouch and deliver in every crop your channels need.',
+      title: 'We deliver',
+      body: 'Pick your favourites in a private gallery. We retouch them and send every size your channels need.',
       duration: '4–7 days'
     }]
 

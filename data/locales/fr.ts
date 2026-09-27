@@ -51,26 +51,26 @@ export const fr: Dict = {
   process: {
     eyebrow: 'Du premier message aux fichiers finaux',
     title: 'Vous saurez toujours ce qui vient ensuite.',
-    lead: "Pas de jargon, pas de facture surprise. Quatre étapes, des délais fixes, une seule personne qui suit le projet du début à la fin.",
+    lead: "Chaque shooting est planifié à l'avance — jusque dans les détails de timing — donc rien n'est laissé au hasard et personne ne perd son temps. Quatre étapes claires, une personne avec vous du début à la fin.",
     steps: [
     {
       title: 'Dites-nous ce que vous vendez',
-      body: "Un appel court ou un formulaire. Nous regardons vos produits, vos canaux et les images qui vous manquent.",
+      body: "Un appel court ou un formulaire. Nous regardons vos produits, où vous les vendez, et les photos que vous aimeriez avoir.",
       duration: '20 minutes'
     },
     {
-      title: 'Nous envoyons le plan de prise de vue',
-      body: "Chaque image est planifiée avant de toucher un appareil — angles, accessoires, lumière et usage final.",
+      title: 'Nous planifions tout en premier',
+      body: "Avant le shooting nous convenons du plan complet : ce que nous photographions, où, comment l'éclairage est fait et les timings. Si utile, nous visitons votre location avant — ainsi le jour du shooting, rien n'est une surprise.",
       duration: '2 jours'
     },
     {
       title: 'Jour de shooting',
-      body: "Chez vous en location, ou avec vos produits expédiés chez nous. Venez sur place, ou suivez le flux en direct où que vous soyez.",
+      body: "Parce que tout est planifié, la journée se déroule selon le programme — économisant votre temps et le nôtre. Chez vous en location, ou avec vos produits expédiés chez nous. Venez avec nous, ou suivez le flux en direct de n'importe où.",
       duration: 'Demi-journée ou journée'
     },
     {
-      title: 'Sélection, retouche, livraison',
-      body: "Vous choisissez vos préférées dans une galerie privée. Nous retouchons et livrons dans tous les formats utiles.",
+      title: 'Nous livrons',
+      body: "Choisissez vos préférées dans une galerie privée. Nous les retouchons et livrons dans tous les formats dont vos canaux ont besoin.",
       duration: '4–7 jours'
     }]
 

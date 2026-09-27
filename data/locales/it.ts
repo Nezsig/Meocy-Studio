@@ -51,26 +51,26 @@ export const it: Dict = {
   process: {
     eyebrow: 'Dal primo messaggio ai file finali',
     title: 'Saprai sempre cosa succede dopo.',
-    lead: "Niente gergo, nessuna fattura a sorpresa. Quattro passaggi, tempi fissi, una sola persona che segue il progetto dall'inizio alla fine.",
+    lead: 'Ogni shooting è pianificato in anticipo — fino al dettaglio dei tempi — così niente è lasciato al caso e il tempo di nessuno è sprecato. Quattro passaggi chiari, una persona con te dall\'inizio alla fine.',
     steps: [
     {
       title: 'Raccontaci cosa vendi',
-      body: 'Una breve call o un modulo. Guardiamo i tuoi prodotti, i tuoi canali e le immagini che ti mancano.',
+      body: 'Una breve call o un modulo. Guardiamo i tuoi prodotti, dove li vendi, e le foto che vorresti avere.',
       duration: '20 minuti'
     },
     {
-      title: 'Ti inviamo lo shot list',
-      body: 'Ogni scatto è pianificato prima di toccare la macchina — angoli, props, luce e utilizzo finale.',
+      title: 'Pianifichiamo tutto per primo',
+      body: 'Prima dello shooting concordiamo il piano completo: cosa fotografare, dove, come illuminare e i tempi. Se utile, visitiamo la tua location prima — così il giorno dello shooting, niente è una sorpresa.',
       duration: '2 giorni'
     },
     {
       title: 'Giorno di shooting',
-      body: 'In location tua, oppure con i tuoi prodotti spediti a noi. Partecipa di persona, oppure segui il collegamento live ovunque tu sia.',
+      body: 'Perché tutto è pianificato, la giornata procede secondo programma — risparmiando tempo a entrambi. In location tua, oppure con i tuoi prodotti spediti a noi. Vieni con noi, oppure segui il collegamento live da qualunque posto.',
       duration: 'Mezza o intera giornata'
     },
     {
-      title: 'Selezione, ritocco, consegna',
-      body: 'Scegli le preferite in una galleria privata. Ritocchiamo e consegniamo in ogni formato che ti serve.',
+      title: 'Consegniamo',
+      body: 'Scegli le tue preferite in una galleria privata. Ritocchiamo e consegniamo ogni formato di cui i tuoi canali hanno bisogno.',
       duration: '4–7 giorni'
     }]
 
