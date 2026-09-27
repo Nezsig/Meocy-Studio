@@ -107,43 +107,60 @@ export const en = {
   },
 
   estimator: {
-    eyebrow: 'Pricing, before you ask',
-    title: 'See your price before you talk to anyone.',
-    lead: 'Move the controls and watch the number change. This is the same calculation behind every quote we send.',
-    categoryLegend: 'What are we photographing?',
+    eyebrow: 'Video pricing, before you ask',
+    title: 'Build your video quote.',
+    lead: 'Choose how many videos and the style you want. Price updates instantly — this is what we charge.',
+    categoryLabel: 'What are we filming?',
     categories: {
       product: 'Product',
-      restaurant: 'Food',
+      food: 'Food',
       fashion: 'Fashion',
       brand: 'Brand'
     },
-    countLabel: 'How many final images?',
-    countMin: '0 — base only',
-    countMax: '80 — full catalogue',
-    whereLabel: 'Where?',
-    whereStudio: 'Our Studio',
-    whereStudioNote: 'Full control of the light',
-    whereLocation: 'Your location',
-    whereLocationNote: 'We pack the studio into a van',
-    addOnLegend: 'Anything else?',
-    addOns: {
-      simpleVideo: { label: 'Simple video', description: '1 setup, one location, no lighting change' },
-      styledVideo: { label: 'Social media commercial video', description: 'Lighting setups, 2 hours recording time' },
-      socialPack: { label: 'Social media video pack', description: '4 short videos, under 20 seconds each — ready for Reels, TikTok & ads' },
-      express: { label: 'Express delivery', description: '48h' }
+    videoTypeLegend: 'Video type',
+    videoTypes: {
+      basic: {
+        name: 'Basic',
+        description: '1 location · 1 lighting · no voiceover',
+        price: 100,
+        unit: 'video'
+      },
+      voiceover: {
+        name: 'Voiceover & music',
+        description: 'Basic video + voiceover + royalty-free music + extra polish',
+        price: 150,
+        unit: 'video'
+      },
+      social: {
+        name: 'Social media video',
+        description: 'Model voice · 2 lighting setups · one location with lighting change · 2 hours recording',
+        price: 150,
+        unit: 'video'
+      },
+      pack: {
+        name: 'Social media video pack',
+        description: '4 short videos (under 20s) per pack — Reels, TikTok & ads.',
+        price: 500,
+        unit: 'pack',
+        discount: '50% OFF'
+      },
+      commercial: {
+        name: 'Social media commercial video',
+        description: 'Premium: 4-hour shoot · lighting changed every shot · location change · model voice · voiceover · and more.',
+        price: 500,
+        unit: 'video'
+      }
     },
+    countLabel: 'How many videos?',
+    countMin: '0 videos',
+    countMax: '8 videos',
     resultLabel: 'Your estimate',
-    lineStudio: (category: string) => `${category} shoot — studio time & lighting`,
-    lineImages: (count: number) => `${count} final retouched images`,
-    lineLocation: 'On-location crew & kit transport',
-    deliveryLabel: 'Files delivered',
-    delivery48: '48 hours',
-    delivery7: '7 working days',
-    delivery4: '4 working days',
-    recommendedLabel: 'Recommended package',
-    oneDay: 'One shoot day',
-    twoDays: 'Two shoot days',
-    cta: 'Hold a date with this brief'
+    lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
+    linePhotos: 'final retouched photos — included',
+    linePhotosQuote: 'Photos for commercial shoots are quoted separately.',
+    linePhotosWant: 'Want photos? Add 5+ videos or choose a pack.',
+    caption: 'Fixed price, agreed before we start.',
+    cta: 'Book this video'
   },
 
   packages: {

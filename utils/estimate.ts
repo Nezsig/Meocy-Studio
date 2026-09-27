@@ -1,63 +1,78 @@
 import type { ShootCategory } from '../types/site';
 
-export type AddOnId = 'simpleVideo' | 'styledVideo' | 'express' | 'socialPack';
+export type VideoType = 'basic' | 'voiceover' | 'social' | 'pack' | 'commercial';
 
 export interface EstimateInput {
   category: ShootCategory;
-  images: number;
-  onLocation: boolean;
-  addOns: AddOnId[];
+  videoType: VideoType;
+  quantity: number;
 }
 
 export interface EstimateLine {
   key: string;
   amount: number;
+  label?: string;
 }
 
 export interface EstimateResult {
   total: number;
-  days: number;
-  express: boolean;
-  large: boolean;
-  recommended: string;
+  videoType: VideoType;
+  quantity: number;
+  photos: number;
+  showPhotos: boolean;
+  photosLabel: string;
+  noteLabel: string;
   lines: EstimateLine[];
 }
 
-export const addOnIds: AddOnId[] = ['simpleVideo', 'styledVideo', 'socialPack', 'express'];
-
-export const addOnPrices: Record<AddOnId, number> = {
-  simpleVideo: 100,
-  styledVideo: 250,
-  socialPack: 500,
-  express: 150
+const videoTypeConfig: Record<VideoType, { price: number; unit: string }> = {
+  basic: { price: 100, unit: 'video' },
+  voiceover: { price: 150, unit: 'video' },
+  social: { price: 150, unit: 'video' },
+  pack: { price: 500, unit: 'pack' },
+  commercial: { price: 500, unit: 'video' }
 };
 
-const baseByCategory: Record<ShootCategory, {base: number;perImage: number;}> = {
-  product: { base: 500, perImage: 10 },
-  restaurant: { base: 500, perImage: 10 },
-  fashion: { base: 500, perImage: 10 },
-  brand: { base: 500, perImage: 10 }
-};
+export function estimate({ category, videoType, quantity }: EstimateInput): EstimateResult {
+  const cfg = videoTypeConfig[videoType];
+  const total = quantity * cfg.price;
 
-export function estimate({ category, images, onLocation, addOns }: EstimateInput): EstimateResult {
-  const cfg = baseByCategory[category];
+  let photos = 0;
+  let showPhotos = false;
+  let photosLabel = '';
+  let noteLabel = '';
+
+  if (videoType === 'pack') {
+    photos = quantity * 50;
+    showPhotos = quantity > 0;
+    photosLabel = `${photos} final retouched photos — included`;
+  } else if (videoType === 'commercial') {
+    photos = 0;
+    showPhotos = false;
+    noteLabel = 'Photos for commercial shoots are quoted to fit the production.';
+  } else if (quantity > 4) {
+    photos = 25;
+    showPhotos = true;
+    photosLabel = '25 final retouched photos — included';
+  } else if (quantity > 0) {
+    photos = 0;
+    showPhotos = false;
+    noteLabel = 'Want photos too? Add 5+ videos or choose the pack — otherwise we quote photos separately.';
+  }
+
   const lines: EstimateLine[] = [
-  { key: 'studio', amount: cfg.base },
-  { key: 'images', amount: images * cfg.perImage }];
-
-
-  if (onLocation) lines.push({ key: 'location', amount: 0 });
-  addOns.forEach((id) => lines.push({ key: id, amount: addOnPrices[id] }));
-
-  const subtotal = lines.reduce((sum, l) => sum + l.amount, 0);
-  const total = Math.round(subtotal / 10) * 10;
+    { key: 'videoType', amount: total, label: `${quantity} ${quantity === 1 ? cfg.unit : cfg.unit + 's'}` },
+    ...(showPhotos ? [{ key: 'photos', amount: 0, label: photosLabel }] : [])
+  ];
 
   return {
     total,
-    days: images > 55 ? 2 : 1,
-    express: addOns.includes('express'),
-    large: images > 40,
-    recommended: subtotal > 1000 ? 'platinum' : subtotal > 750 ? 'gold' : 'silver',
+    videoType,
+    quantity,
+    photos,
+    showPhotos,
+    photosLabel: photosLabel,
+    noteLabel: noteLabel,
     lines
   };
 }

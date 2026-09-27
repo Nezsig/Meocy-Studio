@@ -1,4 +1,4 @@
-export type ShootCategory = 'product' | 'restaurant' | 'fashion' | 'brand';
+export type ShootCategory = 'product' | 'food' | 'fashion' | 'brand';
 
 export type LanguageCode = 'en' | 'fr' | 'it';
 
