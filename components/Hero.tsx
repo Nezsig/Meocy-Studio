@@ -89,6 +89,8 @@ export function Hero() {
                 className="mt-7 block rounded-full bg-accent px-6 py-3.5 text-center text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
                 {t.hero.promo.cta}
               </a>
+
+              <p className="mt-4 text-[12px] text-chalk/50">{t.estimator.packExpiry}</p>
             </div>
           </motion.div>
         </div>

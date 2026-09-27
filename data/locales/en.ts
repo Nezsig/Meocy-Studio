@@ -165,7 +165,15 @@ export const en = {
     linePhotosQuote: 'Photos for commercial shoots are quoted separately.',
     linePhotosWant: 'Want photos? Add 5+ videos or choose a pack.',
     caption: 'Fixed price, agreed before we start.',
-    cta: 'Book this video'
+    cta: 'Book this video',
+    benefits: {
+      basic: ['1 location · 1 lighting setup', 'Simple edit · standard delivery'],
+      social: ['Model voice · 2 lighting setups', 'One location with lighting change · 2 hours recording'],
+      commercial: ['4-hour shoot · lighting changed every shot', 'Location change · model voice · voiceover · full production'],
+      pack: ['4 commercial short videos (under 20s) — Reels, TikTok & ads', '25 retouched photos — included', 'Location change', 'Lighting change at every location', '6-hour shoot', 'Model voice', 'Royalty-free music']
+    },
+    packExpiry: 'Offer valid until December 31',
+    bannerText: '50% off the Social media video pack — valid until December 31'
   },
 
   packages: {

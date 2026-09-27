@@ -163,6 +163,14 @@ export const it: Dict = {
     countMax: '8 video',
     resultLabel: 'La tua stima',
     whatYouGet: 'Quello che ottieni',
+    benefits: {
+      basic: ['1 location · 1 setup di illuminazione', 'Editing semplice · consegna standard'],
+      social: ['Voce del modello · 2 setup di illuminazione', 'Una location con cambio luci · 2 ore di ripresa'],
+      commercial: ['Shooting di 4 ore · cambio luci a ogni scatto', 'Cambio location · voce del modello · voiceover · full production'],
+      pack: ['4 video brevi commerciali (meno di 20s) — Reels, TikTok e ads', '25 foto ritoccate — incluse', 'Cambio location', 'Cambio luci a ogni location', 'Shooting di 6 ore', 'Voce del modello', 'Musica royalty-free']
+    },
+    packExpiry: 'Offerta valida fino al 31 dicembre',
+    bannerText: '50% di sconto sul pacchetto video social — valido fino al 31 dicembre'
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'foto ritoccate finali — incluse',
     linePhotosQuote: 'Le foto per i video commerciali vengono quotate separatamente.',

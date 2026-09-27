@@ -155,23 +155,37 @@ export function Estimator() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
               {t.estimator.resultLabel}
             </p>
-            <p className="mt-4 font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">
-              {euro(result.total, lang)}
-            </p>
+            <div className="mt-4">
+              {videoType === 'pack' && result.discountedPrice ? (
+                <div>
+                  <p className="text-[14px] text-chalk/60">
+                    <span className="line-through">{euro(1000 * quantity, lang)}</span>
+                  </p>
+                  <p className="font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">
+                    {euro(result.total, lang)}
+                  </p>
+                  <p className="mt-2 text-[12px] font-semibold text-accent">50% OFF</p>
+                </div>
+              ) : (
+                <p className="font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">
+                  {euro(result.total, lang)}
+                </p>
+              )}
+            </div>
 
             <div className="mt-8">
               <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-chalk/70">
                 {t.estimator.whatYouGet}
               </p>
               <ul className="mt-4 space-y-2.5">
-                {result.benefits.map((benefit, idx) => (
+                {t.estimator.benefits[videoType]?.map((benefit, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-[14px] leading-relaxed text-chalk">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-none bg-accent"></span>
                     <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
-              {result.showPhotos && (
+              {result.showPhotos && videoType !== 'pack' && (
                 <li className="mt-3 flex items-start gap-3 text-[14px] leading-relaxed text-accent font-medium">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-none bg-accent"></span>
                   <span>{result.photos} {t.estimator.linePhotos}</span>

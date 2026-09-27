@@ -1,4 +1,5 @@
 import { Nav } from '../components/Nav';
+import { OfferBanner } from '../components/OfferBanner';
 import { Hero } from '../components/Hero';
 import { Process } from '../components/Process';
 import { HowItWorks } from '../components/HowItWorks';
@@ -13,6 +14,7 @@ export default function Page() {
   // Video estimator rebuild - 2026-09-27
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
+      <OfferBanner />
       <Nav />
       <main>
         <Hero />
