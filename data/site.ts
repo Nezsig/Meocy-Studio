@@ -29,7 +29,7 @@ export const projects: ProjectMeta[] = [
   id: 'nove',
   client: 'Trattoria Nove',
   year: '2024',
-  category: 'restaurant',
+  category: 'food',
   featured: false
 }];
 
