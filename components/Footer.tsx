@@ -55,6 +55,14 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} MEOCY Studio · {t.footer.rights}
           </p>
+          <div className="flex gap-4">
+            <a href="/privacy" className="text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
+              Privacy
+            </a>
+            <a href="/terms" className="text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
+              Terms
+            </a>
+          </div>
           <p>{studioContact.address}, Italia</p>
         </div>
       </div>
