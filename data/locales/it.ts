@@ -32,7 +32,18 @@ export const it: Dict = {
     { value: 'Prezzo fisso', label: 'Concordato prima di iniziare' }],
 
     studioCaption:
-    'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.'
+    'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
+
+    promo: {
+      badge: 'PORTA IL TUO BRAND AL LIVELLO SUCCESSIVO',
+      heading: 'I contenuti mensili che il tuo brand merita.',
+      title: 'Pacchetto video social media',
+      description: '4 video commerciali brevi per i social (meno di 20s) per pacchetto — Reels, TikTok & ads.',
+      priceStrikethrough: '€1.000',
+      price: '€500 / pacchetto',
+      discount: 'SCONTO 50%',
+      cta: 'Prendi il pacchetto →'
+    }
   },
 
   clients: { label: 'Clienti selezionati' },

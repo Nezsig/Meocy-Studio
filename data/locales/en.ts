@@ -29,7 +29,18 @@ export const en = {
     { value: 'Photographer', label: 'since 2008' },
     { value: 'Fixed price', label: 'Agreed before we start' }],
 
-    studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.'
+    studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
+
+    promo: {
+      badge: 'TAKE YOUR BRAND TO THE NEXT LEVEL',
+      heading: 'The monthly content your brand needs.',
+      title: 'Social media video pack',
+      description: '4 commercial social media short videos (under 20s) per pack — Reels, TikTok & ads.',
+      priceStrikethrough: '€1,000',
+      price: '€500 / pack',
+      discount: '50% OFF',
+      cta: 'Get the pack →'
+    }
   },
 
   clients: { label: 'Selected clients' },

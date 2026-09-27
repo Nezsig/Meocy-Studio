@@ -32,7 +32,18 @@ export const fr: Dict = {
     { value: 'Prix fixe', label: 'Convenu avant de commencer' }],
 
     studioCaption:
-    'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.'
+    'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
+
+    promo: {
+      badge: 'PORTEZ VOTRE MARQUE AU NIVEAU SUPÉRIEUR',
+      heading: 'Le contenu mensuel dont votre marque a besoin.',
+      title: 'Pack vidéo réseaux sociaux',
+      description: '4 vidéos commerciales courtes pour les réseaux (moins de 20s) par pack — Reels, TikTok & pubs.',
+      priceStrikethrough: '€1 000',
+      price: '€500 / pack',
+      discount: '-50%',
+      cta: 'Obtenir le pack →'
+    }
   },
 
   clients: { label: 'Clients sélectionnés' },
