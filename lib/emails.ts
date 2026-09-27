@@ -2,7 +2,7 @@
 const c = { ink:'#0b0b0c', paper:'#f6f5f2', chalk:'#ffffff', mist:'#e5e3dd', slate:'#6b6a66', accent:'#c8f169' };
 const sans = "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const serif = "'Instrument Serif', Georgia, 'Times New Roman', serif";
-const LOGO = 'https://meocy-studio.vercel.app/meocy-logo.png';
+const LOGO = 'https://meocy.com/meocy-wordmark.png';
 const esc = (s: string = '') => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
 export type Locale = 'en' | 'it' | 'fr';
@@ -44,7 +44,7 @@ export function buildConfirmationEmail(b: Booking, locale: Locale = 'it'): strin
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Instrument+Serif:ital@0;1&display=swap');body{margin:0;padding:0}img{border:0;display:block}@media(max-width:620px){.container{width:100%!important}.px{padding-left:22px!important;padding-right:22px!important}.h1{font-size:34px!important}}</style></head>
 <body style="margin:0;padding:0;background:${c.paper}"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px">
 <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:${c.chalk};border-radius:24px;overflow:hidden">
-  <tr><td class="px" style="padding:28px 40px 20px"><table role="presentation" width="100%"><tr><td style="vertical-align:middle"><img src="${LOGO}" alt="MEOCY STUDIO" height="28" style="height:28px;width:auto"></td><td align="right" style="font-family:${sans};font-size:12px;color:${c.slate};vertical-align:middle">Photo &amp; video &middot; Milan</td></tr></table></td></tr>
+  <tr><td class="px" style="padding:28px 40px 20px"><table role="presentation" width="100%"><tr><td style="vertical-align:middle"><img src="${LOGO}" alt="MEOCY STUDIO" height="40" style="height:40px;width:auto"></td><td align="right" style="font-family:${sans};font-size:12px;color:${c.slate};vertical-align:middle">Photo &amp; video &middot; Milan</td></tr></table></td></tr>
   <tr><td class="px" style="padding:16px 40px 8px"><div style="display:inline-block;padding:5px 12px;border-radius:999px;background:${c.accent};font-family:${sans};font-size:12px;font-weight:600;color:${c.ink}">${t.badge}</div>
     <h1 class="h1" style="margin:16px 0 0;font-family:${serif};font-weight:400;font-size:42px;line-height:1.04;color:${c.ink}">${t.h1a}<em>${t.h1em}</em></h1>
     <p style="margin:20px 0 0;font-family:${sans};font-size:16px;line-height:1.6;color:#3a3a38">${t.intro(first)}</p></td></tr>
