@@ -136,12 +136,6 @@ export const en = {
         price: 100,
         unit: 'video'
       },
-      voiceover: {
-        name: 'Voiceover & music',
-        description: 'Basic video + voiceover + royalty-free music + extra polish',
-        price: 150,
-        unit: 'video'
-      },
       social: {
         name: 'Social media video',
         description: 'Model voice · 2 lighting setups · one location with lighting change · 2 hours recording',
@@ -165,6 +159,7 @@ export const en = {
     countMin: '0 videos',
     countMax: '8 videos',
     resultLabel: 'Your estimate',
+    whatYouGet: 'What you get',
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'final retouched photos — included',
     linePhotosQuote: 'Photos for commercial shoots are quoted separately.',

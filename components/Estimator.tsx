@@ -6,7 +6,7 @@ import type { VideoType } from '../utils/estimate';
 import type { ShootCategory } from '../types/site';
 
 const categories: ShootCategory[] = ['product', 'food', 'fashion', 'brand'];
-const videoTypes: VideoType[] = ['basic', 'voiceover', 'social', 'pack', 'commercial'];
+const videoTypes: VideoType[] = ['basic', 'social', 'pack', 'commercial'];
 
 export function Estimator() {
   const { t, lang } = useLanguage();
@@ -159,29 +159,33 @@ export function Estimator() {
               {euro(result.total, lang)}
             </p>
 
-            <ul className="mt-7 space-y-2.5">
-              <li className="flex items-baseline justify-between gap-4 text-[14px]">
-                <span className="text-chalk/60">{result.videoType === 'pack' ? 'Video packs' : 'Videos'}</span>
-                <span className="flex-none font-medium tabular-nums text-accent">
-                  {quantity} {unitLabel}
-                </span>
-              </li>
+            <div className="mt-8">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-chalk/70">
+                {t.estimator.whatYouGet}
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {result.benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-[14px] leading-relaxed text-chalk">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-none bg-accent"></span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
               {result.showPhotos && (
-                <li className="flex items-baseline justify-between gap-4 text-[14px]">
-                  <span className="text-accent font-medium">
-                    {result.photos} {t.estimator.linePhotos}
-                  </span>
+                <li className="mt-3 flex items-start gap-3 text-[14px] leading-relaxed text-accent font-medium">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-none bg-accent"></span>
+                  <span>{result.photos} {t.estimator.linePhotos}</span>
                 </li>
               )}
-            </ul>
+            </div>
 
             {result.noteLabel && (
-              <div className="mt-7 pt-7 border-t border-chalk/10">
+              <div className="mt-6 pt-6 border-t border-chalk/10">
                 <p className="text-[12.5px] text-chalk/50">{result.noteLabel}</p>
               </div>
             )}
 
-            <div className={result.noteLabel ? "mt-4" : "mt-7 pt-7 border-t border-chalk/10"}>
+            <div className={result.noteLabel ? "mt-4" : "mt-6 pt-6 border-t border-chalk/10"}>
               <p className="text-[12.5px] text-chalk/50">{t.estimator.caption}</p>
             </div>
 

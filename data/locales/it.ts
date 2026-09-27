@@ -139,12 +139,6 @@ export const it: Dict = {
         price: 100,
         unit: 'video'
       },
-      voiceover: {
-        name: 'Voiceover & musica',
-        description: 'Video base + voiceover + musica royalty-free + polish extra',
-        price: 150,
-        unit: 'video'
-      },
       social: {
         name: 'Video social media',
         description: 'Voce di modella · 2 setup di illuminazione · una location con cambio luci · 2 ore di ripresa',
@@ -168,6 +162,7 @@ export const it: Dict = {
     countMin: '0 video',
     countMax: '8 video',
     resultLabel: 'La tua stima',
+    whatYouGet: 'Quello che ottieni',
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'foto ritoccate finali — incluse',
     linePhotosQuote: 'Le foto per i video commerciali vengono quotate separatamente.',
