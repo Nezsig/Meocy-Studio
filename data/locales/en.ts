@@ -141,8 +141,7 @@ export const en = {
         name: 'Social media video pack',
         description: '4 short videos (under 20s) per pack — Reels, TikTok & ads.',
         price: 500,
-        unit: 'pack',
-        discount: '50% OFF'
+        unit: 'pack'
       },
       commercial: {
         name: 'Social media commercial video',

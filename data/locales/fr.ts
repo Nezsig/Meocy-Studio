@@ -144,8 +144,7 @@ export const fr: Dict = {
         name: 'Pack vidéo réseaux sociaux',
         description: '4 vidéos courtes (moins de 20s) par pack — Reels, TikTok & pubs.',
         price: 500,
-        unit: 'pack',
-        discount: '-50%'
+        unit: 'pack'
       },
       commercial: {
         name: 'Vidéo commerciale réseaux sociaux',

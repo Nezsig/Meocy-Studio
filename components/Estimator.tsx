@@ -110,7 +110,7 @@ export function Estimator() {
                             <span className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
                               isSelected ? 'bg-accent text-ink' : 'bg-accent text-ink'
                             }`}>
-                              {vtCfg.discount}
+                              50% OFF
                             </span>
                           </span>
                         )}

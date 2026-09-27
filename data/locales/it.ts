@@ -144,8 +144,7 @@ export const it: Dict = {
         name: 'Pacchetto video social media',
         description: '4 video brevi (meno di 20s) per pacchetto — Reels, TikTok & ads.',
         price: 500,
-        unit: 'pacchetto',
-        discount: 'SCONTO 50%'
+        unit: 'pacchetto'
       },
       commercial: {
         name: 'Video commerciale social media',
