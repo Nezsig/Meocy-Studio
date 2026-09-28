@@ -54,10 +54,10 @@ export function About() {
             </div>
           </button>
 
-          {/* Expanded signature card */}
+          {/* Expanded signature card - DARK BACKGROUND */}
           {isOpen && (
             <div className="overflow-hidden">
-              <div className="py-8 sm:py-10 border-t border-mist/50">
+              <div className="py-8 sm:py-10 bg-ink rounded-2xl px-6 sm:px-8 mt-6">
                 <div className="flex gap-6 sm:gap-8 mb-6">
                   {/* Photo */}
                   <div className="flex-shrink-0">
@@ -66,13 +66,13 @@ export function About() {
                       alt={t.about.name}
                       width={110}
                       height={110}
-                      className="rounded-full w-[110px] h-[110px] object-cover"
+                      className="rounded-full w-[110px] h-[110px] object-cover shadow-lg"
                     />
                   </div>
 
                   {/* Name and role */}
                   <div className="flex-1">
-                    <h3 className="font-display text-xl sm:text-2xl font-medium leading-tight tracking-tight">
+                    <h3 className="font-display text-xl sm:text-2xl font-medium leading-tight tracking-tight text-paper">
                       {t.about.name}
                     </h3>
                     <p className="mt-1 text-sm font-medium text-accent">
@@ -85,7 +85,7 @@ export function About() {
                 <div className="space-y-2 mb-6">
                   <a
                     href={`tel:${t.about.contact.phone.replace(/\s/g, '')}`}
-                    className="flex items-center gap-3 text-[14px] text-slate2 hover:text-ink transition-colors"
+                    className="flex items-center gap-3 text-[14px] text-chalk hover:text-accent transition-colors"
                   >
                     <span className="font-medium w-6 text-accent">
                       {t.about.contact.phoneLabel}
@@ -95,7 +95,7 @@ export function About() {
 
                   <a
                     href={`tel:${t.about.contact.mobile.replace(/\s/g, '')}`}
-                    className="flex items-center gap-3 text-[14px] text-slate2 hover:text-ink transition-colors"
+                    className="flex items-center gap-3 text-[14px] text-chalk hover:text-accent transition-colors"
                   >
                     <span className="font-medium w-6 text-accent">
                       {t.about.contact.mobileLabel}
@@ -105,7 +105,7 @@ export function About() {
 
                   <a
                     href={`mailto:${t.about.contact.email}`}
-                    className="flex items-center gap-3 text-[14px] text-slate2 hover:text-ink transition-colors"
+                    className="flex items-center gap-3 text-[14px] text-chalk hover:text-accent transition-colors"
                   >
                     <span className="font-medium w-6 text-accent">
                       {t.about.contact.emailLabel}
@@ -115,7 +115,7 @@ export function About() {
 
                   <a
                     href={`https://${t.about.contact.website}`}
-                    className="flex items-center gap-3 text-[14px] text-slate2 hover:text-ink transition-colors"
+                    className="flex items-center gap-3 text-[14px] text-chalk hover:text-accent transition-colors"
                   >
                     <span className="font-medium w-6 text-accent">
                       {t.about.contact.websiteLabel}
@@ -128,7 +128,7 @@ export function About() {
                 <div className="flex gap-4 items-center">
                   <a
                     href="https://instagram.com/chamila.it"
-                    className="w-8 h-8 rounded-full bg-mist hover:bg-accent/20 flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-accent/20 hover:bg-accent/40 flex items-center justify-center transition-colors"
                     title="Instagram"
                   >
                     <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
@@ -138,7 +138,7 @@ export function About() {
 
                   <a
                     href="https://instagram.com/chami.eu"
-                    className="w-8 h-8 rounded-full bg-mist hover:bg-accent/20 flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-accent/20 hover:bg-accent/40 flex items-center justify-center transition-colors"
                     title="Instagram"
                   >
                     <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@ export function About() {
 
                   <a
                     href="https://wa.me/393791051000"
-                    className="w-8 h-8 rounded-full bg-mist hover:bg-accent/20 flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-accent/20 hover:bg-accent/40 flex items-center justify-center transition-colors"
                     title="WhatsApp"
                   >
                     <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
@@ -158,7 +158,7 @@ export function About() {
 
                   <a
                     href="https://meocy.com"
-                    className="w-8 h-8 rounded-full bg-mist hover:bg-accent/20 flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-accent/20 hover:bg-accent/40 flex items-center justify-center transition-colors"
                     title="Website"
                   >
                     <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +168,7 @@ export function About() {
                 </div>
 
                 {/* Social handles line */}
-                <p className="text-xs text-slate2 mt-4">{t.about.socialHandles}</p>
+                <p className="text-xs text-chalk/80 mt-4">{t.about.socialHandles}</p>
               </div>
             </div>
           )}
