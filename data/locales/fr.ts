@@ -51,19 +51,24 @@ export const fr: Dict = {
   clients: { label: 'Clients sélectionnés' },
 
   about: {
-    heading: 'Chamila Prasanna',
-    role: 'Founder & Photographer · MEOCY STUDIO',
-    body: 'Derrière MEOCY se trouve Chamila, un photographe du Sri Lanka. J\'ai passé huit ans à construire une carrière en photographie dans mon pays, puis je me suis installé en Italie. Après du temps loin de l\'appareil photo, je recommence ici à Milan—le même regard, un nouveau nom. Travaillez avec MEOCY et vous travaillez directement avec moi : chaque tournage est soigneusement planifié, tourné et livré par le fondateur, à un prix convenu à l\'avance.',
+    sectionHeading: 'À propos',
+    bio: 'Derrière MEOCY se trouve Chamila, un photographe du Sri Lanka. J\'ai passé huit ans à construire une carrière en photographie dans mon pays, puis je me suis installé en Italie. Après du temps loin de l\'appareil photo, je recommence ici à Milan—le même regard, un nouveau nom. Travaillez avec MEOCY et vous travaillez directement avec moi : chaque tournage est soigneusement planifié, tourné et livré par le fondateur, à un prix convenu à l\'avance.',
     whatIShoots: 'Campagnes de vêtements et marques · Séances photo de mannequins · Photographie de mode · Photographie culinaire · Vidéo',
     kitLine: 'Chaque tournage est réalisé avec des caméras modernes, un éclairage puissant et un kit professionnel complet — pour que le travail atteigne une véritable norme commerciale.',
+    toggleLabel: 'Rencontrez le fondateur',
+    name: 'Chamila Prasanna',
+    role: 'Founder & Photographer · MEOCY STUDIO',
     contact: {
+      phoneLabel: 'T',
       phone: '+39 379 105 1000',
+      mobileLabel: 'M',
       mobile: '+39 380 498 1718',
+      emailLabel: 'E',
       email: 'hello@meocy.com',
-      website: 'meocy.com',
-      instagram1: '@chamila.it',
-      instagram2: '@chami.eu'
-    }
+      websiteLabel: 'W',
+      website: 'meocy.com'
+    },
+    socialHandles: '@chamila.it · @chami.eu'
   },
 
   process: {

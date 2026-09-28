@@ -13,7 +13,11 @@ export const studioContact = {
   email: 'hello@meocy.com',
   phone: '+39 379 105 1000',
   phoneHref: 'tel:+393791051000',
-  instagram: '@chamila.eu',
+  instagram1: '@chamila.it',
+  instagram1Href: 'https://instagram.com/chamila.it',
+  instagram2: '@chami.eu',
+  instagram2Href: 'https://instagram.com/chami.eu',
+  whatsappHref: 'https://wa.me/393791051000',
   address: 'Viale Renato Serra 14, 20148 Milano'
 };
 
