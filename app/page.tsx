@@ -24,11 +24,11 @@ export default function Page() {
         <Process />
         <HowItWorks />
         <Equipment />
-        <About />
         <Estimator />
         <Packages />
         <Faq />
         <Booking />
+        <About />
       </main>
       <Footer />
     </div>

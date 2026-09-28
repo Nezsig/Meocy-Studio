@@ -11,6 +11,7 @@ export const it: Dict = {
       studio: 'Studio',
       pricing: 'Prezzi',
       packages: 'Pacchetti',
+      about: 'Chi sono',
       faq: 'FAQ'
     },
     cta: 'Prenota uno shooting',
@@ -20,7 +21,7 @@ export const it: Dict = {
   },
 
   hero: {
-    eyebrow: 'FOTOGRAFIA & VIDEOGRAFIA · MILANO · DAL 2008',
+    eyebrow: 'FOTOGRAFIA & VIDEOGRAFIA · MILANO',
     titleA: 'Contenuti che',
     titleB: 'fanno crescere il tuo business.',
     lead: 'MEOCY è uno studio fotografico e video a Milano. Creiamo i contenuti che mettono il tuo brand di fronte a più persone — e ne trasformano più di loro in clienti. Foto di prodotto, reel pronti per i social e campagne, a un prezzo fisso concordato prima di iniziare.',
@@ -33,7 +34,7 @@ export const it: Dict = {
     studioCaption:
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
 
-    rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è il nuovo nome per il lavoro commerciale fotografato a Milano dal 2008. Ci trovi proprio all\'inizio con il nuovo nome — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
+    rebrandCallout: 'MEOCY è una ripartenza — otto anni di fotografia in Sri Lanka, ora costruendo qualcosa di nuovo a Milano.',
 
     promo: {
       badge: 'PORTA IL TUO BRAND AL LIVELLO SUCCESSIVO',
@@ -50,8 +51,9 @@ export const it: Dict = {
   clients: { label: 'Clienti selezionati' },
 
   about: {
-    heading: 'Chi sono',
-    body: 'Dietro MEOCY c\'è Chamila — fotografo e videomaker con base a Milano. Ho girato contenuti commerciali a Milano dal 2008, e MEOCY è lo studio che ho costruito intorno a un\'idea: contenuti che fanno davvero crescere un brand. Quando lavori con MEOCY, lavori direttamente con me — ogni shooting pianificato, girato e consegnato con attenzione da founder, a un prezzo concordato prima di iniziare.'
+    heading: 'Chamila Prasanna',
+    role: 'Founder & Photographer · MEOCY STUDIO',
+    body: 'Dietro MEOCY c\'è Chamila — fotografo dallo Sri Lanka. Ho passato otto anni costruendo una carriera in fotografia nella mia terra, poi mi sono trasferito in Italia. Dopo un po\' lontano dalla macchina fotografica, sto ricominciando da capo qui a Milano — stesso occhio, nuovo nome. Lavora con MEOCY e lavori direttamente con me: ogni shooting pianificato, girato e consegnato con attenzione da founder, a un prezzo concordato prima di iniziare.'
   },
 
   process: {

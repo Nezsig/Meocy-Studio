@@ -9,6 +9,7 @@ export const en = {
       studio: 'Studio',
       pricing: 'Pricing',
       packages: 'Packages',
+      about: 'About',
       faq: 'FAQ'
     },
     cta: 'Book a shoot',
@@ -18,7 +19,7 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'PHOTOGRAPHY & VIDEOGRAPHY · MILAN · SINCE 2008',
+    eyebrow: 'PHOTOGRAPHY & VIDEOGRAPHY · MILAN',
     titleA: 'Content that',
     titleB: 'grows your business.',
     lead: 'MEOCY is a Milan photo & video studio. We create the content that gets your brand in front of more people — and turns more of them into customers. Product shots, social-ready reels and campaigns, at a fixed price agreed before we start.',
@@ -30,7 +31,7 @@ export const en = {
 
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
 
-    rebrandCallout: 'Newly rebranded — September 2026. MEOCY is the new name for commercial work shot in Milan since 2008. You\'re catching us right at the start under the new name — so you get founder-level attention on every shoot, and introductory pricing while we take on our first brands.',
+    rebrandCallout: 'MEOCY is a fresh start — eight years of photography in Sri Lanka, now building something new in Milan.',
 
     promo: {
       badge: 'TAKE YOUR BRAND TO THE NEXT LEVEL',
@@ -47,8 +48,9 @@ export const en = {
   clients: { label: 'Selected clients' },
 
   about: {
-    heading: 'About',
-    body: 'Behind MEOCY is Chamila — a Milan-based photographer and videographer. I\'ve shot commercial work in Milan since 2008, and MEOCY is the studio I\'ve built around one idea: content that actually grows a brand. Work with MEOCY and you work directly with me — every shoot planned, shot and delivered with founder-level care, at a price agreed before we start.'
+    heading: 'Chamila Prasanna',
+    role: 'Founder & Photographer · MEOCY STUDIO',
+    body: 'Behind MEOCY is Chamila — a photographer from Sri Lanka. I spent eight years building a career in photography back home, then moved to Italy. After some time away from the camera, I\'m starting fresh here in Milan — same eye, new name. Work with MEOCY and you work directly with me: every shoot planned, shot and delivered with founder-level care, at a price agreed before we start.'
   },
 
   process: {

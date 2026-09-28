@@ -11,6 +11,7 @@ export const fr: Dict = {
       studio: 'Studio',
       pricing: 'Tarifs',
       packages: 'Formules',
+      about: 'À propos',
       faq: 'FAQ'
     },
     cta: 'Réserver une séance',
@@ -20,7 +21,7 @@ export const fr: Dict = {
   },
 
   hero: {
-    eyebrow: 'PHOTOGRAPHIE & VIDÉOGRAPHIE · MILAN · DEPUIS 2008',
+    eyebrow: 'PHOTOGRAPHIE & VIDÉOGRAPHIE · MILAN',
     titleA: 'Du contenu qui',
     titleB: 'fait croître votre business.',
     lead: 'MEOCY est un studio photo & vidéo à Milan. Nous créons le contenu qui met votre marque devant plus de gens — et en transforme plus en clients. Photos de produits, reels prêts pour les réseaux et campagnes, à un prix fixe convenu avant de commencer.',
@@ -33,7 +34,7 @@ export const fr: Dict = {
     studioCaption:
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
 
-    rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est le nouveau nom pour le travail commercial photographié à Milan depuis 2008. Vous nous trouvez juste au début du nouveau nom — donc vous recevez l\'attention d\'un fondateur sur chaque shoot, et les prix d\'introduction pendant que nous accueillons nos premiers clients.',
+    rebrandCallout: 'MEOCY est une redémarrage — huit ans de photographie au Sri Lanka, construisant maintenant quelque chose de nouveau à Milan.',
 
     promo: {
       badge: 'PORTEZ VOTRE MARQUE AU NIVEAU SUPÉRIEUR',
@@ -50,8 +51,9 @@ export const fr: Dict = {
   clients: { label: 'Clients sélectionnés' },
 
   about: {
-    heading: 'À propos',
-    body: 'Derrière MEOCY se trouve Chamila — photographe et vidéaste basé à Milan. J\'ai tourné du contenu commercial à Milan depuis 2008, et MEOCY est le studio que j\'ai construit autour d\'une idée : du contenu qui fait vraiment croître une marque. Quand vous travaillez avec MEOCY, vous travaillez directement avec moi — chaque tournage planifié, tourné et livré avec attention de fondateur, à un prix convenu avant de commencer.'
+    heading: 'Chamila Prasanna',
+    role: 'Founder & Photographer · MEOCY STUDIO',
+    body: 'Derrière MEOCY se trouve Chamila — un photographe du Sri Lanka. J\'ai passé huit ans à construire une carrière en photographie dans mon pays, puis je me suis installé en Italie. Après du temps loin de l\'appareil photo, je recommence ici à Milan — le même regard, un nouveau nom. Travaillez avec MEOCY et vous travaillez directement avec moi : chaque tournage planifié, tourné et livré avec attention de fondateur, à un prix convenu avant de commencer.'
   },
 
   process: {

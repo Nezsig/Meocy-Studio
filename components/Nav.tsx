@@ -9,6 +9,7 @@ const linkOrder = [
 { href: '#equipment', key: 'studio' },
 { href: '#estimator', key: 'pricing' },
 { href: '#packages', key: 'packages' },
+{ href: '#about', key: 'about' },
 { href: '#faq', key: 'faq' }] as
 const;
 
