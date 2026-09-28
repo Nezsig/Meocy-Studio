@@ -15,9 +15,11 @@ export default function Page() {
   // Video estimator rebuild - 2026-09-27
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
-      <OfferBanner />
-      <Nav />
-      <main>
+      <div className="sticky top-0 z-50">
+        <OfferBanner />
+        <Nav />
+      </div>
+      <main className="pt-0">
         <Hero />
         <Process />
         <HowItWorks />

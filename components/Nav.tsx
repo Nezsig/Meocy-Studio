@@ -25,17 +25,15 @@ export function Nav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div
-        className={`transition-[background-color,border-color,backdrop-filter] duration-200 ease-smooth ${
+    <header
+      className={`transition-[background-color,border-color,backdrop-filter] duration-200 ease-smooth ${
         scrolled || open ?
         'border-b border-mist/80 bg-paper/85 backdrop-blur-xl' :
         'border-b border-transparent bg-transparent'}`
-        }>
-        
-        <nav
-          aria-label="Primary"
-          className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
+      }>
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
           
           <a href="#top" className="flex items-center">
             <img
@@ -101,7 +99,7 @@ export function Nav() {
             </a>
           </div>
         }
-      </div>
-    </header>);
+    </header>
+  );
 
 }
