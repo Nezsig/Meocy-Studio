@@ -39,7 +39,6 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 alt="Chamila Prasanna"
                 width={120}
                 height={120}
-                priority
                 className="rounded-full w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] object-cover"
               />
             </div>
