@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero';
 import { Process } from '../components/Process';
 import { HowItWorks } from '../components/HowItWorks';
 import { Equipment } from '../components/Equipment';
+import { About } from '../components/About';
 import { Estimator } from '../components/Estimator';
 import { Packages } from '../components/Packages';
 import { Faq } from '../components/Faq';
@@ -21,6 +22,7 @@ export default function Page() {
         <Process />
         <HowItWorks />
         <Equipment />
+        <About />
         <Estimator />
         <Packages />
         <Faq />

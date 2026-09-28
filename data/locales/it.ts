@@ -49,6 +49,11 @@ export const it: Dict = {
 
   clients: { label: 'Clienti selezionati' },
 
+  about: {
+    heading: 'Chi sono',
+    body: 'Dietro MEOCY c\'è Chamila — fotografo e videomaker con base a Milano. Ho girato contenuti commerciali a Milano dal 2008, e MEOCY è lo studio che ho costruito intorno a un\'idea: contenuti che fanno davvero crescere un brand. Quando lavori con MEOCY, lavori direttamente con me — ogni shooting pianificato, girato e consegnato con attenzione da founder, a un prezzo concordato prima di iniziare.'
+  },
+
   process: {
     eyebrow: 'Dal primo messaggio ai file finali',
     title: 'Saprai sempre cosa succede dopo.',

@@ -46,6 +46,11 @@ export const en = {
 
   clients: { label: 'Selected clients' },
 
+  about: {
+    heading: 'About',
+    body: 'Behind MEOCY is Chamila — a Milan-based photographer and videographer. I\'ve shot commercial work in Milan since 2008, and MEOCY is the studio I\'ve built around one idea: content that actually grows a brand. Work with MEOCY and you work directly with me — every shoot planned, shot and delivered with founder-level care, at a price agreed before we start.'
+  },
+
   process: {
     eyebrow: 'From first message to final files',
     title: 'You\'ll always know what\'s next.',
