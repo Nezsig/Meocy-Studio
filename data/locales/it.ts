@@ -34,7 +34,8 @@ export const it: Dict = {
     studioCaption:
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
 
-    rebrandCallout: 'MEOCY è una ripartenza — otto anni di fotografia in Sri Lanka, ora costruendo qualcosa di nuovo a Milano.',
+    rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è una ripartenza sotto un nuovo nome. Ci trovi proprio all\'inizio — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
+    noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.',
 
     promo: {
       badge: 'PORTA IL TUO BRAND AL LIVELLO SUCCESSIVO',

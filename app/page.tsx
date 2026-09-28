@@ -1,6 +1,7 @@
 import { Nav } from '../components/Nav';
 import { OfferBanner } from '../components/OfferBanner';
 import { Hero } from '../components/Hero';
+import { NoPackageHighlight } from '../components/NoPackageHighlight';
 import { Process } from '../components/Process';
 import { HowItWorks } from '../components/HowItWorks';
 import { Equipment } from '../components/Equipment';
@@ -20,6 +21,7 @@ export default function Page() {
       </div>
       <main className="pt-0">
         <Hero />
+        <NoPackageHighlight />
         <Process />
         <HowItWorks />
         <Equipment />

@@ -84,7 +84,7 @@ export function About() {
                 {/* Contact info */}
                 <div className="space-y-1.5 mb-4">
                   <a
-                    href={`tel:${t.about.contact.phone.replace(/\s/g, '')}`}
+                    href="https://wa.me/393791051000"
                     className="flex items-center gap-2 text-[13px] text-slate2 hover:text-ink transition-colors"
                   >
                     <span className="font-medium w-5 text-accent">
