@@ -98,21 +98,31 @@ export function Hero() {
         <motion.dl
           {...rise(0.18)}
           className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-mist pt-10 lg:grid-cols-4">
-          
+
           {t.hero.stats.map((s) =>
-          <div key={s.label}>
+          <div key={s.value}>
               <dt className="sr-only">{s.label}</dt>
               <dd>
                 <span className="block font-display text-[clamp(2rem,3vw,2.6rem)] leading-none tracking-tighter-display">
                   {s.value}
                 </span>
-                <span className="mt-2.5 block text-[12px] font-medium uppercase tracking-[0.14em] text-slate2">
-                  {s.label}
-                </span>
+                {s.label && (
+                  <span className="mt-2.5 block text-[12px] font-medium uppercase tracking-[0.14em] text-slate2">
+                    {s.label}
+                  </span>
+                )}
               </dd>
             </div>
           )}
         </motion.dl>
+
+        <motion.div
+          {...rise(0.26)}
+          className="mt-12 rounded-lg bg-slate2/5 px-6 py-5 sm:px-8 border-l-4 border-accent">
+          <p className="text-[14px] leading-relaxed text-slate2">
+            {t.hero.rebrandCallout}
+          </p>
+        </motion.div>
       </div>
     </section>);
 

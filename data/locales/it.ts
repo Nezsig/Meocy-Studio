@@ -20,19 +20,20 @@ export const it: Dict = {
   },
 
   hero: {
-    eyebrow: 'Foto e video per brand che vendono online · Milano · dal 2008',
-    titleA: 'Contenuti fatti per',
-    titleB: 'vendere ciò che crei.',
-    lead: "Le foto e i video di cui il tuo brand ha bisogno per vendere online — scatti di prodotto, reel pronti per i social e contenuti per campagne, per il tuo shop, le tue ads e i tuoi canali social. Inviaci ciò che vendi, o veniamo noi da te. Un unico team per foto e video, a un prezzo fisso concordato prima di iniziare. Brand da poco rinnovato, ora accettiamo nuovi clienti.",
+    eyebrow: 'FOTOGRAFIA & VIDEOGRAFIA · MILANO · DAL 2008',
+    titleA: 'Contenuti che',
+    titleB: 'fanno crescere il tuo business.',
+    lead: 'MEOCY è uno studio fotografico e video a Milano. Creiamo i contenuti che mettono il tuo brand di fronte a più persone — e ne trasformano più di loro in clienti. Foto di prodotto, reel pronti per i social e campagne, a un prezzo fisso concordato prima di iniziare.',
     ctaPrimary: 'Ottieni un prezzo fisso',
     stats: [
-    { value: 'Milano · Parigi', label: 'Dove fotografiamo' },
-    { value: 'Foto + Video', label: 'Un team, entrambi' },
-    { value: 'Fotografo', label: 'dal 2008' },
-    { value: 'Prezzo fisso', label: 'Concordato prima di iniziare' }],
+    { value: 'Vieni visto', label: '' },
+    { value: 'Vieni seguito', label: '' },
+    { value: 'Vendi di più', label: '' }],
 
     studioCaption:
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
+
+    rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è il nuovo nome per il lavoro commerciale fotografato a Milano dal 2008. Ci trovi proprio all\'inizio con il nuovo nome — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
 
     promo: {
       badge: 'PORTA IL TUO BRAND AL LIVELLO SUCCESSIVO',

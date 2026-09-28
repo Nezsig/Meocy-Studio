@@ -18,18 +18,19 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'Photo & video for brands that sell online · Milan · since 2008',
-    titleA: 'Content made to',
-    titleB: 'sell what you make.',
-    lead: 'The photos and videos your brand needs to sell online — product shots, social-ready reels, and campaign content for your store, ads and social channels. Send us what you sell, or we come to your location. One team for both photo and video, on a fixed price agreed before we start. Newly rebranded, now taking on new brands.',
+    eyebrow: 'PHOTOGRAPHY & VIDEOGRAPHY · MILAN · SINCE 2008',
+    titleA: 'Content that',
+    titleB: 'grows your business.',
+    lead: 'MEOCY is a Milan photo & video studio. We create the content that gets your brand in front of more people — and turns more of them into customers. Product shots, social-ready reels and campaigns, at a fixed price agreed before we start.',
     ctaPrimary: 'Get a fixed price',
     stats: [
-    { value: 'Milan · Paris', label: 'Where we shoot' },
-    { value: 'Photo + Video', label: 'One team, both' },
-    { value: 'Photographer', label: 'since 2008' },
-    { value: 'Fixed price', label: 'Agreed before we start' }],
+    { value: 'Get seen', label: '' },
+    { value: 'Get followed', label: '' },
+    { value: 'Get sales', label: '' }],
 
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
+
+    rebrandCallout: 'Newly rebranded — September 2026. MEOCY is the new name for commercial work shot in Milan since 2008. You\'re catching us right at the start under the new name — so you get founder-level attention on every shoot, and introductory pricing while we take on our first brands.',
 
     promo: {
       badge: 'TAKE YOUR BRAND TO THE NEXT LEVEL',

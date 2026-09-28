@@ -20,19 +20,20 @@ export const fr: Dict = {
   },
 
   hero: {
-    eyebrow: 'Photo & vidéo pour les marques qui vendent en ligne · Milan · depuis 2008',
-    titleA: 'Du contenu fait pour',
-    titleB: 'vendre ce que vous créez.',
-    lead: "Les photos et vidéos dont votre marque a besoin pour vendre en ligne — photos de produits, reels prêts pour les réseaux et contenus de campagne, pour votre boutique, vos publicités et vos réseaux sociaux. Envoyez-nous ce que vous vendez, ou nous venons à vous. Une seule équipe pour la photo et la vidéo, à un prix fixe convenu avant de commencer. Marque récemment renouvelée, nous accueillons de nouveaux clients.",
+    eyebrow: 'PHOTOGRAPHIE & VIDÉOGRAPHIE · MILAN · DEPUIS 2008',
+    titleA: 'Du contenu qui',
+    titleB: 'fait croître votre business.',
+    lead: 'MEOCY est un studio photo & vidéo à Milan. Nous créons le contenu qui met votre marque devant plus de gens — et en transforme plus en clients. Photos de produits, reels prêts pour les réseaux et campagnes, à un prix fixe convenu avant de commencer.',
     ctaPrimary: 'Obtenir un prix fixe',
     stats: [
-    { value: 'Milan · Paris', label: 'Où nous travaillons' },
-    { value: 'Photo + Vidéo', label: 'Une équipe, les deux' },
-    { value: 'Photographe', label: 'depuis 2008' },
-    { value: 'Prix fixe', label: 'Convenu avant de commencer' }],
+    { value: 'Être vu', label: '' },
+    { value: 'Être suivi', label: '' },
+    { value: 'Vendre plus', label: '' }],
 
     studioCaption:
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
+
+    rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est le nouveau nom pour le travail commercial photographié à Milan depuis 2008. Vous nous trouvez juste au début du nouveau nom — donc vous recevez l\'attention d\'un fondateur sur chaque shoot, et les prix d\'introduction pendant que nous accueillons nos premiers clients.',
 
     promo: {
       badge: 'PORTEZ VOTRE MARQUE AU NIVEAU SUPÉRIEUR',
