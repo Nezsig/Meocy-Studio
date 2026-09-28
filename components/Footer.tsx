@@ -156,13 +156,13 @@ export function Footer() {
             <h3 className="text-xs font-semibold text-slate2 uppercase tracking-wide mb-6">Navigation</h3>
 
             <ul className="space-y-3 text-sm">
-              {t.footer.navigation.map((link, idx) => (
-                <li key={idx}>
+              {t.footer.navigation.map((link) => (
+                <li key={link.href}>
                   <a
-                    href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={link.href}
                     className="text-chalk hover:text-accent transition-colors duration-150"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

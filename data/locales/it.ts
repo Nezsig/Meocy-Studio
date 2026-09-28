@@ -316,6 +316,35 @@ export const it: Dict = {
   },
 
   footer: {
+    brand: {
+      blurb: 'Fotografia e video commerciali per i brand che vendono. Milano, dal 2008.',
+      handles: '@chamila.it · @chami.eu'
+    },
+    contact: {
+      phoneLabel: 'T',
+      phone: '+39 379 105 1000',
+      mobileLabel: 'M',
+      mobile: '+39 379 105 1000',
+      emailLabel: 'E',
+      email: 'hello@meocy.com',
+      websiteLabel: 'W',
+      website: 'meocy.com'
+    },
+    navigation: [
+      { label: 'Approccio', href: '#process' },
+      { label: 'Prezzi', href: '#estimator' },
+      { label: 'Pacchetti', href: '#packages' },
+      { label: 'Chi sono', href: '#about' },
+      { label: 'FAQ', href: '#faq' },
+      { label: 'Prenota uno shooting', href: '#booking' }
+    ],
+    services: [
+      'Fotografia e-commerce',
+      'Fotografia prodotto',
+      'Video prodotto',
+      'Contenuti per il brand',
+      'Noleggio studio'
+    ],
     tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2008.',
     rights: 'Tutti i diritti riservati.',
     rebrand: 'Rinnovamento del brand settembre 2026'
