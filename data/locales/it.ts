@@ -291,6 +291,7 @@ export const it: Dict = {
 
   footer: {
     tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2008.',
-    rights: 'Tutti i diritti riservati.'
+    rights: 'Tutti i diritti riservati.',
+    rebrand: 'Rinnovamento del brand settembre 2026'
   }
 };

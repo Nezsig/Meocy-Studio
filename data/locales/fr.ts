@@ -291,6 +291,7 @@ export const fr: Dict = {
 
   footer: {
     tagline: 'Photographie commerciale pour les marques qui vendent. Milan-based, depuis 2008.',
-    rights: 'Tous droits réservés.'
+    rights: 'Tous droits réservés.',
+    rebrand: 'Rebranding septembre 2026'
   }
 };

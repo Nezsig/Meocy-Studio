@@ -52,9 +52,12 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-3 pt-6 text-[13px] text-slate2 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} MEOCY Studio · {t.footer.rights}
-          </p>
+          <div>
+            <p>
+              © {new Date().getFullYear()} MEOCY Studio · {t.footer.rights}
+            </p>
+            <p className="mt-1 text-[12px] text-slate2/60">{t.footer.rebrand}</p>
+          </div>
           <div className="flex gap-4">
             <a href="/privacy" className="text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
               Privacy

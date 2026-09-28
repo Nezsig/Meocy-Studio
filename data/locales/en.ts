@@ -288,7 +288,8 @@ export const en = {
 
   footer: {
     tagline: 'Commercial photography for brands that sell. Milan-based, working since 2008.',
-    rights: 'All rights reserved.'
+    rights: 'All rights reserved.',
+    rebrand: 'Rebranded September 2026'
   }
 };
 
