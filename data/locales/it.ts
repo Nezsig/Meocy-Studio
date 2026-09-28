@@ -110,13 +110,15 @@ export const it: Dict = {
       camerasLenses: 'Fotocamere e obiettivi',
       lightingPhoto: 'Illuminazione — Foto',
       lightingVideo: 'Illuminazione — Video',
-      supportGrip: 'Supporti e attrezzatura'
+      supportGrip: 'Supporti e attrezzatura',
+      movementAerial: 'Movimento e aereo'
     },
     items: {
       camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
       lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
       lightingVideo: ['GVM 300W LED', '150W LED light'],
-      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes']
+      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes'],
+      movementAerial: ['Gimbal DJI RS 4 Mini', 'Drone DJI Mini 3 Pro']
     },
     note: 'Tutto è calibrato internamente. Se un brief richiede qualcosa che non abbiamo, lo noleggiamo e lo indichiamo apertamente prima dello shooting.'
   },

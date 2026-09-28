@@ -155,6 +155,13 @@ export function Estimator() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
               {t.estimator.resultLabel}
             </p>
+
+            <div className="mt-3 pb-4 border-b border-chalk/10">
+              <p className="text-[13px] text-chalk/70">
+                {cfg.name} · {quantity} {unitLabel}
+              </p>
+            </div>
+
             <div className="mt-4">
               {videoType === 'pack' && result.discountedPrice ? (
                 <div>

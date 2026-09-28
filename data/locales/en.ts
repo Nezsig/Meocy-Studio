@@ -107,13 +107,15 @@ export const en = {
       camerasLenses: 'Cameras & lenses',
       lightingPhoto: 'Lighting — Photography',
       lightingVideo: 'Lighting — Video',
-      supportGrip: 'Support & grip'
+      supportGrip: 'Support & grip',
+      movementAerial: 'Movement & aerial'
     },
     items: {
       camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
       lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
       lightingVideo: ['GVM 300W LED', '150W LED light'],
-      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes']
+      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes'],
+      movementAerial: ['DJI RS 4 Mini gimbal', 'DJI Mini 3 Pro drone']
     },
     note: 'Everything is colour-calibrated in-house. If a brief needs something we do not own, we rent it and quote it openly before the shoot.'
   },
