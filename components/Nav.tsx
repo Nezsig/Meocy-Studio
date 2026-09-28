@@ -13,7 +13,11 @@ const linkOrder = [
 { href: '#faq', key: 'faq' }] as
 const;
 
-export function Nav() {
+interface NavProps {
+  onAboutClick?: () => void;
+}
+
+export function Nav({ onAboutClick }: NavProps) {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -46,12 +50,19 @@ export function Nav() {
           <ul className="hidden items-center gap-0.5 lg:flex">
             {linkOrder.map((l) =>
             <li key={l.href}>
-                <a
-                href={l.href}
-                className="rounded-full px-3 py-2 text-[13.5px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
-                
-                  {t.nav.links[l.key]}
-                </a>
+                {l.key === 'about' ? (
+                  <button
+                    onClick={() => onAboutClick?.()}
+                    className="rounded-full px-3 py-2 text-[13.5px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
+                    {t.nav.links[l.key]}
+                  </button>
+                ) : (
+                  <a
+                    href={l.href}
+                    className="rounded-full px-3 py-2 text-[13.5px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
+                    {t.nav.links[l.key]}
+                  </a>
+                )}
               </li>
             )}
           </ul>
@@ -81,13 +92,23 @@ export function Nav() {
             <ul className="grid grid-cols-2 gap-2">
               {linkOrder.map((l) =>
             <li key={l.href}>
-                  <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-xl bg-chalk px-4 py-3 text-[15px] font-medium text-ink">
-                
-                    {t.nav.links[l.key]}
-                  </a>
+                  {l.key === 'about' ? (
+                    <button
+                      onClick={() => {
+                        onAboutClick?.();
+                        setOpen(false);
+                      }}
+                      className="block w-full text-left rounded-xl bg-chalk px-4 py-3 text-[15px] font-medium text-ink">
+                      {t.nav.links[l.key]}
+                    </button>
+                  ) : (
+                    <a
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl bg-chalk px-4 py-3 text-[15px] font-medium text-ink">
+                      {t.nav.links[l.key]}
+                    </a>
+                  )}
                 </li>
             )}
             </ul>

@@ -50,7 +50,17 @@ export const en = {
   about: {
     heading: 'Chamila Prasanna',
     role: 'Founder & Photographer · MEOCY STUDIO',
-    body: 'Behind MEOCY is Chamila — a photographer from Sri Lanka. I spent eight years building a career in photography back home, then moved to Italy. After some time away from the camera, I\'m starting fresh here in Milan — same eye, new name. Work with MEOCY and you work directly with me: every shoot planned, shot and delivered with founder-level care, at a price agreed before we start.'
+    body: 'Behind MEOCY is Chamila, a photographer from Sri Lanka. I spent eight years building a photography career in my homeland, then moved to Italy. After a while away from the camera, I\'m starting over here in Milan—same eye, new name. Work with MEOCY and you work directly with me: every shoot is carefully planned, shot, and delivered by the founder, at a price agreed upon beforehand.',
+    whatIShoots: 'Clothing & brand campaigns · Model shoots · Fashion photography · Food photography · Video',
+    kitLine: 'Every shoot is made with modern cameras, powerful lighting and a full professional kit — so the work lands at a real commercial standard.',
+    contact: {
+      phone: '+39 379 105 1000',
+      mobile: '+39 380 498 1718',
+      email: 'hello@meocy.com',
+      website: 'meocy.com',
+      instagram1: '@chamila.it',
+      instagram2: '@chami.eu'
+    }
   },
 
   process: {
