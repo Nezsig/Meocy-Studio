@@ -53,7 +53,7 @@ export function buildConfirmationEmail(b: Booking, locale: Locale = 'it'): strin
   <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${t.rea}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${t.reb}</div></td></tr></table></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>
-<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Viale Renato Serra 14, 20148 Milano<br>Instagram @chamila.eu &middot; EN &middot; IT &middot; FR</td></tr></table>
+<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan, Italy<br>Instagram @chamila.it &middot; @chami.eu &middot; EN &middot; IT &middot; FR</td></tr></table>
 </td></tr></table></body></html>`;
 }
 

@@ -345,7 +345,7 @@ export const it: Dict = {
       'Fotografia di food',
       'Video'
     ],
-    tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2008.',
+    tagline: 'Studio foto e video a Milano — contenuti che fanno crescere il tuo business.',
     rights: 'Tutti i diritti riservati.',
     rebrand: 'Rinnovamento del brand settembre 2026'
   }

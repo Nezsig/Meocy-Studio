@@ -345,7 +345,7 @@ export const fr: Dict = {
       'Photographie gastronomique',
       'Vidéo'
     ],
-    tagline: 'Photographie commerciale pour les marques qui vendent. Milan-based, depuis 2008.',
+    tagline: 'Studio photo et vidéo à Milan — du contenu qui fait grandir votre activité.',
     rights: 'Tous droits réservés.',
     rebrand: 'Rebranding septembre 2026'
   }

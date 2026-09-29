@@ -4,17 +4,22 @@ import { Providers } from './providers';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://meocy.com'),
-  title: 'MEOCY — Photography Studio, Milan',
+  title: 'MEOCY — Photo & Video Studio in Milan',
   description:
-    'MEOCY is a professional photography studio in Milan, Italy. Product, fashion, restaurant and model shoots — in studio or on location.',
+    'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
   alternates: {
     canonical: 'https://meocy.com',
   },
   openGraph: {
     url: 'https://meocy.com',
     type: 'website',
-    title: 'MEOCY — Photography Studio, Milan',
-    description: 'MEOCY is a professional photography studio in Milan, Italy. Product, fashion, restaurant and model shoots — in studio or on location.',
+    title: 'MEOCY — Photo & Video Studio in Milan',
+    description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MEOCY — Photo & Video Studio in Milan',
+    description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
   },
 };
 

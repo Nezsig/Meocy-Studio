@@ -342,7 +342,7 @@ export const en = {
       'Food photography',
       'Video'
     ],
-    tagline: 'Commercial photography for brands that sell. Milan-based, working since 2008.',
+    tagline: 'Photo & video studio in Milan — content that grows your business.',
     rights: 'All rights reserved.',
     rebrand: 'Rebranded September 2026'
   }

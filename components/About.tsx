@@ -145,7 +145,7 @@ export function About() {
                           className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
                           title="Instagram @chamila.it"
                         >
-                          <img src="/ic-instagram.png" alt="" className="w-5 h-5" />
+                          <Image src="/ic-instagram.png" alt="Instagram @chamila.it" width={20} height={20} className="object-contain" />
                         </a>
 
                         <a
@@ -155,7 +155,7 @@ export function About() {
                           className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
                           title="Instagram @chami.eu"
                         >
-                          <img src="/ic-instagram.png" alt="" className="w-5 h-5" />
+                          <Image src="/ic-instagram.png" alt="Instagram @chami.eu" width={20} height={20} className="object-contain" />
                         </a>
 
                         <a
@@ -165,7 +165,7 @@ export function About() {
                           className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
                           title="WhatsApp"
                         >
-                          <img src="/ic-whatsapp.png" alt="" className="w-5 h-5" />
+                          <Image src="/ic-whatsapp.png" alt="WhatsApp" width={20} height={20} className="object-contain" />
                         </a>
 
                         <a
@@ -175,7 +175,7 @@ export function About() {
                           className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
                           title="Website"
                         >
-                          <img src="/ic-web.png" alt="" className="w-5 h-5" />
+                          <Image src="/ic-web.png" alt="Website" width={20} height={20} className="object-contain" />
                         </a>
                       </div>
 

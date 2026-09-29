@@ -25,7 +25,7 @@ export default function TermsPage() {
               <section>
                 <h2 className="font-semibold text-ink">Services.</h2>
                 <p className="mt-3">
-                  MEOCY provides photography and video content services as agreed for each booking.
+                  MEOCY is a photo and video studio based in Milan, Italy. We provide professional photography and videography services as agreed for each booking, including fashion, product, food, model, and brand content creation.
                 </p>
               </section>
 
