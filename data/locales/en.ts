@@ -314,7 +314,7 @@ export const en = {
 
   footer: {
     brand: {
-      blurb: 'Commercial photography and video for brands that sell. Milan-based, working since 2008.',
+      blurb: 'Photo & video studio in Milan. Clothing brands, models, fashion, food and video.',
       handles: '@chamila.it · @chami.eu'
     },
     contact: {
@@ -336,11 +336,11 @@ export const en = {
       { label: 'Book a shoot', href: '#booking' }
     ],
     services: [
-      'E-commerce photography',
-      'Product photography',
-      'Product video',
-      'Brand content',
-      'Studio rental'
+      'Clothing & brand campaigns',
+      'Model shoots',
+      'Fashion photography',
+      'Food photography',
+      'Video'
     ],
     tagline: 'Commercial photography for brands that sell. Milan-based, working since 2008.',
     rights: 'All rights reserved.',

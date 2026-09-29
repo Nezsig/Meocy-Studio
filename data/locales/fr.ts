@@ -317,14 +317,14 @@ export const fr: Dict = {
 
   footer: {
     brand: {
-      blurb: 'Photographie et vidéo commerciales pour les marques qui vendent. Basé à Milan, depuis 2008.',
+      blurb: 'Studio photo et vidéo à Milan. Marques de vêtements, mannequins, mode, gastronomie et vidéo.',
       handles: '@chamila.it · @chami.eu'
     },
     contact: {
       phoneLabel: 'T',
       phone: '+39 379 105 1000',
       mobileLabel: 'M',
-      mobile: '+39 379 105 1000',
+      mobile: '+39 380 498 1718',
       emailLabel: 'E',
       email: 'hello@meocy.com',
       websiteLabel: 'W',
@@ -339,11 +339,11 @@ export const fr: Dict = {
       { label: 'Réserver une séance', href: '#booking' }
     ],
     services: [
-      'Photographie e-commerce',
-      'Photographie produit',
-      'Vidéo produit',
-      'Contenu de marque',
-      'Location de studio'
+      'Campagnes de vêtements et de marques',
+      'Séances avec mannequins',
+      'Photographie de mode',
+      'Photographie gastronomique',
+      'Vidéo'
     ],
     tagline: 'Photographie commerciale pour les marques qui vendent. Milan-based, depuis 2008.',
     rights: 'Tous droits réservés.',

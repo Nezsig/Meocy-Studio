@@ -317,14 +317,14 @@ export const it: Dict = {
 
   footer: {
     brand: {
-      blurb: 'Fotografia e video commerciali per i brand che vendono. Milano, dal 2008.',
+      blurb: 'Studio foto e video a Milano. Brand di abbigliamento, modelle, moda, food e video.',
       handles: '@chamila.it · @chami.eu'
     },
     contact: {
       phoneLabel: 'T',
       phone: '+39 379 105 1000',
       mobileLabel: 'M',
-      mobile: '+39 379 105 1000',
+      mobile: '+39 380 498 1718',
       emailLabel: 'E',
       email: 'hello@meocy.com',
       websiteLabel: 'W',
@@ -339,11 +339,11 @@ export const it: Dict = {
       { label: 'Prenota uno shooting', href: '#booking' }
     ],
     services: [
-      'Fotografia e-commerce',
-      'Fotografia prodotto',
-      'Video prodotto',
-      'Contenuti per il brand',
-      'Noleggio studio'
+      'Campagne di abbigliamento e brand',
+      'Shooting con modelle',
+      'Fotografia di moda',
+      'Fotografia di food',
+      'Video'
     ],
     tagline: 'Fotografia commerciale per i brand che vendono. Milano, dal 2008.',
     rights: 'Tutti i diritti riservati.',
