@@ -74,7 +74,7 @@ export function About() {
                     {/* Photo - larger, rounded 16px */}
                     <div className="flex-shrink-0">
                       <Image
-                        src="/chamila-about.png"
+                        src="/chamila-about.jpg"
                         alt={t.about.name}
                         width={160}
                         height={160}
