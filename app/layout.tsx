@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'MEOCY — Photo & Video Studio in Milan',
     description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
+    images: [
+      {
+        url: 'https://meocy.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'MEOCY — Photo & video studio in Milan',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MEOCY — Photo & Video Studio in Milan',
     description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
+    images: ['https://meocy.com/og-image.png'],
   },
 };
 
