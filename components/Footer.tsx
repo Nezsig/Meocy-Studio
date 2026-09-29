@@ -33,16 +33,16 @@ export function Footer() {
               {t.footer.brand.blurb}
             </p>
 
-            {/* Social icons - 40px circles with inline SVGs */}
+            {/* Social icons - 40px white containers with dark PNG icons */}
             <div className="flex gap-3 mb-4">
               {/* Instagram @chamila.it */}
               <a
                 href="https://instagram.com/chamila.it"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
               >
-                <img src="/ic-instagram-light.png" alt="Instagram @chamila.it" className="w-full h-full" />
+                <Image src="/instagram.png" alt="Instagram @chamila.it" width={22} height={22} className="object-contain" />
               </a>
 
               {/* Instagram @chami.eu */}
@@ -50,9 +50,9 @@ export function Footer() {
                 href="https://instagram.com/chami.eu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
               >
-                <img src="/ic-instagram-light.png" alt="Instagram @chami.eu" className="w-full h-full" />
+                <Image src="/instagram.png" alt="Instagram @chami.eu" width={22} height={22} className="object-contain" />
               </a>
 
               {/* WhatsApp */}
@@ -60,9 +60,9 @@ export function Footer() {
                 href="https://wa.me/393791051000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
               >
-                <img src="/ic-whatsapp-light.png" alt="WhatsApp" className="w-full h-full" />
+                <Image src="/whatsapp.png" alt="WhatsApp" width={22} height={22} className="object-contain" />
               </a>
 
               {/* Website */}
@@ -70,9 +70,9 @@ export function Footer() {
                 href="https://meocy.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
               >
-                <img src="/ic-web-light.png" alt="Website" className="w-full h-full" />
+                <Image src="/world-wide-web.png" alt="Website" width={22} height={22} className="object-contain" />
               </a>
             </div>
 
