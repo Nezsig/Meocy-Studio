@@ -45,15 +45,28 @@ export function Booking() {
         }),
       });
 
-      if (response && response.ok) {
-        setSuccessName(name || '');
-        setSuccessEmail(email || '');
-        setStatus('sent');
+      if (!response) {
+        console.error('No response from booking API');
+        setStatus('error');
+        return;
+      }
+
+      if (response.ok) {
+        try {
+          setSuccessName(name?.trim() || '');
+          setSuccessEmail(email?.trim() || '');
+          setStatus('sent');
+        } catch (stateErr) {
+          console.error('Error setting success state:', stateErr);
+          setStatus('error');
+        }
       } else {
+        const errorData = await response.text().catch(() => 'Unknown error');
+        console.error('Booking API error:', response.status, errorData);
         setStatus('error');
       }
     } catch (err) {
-      console.error('Booking error:', err);
+      console.error('Booking fetch error:', err);
       setStatus('error');
     }
   };
@@ -90,10 +103,13 @@ export function Booking() {
           <div className="flex min-h-[340px] flex-col items-start justify-center">
               <CheckCircle2Icon size={30} className="text-ink" />
               <h3 className="mt-4 font-display text-[2rem] leading-tight tracking-tighter-display">
-                {t.booking.sentTitle}
+                {t?.booking?.sentTitle || 'Brief received.'}
               </h3>
               <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-slate2">
-                {t.booking.sentBody(successName?.split(' ')?.[0] || 'there', successEmail)}
+                {t?.booking?.sentBody ?
+                  t.booking.sentBody(successName?.split(' ')?.[0] || 'there', successEmail || '')
+                  : `Thank you — a confirmation is on its way. We'll be in touch soon.`
+                }
               </p>
               <button
               type="button"
