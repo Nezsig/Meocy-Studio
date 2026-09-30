@@ -389,5 +389,96 @@ export const fr: Dict = {
     cta: 'Discutons de votre projet',
     ctaTitle: 'Un projet en tête ?',
     ctaButton: 'Discutons de votre projet'
+  },
+
+  pkgPage: {
+    title: 'Formules photo et vidéo',
+    intro1: 'Des formules simples pour différents besoins de production.',
+    intro2: 'Tous les projets sont planifiés à l\'avance et le prix final est convenu avant le début de la production.',
+    packageLabel: 'Formule',
+    includesLabel: 'Comprend',
+    idealLabel: 'Idéal pour',
+    photoTitle: 'Formules photo',
+    videoTitle: 'Production vidéo',
+    videoIntro: 'Courtes vidéos commerciales créées pour les réseaux sociaux, les sites web et la publicité digitale.',
+    extrasTitle: 'Options supplémentaires',
+    extrasIntro: 'Besoin de plus que la formule choisie ? Des services de production supplémentaires peuvent être ajoutés à votre projet.',
+    customTitle: 'Production sur mesure',
+    customHeadline: 'Votre projet n\'a pas à entrer dans une formule.',
+    customText1: 'Pour des campagnes plus importantes, plusieurs lieux, plusieurs produits, des productions publicitaires, des mannequins, des assistants, des maquilleurs ou des productions vidéo complexes, MEOCY peut créer une production sur mesure selon vos besoins.',
+    customText2: 'Chaque projet est discuté à l\'avance et chiffré clairement avant le début de la production.',
+    customButton: 'Demander un devis personnalisé',
+    p1: {
+      name: 'Photo Starter',
+      price: '€300',
+      desc: 'Une séance photo professionnelle ciblée pour entreprises, professionnels, personal brands et shootings produit simples.',
+      includes: ['Jusqu\'à 1,5 heure de prise de vue', '1 lieu', '1 configuration d\'éclairage', 'Jusqu\'à 2 tenues ou mises en scène', '20 photos retouchées professionnellement', 'Fichiers haute résolution', 'Formats web et réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Petites entreprises', 'Personal brands', 'Professionnels', 'Shootings produit simples', 'Restaurants et commerces locaux'],
+      button: 'Réserver Photo Starter'
+    },
+    p2: {
+      name: 'Shooting Mode / Mannequins',
+      price: '€450',
+      desc: 'Une production axée sur la mode pour mannequins, créatifs et marques de mode qui ont besoin d\'images éditoriales ou de portfolio percutantes.',
+      includes: ['Jusqu\'à 2,5 heures de prise de vue', '1 lieu à Milan', 'Jusqu\'à 3 tenues', '35 photos retouchées professionnellement', 'Éclairage professionnel', 'Direction créative', 'Direction de pose de base', 'Fichiers haute résolution', 'Formats réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Mannequins', 'Marques de mode', 'Éditoriaux', 'Lookbooks', 'Shootings portfolio', 'Campagnes de mode'],
+      button: 'Réserver un shooting mode'
+    },
+    p3: {
+      name: 'Contenus pour commerces locaux',
+      price: '€450',
+      desc: 'Contenus visuels professionnels pour restaurants, cafés, boutiques, salons, barbiers, entreprises de beauté et autres commerces locaux à Milan.',
+      includes: ['Jusqu\'à 2,5 heures de prise de vue', '1 lieu d\'activité', '25 photos retouchées professionnellement', '2 vidéos courtes', 'Contenus intérieurs et extérieurs', 'Produits / services / personnes', 'Éclairage professionnel si nécessaire', 'Formats prêts pour les réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Restaurants', 'Cafés', 'Bars', 'Boutiques', 'Salons', 'Barbiers', 'Entreprises de beauté', 'Services locaux'],
+      button: 'Réserver contenus commerces locaux'
+    },
+    p4: {
+      name: 'Brand Content',
+      price: '€650',
+      desc: 'Une production de contenu complète pour les marques en croissance qui ont besoin d\'un solide lot de photos et de vidéos en une seule production.',
+      includes: ['Jusqu\'à 4 heures de prise de vue', 'Jusqu\'à 2 lieux', 'Jusqu\'à 5 tenues ou produits', '50 photos retouchées professionnellement', '2 vidéos courtes', 'Éclairage professionnel', 'Direction créative', 'Étalonnage professionnel', 'Formats site web et réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Marques de mode', 'Restaurants', 'Entreprises de beauté', 'Marques de produits', 'Startups', 'Personal brands', 'Entreprises en croissance'],
+      button: 'Réserver Brand Content'
+    },
+    p5: {
+      name: 'Content Day',
+      price: '€950',
+      desc: 'Une journée de production complète pour les marques qui ont besoin d\'assez de contenu visuel pour leur site web et leurs réseaux sociaux pendant plusieurs semaines.',
+      includes: ['Jusqu\'à 6 heures de production', 'Jusqu\'à 2 lieux', 'Jusqu\'à 8 tenues ou produits', '70 photos retouchées professionnellement', '4 vidéos courtes', 'Éclairage professionnel', 'Direction créative', 'Étalonnage professionnel', 'Formats Instagram et TikTok', 'Galerie en ligne privée'],
+      ideal: ['Marques en croissance', 'Collections de mode', 'Lancements de produits', 'Restaurants', 'Campagnes réseaux sociaux', 'Gros besoins en contenu'],
+      button: 'Réserver Content Day'
+    },
+    v1: {
+      name: 'Social Video',
+      price: '€250 / vidéo',
+      desc: '',
+      includes: ['Jusqu\'à 2 heures de prise de vue', '1 lieu', '1 configuration d\'éclairage', 'Jusqu\'à 20 secondes', 'Montage professionnel', 'Étalonnage', 'Musique', 'Format vertical pour les réseaux sociaux'],
+      ideal: [],
+      button: 'Réserver Social Video'
+    },
+    v2: {
+      name: 'Social Video × 3',
+      price: '€600',
+      desc: 'Trois vidéos courtes réalisées lors d\'une seule production organisée.',
+      includes: ['Jusqu\'à 3 heures de prise de vue', '1 lieu', '3 vidéos courtes', 'Montage professionnel', 'Étalonnage', 'Musique', 'Formats verticaux pour les réseaux sociaux'],
+      ideal: [],
+      button: 'Réserver 3 vidéos'
+    },
+    v3: {
+      name: 'Vidéo commerciale',
+      price: 'À partir de €450',
+      desc: 'Une vidéo promotionnelle plus structurée nécessitant une production, une direction, un éclairage, une voix, un travail sur site ou d\'autres exigences supplémentaires. Le prix final dépend du brief du projet et des exigences de production.',
+      includes: [],
+      ideal: [],
+      button: 'Demander un devis vidéo'
+    },
+    extras: [
+      { label: 'Heure de prise de vue supplémentaire', price: '€150' },
+      { label: 'Photo retouchée supplémentaire', price: '€15 / image' },
+      { label: 'Vidéo courte supplémentaire', price: '€150' },
+      { label: 'Deuxième lieu', price: 'À partir de €100' },
+      { label: 'Livraison prioritaire', price: 'Sur demande' },
+      { label: 'Exigences de production supplémentaires', price: 'Devis séparé' }
+    ]
   }
 };

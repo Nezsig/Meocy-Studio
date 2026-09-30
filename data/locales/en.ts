@@ -386,6 +386,97 @@ export const en = {
     cta: 'Discuss your project',
     ctaTitle: 'Have a project in mind?',
     ctaButton: 'Discuss your project'
+  },
+
+  pkgPage: {
+    title: 'Photography & Video Packages',
+    intro1: 'Simple packages for different production needs.',
+    intro2: 'All projects are planned in advance and the final price is agreed before production begins.',
+    packageLabel: 'Package',
+    includesLabel: 'Includes',
+    idealLabel: 'Ideal for',
+    photoTitle: 'Photography Packages',
+    videoTitle: 'Video Production',
+    videoIntro: 'Short-form commercial video created for social media, websites and digital advertising.',
+    extrasTitle: 'Optional Extras',
+    extrasIntro: 'Need something beyond your selected package? Additional production services can be added to your project.',
+    customTitle: 'Custom Production',
+    customHeadline: 'Your project doesn\'t have to fit a package.',
+    customText1: 'For larger campaigns, multiple locations, multiple products, advertising productions, models, assistants, makeup artists or complex video productions, MEOCY can create a custom production around your requirements.',
+    customText2: 'Every project is discussed in advance and quoted clearly before production begins.',
+    customButton: 'Request a custom quote',
+    p1: {
+      name: 'Photo Starter',
+      price: '€300',
+      desc: 'A focused professional photo session for businesses, professionals, personal brands and simple product shoots.',
+      includes: ['Up to 1.5 hours shooting', '1 location', '1 lighting setup', 'Up to 2 outfits or setups', '20 professionally edited photos', 'High-resolution files', 'Web and social media formats', 'Private online gallery'],
+      ideal: ['Small businesses', 'Personal brands', 'Professionals', 'Simple product shoots', 'Restaurants and local businesses'],
+      button: 'Book Photo Starter'
+    },
+    p2: {
+      name: 'Fashion / Model Shoot',
+      price: '€450',
+      desc: 'A fashion-focused production for models, creatives and fashion brands that need strong editorial or portfolio imagery.',
+      includes: ['Up to 2.5 hours shooting', '1 Milan location', 'Up to 3 outfits', '35 professionally edited photos', 'Professional lighting', 'Creative direction', 'Basic posing direction', 'High-resolution files', 'Social media formats', 'Private online gallery'],
+      ideal: ['Models', 'Fashion brands', 'Editorials', 'Lookbooks', 'Portfolio shoots', 'Fashion campaigns'],
+      button: 'Book Fashion Shoot'
+    },
+    p3: {
+      name: 'Local Business Content',
+      price: '€450',
+      desc: 'Professional visual content for Milan restaurants, cafés, shops, salons, barbers, beauty businesses and other local businesses.',
+      includes: ['Up to 2.5 hours shooting', '1 business location', '25 professionally edited photos', '2 short-form videos', 'Interior and exterior content', 'Products / services / people', 'Professional lighting where required', 'Social-media-ready formats', 'Private online gallery'],
+      ideal: ['Restaurants', 'Cafés', 'Bars', 'Shops', 'Salons', 'Barbers', 'Beauty businesses', 'Local services'],
+      button: 'Book Local Business Content'
+    },
+    p4: {
+      name: 'Brand Content',
+      price: '€650',
+      desc: 'A complete content production for growing brands that need a strong batch of photography and video from one production.',
+      includes: ['Up to 4 hours shooting', 'Up to 2 locations', 'Up to 5 outfits or products', '50 professionally edited photos', '2 short-form videos', 'Professional lighting', 'Creative direction', 'Professional colour grading', 'Website and social media formats', 'Private online gallery'],
+      ideal: ['Fashion brands', 'Restaurants', 'Beauty businesses', 'Product brands', 'Startups', 'Personal brands', 'Growing businesses'],
+      button: 'Book Brand Content'
+    },
+    p5: {
+      name: 'Content Day',
+      price: '€950',
+      desc: 'A full production day designed for brands that need enough visual content for their website and social media for several weeks.',
+      includes: ['Up to 6 hours production', 'Up to 2 locations', 'Up to 8 outfits or products', '70 professionally edited photos', '4 short-form videos', 'Professional lighting', 'Creative direction', 'Professional colour grading', 'Instagram and TikTok formats', 'Private online gallery'],
+      ideal: ['Growing brands', 'Fashion collections', 'Product launches', 'Restaurants', 'Social media campaigns', 'Large content requirements'],
+      button: 'Book Content Day'
+    },
+    v1: {
+      name: 'Social Video',
+      price: '€250 / video',
+      desc: '',
+      includes: ['Up to 2 hours shooting', '1 location', '1 lighting setup', 'Up to 20 seconds', 'Professional editing', 'Colour grading', 'Music', 'Vertical social-media format'],
+      ideal: [] as string[],
+      button: 'Book Social Video'
+    },
+    v2: {
+      name: 'Social Video × 3',
+      price: '€600',
+      desc: 'Three short-form videos created during one organised production.',
+      includes: ['Up to 3 hours shooting', '1 location', '3 short-form videos', 'Professional editing', 'Colour grading', 'Music', 'Vertical social-media formats'],
+      ideal: [] as string[],
+      button: 'Book 3 Videos'
+    },
+    v3: {
+      name: 'Commercial Video',
+      price: 'From €450',
+      desc: 'A more structured promotional video requiring additional production, direction, lighting, voice, location work or other production requirements. Final pricing depends on the project brief and production requirements.',
+      includes: [] as string[],
+      ideal: [] as string[],
+      button: 'Request a Video Quote'
+    },
+    extras: [
+      { label: 'Extra shooting hour', price: '€150' },
+      { label: 'Extra edited photo', price: '€15 / image' },
+      { label: 'Extra short-form video', price: '€150' },
+      { label: 'Second location', price: 'From €100' },
+      { label: 'Priority delivery', price: 'Available on request' },
+      { label: 'Additional production requirements', price: 'Quoted separately' }
+    ]
   }
 };
 

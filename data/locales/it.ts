@@ -389,5 +389,96 @@ export const it: Dict = {
     cta: 'Parliamo del tuo progetto',
     ctaTitle: 'Hai un progetto in mente?',
     ctaButton: 'Parliamo del tuo progetto'
+  },
+
+  pkgPage: {
+    title: 'Pacchetti foto e video',
+    intro1: 'Pacchetti semplici per diverse esigenze di produzione.',
+    intro2: 'Tutti i progetti sono pianificati in anticipo e il prezzo finale viene concordato prima dell\'inizio della produzione.',
+    packageLabel: 'Pacchetto',
+    includesLabel: 'Include',
+    idealLabel: 'Ideale per',
+    photoTitle: 'Pacchetti fotografici',
+    videoTitle: 'Produzione video',
+    videoIntro: 'Video commerciali brevi creati per social media, siti web e pubblicità digitale.',
+    extrasTitle: 'Extra opzionali',
+    extrasIntro: 'Hai bisogno di qualcosa in più rispetto al pacchetto scelto? È possibile aggiungere servizi di produzione extra al tuo progetto.',
+    customTitle: 'Produzione personalizzata',
+    customHeadline: 'Il tuo progetto non deve per forza rientrare in un pacchetto.',
+    customText1: 'Per campagne più grandi, più location, più prodotti, produzioni pubblicitarie, modelle, assistenti, truccatori o produzioni video complesse, MEOCY può creare una produzione su misura in base alle tue esigenze.',
+    customText2: 'Ogni progetto viene discusso in anticipo e quotato chiaramente prima dell\'inizio della produzione.',
+    customButton: 'Richiedi un preventivo personalizzato',
+    p1: {
+      name: 'Photo Starter',
+      price: '€300',
+      desc: 'Un servizio fotografico professionale mirato per aziende, professionisti, personal brand e semplici shooting di prodotto.',
+      includes: ['Fino a 1,5 ore di shooting', '1 location', '1 setup luci', 'Fino a 2 outfit o allestimenti', '20 foto professionalmente ritoccate', 'File ad alta risoluzione', 'Formati per web e social media', 'Galleria online privata'],
+      ideal: ['Piccole attività', 'Personal brand', 'Professionisti', 'Semplici shooting di prodotto', 'Ristoranti e attività locali'],
+      button: 'Prenota Photo Starter'
+    },
+    p2: {
+      name: 'Shooting Moda / Modelle',
+      price: '€450',
+      desc: 'Una produzione dedicata alla moda per modelle, creativi e brand di moda che hanno bisogno di immagini editoriali o di portfolio di grande impatto.',
+      includes: ['Fino a 2,5 ore di shooting', '1 location a Milano', 'Fino a 3 outfit', '35 foto professionalmente ritoccate', 'Illuminazione professionale', 'Direzione creativa', 'Direzione di base delle pose', 'File ad alta risoluzione', 'Formati per i social media', 'Galleria online privata'],
+      ideal: ['Modelle', 'Brand di moda', 'Editoriali', 'Lookbook', 'Shooting per portfolio', 'Campagne moda'],
+      button: 'Prenota shooting moda'
+    },
+    p3: {
+      name: 'Contenuti per attività locali',
+      price: '€450',
+      desc: 'Contenuti visivi professionali per ristoranti, caffè, negozi, saloni, barbieri, attività di bellezza e altre attività locali di Milano.',
+      includes: ['Fino a 2,5 ore di shooting', '1 sede dell\'attività', '25 foto professionalmente ritoccate', '2 video brevi', 'Contenuti di interni ed esterni', 'Prodotti / servizi / persone', 'Illuminazione professionale quando necessario', 'Formati pronti per i social media', 'Galleria online privata'],
+      ideal: ['Ristoranti', 'Caffè', 'Bar', 'Negozi', 'Saloni', 'Barbieri', 'Attività di bellezza', 'Servizi locali'],
+      button: 'Prenota contenuti per attività locali'
+    },
+    p4: {
+      name: 'Brand Content',
+      price: '€650',
+      desc: 'Una produzione di contenuti completa per brand in crescita che hanno bisogno di un solido lotto di foto e video in un\'unica produzione.',
+      includes: ['Fino a 4 ore di shooting', 'Fino a 2 location', 'Fino a 5 outfit o prodotti', '50 foto professionalmente ritoccate', '2 video brevi', 'Illuminazione professionale', 'Direzione creativa', 'Color grading professionale', 'Formati per sito web e social media', 'Galleria online privata'],
+      ideal: ['Brand di moda', 'Ristoranti', 'Attività di bellezza', 'Brand di prodotto', 'Startup', 'Personal brand', 'Attività in crescita'],
+      button: 'Prenota Brand Content'
+    },
+    p5: {
+      name: 'Content Day',
+      price: '€950',
+      desc: 'Un\'intera giornata di produzione per brand che hanno bisogno di abbastanza contenuti visivi per sito web e social media per diverse settimane.',
+      includes: ['Fino a 6 ore di produzione', 'Fino a 2 location', 'Fino a 8 outfit o prodotti', '70 foto professionalmente ritoccate', '4 video brevi', 'Illuminazione professionale', 'Direzione creativa', 'Color grading professionale', 'Formati Instagram e TikTok', 'Galleria online privata'],
+      ideal: ['Brand in crescita', 'Collezioni moda', 'Lanci di prodotto', 'Ristoranti', 'Campagne sui social media', 'Grandi esigenze di contenuti'],
+      button: 'Prenota Content Day'
+    },
+    v1: {
+      name: 'Social Video',
+      price: '€250 / video',
+      desc: '',
+      includes: ['Fino a 2 ore di shooting', '1 location', '1 setup luci', 'Fino a 20 secondi', 'Montaggio professionale', 'Color grading', 'Musica', 'Formato verticale per i social media'],
+      ideal: [],
+      button: 'Prenota Social Video'
+    },
+    v2: {
+      name: 'Social Video × 3',
+      price: '€600',
+      desc: 'Tre video brevi realizzati durante un\'unica produzione organizzata.',
+      includes: ['Fino a 3 ore di shooting', '1 location', '3 video brevi', 'Montaggio professionale', 'Color grading', 'Musica', 'Formati verticali per i social media'],
+      ideal: [],
+      button: 'Prenota 3 video'
+    },
+    v3: {
+      name: 'Video commerciale',
+      price: 'Da €450',
+      desc: 'Un video promozionale più strutturato che richiede produzione, direzione, illuminazione, voce, lavoro sulla location o altre esigenze aggiuntive. Il prezzo finale dipende dal brief del progetto e dai requisiti di produzione.',
+      includes: [],
+      ideal: [],
+      button: 'Richiedi un preventivo video'
+    },
+    extras: [
+      { label: 'Ora di shooting extra', price: '€150' },
+      { label: 'Foto ritoccata extra', price: '€15 / immagine' },
+      { label: 'Video breve extra', price: '€150' },
+      { label: 'Seconda location', price: 'Da €100' },
+      { label: 'Consegna prioritaria', price: 'Su richiesta' },
+      { label: 'Ulteriori esigenze di produzione', price: 'Quotate a parte' }
+    ]
   }
 };
