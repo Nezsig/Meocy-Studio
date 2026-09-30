@@ -48,26 +48,6 @@ export const en = {
 
   clients: { label: 'Selected clients' },
 
-  work: {
-    all: 'All work',
-    fashion: 'Fashion',
-    portrait: 'Portrait',
-    commercial: 'Commercial',
-    product: 'Product',
-    food: 'Food',
-    video: 'Video',
-    title: 'Selected work',
-    intro: 'A selection of photography and video created for brands, businesses, fashion, products and people. Milan-based, working on location and with shipped products.',
-    empty: 'Coming soon',
-    watch: 'Watch',
-    close: 'Close',
-    prev: 'Previous image',
-    next: 'Next image',
-    ctaTitle: 'Ready to create?',
-    ctaText: 'Bring your project to us and let\'s make something great.',
-    ctaButton: 'Get a quote'
-  },
-
   about: {
     sectionHeading: 'About',
     bio: 'Behind MEOCY is Chamila, a photographer from Sri Lanka. I spent eight years building a photography career in my homeland, then moved to Italy. After a while away from the camera, I\'m starting over here in Milan—same eye, new name. Work with MEOCY and you work directly with me: every shoot is carefully planned, shot, and delivered by the founder, at a price agreed upon beforehand.',
@@ -373,6 +353,7 @@ export const en = {
     all: 'All',
     fashion: 'Fashion',
     portrait: 'Portrait',
+    city: 'City',
     commercial: 'Commercial',
     product: 'Product',
     food: 'Restaurant & Food',

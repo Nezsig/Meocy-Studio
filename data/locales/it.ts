@@ -51,26 +51,6 @@ export const it: Dict = {
 
   clients: { label: 'Clienti selezionati' },
 
-  work: {
-    all: 'Tutti i lavori',
-    fashion: 'Moda',
-    portrait: 'Ritratti',
-    commercial: 'Commerciale',
-    product: 'Prodotto',
-    food: 'Cibo',
-    video: 'Video',
-    title: 'Lavori selezionati',
-    intro: 'Una selezione di fotografia e video creati per brand, aziende, moda, prodotti e persone. Con sede a Milano, lavoriamo in location e con prodotti spediti.',
-    empty: 'Prossimamente',
-    watch: 'Guarda',
-    close: 'Chiudi',
-    prev: 'Immagine precedente',
-    next: 'Immagine successiva',
-    ctaTitle: 'Pronto a creare?',
-    ctaText: 'Portaci il tuo progetto e creiamo qualcosa di straordinario.',
-    ctaButton: 'Ottieni un preventivo'
-  },
-
   about: {
     sectionHeading: 'Chi sono',
     bio: 'Dietro MEOCY c\'è Chamila, fotografo dallo Sri Lanka. Ho passato otto anni costruendo una carriera in fotografia nella mia terra, poi mi sono trasferito in Italia. Dopo un po\' lontano dalla macchina fotografica, sto ricominciando da capo qui a Milano—stesso occhio, nuovo nome. Lavora con MEOCY e lavori direttamente con me: ogni shooting è attentamente pianificato, girato e consegnato dal founder, a un prezzo concordato in anticipo.',
@@ -376,6 +356,7 @@ export const it: Dict = {
     all: 'Tutti',
     fashion: 'Moda',
     portrait: 'Ritratti',
+    city: 'Città',
     commercial: 'Commerciale',
     product: 'Prodotto',
     food: 'Ristorazione e food',

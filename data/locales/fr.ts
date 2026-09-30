@@ -51,26 +51,6 @@ export const fr: Dict = {
 
   clients: { label: 'Clients sélectionnés' },
 
-  work: {
-    all: 'Tous les travaux',
-    fashion: 'Mode',
-    portrait: 'Portraits',
-    commercial: 'Publicité',
-    product: 'Produit',
-    food: 'Gastronomie',
-    video: 'Vidéo',
-    title: 'Travaux sélectionnés',
-    intro: 'Une sélection de photographies et de vidéos créées pour les marques, les entreprises, la mode, les produits et les gens. Basés à Milan, nous travaillons en location et avec vos produits expédiés.',
-    empty: 'Bientôt',
-    watch: 'Regarder',
-    close: 'Fermer',
-    prev: 'Image précédente',
-    next: 'Image suivante',
-    ctaTitle: 'Prêt à créer?',
-    ctaText: 'Apportez-nous votre projet et créons quelque chose d\'extraordinaire.',
-    ctaButton: 'Obtenir un devis'
-  },
-
   about: {
     sectionHeading: 'À propos',
     bio: 'Derrière MEOCY se trouve Chamila, un photographe du Sri Lanka. J\'ai passé huit ans à construire une carrière en photographie dans mon pays, puis je me suis installé en Italie. Après du temps loin de l\'appareil photo, je recommence ici à Milan—le même regard, un nouveau nom. Travaillez avec MEOCY et vous travaillez directement avec moi : chaque tournage est soigneusement planifié, tourné et livré par le fondateur, à un prix convenu à l\'avance.',
@@ -376,6 +356,7 @@ export const fr: Dict = {
     all: 'Tout',
     fashion: 'Mode',
     portrait: 'Portrait',
+    city: 'Ville',
     commercial: 'Commercial',
     product: 'Produit',
     food: 'Restaurant & food',
