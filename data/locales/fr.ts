@@ -52,10 +52,23 @@ export const fr: Dict = {
   clients: { label: 'Clients sélectionnés' },
 
   work: {
-    sectionHeading: 'Portfolio',
-    filterFashion: 'Mode',
-    filterPortrait: 'Portraits',
-    filterAll: 'Tous'
+    all: 'Tous les travaux',
+    fashion: 'Mode',
+    portrait: 'Portraits',
+    commercial: 'Publicité',
+    product: 'Produit',
+    food: 'Gastronomie',
+    video: 'Vidéo',
+    title: 'Travaux sélectionnés',
+    intro: 'Une sélection de photographies et de vidéos créées pour les marques, les entreprises, la mode, les produits et les gens. Basés à Milan, nous travaillons en location et avec vos produits expédiés.',
+    empty: 'Bientôt',
+    watch: 'Regarder',
+    close: 'Fermer',
+    prev: 'Image précédente',
+    next: 'Image suivante',
+    ctaTitle: 'Prêt à créer?',
+    ctaText: 'Apportez-nous votre projet et créons quelque chose d\'extraordinaire.',
+    ctaButton: 'Obtenir un devis'
   },
 
   about: {
@@ -355,5 +368,356 @@ export const fr: Dict = {
     tagline: 'Studio photo et vidéo à Milan — du contenu qui fait grandir votre activité.',
     rights: 'Tous droits réservés.',
     rebrand: 'Rebranding septembre 2026'
+  },
+
+  work: {
+    title: 'Sélection de travaux',
+    intro: 'Une sélection de photographies et de vidéos réalisées pour des marques, des entreprises, la mode, des produits et des personnes à Milan.',
+    all: 'Tout',
+    fashion: 'Mode',
+    portrait: 'Portrait',
+    commercial: 'Commercial',
+    product: 'Produit',
+    food: 'Restaurant & food',
+    video: 'Vidéo',
+    watch: 'Regarder',
+    empty: 'De nouveaux projets arrivent bientôt.',
+    close: 'Fermer',
+    prev: 'Précédent',
+    next: 'Suivant',
+    ctaTitle: 'Prêt à créer quelque chose ?',
+    ctaText: 'Dites-nous sur quoi vous travaillez.',
+    ctaButton: 'Demander un devis'
+  },
+
+  svcPage: {
+    title: 'Ce que nous faisons',
+    intro1: 'Un bon contenu visuel doit faire plus que bien paraître.',
+    intro2: 'MEOCY crée des photographies et des vidéos conçues pour les sites web, les réseaux sociaux, la publicité, les campagnes et la communication quotidienne des marques.',
+    s1t: 'Photographie de mode et de mannequins',
+    s1d: 'Photographie de mode, éditoriale et de portfolio pour mannequins, designers et marques de mode.',
+    s2t: 'Photographie commerciale',
+    s2d: 'Contenus visuels professionnels pour les entreprises et les marques qui ont besoin d\'images de haute qualité pour leur site web, leur publicité et les réseaux sociaux.',
+    s3t: 'Photographie de produit',
+    s3d: 'Photographie de produit épurée et professionnelle pour sites web, e-commerce, réseaux sociaux et campagnes.',
+    s4t: 'Contenus pour restaurants et food',
+    s4d: 'Photographie et vidéos courtes pour restaurants, cafés, bars et entreprises de restauration à Milan.',
+    s5t: 'Branding et personal branding',
+    s5d: 'Photographie professionnelle conçue pour donner à votre marque ou à votre activité une identité visuelle plus forte.',
+    s6t: 'Vidéo pour les réseaux sociaux',
+    s6d: 'Courtes vidéos commerciales et Reels conçus pour Instagram, TikTok et la publicité digitale.',
+    cta: 'Discutons de votre projet',
+    ctaTitle: 'Un projet en tête ?',
+    ctaButton: 'Discutons de votre projet'
+  },
+
+  pkgPage: {
+    title: 'Formules photo et vidéo',
+    intro1: 'Des formules simples pour différents besoins de production.',
+    intro2: 'Tous les projets sont planifiés à l\'avance et le prix final est convenu avant le début de la production.',
+    packageLabel: 'Formule',
+    includesLabel: 'Comprend',
+    idealLabel: 'Idéal pour',
+    photoTitle: 'Formules photo',
+    videoTitle: 'Production vidéo',
+    videoIntro: 'Courtes vidéos commerciales créées pour les réseaux sociaux, les sites web et la publicité digitale.',
+    extrasTitle: 'Options supplémentaires',
+    extrasIntro: 'Besoin de plus que la formule choisie ? Des services de production supplémentaires peuvent être ajoutés à votre projet.',
+    customTitle: 'Production sur mesure',
+    customHeadline: 'Votre projet n\'a pas à entrer dans une formule.',
+    customText1: 'Pour des campagnes plus importantes, plusieurs lieux, plusieurs produits, des productions publicitaires, des mannequins, des assistants, des maquilleurs ou des productions vidéo complexes, MEOCY peut créer une production sur mesure selon vos besoins.',
+    customText2: 'Chaque projet est discuté à l\'avance et chiffré clairement avant le début de la production.',
+    customButton: 'Demander un devis personnalisé',
+    p1: {
+      name: 'Photo Starter',
+      price: '€300',
+      desc: 'Une séance photo professionnelle ciblée pour entreprises, professionnels, personal brands et shootings produit simples.',
+      includes: ['Jusqu\'à 1,5 heure de prise de vue', '1 lieu', '1 configuration d\'éclairage', 'Jusqu\'à 2 tenues ou mises en scène', '20 photos retouchées professionnellement', 'Fichiers haute résolution', 'Formats web et réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Petites entreprises', 'Personal brands', 'Professionnels', 'Shootings produit simples', 'Restaurants et commerces locaux'],
+      button: 'Réserver Photo Starter'
+    },
+    p2: {
+      name: 'Shooting Mode / Mannequins',
+      price: '€450',
+      desc: 'Une production axée sur la mode pour mannequins, créatifs et marques de mode qui ont besoin d\'images éditoriales ou de portfolio percutantes.',
+      includes: ['Jusqu\'à 2,5 heures de prise de vue', '1 lieu à Milan', 'Jusqu\'à 3 tenues', '35 photos retouchées professionnellement', 'Éclairage professionnel', 'Direction créative', 'Direction de pose de base', 'Fichiers haute résolution', 'Formats réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Mannequins', 'Marques de mode', 'Éditoriaux', 'Lookbooks', 'Shootings portfolio', 'Campagnes de mode'],
+      button: 'Réserver un shooting mode'
+    },
+    p3: {
+      name: 'Contenus pour commerces locaux',
+      price: '€450',
+      desc: 'Contenus visuels professionnels pour restaurants, cafés, boutiques, salons, barbiers, entreprises de beauté et autres commerces locaux à Milan.',
+      includes: ['Jusqu\'à 2,5 heures de prise de vue', '1 lieu d\'activité', '25 photos retouchées professionnellement', '2 vidéos courtes', 'Contenus intérieurs et extérieurs', 'Produits / services / personnes', 'Éclairage professionnel si nécessaire', 'Formats prêts pour les réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Restaurants', 'Cafés', 'Bars', 'Boutiques', 'Salons', 'Barbiers', 'Entreprises de beauté', 'Services locaux'],
+      button: 'Réserver contenus commerces locaux'
+    },
+    p4: {
+      name: 'Brand Content',
+      price: '€650',
+      desc: 'Une production de contenu complète pour les marques en croissance qui ont besoin d\'un solide lot de photos et de vidéos en une seule production.',
+      includes: ['Jusqu\'à 4 heures de prise de vue', 'Jusqu\'à 2 lieux', 'Jusqu\'à 5 tenues ou produits', '50 photos retouchées professionnellement', '2 vidéos courtes', 'Éclairage professionnel', 'Direction créative', 'Étalonnage professionnel', 'Formats site web et réseaux sociaux', 'Galerie en ligne privée'],
+      ideal: ['Marques de mode', 'Restaurants', 'Entreprises de beauté', 'Marques de produits', 'Startups', 'Personal brands', 'Entreprises en croissance'],
+      button: 'Réserver Brand Content'
+    },
+    p5: {
+      name: 'Content Day',
+      price: '€950',
+      desc: 'Une journée de production complète pour les marques qui ont besoin d\'assez de contenu visuel pour leur site web et leurs réseaux sociaux pendant plusieurs semaines.',
+      includes: ['Jusqu\'à 6 heures de production', 'Jusqu\'à 2 lieux', 'Jusqu\'à 8 tenues ou produits', '70 photos retouchées professionnellement', '4 vidéos courtes', 'Éclairage professionnel', 'Direction créative', 'Étalonnage professionnel', 'Formats Instagram et TikTok', 'Galerie en ligne privée'],
+      ideal: ['Marques en croissance', 'Collections de mode', 'Lancements de produits', 'Restaurants', 'Campagnes réseaux sociaux', 'Gros besoins en contenu'],
+      button: 'Réserver Content Day'
+    },
+    v1: {
+      name: 'Social Video',
+      price: '€250 / vidéo',
+      desc: '',
+      includes: ['Jusqu\'à 2 heures de prise de vue', '1 lieu', '1 configuration d\'éclairage', 'Jusqu\'à 20 secondes', 'Montage professionnel', 'Étalonnage', 'Musique', 'Format vertical pour les réseaux sociaux'],
+      ideal: [],
+      button: 'Réserver Social Video'
+    },
+    v2: {
+      name: 'Social Video × 3',
+      price: '€600',
+      desc: 'Trois vidéos courtes réalisées lors d\'une seule production organisée.',
+      includes: ['Jusqu\'à 3 heures de prise de vue', '1 lieu', '3 vidéos courtes', 'Montage professionnel', 'Étalonnage', 'Musique', 'Formats verticaux pour les réseaux sociaux'],
+      ideal: [],
+      button: 'Réserver 3 vidéos'
+    },
+    v3: {
+      name: 'Vidéo commerciale',
+      price: 'À partir de €450',
+      desc: 'Une vidéo promotionnelle plus structurée nécessitant une production, une direction, un éclairage, une voix, un travail sur site ou d\'autres exigences supplémentaires. Le prix final dépend du brief du projet et des exigences de production.',
+      includes: [],
+      ideal: [],
+      button: 'Demander un devis vidéo'
+    },
+    extras: [
+      { label: 'Heure de prise de vue supplémentaire', price: '€150' },
+      { label: 'Photo retouchée supplémentaire', price: '€15 / image' },
+      { label: 'Vidéo courte supplémentaire', price: '€150' },
+      { label: 'Deuxième lieu', price: 'À partir de €100' },
+      { label: 'Livraison prioritaire', price: 'Sur demande' },
+      { label: 'Exigences de production supplémentaires', price: 'Devis séparé' }
+    ]
+  },
+
+  aboutPage: {
+    title: 'À propos de MEOCY',
+    headline: 'La personne derrière l\'appareil photo',
+    p1: 'MEOCY a été fondé par Chamila, photographe originaire du Sri Lanka, qui a passé huit ans à construire sa carrière photographique avant de s\'installer en Italie.',
+    p2: 'Après un temps loin de l\'appareil photo, il revient à la photographie à Milan avec un nouveau nom et un objectif clair : créer du contenu visuel professionnel pour les marques, les entreprises, les produits, les mannequins et les personnes.',
+    p3: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.',
+    button: 'Démarrer un projet',
+    whyTitle: 'Pourquoi travailler avec MEOCY ?',
+    why: [
+      { t: 'Implication directe du fondateur', d: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.' },
+      { t: 'Planifié avant le tournage', d: 'Chaque production est planifiée avant le jour de la prise de vue : lieux, éclairage, tenues, produits, calendrier et livrables finaux.' },
+      { t: 'Des contenus pensés pour les vraies plateformes', d: 'Photos et vidéos sont créées en pensant à leur usage final : sites web, réseaux sociaux, publicité et campagnes.' },
+      { t: 'Basé à Milan', d: 'Basé à Milan, en Italie, avec production sur site dans toute la ville et ses environs.' },
+      { t: 'Tarifs clairs', d: 'Le périmètre de la production et le prix final sont convenus avant la prise de vue, sans coûts de production inattendus.' }
+    ],
+    eqTitle: 'Équipement professionnel',
+    eqIntro: 'MEOCY travaille avec un équipement professionnel d\'appareils, d\'objectifs et d\'éclairage conçu pour la photographie comme pour la production vidéo.',
+    eqNote: 'Les besoins en équipement sont planifiés selon la production spécifique.',
+    eq: [
+      { label: 'Appareils', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Objectifs', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
+      { label: 'Éclairage photo', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
+      { label: 'Éclairage vidéo', items: ['GVM 300W LED', 'Lumière LED 150W'] },
+      { label: 'Mouvement et aérien', items: ['Stabilisateur DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
+      { label: 'Supports', items: ['Trépieds professionnels', 'Pieds d\'éclairage', 'Softbox 120 cm', 'Softbox 85 cm'] }
+    ]
+  },
+
+  faqPage: {
+    howTitle: 'Comment ça marche',
+    steps: [
+      { t: 'Dites-nous ce dont vous avez besoin', d: ['Envoyez-nous les détails de votre projet via le formulaire de contact ou réservez un court appel.', 'Parlez-nous de votre marque, de vos produits, du lieu et du contenu dont vous avez besoin.'] },
+      { t: 'Planifier la production', d: ['Nous convenons du plan de production complet avant la prise de vue.', 'Cela comprend le lieu, l\'éclairage, les tenues, les produits, le calendrier et les livrables finaux.'] },
+      { t: 'Prise de vue', d: ['La production a lieu sur votre site à Milan, ou avec des produits expédiés chez nous lorsque cela convient.'] },
+      { t: 'Montage et livraison', d: ['Vos images et vidéos sont retouchées, étalonnées professionnellement et préparées pour les plateformes dont vous avez besoin.'] }
+    ],
+    deliveryTitle: 'Livraison standard',
+    deliveryPhotos: 'Photos : 7 à 10 jours ouvrés',
+    deliveryVideos: 'Vidéos : 7 à 14 jours ouvrés',
+    deliveryNote: 'Une livraison prioritaire peut être demandée avant la réservation.',
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Combien coûte une séance ?', a: ['Les formules MEOCY commencent à €300 pour de la photographie ciblée et augmentent selon les besoins de production.', 'Les productions de contenu plus importantes et les projets sur mesure sont chiffrés selon l\'ampleur, la durée de prise de vue, les lieux et les livrables.'] },
+      { q: 'Puis-je vous envoyer mes produits ?', a: ['Oui. Les produits peuvent nous être expédiés directement lorsque le projet se prête à une production en studio.', 'La production sur site est également disponible à Milan.'] },
+      { q: 'Pouvez-vous vous déplacer dans mon établissement ?', a: ['Oui. MEOCY réalise des productions photo et vidéo sur site à Milan et dans ses environs.'] },
+      { q: 'Puis-je assister à la prise de vue ?', a: ['Oui. Les clients peuvent assister à la production en personne.', 'Pour les productions qui s\'y prêtent, une participation à distance peut également être organisée.'] },
+      { q: 'Fournissez-vous des mannequins ?', a: ['Des mannequins peuvent être organisés selon le projet. Les cachets sont chiffrés séparément lorsque nécessaire.'] },
+      { q: 'Fournissez-vous des maquilleurs et des stylistes ?', a: ['Des maquilleurs, stylistes, assistants et autres professionnels de production peuvent être organisés si nécessaire. Ces coûts sont chiffrés séparément.'] },
+      { q: 'La location de studio et les frais de lieu sont-ils inclus ?', a: ['Pas automatiquement. La location de studio, les autorisations, les lieux spécialisés et les autres coûts de production de tiers sont chiffrés séparément si nécessaire.'] },
+      { q: 'Quel est le délai de livraison ?', a: ['La livraison standard des photos est de 7 à 10 jours ouvrés.', 'La livraison standard des vidéos est de 7 à 14 jours ouvrés.', 'Une livraison prioritaire peut être disponible sur demande.'] },
+      { q: 'Dans quelles langues travaillez-vous ?', a: ['English, Italiano, Français'] },
+      { q: 'Où est basé MEOCY ?', a: ['Milan, Italie.'] }
+    ]
+  },
+
+  contactPage: {
+    title: 'Travaillons ensemble',
+    intro1: 'Parlez-nous de votre projet et de ce dont vous avez besoin.',
+    intro2: 'Plus vous nous donnez d\'informations, plus nous pourrons préparer votre devis avec précision.',
+    name: 'Nom',
+    email: 'Email',
+    brand: 'Entreprise / Marque',
+    projectType: 'Type de projet',
+    select: 'Sélectionner…',
+    preferredDate: 'Date souhaitée',
+    location: 'Lieu',
+    quantity: 'Nombre de produits / tenues',
+    contentType: 'Photo / Vidéo / Les deux',
+    photo: 'Photographie',
+    video: 'Vidéo',
+    both: 'Les deux',
+    message: 'Message',
+    submit: 'Envoyer la demande de projet',
+    sending: 'Envoi en cours…',
+    errName: 'Veuillez saisir votre nom.',
+    errEmail: 'Veuillez saisir une adresse email valide.',
+    errProject: 'Veuillez choisir un type de projet.',
+    errMessage: 'Parlez-nous brièvement de votre projet.',
+    errGeneric: 'Une erreur est survenue. Réessayez ou écrivez à hello@meocy.com.',
+    successTitle: 'Demande reçue.',
+    successBody: 'Merci {name} — une confirmation part vers {email}. Nous vous répondrons sous un jour ouvré.',
+    another: 'Envoyer une autre demande',
+    detailsTitle: 'Coordonnées',
+    loc: 'Milan et Paris',
+    whatsappCta: 'Écrire sur WhatsApp',
+    collabLabel: 'POUR MANNEQUINS ET CRÉATIFS',
+    collabTitle: 'Vous construisez votre portfolio à Milan ?',
+    collabText1: 'MEOCY collabore avec des mannequins et des créatifs à Milan pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    collabText2: 'Si vous êtes mannequin et construisez votre portfolio, créatif émergent ou si vous souhaitez simplement créer de nouvelles images, contactez-nous.',
+    collabButton: 'Collaborer avec MEOCY',
+    projectOptions: [
+      'Shooting mode / mannequins',
+      'Photographie commerciale',
+      'Photographie de produit',
+      'Restaurant & food',
+      'Portrait / personal branding',
+      'Vidéo pour les réseaux sociaux',
+      'Production de contenu complète (photo + vidéo)',
+      'Collaboration mannequins / créatifs',
+      'Autre'
+    ]
+  },
+
+  collabPage: {
+    title: 'Travailler avec MEOCY',
+    intro1: 'MEOCY est un petit studio milanais dirigé par son fondateur. Je travaille directement avec chaque mannequin, agence et photographe avec qui je collabore.',
+    intro2: 'Choisissez l\'option qui vous correspond, découvrez ce dont j\'ai besoin et envoyez vos informations ci-dessous. Je lis chaque message moi-même.',
+    tabModels: 'Mannequins et talents',
+    tabAgencies: 'Agences',
+    tabCreatives: 'Photographes et assistants',
+    offerTitle: 'Comment ça marche',
+    needTitle: 'Ce qu\'il faut m\'envoyer',
+    mIntro: 'Vous construisez votre portfolio à Milan ? Je collabore avec des mannequins pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    mOffer: [
+      'Aucun cachet de part et d\'autre — les shootings en collaboration ne sont pas rémunérés',
+      'Vous recevez de 10 à 25 photos retouchées professionnellement, selon le shooting',
+      'Le concept, le lieu, les tenues et le calendrier sont planifiés ensemble avant le shooting',
+      'Les conditions sont confirmées par écrit avant le shooting'
+    ],
+    mNeed: [
+      'Votre Instagram et/ou lien vers votre portfolio',
+      '3 à 6 photos récentes (sous forme de lien)',
+      'Votre ville et vos disponibilités',
+      'Si vous êtes représenté(e) par une agence',
+      'Ce que vous cherchez : une collaboration ou un shooting rémunéré'
+    ],
+    mPaidNote: 'Vous préférez un shooting rémunéré ?',
+    mPaidLink: 'Découvrir la formule Shooting Mode / Mannequins',
+    aIntro: 'Vous travaillez avec une agence de mannequins à Milan ? Je propose des test shootings pour les nouveaux visages et du contenu pour vos mannequins.',
+    aOffer: [
+      'Test shootings gratuits pour les nouveaux visages — limités à 10 shootings gratuits',
+      'Les test shootings gratuits sont réservés aux tests et au portfolio, pas à un usage commercial',
+      'Chaque shooting gratuit est discuté avec l\'agence pour le projet concerné avant d\'être confirmé',
+      'Les shootings commerciaux sont chiffrés séparément'
+    ],
+    aNeed: [
+      'Nom de l\'agence, interlocuteur et site web ou Instagram',
+      'Un lien vers votre model board ou les nouveaux visages que vous avez en tête',
+      'Ce dont vous avez besoin : test shootings, digitals et polaroïds, comp cards, lookbook ou vidéo',
+      'Votre calendrier ou vos échéances'
+    ],
+    cIntro: 'Je travaille avec des photographes, des vidéastes et des assistants lumière à Milan.',
+    cOffer: [
+      'Travail rémunéré comme assistant lumière sur mes productions',
+      'Les tarifs et conditions sont convenus avant chaque production'
+    ],
+    cNeed: [
+      'Votre Instagram et/ou lien vers votre portfolio',
+      'Votre rôle et votre ville',
+      'Vos disponibilités',
+      'Votre expérience de l\'éclairage et du travail sur plateau'
+    ],
+    creativesPaidNote: 'Travail rémunéré comme assistant lumière.',
+    name: 'Nom',
+    email: 'Email',
+    instagram: 'Instagram',
+    portfolio: 'Lien portfolio / photos',
+    city: 'Ville',
+    availability: 'Disponibilités',
+    message: 'Message (facultatif)',
+    experience: 'Expérience',
+    experienceOptions: [
+      'Nouveau visage',
+      'Un peu d\'expérience',
+      'Expérimenté(e)'
+    ],
+    agencyQ: 'Représenté(e) par une agence ?',
+    agencyOptions: [
+      'Non',
+      'Oui'
+    ],
+    agencyName: 'Nom de l\'agence',
+    lookingFor: 'Vous cherchez',
+    lookingForOptions: [
+      'Shooting en collaboration',
+      'Shooting rémunéré',
+      'Les deux'
+    ],
+    over18: 'Je confirme avoir 18 ans ou plus.',
+    consent: 'J\'accepte que MEOCY utilise ces informations pour me répondre, comme décrit dans la Politique de confidentialité.',
+    contactPerson: 'Interlocuteur',
+    role: 'Votre rôle',
+    website: 'Site web ou Instagram',
+    modelsCount: 'Nombre de mannequins / nouveaux visages',
+    need: 'De quoi avez-vous besoin ?',
+    needOptions: [
+      'Test shootings pour nouveaux visages',
+      'Digitals et polaroïds',
+      'Comp cards / portfolios',
+      'Lookbook / campagne',
+      'Vidéo',
+      'Autre'
+    ],
+    boardLink: 'Lien vers le model board',
+    timeframe: 'Calendrier / échéance',
+    creativeRole: 'Votre rôle',
+    creativeRoleOptions: [
+      'Photographe',
+      'Vidéaste',
+      'Assistant lumière'
+    ],
+    select: 'Sélectionner…',
+    submit: 'Envoyer',
+    sending: 'Envoi en cours…',
+    errRequired: 'Veuillez remplir les champs obligatoires.',
+    errEmail: 'Veuillez saisir une adresse email valide.',
+    errConsent: 'Veuillez accepter le consentement de confidentialité pour continuer.',
+    errOver18: 'Vous devez avoir 18 ans ou plus pour postuler.',
+    errGeneric: 'Une erreur est survenue. Réessayez ou écrivez à hello@meocy.com.',
+    successTitle: 'Message reçu.',
+    successBody: 'Merci {name} — je lis chaque message personnellement. Si cela correspond à un prochain projet, je vous répondrai.',
+    another: 'Envoyer un autre message'
+  },
+
+  privacyCollab: {
+    title: 'Formulaires de collaboration.',
+    text: 'Si vous nous contactez via le formulaire de collaboration, nous utilisons vos données (nom, email, liens de réseaux sociaux ou de portfolio et les informations que vous fournissez) uniquement pour vous répondre et planifier d\'éventuels projets. Nous ne les vendons ni ne les partageons, et nous les supprimons sur demande.'
   }
 };

@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
-import { WorkGallery } from '../../components/WorkGallery';
+import { CollaboratePage } from '../../components/CollaboratePage';
 
 export const metadata: Metadata = {
-  title: 'Selected Work — Photography & Video in Milan | MEOCY',
+  title: 'Work With MEOCY — Models, Agencies & Photographers in Milan',
   description:
-    'A selection of photography and video created for brands, businesses, fashion, products and people in Milan.',
+    'Models, modeling agencies and photographers: see how MEOCY collaborates in Milan and send your details.',
   alternates: {
-    canonical: 'https://meocy.com/work',
+    canonical: 'https://meocy.com/collaborate',
   },
   robots: {
     index: false,
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WorkPage() {
+export default function Collaborate() {
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
       <Nav />
-      <WorkGallery />
+      <CollaboratePage />
       <Footer />
     </div>
   );

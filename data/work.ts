@@ -1,12 +1,16 @@
-export type WorkItem = {
+export type WorkCategory = 'fashion' | 'portrait' | 'commercial' | 'product' | 'food' | 'video';
+
+export interface WorkItem {
   id: string;
   type: 'photo' | 'video';
-  category: 'fashion' | 'portrait';
+  category: WorkCategory;
   src: string;
   width: number;
   height: number;
   alt: string;
-};
+  caption?: string;
+  videoUrl?: string;
+}
 
 export const workItems: WorkItem[] = [
   { id: "fashion-01", type: "photo", category: "fashion", src: "/work/fashion-01.jpg", width: 1129, height: 1600, alt: "MEOCY fashion photography" },

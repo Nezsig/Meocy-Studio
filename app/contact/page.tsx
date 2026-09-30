@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
-import { WorkGallery } from '../../components/WorkGallery';
+import { ContactPage } from '../../components/ContactPage';
 
 export const metadata: Metadata = {
-  title: 'Selected Work — Photography & Video in Milan | MEOCY',
+  title: 'Contact & Project Request — MEOCY | Photography & Video Milan',
   description:
-    'A selection of photography and video created for brands, businesses, fashion, products and people in Milan.',
+    'Send your photography or video project brief to MEOCY in Milan. Tell us what you need and get a clear quotation.',
   alternates: {
-    canonical: 'https://meocy.com/work',
+    canonical: 'https://meocy.com/contact',
   },
   robots: {
     index: false,
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WorkPage() {
+export default function Contact() {
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
       <Nav />
-      <WorkGallery />
+      <ContactPage />
       <Footer />
     </div>
   );
