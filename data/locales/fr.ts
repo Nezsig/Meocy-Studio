@@ -348,5 +348,25 @@ export const fr: Dict = {
     tagline: 'Studio photo et vidéo à Milan — du contenu qui fait grandir votre activité.',
     rights: 'Tous droits réservés.',
     rebrand: 'Rebranding septembre 2026'
+  },
+
+  work: {
+    title: 'Sélection de travaux',
+    intro: 'Une sélection de photographies et de vidéos réalisées pour des marques, des entreprises, la mode, des produits et des personnes à Milan.',
+    all: 'Tout',
+    fashion: 'Mode',
+    portrait: 'Portrait',
+    commercial: 'Commercial',
+    product: 'Produit',
+    food: 'Restaurant & food',
+    video: 'Vidéo',
+    watch: 'Regarder',
+    empty: 'De nouveaux projets arrivent bientôt.',
+    close: 'Fermer',
+    prev: 'Précédent',
+    next: 'Suivant',
+    ctaTitle: 'Prêt à créer quelque chose ?',
+    ctaText: 'Dites-nous sur quoi vous travaillez.',
+    ctaButton: 'Demander un devis'
   }
 };

@@ -345,6 +345,26 @@ export const en = {
     tagline: 'Photo & video studio in Milan — content that grows your business.',
     rights: 'All rights reserved.',
     rebrand: 'Rebranded September 2026'
+  },
+
+  work: {
+    title: 'Selected Work',
+    intro: 'A selection of photography and video created for brands, businesses, fashion, products and people in Milan.',
+    all: 'All',
+    fashion: 'Fashion',
+    portrait: 'Portrait',
+    commercial: 'Commercial',
+    product: 'Product',
+    food: 'Restaurant & Food',
+    video: 'Video',
+    watch: 'Watch',
+    empty: 'New work is being added — check back soon.',
+    close: 'Close',
+    prev: 'Previous',
+    next: 'Next',
+    ctaTitle: 'Ready to Create Something?',
+    ctaText: 'Tell us what you are working on.',
+    ctaButton: 'Request a Quote'
   }
 };
 

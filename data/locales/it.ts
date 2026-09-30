@@ -348,5 +348,25 @@ export const it: Dict = {
     tagline: 'Studio foto e video a Milano — contenuti che fanno crescere il tuo business.',
     rights: 'Tutti i diritti riservati.',
     rebrand: 'Rinnovamento del brand settembre 2026'
+  },
+
+  work: {
+    title: 'Lavori selezionati',
+    intro: 'Una selezione di fotografie e video realizzati per brand, aziende, moda, prodotti e persone a Milano.',
+    all: 'Tutti',
+    fashion: 'Moda',
+    portrait: 'Ritratti',
+    commercial: 'Commerciale',
+    product: 'Prodotto',
+    food: 'Ristorazione e food',
+    video: 'Video',
+    watch: 'Guarda',
+    empty: 'Stiamo aggiungendo nuovi lavori — torna presto.',
+    close: 'Chiudi',
+    prev: 'Precedente',
+    next: 'Successivo',
+    ctaTitle: 'Pronto a creare qualcosa?',
+    ctaText: 'Raccontaci a cosa stai lavorando.',
+    ctaButton: 'Richiedi un preventivo'
   }
 };
