@@ -583,5 +583,127 @@ export const fr: Dict = {
       'Collaboration mannequins / créatifs',
       'Autre'
     ]
+  },
+
+  collabPage: {
+    title: 'Travailler avec MEOCY',
+    intro1: 'MEOCY collabore avec des mannequins, des agences et des créatifs à Milan.',
+    intro2: 'Choisissez l\'option qui vous correspond, découvrez ce dont nous avons besoin et envoyez vos informations ci-dessous.',
+    tabModels: 'Mannequins et talents',
+    tabAgencies: 'Agences',
+    tabCreatives: 'Créatifs et assistants',
+    offerTitle: 'Comment ça marche',
+    needTitle: 'Ce qu\'il faut nous envoyer',
+    mIntro: 'Vous construisez votre portfolio à Milan ? MEOCY collabore avec des mannequins pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    mOffer: [
+      'Aucun cachet de part et d\'autre — les shootings en collaboration ne sont pas rémunérés',
+      'Vous recevez de 10 à 25 photos retouchées professionnellement, selon le shooting',
+      'Le concept, le lieu, les tenues et le calendrier sont planifiés ensemble avant le shooting',
+      'Les conditions sont confirmées par écrit avant le shooting'
+    ],
+    mNeed: [
+      'Votre Instagram et/ou lien vers votre portfolio',
+      '3 à 6 photos récentes (sous forme de lien)',
+      'Votre ville et vos disponibilités',
+      'Si vous êtes représenté(e) par une agence',
+      'Ce que vous cherchez : une collaboration ou un shooting rémunéré'
+    ],
+    mPaidNote: 'Vous préférez un shooting rémunéré ?',
+    mPaidLink: 'Découvrir la formule Shooting Mode / Mannequins',
+    aIntro: 'Vous travaillez avec une agence de mannequins à Milan ? MEOCY propose des test shootings pour les nouveaux visages et du contenu pour vos mannequins.',
+    aOffer: [
+      'Test shootings gratuits pour les nouveaux visages — limités à 10 shootings gratuits',
+      'Les test shootings gratuits sont réservés aux tests et au portfolio, pas à un usage commercial',
+      'Chaque shooting gratuit est discuté avec l\'agence pour le projet concerné avant d\'être confirmé',
+      'Les shootings commerciaux sont chiffrés séparément'
+    ],
+    aNeed: [
+      'Nom de l\'agence, interlocuteur et site web ou Instagram',
+      'Un lien vers votre model board ou les nouveaux visages que vous avez en tête',
+      'Ce dont vous avez besoin : test shootings, digitals et polaroïds, comp cards, lookbook ou vidéo',
+      'Votre calendrier ou vos échéances'
+    ],
+    cIntro: 'MEOCY travaille avec des photographes, des vidéastes et des professionnels créatifs à Milan.',
+    cOffer: [
+      'Photographes et vidéastes : travail rémunéré comme assistant lumière',
+      'Maquilleurs, coiffeurs, stylistes et autres créatifs : shootings en collaboration, si vous êtes intéressés',
+      'Les tarifs et conditions sont convenus avant chaque production'
+    ],
+    cNeed: [
+      'Votre Instagram et/ou lien vers votre portfolio',
+      'Votre rôle et votre ville',
+      'Vos disponibilités',
+      'Sur quoi vous aimeriez travailler'
+    ],
+    creativesPaidNote: 'Travail rémunéré comme assistant lumière.',
+    creativesCollabNote: 'Shooting en collaboration — pour les créatifs intéressés.',
+    name: 'Nom',
+    email: 'Email',
+    instagram: 'Instagram',
+    portfolio: 'Lien portfolio / photos',
+    city: 'Ville',
+    availability: 'Disponibilités',
+    message: 'Message (facultatif)',
+    experience: 'Expérience',
+    experienceOptions: [
+      'Nouveau visage',
+      'Un peu d\'expérience',
+      'Expérimenté(e)'
+    ],
+    agencyQ: 'Représenté(e) par une agence ?',
+    agencyOptions: [
+      'Non',
+      'Oui'
+    ],
+    agencyName: 'Nom de l\'agence',
+    lookingFor: 'Vous cherchez',
+    lookingForOptions: [
+      'Shooting en collaboration',
+      'Shooting rémunéré',
+      'Les deux'
+    ],
+    over18: 'Je confirme avoir 18 ans ou plus.',
+    consent: 'J\'accepte que MEOCY utilise ces informations pour me répondre, comme décrit dans la Politique de confidentialité.',
+    contactPerson: 'Interlocuteur',
+    role: 'Votre rôle',
+    website: 'Site web ou Instagram',
+    modelsCount: 'Nombre de mannequins / nouveaux visages',
+    need: 'De quoi avez-vous besoin ?',
+    needOptions: [
+      'Test shootings pour nouveaux visages',
+      'Digitals et polaroïds',
+      'Comp cards / portfolios',
+      'Lookbook / campagne',
+      'Vidéo',
+      'Autre'
+    ],
+    boardLink: 'Lien vers le model board',
+    timeframe: 'Calendrier / échéance',
+    creativeRole: 'Votre rôle',
+    creativeRoleOptions: [
+      'Photographe / vidéaste (assistant lumière)',
+      'Maquilleur(se)',
+      'Coiffeur(se)',
+      'Styliste de mode',
+      'Assistant(e)',
+      'Designer',
+      'Autre'
+    ],
+    select: 'Sélectionner…',
+    submit: 'Envoyer',
+    sending: 'Envoi en cours…',
+    errRequired: 'Veuillez remplir les champs obligatoires.',
+    errEmail: 'Veuillez saisir une adresse email valide.',
+    errConsent: 'Veuillez accepter le consentement de confidentialité pour continuer.',
+    errOver18: 'Vous devez avoir 18 ans ou plus pour postuler.',
+    errGeneric: 'Une erreur est survenue. Réessayez ou écrivez à hello@meocy.com.',
+    successTitle: 'Message reçu.',
+    successBody: 'Merci {name} — nous lisons chaque message personnellement et vous répondrons dès que possible.',
+    another: 'Envoyer un autre message'
+  },
+
+  privacyCollab: {
+    title: 'Formulaires de collaboration.',
+    text: 'Si vous nous contactez via le formulaire de collaboration, nous utilisons vos données (nom, email, liens de réseaux sociaux ou de portfolio et les informations que vous fournissez) uniquement pour vous répondre et planifier d\'éventuels projets. Nous ne les vendons ni ne les partageons, et nous les supprimons sur demande.'
   }
 };

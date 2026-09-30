@@ -583,5 +583,127 @@ export const it: Dict = {
       'Collaborazione modelle / creativi',
       'Altro'
     ]
+  },
+
+  collabPage: {
+    title: 'Lavorare con MEOCY',
+    intro1: 'MEOCY collabora con modelle, agenzie e creativi a Milano.',
+    intro2: 'Scegli l\'opzione più adatta a te, guarda cosa ci serve e invia i tuoi dati qui sotto.',
+    tabModels: 'Modelle e talent',
+    tabAgencies: 'Agenzie',
+    tabCreatives: 'Creativi e assistenti',
+    offerTitle: 'Come funziona',
+    needTitle: 'Cosa inviarci',
+    mIntro: 'Stai costruendo il tuo portfolio a Milano? MEOCY collabora con modelle e modelli per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
+    mOffer: [
+      'Nessun compenso da nessuna delle due parti — gli shooting in collaborazione non sono retribuiti',
+      'Ricevi da 10 a 25 foto professionalmente ritoccate, a seconda dello shooting',
+      'Concept, location, outfit e tempistiche vengono pianificati insieme prima dello shooting',
+      'I termini vengono confermati per iscritto prima dello shooting'
+    ],
+    mNeed: [
+      'Il tuo Instagram e/o link al portfolio',
+      '3–6 foto recenti (tramite link)',
+      'La tua città e la tua disponibilità',
+      'Se sei rappresentata/o da un\'agenzia',
+      'Cosa cerchi: una collaborazione o uno shooting a pagamento'
+    ],
+    mPaidNote: 'Preferisci uno shooting a pagamento?',
+    mPaidLink: 'Scopri il pacchetto Shooting Moda / Modelle',
+    aIntro: 'Lavori con un\'agenzia di modelle a Milano? MEOCY offre test shoot per new faces e contenuti per le tue modelle.',
+    aOffer: [
+      'Test shoot gratuiti per new faces — limitati a 10 shooting gratuiti',
+      'I test shoot gratuiti sono solo per test e portfolio, non per uso commerciale',
+      'Ogni shooting gratuito viene discusso con l\'agenzia per lo specifico progetto prima di essere confermato',
+      'Gli shooting commerciali vengono quotati a parte'
+    ],
+    aNeed: [
+      'Nome dell\'agenzia, referente e sito web o Instagram',
+      'Un link alla vostra model board o alle new faces che avete in mente',
+      'Di cosa avete bisogno: test shoot, digitals e polaroid, comp card, lookbook o video',
+      'Le vostre tempistiche o scadenze'
+    ],
+    cIntro: 'MEOCY collabora con fotografi, videomaker e professionisti creativi a Milano.',
+    cOffer: [
+      'Fotografi e videomaker: lavoro retribuito come assistente luci',
+      'Truccatori, hair stylist, stylist e altri creativi: shooting in collaborazione, se siete interessati',
+      'Compensi e termini vengono concordati prima di ogni produzione'
+    ],
+    cNeed: [
+      'Il tuo Instagram e/o link al portfolio',
+      'Il tuo ruolo e la tua città',
+      'La tua disponibilità',
+      'Su cosa ti piacerebbe lavorare'
+    ],
+    creativesPaidNote: 'Lavoro retribuito come assistente luci.',
+    creativesCollabNote: 'Shooting in collaborazione — per i creativi interessati.',
+    name: 'Nome',
+    email: 'Email',
+    instagram: 'Instagram',
+    portfolio: 'Link a portfolio / foto',
+    city: 'Città',
+    availability: 'Disponibilità',
+    message: 'Messaggio (facoltativo)',
+    experience: 'Esperienza',
+    experienceOptions: [
+      'New face',
+      'Qualche esperienza',
+      'Esperta/o'
+    ],
+    agencyQ: 'Rappresentata/o da un\'agenzia?',
+    agencyOptions: [
+      'No',
+      'Sì'
+    ],
+    agencyName: 'Nome dell\'agenzia',
+    lookingFor: 'Cerchi',
+    lookingForOptions: [
+      'Shooting in collaborazione',
+      'Shooting a pagamento',
+      'Entrambi'
+    ],
+    over18: 'Confermo di avere almeno 18 anni.',
+    consent: 'Accetto che MEOCY utilizzi questi dati per rispondermi, come descritto nell\'Informativa sulla privacy.',
+    contactPerson: 'Referente',
+    role: 'Il tuo ruolo',
+    website: 'Sito web o Instagram',
+    modelsCount: 'Numero di modelle / new faces',
+    need: 'Di cosa avete bisogno?',
+    needOptions: [
+      'Test shoot per new faces',
+      'Digitals e polaroid',
+      'Comp card / portfolio',
+      'Lookbook / campagna',
+      'Video',
+      'Altro'
+    ],
+    boardLink: 'Link alla model board',
+    timeframe: 'Tempistiche / scadenza',
+    creativeRole: 'Il tuo ruolo',
+    creativeRoleOptions: [
+      'Fotografo / videomaker (assistente luci)',
+      'Truccatore/trice',
+      'Hair stylist',
+      'Stylist di moda',
+      'Assistente',
+      'Designer',
+      'Altro'
+    ],
+    select: 'Seleziona…',
+    submit: 'Invia',
+    sending: 'Invio in corso…',
+    errRequired: 'Compila i campi obbligatori.',
+    errEmail: 'Inserisci un indirizzo email valido.',
+    errConsent: 'Accetta il consenso privacy per continuare.',
+    errOver18: 'Devi avere almeno 18 anni per candidarti.',
+    errGeneric: 'Qualcosa è andato storto. Riprova o scrivi a hello@meocy.com.',
+    successTitle: 'Messaggio ricevuto.',
+    successBody: 'Grazie {name} — leggiamo personalmente ogni messaggio e ti risponderemo il prima possibile.',
+    another: 'Invia un altro messaggio'
+  },
+
+  privacyCollab: {
+    title: 'Moduli di collaborazione.',
+    text: 'Se ci contatti tramite il modulo di collaborazione, utilizziamo i tuoi dati (nome, email, link social o portfolio e le informazioni che fornisci) solo per risponderti e per pianificare eventuali progetti. Non li vendiamo né li condividiamo e li cancelliamo su richiesta.'
   }
 };

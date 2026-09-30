@@ -580,6 +580,128 @@ export const en = {
       'Model / creative collaboration',
       'Other'
     ]
+  },
+
+  collabPage: {
+    title: 'Working With MEOCY',
+    intro1: 'MEOCY works with models, agencies and creatives in Milan.',
+    intro2: 'Choose the option that fits you, see what we need from you and send your details below.',
+    tabModels: 'Models & talent',
+    tabAgencies: 'Agencies',
+    tabCreatives: 'Creatives & assistants',
+    offerTitle: 'How it works',
+    needTitle: 'What to send us',
+    mIntro: 'Building your portfolio in Milan? MEOCY collaborates with models to create strong fashion, editorial and portfolio imagery.',
+    mOffer: [
+      'No fee on either side — collaboration shoots are unpaid',
+      'You receive 10–25 professionally edited photos, depending on the shoot',
+      'Concept, location, outfits and timing are planned together before the shoot',
+      'Terms are confirmed in writing before we shoot'
+    ],
+    mNeed: [
+      'Your Instagram and/or portfolio link',
+      '3–6 recent photos (as a link)',
+      'Your city and availability',
+      'Whether you are represented by an agency',
+      'What you are looking for: collaboration or a paid shoot'
+    ],
+    mPaidNote: 'Prefer a paid shoot?',
+    mPaidLink: 'See the Fashion / Model Shoot package',
+    aIntro: 'Working with a modeling agency in Milan? MEOCY offers test shoots for new faces and content for your models.',
+    aOffer: [
+      'Free test shoots for new faces — limited to 10 free shoots',
+      'Free test shoots are for test and portfolio use only, not for commercial use',
+      'Each free shoot is discussed with the agency for the specific project before it is confirmed',
+      'Commercial shoots are quoted separately'
+    ],
+    aNeed: [
+      'Agency name, contact person and website or Instagram',
+      'A link to your model board or the new faces you have in mind',
+      'What you need: test shoots, digitals and polaroids, comp cards, lookbook or video',
+      'Your timeframe or deadlines'
+    ],
+    cIntro: 'MEOCY works with photographers, videographers and creative professionals in Milan.',
+    cOffer: [
+      'Photographers and videographers: paid work as a lighting assistant',
+      'Makeup artists, hair, stylists and other creatives: collaboration shoots, if you are interested',
+      'Rates and terms are agreed before each production'
+    ],
+    cNeed: [
+      'Your Instagram and/or portfolio link',
+      'Your role and city',
+      'Your availability',
+      'What you would like to work on'
+    ],
+    creativesPaidNote: 'Paid work as a lighting assistant.',
+    creativesCollabNote: 'Collaboration shoot — for creatives who are interested.',
+    name: 'Name',
+    email: 'Email',
+    instagram: 'Instagram',
+    portfolio: 'Portfolio / photos link',
+    city: 'City',
+    availability: 'Availability',
+    message: 'Message (optional)',
+    experience: 'Experience',
+    experienceOptions: [
+      'New face',
+      'Some experience',
+      'Experienced'
+    ],
+    agencyQ: 'Represented by an agency?',
+    agencyOptions: [
+      'No',
+      'Yes'
+    ],
+    agencyName: 'Agency name',
+    lookingFor: 'Looking for',
+    lookingForOptions: [
+      'Collaboration shoot',
+      'Paid shoot',
+      'Both'
+    ],
+    over18: 'I confirm that I am 18 or older.',
+    consent: 'I agree that MEOCY may use these details to reply to me, as described in the Privacy Policy.',
+    contactPerson: 'Contact person',
+    role: 'Your role',
+    website: 'Website or Instagram',
+    modelsCount: 'Number of models / new faces',
+    need: 'What do you need?',
+    needOptions: [
+      'Test shoots for new faces',
+      'Digitals & polaroids',
+      'Comp cards / portfolios',
+      'Lookbook / campaign',
+      'Video',
+      'Other'
+    ],
+    boardLink: 'Link to model board',
+    timeframe: 'Timeframe / deadline',
+    creativeRole: 'Your role',
+    creativeRoleOptions: [
+      'Photographer / videographer (lighting assistant)',
+      'Makeup artist',
+      'Hair stylist',
+      'Fashion stylist',
+      'Assistant',
+      'Designer',
+      'Other'
+    ],
+    select: 'Select…',
+    submit: 'Send',
+    sending: 'Sending…',
+    errRequired: 'Please fill in the required fields.',
+    errEmail: 'Please enter a valid email address.',
+    errConsent: 'Please accept the privacy consent to continue.',
+    errOver18: 'You must be 18 or older to apply.',
+    errGeneric: 'Something went wrong. Please try again or write to hello@meocy.com.',
+    successTitle: 'Message received.',
+    successBody: 'Thank you {name} — we read every message personally and will get back to you as soon as possible.',
+    another: 'Send another message'
+  },
+
+  privacyCollab: {
+    title: 'Collaboration forms.',
+    text: 'If you contact us through the collaboration form, we use your details (name, email, social or portfolio links and the information you provide) only to reply to you and to plan possible projects. We do not sell or share them, and we delete them on request.'
   }
 };
 

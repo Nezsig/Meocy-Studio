@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
+import { PrivacyCollabSection } from '../../components/PrivacyCollabSection';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — MEOCY',
@@ -47,6 +48,8 @@ export default function PrivacyPage() {
                   for advertising and we never sell it.
                 </p>
               </section>
+
+              <PrivacyCollabSection />
 
               <section>
                 <h2 className="font-semibold text-ink">Legal basis (GDPR).</h2>
