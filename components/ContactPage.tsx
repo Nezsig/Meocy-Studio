@@ -394,14 +394,14 @@ export function ContactPage() {
 
               <div className="mt-6 space-y-1">
                 {[
-                  { label: 'T', value: '+39 379 105 1000', href: 'https://wa.me/393791051000', external: true },
+                  { label: 'T', value: '+39 380 498 1718', href: 'https://wa.me/393804981718', external: true },
                   { label: 'M', value: '+39 380 498 1718', href: 'tel:+393804981718', external: false },
                   { label: 'E', value: 'hello@meocy.com', href: 'mailto:hello@meocy.com', external: false },
                   { label: 'IG', value: '@chamila.it', href: 'https://instagram.com/chamila.it', external: true },
                   { label: 'IG', value: '@chami.eu', href: 'https://instagram.com/chami.eu', external: true },
-                ].map((r) => (
+                ].map((r, i) => (
                   <a
-                    key={r.value}
+                    key={`${r.label}-${i}`}
                     href={r.href}
                     {...(r.external ? externalLink : {})}
                     className="flex min-h-[40px] items-center gap-3 text-[14.5px] text-[#0b0b0c] transition-colors hover:text-slate2">
