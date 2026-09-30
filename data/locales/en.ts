@@ -48,6 +48,13 @@ export const en = {
 
   clients: { label: 'Selected clients' },
 
+  work: {
+    sectionHeading: 'Work',
+    filterFashion: 'Fashion',
+    filterPortrait: 'Portrait',
+    filterAll: 'All'
+  },
+
   about: {
     sectionHeading: 'About',
     bio: 'Behind MEOCY is Chamila, a photographer from Sri Lanka. I spent eight years building a photography career in my homeland, then moved to Italy. After a while away from the camera, I\'m starting over here in Milan—same eye, new name. Work with MEOCY and you work directly with me: every shoot is carefully planned, shot, and delivered by the founder, at a price agreed upon beforehand.',

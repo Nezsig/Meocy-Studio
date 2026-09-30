@@ -51,6 +51,13 @@ export const it: Dict = {
 
   clients: { label: 'Clienti selezionati' },
 
+  work: {
+    sectionHeading: 'Lavori',
+    filterFashion: 'Moda',
+    filterPortrait: 'Ritratti',
+    filterAll: 'Tutti'
+  },
+
   about: {
     sectionHeading: 'Chi sono',
     bio: 'Dietro MEOCY c\'è Chamila, fotografo dallo Sri Lanka. Ho passato otto anni costruendo una carriera in fotografia nella mia terra, poi mi sono trasferito in Italia. Dopo un po\' lontano dalla macchina fotografica, sto ricominciando da capo qui a Milano—stesso occhio, nuovo nome. Lavora con MEOCY e lavori direttamente con me: ogni shooting è attentamente pianificato, girato e consegnato dal founder, a un prezzo concordato in anticipo.',
