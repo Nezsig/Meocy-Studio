@@ -11,14 +11,13 @@ export const images = {
 
 export const studioContact = {
   email: 'hello@meocy.com',
-  phone: '+39 379 105 1000',
-  phoneHref: 'tel:+393791051000',
+  phone: '+39 380 498 1718',
+  phoneHref: 'tel:+393804981718',
   instagram1: '@chamila.it',
   instagram1Href: 'https://instagram.com/chamila.it',
   instagram2: '@chami.eu',
   instagram2Href: 'https://instagram.com/chami.eu',
-  whatsappHref: 'https://wa.me/393791051000',
-  address: 'Viale Renato Serra 14, 20148 Milano'
+  whatsappHref: 'https://wa.me/393804981718'
 };
 
 export const projects: ProjectMeta[] = [

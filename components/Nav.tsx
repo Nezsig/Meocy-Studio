@@ -5,12 +5,14 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 const linkOrder = [
-{ href: '#process', key: 'approach' },
-{ href: '#equipment', key: 'studio' },
-{ href: '#estimator', key: 'pricing' },
-{ href: '#packages', key: 'packages' },
-{ href: '#about', key: 'about' },
-{ href: '#faq', key: 'faq' }] as
+{ href: '/', key: 'home' },
+{ href: '/work', key: 'work' },
+{ href: '/services', key: 'services' },
+{ href: '/packages', key: 'packages' },
+{ href: '/about', key: 'about' },
+{ href: '/faq', key: 'faq' },
+{ href: '/collaborate', key: 'collaborate' },
+{ href: '/contact', key: 'contact' }] as
 const;
 
 export function Nav() {
@@ -59,9 +61,9 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
             <a
-              href="#booking"
+              href="/contact"
               className="hidden whitespace-nowrap rounded-full bg-ink px-5 py-2.5 text-[13.5px] font-medium text-chalk transition-transform duration-150 ease-smooth hover:-translate-y-0.5 sm:inline-flex">
-              
+
               {t.nav.cta}
             </a>
             <button
@@ -92,10 +94,10 @@ export function Nav() {
             )}
             </ul>
             <a
-            href="#booking"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="mt-3 block rounded-full bg-ink px-5 py-3 text-center text-[14px] font-medium text-chalk">
-            
+
               {t.nav.cta}
             </a>
           </div>

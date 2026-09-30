@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: 'https://meocy.com/about',
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

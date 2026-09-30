@@ -7,14 +7,16 @@ export const it: Dict = {
 
   nav: {
     links: {
-      approach: 'Metodo',
-      studio: 'Studio',
-      pricing: 'Prezzi',
+      home: 'Home',
+      work: 'Portfolio',
+      services: 'Servizi',
       packages: 'Pacchetti',
       about: 'Chi sono',
-      faq: 'FAQ'
+      faq: 'FAQ',
+      collaborate: 'Collabora',
+      contact: 'Contatti'
     },
-    cta: 'Prenota uno shooting',
+    cta: 'Contattami',
     openMenu: 'Apri il menu',
     closeMenu: 'Chiudi il menu',
     language: 'Lingua'
@@ -35,18 +37,7 @@ export const it: Dict = {
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
 
     rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è una ripartenza sotto un nuovo nome. Ci trovi proprio all\'inizio — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
-    noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.',
-
-    promo: {
-      badge: 'PORTA IL TUO BRAND AL LIVELLO SUCCESSIVO',
-      heading: 'I contenuti mensili che il tuo brand merita.',
-      title: 'Pacchetto video social media',
-      description: '4 video commerciali brevi per i social (meno di 20s) per pacchetto — Reels, TikTok & ads.',
-      priceStrikethrough: '€1.000',
-      price: '€500 / pacchetto',
-      discount: 'SCONTO 50%',
-      cta: 'Prendi il pacchetto →'
-    }
+    noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.'
   },
 
   clients: { label: 'Clienti selezionati' },
@@ -61,7 +52,7 @@ export const it: Dict = {
     role: 'Founder & Photographer · MEOCY STUDIO',
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
       mobile: '+39 380 498 1718',
       emailLabel: 'E',
@@ -195,8 +186,6 @@ export const it: Dict = {
       commercial: ['Shooting di 4 ore · cambio luci a ogni scatto', 'Cambio location · voce del modello · voiceover · full production'],
       pack: ['4 video brevi commerciali (meno di 20s) — Reels, TikTok e ads', '25 foto ritoccate — incluse', 'Cambio location', 'Cambio luci a ogni location', 'Shooting di 6 ore', 'Voce del modello', 'Musica royalty-free']
     },
-    packExpiry: 'Offerta valida fino al 31 dicembre',
-    bannerText: '50% di sconto sul pacchetto video social — valido fino al 31 dicembre',
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'foto ritoccate finali — incluse',
     linePhotosQuote: 'Le foto per i video commerciali vengono quotate separatamente.',
@@ -322,7 +311,7 @@ export const it: Dict = {
     },
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
       mobile: '+39 380 498 1718',
       emailLabel: 'E',
@@ -331,12 +320,14 @@ export const it: Dict = {
       website: 'meocy.com'
     },
     navigation: [
-      { label: 'Approccio', href: '#process' },
-      { label: 'Prezzi', href: '#estimator' },
-      { label: 'Pacchetti', href: '#packages' },
-      { label: 'Chi sono', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Prenota uno shooting', href: '#booking' }
+      { label: 'Home', href: '/' },
+      { label: 'Portfolio', href: '/work' },
+      { label: 'Servizi', href: '/services' },
+      { label: 'Pacchetti', href: '/packages' },
+      { label: 'Chi sono', href: '/about' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Collabora', href: '/collaborate' },
+      { label: 'Contatti', href: '/contact' }
     ],
     services: [
       'Campagne di abbigliamento e brand',
@@ -487,7 +478,7 @@ export const it: Dict = {
     title: 'Chi è MEOCY',
     headline: 'La persona dietro la fotocamera',
     p1: 'MEOCY è stato fondato da Chamila, fotografo originario dello Sri Lanka che ha trascorso otto anni a costruire la sua carriera fotografica prima di trasferirsi in Italia.',
-    p2: 'Dopo un periodo lontano dalla fotocamera, torna alla fotografia a Milano con un nuovo nome e un obiettivo chiaro: creare contenuti visivi professionali per brand, aziende, prodotti, modelle e persone.',
+    p2: 'Dopo un periodo lontano dalla fotocamera, torna alla fotografia a Milano e Parigi con un nuovo nome e un obiettivo chiaro: creare contenuti visivi professionali per brand, aziende, prodotti, modelle e persone.',
     p3: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.',
     button: 'Inizia un progetto',
     whyTitle: 'Perché scegliere MEOCY?',
@@ -495,7 +486,7 @@ export const it: Dict = {
       { t: 'Coinvolgimento diretto del fondatore', d: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.' },
       { t: 'Pianificato prima dello shooting', d: 'Ogni produzione viene pianificata prima del giorno delle riprese: location, illuminazione, outfit, prodotti, tempistiche e consegne finali.' },
       { t: 'Contenuti pensati per le piattaforme reali', d: 'Foto e video sono creati pensando al loro utilizzo finale: siti web, social media, pubblicità e campagne.' },
-      { t: 'Con base a Milano', d: 'Con sede a Milano, con produzione on location in tutta la città e nelle zone limitrofe.' },
+      { t: 'Con base a Milano e Parigi', d: 'Con sede a Milano e Parigi, con produzione on location in entrambe le città e nelle zone limitrofe.' },
       { t: 'Prezzi chiari', d: 'L\'ambito della produzione e il prezzo finale vengono concordati prima dello shooting, quindi nessun costo di produzione inatteso.' }
     ],
     eqTitle: 'Attrezzatura professionale',
@@ -534,7 +525,7 @@ export const it: Dict = {
       { q: 'Noleggio studio e costi delle location sono inclusi?', a: ['Non automaticamente. Noleggio studio, permessi, location specializzate e altri costi di produzione di terze parti vengono quotati a parte quando necessari.'] },
       { q: 'Quanto tempo richiede la consegna?', a: ['La consegna standard delle foto è di 7–10 giorni lavorativi.', 'La consegna standard dei video è di 7–14 giorni lavorativi.', 'La consegna prioritaria può essere disponibile su richiesta.'] },
       { q: 'In quali lingue lavorate?', a: ['English, Italiano, Français'] },
-      { q: 'Dove ha sede MEOCY?', a: ['Milano, Italia.'] }
+      { q: 'Dove ha sede MEOCY?', a: ['Milano e Parigi.'] }
     ]
   },
 

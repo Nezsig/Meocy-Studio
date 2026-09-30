@@ -5,14 +5,16 @@ export const en = {
 
   nav: {
     links: {
-      approach: 'Approach',
-      studio: 'Studio',
-      pricing: 'Pricing',
+      home: 'Home',
+      work: 'Work',
+      services: 'Services',
       packages: 'Packages',
       about: 'About',
-      faq: 'FAQ'
+      faq: 'FAQ',
+      collaborate: 'Collaborate',
+      contact: 'Contact'
     },
-    cta: 'Book a shoot',
+    cta: 'Get in touch',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     language: 'Language'
@@ -32,18 +34,7 @@ export const en = {
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
 
     rebrandCallout: 'Newly rebranded — September 2026. MEOCY is a fresh start under a new name. You\'re catching us right at the beginning — so you get founder-level attention on every shoot, and introductory pricing while we take on our first brands.',
-    noPackageNeeded: 'No package needed — tell us what you want and we\'ll shoot it your way.',
-
-    promo: {
-      badge: 'TAKE YOUR BRAND TO THE NEXT LEVEL',
-      heading: 'The monthly content your brand needs.',
-      title: 'Social media video pack',
-      description: '4 commercial social media short videos (under 20s) per pack — Reels, TikTok & ads.',
-      priceStrikethrough: '€1,000',
-      price: '€500 / pack',
-      discount: '50% OFF',
-      cta: 'Get the pack →'
-    }
+    noPackageNeeded: 'No package needed — tell us what you want and we\'ll shoot it your way.'
   },
 
   clients: { label: 'Selected clients' },
@@ -58,7 +49,7 @@ export const en = {
     role: 'Founder & Photographer · MEOCY STUDIO',
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
       mobile: '+39 380 498 1718',
       emailLabel: 'E',
@@ -197,9 +188,7 @@ export const en = {
       social: ['Model voice · 2 lighting setups', 'One location with lighting change · 2 hours recording'],
       commercial: ['4-hour shoot · lighting changed every shot', 'Location change · model voice · voiceover · full production'],
       pack: ['4 commercial short videos (under 20s) — Reels, TikTok & ads', '25 retouched photos — included', 'Location change', 'Lighting change at every location', '6-hour shoot', 'Model voice', 'Royalty-free music']
-    },
-    packExpiry: 'Offer valid until December 31',
-    bannerText: '50% off the Social media video pack — valid until December 31'
+    }
   },
 
   packages: {
@@ -319,21 +308,23 @@ export const en = {
     },
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
-      mobile: '+39 379 105 1000',
+      mobile: '+39 380 498 1718',
       emailLabel: 'E',
       email: 'hello@meocy.com',
       websiteLabel: 'W',
       website: 'meocy.com'
     },
     navigation: [
-      { label: 'Approach', href: '#process' },
-      { label: 'Pricing', href: '#estimator' },
-      { label: 'Packages', href: '#packages' },
-      { label: 'About', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Book a shoot', href: '#booking' }
+      { label: 'Home', href: '/' },
+      { label: 'Work', href: '/work' },
+      { label: 'Services', href: '/services' },
+      { label: 'Packages', href: '/packages' },
+      { label: 'About', href: '/about' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Collaborate', href: '/collaborate' },
+      { label: 'Contact', href: '/contact' }
     ],
     services: [
       'Clothing & brand campaigns',
@@ -484,7 +475,7 @@ export const en = {
     title: 'About MEOCY',
     headline: 'The Person Behind the Camera',
     p1: 'MEOCY is founded by Chamila, a photographer originally from Sri Lanka who spent eight years building his photography career before relocating to Italy.',
-    p2: 'After time away from the camera, he is returning to photography in Milan with a new name and a clear focus: creating professional visual content for brands, businesses, products, models and people.',
+    p2: 'After time away from the camera, he is returning to photography in Milan and Paris with a new name and a clear focus: creating professional visual content for brands, businesses, products, models and people.',
     p3: 'When you work with MEOCY, you work directly with the founder — from the first brief to the final delivery.',
     button: 'Start a project',
     whyTitle: 'Why Work With MEOCY?',
@@ -492,7 +483,7 @@ export const en = {
       { t: 'Direct founder involvement', d: 'When you work with MEOCY, you work directly with the founder from the first brief to the final delivery.' },
       { t: 'Planned before the shoot', d: 'Every production is planned before the shooting day, including locations, lighting, outfits, products, timing and final deliverables.' },
       { t: 'Content made for real platforms', d: 'Photography and video are created with their final use in mind — websites, social media, advertising and campaigns.' },
-      { t: 'Milan based', d: 'Based in Milan, Italy, with on-location production available across the city and surrounding areas.' },
+      { t: 'Milan & Paris based', d: 'Based in Milan and Paris, with on-location production available across both cities and surrounding areas.' },
       { t: 'Clear pricing', d: 'The production scope and final price are agreed before the shoot begins, so there are no unexpected production costs.' }
     ],
     eqTitle: 'Professional Equipment',
@@ -531,7 +522,7 @@ export const en = {
       { q: 'Are studio rental and location fees included?', a: ['Not automatically. Studio rental, permits, specialised locations and other third-party production costs are quoted separately when required.'] },
       { q: 'How long does delivery take?', a: ['Standard photo delivery is 7–10 working days.', 'Standard video delivery is 7–14 working days.', 'Priority delivery may be available on request.'] },
       { q: 'What languages do you work in?', a: ['English, Italiano, Français'] },
-      { q: 'Where is MEOCY based?', a: ['Milan, Italy.'] }
+      { q: 'Where is MEOCY based?', a: ['Milan and Paris.'] }
     ]
   },
 

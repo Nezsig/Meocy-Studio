@@ -13,7 +13,7 @@ export function OfferBanner() {
     <div className="bg-accent text-ink py-4 px-5 sm:px-8">
       <div className="flex items-start justify-between gap-3">
         <p className="text-[13px] sm:text-[14px] font-medium leading-snug flex-1">
-          {t.estimator.bannerText}
+          {(t.estimator as any).bannerText || ''}
         </p>
         <button
           onClick={() => setIsVisible(false)}

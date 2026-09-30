@@ -7,14 +7,16 @@ export const fr: Dict = {
 
   nav: {
     links: {
-      approach: 'Méthode',
-      studio: 'Studio',
-      pricing: 'Tarifs',
+      home: 'Accueil',
+      work: 'Portfolio',
+      services: 'Services',
       packages: 'Formules',
       about: 'À propos',
-      faq: 'FAQ'
+      faq: 'FAQ',
+      collaborate: 'Collaborer',
+      contact: 'Contact'
     },
-    cta: 'Réserver une séance',
+    cta: 'Me contacter',
     openMenu: 'Ouvrir le menu',
     closeMenu: 'Fermer le menu',
     language: 'Langue'
@@ -35,18 +37,7 @@ export const fr: Dict = {
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
 
     rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est une redémarrage sous un nouveau nom. Vous nous trouvez juste au début — donc vous recevez l\'attention d\'un fondateur sur chaque shooting, et les prix d\'introduction pendant que nous accueillons nos premiers brand.',
-    noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.',
-
-    promo: {
-      badge: 'PORTEZ VOTRE MARQUE AU NIVEAU SUPÉRIEUR',
-      heading: 'Le contenu mensuel dont votre marque a besoin.',
-      title: 'Pack vidéo réseaux sociaux',
-      description: '4 vidéos commerciales courtes pour les réseaux (moins de 20s) par pack — Reels, TikTok & pubs.',
-      priceStrikethrough: '€1 000',
-      price: '€500 / pack',
-      discount: '-50%',
-      cta: 'Obtenir le pack →'
-    }
+    noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.'
   },
 
   clients: { label: 'Clients sélectionnés' },
@@ -61,7 +52,7 @@ export const fr: Dict = {
     role: 'Founder & Photographer · MEOCY STUDIO',
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
       mobile: '+39 380 498 1718',
       emailLabel: 'E',
@@ -195,8 +186,6 @@ export const fr: Dict = {
       commercial: ['Tournage de 4 heures · changement d\'éclairage à chaque plan', 'Changement de lieu · voix du modèle · voiceover · production complète'],
       pack: ['4 vidéos courtes commerciales (moins de 20s) — Reels, TikTok et pubs', '25 photos retouchées — incluses', 'Changement de lieu', 'Changement d\'éclairage à chaque lieu', 'Tournage de 6 heures', 'Voix du modèle', 'Musique libre de droits']
     },
-    packExpiry: 'Offre valable jusqu\'au 31 décembre',
-    bannerText: '50% de réduction sur le pack vidéo réseaux — valable jusqu\'au 31 décembre',
     lineVideos: (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`,
     linePhotos: 'photos retouchées finales — incluses',
     linePhotosQuote: 'Les photos pour les vidéos commerciales sont cotées séparément.',
@@ -322,7 +311,7 @@ export const fr: Dict = {
     },
     contact: {
       phoneLabel: 'T',
-      phone: '+39 379 105 1000',
+      phone: '+39 380 498 1718',
       mobileLabel: 'M',
       mobile: '+39 380 498 1718',
       emailLabel: 'E',
@@ -331,12 +320,14 @@ export const fr: Dict = {
       website: 'meocy.com'
     },
     navigation: [
-      { label: 'Approche', href: '#process' },
-      { label: 'Tarifs', href: '#estimator' },
-      { label: 'Forfaits', href: '#packages' },
-      { label: 'À propos', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Réserver une séance', href: '#booking' }
+      { label: 'Accueil', href: '/' },
+      { label: 'Portfolio', href: '/work' },
+      { label: 'Services', href: '/services' },
+      { label: 'Forfaits', href: '/packages' },
+      { label: 'À propos', href: '/about' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Collaborer', href: '/collaborate' },
+      { label: 'Contact', href: '/contact' }
     ],
     services: [
       'Campagnes de vêtements et de marques',
@@ -487,7 +478,7 @@ export const fr: Dict = {
     title: 'À propos de MEOCY',
     headline: 'La personne derrière l\'appareil photo',
     p1: 'MEOCY a été fondé par Chamila, photographe originaire du Sri Lanka, qui a passé huit ans à construire sa carrière photographique avant de s\'installer en Italie.',
-    p2: 'Après un temps loin de l\'appareil photo, il revient à la photographie à Milan avec un nouveau nom et un objectif clair : créer du contenu visuel professionnel pour les marques, les entreprises, les produits, les mannequins et les personnes.',
+    p2: 'Après un temps loin de l\'appareil photo, il revient à la photographie à Milan et Paris avec un nouveau nom et un objectif clair : créer du contenu visuel professionnel pour les marques, les entreprises, les produits, les mannequins et les personnes.',
     p3: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.',
     button: 'Démarrer un projet',
     whyTitle: 'Pourquoi travailler avec MEOCY ?',
@@ -495,7 +486,7 @@ export const fr: Dict = {
       { t: 'Implication directe du fondateur', d: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.' },
       { t: 'Planifié avant le tournage', d: 'Chaque production est planifiée avant le jour de la prise de vue : lieux, éclairage, tenues, produits, calendrier et livrables finaux.' },
       { t: 'Des contenus pensés pour les vraies plateformes', d: 'Photos et vidéos sont créées en pensant à leur usage final : sites web, réseaux sociaux, publicité et campagnes.' },
-      { t: 'Basé à Milan', d: 'Basé à Milan, en Italie, avec production sur site dans toute la ville et ses environs.' },
+      { t: 'Basé à Milan et Paris', d: 'Basé à Milan et Paris, avec production sur site dans les deux villes et leurs environs.' },
       { t: 'Tarifs clairs', d: 'Le périmètre de la production et le prix final sont convenus avant la prise de vue, sans coûts de production inattendus.' }
     ],
     eqTitle: 'Équipement professionnel',
@@ -534,7 +525,7 @@ export const fr: Dict = {
       { q: 'La location de studio et les frais de lieu sont-ils inclus ?', a: ['Pas automatiquement. La location de studio, les autorisations, les lieux spécialisés et les autres coûts de production de tiers sont chiffrés séparément si nécessaire.'] },
       { q: 'Quel est le délai de livraison ?', a: ['La livraison standard des photos est de 7 à 10 jours ouvrés.', 'La livraison standard des vidéos est de 7 à 14 jours ouvrés.', 'Une livraison prioritaire peut être disponible sur demande.'] },
       { q: 'Dans quelles langues travaillez-vous ?', a: ['English, Italiano, Français'] },
-      { q: 'Où est basé MEOCY ?', a: ['Milan, Italie.'] }
+      { q: 'Où est basé MEOCY ?', a: ['Milan et Paris.'] }
     ]
   },
 

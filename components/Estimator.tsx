@@ -101,19 +101,6 @@ export function Estimator() {
                         <span className={`mt-0.5 block text-[12.5px] ${isSelected ? 'text-chalk/70' : 'text-slate2'}`}>
                           {vtCfg.description}
                         </span>
-                        {isPack && (
-                          <span className="mt-2 inline-flex items-center gap-1.5 text-[11px]">
-                            <span className={`line-through ${isSelected ? 'text-chalk/40' : 'text-slate2'}`}>
-                              {euro(1000, lang)}
-                            </span>
-                            <span className="text-accent font-bold">{euro(500, lang)}</span>
-                            <span className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
-                              isSelected ? 'bg-accent text-ink' : 'bg-accent text-ink'
-                            }`}>
-                              50% OFF
-                            </span>
-                          </span>
-                        )}
                       </span>
                     </label>
                   );
@@ -165,13 +152,9 @@ export function Estimator() {
             <div className="mt-4">
               {videoType === 'pack' && result.discountedPrice ? (
                 <div>
-                  <p className="text-[14px] text-chalk/60">
-                    <span className="line-through">{euro(1000 * quantity, lang)}</span>
-                  </p>
                   <p className="font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">
                     {euro(result.total, lang)}
                   </p>
-                  <p className="mt-2 text-[12px] font-semibold text-accent">50% OFF</p>
                 </div>
               ) : (
                 <p className="font-display text-[clamp(2.3rem,5vw,3.2rem)] leading-none tracking-tighter-display">

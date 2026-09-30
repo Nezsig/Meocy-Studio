@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-36">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.72fr)] lg:items-center lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-1 lg:items-center lg:gap-16">
           <motion.div {...rise(0)}>
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate2">
               <span className="h-2 w-2 rounded-full bg-accent" />
@@ -50,49 +50,6 @@ export function Hero() {
             <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-slate2">{t.hero.studioCaption}</p>
           </motion.div>
 
-          <motion.div {...rise(0.1)} className="flex flex-col">
-            <div className="rounded-xl2 bg-ink p-8 text-chalk">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                {t.hero.promo.badge}
-              </p>
-
-              <h3 className="mt-4 font-display text-[1.8rem] leading-tight tracking-tighter-display">
-                {t.hero.promo.heading}
-              </h3>
-
-              <div className="mt-6 border-t border-chalk/10"></div>
-
-              <div className="mt-6">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-chalk/70">
-                  {t.hero.promo.title}
-                </p>
-
-                <p className="mt-3 text-[14px] leading-relaxed text-chalk/80">
-                  {t.hero.promo.description}
-                </p>
-
-                <div className="mt-6 flex items-baseline gap-3">
-                  <span className="line-through text-chalk/40 text-[15px]">
-                    {t.hero.promo.priceStrikethrough}
-                  </span>
-                  <span className="font-display text-[1.6rem] leading-none tracking-tighter-display text-accent">
-                    {t.hero.promo.price}
-                  </span>
-                  <span className="inline-flex items-center rounded bg-accent px-2 py-1 text-[11px] font-semibold text-ink">
-                    {t.hero.promo.discount}
-                  </span>
-                </div>
-              </div>
-
-              <a
-                href="#estimator"
-                className="mt-7 block rounded-full bg-accent px-6 py-3.5 text-center text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-                {t.hero.promo.cta}
-              </a>
-
-              <p className="mt-4 text-[12px] text-chalk/50">{t.estimator.packExpiry}</p>
-            </div>
-          </motion.div>
         </div>
 
         <motion.dl
