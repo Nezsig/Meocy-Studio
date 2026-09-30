@@ -508,5 +508,32 @@ export const it: Dict = {
       { label: 'Movimento e riprese aeree', items: ['Gimbal DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
       { label: 'Supporti', items: ['Treppiedi professionali', 'Stativi per luci', 'Softbox 120 cm', 'Softbox 85 cm'] }
     ]
+  },
+
+  faqPage: {
+    howTitle: 'Come funziona',
+    steps: [
+      { t: 'Raccontaci di cosa hai bisogno', d: ['Inviaci i dettagli del progetto tramite il modulo di contatto o prenota una breve chiamata.', 'Parlaci del tuo brand, dei prodotti, della location e dei contenuti che ti servono.'] },
+      { t: 'Pianifichiamo la produzione', d: ['Concordiamo il piano di produzione completo prima dello shooting.', 'Include location, illuminazione, outfit, prodotti, tempistiche e consegne finali.'] },
+      { t: 'Shooting', d: ['La produzione si svolge nella tua location a Milano oppure con i prodotti spediti a noi, quando adatto.'] },
+      { t: 'Editing e consegna', d: ['Le tue immagini e i tuoi video vengono ritoccati e color-corretti professionalmente e preparati per le piattaforme che ti servono.'] }
+    ],
+    deliveryTitle: 'Consegna standard',
+    deliveryPhotos: 'Foto: 7–10 giorni lavorativi',
+    deliveryVideos: 'Video: 7–14 giorni lavorativi',
+    deliveryNote: 'La consegna prioritaria può essere richiesta prima della prenotazione.',
+    faqTitle: 'Domande frequenti',
+    faq: [
+      { q: 'Quanto costa uno shooting?', a: ['I pacchetti MEOCY partono da €300 per una fotografia mirata e aumentano in base alle esigenze di produzione.', 'Le produzioni di contenuti più grandi e i progetti personalizzati vengono quotati in base a portata, tempo di shooting, location e consegne.'] },
+      { q: 'Posso inviarvi i miei prodotti?', a: ['Sì. I prodotti possono essere spediti direttamente a noi quando il progetto è adatto a una produzione in studio.', 'È disponibile anche la produzione on location a Milano.'] },
+      { q: 'Potete venire nella mia attività?', a: ['Sì. MEOCY realizza produzioni foto e video on location a Milano e dintorni.'] },
+      { q: 'Posso essere presente durante lo shooting?', a: ['Sì. I clienti possono assistere alla produzione di persona.', 'Per le produzioni adatte, si può organizzare anche la partecipazione a distanza.'] },
+      { q: 'Fornite modelle e modelli?', a: ['Le modelle e i modelli possono essere organizzati in base al progetto. I compensi vengono quotati a parte quando necessari.'] },
+      { q: 'Fornite truccatori e stylist?', a: ['Truccatori, stylist, assistenti e altri professionisti di produzione possono essere organizzati quando necessario. Questi costi vengono quotati a parte.'] },
+      { q: 'Noleggio studio e costi delle location sono inclusi?', a: ['Non automaticamente. Noleggio studio, permessi, location specializzate e altri costi di produzione di terze parti vengono quotati a parte quando necessari.'] },
+      { q: 'Quanto tempo richiede la consegna?', a: ['La consegna standard delle foto è di 7–10 giorni lavorativi.', 'La consegna standard dei video è di 7–14 giorni lavorativi.', 'La consegna prioritaria può essere disponibile su richiesta.'] },
+      { q: 'In quali lingue lavorate?', a: ['English, Italiano, Français'] },
+      { q: 'Dove ha sede MEOCY?', a: ['Milano, Italia.'] }
+    ]
   }
 };

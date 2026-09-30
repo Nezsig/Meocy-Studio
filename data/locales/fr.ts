@@ -508,5 +508,32 @@ export const fr: Dict = {
       { label: 'Mouvement et aérien', items: ['Stabilisateur DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
       { label: 'Supports', items: ['Trépieds professionnels', 'Pieds d\'éclairage', 'Softbox 120 cm', 'Softbox 85 cm'] }
     ]
+  },
+
+  faqPage: {
+    howTitle: 'Comment ça marche',
+    steps: [
+      { t: 'Dites-nous ce dont vous avez besoin', d: ['Envoyez-nous les détails de votre projet via le formulaire de contact ou réservez un court appel.', 'Parlez-nous de votre marque, de vos produits, du lieu et du contenu dont vous avez besoin.'] },
+      { t: 'Planifier la production', d: ['Nous convenons du plan de production complet avant la prise de vue.', 'Cela comprend le lieu, l\'éclairage, les tenues, les produits, le calendrier et les livrables finaux.'] },
+      { t: 'Prise de vue', d: ['La production a lieu sur votre site à Milan, ou avec des produits expédiés chez nous lorsque cela convient.'] },
+      { t: 'Montage et livraison', d: ['Vos images et vidéos sont retouchées, étalonnées professionnellement et préparées pour les plateformes dont vous avez besoin.'] }
+    ],
+    deliveryTitle: 'Livraison standard',
+    deliveryPhotos: 'Photos : 7 à 10 jours ouvrés',
+    deliveryVideos: 'Vidéos : 7 à 14 jours ouvrés',
+    deliveryNote: 'Une livraison prioritaire peut être demandée avant la réservation.',
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Combien coûte une séance ?', a: ['Les formules MEOCY commencent à €300 pour de la photographie ciblée et augmentent selon les besoins de production.', 'Les productions de contenu plus importantes et les projets sur mesure sont chiffrés selon l\'ampleur, la durée de prise de vue, les lieux et les livrables.'] },
+      { q: 'Puis-je vous envoyer mes produits ?', a: ['Oui. Les produits peuvent nous être expédiés directement lorsque le projet se prête à une production en studio.', 'La production sur site est également disponible à Milan.'] },
+      { q: 'Pouvez-vous vous déplacer dans mon établissement ?', a: ['Oui. MEOCY réalise des productions photo et vidéo sur site à Milan et dans ses environs.'] },
+      { q: 'Puis-je assister à la prise de vue ?', a: ['Oui. Les clients peuvent assister à la production en personne.', 'Pour les productions qui s\'y prêtent, une participation à distance peut également être organisée.'] },
+      { q: 'Fournissez-vous des mannequins ?', a: ['Des mannequins peuvent être organisés selon le projet. Les cachets sont chiffrés séparément lorsque nécessaire.'] },
+      { q: 'Fournissez-vous des maquilleurs et des stylistes ?', a: ['Des maquilleurs, stylistes, assistants et autres professionnels de production peuvent être organisés si nécessaire. Ces coûts sont chiffrés séparément.'] },
+      { q: 'La location de studio et les frais de lieu sont-ils inclus ?', a: ['Pas automatiquement. La location de studio, les autorisations, les lieux spécialisés et les autres coûts de production de tiers sont chiffrés séparément si nécessaire.'] },
+      { q: 'Quel est le délai de livraison ?', a: ['La livraison standard des photos est de 7 à 10 jours ouvrés.', 'La livraison standard des vidéos est de 7 à 14 jours ouvrés.', 'Une livraison prioritaire peut être disponible sur demande.'] },
+      { q: 'Dans quelles langues travaillez-vous ?', a: ['English, Italiano, Français'] },
+      { q: 'Où est basé MEOCY ?', a: ['Milan, Italie.'] }
+    ]
   }
 };

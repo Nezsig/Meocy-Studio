@@ -505,6 +505,33 @@ export const en = {
       { label: 'Movement & aerial', items: ['DJI RS 4 Mini gimbal', 'DJI Mini 3 Pro drone'] },
       { label: 'Support', items: ['Professional tripods', 'Light stands', '120cm softbox', '85cm softbox'] }
     ]
+  },
+
+  faqPage: {
+    howTitle: 'How It Works',
+    steps: [
+      { t: 'Tell us what you need', d: ['Send us your project details through the contact form or book a short call.', 'Tell us about your brand, products, location and the content you need.'] },
+      { t: 'Plan the production', d: ['We agree on the complete production plan before the shoot.', 'This includes the location, lighting, outfits, products, timing and final deliverables.'] },
+      { t: 'Shoot', d: ['Production takes place at your location in Milan or with products shipped to us when suitable.'] },
+      { t: 'Edit & deliver', d: ['Your images and videos are professionally edited, colour-graded and prepared for the platforms you need.'] }
+    ],
+    deliveryTitle: 'Standard delivery',
+    deliveryPhotos: 'Photos: 7–10 working days',
+    deliveryVideos: 'Videos: 7–14 working days',
+    deliveryNote: 'Priority delivery can be requested before booking.',
+    faqTitle: 'Frequently Asked Questions',
+    faq: [
+      { q: 'How much does a shoot cost?', a: ['MEOCY packages start from €300 for focused photography and increase depending on the production requirements.', 'Larger content productions and custom projects are quoted according to scope, shooting time, locations and deliverables.'] },
+      { q: 'Can I send my products to you?', a: ['Yes. Products can be shipped directly to us when the project is suitable for studio-based production.', 'On-location production is also available in Milan.'] },
+      { q: 'Can you come to my business?', a: ['Yes. MEOCY provides on-location photography and video production in Milan and surrounding areas.'] },
+      { q: 'Can I be present during the shoot?', a: ['Yes. Clients can attend the production in person.', 'For suitable productions, remote participation can also be arranged.'] },
+      { q: 'Do you provide models?', a: ['Models can be arranged depending on the project. Model fees are quoted separately when required.'] },
+      { q: 'Do you provide makeup artists and stylists?', a: ['Makeup artists, stylists, assistants and other production professionals can be arranged when required. These costs are quoted separately.'] },
+      { q: 'Are studio rental and location fees included?', a: ['Not automatically. Studio rental, permits, specialised locations and other third-party production costs are quoted separately when required.'] },
+      { q: 'How long does delivery take?', a: ['Standard photo delivery is 7–10 working days.', 'Standard video delivery is 7–14 working days.', 'Priority delivery may be available on request.'] },
+      { q: 'What languages do you work in?', a: ['English, Italiano, Français'] },
+      { q: 'Where is MEOCY based?', a: ['Milan, Italy.'] }
+    ]
   }
 };
 
