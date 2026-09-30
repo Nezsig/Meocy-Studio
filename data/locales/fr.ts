@@ -535,5 +535,53 @@ export const fr: Dict = {
       { q: 'Dans quelles langues travaillez-vous ?', a: ['English, Italiano, Français'] },
       { q: 'Où est basé MEOCY ?', a: ['Milan, Italie.'] }
     ]
+  },
+
+  contactPage: {
+    title: 'Travaillons ensemble',
+    intro1: 'Parlez-nous de votre projet et de ce dont vous avez besoin.',
+    intro2: 'Plus vous nous donnez d\'informations, plus nous pourrons préparer votre devis avec précision.',
+    name: 'Nom',
+    email: 'Email',
+    brand: 'Entreprise / Marque',
+    projectType: 'Type de projet',
+    select: 'Sélectionner…',
+    preferredDate: 'Date souhaitée',
+    location: 'Lieu',
+    quantity: 'Nombre de produits / tenues',
+    contentType: 'Photo / Vidéo / Les deux',
+    photo: 'Photographie',
+    video: 'Vidéo',
+    both: 'Les deux',
+    message: 'Message',
+    submit: 'Envoyer la demande de projet',
+    sending: 'Envoi en cours…',
+    errName: 'Veuillez saisir votre nom.',
+    errEmail: 'Veuillez saisir une adresse email valide.',
+    errProject: 'Veuillez choisir un type de projet.',
+    errMessage: 'Parlez-nous brièvement de votre projet.',
+    errGeneric: 'Une erreur est survenue. Réessayez ou écrivez à hello@meocy.com.',
+    successTitle: 'Demande reçue.',
+    successBody: 'Merci {name} — une confirmation part vers {email}. Nous vous répondrons sous un jour ouvré.',
+    another: 'Envoyer une autre demande',
+    detailsTitle: 'Coordonnées',
+    loc: 'Milan et Paris',
+    whatsappCta: 'Écrire sur WhatsApp',
+    collabLabel: 'POUR MANNEQUINS ET CRÉATIFS',
+    collabTitle: 'Vous construisez votre portfolio à Milan ?',
+    collabText1: 'MEOCY collabore avec des mannequins et des créatifs à Milan pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    collabText2: 'Si vous êtes mannequin et construisez votre portfolio, créatif émergent ou si vous souhaitez simplement créer de nouvelles images, contactez-nous.',
+    collabButton: 'Collaborer avec MEOCY',
+    projectOptions: [
+      'Shooting mode / mannequins',
+      'Photographie commerciale',
+      'Photographie de produit',
+      'Restaurant & food',
+      'Portrait / personal branding',
+      'Vidéo pour les réseaux sociaux',
+      'Production de contenu complète (photo + vidéo)',
+      'Collaboration mannequins / créatifs',
+      'Autre'
+    ]
   }
 };

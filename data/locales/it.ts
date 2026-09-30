@@ -535,5 +535,53 @@ export const it: Dict = {
       { q: 'In quali lingue lavorate?', a: ['English, Italiano, Français'] },
       { q: 'Dove ha sede MEOCY?', a: ['Milano, Italia.'] }
     ]
+  },
+
+  contactPage: {
+    title: 'Lavoriamo insieme',
+    intro1: 'Raccontaci il tuo progetto e di cosa hai bisogno.',
+    intro2: 'Più informazioni ci fornisci, più accuratamente potremo preparare il tuo preventivo.',
+    name: 'Nome',
+    email: 'Email',
+    brand: 'Attività / Brand',
+    projectType: 'Tipo di progetto',
+    select: 'Seleziona…',
+    preferredDate: 'Data preferita',
+    location: 'Location',
+    quantity: 'Numero di prodotti / outfit',
+    contentType: 'Foto / Video / Entrambi',
+    photo: 'Fotografia',
+    video: 'Video',
+    both: 'Entrambi',
+    message: 'Messaggio',
+    submit: 'Invia richiesta di progetto',
+    sending: 'Invio in corso…',
+    errName: 'Inserisci il tuo nome.',
+    errEmail: 'Inserisci un indirizzo email valido.',
+    errProject: 'Seleziona un tipo di progetto.',
+    errMessage: 'Raccontaci brevemente il tuo progetto.',
+    errGeneric: 'Qualcosa è andato storto. Riprova o scrivi a hello@meocy.com.',
+    successTitle: 'Richiesta ricevuta.',
+    successBody: 'Grazie {name} — una conferma sta arrivando a {email}. Ti risponderemo entro un giorno lavorativo.',
+    another: 'Invia un\'altra richiesta',
+    detailsTitle: 'Contatti',
+    loc: 'Milano e Parigi',
+    whatsappCta: 'Scrivici su WhatsApp',
+    collabLabel: 'PER MODELLE E CREATIVI',
+    collabTitle: 'Stai costruendo il tuo portfolio a Milano?',
+    collabText1: 'MEOCY collabora con modelle e creativi a Milano per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
+    collabText2: 'Se sei una modella che costruisce il proprio portfolio, un creativo emergente o semplicemente vuoi realizzare nuovi lavori visivi, contattaci.',
+    collabButton: 'Collabora con MEOCY',
+    projectOptions: [
+      'Shooting moda / modelle',
+      'Fotografia commerciale',
+      'Fotografia di prodotto',
+      'Ristorazione e food',
+      'Ritratto / personal brand',
+      'Video per i social media',
+      'Produzione di contenuti completa (foto + video)',
+      'Collaborazione modelle / creativi',
+      'Altro'
+    ]
   }
 };

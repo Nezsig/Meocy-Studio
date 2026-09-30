@@ -532,6 +532,54 @@ export const en = {
       { q: 'What languages do you work in?', a: ['English, Italiano, Français'] },
       { q: 'Where is MEOCY based?', a: ['Milan, Italy.'] }
     ]
+  },
+
+  contactPage: {
+    title: 'Let\'s Work Together',
+    intro1: 'Tell us about your project and what you need.',
+    intro2: 'The more information you provide, the more accurately we can prepare your quotation.',
+    name: 'Name',
+    email: 'Email',
+    brand: 'Business / Brand',
+    projectType: 'Project type',
+    select: 'Select…',
+    preferredDate: 'Preferred date',
+    location: 'Location',
+    quantity: 'Number of products / outfits',
+    contentType: 'Photography / Video / Both',
+    photo: 'Photography',
+    video: 'Video',
+    both: 'Both',
+    message: 'Message',
+    submit: 'Send project request',
+    sending: 'Sending…',
+    errName: 'Please enter your name.',
+    errEmail: 'Please enter a valid email address.',
+    errProject: 'Please choose a project type.',
+    errMessage: 'Please tell us a little about your project.',
+    errGeneric: 'Something went wrong. Please try again or write to hello@meocy.com.',
+    successTitle: 'Request received.',
+    successBody: 'Thank you {name} — a confirmation is on its way to {email}. We\'ll reply within one working day.',
+    another: 'Send another request',
+    detailsTitle: 'Contact details',
+    loc: 'Milan & Paris',
+    whatsappCta: 'Message on WhatsApp',
+    collabLabel: 'FOR MODELS & CREATIVES',
+    collabTitle: 'Building Your Portfolio in Milan?',
+    collabText1: 'MEOCY collaborates with models and creatives in Milan to create strong fashion, editorial and portfolio imagery.',
+    collabText2: 'If you are a model building your portfolio, an emerging creative or simply looking to create new visual work, get in touch.',
+    collabButton: 'Collaborate with MEOCY',
+    projectOptions: [
+      'Fashion / model shoot',
+      'Commercial photography',
+      'Product photography',
+      'Restaurant & food',
+      'Portrait / personal brand',
+      'Social media video',
+      'Full content production (photo + video)',
+      'Model / creative collaboration',
+      'Other'
+    ]
   }
 };
 
