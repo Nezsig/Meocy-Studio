@@ -2,6 +2,8 @@ import { Nav } from '../components/Nav';
 import { Hero } from '../components/Hero';
 import { Process } from '../components/Process';
 import { Equipment } from '../components/Equipment';
+import { WorkTeaser } from '../components/WorkTeaser';
+import { PackagesTeaser } from '../components/PackagesTeaser';
 import { Testimonials } from '../components/Testimonials';
 import { Footer } from '../components/Footer';
 
@@ -15,6 +17,8 @@ export default function Page() {
         <Hero />
         <Process />
         <Equipment />
+        <WorkTeaser />
+        <PackagesTeaser />
         <Testimonials />
       </main>
       <Footer />
