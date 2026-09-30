@@ -83,11 +83,11 @@ export const collabSubjects: Record<Locale, string> = {
 
 const CT: Record<Locale, { badge: string; h1a: string; h1em: string; body: (n: string) => string; sign: string }> = {
   en: { badge:'Message received', h1a:'Thank you — your message ', h1em:'is in.',
-    body:(n)=>`Hi ${n}, thank you for getting in touch with MEOCY. We read every message personally and will get back to you as soon as possible.`, sign:'Speak soon,' },
+    body:(n)=>`Hi ${n}, thank you for getting in touch. I read every message personally, and if it&rsquo;s a good fit for an upcoming project I&rsquo;ll get back to you.`, sign:'Speak soon,' },
   it: { badge:'Messaggio ricevuto', h1a:'Grazie — il tuo messaggio ', h1em:'è arrivato.',
-    body:(n)=>`Ciao ${n}, grazie per aver contattato MEOCY. Leggiamo personalmente ogni messaggio e ti risponderemo il prima possibile.`, sign:'A presto,' },
+    body:(n)=>`Ciao ${n}, grazie per avermi contattato. Leggo ogni messaggio personalmente e, se è adatto a un prossimo progetto, ti risponderò.`, sign:'A presto,' },
   fr: { badge:'Message reçu', h1a:'Merci — votre message ', h1em:'est bien arrivé.',
-    body:(n)=>`Bonjour ${n}, merci d&rsquo;avoir contacté MEOCY. Nous lisons chaque message personnellement et vous répondrons dès que possible.`, sign:'À bientôt,' },
+    body:(n)=>`Bonjour ${n}, merci de m&rsquo;avoir contacté. Je lis chaque message personnellement et, si cela correspond à un prochain projet, je vous répondrai.`, sign:'À bientôt,' },
 };
 
 export function buildCollabConfirmationEmail(name: string, locale: Locale = 'it'): string {

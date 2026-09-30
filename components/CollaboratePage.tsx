@@ -247,9 +247,9 @@ export function CollaboratePage() {
             ))}
           </select>
           {fieldError(f.key)}
-          {active === 'creatives' && f.key === 'role' && current && (
+          {active === 'creatives' && f.key === 'role' && (
             <p className="mt-2 rounded-xl border border-accent bg-accent/20 px-4 py-2.5 text-[13.5px] text-ink">
-              {current === values[0] ? c.creativesPaidNote : c.creativesCollabNote}
+              {c.creativesPaidNote}
             </p>
           )}
         </div>

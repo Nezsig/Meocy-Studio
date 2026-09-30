@@ -586,15 +586,15 @@ export const it: Dict = {
   },
 
   collabPage: {
-    title: 'Lavorare con MEOCY',
-    intro1: 'MEOCY collabora con modelle, agenzie e creativi a Milano.',
-    intro2: 'Scegli l\'opzione più adatta a te, guarda cosa ci serve e invia i tuoi dati qui sotto.',
+    title: 'Lavora con MEOCY',
+    intro1: 'MEOCY è un piccolo studio a Milano guidato dal fondatore. Lavoro direttamente con ogni modella, agenzia e fotografo con cui collaboro.',
+    intro2: 'Scegli l\'opzione più adatta a te, guarda cosa mi serve e invia i tuoi dati qui sotto. Leggo ogni messaggio personalmente.',
     tabModels: 'Modelle e talent',
     tabAgencies: 'Agenzie',
-    tabCreatives: 'Creativi e assistenti',
+    tabCreatives: 'Fotografi e assistenti',
     offerTitle: 'Come funziona',
-    needTitle: 'Cosa inviarci',
-    mIntro: 'Stai costruendo il tuo portfolio a Milano? MEOCY collabora con modelle e modelli per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
+    needTitle: 'Cosa inviarmi',
+    mIntro: 'Stai costruendo il tuo portfolio a Milano? Collaboro con modelle e modelli per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
     mOffer: [
       'Nessun compenso da nessuna delle due parti — gli shooting in collaborazione non sono retribuiti',
       'Ricevi da 10 a 25 foto professionalmente ritoccate, a seconda dello shooting',
@@ -610,7 +610,7 @@ export const it: Dict = {
     ],
     mPaidNote: 'Preferisci uno shooting a pagamento?',
     mPaidLink: 'Scopri il pacchetto Shooting Moda / Modelle',
-    aIntro: 'Lavori con un\'agenzia di modelle a Milano? MEOCY offre test shoot per new faces e contenuti per le tue modelle.',
+    aIntro: 'Lavori con un\'agenzia di modelle a Milano? Offro test shoot per new faces e contenuti per le tue modelle.',
     aOffer: [
       'Test shoot gratuiti per new faces — limitati a 10 shooting gratuiti',
       'I test shoot gratuiti sono solo per test e portfolio, non per uso commerciale',
@@ -623,20 +623,18 @@ export const it: Dict = {
       'Di cosa avete bisogno: test shoot, digitals e polaroid, comp card, lookbook o video',
       'Le vostre tempistiche o scadenze'
     ],
-    cIntro: 'MEOCY collabora con fotografi, videomaker e professionisti creativi a Milano.',
+    cIntro: 'Lavoro con fotografi, videomaker e assistenti luci a Milano.',
     cOffer: [
-      'Fotografi e videomaker: lavoro retribuito come assistente luci',
-      'Truccatori, hair stylist, stylist e altri creativi: shooting in collaborazione, se siete interessati',
+      'Lavoro retribuito come assistente luci nelle mie produzioni',
       'Compensi e termini vengono concordati prima di ogni produzione'
     ],
     cNeed: [
       'Il tuo Instagram e/o link al portfolio',
       'Il tuo ruolo e la tua città',
       'La tua disponibilità',
-      'Su cosa ti piacerebbe lavorare'
+      'La tua esperienza con le luci e sul set'
     ],
     creativesPaidNote: 'Lavoro retribuito come assistente luci.',
-    creativesCollabNote: 'Shooting in collaborazione — per i creativi interessati.',
     name: 'Nome',
     email: 'Email',
     instagram: 'Instagram',
@@ -681,13 +679,9 @@ export const it: Dict = {
     timeframe: 'Tempistiche / scadenza',
     creativeRole: 'Il tuo ruolo',
     creativeRoleOptions: [
-      'Fotografo / videomaker (assistente luci)',
-      'Truccatore/trice',
-      'Hair stylist',
-      'Stylist di moda',
-      'Assistente',
-      'Designer',
-      'Altro'
+      'Fotografo',
+      'Videomaker',
+      'Assistente luci'
     ],
     select: 'Seleziona…',
     submit: 'Invia',
@@ -698,7 +692,7 @@ export const it: Dict = {
     errOver18: 'Devi avere almeno 18 anni per candidarti.',
     errGeneric: 'Qualcosa è andato storto. Riprova o scrivi a hello@meocy.com.',
     successTitle: 'Messaggio ricevuto.',
-    successBody: 'Grazie {name} — leggiamo personalmente ogni messaggio e ti risponderemo il prima possibile.',
+    successBody: 'Grazie {name} — leggo ogni messaggio personalmente. Se è adatto a un prossimo progetto, ti risponderò.',
     another: 'Invia un altro messaggio'
   },
 

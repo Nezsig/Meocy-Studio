@@ -587,14 +587,14 @@ export const fr: Dict = {
 
   collabPage: {
     title: 'Travailler avec MEOCY',
-    intro1: 'MEOCY collabore avec des mannequins, des agences et des créatifs à Milan.',
-    intro2: 'Choisissez l\'option qui vous correspond, découvrez ce dont nous avons besoin et envoyez vos informations ci-dessous.',
+    intro1: 'MEOCY est un petit studio milanais dirigé par son fondateur. Je travaille directement avec chaque mannequin, agence et photographe avec qui je collabore.',
+    intro2: 'Choisissez l\'option qui vous correspond, découvrez ce dont j\'ai besoin et envoyez vos informations ci-dessous. Je lis chaque message moi-même.',
     tabModels: 'Mannequins et talents',
     tabAgencies: 'Agences',
-    tabCreatives: 'Créatifs et assistants',
+    tabCreatives: 'Photographes et assistants',
     offerTitle: 'Comment ça marche',
-    needTitle: 'Ce qu\'il faut nous envoyer',
-    mIntro: 'Vous construisez votre portfolio à Milan ? MEOCY collabore avec des mannequins pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    needTitle: 'Ce qu\'il faut m\'envoyer',
+    mIntro: 'Vous construisez votre portfolio à Milan ? Je collabore avec des mannequins pour créer des images de mode, éditoriales et de portfolio percutantes.',
     mOffer: [
       'Aucun cachet de part et d\'autre — les shootings en collaboration ne sont pas rémunérés',
       'Vous recevez de 10 à 25 photos retouchées professionnellement, selon le shooting',
@@ -610,7 +610,7 @@ export const fr: Dict = {
     ],
     mPaidNote: 'Vous préférez un shooting rémunéré ?',
     mPaidLink: 'Découvrir la formule Shooting Mode / Mannequins',
-    aIntro: 'Vous travaillez avec une agence de mannequins à Milan ? MEOCY propose des test shootings pour les nouveaux visages et du contenu pour vos mannequins.',
+    aIntro: 'Vous travaillez avec une agence de mannequins à Milan ? Je propose des test shootings pour les nouveaux visages et du contenu pour vos mannequins.',
     aOffer: [
       'Test shootings gratuits pour les nouveaux visages — limités à 10 shootings gratuits',
       'Les test shootings gratuits sont réservés aux tests et au portfolio, pas à un usage commercial',
@@ -623,20 +623,18 @@ export const fr: Dict = {
       'Ce dont vous avez besoin : test shootings, digitals et polaroïds, comp cards, lookbook ou vidéo',
       'Votre calendrier ou vos échéances'
     ],
-    cIntro: 'MEOCY travaille avec des photographes, des vidéastes et des professionnels créatifs à Milan.',
+    cIntro: 'Je travaille avec des photographes, des vidéastes et des assistants lumière à Milan.',
     cOffer: [
-      'Photographes et vidéastes : travail rémunéré comme assistant lumière',
-      'Maquilleurs, coiffeurs, stylistes et autres créatifs : shootings en collaboration, si vous êtes intéressés',
+      'Travail rémunéré comme assistant lumière sur mes productions',
       'Les tarifs et conditions sont convenus avant chaque production'
     ],
     cNeed: [
       'Votre Instagram et/ou lien vers votre portfolio',
       'Votre rôle et votre ville',
       'Vos disponibilités',
-      'Sur quoi vous aimeriez travailler'
+      'Votre expérience de l\'éclairage et du travail sur plateau'
     ],
     creativesPaidNote: 'Travail rémunéré comme assistant lumière.',
-    creativesCollabNote: 'Shooting en collaboration — pour les créatifs intéressés.',
     name: 'Nom',
     email: 'Email',
     instagram: 'Instagram',
@@ -681,13 +679,9 @@ export const fr: Dict = {
     timeframe: 'Calendrier / échéance',
     creativeRole: 'Votre rôle',
     creativeRoleOptions: [
-      'Photographe / vidéaste (assistant lumière)',
-      'Maquilleur(se)',
-      'Coiffeur(se)',
-      'Styliste de mode',
-      'Assistant(e)',
-      'Designer',
-      'Autre'
+      'Photographe',
+      'Vidéaste',
+      'Assistant lumière'
     ],
     select: 'Sélectionner…',
     submit: 'Envoyer',
@@ -698,7 +692,7 @@ export const fr: Dict = {
     errOver18: 'Vous devez avoir 18 ans ou plus pour postuler.',
     errGeneric: 'Une erreur est survenue. Réessayez ou écrivez à hello@meocy.com.',
     successTitle: 'Message reçu.',
-    successBody: 'Merci {name} — nous lisons chaque message personnellement et vous répondrons dès que possible.',
+    successBody: 'Merci {name} — je lis chaque message personnellement. Si cela correspond à un prochain projet, je vous répondrai.',
     another: 'Envoyer un autre message'
   },
 

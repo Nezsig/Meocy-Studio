@@ -583,15 +583,15 @@ export const en = {
   },
 
   collabPage: {
-    title: 'Working With MEOCY',
-    intro1: 'MEOCY works with models, agencies and creatives in Milan.',
-    intro2: 'Choose the option that fits you, see what we need from you and send your details below.',
+    title: 'Work With MEOCY',
+    intro1: 'MEOCY is a small, founder-led studio in Milan. I work directly with every model, agency and photographer I collaborate with.',
+    intro2: 'Pick the option that fits you, see what I need from you and send your details below. I read every message myself.',
     tabModels: 'Models & talent',
     tabAgencies: 'Agencies',
-    tabCreatives: 'Creatives & assistants',
+    tabCreatives: 'Photographers & assistants',
     offerTitle: 'How it works',
-    needTitle: 'What to send us',
-    mIntro: 'Building your portfolio in Milan? MEOCY collaborates with models to create strong fashion, editorial and portfolio imagery.',
+    needTitle: 'What to send me',
+    mIntro: 'Building your portfolio in Milan? I collaborate with models to create strong fashion, editorial and portfolio imagery.',
     mOffer: [
       'No fee on either side — collaboration shoots are unpaid',
       'You receive 10–25 professionally edited photos, depending on the shoot',
@@ -607,7 +607,7 @@ export const en = {
     ],
     mPaidNote: 'Prefer a paid shoot?',
     mPaidLink: 'See the Fashion / Model Shoot package',
-    aIntro: 'Working with a modeling agency in Milan? MEOCY offers test shoots for new faces and content for your models.',
+    aIntro: 'Working with a modeling agency in Milan? I offer test shoots for new faces and content for your models.',
     aOffer: [
       'Free test shoots for new faces — limited to 10 free shoots',
       'Free test shoots are for test and portfolio use only, not for commercial use',
@@ -620,20 +620,18 @@ export const en = {
       'What you need: test shoots, digitals and polaroids, comp cards, lookbook or video',
       'Your timeframe or deadlines'
     ],
-    cIntro: 'MEOCY works with photographers, videographers and creative professionals in Milan.',
+    cIntro: 'I work with photographers, videographers and lighting assistants in Milan.',
     cOffer: [
-      'Photographers and videographers: paid work as a lighting assistant',
-      'Makeup artists, hair, stylists and other creatives: collaboration shoots, if you are interested',
+      'Paid work as a lighting assistant on my productions',
       'Rates and terms are agreed before each production'
     ],
     cNeed: [
       'Your Instagram and/or portfolio link',
       'Your role and city',
       'Your availability',
-      'What you would like to work on'
+      'Your experience with lighting and working on set'
     ],
     creativesPaidNote: 'Paid work as a lighting assistant.',
-    creativesCollabNote: 'Collaboration shoot — for creatives who are interested.',
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram',
@@ -678,13 +676,9 @@ export const en = {
     timeframe: 'Timeframe / deadline',
     creativeRole: 'Your role',
     creativeRoleOptions: [
-      'Photographer / videographer (lighting assistant)',
-      'Makeup artist',
-      'Hair stylist',
-      'Fashion stylist',
-      'Assistant',
-      'Designer',
-      'Other'
+      'Photographer',
+      'Videographer',
+      'Lighting assistant'
     ],
     select: 'Select…',
     submit: 'Send',
@@ -695,7 +689,7 @@ export const en = {
     errOver18: 'You must be 18 or older to apply.',
     errGeneric: 'Something went wrong. Please try again or write to hello@meocy.com.',
     successTitle: 'Message received.',
-    successBody: 'Thank you {name} — we read every message personally and will get back to you as soon as possible.',
+    successBody: 'Thank you {name} — I read every message personally. If it\'s a good fit for an upcoming project, I\'ll get back to you.',
     another: 'Send another message'
   },
 
