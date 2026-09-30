@@ -477,6 +477,34 @@ export const en = {
       { label: 'Priority delivery', price: 'Available on request' },
       { label: 'Additional production requirements', price: 'Quoted separately' }
     ]
+  },
+
+  aboutPage: {
+    title: 'About MEOCY',
+    headline: 'The Person Behind the Camera',
+    p1: 'MEOCY is founded by Chamila, a photographer originally from Sri Lanka who spent eight years building his photography career before relocating to Italy.',
+    p2: 'After time away from the camera, he is returning to photography in Milan with a new name and a clear focus: creating professional visual content for brands, businesses, products, models and people.',
+    p3: 'When you work with MEOCY, you work directly with the founder — from the first brief to the final delivery.',
+    button: 'Start a project',
+    whyTitle: 'Why Work With MEOCY?',
+    why: [
+      { t: 'Direct founder involvement', d: 'When you work with MEOCY, you work directly with the founder from the first brief to the final delivery.' },
+      { t: 'Planned before the shoot', d: 'Every production is planned before the shooting day, including locations, lighting, outfits, products, timing and final deliverables.' },
+      { t: 'Content made for real platforms', d: 'Photography and video are created with their final use in mind — websites, social media, advertising and campaigns.' },
+      { t: 'Milan based', d: 'Based in Milan, Italy, with on-location production available across the city and surrounding areas.' },
+      { t: 'Clear pricing', d: 'The production scope and final price are agreed before the shoot begins, so there are no unexpected production costs.' }
+    ],
+    eqTitle: 'Professional Equipment',
+    eqIntro: 'MEOCY works with a professional camera, lens and lighting setup designed for both photography and video production.',
+    eqNote: 'Equipment requirements are planned according to the specific production.',
+    eq: [
+      { label: 'Cameras', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Lenses', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
+      { label: 'Photo lighting', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
+      { label: 'Video lighting', items: ['GVM 300W LED', '150W LED light'] },
+      { label: 'Movement & aerial', items: ['DJI RS 4 Mini gimbal', 'DJI Mini 3 Pro drone'] },
+      { label: 'Support', items: ['Professional tripods', 'Light stands', '120cm softbox', '85cm softbox'] }
+    ]
   }
 };
 

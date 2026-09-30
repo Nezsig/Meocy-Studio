@@ -480,5 +480,33 @@ export const it: Dict = {
       { label: 'Consegna prioritaria', price: 'Su richiesta' },
       { label: 'Ulteriori esigenze di produzione', price: 'Quotate a parte' }
     ]
+  },
+
+  aboutPage: {
+    title: 'Chi è MEOCY',
+    headline: 'La persona dietro la fotocamera',
+    p1: 'MEOCY è stato fondato da Chamila, fotografo originario dello Sri Lanka che ha trascorso otto anni a costruire la sua carriera fotografica prima di trasferirsi in Italia.',
+    p2: 'Dopo un periodo lontano dalla fotocamera, torna alla fotografia a Milano con un nuovo nome e un obiettivo chiaro: creare contenuti visivi professionali per brand, aziende, prodotti, modelle e persone.',
+    p3: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.',
+    button: 'Inizia un progetto',
+    whyTitle: 'Perché scegliere MEOCY?',
+    why: [
+      { t: 'Coinvolgimento diretto del fondatore', d: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.' },
+      { t: 'Pianificato prima dello shooting', d: 'Ogni produzione viene pianificata prima del giorno delle riprese: location, illuminazione, outfit, prodotti, tempistiche e consegne finali.' },
+      { t: 'Contenuti pensati per le piattaforme reali', d: 'Foto e video sono creati pensando al loro utilizzo finale: siti web, social media, pubblicità e campagne.' },
+      { t: 'Con base a Milano', d: 'Con sede a Milano, con produzione on location in tutta la città e nelle zone limitrofe.' },
+      { t: 'Prezzi chiari', d: 'L\'ambito della produzione e il prezzo finale vengono concordati prima dello shooting, quindi nessun costo di produzione inatteso.' }
+    ],
+    eqTitle: 'Attrezzatura professionale',
+    eqIntro: 'MEOCY lavora con un set professionale di fotocamere, obiettivi e luci pensato sia per la fotografia sia per la produzione video.',
+    eqNote: 'Le esigenze di attrezzatura vengono pianificate in base alla produzione specifica.',
+    eq: [
+      { label: 'Fotocamere', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Obiettivi', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
+      { label: 'Luci per foto', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
+      { label: 'Luci per video', items: ['GVM 300W LED', 'Luce LED 150W'] },
+      { label: 'Movimento e riprese aeree', items: ['Gimbal DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
+      { label: 'Supporti', items: ['Treppiedi professionali', 'Stativi per luci', 'Softbox 120 cm', 'Softbox 85 cm'] }
+    ]
   }
 };

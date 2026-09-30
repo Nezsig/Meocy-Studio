@@ -480,5 +480,33 @@ export const fr: Dict = {
       { label: 'Livraison prioritaire', price: 'Sur demande' },
       { label: 'Exigences de production supplémentaires', price: 'Devis séparé' }
     ]
+  },
+
+  aboutPage: {
+    title: 'À propos de MEOCY',
+    headline: 'La personne derrière l\'appareil photo',
+    p1: 'MEOCY a été fondé par Chamila, photographe originaire du Sri Lanka, qui a passé huit ans à construire sa carrière photographique avant de s\'installer en Italie.',
+    p2: 'Après un temps loin de l\'appareil photo, il revient à la photographie à Milan avec un nouveau nom et un objectif clair : créer du contenu visuel professionnel pour les marques, les entreprises, les produits, les mannequins et les personnes.',
+    p3: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.',
+    button: 'Démarrer un projet',
+    whyTitle: 'Pourquoi travailler avec MEOCY ?',
+    why: [
+      { t: 'Implication directe du fondateur', d: 'Lorsque vous travaillez avec MEOCY, vous travaillez directement avec le fondateur, du premier brief à la livraison finale.' },
+      { t: 'Planifié avant le tournage', d: 'Chaque production est planifiée avant le jour de la prise de vue : lieux, éclairage, tenues, produits, calendrier et livrables finaux.' },
+      { t: 'Des contenus pensés pour les vraies plateformes', d: 'Photos et vidéos sont créées en pensant à leur usage final : sites web, réseaux sociaux, publicité et campagnes.' },
+      { t: 'Basé à Milan', d: 'Basé à Milan, en Italie, avec production sur site dans toute la ville et ses environs.' },
+      { t: 'Tarifs clairs', d: 'Le périmètre de la production et le prix final sont convenus avant la prise de vue, sans coûts de production inattendus.' }
+    ],
+    eqTitle: 'Équipement professionnel',
+    eqIntro: 'MEOCY travaille avec un équipement professionnel d\'appareils, d\'objectifs et d\'éclairage conçu pour la photographie comme pour la production vidéo.',
+    eqNote: 'Les besoins en équipement sont planifiés selon la production spécifique.',
+    eq: [
+      { label: 'Appareils', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Objectifs', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
+      { label: 'Éclairage photo', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
+      { label: 'Éclairage vidéo', items: ['GVM 300W LED', 'Lumière LED 150W'] },
+      { label: 'Mouvement et aérien', items: ['Stabilisateur DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
+      { label: 'Supports', items: ['Trépieds professionnels', 'Pieds d\'éclairage', 'Softbox 120 cm', 'Softbox 85 cm'] }
+    ]
   }
 };
