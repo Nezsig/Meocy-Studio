@@ -368,5 +368,26 @@ export const it: Dict = {
     ctaTitle: 'Pronto a creare qualcosa?',
     ctaText: 'Raccontaci a cosa stai lavorando.',
     ctaButton: 'Richiedi un preventivo'
+  },
+
+  svcPage: {
+    title: 'Cosa facciamo',
+    intro1: 'Un buon contenuto visivo deve fare più che essere bello.',
+    intro2: 'MEOCY crea fotografie e video pensati per siti web, social media, pubblicità, campagne e comunicazione quotidiana del brand.',
+    s1t: 'Fotografia di moda e modelle',
+    s1d: 'Fotografia fashion, editoriale e di portfolio per modelle, designer e brand di moda.',
+    s2t: 'Fotografia commerciale',
+    s2d: 'Contenuti visivi professionali per aziende e brand che hanno bisogno di immagini di alta qualità per siti web, pubblicità e social media.',
+    s3t: 'Fotografia di prodotto',
+    s3d: 'Fotografia di prodotto pulita e professionale per siti web, e-commerce, social media e campagne.',
+    s4t: 'Contenuti per ristoranti e food',
+    s4d: 'Fotografia e brevi video per ristoranti, caffè, bar e attività di food a Milano.',
+    s5t: 'Brand e personal branding',
+    s5d: 'Fotografia professionale pensata per dare al tuo brand o alla tua attività un\'identità visiva più forte.',
+    s6t: 'Video per i social media',
+    s6d: 'Brevi video commerciali e Reel pensati per Instagram, TikTok e advertising digitale.',
+    cta: 'Parliamo del tuo progetto',
+    ctaTitle: 'Hai un progetto in mente?',
+    ctaButton: 'Parliamo del tuo progetto'
   }
 };

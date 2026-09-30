@@ -365,6 +365,27 @@ export const en = {
     ctaTitle: 'Ready to Create Something?',
     ctaText: 'Tell us what you are working on.',
     ctaButton: 'Request a Quote'
+  },
+
+  svcPage: {
+    title: 'What We Do',
+    intro1: 'Strong visual content should do more than look good.',
+    intro2: 'MEOCY creates photography and video designed for websites, social media, advertising, campaigns and everyday brand communication.',
+    s1t: 'Fashion & Model Photography',
+    s1d: 'Fashion, editorial and portfolio photography for models, designers and fashion brands.',
+    s2t: 'Commercial Photography',
+    s2d: 'Professional visual content for businesses and brands that need high-quality images for websites, advertising and social media.',
+    s3t: 'Product Photography',
+    s3d: 'Clean, professional product photography created for websites, e-commerce, social media and campaigns.',
+    s4t: 'Restaurant & Food Content',
+    s4d: 'Photography and short-form video for restaurants, cafés, bars and food businesses in Milan.',
+    s5t: 'Brand & Personal Branding',
+    s5d: 'Professional photography designed to give your brand or personal business a stronger visual identity.',
+    s6t: 'Social Media Video',
+    s6d: 'Short commercial videos and Reels designed specifically for Instagram, TikTok and digital advertising.',
+    cta: 'Discuss your project',
+    ctaTitle: 'Have a project in mind?',
+    ctaButton: 'Discuss your project'
   }
 };
 

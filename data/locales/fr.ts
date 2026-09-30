@@ -368,5 +368,26 @@ export const fr: Dict = {
     ctaTitle: 'Prêt à créer quelque chose ?',
     ctaText: 'Dites-nous sur quoi vous travaillez.',
     ctaButton: 'Demander un devis'
+  },
+
+  svcPage: {
+    title: 'Ce que nous faisons',
+    intro1: 'Un bon contenu visuel doit faire plus que bien paraître.',
+    intro2: 'MEOCY crée des photographies et des vidéos conçues pour les sites web, les réseaux sociaux, la publicité, les campagnes et la communication quotidienne des marques.',
+    s1t: 'Photographie de mode et de mannequins',
+    s1d: 'Photographie de mode, éditoriale et de portfolio pour mannequins, designers et marques de mode.',
+    s2t: 'Photographie commerciale',
+    s2d: 'Contenus visuels professionnels pour les entreprises et les marques qui ont besoin d\'images de haute qualité pour leur site web, leur publicité et les réseaux sociaux.',
+    s3t: 'Photographie de produit',
+    s3d: 'Photographie de produit épurée et professionnelle pour sites web, e-commerce, réseaux sociaux et campagnes.',
+    s4t: 'Contenus pour restaurants et food',
+    s4d: 'Photographie et vidéos courtes pour restaurants, cafés, bars et entreprises de restauration à Milan.',
+    s5t: 'Branding et personal branding',
+    s5d: 'Photographie professionnelle conçue pour donner à votre marque ou à votre activité une identité visuelle plus forte.',
+    s6t: 'Vidéo pour les réseaux sociaux',
+    s6d: 'Courtes vidéos commerciales et Reels conçus pour Instagram, TikTok et la publicité digitale.',
+    cta: 'Discutons de votre projet',
+    ctaTitle: 'Un projet en tête ?',
+    ctaButton: 'Discutons de votre projet'
   }
 };
