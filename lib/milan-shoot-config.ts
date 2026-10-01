@@ -119,11 +119,11 @@ export const milanLocations: MilanLocation[] = [
   { id: 'scala', image: { src: '/locations/scala.jpg', width: 1694, height: 1800 } },
   { id: 'brera', image: { src: '/locations/brera.jpg', width: 1800, height: 1688 } },
   { id: 'castello', image: { src: '/locations/castello.jpg', width: 1800, height: 1200 } },
-  { id: 'sempione', image: { src: '/locations/Parco%20Sempione.jpg', width: 1800, height: 1125 } },
+  { id: 'sempione', image: { src: '/locations/sempione.jpg', width: 1800, height: 1125 } },
   { id: 'navigli', image: { src: '/locations/navigli.jpg', width: 1800, height: 1012 } },
   { id: 'portaNuova', image: { src: '/locations/porta-nuova.jpg', width: 1800, height: 1125 } },
   { id: 'gaeAulenti', image: { src: '/locations/gae-aulenti.jpg', width: 1800, height: 1800 } },
-  { id: 'arcoPace', image: { src: '/locations/Arco%20della%20Pace.jpg', width: 1694, height: 1800 } },
+  { id: 'arcoPace', image: { src: '/locations/arco-pace.jpg', width: 1694, height: 1800 } },
 ];
 
 /** On Milan Memory, the Duomo and its immediate surroundings count as one location. */
