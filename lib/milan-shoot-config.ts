@@ -150,6 +150,9 @@ export const blockedSlots: { date: string; time: string }[] = [];
 /** Show the "Private online gallery" line only when a gallery delivery is actually offered. */
 export const privateGalleryEnabled = false;
 
+/** Show placeholder tiles in gallery until couple photos arrive. Set to true to render placeholders, false to show only real images. */
+export const showGalleryPlaceholders = false;
+
 /** Link where the €50 deposit is paid (set in Step 2). Empty = not available yet. */
 export const depositPaymentUrl = '';
 

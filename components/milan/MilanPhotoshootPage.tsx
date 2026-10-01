@@ -8,6 +8,7 @@ import {
   milanLocations,
   milanPackages,
   visibleFeatures,
+  showGalleryPlaceholders,
   type MilanLocationId,
   type MilanPackageId,
   fillRefund,
@@ -106,7 +107,15 @@ export function MilanPhotoshootPage() {
     <main>
       {/* 1 — HERO */}
       <section className="relative isolate flex min-h-[88svh] items-end overflow-hidden bg-ink text-chalk">
-        <PhotoPlaceholder id="hero-couple-duomo" label={m.ph.label} description={m.ph.hero} className="absolute inset-0 -z-10 !justify-start !p-6 sm:!p-8" />
+        {/* TODO: Replace /work/fashion-01.jpg with real couple photo hero-couple-duomo when available. */}
+        <Image
+          src="/work/fashion-01.jpg"
+          alt="Milan, Galleria Vittorio Emanuele II"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-10 object-cover"
+        />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-ink/90 to-transparent" />
         <div className="mx-auto w-full max-w-[1240px] px-5 pb-16 pt-32 sm:px-8 sm:pb-24">
           <h1 className="max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">{m.hero.title}</h1>
@@ -389,7 +398,7 @@ export function MilanPhotoshootPage() {
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <h2 className={sectionTitle}>{m.gallery.title}</h2>
           <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:block md:columns-2 md:gap-4 md:space-y-4 md:overflow-visible md:px-0 lg:columns-3 [&::-webkit-scrollbar]:hidden">
-            {GALLERY.map((item, i) => (
+            {GALLERY.filter((item) => showGalleryPlaceholders || item.kind === 'photo').map((item, i) => (
               <figure key={i} className="w-[78%] shrink-0 snap-center break-inside-avoid overflow-hidden rounded-2xl md:w-auto">
                 {item.kind === 'photo' ? (
                   <Image
