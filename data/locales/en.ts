@@ -582,7 +582,25 @@ export const en = {
       'Full content production (photo + video)',
       'Model / creative collaboration',
       'Other'
-    ]
+    ],
+    briefWhat: 'What are we photographing?',
+    briefWhere: 'Where?',
+    briefMilan: 'Milan',
+    briefMilanDesc: 'Our studio & location scouts in Milan',
+    briefYourLocation: 'Your location',
+    briefYourLocationDesc: 'At your studio, office or venue',
+    briefExtras: 'Anything else?',
+    briefModelCasting: 'Model casting',
+    briefStyling: 'Styling & set build',
+    briefVerticalVideo: 'Vertical video clips',
+    briefExpressDelivery: 'Express delivery',
+    briefSummaryTitle: 'Your request',
+    briefSummaryService: 'Service',
+    briefSummaryWhere: 'Location',
+    briefSummaryExtras: 'Extras',
+    briefSubmitCta: 'Send request',
+    briefPhone: 'Phone / WhatsApp',
+    briefResponseTime: 'We\'ll reply within one working day.'
   },
 
   collabPage: {

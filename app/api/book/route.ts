@@ -43,10 +43,12 @@ export async function POST(req: Request) {
     const booking: Booking = {
       name,
       email,
+      phone: str(body.phone),
       brand: str(body.brand),
       package: str(body.package),
       shootType: str(body.shootType),
       where: str(body.where),
+      extras: str(body.extras),
       preferredDate: str(body.preferredDate),
       preferredTime: str(body.preferredTime),
       specialRequests: str(body.specialRequests, 3000),

@@ -585,7 +585,25 @@ export const fr: Dict = {
       'Production de contenu complète (photo + vidéo)',
       'Collaboration mannequins / créatifs',
       'Autre'
-    ]
+    ],
+    briefWhat: 'Que photographions-nous ?',
+    briefWhere: 'Où ?',
+    briefMilan: 'Milan',
+    briefMilanDesc: 'Notre studio et repérages à Milan',
+    briefYourLocation: 'Votre lieu',
+    briefYourLocationDesc: 'Dans votre studio, bureau ou lieu',
+    briefExtras: 'Autre chose ?',
+    briefModelCasting: 'Casting mannequins',
+    briefStyling: 'Styling & set build',
+    briefVerticalVideo: 'Vidéos verticales',
+    briefExpressDelivery: 'Livraison express',
+    briefSummaryTitle: 'Votre demande',
+    briefSummaryService: 'Service',
+    briefSummaryWhere: 'Lieu',
+    briefSummaryExtras: 'Extras',
+    briefSubmitCta: 'Envoyer la demande',
+    briefPhone: 'Téléphone / WhatsApp',
+    briefResponseTime: 'Nous vous répondrons dans un délai d\'un jour ouvrable.'
   },
 
   collabPage: {
