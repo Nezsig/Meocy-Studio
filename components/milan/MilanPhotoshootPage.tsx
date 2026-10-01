@@ -10,6 +10,7 @@ import {
   visibleFeatures,
   type MilanLocationId,
   type MilanPackageId,
+  fillRefund,
 } from '../../lib/milan-shoot-config';
 import { AccordionItem, PhotoPlaceholder, fmt, formatPrice } from './parts';
 import { LocationSelector } from './LocationSelector';
@@ -367,7 +368,7 @@ export function MilanPhotoshootPage() {
             <ul className="divide-y divide-mist border-y border-mist">
               {m.policy.lines.map((line) => (
                 <li key={line} className="py-4 text-[16px] leading-relaxed">
-                  {line}
+                  {fillRefund(line)}
                 </li>
               ))}
             </ul>
@@ -415,7 +416,7 @@ export function MilanPhotoshootPage() {
           <h2 className={sectionTitle}>{m.faq.title}</h2>
           <div className="mt-10 border-t border-mist">
             {m.faq.items.map((item, i) => (
-              <AccordionItem key={i} id={`milan-faq-${i}`} question={item.q} answer={item.a} />
+              <AccordionItem key={i} id={`milan-faq-${i}`} question={item.q} answer={fillRefund(item.a)} />
             ))}
           </div>
         </div>

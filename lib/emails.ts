@@ -1,4 +1,5 @@
 // lib/emails.ts — MEOCY STUDIO transactional emails
+import { refundDaysBefore, refundHoursBefore } from './milan-shoot-config';
 const c = { ink:'#0b0b0c', paper:'#f6f5f2', chalk:'#ffffff', mist:'#e5e3dd', slate:'#6b6a66', accent:'#c8f169' };
 const sans = "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const serif = "'Instrument Serif', Georgia, 'Times New Roman', serif";
@@ -156,8 +157,8 @@ const MT: Record<MilanEmailLang, any> = {
             ['You receive the €50 deposit link', 'The deposit holds your date once MEOCY confirms your session.'],
             ['MEOCY confirms your session', 'By email and WhatsApp.']],
     payBtn: 'Pay the €50 deposit',
-    depT: 'The €50 booking deposit is non-refundable.',
-    depB: 'If your plans change, you may request a date change instead, in advance and subject to availability. The remaining balance is settled separately.',
+    depT: `€50 booking deposit: refunded in full if you cancel at least ${refundDaysBefore} days before your shoot.`,
+    depB: `If you cancel at least ${refundDaysBefore} days (${refundHoursBefore} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than ${refundDaysBefore} days before, it is not refunded, but you may request a date change instead, subject to availability. The remaining balance is settled separately.`,
     sign: 'Speak soon,',
   },
   it: {
@@ -173,8 +174,8 @@ const MT: Record<MilanEmailLang, any> = {
             ["Ricevi il link per l'acconto di €50", "L'acconto blocca la data quando MEOCY conferma la sessione."],
             ['MEOCY conferma la sessione', 'Via email e WhatsApp.']],
     payBtn: "Paga l'acconto di €50",
-    depT: "L'acconto di prenotazione di €50 non è rimborsabile.",
-    depB: 'Se i tuoi programmi cambiano, puoi chiedere un cambio di data, in anticipo e in base alla disponibilità. Il saldo restante si regola a parte.',
+    depT: `Acconto di prenotazione di €50: rimborsato per intero se annulli almeno ${refundDaysBefore} giorni prima dello shooting.`,
+    depB: `Se annulli almeno ${refundDaysBefore} giorni (${refundHoursBefore} ore) prima dello shooting, l'acconto di €50 viene rimborsato per intero. Se annulli meno di ${refundDaysBefore} giorni prima, l'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Il saldo restante si regola a parte.`,
     sign: 'A presto,',
   },
 };

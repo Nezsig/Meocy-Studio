@@ -18,6 +18,7 @@ import {
   type MilanLocationId,
   type MilanPackageId,
   type MilanPricing,
+  fillRefund,
 } from '../../lib/milan-shoot-config';
 import { fmt, formatPrice } from './parts';
 
@@ -509,6 +510,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             <div className="rounded-2xl bg-accent p-6 text-ink">
               <p className="text-[18px] font-semibold">{b.depositHeadline}</p>
               <p className="mt-1 text-[15px]">{fmt(b.remainingLine, { amount: money(pricing.remaining) })}</p>
+              <p className="mt-3 text-[13.5px] leading-snug">{fillRefund(b.payPolicy)}</p>
               {details.people > standardPeople && <p className="mt-3 text-[13.5px] leading-snug">{b.groupNote}</p>}
             </div>
           </div>
@@ -519,7 +521,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             <DepositPayment
               url={depositPaymentUrl}
               amount={money(depositAmount)}
-              labels={{ title: b.payTitle, currency: b.payCurrency, pending: b.payPending, button: b.payButton, policy: b.payPolicy, policyLink: b.policyLink }}
+              labels={{ title: b.payTitle, currency: b.payCurrency, pending: b.payPending, button: b.payButton, policy: fillRefund(b.payPolicy), policyLink: b.policyLink }}
             />
             <div className="rounded-2xl bg-chalk/[0.06] p-6 text-[14.5px] ring-1 ring-chalk/15">
               <p className="font-semibold">{m.packages[pkg!.id].name} · {money(pricing.total)}</p>
@@ -545,6 +547,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                 <SummaryTable rows={[[b.name, details.name], [b.email, details.email], [b.phone, details.phone], [b.country, details.country], [b.people, String(details.people)], ...(details.notes ? [[b.notes, details.notes] as [string, string]] : [])]} />
               </div>
             </div>
+            <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-chalk/65">{fillRefund(b.payPolicy)}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waToMeocy} target="_blank" rel="noopener noreferrer" className={btnPrimary}>{b.waCta}</a>
               {depositPaymentUrl && <a href={depositPaymentUrl} target="_blank" rel="noopener noreferrer" className={btnGhost}>{b.payButton}</a>}

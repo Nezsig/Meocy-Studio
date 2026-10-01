@@ -92,8 +92,19 @@ export const milanPackages: MilanPackage[] = [
   },
 ];
 
-/** Booking deposit in EUR (non-refundable; a date change can be requested instead). */
+/** Booking deposit in EUR ("deposit" / "acconto" / "acompte"). */
 export const depositAmount = 50;
+
+/**
+ * Cancellation rule for the deposit: cancelling at least this many days (× 24 hours) before the shoot
+ * refunds it in full; cancelling later means no refund, but a date change can be requested (subject to availability).
+ */
+export const refundDaysBefore = 3;
+export const refundHoursBefore = refundDaysBefore * 24;
+
+/** Fills {days} and {hours} in policy sentences from refundDaysBefore. */
+export const fillRefund = (text: string) =>
+  text.split('{days}').join(String(refundDaysBefore)).split('{hours}').join(String(refundHoursBefore));
 export const currency = 'EUR';
 
 export interface MilanLocation {

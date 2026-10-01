@@ -943,7 +943,7 @@ export const en = {
       payCurrency: 'Payment currency: EUR (€)',
       payPending: 'We will send you the deposit link shortly.',
       payButton: 'Pay the €50 deposit',
-      payPolicy: 'The deposit is non-refundable. If your plans change, you may request a date change instead, in advance and subject to availability.',
+      payPolicy: 'If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than {days} days before, it is not refunded, but you may request a date change instead, subject to availability.',
       policyLink: 'Booking Policy',
       submit: 'Send booking request',
       sending: 'Sending…',
@@ -972,8 +972,8 @@ export const en = {
       title: 'Booking Policy',
       lines: [
         'A €50 deposit is required to reserve your photography date.',
-        'Booking deposits are non-refundable.',
-        'If your plans change, you may request a date change instead of a refund, subject to availability.',
+        'If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full.',
+        'If you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.',
         'Date changes must be requested in advance.',
         'Additional locations can be added for €50 each where applicable.',
         'Your booking is confirmed manually by MEOCY after the booking request and deposit are received.'
@@ -1037,7 +1037,7 @@ export const en = {
         },
         {
           q: 'Is the deposit refundable?',
-          a: 'No, the deposit is non-refundable. If your plans change, you may request a date change instead.'
+          a: 'Yes, if you cancel at least {days} days ({hours} hours) before your shoot: the €50 deposit is refunded in full. If you cancel less than {days} days before, it is not refunded, but you may request a date change instead, subject to availability.'
         },
         {
           q: 'Can I book for a family or larger group?',
@@ -1080,15 +1080,16 @@ export const en = {
           ]
         },
         {
-          h: 'Deposits are non-refundable.',
+          h: 'Cancellation and refund.',
           p: [
-            'Booking deposits are non-refundable.'
+            'If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full.',
+            'If you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.'
           ]
         },
         {
           h: 'Date changes.',
           p: [
-            'If your plans change, you may request a date change instead of a refund, subject to availability.',
+            'Date changes can be requested subject to availability.',
             'Date changes must be requested in advance.'
           ]
         },
@@ -1167,7 +1168,7 @@ export const en = {
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',
-      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. The €50 deposit, date changes and other conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
+      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full; if you cancel later, it is not refunded, but you may request a date change instead, subject to availability. Further conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
       link: 'Booking Policy'
     },
     footer: {

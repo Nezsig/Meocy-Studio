@@ -946,7 +946,7 @@ export const fr: Dict = {
       payCurrency: 'Devise de paiement : EUR (€)',
       payPending: 'Nous vous enverrons très bientôt le lien pour l\'acompte.',
       payButton: 'Payer l\'acompte de 50 €',
-      payPolicy: 'L\'acompte n\'est pas remboursable. Si vos projets changent, vous pouvez demander un changement de date, à l\'avance et selon les disponibilités.',
+      payPolicy: 'Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé. Si vous annulez moins de {days} jours avant, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
       policyLink: 'Conditions de réservation',
       submit: 'Envoyer la demande de réservation',
       sending: 'Envoi en cours…',
@@ -975,8 +975,8 @@ export const fr: Dict = {
       title: 'Conditions de réservation',
       lines: [
         'Un acompte de 50 € est demandé pour réserver la date de votre séance.',
-        'Les acomptes de réservation ne sont pas remboursables.',
-        'Si vos projets changent, vous pouvez demander un changement de date au lieu d\'un remboursement, selon les disponibilités.',
+        'Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé.',
+        'Si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
         'Les changements de date doivent être demandés à l\'avance.',
         'Des lieux supplémentaires peuvent être ajoutés pour 50 € chacun lorsque c\'est possible.',
         'Votre réservation est confirmée manuellement par MEOCY après réception de la demande et de l\'acompte.'
@@ -1040,7 +1040,7 @@ export const fr: Dict = {
         },
         {
           q: 'L\'acompte est-il remboursable ?',
-          a: 'Non, l\'acompte n\'est pas remboursable. Si vos projets changent, vous pouvez demander un changement de date.'
+          a: 'Oui, si vous annulez au moins {days} jours ({hours} heures) avant votre séance : l\'acompte de 50 € est intégralement remboursé. Si vous annulez moins de {days} jours avant, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
         },
         {
           q: 'Puis-je réserver pour une famille ou un groupe plus grand ?',
@@ -1083,15 +1083,16 @@ export const fr: Dict = {
           ]
         },
         {
-          h: 'Les acomptes ne sont pas remboursables.',
+          h: 'Annulation et remboursement.',
           p: [
-            'Les acomptes de réservation ne sont pas remboursables.'
+            'Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé.',
+            'Si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
           ]
         },
         {
           h: 'Changements de date.',
           p: [
-            'Si vos projets changent, vous pouvez demander un changement de date au lieu d\'un remboursement, selon les disponibilités.',
+            'Les changements de date peuvent être demandés selon les disponibilités.',
             'Les changements de date doivent être demandés à l\'avance.'
           ]
         },
@@ -1170,7 +1171,7 @@ export const fr: Dict = {
     },
     milanTerms: {
       title: 'Demandes de réservation de séances photo à Milan.',
-      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. L\'acompte de 50 €, les changements de date et les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
+      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé ; si vous annulez plus tard, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités. Les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
       link: 'Conditions de réservation'
     },
     footer: {

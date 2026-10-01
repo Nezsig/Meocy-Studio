@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
 import { locales } from '../data/locales';
+import { fillRefund } from '../lib/milan-shoot-config';
 
 type PolicyKey = 'bookingPolicy' | 'cookiePolicy';
 
@@ -32,7 +33,7 @@ export function LegalPolicyPage({ policy }: { policy: PolicyKey }) {
                 <h2 className="font-semibold text-ink">{s.h}</h2>
                 {s.p.map((para) => (
                   <p key={para} className="mt-3">
-                    {para}
+                    {fillRefund(para)}
                   </p>
                 ))}
               </section>
@@ -67,7 +68,7 @@ export function MilanLegalSection({ page }: { page: 'privacy' | 'terms' }) {
   return (
     <section>
       <h2 className="font-semibold text-ink">{legal.milanTerms.title}</h2>
-      <p className="mt-3">{legal.milanTerms.text}</p>
+      <p className="mt-3">{fillRefund(legal.milanTerms.text)}</p>
       <Link href="/booking-policy" className="mt-2 inline-flex min-h-[44px] items-center font-medium text-ink underline decoration-accent decoration-2 underline-offset-4">
         {legal.milanTerms.link}
       </Link>

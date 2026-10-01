@@ -946,7 +946,7 @@ export const it: Dict = {
       payCurrency: 'Valuta di pagamento: EUR (€)',
       payPending: 'Ti invieremo a breve il link per l\'acconto.',
       payButton: 'Paga l\'acconto di €50',
-      payPolicy: 'L\'acconto non è rimborsabile. Se i tuoi programmi cambiano, puoi chiedere un cambio di data, in anticipo e in base alla disponibilità.',
+      payPolicy: 'Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero. Se annulli meno di {days} giorni prima, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità.',
       policyLink: 'Condizioni di prenotazione',
       submit: 'Invia la richiesta di prenotazione',
       sending: 'Invio in corso…',
@@ -975,8 +975,8 @@ export const it: Dict = {
       title: 'Condizioni di prenotazione',
       lines: [
         'Per riservare la data dello shooting è richiesto un acconto di €50.',
-        'Gli acconti di prenotazione non sono rimborsabili.',
-        'Se i vostri programmi cambiano, potete chiedere un cambio di data al posto del rimborso, in base alla disponibilità.',
+        'Se annullate almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero.',
+        'Se annullate meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.',
         'I cambi di data vanno richiesti in anticipo.',
         'Dove previsto, si possono aggiungere location per €50 ciascuna.',
         'La prenotazione viene confermata manualmente da MEOCY dopo aver ricevuto la richiesta e l\'acconto.'
@@ -1040,7 +1040,7 @@ export const it: Dict = {
         },
         {
           q: 'L\'acconto è rimborsabile?',
-          a: 'No, l\'acconto non è rimborsabile. Se i vostri programmi cambiano, potete chiedere un cambio di data.'
+          a: 'Sì, se annullate almeno {days} giorni ({hours} ore) prima dello shooting: l\'acconto di €50 viene rimborsato per intero. Se annullate meno di {days} giorni prima, non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.'
         },
         {
           q: 'Posso prenotare per una famiglia o un gruppo più numeroso?',
@@ -1083,15 +1083,16 @@ export const it: Dict = {
           ]
         },
         {
-          h: 'Gli acconti non sono rimborsabili.',
+          h: 'Annullamento e rimborso.',
           p: [
-            'Gli acconti di prenotazione non sono rimborsabili.'
+            'Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero.',
+            'Se annulli meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità.'
           ]
         },
         {
           h: 'Cambi di data.',
           p: [
-            'Se i tuoi programmi cambiano, puoi chiedere un cambio di data al posto del rimborso, in base alla disponibilità.',
+            'I cambi di data si possono richiedere in base alla disponibilità.',
             'I cambi di data vanno richiesti in anticipo.'
           ]
         },
@@ -1170,7 +1171,7 @@ export const it: Dict = {
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. L\'acconto di €50, i cambi di data e le altre condizioni sono indicati nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
+      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero; se annulli più tardi, non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Le altre condizioni sono indicate nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
       link: 'Condizioni di prenotazione'
     },
     footer: {
