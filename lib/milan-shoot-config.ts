@@ -114,16 +114,16 @@ export interface MilanLocation {
 }
 
 export const milanLocations: MilanLocation[] = [
-  { id: 'duomo', image: null },
+  { id: 'duomo', image: { src: '/locations/duomo.jpg', width: 1800, height: 1125 } },
   { id: 'galleria', image: { src: '/work/fashion-01.jpg', width: 1129, height: 1600 } },
-  { id: 'scala', image: null },
-  { id: 'brera', image: null },
-  { id: 'castello', image: null },
-  { id: 'sempione', image: null },
-  { id: 'navigli', image: null },
-  { id: 'portaNuova', image: null },
-  { id: 'gaeAulenti', image: null },
-  { id: 'arcoPace', image: null },
+  { id: 'scala', image: { src: '/locations/scala.jpg', width: 1694, height: 1800 } },
+  { id: 'brera', image: { src: '/locations/brera.jpg', width: 1800, height: 1688 } },
+  { id: 'castello', image: { src: '/locations/castello.jpg', width: 1800, height: 1200 } },
+  { id: 'sempione', image: { src: '/locations/Parco%20Sempione.jpg', width: 1800, height: 1125 } },
+  { id: 'navigli', image: { src: '/locations/navigli.jpg', width: 1800, height: 1012 } },
+  { id: 'portaNuova', image: { src: '/locations/porta-nuova.jpg', width: 1800, height: 1125 } },
+  { id: 'gaeAulenti', image: { src: '/locations/gae-aulenti.jpg', width: 1800, height: 1800 } },
+  { id: 'arcoPace', image: { src: '/locations/Arco%20della%20Pace.jpg', width: 1694, height: 1800 } },
 ];
 
 /** On Milan Memory, the Duomo and its immediate surroundings count as one location. */
