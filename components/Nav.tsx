@@ -37,13 +37,14 @@ export function Nav() {
       }>
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
+        className="mx-auto flex h-20 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8 sm:h-24">
           
           <a href="/" aria-label="MEOCY home" className="flex shrink-0 items-center rounded-full p-1 transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            {/* TODO: Replace with /meocy-mark.png (M letter-mark only) when provided. For now using full logo mark at restored size. */}
             <img
-              src="/meocy-wordmark.png"
+              src="/meocy-logo.png"
               alt=""
-              className="h-10 w-auto object-contain sm:h-12" />
+              className="h-[72px] w-auto object-contain sm:h-[90px]" />
           </a>
 
           <ul className="hidden items-center gap-0.5 xl:flex">
