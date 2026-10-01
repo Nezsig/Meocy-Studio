@@ -55,23 +55,28 @@ export function Hero() {
                 {t.hero.pathsTitle}
               </h2>
               <div className="grid gap-4 sm:grid-cols-2 max-w-2xl">
-                <a
-                  href="/services"
-                  className="group flex items-center justify-between gap-4 rounded-xl border-2 border-mist p-5 transition-all hover:border-ink hover:bg-paper/50">
-                  <span className="text-[15px] font-medium text-ink">{t.hero.pathsCommercial}</span>
-                  <ArrowRightIcon
-                    size={18}
-                    className="shrink-0 text-slate2 transition-transform group-hover:translate-x-1" />
-                </a>
-                <a
-                  href="/milan-photoshoot"
-                  className="group relative flex items-center justify-between gap-4 rounded-xl border-2 border-mist p-5 transition-all hover:border-ink hover:bg-paper/50">
-                  <span className="text-[15px] font-medium text-ink">{t.hero.pathsMilan}</span>
-                  <ArrowRightIcon
-                    size={18}
-                    className="shrink-0 text-slate2 transition-transform group-hover:translate-x-1" />
+                {/* Commercial Services Card */}
+                <div className="rounded-xl border-2 border-mist bg-paper p-6 flex flex-col">
+                  <span className="text-[15px] font-medium text-ink mb-auto">{t.hero.pathsCommercial}</span>
+                  <a
+                    href="/services"
+                    className="mt-6 group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border-2 border-ink bg-transparent text-ink font-medium transition-all hover:bg-ink hover:text-chalk focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+                    {t.hero.pathsCommercial}
+                    <ArrowRightIcon size={17} className="transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
+
+                {/* Milan Photoshoot Card */}
+                <div className="relative rounded-xl border-2 border-mist bg-paper p-6 flex flex-col">
+                  <span className="text-[15px] font-medium text-ink mb-auto">{t.hero.pathsMilan}</span>
                   <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-accent" aria-hidden />
-                </a>
+                  <a
+                    href="/milan-photoshoot"
+                    className="mt-6 group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-accent px-6 text-ink font-medium transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+                    {t.hero.pathsMilan}
+                    <ArrowRightIcon size={17} className="transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
