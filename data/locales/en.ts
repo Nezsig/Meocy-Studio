@@ -9,6 +9,7 @@ export const en = {
       work: 'Work',
       services: 'Services',
       packages: 'Packages',
+      milan: 'Milan Photoshoot',
       about: 'About',
       faq: 'FAQ',
       collaborate: 'Collaborate',

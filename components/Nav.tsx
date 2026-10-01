@@ -9,6 +9,7 @@ const linkOrder = [
 { href: '/work', key: 'work' },
 { href: '/services', key: 'services' },
 { href: '/packages', key: 'packages' },
+{ href: '/milan-photoshoot', key: 'milan' },
 { href: '/about', key: 'about' },
 { href: '/faq', key: 'faq' },
 { href: '/collaborate', key: 'collaborate' },
@@ -45,7 +46,7 @@ export function Nav() {
               className="h-[72px] w-auto object-contain md:h-[90px]" />
           </a>
 
-          <ul className="hidden items-center gap-0.5 lg:flex">
+          <ul className="hidden items-center gap-0.5 xl:flex">
             {linkOrder.map((l) =>
             <li key={l.href}>
                 <a
@@ -71,7 +72,7 @@ export function Nav() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-              className="grid h-10 w-10 place-items-center rounded-full border border-mist text-ink lg:hidden">
+              className="grid h-11 w-11 place-items-center rounded-full border border-mist text-ink xl:hidden">
               
               {open ? <XIcon size={18} /> : <MenuIcon size={18} />}
             </button>
@@ -79,7 +80,7 @@ export function Nav() {
         </nav>
 
         {open &&
-        <div className="border-t border-mist/70 px-5 pb-5 pt-3 lg:hidden">
+        <div className="border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
             <ul className="grid grid-cols-2 gap-2">
               {linkOrder.map((l) =>
             <li key={l.href}>

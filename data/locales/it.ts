@@ -11,6 +11,7 @@ export const it: Dict = {
       work: 'Portfolio',
       services: 'Servizi',
       packages: 'Pacchetti',
+      milan: 'Shooting a Milano',
       about: 'Chi sono',
       faq: 'FAQ',
       collaborate: 'Collabora',
