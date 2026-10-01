@@ -106,18 +106,18 @@ export function MilanPhotoshootPage() {
   return (
     <main>
       {/* 1 — HERO */}
-      <section className="relative isolate flex min-h-[88svh] items-end overflow-hidden bg-ink text-chalk">
-        {/* TODO: Replace /work/fashion-01.jpg with real couple photo hero-couple-duomo when available. */}
+      <section className="relative isolate flex min-h-[clamp(520px,75vh,760px)] items-end overflow-hidden bg-ink text-chalk">
+        {/* TODO: Replace /locations/duomo.jpg with real couple photo hero-couple-duomo when available. */}
         <Image
-          src="/work/fashion-01.jpg"
-          alt="Milan, Galleria Vittorio Emanuele II"
+          src="/locations/duomo.jpg"
+          alt="Duomo di Milano"
           fill
           priority
           sizes="100vw"
           className="absolute inset-0 -z-10 object-cover"
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-ink/90 to-transparent" />
-        <div className="mx-auto w-full max-w-[1240px] px-5 pb-16 pt-32 sm:px-8 sm:pb-24">
+        <div className="mx-auto w-full max-w-[1240px] px-5 pb-12 pt-20 sm:px-8 sm:pb-20">
           <h1 className="max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">{m.hero.title}</h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-chalk/75 sm:text-[18px]">{m.hero.text}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

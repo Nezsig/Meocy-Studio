@@ -39,11 +39,11 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8">
           
-          <a href="#top" className="flex items-center">
+          <a href="/" aria-label="MEOCY home" className="flex shrink-0 items-center rounded-full p-1 transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
             <img
-              src="/meocy-logo.png"
-              alt="MEOCY Studio"
-              className="h-[72px] w-auto object-contain md:h-[90px]" />
+              src="/meocy-wordmark.png"
+              alt=""
+              className="h-10 w-auto object-contain sm:h-12" />
           </a>
 
           <ul className="hidden items-center gap-0.5 xl:flex">
