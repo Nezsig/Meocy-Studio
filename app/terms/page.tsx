@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
+import { MilanLegalSection } from '../../components/LegalPolicyPage';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions — MEOCY',
@@ -36,6 +37,8 @@ export default function TermsPage() {
                   only once we agree the details and price in writing (email).
                 </p>
               </section>
+
+              <MilanLegalSection page="terms" />
 
               <section>
                 <h2 className="font-semibold text-ink">Prices & offers.</h2>

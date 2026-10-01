@@ -336,7 +336,7 @@ export const it: Dict = {
         { label: 'Pacchetti', href: '/milan-photoshoot#packages' },
         { label: 'Location', href: '/milan-photoshoot#locations' },
         { label: 'Prenotazione', href: '/milan-photoshoot#booking' },
-        { label: 'Condizioni di prenotazione', href: '/milan-photoshoot#booking-policy' }
+        { label: 'Condizioni di prenotazione', href: '/booking-policy' }
       ]
     },
     services: [
@@ -947,6 +947,7 @@ export const it: Dict = {
       payPending: 'Ti invieremo a breve il link per l\'acconto.',
       payButton: 'Paga l\'acconto di €50',
       payPolicy: 'L\'acconto non è rimborsabile. Se i tuoi programmi cambiano, puoi chiedere un cambio di data, in anticipo e in base alla disponibilità.',
+      policyLink: 'Condizioni di prenotazione',
       submit: 'Invia la richiesta di prenotazione',
       sending: 'Invio in corso…',
       errRequired: 'Compila questo campo.',
@@ -980,7 +981,8 @@ export const it: Dict = {
         'Dove previsto, si possono aggiungere location per €50 ciascuna.',
         'La prenotazione viene confermata manualmente da MEOCY dopo aver ricevuto la richiesta e l\'acconto.'
       ],
-      termsLink: 'Termini e condizioni completi'
+      termsLink: 'Termini e condizioni completi',
+      fullPolicyLink: 'Condizioni di prenotazione complete'
     },
     gallery: {
       title: 'Milano attraverso il nostro obiettivo'
@@ -1065,6 +1067,123 @@ export const it: Dict = {
       experience: 'Ritratto editoriale nella Galleria Vittorio Emanuele II, Milano',
       why: 'Ritratto naturale in una via di Milano',
       final: 'Ritratto in una via di Milano'
+    }
+  },
+
+  legal: {
+    updated: 'Ultimo aggiornamento: ottobre 2026',
+    bookingPolicy: {
+      title: 'Condizioni di prenotazione',
+      intro: 'Queste condizioni si applicano alle prenotazioni di shooting a Milano richieste tramite meocy.com/milan-photoshoot.',
+      sections: [
+        {
+          h: 'Acconto di prenotazione.',
+          p: [
+            'Per riservare la data dello shooting è richiesto un acconto di €50. Tutti i prezzi sono in euro (EUR).'
+          ]
+        },
+        {
+          h: 'Gli acconti non sono rimborsabili.',
+          p: [
+            'Gli acconti di prenotazione non sono rimborsabili.'
+          ]
+        },
+        {
+          h: 'Cambi di data.',
+          p: [
+            'Se i tuoi programmi cambiano, puoi chiedere un cambio di data al posto del rimborso, in base alla disponibilità.',
+            'I cambi di data vanno richiesti in anticipo.'
+          ]
+        },
+        {
+          h: 'Richieste di prenotazione e conferma.',
+          p: [
+            'Inviando il modulo di prenotazione si crea una richiesta di prenotazione. MEOCY conferma le prenotazioni manualmente.',
+            'Una richiesta in attesa non è confermata finché MEOCY non la conferma via email o WhatsApp.',
+            'La prenotazione viene confermata manualmente da MEOCY dopo aver ricevuto la richiesta e l\'acconto.'
+          ]
+        },
+        {
+          h: 'Disponibilità.',
+          p: [
+            'La disponibilità è gestita da MEOCY. Scegliere una data e un orario nel modulo non li riserva.'
+          ]
+        },
+        {
+          h: 'Pacchetti e location.',
+          p: [
+            'Milan Memory — €200, 2 location incluse. Milan Experience — €300, 3 location incluse. Milan Signature — €600, 4 location incluse.',
+            'Dove previsto, si possono aggiungere location per €50 ciascuna.'
+          ]
+        },
+        {
+          h: 'Consegna delle foto.',
+          p: [
+            'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7-10 giorni.'
+          ]
+        },
+        {
+          h: 'Contatti.',
+          p: [
+            'hello@meocy.com · WhatsApp +39 379 105 1000'
+          ]
+        }
+      ],
+      termsLink: 'Termini e condizioni',
+      privacyLink: 'Informativa sulla privacy'
+    },
+    cookiePolicy: {
+      title: 'Cookie Policy',
+      intro: 'Questa pagina descrive cosa memorizza questo sito nel tuo browser.',
+      sections: [
+        {
+          h: 'Nessun cookie pubblicitario o di tracciamento.',
+          p: [
+            'Questo sito non imposta cookie propri e non utilizza cookie pubblicitari, di analisi o di tracciamento.'
+          ]
+        },
+        {
+          h: 'Preferenza di lingua (local storage).',
+          p: [
+            'Il sito salva un solo elemento nel local storage del browser, chiamato meocy-lang, che ricorda la lingua che usi sul sito (inglese, italiano o francese).',
+            'Viene salvato alla prima visita, in base alla lingua del browser, e aggiornato quando cambi lingua. Non è un cookie, non ci viene inviato e resta nel tuo browser finché non cancelli i dati di questo sito.'
+          ]
+        },
+        {
+          h: 'Font.',
+          p: [
+            'I caratteri tipografici di questo sito vengono caricati da Google Fonts: il browser si collega quindi ai server di Google per scaricarli.'
+          ]
+        },
+        {
+          h: 'Come eliminarla.',
+          p: [
+            'Puoi eliminare in qualsiasi momento la preferenza di lingua salvata cancellando i dati di questo sito nelle impostazioni del browser.'
+          ]
+        },
+        {
+          h: 'Modifiche.',
+          p: [
+            'Potremmo aggiornare questa informativa; la data più recente è indicata sopra.'
+          ]
+        }
+      ],
+      privacyLink: 'Informativa sulla privacy'
+    },
+    milanPrivacy: {
+      title: 'Richieste di prenotazione degli shooting a Milano.',
+      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati solo per gestire la tua richiesta di prenotazione. Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento.'
+    },
+    milanTerms: {
+      title: 'Richieste di prenotazione degli shooting a Milano.',
+      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. L\'acconto di €50, i cambi di data e le altre condizioni sono indicati nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
+      link: 'Condizioni di prenotazione'
+    },
+    footer: {
+      privacy: 'Informativa sulla privacy',
+      terms: 'Termini e condizioni',
+      bookingPolicy: 'Condizioni di prenotazione',
+      cookiePolicy: 'Cookie Policy'
     }
   }
 };

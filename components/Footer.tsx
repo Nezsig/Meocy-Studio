@@ -194,19 +194,17 @@ export function Footer() {
             <p className="text-xs mt-1">{t.footer.rebrand}</p>
           </div>
 
-          <div className="flex gap-6 text-[#9a998f]">
-            <a
-              href="/privacy"
-              className="hover:text-chalk transition-colors duration-150"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/terms"
-              className="hover:text-chalk transition-colors duration-150"
-            >
-              Terms & Conditions
-            </a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[#9a998f]">
+            {[
+              { href: '/privacy', label: t.legal.footer.privacy },
+              { href: '/terms', label: t.legal.footer.terms },
+              { href: '/booking-policy', label: t.legal.footer.bookingPolicy },
+              { href: '/cookie-policy', label: t.legal.footer.cookiePolicy },
+            ].map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-chalk transition-colors duration-150">
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

@@ -336,7 +336,7 @@ export const fr: Dict = {
         { label: 'Formules', href: '/milan-photoshoot#packages' },
         { label: 'Lieux', href: '/milan-photoshoot#locations' },
         { label: 'Réservation', href: '/milan-photoshoot#booking' },
-        { label: 'Conditions de réservation', href: '/milan-photoshoot#booking-policy' }
+        { label: 'Conditions de réservation', href: '/booking-policy' }
       ]
     },
     services: [
@@ -947,6 +947,7 @@ export const fr: Dict = {
       payPending: 'Nous vous enverrons très bientôt le lien pour l\'acompte.',
       payButton: 'Payer l\'acompte de 50 €',
       payPolicy: 'L\'acompte n\'est pas remboursable. Si vos projets changent, vous pouvez demander un changement de date, à l\'avance et selon les disponibilités.',
+      policyLink: 'Conditions de réservation',
       submit: 'Envoyer la demande de réservation',
       sending: 'Envoi en cours…',
       errRequired: 'Veuillez remplir ce champ.',
@@ -980,7 +981,8 @@ export const fr: Dict = {
         'Des lieux supplémentaires peuvent être ajoutés pour 50 € chacun lorsque c\'est possible.',
         'Votre réservation est confirmée manuellement par MEOCY après réception de la demande et de l\'acompte.'
       ],
-      termsLink: 'Conditions générales complètes'
+      termsLink: 'Conditions générales complètes',
+      fullPolicyLink: 'Conditions de réservation complètes'
     },
     gallery: {
       title: 'Milan à travers notre objectif'
@@ -1065,6 +1067,123 @@ export const fr: Dict = {
       experience: 'Portrait éditorial dans la Galleria Vittorio Emanuele II, Milan',
       why: 'Portrait naturel dans une rue de Milan',
       final: 'Portrait dans une rue de Milan'
+    }
+  },
+
+  legal: {
+    updated: 'Dernière mise à jour : octobre 2026',
+    bookingPolicy: {
+      title: 'Conditions de réservation',
+      intro: 'Ces conditions s\'appliquent aux réservations de séances photo à Milan demandées sur meocy.com/milan-photoshoot.',
+      sections: [
+        {
+          h: 'Acompte de réservation.',
+          p: [
+            'Un acompte de 50 € est demandé pour réserver la date de votre séance. Tous les prix sont en euros (EUR).'
+          ]
+        },
+        {
+          h: 'Les acomptes ne sont pas remboursables.',
+          p: [
+            'Les acomptes de réservation ne sont pas remboursables.'
+          ]
+        },
+        {
+          h: 'Changements de date.',
+          p: [
+            'Si vos projets changent, vous pouvez demander un changement de date au lieu d\'un remboursement, selon les disponibilités.',
+            'Les changements de date doivent être demandés à l\'avance.'
+          ]
+        },
+        {
+          h: 'Demandes de réservation et confirmation.',
+          p: [
+            'L\'envoi du formulaire de réservation crée une demande de réservation. MEOCY confirme les réservations manuellement.',
+            'Une demande en attente n\'est pas confirmée tant que MEOCY ne l\'a pas confirmée par email ou WhatsApp.',
+            'Votre réservation est confirmée manuellement par MEOCY après réception de la demande et de l\'acompte.'
+          ]
+        },
+        {
+          h: 'Disponibilités.',
+          p: [
+            'Les disponibilités sont gérées par MEOCY. Choisir une date et un horaire dans le formulaire ne les réserve pas.'
+          ]
+        },
+        {
+          h: 'Formules et lieux.',
+          p: [
+            'Milan Memory — 200 €, 2 lieux inclus. Milan Experience — 300 €, 3 lieux inclus. Milan Signature — 600 €, 4 lieux inclus.',
+            'Des lieux supplémentaires peuvent être ajoutés pour 50 € chacun lorsque c\'est possible.'
+          ]
+        },
+        {
+          h: 'Livraison des photos.',
+          p: [
+            'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours.'
+          ]
+        },
+        {
+          h: 'Contact.',
+          p: [
+            'hello@meocy.com · WhatsApp +39 379 105 1000'
+          ]
+        }
+      ],
+      termsLink: 'Conditions générales',
+      privacyLink: 'Politique de confidentialité'
+    },
+    cookiePolicy: {
+      title: 'Politique en matière de cookies',
+      intro: 'Cette page décrit ce que ce site enregistre dans votre navigateur.',
+      sections: [
+        {
+          h: 'Aucun cookie publicitaire ou de suivi.',
+          p: [
+            'Ce site ne dépose pas ses propres cookies et n\'utilise aucun cookie publicitaire, de mesure d\'audience ou de suivi.'
+          ]
+        },
+        {
+          h: 'Préférence de langue (stockage local).',
+          p: [
+            'Le site enregistre un seul élément dans le stockage local de votre navigateur, appelé meocy-lang, qui mémorise la langue utilisée sur le site (anglais, italien ou français).',
+            'Il est enregistré lors de votre première visite, selon la langue de votre navigateur, et mis à jour quand vous changez de langue. Ce n\'est pas un cookie, il ne nous est pas transmis et reste dans votre navigateur jusqu\'à ce que vous effaciez les données de ce site.'
+          ]
+        },
+        {
+          h: 'Polices.',
+          p: [
+            'Les polices de caractères de ce site sont chargées depuis Google Fonts : votre navigateur se connecte donc aux serveurs de Google pour les télécharger.'
+          ]
+        },
+        {
+          h: 'Comment la supprimer.',
+          p: [
+            'Vous pouvez supprimer à tout moment la préférence de langue enregistrée en effaçant les données de ce site dans les paramètres de votre navigateur.'
+          ]
+        },
+        {
+          h: 'Modifications.',
+          p: [
+            'Nous pouvons mettre à jour cette politique ; la date la plus récente est indiquée ci-dessus.'
+          ]
+        }
+      ],
+      privacyLink: 'Politique de confidentialité'
+    },
+    milanPrivacy: {
+      title: 'Demandes de réservation de séances photo à Milan.',
+      text: 'Lorsque vous envoyez une demande de réservation depuis la page des séances photo à Milan, nous collectons votre nom, votre email, votre numéro WhatsApp ou de téléphone, votre pays, la formule, la date, l\'heure et les lieux choisis, le nombre de personnes et vos éventuelles remarques. Nous utilisons ces données uniquement pour traiter votre demande de réservation. Elles sont envoyées par email à MEOCY. Le site ne collecte ni ne conserve aucune donnée de paiement.'
+    },
+    milanTerms: {
+      title: 'Demandes de réservation de séances photo à Milan.',
+      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. L\'acompte de 50 €, les changements de date et les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
+      link: 'Conditions de réservation'
+    },
+    footer: {
+      privacy: 'Politique de confidentialité',
+      terms: 'Conditions générales',
+      bookingPolicy: 'Conditions de réservation',
+      cookiePolicy: 'Politique cookies'
     }
   }
 };

@@ -371,9 +371,14 @@ export function MilanPhotoshootPage() {
                 </li>
               ))}
             </ul>
-            <Link href="/terms" className="mt-4 inline-flex min-h-[44px] items-center text-[14.5px] font-medium underline decoration-accent decoration-2 underline-offset-4">
+            <div className="mt-4 flex flex-wrap gap-x-6">
+              <Link href="/booking-policy" className="inline-flex min-h-[44px] items-center text-[14.5px] font-medium underline decoration-accent decoration-2 underline-offset-4">
+                {m.policy.fullPolicyLink}
+              </Link>
+              <Link href="/terms" className="inline-flex min-h-[44px] items-center text-[14.5px] font-medium underline decoration-accent decoration-2 underline-offset-4">
               {m.policy.termsLink}
             </Link>
+            </div>
           </div>
         </div>
       </section>

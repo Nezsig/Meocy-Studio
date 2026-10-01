@@ -56,7 +56,7 @@ const btnGhost =
   'inline-flex min-h-[52px] items-center justify-center gap-1.5 rounded-full px-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-chalk ring-1 ring-chalk/30 transition-colors hover:bg-chalk/10';
 
 /** Payment-ready deposit block: shows a pay link only when a provider URL is configured. Never reports a payment. */
-function DepositPayment({ url, amount, labels }: { url: string; amount: string; labels: { title: string; currency: string; pending: string; button: string; policy: string } }) {
+function DepositPayment({ url, amount, labels }: { url: string; amount: string; labels: { title: string; currency: string; pending: string; button: string; policy: string; policyLink: string } }) {
   return (
     <div className="rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-7">
       <p className="font-display text-[2.4rem] leading-none tracking-tighter-display text-accent">{amount}</p>
@@ -70,6 +70,9 @@ function DepositPayment({ url, amount, labels }: { url: string; amount: string; 
         <p className="mt-5 rounded-xl bg-chalk/10 px-4 py-3 text-[14.5px]">{labels.pending}</p>
       )}
       <p className="mt-5 text-[13.5px] leading-relaxed text-chalk/65">{labels.policy}</p>
+      <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium text-chalk underline decoration-accent decoration-2 underline-offset-4">
+        {labels.policyLink}
+      </a>
     </div>
   );
 }
@@ -516,7 +519,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             <DepositPayment
               url={depositPaymentUrl}
               amount={money(depositAmount)}
-              labels={{ title: b.payTitle, currency: b.payCurrency, pending: b.payPending, button: b.payButton, policy: b.payPolicy }}
+              labels={{ title: b.payTitle, currency: b.payCurrency, pending: b.payPending, button: b.payButton, policy: b.payPolicy, policyLink: b.policyLink }}
             />
             <div className="rounded-2xl bg-chalk/[0.06] p-6 text-[14.5px] ring-1 ring-chalk/15">
               <p className="font-semibold">{m.packages[pkg!.id].name} · {money(pricing.total)}</p>

@@ -333,7 +333,7 @@ export const en = {
         { label: 'Packages', href: '/milan-photoshoot#packages' },
         { label: 'Locations', href: '/milan-photoshoot#locations' },
         { label: 'Booking', href: '/milan-photoshoot#booking' },
-        { label: 'Booking Policy', href: '/milan-photoshoot#booking-policy' }
+        { label: 'Booking Policy', href: '/booking-policy' }
       ]
     },
     services: [
@@ -944,6 +944,7 @@ export const en = {
       payPending: 'We will send you the deposit link shortly.',
       payButton: 'Pay the €50 deposit',
       payPolicy: 'The deposit is non-refundable. If your plans change, you may request a date change instead, in advance and subject to availability.',
+      policyLink: 'Booking Policy',
       submit: 'Send booking request',
       sending: 'Sending…',
       errRequired: 'Please fill in this field.',
@@ -977,7 +978,8 @@ export const en = {
         'Additional locations can be added for €50 each where applicable.',
         'Your booking is confirmed manually by MEOCY after the booking request and deposit are received.'
       ],
-      termsLink: 'Full Terms & Conditions'
+      termsLink: 'Full Terms & Conditions',
+      fullPolicyLink: 'Full Booking Policy'
     },
     gallery: {
       title: 'See Milan Through Our Lens'
@@ -1062,6 +1064,123 @@ export const en = {
       experience: 'Editorial portrait inside the Galleria Vittorio Emanuele II, Milan',
       why: 'Natural portrait on a street in Milan',
       final: 'Portrait in a Milan street at street level'
+    }
+  },
+
+  legal: {
+    updated: 'Last updated: October 2026',
+    bookingPolicy: {
+      title: 'Booking Policy',
+      intro: 'This policy applies to Milan photoshoot bookings requested through meocy.com/milan-photoshoot.',
+      sections: [
+        {
+          h: 'Booking deposit.',
+          p: [
+            'A €50 deposit is required to reserve your photography date. All prices are in euro (EUR).'
+          ]
+        },
+        {
+          h: 'Deposits are non-refundable.',
+          p: [
+            'Booking deposits are non-refundable.'
+          ]
+        },
+        {
+          h: 'Date changes.',
+          p: [
+            'If your plans change, you may request a date change instead of a refund, subject to availability.',
+            'Date changes must be requested in advance.'
+          ]
+        },
+        {
+          h: 'Booking requests and confirmation.',
+          p: [
+            'Sending the booking form creates a booking request. MEOCY confirms bookings manually.',
+            'A pending request is not confirmed until MEOCY confirms it by email or WhatsApp.',
+            'Your booking is confirmed manually by MEOCY after the booking request and deposit are received.'
+          ]
+        },
+        {
+          h: 'Availability.',
+          p: [
+            'Availability is controlled by MEOCY. Choosing a date and time in the booking form does not reserve it.'
+          ]
+        },
+        {
+          h: 'Packages and locations.',
+          p: [
+            'Milan Memory — €200, 2 locations included. Milan Experience — €300, 3 locations included. Milan Signature — €600, 4 locations included.',
+            'Additional locations can be added for €50 each where applicable.'
+          ]
+        },
+        {
+          h: 'Photo delivery.',
+          p: [
+            'Your edited photographs are delivered as high-resolution digital images within 7 to 10 days.'
+          ]
+        },
+        {
+          h: 'Contact.',
+          p: [
+            'hello@meocy.com · WhatsApp +39 379 105 1000'
+          ]
+        }
+      ],
+      termsLink: 'Terms & Conditions',
+      privacyLink: 'Privacy Policy'
+    },
+    cookiePolicy: {
+      title: 'Cookie Policy',
+      intro: 'This page describes what this website stores in your browser.',
+      sections: [
+        {
+          h: 'No advertising or tracking cookies.',
+          p: [
+            'This website does not set its own cookies and does not use advertising, analytics or tracking cookies.'
+          ]
+        },
+        {
+          h: 'Language preference (local storage).',
+          p: [
+            'The website saves one item in your browser\'s local storage, called meocy-lang. It remembers the language you use on the site (English, Italian or French).',
+            'It is saved on your first visit, based on your browser\'s language, and updated when you change language. It is not a cookie, is not sent to us and stays in your browser until you clear this site\'s data.'
+          ]
+        },
+        {
+          h: 'Fonts.',
+          p: [
+            'The typefaces used on this website are loaded from Google Fonts, so your browser connects to Google\'s servers to download them.'
+          ]
+        },
+        {
+          h: 'How to remove it.',
+          p: [
+            'You can delete the stored language preference at any time by clearing this site\'s data in your browser settings.'
+          ]
+        },
+        {
+          h: 'Changes.',
+          p: [
+            'We may update this policy; the latest date is shown above.'
+          ]
+        }
+      ],
+      privacyLink: 'Privacy Policy'
+    },
+    milanPrivacy: {
+      title: 'Milan photoshoot booking requests.',
+      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details only to handle your booking request. They are sent by email to MEOCY. The website does not collect or store any payment data.'
+    },
+    milanTerms: {
+      title: 'Milan photoshoot booking requests.',
+      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. The €50 deposit, date changes and other conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
+      link: 'Booking Policy'
+    },
+    footer: {
+      privacy: 'Privacy Policy',
+      terms: 'Terms & Conditions',
+      bookingPolicy: 'Booking Policy',
+      cookiePolicy: 'Cookie Policy'
     }
   }
 };
