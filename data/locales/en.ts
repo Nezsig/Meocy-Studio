@@ -886,7 +886,7 @@ export const en = {
         },
         {
           t: 'Reserve With €50',
-          d: 'Pay a €50 booking deposit to request and secure your date.'
+          d: 'Pay a €50 booking deposit with your request. Once MEOCY confirms by email or WhatsApp, it holds your date.'
         }
       ],
       afterPayment: 'After payment, MEOCY manually confirms the booking.',
@@ -1029,7 +1029,7 @@ export const en = {
         },
         {
           q: 'How does the €50 deposit work?',
-          a: 'The €50 deposit reserves your date, and the remaining amount is paid separately. MEOCY confirms your booking manually, and you receive confirmation by email and WhatsApp.'
+          a: 'Your date is not reserved until MEOCY confirms your booking by email or WhatsApp. Once MEOCY confirms, the €50 deposit holds your date, and the remaining amount is paid separately.'
         },
         {
           q: 'Can I change my booking date?',

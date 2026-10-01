@@ -889,7 +889,7 @@ export const fr: Dict = {
         },
         {
           t: 'Réservez avec 50 €',
-          d: 'Versez un acompte de 50 € pour demander et bloquer votre date.'
+          d: 'Versez un acompte de 50 € avec votre demande. Après la confirmation de MEOCY par email ou WhatsApp, il bloque votre date.'
         }
       ],
       afterPayment: 'Après le paiement, MEOCY confirme la réservation manuellement.',
@@ -1032,7 +1032,7 @@ export const fr: Dict = {
         },
         {
           q: 'Comment fonctionne l\'acompte de 50 € ?',
-          a: 'L\'acompte de 50 € réserve votre date, et le solde est réglé séparément. MEOCY confirme votre réservation manuellement, et vous recevez la confirmation par email et WhatsApp.'
+          a: 'Votre date n\'est pas réservée tant que MEOCY n\'a pas confirmé votre réservation par email ou WhatsApp. Après la confirmation de MEOCY, l\'acompte de 50 € bloque votre date, et le solde est réglé séparément.'
         },
         {
           q: 'Puis-je changer la date de ma réservation ?',

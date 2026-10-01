@@ -889,7 +889,7 @@ export const it: Dict = {
         },
         {
           t: 'Prenotate con €50',
-          d: 'Versate un acconto di €50 per richiedere e bloccare la vostra data.'
+          d: 'Versate un acconto di €50 con la vostra richiesta. Dopo la conferma di MEOCY via email o WhatsApp, l\'acconto blocca la vostra data.'
         }
       ],
       afterPayment: 'Dopo il pagamento, MEOCY conferma la prenotazione manualmente.',
@@ -1032,7 +1032,7 @@ export const it: Dict = {
         },
         {
           q: 'Come funziona l\'acconto di €50?',
-          a: 'L\'acconto di €50 riserva la vostra data e l\'importo restante si paga a parte. MEOCY conferma la prenotazione manualmente e riceverete la conferma via email e WhatsApp.'
+          a: 'La data non è riservata finché MEOCY non conferma la prenotazione via email o WhatsApp. Dopo la conferma di MEOCY, l\'acconto di €50 blocca la vostra data e l\'importo restante si paga a parte.'
         },
         {
           q: 'Posso cambiare la data della prenotazione?',
