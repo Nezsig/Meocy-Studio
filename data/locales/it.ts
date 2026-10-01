@@ -691,5 +691,306 @@ export const it: Dict = {
   privacyCollab: {
     title: 'Moduli di collaborazione.',
     text: 'Se ci contatti tramite il modulo di collaborazione, utilizziamo i tuoi dati (nome, email, link social o portfolio e le informazioni che fornisci) solo per risponderti e per pianificare eventuali progetti. Non li vendiamo né li condividiamo e li cancelliamo su richiesta.'
+  },
+
+  milanShoot: {
+    seo: {
+      title: 'Servizio fotografico a Milano per coppie | Fotografia professionale | MEOCY',
+      description: 'Prenota un servizio fotografico professionale di coppia a Milano con MEOCY. Scegli pacchetto, location, data e orario e riserva la tua esperienza con un acconto di €50.'
+    },
+    hero: {
+      title: 'La vostra storia a Milano, fotografata da professionisti.',
+      text: 'Fotografia di coppia professionale a Milano — dal Duomo a Brera e oltre. Scegliete l\'esperienza, le location e lasciate Milano con fotografie da conservare.',
+      ctaPrimary: 'PRENOTA IL TUO SHOOTING A MILANO',
+      ctaSecondary: 'SCOPRI I PACCHETTI',
+      trust: 'Fotografia professionale • Location a Milano • Immagini ritoccate ad alta risoluzione'
+    },
+    intro: {
+      title: 'Più di una foto ricordo.',
+      text1: 'Vedete Milano, vivetela e fatevela fotografare da un professionista.',
+      text2: 'La sessione è costruita intorno a voi — con una direzione naturale, fotografia professionale e location di Milano scelte con cura. Che viaggiate in coppia, festeggiate un momento speciale o vogliate semplicemente belle fotografie del vostro viaggio, creeremo immagini personali, curate e senza tempo.',
+      features: [
+        {
+          t: 'Direzione professionale',
+          d: 'Indicazioni di posa rilassate, così non dovrete mai chiedervi cosa fare.'
+        },
+        {
+          t: 'Fotografia professionale',
+          d: 'Fotocamera e luci di alta qualità, immagini composte con cura.'
+        },
+        {
+          t: 'La vera Milano',
+          d: 'Fotografie costruite intorno all\'architettura, alle strade e all\'atmosfera di Milano.'
+        }
+      ]
+    },
+    experience: {
+      title: 'La vostra Milano. Le vostre location. La vostra storia.',
+      text: 'Scegliete l\'esperienza adatta al vostro viaggio, poi selezionate le location di Milano che volete fotografare.',
+      note: 'Le location si scelgono durante la prenotazione.'
+    },
+    locations: {
+      duomo: {
+        name: 'Duomo di Milano',
+        desc: 'Il cuore di Milano.'
+      },
+      galleria: {
+        name: 'Galleria Vittorio Emanuele II',
+        desc: 'L\'architettura classica di Milano.'
+      },
+      scala: {
+        name: 'Piazza della Scala',
+        desc: 'La Milano storica ed elegante.'
+      },
+      brera: {
+        name: 'Brera',
+        desc: 'Arte, vie e carattere milanese.'
+      },
+      castello: {
+        name: 'Castello Sforzesco',
+        desc: 'Architettura storica e grandi spazi aperti.'
+      },
+      sempione: {
+        name: 'Parco Sempione',
+        desc: 'Verde e ritratti rilassati.'
+      },
+      navigli: {
+        name: 'Navigli / Darsena',
+        desc: 'Canali, vie e atmosfera serale.'
+      },
+      portaNuova: {
+        name: 'Porta Nuova',
+        desc: 'Lo skyline e l\'architettura della Milano moderna.'
+      },
+      gaeAulenti: {
+        name: 'Piazza Gae Aulenti',
+        desc: 'La Milano contemporanea.'
+      },
+      arcoPace: {
+        name: 'Arco della Pace',
+        desc: 'Architettura elegante e spazi aperti tutt\'intorno.'
+      }
+    },
+    packages: {
+      title: 'Scegliete la vostra esperienza a Milano',
+      text: 'Tre modi di vivere Milano attraverso la fotografia professionale.',
+      label: 'PACCHETTO',
+      popular: 'LA PIÙ SCELTA',
+      includes: 'Include',
+      statTime: 'Durata',
+      statPhotos: 'Foto',
+      statLocations: 'Location',
+      statLighting: 'Luci',
+      photosValue: '{n} ritoccate',
+      locationsUpTo: 'Fino a {n}',
+      locationsIncluded: '{n} incluse',
+      lightingAd300: 'Godox AD300 Pro',
+      lightingAd600Ad300: 'Godox AD600 Pro + AD300 Pro',
+      recommendedLabel: 'Location consigliata',
+      recommended: 'Duomo + area intorno al Duomo',
+      signatureIncluded: '4 location incluse',
+      signatureExtra: 'Location aggiuntive: +€50 ciascuna',
+      memory: {
+        name: 'MILAN MEMORY',
+        duration: '2 ORE',
+        cta: 'SCEGLI MILAN MEMORY'
+      },
+      experience: {
+        name: 'MILAN EXPERIENCE',
+        duration: '3 ORE',
+        cta: 'SCEGLI MILAN EXPERIENCE'
+      },
+      signature: {
+        name: 'MILAN SIGNATURE',
+        duration: '5 ORE',
+        cta: 'SCEGLI MILAN SIGNATURE'
+      }
+    },
+    features: {
+      photos25: '25 fotografie ritoccate professionalmente',
+      photos50: '50 fotografie ritoccate professionalmente',
+      photos75: '75 fotografie ritoccate professionalmente',
+      locations2: 'Fino a 2 location di Milano a scelta',
+      locations3: 'Fino a 3 location di Milano a scelta',
+      locations4: 'Fino a 4 location di Milano incluse',
+      photographer: 'Fotografo professionista',
+      naturalPosing: 'Pose naturali e direzione',
+      naturalCreative: 'Pose naturali e direzione creativa',
+      creativePosing: 'Direzione creativa e pose',
+      lightingAd300: 'Illuminazione professionale Godox AD300 Pro',
+      lightingAd600Ad300: 'Illuminazione professionale Godox AD600 Pro + AD300 Pro',
+      softboxes: 'Softbox professionali da 120 cm e 85 cm',
+      editing: 'Ritocco professionale',
+      editingGrading: 'Ritocco professionale e color grading',
+      highRes: 'Immagini digitali ad alta risoluzione',
+      privateGallery: 'Galleria online privata'
+    },
+    selector: {
+      title: 'Scegliete le vostre location a Milano',
+      text: 'Selezionate i luoghi adatti alla storia che volete raccontare.',
+      packageLabel: 'Il vostro pacchetto',
+      counter: '{count} di {included} location incluse selezionate',
+      extraCount: '+{n} location aggiuntive · +€{total}',
+      select: 'Seleziona',
+      selected: 'Selezionata',
+      limitIncluded: 'Il vostro pacchetto include {n} location.',
+      limitAdd: 'Aggiungete un\'altra location per €50.',
+      addConfirm: 'Aggiungi per €50',
+      dismiss: 'Mantieni la selezione',
+      duomoNote: 'Con Milan Memory, il Duomo e l\'area circostante contano come una sola location.',
+      continueCta: 'Continua con la prenotazione'
+    },
+    why: {
+      title: 'Fotografia professionale. Senza l\'effetto foto da turista.',
+      items: [
+        {
+          t: 'Attrezzatura professionale',
+          d: 'Fotocamere Sony professionali e attrezzatura di illuminazione professionale.'
+        },
+        {
+          t: 'Direzione naturale',
+          d: 'Non serve saper posare. Vi guiderò io durante tutta la sessione.'
+        },
+        {
+          t: 'Location a Milano',
+          d: 'Fotografate la Milano iconica che siete venuti a vivere — e scoprite lungo la strada qualche angolo meno noto.'
+        },
+        {
+          t: 'Ritocco professionale',
+          d: 'Le fotografie finali vengono selezionate con cura e ritoccate professionalmente.'
+        }
+      ]
+    },
+    how: {
+      title: 'Prenotate il vostro shooting a Milano in pochi passaggi',
+      stepLabel: 'PASSO',
+      steps: [
+        {
+          t: 'Scegliete l\'esperienza',
+          d: 'Selezionate il pacchetto fotografico che preferite.'
+        },
+        {
+          t: 'Scegliete data e orario',
+          d: 'Selezionate la data che preferite e un orario disponibile.'
+        },
+        {
+          t: 'Scegliete le location',
+          d: 'Selezionate le location di Milano incluse nel vostro pacchetto.'
+        },
+        {
+          t: 'Prenotate con €50',
+          d: 'Versate un acconto di €50 per richiedere e bloccare la vostra data.'
+        }
+      ],
+      afterPayment: 'Dopo il pagamento, MEOCY conferma la prenotazione manualmente.',
+      note: 'La prenotazione viene confermata manualmente da MEOCY dopo la richiesta.'
+    },
+    booking: {
+      title: 'Prenota il tuo shooting a Milano',
+      selectedPackage: 'Pacchetto scelto:',
+      selectedLocations: 'Location scelte:',
+      whatsapp: 'Scrivici su WhatsApp',
+      email: 'Scrivi a hello@meocy.com',
+      waGreeting: 'Ciao MEOCY, vorrei prenotare uno shooting fotografico a Milano.',
+      waPackage: 'Pacchetto:',
+      waLocations: 'Location:',
+      emailSubject: 'Richiesta di prenotazione shooting a Milano'
+    },
+    policy: {
+      title: 'Condizioni di prenotazione',
+      lines: [
+        'Per riservare la data dello shooting è richiesto un acconto di €50.',
+        'Gli acconti di prenotazione non sono rimborsabili.',
+        'Se i vostri programmi cambiano, potete chiedere un cambio di data al posto del rimborso, in base alla disponibilità.',
+        'I cambi di data vanno richiesti in anticipo.',
+        'Dove previsto, si possono aggiungere location per €50 ciascuna.',
+        'La prenotazione viene confermata manualmente da MEOCY dopo aver ricevuto la richiesta e l\'acconto.'
+      ],
+      termsLink: 'Termini e condizioni completi'
+    },
+    gallery: {
+      title: 'Milano attraverso il nostro obiettivo'
+    },
+    faq: {
+      title: 'Domande frequenti',
+      items: [
+        {
+          q: 'A chi è rivolto lo shooting a Milano?',
+          a: 'A chi visita Milano e vuole fotografie professionali del proprio viaggio — soprattutto coppie e gruppi di due persone.'
+        },
+        {
+          q: 'Possiamo prenotare in coppia?',
+          a: 'Sì. Le esperienze sono pensate per coppie e gruppi di due persone.'
+        },
+        {
+          q: 'Possiamo scegliere le location a Milano?',
+          a: 'Sì. Le location si scelgono durante la prenotazione, tra quelle presentate in questa pagina.'
+        },
+        {
+          q: 'Quante location sono incluse?',
+          a: 'Milan Memory include fino a 2 location (il Duomo e l\'area circostante contano come una), Milan Experience fino a 3 e Milan Signature 4.'
+        },
+        {
+          q: 'E se vogliamo un\'altra location?',
+          a: 'Con Milan Signature si possono aggiungere altre location per €50 ciascuna.'
+        },
+        {
+          q: 'Dobbiamo saper posare?',
+          a: 'No. Vi guiderò io durante la sessione, con indicazioni naturali e rilassate.'
+        },
+        {
+          q: 'Usate un\'illuminazione professionale?',
+          a: 'Sì. Milan Experience include un Godox AD300 Pro, Milan Signature un Godox AD600 Pro e un AD300 Pro con softbox da 120 cm e 85 cm.'
+        },
+        {
+          q: 'Quanto dura lo shooting?',
+          a: 'Milan Memory dura 2 ore, Milan Experience 3 ore e Milan Signature 5 ore.'
+        },
+        {
+          q: 'Quante fotografie ritoccate riceveremo?',
+          a: '25 con Milan Memory, 50 con Milan Experience e 75 con Milan Signature — tutte ritoccate professionalmente.'
+        },
+        {
+          q: 'Quando riceveremo le fotografie?',
+          a: 'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7-10 giorni.'
+        },
+        {
+          q: 'Come funziona l\'acconto di €50?',
+          a: 'L\'acconto di €50 riserva la vostra data e l\'importo restante si paga a parte. MEOCY conferma la prenotazione manualmente e riceverete la conferma via email e WhatsApp.'
+        },
+        {
+          q: 'Posso cambiare la data della prenotazione?',
+          a: 'Sì. Il cambio di data va richiesto in anticipo ed è soggetto a disponibilità.'
+        },
+        {
+          q: 'L\'acconto è rimborsabile?',
+          a: 'No, l\'acconto non è rimborsabile. Se i vostri programmi cambiano, potete chiedere un cambio di data.'
+        },
+        {
+          q: 'Posso prenotare per una famiglia o un gruppo più numeroso?',
+          a: 'Le esperienze sono pensate per coppie e gruppi di due persone. Per una famiglia o un gruppo più numeroso, contattateci e ne parleremo insieme.'
+        }
+      ]
+    },
+    final: {
+      title: 'Fate di Milano parte della vostra storia.',
+      text: 'Non lasciate Milano solo con le foto del telefono. Create qualcosa che vorrete conservare.',
+      ctaPrimary: 'PRENOTA IL TUO SHOOTING A MILANO',
+      ctaSecondary: 'VEDI I PACCHETTI'
+    },
+    ph: {
+      label: 'Segnaposto foto',
+      hero: 'Shooting di coppia al Duomo di Milano',
+      couple: 'Ritratto di coppia a Milano',
+      duomo: 'Coppia al Duomo di Milano',
+      lighting: 'Ritratto di coppia con illuminazione professionale'
+    },
+    alt: {
+      galleria: 'Ritratto sul pavimento a mosaico della Galleria Vittorio Emanuele II a Milano',
+      street: 'Ritratto in una via di Milano',
+      experience: 'Ritratto editoriale nella Galleria Vittorio Emanuele II, Milano',
+      why: 'Ritratto naturale in una via di Milano',
+      final: 'Ritratto in una via di Milano'
+    }
   }
 };

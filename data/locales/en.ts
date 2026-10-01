@@ -688,6 +688,307 @@ export const en = {
   privacyCollab: {
     title: 'Collaboration forms.',
     text: 'If you contact us through the collaboration form, we use your details (name, email, social or portfolio links and the information you provide) only to reply to you and to plan possible projects. We do not sell or share them, and we delete them on request.'
+  },
+
+  milanShoot: {
+    seo: {
+      title: 'Milan Photoshoot for Couples | Professional Photography | MEOCY',
+      description: 'Book a professional couple photoshoot in Milan with MEOCY. Choose your package, Milan locations, date and time, and reserve your experience with a €50 booking deposit.'
+    },
+    hero: {
+      title: 'Your Milan Story, Captured Professionally.',
+      text: 'Professional couple photography in Milan — from the Duomo to Brera and beyond. Choose your experience, pick your locations, and leave Milan with photographs worth keeping.',
+      ctaPrimary: 'BOOK YOUR MILAN SHOOT',
+      ctaSecondary: 'EXPLORE PACKAGES',
+      trust: 'Professional photography • Milan locations • Edited high-resolution images'
+    },
+    intro: {
+      title: 'More Than a Tourist Photo.',
+      text1: 'See Milan, experience Milan, and have it professionally photographed.',
+      text2: 'Your session is designed around you — with natural direction, professional photography and carefully selected Milan locations. Whether you\'re traveling as a couple, celebrating a special moment or simply want beautiful photographs from your trip, we\'ll create images that feel personal, polished and timeless.',
+      features: [
+        {
+          t: 'Professional Direction',
+          d: 'Relaxed posing guidance so you never have to wonder what to do.'
+        },
+        {
+          t: 'Professional Photography',
+          d: 'High-quality camera, lighting and carefully composed images.'
+        },
+        {
+          t: 'Real Milan',
+          d: 'Photographs created around the architecture, streets and atmosphere of Milan.'
+        }
+      ]
+    },
+    experience: {
+      title: 'Your Milan. Your Locations. Your Story.',
+      text: 'Choose the experience that fits your trip, then select the Milan locations you want to photograph.',
+      note: 'You select your locations during the booking process.'
+    },
+    locations: {
+      duomo: {
+        name: 'Duomo di Milano',
+        desc: 'The heart of Milan.'
+      },
+      galleria: {
+        name: 'Galleria Vittorio Emanuele II',
+        desc: 'Classic Milan architecture.'
+      },
+      scala: {
+        name: 'Piazza della Scala',
+        desc: 'Elegant historic Milan.'
+      },
+      brera: {
+        name: 'Brera',
+        desc: 'Art, streets and Milanese character.'
+      },
+      castello: {
+        name: 'Castello Sforzesco',
+        desc: 'Historic architecture and open spaces.'
+      },
+      sempione: {
+        name: 'Parco Sempione',
+        desc: 'Green space and relaxed portraits.'
+      },
+      navigli: {
+        name: 'Navigli / Darsena',
+        desc: 'Canals, streets and evening atmosphere.'
+      },
+      portaNuova: {
+        name: 'Porta Nuova',
+        desc: 'Modern Milan skyline and architecture.'
+      },
+      gaeAulenti: {
+        name: 'Piazza Gae Aulenti',
+        desc: 'Contemporary Milan.'
+      },
+      arcoPace: {
+        name: 'Arco della Pace',
+        desc: 'Elegant architecture and open surroundings.'
+      }
+    },
+    packages: {
+      title: 'Choose Your Milan Experience',
+      text: 'Three ways to experience Milan through professional photography.',
+      label: 'PACKAGE',
+      popular: 'POPULAR CHOICE',
+      includes: 'Includes',
+      statTime: 'Time',
+      statPhotos: 'Photos',
+      statLocations: 'Locations',
+      statLighting: 'Lighting',
+      photosValue: '{n} edited',
+      locationsUpTo: 'Up to {n}',
+      locationsIncluded: '{n} included',
+      lightingAd300: 'Godox AD300 Pro',
+      lightingAd600Ad300: 'Godox AD600 Pro + AD300 Pro',
+      recommendedLabel: 'Recommended location concept',
+      recommended: 'Duomo + surrounding Duomo area',
+      signatureIncluded: '4 locations included',
+      signatureExtra: 'Additional locations: +€50 each',
+      memory: {
+        name: 'MILAN MEMORY',
+        duration: '2 HOURS',
+        cta: 'CHOOSE MILAN MEMORY'
+      },
+      experience: {
+        name: 'MILAN EXPERIENCE',
+        duration: '3 HOURS',
+        cta: 'CHOOSE MILAN EXPERIENCE'
+      },
+      signature: {
+        name: 'MILAN SIGNATURE',
+        duration: '5 HOURS',
+        cta: 'CHOOSE MILAN SIGNATURE'
+      }
+    },
+    features: {
+      photos25: '25 professionally edited photographs',
+      photos50: '50 professionally edited photographs',
+      photos75: '75 professionally edited photographs',
+      locations2: 'Up to 2 selected Milan locations',
+      locations3: 'Up to 3 selected Milan locations',
+      locations4: 'Up to 4 Milan locations included',
+      photographer: 'Professional photographer',
+      naturalPosing: 'Natural posing and direction',
+      naturalCreative: 'Natural posing and creative direction',
+      creativePosing: 'Creative direction and posing',
+      lightingAd300: 'Godox AD300 Pro professional lighting',
+      lightingAd600Ad300: 'Godox AD600 Pro + AD300 Pro professional lighting',
+      softboxes: '120cm and 85cm professional softboxes',
+      editing: 'Professional editing',
+      editingGrading: 'Professional editing and color grading',
+      highRes: 'High-resolution digital images',
+      privateGallery: 'Private online gallery'
+    },
+    selector: {
+      title: 'Choose Your Milan Locations',
+      text: 'Select the places that fit the story you want to create.',
+      packageLabel: 'Your package',
+      counter: '{count} of {included} included locations selected',
+      extraCount: '+{n} additional location(s) · +€{total}',
+      select: 'Select',
+      selected: 'Selected',
+      limitIncluded: 'Your package includes {n} locations.',
+      limitAdd: 'Add another location for €50.',
+      addConfirm: 'Add for €50',
+      dismiss: 'Keep my selection',
+      duomoNote: 'With Milan Memory, the Duomo and its surrounding area count as one location.',
+      continueCta: 'Continue to booking'
+    },
+    why: {
+      title: 'Professional Photography. Without the Tourist-Photo Look.',
+      items: [
+        {
+          t: 'Professional Equipment',
+          d: 'Professional Sony cameras and professional lighting equipment.'
+        },
+        {
+          t: 'Natural Direction',
+          d: 'You don\'t need to know how to pose. I\'ll guide you through the session.'
+        },
+        {
+          t: 'Milan Locations',
+          d: 'Photograph the iconic Milan you came to experience — and discover a few less-obvious corners along the way.'
+        },
+        {
+          t: 'Professionally Edited',
+          d: 'Your final photographs are carefully selected and professionally edited.'
+        }
+      ]
+    },
+    how: {
+      title: 'Book Your Milan Shoot in a Few Steps',
+      stepLabel: 'STEP',
+      steps: [
+        {
+          t: 'Choose Your Experience',
+          d: 'Select your preferred photography package.'
+        },
+        {
+          t: 'Choose Your Date & Time',
+          d: 'Select your preferred shooting date and available time.'
+        },
+        {
+          t: 'Choose Your Locations',
+          d: 'Select the Milan locations included in your package.'
+        },
+        {
+          t: 'Reserve With €50',
+          d: 'Pay a €50 booking deposit to request and secure your date.'
+        }
+      ],
+      afterPayment: 'After payment, MEOCY manually confirms the booking.',
+      note: 'Your booking is manually confirmed by MEOCY after the reservation request.'
+    },
+    booking: {
+      title: 'Book Your Milan Shoot',
+      selectedPackage: 'Selected package:',
+      selectedLocations: 'Selected locations:',
+      whatsapp: 'Message on WhatsApp',
+      email: 'Email hello@meocy.com',
+      waGreeting: 'Hi MEOCY, I\'d like to book a Milan photoshoot.',
+      waPackage: 'Package:',
+      waLocations: 'Locations:',
+      emailSubject: 'Milan photoshoot booking request'
+    },
+    policy: {
+      title: 'Booking Policy',
+      lines: [
+        'A €50 deposit is required to reserve your photography date.',
+        'Booking deposits are non-refundable.',
+        'If your plans change, you may request a date change instead of a refund, subject to availability.',
+        'Date changes must be requested in advance.',
+        'Additional locations can be added for €50 each where applicable.',
+        'Your booking is confirmed manually by MEOCY after the booking request and deposit are received.'
+      ],
+      termsLink: 'Full Terms & Conditions'
+    },
+    gallery: {
+      title: 'See Milan Through Our Lens'
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          q: 'Who is the Milan photoshoot for?',
+          a: 'Travelers visiting Milan who want professional photographs of their trip — especially couples and two-person groups.'
+        },
+        {
+          q: 'Can we book as a couple?',
+          a: 'Yes. The experiences are designed for couples and two-person groups.'
+        },
+        {
+          q: 'Can we choose our own Milan locations?',
+          a: 'Yes. You choose your Milan locations during booking, from the locations shown on this page.'
+        },
+        {
+          q: 'How many locations are included?',
+          a: 'Milan Memory includes up to 2 locations (the Duomo and its surrounding area count as one), Milan Experience up to 3, and Milan Signature 4.'
+        },
+        {
+          q: 'What happens if we want another location?',
+          a: 'With Milan Signature, additional locations can be added for €50 each.'
+        },
+        {
+          q: 'Do we need to know how to pose?',
+          a: 'No. I\'ll guide you through the session with natural, relaxed direction.'
+        },
+        {
+          q: 'Do you provide professional lighting?',
+          a: 'Yes. Milan Experience includes a Godox AD300 Pro, and Milan Signature includes a Godox AD600 Pro and AD300 Pro with 120cm and 85cm softboxes.'
+        },
+        {
+          q: 'How long does the photoshoot take?',
+          a: 'Milan Memory is 2 hours, Milan Experience 3 hours and Milan Signature 5 hours.'
+        },
+        {
+          q: 'How many edited photographs will we receive?',
+          a: '25 with Milan Memory, 50 with Milan Experience and 75 with Milan Signature — all professionally edited.'
+        },
+        {
+          q: 'When will we receive our photographs?',
+          a: 'Your edited photographs are delivered as high-resolution digital images within 7 to 10 days.'
+        },
+        {
+          q: 'How does the €50 deposit work?',
+          a: 'The €50 deposit reserves your date, and the remaining amount is paid separately. MEOCY confirms your booking manually, and you receive confirmation by email and WhatsApp.'
+        },
+        {
+          q: 'Can I change my booking date?',
+          a: 'Yes. Date changes must be requested in advance and are subject to availability.'
+        },
+        {
+          q: 'Is the deposit refundable?',
+          a: 'No, the deposit is non-refundable. If your plans change, you may request a date change instead.'
+        },
+        {
+          q: 'Can I book for a family or larger group?',
+          a: 'The experiences are designed for couples and two-person groups. For a family or a larger group, get in touch and we\'ll discuss what\'s possible.'
+        }
+      ]
+    },
+    final: {
+      title: 'Make Milan Part of Your Story.',
+      text: 'Don\'t leave Milan with only phone photos. Create something you\'ll want to keep.',
+      ctaPrimary: 'BOOK YOUR MILAN SHOOT',
+      ctaSecondary: 'VIEW PACKAGES'
+    },
+    ph: {
+      label: 'Photo placeholder',
+      hero: 'Couple photoshoot at the Duomo di Milano',
+      couple: 'Couple portrait in Milan',
+      duomo: 'Couple at the Duomo di Milano',
+      lighting: 'Couple portrait with professional lighting'
+    },
+    alt: {
+      galleria: 'Portrait on the mosaic floor of the Galleria Vittorio Emanuele II in Milan',
+      street: 'Portrait on a Milan street',
+      experience: 'Editorial portrait inside the Galleria Vittorio Emanuele II, Milan',
+      why: 'Natural portrait on a street in Milan',
+      final: 'Portrait in a Milan street at street level'
+    }
   }
 };
 
