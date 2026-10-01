@@ -29,9 +29,8 @@ export const metadata: Metadata = {
     description: m.seo.description,
     images: ['https://meocy.com/og-image.png'],
   },
-  // Not indexed until the booking form goes live in Step 2.
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

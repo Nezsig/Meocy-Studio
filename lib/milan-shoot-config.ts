@@ -118,10 +118,10 @@ export const milanLocations: MilanLocation[] = [
 /** On Milan Memory, the Duomo and its immediate surroundings count as one location. */
 export const duomoAreaCountsAsOne = true;
 
-/** Session start times offered in the booking form (24h, Europe/Rome). First slot is 06:00. */
+/** Session start times offered in the booking form (24h, Europe/Rome): hourly, 06:00 first, 22:00 last. */
 export const slotStartTimes = [
-  '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00',
-  '13:00', '14:00', '15:00', '16:00', '17:00', '18:00',
+  '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00',
+  '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00',
 ];
 
 /**
@@ -151,3 +151,87 @@ export const milanContact = {
 
 export const visibleFeatures = (pkg: MilanPackage): MilanFeatureKey[] =>
   pkg.features.filter((f) => f !== 'privateGallery' || privateGalleryEnabled);
+
+/** Standard experience is for two people; larger groups get availability and pricing confirmed separately. */
+export const standardPeople = 2;
+export const maxPeople = 10;
+
+export interface MilanPricing {
+  packagePrice: number;
+  includedLocations: number;
+  extraLocations: number;
+  extraLocationPrice: number;
+  extraLocationsTotal: number;
+  total: number;
+  deposit: number;
+  remaining: number;
+}
+
+/**
+ * Single pricing rule, used by the page (live summary) and recomputed by /api/milan/request.
+ * Prices sent by the browser are never trusted.
+ */
+export function computePricing(packageId: MilanPackageId, locationCount: number): MilanPricing {
+  const pkg = milanPackages.find((p) => p.id === packageId)!;
+  const extraLocations = pkg.extraLocationPrice === null ? 0 : Math.max(0, locationCount - pkg.includedLocations);
+  const extraLocationPrice = pkg.extraLocationPrice ?? 0;
+  const extraLocationsTotal = extraLocations * extraLocationPrice;
+  const total = pkg.price + extraLocationsTotal;
+  return {
+    packagePrice: pkg.price,
+    includedLocations: pkg.includedLocations,
+    extraLocations,
+    extraLocationPrice,
+    extraLocationsTotal,
+    total,
+    deposit: depositAmount,
+    remaining: total - depositAmount,
+  };
+}
+
+/** Maximum locations a package accepts (Signature can add extras up to every listed location). */
+export const maxLocationsFor = (packageId: MilanPackageId) => {
+  const pkg = milanPackages.find((p) => p.id === packageId)!;
+  return pkg.extraLocationPrice === null ? pkg.includedLocations : milanLocations.length;
+};
+
+// --- Dates and slots (all in Milan time) -------------------------------------------------
+
+const romeParts = (now: Date) => {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Rome',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(now);
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+  return { date: `${get('year')}-${get('month')}-${get('day')}`, time: `${get('hour')}:${get('minute')}` };
+};
+
+/** Today's date in Milan as YYYY-MM-DD. */
+export const todayInMilan = (now = new Date()) => romeParts(now).date;
+
+/** True for a real calendar date written as YYYY-MM-DD. */
+export const isValidIsoDate = (date: string) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+  const d = new Date(`${date}T00:00:00Z`);
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === date;
+};
+
+/** A date can be requested when it is today or later (Milan time) and not in blockedDates. */
+export const isDateSelectable = (date: string, now = new Date()) =>
+  isValidIsoDate(date) && date >= todayInMilan(now) && !blockedDates.includes(date);
+
+/** A start time can be requested when it is listed, not blocked, and not already past (for today). */
+export const isSlotSelectable = (date: string, time: string, now = new Date()) => {
+  if (!isDateSelectable(date, now) || !slotStartTimes.includes(time)) return false;
+  if (blockedSlots.some((s) => s.date === date && s.time === time)) return false;
+  const { date: today, time: nowTime } = romeParts(now);
+  return date > today || time > nowTime;
+};
+
+export const selectableSlots = (date: string, now = new Date()) =>
+  slotStartTimes.filter((time) => isSlotSelectable(date, time, now));

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
-  milanContact,
   milanLocations,
   milanPackages,
   visibleFeatures,
@@ -14,6 +13,7 @@ import {
 } from '../../lib/milan-shoot-config';
 import { AccordionItem, PhotoPlaceholder, fmt, formatPrice } from './parts';
 import { LocationSelector } from './LocationSelector';
+import { BookingFlow } from './BookingFlow';
 
 const PACKAGE_IDS = milanPackages.map((p) => p.id);
 const LOCATION_IDS = milanLocations.map((l) => l.id);
@@ -100,18 +100,6 @@ export function MilanPhotoshootPage() {
     },
     [packageChosen, packageId, locations],
   );
-
-  const chosenPkg = packageChosen ? milanPackages.find((p) => p.id === packageId) : undefined;
-  const chosenLocationNames = locations.map((l) => m.locations[l].name);
-  const waText = [
-    m.booking.waGreeting,
-    chosenPkg ? `${m.booking.waPackage} ${m.packages[chosenPkg.id].name} (${formatPrice(chosenPkg.price, lang)})` : '',
-    chosenLocationNames.length ? `${m.booking.waLocations} ${chosenLocationNames.join(', ')}` : '',
-  ]
-    .filter(Boolean)
-    .join('\n');
-  const waHref = `https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(waText)}`;
-  const mailHref = `mailto:${milanContact.email}?subject=${encodeURIComponent(m.booking.emailSubject)}&body=${encodeURIComponent(waText)}`;
 
   return (
     <main>
@@ -352,37 +340,22 @@ export function MilanPhotoshootPage() {
         </div>
       </section>
 
-      {/* 8 — BOOKING (Step 1: contact options; the full booking form arrives in Step 2) */}
-      <section id="booking" className="scroll-mt-20 px-5 pb-24 sm:px-8 sm:pb-32">
-        <div className="mx-auto max-w-[1240px] rounded-[28px] bg-ink px-6 py-14 text-chalk sm:px-12 sm:py-20">
+      {/* 8 — BOOKING: multi-step booking request flow */}
+      <section id="booking" className="relative scroll-mt-20 px-5 pb-24 sm:px-8 sm:pb-32">
+        <div className="mx-auto max-w-[1240px] rounded-[28px] bg-ink px-5 py-12 text-chalk sm:px-12 sm:py-16">
           <h2 className={`${sectionTitle} max-w-3xl`}>{m.booking.title}</h2>
-          {(chosenPkg || chosenLocationNames.length > 0) && (
-            <dl className="mt-8 space-y-2 text-[15px]">
-              {chosenPkg && (
-                <div className="flex flex-wrap gap-x-2">
-                  <dt className="text-chalk/55">{m.booking.selectedPackage}</dt>
-                  <dd className="font-semibold">
-                    {m.packages[chosenPkg.id].name} · <span className="text-accent">{formatPrice(chosenPkg.price, lang)}</span>
-                  </dd>
-                </div>
-              )}
-              {chosenLocationNames.length > 0 && (
-                <div className="flex flex-wrap gap-x-2">
-                  <dt className="text-chalk/55">{m.booking.selectedLocations}</dt>
-                  <dd className="font-semibold">{chosenLocationNames.join(', ')}</dd>
-                </div>
-              )}
-            </dl>
-          )}
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href={waHref} target="_blank" rel="noopener noreferrer" className={ctaPrimary}>
-              {m.booking.whatsapp}
-            </a>
-            <a href={mailHref} className={ctaGhostDark}>
-              {m.booking.email}
-            </a>
+          <p className="mt-4 max-w-2xl text-[17px] text-chalk/70">{m.booking.subtitle}</p>
+          <div className="mt-10">
+            <BookingFlow
+              packageId={packageChosen ? packageId : null}
+              onPackageChange={(id) => {
+                setPackageId(id);
+                setPackageChosen(true);
+              }}
+              locations={locations}
+              onLocationsChange={setLocations}
+            />
           </div>
-          <p className="mt-8 text-[14px] text-chalk/55">{m.how.note}</p>
         </div>
       </section>
 

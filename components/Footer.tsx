@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-ink text-chalk">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 py-16">
         {/* Main grid: 4 columns on desktop, 1 column on mobile */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-16 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-12 pb-12 border-b border-white/10">
 
           {/* COLUMN 1: Brand */}
           <div className="flex flex-col">
@@ -143,6 +143,24 @@ export function Footer() {
 
             <ul className="space-y-3 text-sm">
               {t.footer.navigation.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-chalk hover:text-accent transition-colors duration-150"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COLUMN: Tourist Photography (Milan photoshoot landing page) */}
+          <div className="flex flex-col">
+            <h3 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">{t.footer.tourist.title}</h3>
+
+            <ul className="space-y-3 text-sm">
+              {t.footer.tourist.links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
