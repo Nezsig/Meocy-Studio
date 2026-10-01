@@ -35,7 +35,10 @@ export const en = {
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
 
     rebrandCallout: 'Newly rebranded — September 2026. MEOCY is a fresh start under a new name. You\'re catching us right at the beginning — so you get founder-level attention on every shoot, and introductory pricing while we take on our first brands.',
-    noPackageNeeded: 'No package needed — tell us what you want and we\'ll shoot it your way.'
+    noPackageNeeded: 'No package needed — tell us what you want and we\'ll shoot it your way.',
+    pathsTitle: 'Pick your path',
+    pathsCommercial: 'Explore Commercial Services',
+    pathsMilan: 'Explore Milan Photoshoot'
   },
 
   clients: { label: 'Selected clients' },

@@ -48,6 +48,32 @@ export function Hero() {
             </div>
 
             <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-slate2">{t.hero.studioCaption}</p>
+
+            {/* Two-path section */}
+            <div className="mt-16 pt-12 border-t border-mist sm:mt-20">
+              <h2 className="text-[14px] font-semibold uppercase tracking-[0.12em] text-slate2 mb-6">
+                {t.hero.pathsTitle}
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2 max-w-2xl">
+                <a
+                  href="/services"
+                  className="group flex items-center justify-between gap-4 rounded-xl border-2 border-mist p-5 transition-all hover:border-ink hover:bg-paper/50">
+                  <span className="text-[15px] font-medium text-ink">{t.hero.pathsCommercial}</span>
+                  <ArrowRightIcon
+                    size={18}
+                    className="shrink-0 text-slate2 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href="/milan-photoshoot"
+                  className="group relative flex items-center justify-between gap-4 rounded-xl border-2 border-mist p-5 transition-all hover:border-ink hover:bg-paper/50">
+                  <span className="text-[15px] font-medium text-ink">{t.hero.pathsMilan}</span>
+                  <ArrowRightIcon
+                    size={18}
+                    className="shrink-0 text-slate2 transition-transform group-hover:translate-x-1" />
+                  <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-accent" aria-hidden />
+                </a>
+              </div>
+            </div>
           </motion.div>
 
         </div>

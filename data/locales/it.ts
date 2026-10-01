@@ -38,7 +38,10 @@ export const it: Dict = {
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
 
     rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è una ripartenza sotto un nuovo nome. Ci trovi proprio all\'inizio — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
-    noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.'
+    noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.',
+    pathsTitle: 'Scegli il tuo percorso',
+    pathsCommercial: 'Scopri i Servizi Commerciali',
+    pathsMilan: 'Scopri il Fotoshoot di Milano'
   },
 
   clients: { label: 'Clienti selezionati' },

@@ -49,12 +49,13 @@ export function Nav() {
 
           <ul className="hidden items-center gap-0.5 xl:flex">
             {linkOrder.map((l) =>
-            <li key={l.href}>
+            <li key={l.href} className="relative">
                 <a
                 href={l.href}
                 className="rounded-full px-3 py-2 text-[13.5px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
 
                   {t.nav.links[l.key]}
+                  {l.key === 'milan' && <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />}
                 </a>
               </li>
             )}

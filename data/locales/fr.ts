@@ -38,7 +38,10 @@ export const fr: Dict = {
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
 
     rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est une redémarrage sous un nouveau nom. Vous nous trouvez juste au début — donc vous recevez l\'attention d\'un fondateur sur chaque shooting, et les prix d\'introduction pendant que nous accueillons nos premiers brand.',
-    noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.'
+    noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.',
+    pathsTitle: 'Choisissez votre chemin',
+    pathsCommercial: 'Découvrir les Services Commerciaux',
+    pathsMilan: 'Découvrir le Photoshoot de Milan'
   },
 
   clients: { label: 'Clients sélectionnés' },
