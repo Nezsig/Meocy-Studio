@@ -115,7 +115,7 @@ export interface MilanLocation {
 
 export const milanLocations: MilanLocation[] = [
   { id: 'duomo', image: { src: '/locations/duomo.jpg', width: 1800, height: 1125 } },
-  { id: 'galleria', image: { src: '/work/fashion-01.jpg', width: 1129, height: 1600 } },
+  { id: 'galleria', image: { src: '/locations/galleria.jpg', width: 1800, height: 1209 } },
   { id: 'scala', image: { src: '/locations/scala.jpg', width: 1694, height: 1800 } },
   { id: 'brera', image: { src: '/locations/brera.jpg', width: 1800, height: 1688 } },
   { id: 'castello', image: { src: '/locations/castello.jpg', width: 1800, height: 1200 } },

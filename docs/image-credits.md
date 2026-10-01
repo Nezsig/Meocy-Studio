@@ -5,6 +5,7 @@ Location images used in /milan-photoshoot. All images are optimized for web (max
 | Filename | Location | Source URL | Author | License |
 |----------|----------|-----------|--------|---------|
 | duomo.jpg | Duomo di Milano | not recorded | not recorded | Unsplash License (free for commercial use, no attribution required) |
+| galleria.jpg | Galleria Vittorio Emanuele II | TODO | TODO | TODO |
 | scala.jpg | La Scala Theatre | not recorded | not recorded | Unsplash License (free for commercial use, no attribution required) |
 | brera.jpg | Brera District | not recorded | not recorded | Unsplash License (free for commercial use, no attribution required) |
 | castello.jpg | Castello Sforzesco | not recorded | not recorded | Unsplash License (free for commercial use, no attribution required) |
