@@ -1150,12 +1150,6 @@ export const fr: Dict = {
           ]
         },
         {
-          h: 'Polices.',
-          p: [
-            'Les polices de caractères de ce site sont chargées depuis Google Fonts : votre navigateur se connecte donc aux serveurs de Google pour les télécharger.'
-          ]
-        },
-        {
           h: 'Comment la supprimer.',
           p: [
             'Vous pouvez supprimer à tout moment la préférence de langue enregistrée en effaçant les données de ce site dans les paramètres de votre navigateur.'

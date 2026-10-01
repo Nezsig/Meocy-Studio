@@ -1147,12 +1147,6 @@ export const en = {
           ]
         },
         {
-          h: 'Fonts.',
-          p: [
-            'The typefaces used on this website are loaded from Google Fonts, so your browser connects to Google\'s servers to download them.'
-          ]
-        },
-        {
           h: 'How to remove it.',
           p: [
             'You can delete the stored language preference at any time by clearing this site\'s data in your browser settings.'

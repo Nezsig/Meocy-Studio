@@ -1150,12 +1150,6 @@ export const it: Dict = {
           ]
         },
         {
-          h: 'Font.',
-          p: [
-            'I caratteri tipografici di questo sito vengono caricati da Google Fonts: il browser si collega quindi ai server di Google per scaricarli.'
-          ]
-        },
-        {
           h: 'Come eliminarla.',
           p: [
             'Puoi eliminare in qualsiasi momento la preferenza di lingua salvata cancellando i dati di questo sito nelle impostazioni del browser.'
