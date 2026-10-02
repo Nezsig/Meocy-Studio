@@ -13,12 +13,33 @@ interface LanguageValue {
 const LanguageContext = createContext<LanguageValue | null>(null);
 
 interface LanguageProviderProps {
-  initial: LanguageCode;
   children: React.ReactNode;
 }
 
-export function LanguageProvider({ initial, children }: LanguageProviderProps) {
-  const [lang, setLang] = useState<LanguageCode>(initial);
+function getInitialLanguage(): LanguageCode {
+  if (typeof window === 'undefined') return 'en';
+
+  const saved = localStorage.getItem('meocy-lang');
+  if (saved === 'en' || saved === 'it' || saved === 'fr') {
+    return saved;
+  }
+
+  const browserLang = navigator.language.toLowerCase();
+  if (browserLang.startsWith('it')) return 'it';
+  if (browserLang.startsWith('fr')) return 'fr';
+
+  return 'en';
+}
+
+export function LanguageProvider({ children }: LanguageProviderProps) {
+  const [lang, setLang] = useState<LanguageCode>('en');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const initialLang = getInitialLanguage();
+    setLang(initialLang);
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = locales[lang].htmlLang;
