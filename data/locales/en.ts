@@ -1047,7 +1047,7 @@ export const en = {
         },
         {
           q: 'When will we receive our photographs?',
-          a: 'Your edited photographs are delivered as high-resolution digital images within 7 to 10 days.'
+          a: 'Your edited photographs are delivered as high-resolution digital images within 7 to 10 working days.'
         },
         {
           q: 'How does the €50 deposit work?',
@@ -1139,7 +1139,7 @@ export const en = {
         {
           h: 'Photo delivery.',
           p: [
-            'Your edited photographs are delivered as high-resolution digital images within 7 to 10 days.'
+            'Your edited photographs are delivered as high-resolution digital images within 7 to 10 working days.'
           ]
         },
         {
