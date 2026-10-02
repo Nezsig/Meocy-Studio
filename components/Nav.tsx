@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { MenuIcon, XIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -12,13 +13,17 @@ const linkOrder = [
 { href: '/milan-photoshoot', key: 'milan' },
 { href: '/about', key: 'about' },
 { href: '/faq', key: 'faq' },
-{ href: '/collaborate', key: 'collaborate' },
-{ href: '/work-with-meocy', key: 'workWithMeocy' },
 { href: '/contact', key: 'contact' }] as
+const;
+
+const collabLinks = [
+{ href: '/collaborate', key: 'collaborate' },
+{ href: '/work-with-meocy', key: 'workWithMeocy' }] as
 const;
 
 export function Nav() {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -62,6 +67,25 @@ export function Nav() {
             )}
           </ul>
 
+          <div className="hidden items-center rounded-full border border-mist bg-chalk/50 p-0.5 xl:flex">
+            {collabLinks.map((l, idx) => {
+              const isActive = pathname === l.href;
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className={`px-3 py-1.5 text-[13.5px] font-medium rounded-full transition-colors duration-150 ease-smooth ${
+                    isActive
+                      ? 'bg-accent text-ink'
+                      : 'text-slate2 hover:text-ink'
+                  }`}
+                >
+                  {t.nav.links[l.key]}
+                </a>
+              );
+            })}
+          </div>
+
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
             <a
@@ -85,7 +109,7 @@ export function Nav() {
         {open &&
         <div className="border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
             <ul className="grid grid-cols-2 gap-2">
-              {linkOrder.map((l) =>
+              {[...linkOrder.slice(0, 7), ...collabLinks, linkOrder[7]].map((l) =>
             <li key={l.href}>
                   <a
                 href={l.href}
