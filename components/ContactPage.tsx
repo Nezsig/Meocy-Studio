@@ -152,7 +152,7 @@ export function ContactPage() {
 
           <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)] lg:items-start lg:gap-10">
             {/* LEFT: FORM */}
-            <div id="contact-form" className="scroll-mt-24">
+            <div className="scroll-mt-24">
               {status === 'sent' ? (
                 <div className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8">
                   <div className="flex min-h-[360px] flex-col items-start justify-center" role="status">
@@ -170,7 +170,7 @@ export function ContactPage() {
                   </div>
                 </div>
               ) : (
-                <form ref={formRef} onSubmit={onSubmit} noValidate className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8 space-y-8">
+                <form id="contact-form" ref={formRef} onSubmit={onSubmit} noValidate className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8 space-y-8">
                   {/* Section 1: Service */}
                   <div className="border-b border-ink/10 pb-8">
                     <h3 className={labelClass}>{c.briefWhat}</h3>
