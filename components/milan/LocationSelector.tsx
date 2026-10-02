@@ -96,7 +96,9 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
           </div>
         </div>
         <p className="text-[14px] text-slate2" aria-live="polite">
-          {fmt(m.selector.counter, { count: Math.min(selected.length, pkg.includedLocations), included: pkg.includedLocations })}
+          {packageId === 'signature' && extra > 0
+            ? `${pkg.includedLocations} included + ${extra} additional`
+            : fmt(m.selector.counter, { count: selected.length, included: pkg.includedLocations })}
           {extra > 0 && <span className="ml-2 font-medium text-ink">{fmt(m.selector.extraCount, { n: extra, total: extraTotal })}</span>}
         </p>
       </div>
