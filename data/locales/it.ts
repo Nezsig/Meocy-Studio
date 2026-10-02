@@ -57,8 +57,6 @@ export const it: Dict = {
     contact: {
       phoneLabel: 'T',
       phone: '+39 379 105 1000',
-      mobileLabel: 'M',
-      mobile: '+39 380 498 1718',
       emailLabel: 'E',
       email: 'hello@meocy.com',
       websiteLabel: 'W',
@@ -316,8 +314,6 @@ export const it: Dict = {
     contact: {
       phoneLabel: 'T',
       phone: '+39 379 105 1000',
-      mobileLabel: 'M',
-      mobile: '+39 380 498 1718',
       emailLabel: 'E',
       email: 'hello@meocy.com',
       websiteLabel: 'W',

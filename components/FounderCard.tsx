@@ -55,16 +55,6 @@ export function FounderCard() {
             </a>
 
             <a
-              href={`tel:${t.about.contact.mobile.replace(/\s/g, '')}`}
-              className="flex items-center gap-3 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
-            >
-              <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
-                {t.about.contact.mobileLabel}
-              </span>
-              <span>{t.about.contact.mobile}</span>
-            </a>
-
-            <a
               href={`mailto:${t.about.contact.email}`}
               className="flex items-center gap-3 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
             >

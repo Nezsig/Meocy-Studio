@@ -101,18 +101,6 @@ export function Footer() {
 
               <div className="flex items-start gap-3">
                 <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
-                  {t.footer.contact.mobileLabel}
-                </span>
-                <a
-                  href={`tel:${t.footer.contact.mobile.replace(/\s/g, '')}`}
-                  className="text-chalk hover:text-accent transition-colors duration-150"
-                >
-                  {t.footer.contact.mobile}
-                </a>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
                   {t.footer.contact.emailLabel}
                 </span>
                 <a
