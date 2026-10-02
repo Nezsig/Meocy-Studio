@@ -606,55 +606,45 @@ export const it: Dict = {
   },
 
   collabPage: {
-    title: 'Lavora con MEOCY',
-    intro1: 'MEOCY è un piccolo studio a Milano guidato dal fondatore. Lavoro direttamente con ogni modella, agenzia e fotografo con cui collaboro.',
-    intro2: 'Scegli l\'opzione più adatta a te, guarda cosa mi serve e invia i tuoi dati qui sotto. Leggo ogni messaggio personalmente.',
-    tabModels: 'Modelle e talent',
-    tabAgencies: 'Agenzie',
-    tabCreatives: 'Fotografi e assistenti',
-    offerTitle: 'Come funziona',
-    needTitle: 'Cosa inviarmi',
-    mIntro: 'Stai costruendo il tuo portfolio a Milano? Collaboro con modelle e modelli per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
+    title: 'Collabora con MEOCY',
+    intro1: 'MEOCY collabora con modelle/modelli e agenzie di modelle a Milano su progetti fashion, editoriali e di portfolio selezionati.',
+    intro2: 'Scegli il tuo percorso qui sotto e invia i tuoi dati. Leggo ogni messaggio personalmente.',
+    tabModels: 'Modelle / Talent',
+    tabAgencies: 'Agenzie di modelle',
+    offerTitle: 'Cosa ricevi',
+    needTitle: 'Cosa inviare',
+    mIntro: 'Collaborazioni di portfolio per modelle a Milano. Fashion • Editoriale • Ritratti',
     mOffer: [
-      'Nessun compenso da nessuna delle due parti — gli shooting in collaborazione non sono retribuiti',
-      'Ricevi da 10 a 25 foto professionalmente ritoccate, a seconda dello shooting',
-      'Concept, location, outfit e tempistiche vengono pianificati insieme prima dello shooting',
-      'I termini vengono confermati per iscritto prima dello shooting'
+      'Da 10 a 25 fotografie professionalmente ritoccate',
+      'Concept fashion, editoriali o ritratti',
+      'Shooting in location a Milano',
+      'Concept e mood pianificati prima dello shooting',
+      'Direzione styling e outfit discussa insieme',
+      'Immagini finali adatte al portfolio e ai social'
     ],
     mNeed: [
       'Il tuo Instagram e/o link al portfolio',
-      '3–6 foto recenti (tramite link)',
-      'La tua città e la tua disponibilità',
-      'Se sei rappresentata/o da un\'agenzia',
-      'Cosa cerchi: una collaborazione o uno shooting a pagamento'
+      'La tua città e la tua posizione attuale',
+      '3–6 foto recenti o link al portfolio',
+      'La tua disponibilità per gli shooting',
+      'Se sei rappresentata da un\'agenzia (facoltativo)',
+      'Un messaggio sul tipo di shooting che ti interessa'
     ],
-    mPaidNote: 'Preferisci uno shooting a pagamento?',
+    mPaidNote: 'Cerchi lavoro a pagamento?',
     mPaidLink: 'Scopri il pacchetto Shooting Moda / Modelle',
-    aIntro: 'Lavori con un\'agenzia di modelle a Milano? Offro test shoot per new faces e contenuti per le tue modelle.',
+    aIntro: 'Test e collaborazioni editoriali selezionati con modelle. New faces • Sviluppo portfolio • Test creativi',
     aOffer: [
-      'Test shoot gratuiti per new faces — limitati a 10 shooting gratuiti',
-      'I test shoot gratuiti sono solo per test e portfolio, non per uso commerciale',
-      'Ogni shooting gratuito viene discusso con l\'agenzia per lo specifico progetto prima di essere confermato',
+      'Test shoot selezionati e gratuiti per new faces e modelle',
+      'I test shoot sono per uso editoriale e portfolio',
+      'Concept, timing e consegne discussi in anticipo',
       'Gli shooting commerciali vengono quotati a parte'
     ],
     aNeed: [
       'Nome dell\'agenzia, referente e sito web o Instagram',
-      'Un link alla vostra model board o alle new faces che avete in mente',
-      'Di cosa avete bisogno: test shoot, digitals e polaroid, comp card, lookbook o video',
-      'Le vostre tempistiche o scadenze'
+      'Un link alla vostra model board o alle modelle che avete in mente',
+      'Di cosa avete bisogno: test shoot, digitals, comp card, lookbook o video',
+      'Le vostre tempistiche o scadenze progettuali'
     ],
-    cIntro: 'Lavoro con fotografi, videomaker e assistenti luci a Milano.',
-    cOffer: [
-      'Lavoro retribuito come assistente luci nelle mie produzioni',
-      'Compensi e termini vengono concordati prima di ogni produzione'
-    ],
-    cNeed: [
-      'Il tuo Instagram e/o link al portfolio',
-      'Il tuo ruolo e la tua città',
-      'La tua disponibilità',
-      'La tua esperienza con le luci e sul set'
-    ],
-    creativesPaidNote: 'Lavoro retribuito come assistente luci.',
     name: 'Nome',
     email: 'Email',
     instagram: 'Instagram',
@@ -697,12 +687,6 @@ export const it: Dict = {
     ],
     boardLink: 'Link alla model board',
     timeframe: 'Tempistiche / scadenza',
-    creativeRole: 'Il tuo ruolo',
-    creativeRoleOptions: [
-      'Fotografo',
-      'Videomaker',
-      'Assistente luci'
-    ],
     select: 'Seleziona…',
     submit: 'Invia',
     sending: 'Invio in corso…',

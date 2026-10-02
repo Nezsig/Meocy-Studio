@@ -74,8 +74,8 @@ export function buildNotificationEmail(b: Booking): string {
 // ---------------------------------------------------------------------------
 // Collaboration requests (/collaborate) — separate from the booking emails above.
 // ---------------------------------------------------------------------------
-export type CollabTrack = 'models' | 'agencies' | 'creatives';
-export const collabTrackLabels: Record<CollabTrack, string> = { models: 'Models', agencies: 'Agencies', creatives: 'Creatives' };
+export type CollabTrack = 'models' | 'agencies';
+export const collabTrackLabels: Record<CollabTrack, string> = { models: 'Models', agencies: 'Agencies' };
 
 export const collabSubjects: Record<Locale, string> = {
   en: "We've received your message — MEOCY STUDIO",

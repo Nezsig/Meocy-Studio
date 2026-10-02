@@ -603,55 +603,45 @@ export const en = {
   },
 
   collabPage: {
-    title: 'Work With MEOCY',
-    intro1: 'MEOCY is a small, founder-led studio in Milan. I work directly with every model, agency and photographer I collaborate with.',
-    intro2: 'Pick the option that fits you, see what I need from you and send your details below. I read every message myself.',
-    tabModels: 'Models & talent',
-    tabAgencies: 'Agencies',
-    tabCreatives: 'Photographers & assistants',
-    offerTitle: 'How it works',
-    needTitle: 'What to send me',
-    mIntro: 'Building your portfolio in Milan? I collaborate with models to create strong fashion, editorial and portfolio imagery.',
+    title: 'Collaborate With MEOCY',
+    intro1: 'MEOCY collaborates with models and model agencies in Milan on selected fashion, editorial and portfolio projects.',
+    intro2: 'Choose your path below and send your details. I read every message personally.',
+    tabModels: 'Models / Talent',
+    tabAgencies: 'Model Agencies',
+    offerTitle: 'What You Get',
+    needTitle: 'What to Send',
+    mIntro: 'Portfolio collaborations for models in Milan. Fashion • Editorial • Portrait',
     mOffer: [
-      'No fee on either side — collaboration shoots are unpaid',
-      'You receive 10–25 professionally edited photos, depending on the shoot',
-      'Concept, location, outfits and timing are planned together before the shoot',
-      'Terms are confirmed in writing before we shoot'
+      '10–25 professionally edited photographs',
+      'Fashion, editorial or portrait concepts',
+      'Milan outdoor and location shoots',
+      'Concept and mood planned before the shoot',
+      'Outfit and styling direction discussed together',
+      'Final images suitable for portfolio and social use'
     ],
     mNeed: [
       'Your Instagram and/or portfolio link',
-      '3–6 recent photos (as a link)',
-      'Your city and availability',
-      'Whether you are represented by an agency',
-      'What you are looking for: collaboration or a paid shoot'
+      'Your city and current location',
+      '3–6 recent photos or portfolio link',
+      'Your availability for shoots',
+      'Whether you are represented by an agency (optional)',
+      'A message about what type of shoot interests you'
     ],
-    mPaidNote: 'Prefer a paid shoot?',
+    mPaidNote: 'Looking for paid work?',
     mPaidLink: 'See the Fashion / Model Shoot package',
-    aIntro: 'Working with a modeling agency in Milan? I offer test shoots for new faces and content for your models.',
+    aIntro: 'Selected model test and editorial collaborations. New faces • Portfolio development • Creative tests',
     aOffer: [
-      'Free test shoots for new faces — limited to 10 free shoots',
-      'Free test shoots are for test and portfolio use only, not for commercial use',
-      'Each free shoot is discussed with the agency for the specific project before it is confirmed',
-      'Commercial shoots are quoted separately'
+      'Selected complimentary test shoots for new faces and models',
+      'Test shoots are for portfolio and editorial use',
+      'Concept, timing and deliverables discussed in advance',
+      'Commercial shoots quoted separately'
     ],
     aNeed: [
       'Agency name, contact person and website or Instagram',
-      'A link to your model board or the new faces you have in mind',
-      'What you need: test shoots, digitals and polaroids, comp cards, lookbook or video',
-      'Your timeframe or deadlines'
+      'A link to your model board or the talent you have in mind',
+      'What you need: test shoots, digitals, comp cards, lookbook or video',
+      'Your timeframe or project deadlines'
     ],
-    cIntro: 'I work with photographers, videographers and lighting assistants in Milan.',
-    cOffer: [
-      'Paid work as a lighting assistant on my productions',
-      'Rates and terms are agreed before each production'
-    ],
-    cNeed: [
-      'Your Instagram and/or portfolio link',
-      'Your role and city',
-      'Your availability',
-      'Your experience with lighting and working on set'
-    ],
-    creativesPaidNote: 'Paid work as a lighting assistant.',
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram',
@@ -694,12 +684,6 @@ export const en = {
     ],
     boardLink: 'Link to model board',
     timeframe: 'Timeframe / deadline',
-    creativeRole: 'Your role',
-    creativeRoleOptions: [
-      'Photographer',
-      'Videographer',
-      'Lighting assistant'
-    ],
     select: 'Select…',
     submit: 'Send',
     sending: 'Sending…',

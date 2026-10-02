@@ -20,11 +20,10 @@ type Status = 'idle' | 'sending' | 'sent' | 'error';
 type Values = Record<string, string | boolean>;
 type Errors = Record<string, string | undefined>;
 
-const TAB_LABEL = { models: 'tabModels', agencies: 'tabAgencies', creatives: 'tabCreatives' } as const;
+const TAB_LABEL = { models: 'tabModels', agencies: 'tabAgencies' } as const;
 const INFO = {
   models: { intro: 'mIntro', offer: 'mOffer', need: 'mNeed' },
   agencies: { intro: 'aIntro', offer: 'aOffer', need: 'aNeed' },
-  creatives: { intro: 'cIntro', offer: 'cOffer', need: 'cNeed' },
 } as const;
 // Phrases linked to /privacy inside the consent label.
 const PRIVACY_PHRASES = ['Privacy Policy', 'Informativa sulla privacy', 'Politique de confidentialité'];
@@ -65,7 +64,7 @@ export function CollaboratePage() {
   // Fall back to English for any missing translation.
   const en = locales.en.collabPage;
   const c = { ...en, ...(t?.collabPage ?? {}) };
-  const list = (key: 'mOffer' | 'mNeed' | 'aOffer' | 'aNeed' | 'cOffer' | 'cNeed') => (c[key]?.length ? c[key] : en[key]);
+  const list = (key: 'mOffer' | 'mNeed' | 'aOffer' | 'aNeed') => (c[key]?.length ? c[key] : en[key]);
   const opts = (key: CollabOptionsKey) => (c[key]?.length === en[key].length ? c[key] : en[key]);
 
   const [active, setActive] = useState<CollabTrack>('models');
@@ -247,11 +246,6 @@ export function CollaboratePage() {
             ))}
           </select>
           {fieldError(f.key)}
-          {active === 'creatives' && f.key === 'role' && (
-            <p className="mt-2 rounded-xl border border-accent bg-accent/20 px-4 py-2.5 text-[13.5px] text-ink">
-              {c.creativesPaidNote}
-            </p>
-          )}
         </div>
       );
     }
@@ -310,7 +304,7 @@ export function CollaboratePage() {
           role="tablist"
           aria-label={c.title}
           onKeyDown={onTabKeyDown}
-          className="mt-12 grid grid-cols-3 gap-1 rounded-[20px] bg-chalk p-1 ring-1 ring-mist sm:inline-grid sm:rounded-full">
+          className="mt-12 grid grid-cols-2 gap-1 rounded-[20px] bg-chalk p-1 ring-1 ring-mist sm:inline-grid sm:rounded-full">
           {COLLAB_TRACKS.map((track) => {
             const selected = track === active;
             return (

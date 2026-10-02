@@ -3,10 +3,10 @@ import { en } from '../data/locales/en';
 import type { CollabTrack } from './emails';
 
 export type { CollabTrack };
-export const COLLAB_TRACKS: CollabTrack[] = ['models', 'agencies', 'creatives'];
+export const COLLAB_TRACKS: CollabTrack[] = ['models', 'agencies'];
 
 type CollabDict = typeof en.collabPage;
-export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'lookingForOptions' | 'needOptions' | 'creativeRoleOptions';
+export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'lookingForOptions' | 'needOptions';
 export type CollabLabelKey = {
   [K in keyof CollabDict]: CollabDict[K] extends string ? K : never;
 }[keyof CollabDict];
@@ -57,16 +57,6 @@ export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
     { key: 'need', label: 'need', emailLabel: 'Need', kind: 'select', options: 'needOptions' },
     { key: 'boardLink', label: 'boardLink', emailLabel: 'Model board link', kind: 'text', autoComplete: 'off' },
     { key: 'timeframe', label: 'timeframe', emailLabel: 'Timeframe / deadline', kind: 'text', autoComplete: 'off' },
-    { key: 'message', label: 'message', emailLabel: 'Message', kind: 'message' },
-    { key: 'consent', label: 'consent', emailLabel: 'Privacy consent', kind: 'check', required: true },
-  ],
-  creatives: [
-    { key: 'name', label: 'name', emailLabel: 'Name', kind: 'name', required: true, autoComplete: 'name' },
-    { key: 'email', label: 'email', emailLabel: 'Email', kind: 'email', required: true, autoComplete: 'email' },
-    { key: 'role', label: 'creativeRole', emailLabel: 'Role', kind: 'select', required: true, options: 'creativeRoleOptions' },
-    { key: 'instagram', label: 'instagram', emailLabel: 'Instagram / portfolio', kind: 'text', required: true, autoComplete: 'off' },
-    { key: 'city', label: 'city', emailLabel: 'City', kind: 'text', autoComplete: 'address-level2' },
-    { key: 'availability', label: 'availability', emailLabel: 'Availability', kind: 'text', autoComplete: 'off' },
     { key: 'message', label: 'message', emailLabel: 'Message', kind: 'message' },
     { key: 'consent', label: 'consent', emailLabel: 'Privacy consent', kind: 'check', required: true },
   ],

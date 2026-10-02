@@ -606,55 +606,45 @@ export const fr: Dict = {
   },
 
   collabPage: {
-    title: 'Travailler avec MEOCY',
-    intro1: 'MEOCY est un petit studio milanais dirigé par son fondateur. Je travaille directement avec chaque mannequin, agence et photographe avec qui je collabore.',
-    intro2: 'Choisissez l\'option qui vous correspond, découvrez ce dont j\'ai besoin et envoyez vos informations ci-dessous. Je lis chaque message moi-même.',
-    tabModels: 'Mannequins et talents',
-    tabAgencies: 'Agences',
-    tabCreatives: 'Photographes et assistants',
-    offerTitle: 'Comment ça marche',
-    needTitle: 'Ce qu\'il faut m\'envoyer',
-    mIntro: 'Vous construisez votre portfolio à Milan ? Je collabore avec des mannequins pour créer des images de mode, éditoriales et de portfolio percutantes.',
+    title: 'Collaborer avec MEOCY',
+    intro1: 'MEOCY collabore avec des mannequins et des agences de mannequins à Milan sur des projets de mode, éditoriaux et de portfolio sélectionnés.',
+    intro2: 'Choisissez votre profil ci-dessous et envoyez vos informations. Je lis chaque message personnellement.',
+    tabModels: 'Mannequins / Talents',
+    tabAgencies: 'Agences de mannequins',
+    offerTitle: 'Ce que vous recevez',
+    needTitle: 'Ce qu\'il faut envoyer',
+    mIntro: 'Collaborations de portfolio pour mannequins à Milan. Mode • Éditorial • Portraits',
     mOffer: [
-      'Aucun cachet de part et d\'autre — les shootings en collaboration ne sont pas rémunérés',
-      'Vous recevez de 10 à 25 photos retouchées professionnellement, selon le shooting',
-      'Le concept, le lieu, les tenues et le calendrier sont planifiés ensemble avant le shooting',
-      'Les conditions sont confirmées par écrit avant le shooting'
+      'De 10 à 25 photographies retouchées professionnellement',
+      'Concepts mode, éditoriaux ou portrai ts',
+      'Shootings en location à Milan',
+      'Concept et ambiance planifiés avant le shooting',
+      'Direction style et tenues discutées ensemble',
+      'Images finales adaptées au portfolio et aux réseaux sociaux'
     ],
     mNeed: [
       'Votre Instagram et/ou lien vers votre portfolio',
-      '3 à 6 photos récentes (sous forme de lien)',
-      'Votre ville et vos disponibilités',
-      'Si vous êtes représenté(e) par une agence',
-      'Ce que vous cherchez : une collaboration ou un shooting rémunéré'
+      'Votre ville et votre localisation actuelle',
+      '3 à 6 photos récentes ou lien portfolio',
+      'Vos disponibilités pour les shootings',
+      'Si vous êtes représenté(e) par une agence (facultatif)',
+      'Un message sur le type de shooting qui vous intéresse'
     ],
-    mPaidNote: 'Vous préférez un shooting rémunéré ?',
+    mPaidNote: 'Vous cherchez du travail rémunéré ?',
     mPaidLink: 'Découvrir la formule Shooting Mode / Mannequins',
-    aIntro: 'Vous travaillez avec une agence de mannequins à Milan ? Je propose des test shootings pour les nouveaux visages et du contenu pour vos mannequins.',
+    aIntro: 'Tests et collaborations éditoriales sélectionnés avec mannequins. Nouveaux visages • Développement de portfolio • Tests créatifs',
     aOffer: [
-      'Test shootings gratuits pour les nouveaux visages — limités à 10 shootings gratuits',
-      'Les test shootings gratuits sont réservés aux tests et au portfolio, pas à un usage commercial',
-      'Chaque shooting gratuit est discuté avec l\'agence pour le projet concerné avant d\'être confirmé',
+      'Test shootings sélectionnés et gratuits pour nouveaux visages et mannequins',
+      'Les test shootings sont pour usage éditorial et portfolio',
+      'Concept, timing et livrables discutés en avance',
       'Les shootings commerciaux sont chiffrés séparément'
     ],
     aNeed: [
       'Nom de l\'agence, interlocuteur et site web ou Instagram',
-      'Un lien vers votre model board ou les nouveaux visages que vous avez en tête',
-      'Ce dont vous avez besoin : test shootings, digitals et polaroïds, comp cards, lookbook ou vidéo',
-      'Votre calendrier ou vos échéances'
+      'Un lien vers votre model board ou les mannequins que vous avez en tête',
+      'Ce dont vous avez besoin : test shootings, digitals, comp cards, lookbook ou vidéo',
+      'Votre calendrier ou vos échéances de projet'
     ],
-    cIntro: 'Je travaille avec des photographes, des vidéastes et des assistants lumière à Milan.',
-    cOffer: [
-      'Travail rémunéré comme assistant lumière sur mes productions',
-      'Les tarifs et conditions sont convenus avant chaque production'
-    ],
-    cNeed: [
-      'Votre Instagram et/ou lien vers votre portfolio',
-      'Votre rôle et votre ville',
-      'Vos disponibilités',
-      'Votre expérience de l\'éclairage et du travail sur plateau'
-    ],
-    creativesPaidNote: 'Travail rémunéré comme assistant lumière.',
     name: 'Nom',
     email: 'Email',
     instagram: 'Instagram',
@@ -697,12 +687,6 @@ export const fr: Dict = {
     ],
     boardLink: 'Lien vers le model board',
     timeframe: 'Calendrier / échéance',
-    creativeRole: 'Votre rôle',
-    creativeRoleOptions: [
-      'Photographe',
-      'Vidéaste',
-      'Assistant lumière'
-    ],
     select: 'Sélectionner…',
     submit: 'Envoyer',
     sending: 'Envoi en cours…',
