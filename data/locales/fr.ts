@@ -15,6 +15,7 @@ export const fr: Dict = {
       about: 'À propos',
       faq: 'FAQ',
       collaborate: 'Collaborer',
+      workWithMeocy: 'Travailler avec MEOCY',
       contact: 'Contact'
     },
     cta: 'Me contacter',

@@ -13,6 +13,7 @@ const linkOrder = [
 { href: '/about', key: 'about' },
 { href: '/faq', key: 'faq' },
 { href: '/collaborate', key: 'collaborate' },
+{ href: '/work-with-meocy', key: 'workWithMeocy' },
 { href: '/contact', key: 'contact' }] as
 const;
 

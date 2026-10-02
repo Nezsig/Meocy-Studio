@@ -13,6 +13,7 @@ export const en = {
       about: 'About',
       faq: 'FAQ',
       collaborate: 'Collaborate',
+      workWithMeocy: 'Work With MEOCY',
       contact: 'Contact'
     },
     cta: 'Get in touch',
@@ -745,7 +746,7 @@ export const en = {
     errConsent: 'Please accept the privacy consent to continue.',
     errGeneric: 'Something went wrong. Please try again or write to hello@meocy.com.',
     successTitle: 'Details received.',
-    successBody: 'Thank you {name} — if your profile matches a future MEOCY production need, we'll get in touch with the project details.',
+    successBody: 'Thank you {name} — if your profile matches a future MEOCY production need, we\'ll get in touch with the project details.',
     another: 'Send another profile'
   },
 
