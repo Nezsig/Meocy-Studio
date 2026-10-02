@@ -157,7 +157,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
-  const slots = useMemo(() => (date ? selectableSlots(date) : []), [date]);
+  const slots = useMemo(() => (date && pkg ? selectableSlots(date, pkg.id) : []), [date, pkg]);
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
     d ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`)) : '';
@@ -172,6 +172,10 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const choosePackage = (id: MilanPackageId) => {
     const max = maxLocationsFor(id);
     if (locations.length > max) onLocationsChange(locations.slice(0, max));
+    // Clear time if it's not valid for the new package's duration
+    if (date && time && !selectableSlots(date, id).includes(time)) {
+      setTime('');
+    }
     setPendingExtra(null);
     setLimitHit(false);
     setErrors((e) => ({ ...e, package: undefined }));

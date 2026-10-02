@@ -9,6 +9,7 @@ import {
   type MilanRequestEmail,
 } from '../../../../lib/emails';
 import {
+  availabilityEndTime,
   computePricing,
   depositPaymentUrl,
   isDateSelectable,
@@ -108,6 +109,17 @@ export async function POST(req: Request) {
     // Past dates, blocked dates and blocked/past start times are refused here, whatever the browser showed.
     if (!isDateSelectable(r.date) || !isSlotSelectable(r.date, r.time)) {
       return NextResponse.json({ error: 'Date or time not available' }, { status: 409 });
+    }
+
+    // Validate duration: selected time + package duration must not exceed availability end time.
+    const pkg = milanPackages.find((p) => p.id === r.packageId)!;
+    const [timeHour, timeMin] = r.time.split(':').map(Number);
+    const [endHour, endMin] = availabilityEndTime.split(':').map(Number);
+    const startMinutes = timeHour * 60 + timeMin;
+    const endMinutes = endHour * 60 + endMin;
+    const durationMinutes = pkg.durationHours * 60;
+    if (startMinutes + durationMinutes > endMinutes) {
+      return NextResponse.json({ error: 'Selected time does not allow enough duration for this package', fields: ['time'] }, { status: 400 });
     }
 
     const pricing = computePricing(r.packageId, uniqueLocations.length);

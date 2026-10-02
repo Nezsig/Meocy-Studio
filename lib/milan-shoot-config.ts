@@ -156,6 +156,21 @@ export const showGalleryPlaceholders = false;
 /** Link where the €50 deposit is paid (set in Step 2). Empty = not available yet. */
 export const depositPaymentUrl = '';
 
+/** Working day ends at this time (24h format). Used for duration-aware slot calculation. */
+export const availabilityEndTime = '22:00';
+
+/** Calculate the latest valid start time for a package based on its duration and availability end time. */
+export const maxStartTimeFor = (packageId: MilanPackageId): string => {
+  const pkg = milanPackages.find((p) => p.id === packageId)!;
+  const [endHour, endMin] = availabilityEndTime.split(':').map(Number);
+  const endMinutes = endHour * 60 + endMin;
+  const durationMinutes = pkg.durationHours * 60;
+  const maxStartMinutes = endMinutes - durationMinutes;
+  const maxHour = Math.floor(maxStartMinutes / 60);
+  const maxMin = maxStartMinutes % 60;
+  return `${String(maxHour).padStart(2, '0')}:${String(maxMin).padStart(2, '0')}`;
+};
+
 /** Contact options used by the booking section. */
 export const milanContact = {
   whatsappNumber: '393791051000',
@@ -247,5 +262,24 @@ export const isSlotSelectable = (date: string, time: string, now = new Date()) =
   return date > today || time > nowTime;
 };
 
-export const selectableSlots = (date: string, now = new Date()) =>
-  slotStartTimes.filter((time) => isSlotSelectable(date, time, now));
+/**
+ * Get available time slots for a date and package.
+ * Filters out times that would exceed the availability end window based on package duration.
+ * IMPORTANT: Double-booking prevention is NOT implemented. This only checks duration fit and manual blocks.
+ */
+export const selectableSlots = (date: string, packageId?: MilanPackageId, now = new Date()) => {
+  const baseSlots = slotStartTimes.filter((time) => isSlotSelectable(date, time, now));
+  if (!packageId) return baseSlots;
+
+  const [endHour, endMin] = availabilityEndTime.split(':').map(Number);
+  const endMinutes = endHour * 60 + endMin;
+  const pkg = milanPackages.find((p) => p.id === packageId)!;
+  const durationMinutes = pkg.durationHours * 60;
+
+  return baseSlots.filter((time) => {
+    const [hour, min] = time.split(':').map(Number);
+    const startMinutes = hour * 60 + min;
+    const endMinutes_ = startMinutes + durationMinutes;
+    return endMinutes_ <= endMinutes;
+  });
+};
