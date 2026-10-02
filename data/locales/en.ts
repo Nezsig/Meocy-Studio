@@ -325,6 +325,7 @@ export const en = {
       { label: 'About', href: '/about' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Collaborate', href: '/collaborate' },
+      { label: 'Work With MEOCY', href: '/work-with-meocy' },
       { label: 'Contact', href: '/contact' }
     ],
     tourist: {

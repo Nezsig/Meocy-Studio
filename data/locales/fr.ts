@@ -328,6 +328,7 @@ export const fr: Dict = {
       { label: 'À propos', href: '/about' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Collaborer', href: '/collaborate' },
+      { label: 'Travailler avec MEOCY', href: '/work-with-meocy' },
       { label: 'Contact', href: '/contact' }
     ],
     tourist: {
