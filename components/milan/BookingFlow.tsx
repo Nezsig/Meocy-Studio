@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
@@ -155,6 +155,12 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const [submitError, setSubmitError] = useState('');
   const [result, setResult] = useState<{ reference: string; pricing: MilanPricing } | null>(null);
 
+  // Immediate synchronous lock to prevent duplicate submission even with rapid clicks.
+  // Race: Two renders can execute submit before state setter completes.
+  // Solution: Use ref to block at function entry before any async operations.
+  const submissionLockRef = useRef(false);
+  const submissionIdRef = useRef<string>('');
+
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
   const slots = useMemo(() => (date && pkg ? selectableSlots(date, pkg.id) : []), [date, pkg]);
@@ -244,14 +250,27 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const back = () => go(SCREENS[Math.max(0, SCREENS.indexOf(screen) - 1)]);
 
   const submit = async () => {
+    // Immediate guard: prevent submission if already in progress or completed.
+    if (submissionLockRef.current || result) return;
     if (!pkg) return go('package');
+
+    // Lock immediately (synchronously) before any async operations.
+    // This prevents two rapid clicks from both reaching the API.
+    submissionLockRef.current = true;
     setSending(true);
     setSubmitError('');
+
+    // Generate submission ID on first attempt; reuse for retries (if any).
+    if (!submissionIdRef.current) {
+      submissionIdRef.current = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    }
+
     try {
       const res = await fetch('/api/milan/request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          submissionId: submissionIdRef.current,
           packageId: pkg.id,
           date,
           time,
@@ -270,18 +289,29 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       if (res.ok && json.reference) {
         setResult({ reference: json.reference, pricing: json.pricing });
         go('done');
+        // On success, keep lock active (don't reset submissionLockRef).
+        // User stays on 'done' screen; they cannot re-submit from there.
       } else if (res.ok) {
         setSubmitError(b.errGeneric);
+        // Success response but no reference: treat as error and release lock for retry.
+        submissionLockRef.current = false;
+        setSending(false);
       } else if (res.status === 409) {
         setSubmitError(b.errUnavailable);
+        submissionLockRef.current = false;
+        setSending(false);
       } else if (res.status === 429) {
         setSubmitError(b.errRate);
+        submissionLockRef.current = false;
+        setSending(false);
       } else {
         setSubmitError(b.errGeneric);
+        submissionLockRef.current = false;
+        setSending(false);
       }
     } catch {
       setSubmitError(b.errGeneric);
-    } finally {
+      submissionLockRef.current = false;
       setSending(false);
     }
   };
@@ -293,6 +323,9 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     setDetails(emptyDetails);
     setErrors({});
     onLocationsChange([]);
+    // Reset submission lock for new booking attempt.
+    submissionLockRef.current = false;
+    submissionIdRef.current = '';
     go('package');
   };
 

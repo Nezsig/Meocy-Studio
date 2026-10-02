@@ -43,6 +43,34 @@ function rateLimited(ip: string): boolean {
   if (hits.size > 5000) hits.forEach((times, key) => times.every((t) => now - t >= RATE_WINDOW_MS) && hits.delete(key));
   return false;
 }
+
+// In-memory submission deduplication: tracks recently processed submission IDs.
+// Purpose: prevent accidental duplicate bookings from rapid client retries or double-clicks.
+// Limitation: only valid within single Vercel instance for ~5 minutes. Does NOT survive
+// instance restarts or load balancing across instances. Not suitable for durable cross-instance idempotency.
+const DEDUP_WINDOW_MS = 5 * 60 * 1000; // 5 minutes
+const processedSubmissions = new Map<string, { timestamp: number; reference: string }>();
+function checkAndRecordSubmission(submissionId: string): { isDuplicate: boolean; cachedReference?: string } {
+  const now = Date.now();
+  const existing = processedSubmissions.get(submissionId);
+  if (existing && now - existing.timestamp < DEDUP_WINDOW_MS) {
+    // Duplicate detected within dedup window; return cached reference.
+    return { isDuplicate: true, cachedReference: existing.reference };
+  }
+  // New submission or outside dedup window; will be recorded after successful processing.
+  return { isDuplicate: false };
+}
+function recordSubmission(submissionId: string, reference: string) {
+  processedSubmissions.set(submissionId, { timestamp: Date.now(), reference });
+  // Cleanup old entries to prevent unbounded growth.
+  const now = Date.now();
+  for (const [id, data] of processedSubmissions.entries()) {
+    if (now - data.timestamp > DEDUP_WINDOW_MS * 2) {
+      processedSubmissions.delete(id);
+    }
+  }
+}
+
 const clientIp = (req: Request) =>
   req.headers.get('x-real-ip')?.trim() || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
 
@@ -52,6 +80,7 @@ const text = (min: number, max: number) => z.string().trim().min(min).max(max);
 
 // Unknown keys (for example a price sent by the browser) are stripped and never used.
 const RequestSchema = z.object({
+  submissionId: z.string().trim().min(1).max(100).optional().default(''),
   packageId: z.enum(PACKAGE_IDS),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   time: z.enum(slotStartTimes as [string, ...string[]]),
@@ -100,6 +129,18 @@ export async function POST(req: Request) {
       );
     }
     const r = parsed.data;
+
+    // Deduplication: check if this submission was already processed within the dedup window.
+    // If so, return the cached booking reference without reprocessing or resending emails.
+    if (r.submissionId) {
+      const dedup = checkAndRecordSubmission(r.submissionId);
+      if (dedup.isDuplicate && dedup.cachedReference) {
+        // Return success with the previously-generated reference.
+        // No new emails are sent; the client receives the same reference.
+        const pricing = computePricing(r.packageId, r.locations.length);
+        return NextResponse.json({ ok: true, reference: dedup.cachedReference, pricing }, { status: 200 });
+      }
+    }
 
     const uniqueLocations = Array.from(new Set(r.locations));
     if (uniqueLocations.length !== r.locations.length || uniqueLocations.length > maxLocationsFor(r.packageId)) {
@@ -169,6 +210,11 @@ export async function POST(req: Request) {
       html: buildMilanCustomerEmail(data),
     });
     if (confirmation.error) console.error('milan request: customer email failed', reference, confirmation.error);
+
+    // Record successful submission for deduplication.
+    if (r.submissionId) {
+      recordSubmission(r.submissionId, reference);
+    }
 
     return NextResponse.json({ ok: true, reference, pricing });
   } catch (e) {
