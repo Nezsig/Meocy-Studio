@@ -43,7 +43,7 @@ export function ServicesPage() {
                 </h2>
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate2">{t.svcPage[s.desc]}</p>
                 <Link
-                  href="/#booking"
+                  href="/contact"
                   className="mt-6 inline-flex items-center gap-1.5 self-start text-[14px] font-medium text-ink underline-offset-4 hover:underline">
                   {t.svcPage.cta} <span aria-hidden>→</span>
                 </Link>
@@ -59,7 +59,7 @@ export function ServicesPage() {
             {t.svcPage.ctaTitle}
           </h2>
           <Link
-            href="/#booking"
+            href="/contact"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
             {t.svcPage.ctaButton}
           </Link>

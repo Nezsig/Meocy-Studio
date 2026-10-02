@@ -71,7 +71,7 @@ function PackageCard({ pkg, number, labels, featured = false }: PackageCardProps
 
       <div className="mt-auto pt-8">
         <Link
-          href="/#booking"
+          href="/contact"
           className={`flex w-full items-center justify-center rounded-full px-6 py-3 text-center text-[14px] font-semibold transition-transform duration-150 ease-smooth hover:-translate-y-0.5 ${
             featured ? 'bg-accent text-ink' : 'bg-ink text-chalk'
           }`}>
@@ -160,7 +160,7 @@ export function PackagesPage() {
             <p className="mt-6 text-[17px] leading-relaxed text-chalk/70">{p.customText1}</p>
             <p className="mt-3 text-[17px] leading-relaxed text-chalk/70">{p.customText2}</p>
             <Link
-              href="/#booking"
+              href="/contact"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
               {p.customButton}
             </Link>
