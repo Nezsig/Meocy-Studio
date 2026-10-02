@@ -167,15 +167,24 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
   // When package changes (including via external props), validate that current time is valid.
   // Clear time if it's no longer valid for the new package's duration.
+  // Also trim locations to fit the new package's maximum.
   useEffect(() => {
-    if (date && time && pkg) {
-      const validSlots = selectableSlots(date, pkg.id);
-      if (!validSlots.includes(time)) {
-        setTime('');
-        setErrors((e) => ({ ...e, time: undefined }));
+    if (pkg) {
+      // Trim locations if they exceed the new package's maximum.
+      const max = maxLocationsFor(pkg.id);
+      if (locations.length > max) {
+        onLocationsChange(locations.slice(0, max));
+      }
+      // Clear time if it's not valid for the new package's duration.
+      if (date && time) {
+        const validSlots = selectableSlots(date, pkg.id);
+        if (!validSlots.includes(time)) {
+          setTime('');
+          setErrors((e) => ({ ...e, time: undefined }));
+        }
       }
     }
-  }, [pkg, date]);
+  }, [pkg, date, locations, onLocationsChange]);
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
     d ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`)) : '';
@@ -238,6 +247,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (screen === 'date' && !(date && isDateSelectable(date))) e.date = b.errDate;
     if (screen === 'time' && !(time && slots.includes(time))) e.time = b.errTime;
     if (screen === 'locations' && locations.length === 0) e.locations = b.errLocations;
+    if (screen === 'locations' && pkg && locations.length > maxLocationsFor(pkg.id)) e.locations = b.errLocations;
     if (screen === 'details') Object.assign(e, validateDetails());
     setErrors(e);
     if (Object.keys(e).length) {
