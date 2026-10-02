@@ -173,8 +173,12 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     const max = maxLocationsFor(id);
     if (locations.length > max) onLocationsChange(locations.slice(0, max));
     // Clear time if it's not valid for the new package's duration
-    if (date && time && !selectableSlots(date, id).includes(time)) {
-      setTime('');
+    if (date && time) {
+      const validSlots = selectableSlots(date, id);
+      if (!validSlots.includes(time)) {
+        setTime('');
+        setErrors((e) => ({ ...e, time: undefined }));
+      }
     }
     setPendingExtra(null);
     setLimitHit(false);
