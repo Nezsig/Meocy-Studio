@@ -21,10 +21,6 @@ export function LanguageProvider({ initial, children }: LanguageProviderProps) {
   const [lang, setLang] = useState<LanguageCode>(initial);
 
   useEffect(() => {
-    setLang(initial);
-  }, [initial]);
-
-  useEffect(() => {
     document.documentElement.lang = locales[lang].htmlLang;
     try {
       localStorage.setItem('meocy-lang', lang);
