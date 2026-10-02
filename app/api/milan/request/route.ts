@@ -85,6 +85,7 @@ const text = (min: number, max: number) => z.string().trim().min(min).max(max);
 // - Enum validation ensures only valid packages/locations/times are accepted
 // - Format validation prevents manipulated dates
 // - Business logic validation (duration, location limits) happens after schema parsing
+// - company_website is a honeypot field (checked before this schema, included here for strict mode)
 const RequestSchema = z.object({
   submissionId: z.string().trim().min(1).max(100).optional().default(''),
   packageId: z.enum(PACKAGE_IDS),
@@ -98,6 +99,7 @@ const RequestSchema = z.object({
   country: text(2, 80),
   notes: z.string().trim().max(1000).optional().default(''),
   locale: z.enum(['en', 'it', 'fr']).catch('en'),
+  company_website: z.string().trim().max(500).optional().default(''), // Honeypot field
 }).strict(); // Reject any unknown fields (price, bookingReference, etc.)
 
 // Reference: MEO-YYMMDD-XXXX, random suffix without ambiguous characters (no 0/O, 1/I/L).
