@@ -287,19 +287,22 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   };
 
-  const rowsFor = (pr: MilanPricing | null): [string, string][] => pkg && pr
-    ? [
-        [b.sumPackage, m.packages[pkg.id].name],
-        [b.sumDate, longDate(date)],
-        [b.sumTime, time],
-        [b.sumLocations, locationNames.join(', ')],
-        [b.sumPeople, String(details.people)],
-        [b.sumPackagePrice, money(pr.packagePrice)],
-        [b.sumExtra, pr.extraLocations ? `${pr.extraLocations} × ${money(pr.extraLocationPrice)} = ${money(pr.extraLocationsTotal)}` : b.sumNone],
-        [b.sumDeposit, money(pr.deposit)],
-        [b.sumRemaining, money(pr.remaining)],
-      ]
-    : [];
+  const rowsFor = (pr: MilanPricing | null): [string, string][] => {
+    if (!pkg || !pr) return [];
+    const rows: [string, string][] = [
+      [b.sumPackage, m.packages[pkg.id].name],
+      [b.sumDate, longDate(date)],
+      [b.sumTime, time],
+      [b.sumLocations, locationNames.join(', ')],
+      [b.sumPeople, String(details.people)],
+      [b.sumPackagePrice, money(pr.packagePrice)],
+    ];
+    if (pr.extraLocations > 0) {
+      rows.push([b.sumExtra, `${pr.extraLocations} × ${money(pr.extraLocationPrice)} = ${money(pr.extraLocationsTotal)}`]);
+    }
+    rows.push([b.sumDeposit, money(pr.deposit)], [b.sumRemaining, money(pr.remaining)]);
+    return rows;
+  };
   const summaryRows = rowsFor(pricing);
 
   const SummaryTable = ({ rows }: { rows: [string, string][] }) => (

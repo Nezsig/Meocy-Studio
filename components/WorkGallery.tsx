@@ -127,6 +127,7 @@ export function WorkGallery() {
                           aria-label={`${t.work.watch}: ${item.alt}`}
                           className="group relative block overflow-hidden rounded-2xl bg-mist">
                           {img}
+                          <span className="absolute inset-0 -z-10 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/15" aria-hidden />
                           <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-[12px] font-medium text-chalk backdrop-blur">
                             <Play className="h-3.5 w-3.5 fill-current" aria-hidden />
                             {t.work.watch}
@@ -144,8 +145,9 @@ export function WorkGallery() {
                         type="button"
                         onClick={() => setLightboxIndex(photoIndex)}
                         aria-label={item.alt}
-                        className="group block w-full overflow-hidden rounded-2xl bg-mist">
+                        className="group relative block w-full overflow-hidden rounded-2xl bg-mist">
                         {img}
+                        <span className="absolute inset-0 -z-10 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/15" aria-hidden />
                       </button>
                       {caption}
                     </figure>
