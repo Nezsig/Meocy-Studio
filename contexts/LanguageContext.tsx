@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { locales } from '../data/locales';
 import type { Dict } from '../data/locales';
 import type { LanguageCode } from '../types/site';
@@ -33,12 +33,10 @@ function getInitialLanguage(): LanguageCode {
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const [lang, setLang] = useState<LanguageCode>('en');
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const initialLang = getInitialLanguage();
     setLang(initialLang);
-    setMounted(true);
   }, []);
 
   useEffect(() => {
