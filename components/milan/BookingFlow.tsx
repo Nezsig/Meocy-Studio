@@ -1,5 +1,5 @@
 'use client';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
@@ -158,6 +158,18 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
   const slots = useMemo(() => (date && pkg ? selectableSlots(date, pkg.id) : []), [date, pkg]);
+
+  // When package changes (including via external props), validate that current time is valid.
+  // Clear time if it's no longer valid for the new package's duration.
+  useEffect(() => {
+    if (date && time && pkg) {
+      const validSlots = selectableSlots(date, pkg.id);
+      if (!validSlots.includes(time)) {
+        setTime('');
+        setErrors((e) => ({ ...e, time: undefined }));
+      }
+    }
+  }, [pkg, date]);
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
     d ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`)) : '';
