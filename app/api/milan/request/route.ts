@@ -78,7 +78,13 @@ const PACKAGE_IDS = milanPackages.map((p) => p.id) as [MilanPackageId, ...MilanP
 const LOCATION_IDS = milanLocations.map((l) => l.id) as [MilanLocationId, ...MilanLocationId[]];
 const text = (min: number, max: number) => z.string().trim().min(min).max(max);
 
-// Unknown keys (for example a price sent by the browser) are stripped and never used.
+// Zod schema for booking request validation.
+// - Only whitelisted fields are accepted
+// - Unknown keys (e.g., price, bookingReference) are explicitly rejected
+// - All fields are sanitized/trimmed where applicable
+// - Enum validation ensures only valid packages/locations/times are accepted
+// - Format validation prevents manipulated dates
+// - Business logic validation (duration, location limits) happens after schema parsing
 const RequestSchema = z.object({
   submissionId: z.string().trim().min(1).max(100).optional().default(''),
   packageId: z.enum(PACKAGE_IDS),
@@ -92,7 +98,7 @@ const RequestSchema = z.object({
   country: text(2, 80),
   notes: z.string().trim().max(1000).optional().default(''),
   locale: z.enum(['en', 'it', 'fr']).catch('en'),
-});
+}).strict(); // Reject any unknown fields (price, bookingReference, etc.)
 
 // Reference: MEO-YYMMDD-XXXX, random suffix without ambiguous characters (no 0/O, 1/I/L).
 const REF_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
