@@ -1,8 +1,10 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import { CheckCircle2Icon, Loader2Icon } from 'lucide-react';
+import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
 import { locales } from '../data/locales';
+import { studioContact } from '../data/site';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 type FieldErrors = Partial<Record<'name' | 'email' | 'phone' | 'projectType' | 'message', string>>;
@@ -184,7 +186,7 @@ export function ContactPage() {
                             className="peer sr-only"
                             required
                           />
-                          <span className="inline-flex min-h-[44px] items-center rounded-full px-4 py-2 text-[14px] font-medium ring-1 ring-ink/10 transition-colors peer-checked:bg-accent peer-checked:ring-accent peer-focus-visible:ring-2 peer-focus-visible:ring-ink bg-paper text-ink">
+                          <span className="inline-flex min-h-[44px] items-center rounded-full px-4 py-2 text-[14px] font-medium border border-ink/20 transition-colors peer-checked:border-ink peer-checked:bg-ink/5 peer-focus-visible:ring-2 peer-focus-visible:ring-ink text-ink">
                             {opt}
                           </span>
                         </label>
@@ -210,7 +212,7 @@ export function ContactPage() {
                             onChange={(e) => set('where', e.target.value as 'milan' | 'your-location')}
                             className="peer sr-only"
                           />
-                          <div className="rounded-xl border-2 border-ink/10 p-4 transition-all peer-checked:border-accent peer-checked:bg-accent/5 peer-focus-visible:ring-2 peer-focus-visible:ring-ink min-h-[100px] flex flex-col justify-center">
+                          <div className="rounded-xl border border-ink/15 p-4 transition-all peer-checked:border-ink peer-checked:bg-ink/3 peer-focus-visible:ring-2 peer-focus-visible:ring-ink min-h-[100px] flex flex-col justify-center">
                             <p className="font-medium text-ink">{loc.title}</p>
                             <p className="mt-1 text-[14px] text-slate2">{loc.desc}</p>
                           </div>
@@ -346,8 +348,9 @@ export function ContactPage() {
               )}
             </div>
 
-            {/* RIGHT: SUMMARY */}
-            <div className={status === 'sent' ? 'hidden' : ''}>
+            {/* RIGHT: SUMMARY + CONTACT DETAILS */}
+            <div className={status === 'sent' ? 'hidden' : 'flex flex-col gap-6'}>
+              {/* FORM SUMMARY */}
               <div className="sticky top-24 rounded-[20px] border border-[#ecebe6] bg-ink text-chalk p-6 sm:p-8">
                 <h2 className="text-[12px] font-semibold uppercase tracking-[0.12em] text-chalk/60 mb-6">
                   {c.briefSummaryTitle}
@@ -397,6 +400,106 @@ export function ContactPage() {
                 </button>
 
                 <p className="mt-4 text-[12px] text-chalk/60 text-center">{c.briefResponseTime}</p>
+              </div>
+
+              {/* DIRECT CONTACT DETAILS BLOCK */}
+              <div className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8">
+                <div className="mb-6">
+                  <img
+                    src="/meocy-wordmark.png"
+                    alt="MEOCY"
+                    className="h-8 w-auto object-contain mb-3"
+                  />
+                  <div className="h-0.5 w-8 bg-accent rounded-full" />
+                </div>
+
+                <h3 className="text-[14px] font-semibold uppercase tracking-[0.12em] text-[#0b0b0c] mb-6">
+                  Direct Contact
+                </h3>
+
+                <div className="space-y-4">
+                  {/* Phone / WhatsApp */}
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate2 mb-2">
+                      Phone / WhatsApp
+                    </p>
+                    <a
+                      href={studioContact.whatsappHref}
+                      className="inline-flex items-center gap-2 text-[17px] font-medium text-ink hover:text-accent transition-colors"
+                    >
+                      {studioContact.phone}
+                    </a>
+                  </div>
+
+                  {/* Email */}
+                  <div className="pt-2 border-t border-ink/10">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate2 mb-2">
+                      Email
+                    </p>
+                    <a
+                      href={`mailto:${studioContact.email}`}
+                      className="text-[14px] text-ink hover:text-accent transition-colors"
+                    >
+                      {studioContact.email}
+                    </a>
+                  </div>
+
+                  {/* Location */}
+                  <div className="pt-2 border-t border-ink/10">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate2 mb-2">
+                      Location
+                    </p>
+                    <p className="text-[14px] text-ink">Milan, Italy</p>
+                  </div>
+
+                  {/* Website */}
+                  <div className="pt-2 border-t border-ink/10">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-slate2 mb-2">
+                      Website
+                    </p>
+                    <a
+                      href="https://meocy.com"
+                      className="text-[14px] text-ink hover:text-accent transition-colors"
+                    >
+                      meocy.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Social icons */}
+                <div className="mt-6 pt-4 border-t border-ink/10">
+                  <div className="flex gap-2">
+                    <a
+                      href={studioContact.instagram1Href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
+                      title={studioContact.instagram1}
+                    >
+                      <Image src="/ic-instagram.png" alt={studioContact.instagram1} width={18} height={18} className="object-contain" />
+                    </a>
+
+                    <a
+                      href={studioContact.instagram2Href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
+                      title={studioContact.instagram2}
+                    >
+                      <Image src="/ic-instagram.png" alt={studioContact.instagram2} width={18} height={18} className="object-contain" />
+                    </a>
+
+                    <a
+                      href={studioContact.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
+                      title="WhatsApp"
+                    >
+                      <Image src="/ic-whatsapp.png" alt="WhatsApp" width={18} height={18} className="object-contain" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
