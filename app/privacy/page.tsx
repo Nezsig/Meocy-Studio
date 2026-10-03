@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { pageMetadata } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
@@ -23,7 +24,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="mt-4 text-[14px] text-slate2">
-              Last updated: September 2026
+              Last updated: October 2026
             </p>
 
             <div className="mt-12 space-y-8 text-[16px] leading-relaxed text-slate2">
@@ -75,6 +76,17 @@ export default function PrivacyPage() {
               </section>
 
               <section>
+                <h2 className="font-semibold text-ink">Technical data.</h2>
+                <p className="mt-3">
+                  Our hosting provider (Vercel) processes standard technical data, such as IP
+                  addresses, to deliver the website and keep it secure. When you send the
+                  collaboration or Milan booking form, your IP address is also held briefly in server
+                  memory to limit repeated submissions (spam protection); it is not stored in a
+                  database or included in emails.
+                </p>
+              </section>
+
+              <section>
                 <h2 className="font-semibold text-ink">How long we keep it.</h2>
                 <p className="mt-3">
                   Only as long as needed to handle your enquiry or booking and to meet any legal or
@@ -94,8 +106,13 @@ export default function PrivacyPage() {
               <section>
                 <h2 className="font-semibold text-ink">Cookies.</h2>
                 <p className="mt-3">
-                  Our website uses only essential cookies needed for it to work. We do not use
-                  advertising or tracking cookies.
+                  This website does not set its own cookies and does not use advertising, analytics
+                  or tracking cookies. It stores one language preference (meocy-lang) in your
+                  browser&apos;s local storage. See the{' '}
+                  <Link href="/cookie-policy" className="underline underline-offset-2">
+                    Cookie Policy
+                  </Link>{' '}
+                  for details.
                 </p>
               </section>
 

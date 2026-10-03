@@ -710,6 +710,11 @@ export const fr: Dict = {
     text: 'Si vous nous contactez via le formulaire de collaboration, nous utilisons vos données (nom, email, liens de réseaux sociaux ou de portfolio et les informations que vous fournissez) uniquement pour vous répondre et planifier d\'éventuels projets. Nous ne les vendons ni ne les partageons, et nous les supprimons sur demande.'
   },
 
+  privacyCrew: {
+    title: 'Formulaire Travailler avec MEOCY (équipe freelance).',
+    text: 'Si vous nous envoyez vos informations via le formulaire Travailler avec MEOCY, nous les utilisons (nom, email, rôle, ville, liens de portfolio ou de réseaux sociaux, ainsi que le téléphone, l\'expérience, l\'équipement, les disponibilités, les langues et le message éventuellement ajoutés) uniquement pour vous contacter au sujet d\'éventuelles opportunités freelance. Nous ne les vendons ni ne les partageons, et nous les supprimons sur demande.'
+  },
+
   crewPage: {
     title: 'Travailler avec MEOCY',
     intro: 'MEOCY constitue un réseau fiable de créatifs freelance à Milan pour des productions photographiques et vidéo sélectionnées.',
@@ -1132,6 +1137,7 @@ export const fr: Dict = {
 
   legal: {
     updated: 'Dernière mise à jour : octobre 2026',
+    formNotice: 'Nous utilisons ces informations uniquement pour traiter votre demande, comme décrit dans notre {link}.',
     bookingPolicy: {
       title: 'Conditions de réservation',
       intro: 'Ces conditions s\'appliquent aux réservations de séances photo à Milan demandées sur meocy.com/milan-photoshoot.',
@@ -1200,7 +1206,8 @@ export const fr: Dict = {
         {
           h: 'Aucun cookie publicitaire ou de suivi.',
           p: [
-            'Ce site ne dépose pas ses propres cookies et n\'utilise aucun cookie publicitaire, de mesure d\'audience ou de suivi.'
+            'Ce site ne dépose pas ses propres cookies et n\'utilise aucun cookie publicitaire, de mesure d\'audience ou de suivi.',
+            'Les pages ne chargent pas de scripts, polices, cartes, vidéos ou autres contenus provenant de sites tiers. Les liens vers WhatsApp ou Instagram ne se connectent à ces services que si vous choisissez de les ouvrir.'
           ]
         },
         {

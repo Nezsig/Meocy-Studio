@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
 import { locales } from '../data/locales';
 import { studioContact } from '../data/site';
+import { FormPrivacyNotice } from './FormPrivacyNotice';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 type FieldErrors = Partial<Record<'name' | 'email' | 'phone' | 'projectType' | 'message', string>>;
@@ -400,6 +401,7 @@ export function ContactPage() {
                 </button>
 
                 <p className="mt-4 text-[12px] text-chalk/60 text-center">{c.briefResponseTime}</p>
+                <FormPrivacyNotice className="mt-2 text-center text-[12px] text-chalk/60" linkClassName="hover:text-chalk" />
               </div>
 
               {/* DIRECT CONTACT DETAILS BLOCK */}

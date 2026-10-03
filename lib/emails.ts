@@ -4,7 +4,7 @@ const c = { ink:'#0b0b0c', paper:'#f6f5f2', chalk:'#ffffff', mist:'#e5e3dd', sla
 const sans = "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const serif = "'Instrument Serif', Georgia, 'Times New Roman', serif";
 const LOGO = 'https://meocy.com/meocy-wordmark.png';
-const esc = (s: string = '') => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+export const esc = (s: string = '') => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
 export type Locale = 'en' | 'it' | 'fr';
 export interface Booking {

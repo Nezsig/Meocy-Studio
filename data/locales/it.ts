@@ -710,6 +710,11 @@ export const it: Dict = {
     text: 'Se ci contatti tramite il modulo di collaborazione, utilizziamo i tuoi dati (nome, email, link social o portfolio e le informazioni che fornisci) solo per risponderti e per pianificare eventuali progetti. Non li vendiamo né li condividiamo e li cancelliamo su richiesta.'
   },
 
+  privacyCrew: {
+    title: 'Modulo Lavora con MEOCY (crew freelance).',
+    text: 'Se ci invii i tuoi dati tramite il modulo Lavora con MEOCY, li utilizziamo (nome, email, ruolo, città, link a portfolio o social ed eventuali numero di telefono, esperienza, attrezzatura, disponibilità, lingue e messaggio) solo per contattarti riguardo a possibili opportunità freelance. Non li vendiamo né li condividiamo e li cancelliamo su richiesta.'
+  },
+
   crewPage: {
     title: 'Lavora con MEOCY',
     intro: 'MEOCY sta costruendo una rete affidabile di creativi freelance a Milano per produzioni fotografiche e video selezionate.',
@@ -1132,6 +1137,7 @@ export const it: Dict = {
 
   legal: {
     updated: 'Ultimo aggiornamento: ottobre 2026',
+    formNotice: 'Usiamo questi dati solo per gestire la tua richiesta, come descritto nella nostra {link}.',
     bookingPolicy: {
       title: 'Condizioni di prenotazione',
       intro: 'Queste condizioni si applicano alle prenotazioni di shooting a Milano richieste tramite meocy.com/milan-photoshoot.',
@@ -1200,7 +1206,8 @@ export const it: Dict = {
         {
           h: 'Nessun cookie pubblicitario o di tracciamento.',
           p: [
-            'Questo sito non imposta cookie propri e non utilizza cookie pubblicitari, di analisi o di tracciamento.'
+            'Questo sito non imposta cookie propri e non utilizza cookie pubblicitari, di analisi o di tracciamento.',
+            'Le pagine non caricano script, font, mappe, video o altri contenuti da siti di terze parti. I link a WhatsApp o Instagram si collegano a quei servizi solo se scegli di aprirli.'
           ]
         },
         {

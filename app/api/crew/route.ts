@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 import { CREW_FIELDS } from '../../../lib/crew';
-import type { Locale } from '../../../lib/emails';
+import { esc, type Locale } from '../../../lib/emails';
 
 const MEOCY_EMAIL = 'hello@meocy.com';
 const NOTIFY_EMAIL = 'hello@meocy.com';
@@ -28,6 +28,11 @@ export async function POST(request: Request) {
     for (const f of CREW_FIELDS) {
       if (!f.required) continue;
       const raw = fields[f.key];
+      // A required checkbox (privacy consent) must be literally true; String(false) would otherwise pass.
+      if (f.kind === 'check') {
+        if (raw !== true) return Response.json({ error: `Missing ${f.label}` }, { status: 400 });
+        continue;
+      }
       const value = String(raw ?? '').trim();
       if (!value) return Response.json({ error: `Missing ${f.label}` }, { status: 400 });
       if (f.kind === 'email' && !value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
@@ -58,10 +63,10 @@ export async function POST(request: Request) {
 
     const notificationHtml = `
 <h2>New MEOCY Crew Profile</h2>
-<p><strong>Role:</strong> ${role}</p>
-<p><strong>Name:</strong> ${name}</p>
-<p><strong>Email:</strong> ${email}</p>
-<pre>${fieldsList}</pre>
+<p><strong>Role:</strong> ${esc(role)}</p>
+<p><strong>Name:</strong> ${esc(name)}</p>
+<p><strong>Email:</strong> ${esc(email)}</p>
+<pre>${esc(fieldsList)}</pre>
 <p><em>Type: Freelance Crew / Production Network</em></p>
     `;
 

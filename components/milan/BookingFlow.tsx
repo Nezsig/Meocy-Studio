@@ -1,4 +1,5 @@
 'use client';
+import { FormPrivacyNotice } from '../FormPrivacyNotice';
 import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -562,6 +563,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
               <label htmlFor="mb-notes" className="block text-[13.5px] font-medium">{b.notes}</label>
               <textarea id="mb-notes" rows={4} maxLength={1000} value={details.notes} onChange={(e) => setField('notes', e.target.value)} className={`${fieldClass} resize-y`} />
             </div>
+            <FormPrivacyNotice className="text-[13px] leading-snug text-chalk/60 sm:col-span-2" linkClassName="hover:text-chalk" />
             {/* Honeypot: hidden from people and assistive tech. */}
             <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-px w-px overflow-hidden">
               <label htmlFor="mb-company-website">Company website</label>

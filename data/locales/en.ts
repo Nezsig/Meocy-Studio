@@ -707,6 +707,11 @@ export const en = {
     text: 'If you contact us through the collaboration form, we use your details (name, email, social or portfolio links and the information you provide) only to reply to you and to plan possible projects. We do not sell or share them, and we delete them on request.'
   },
 
+  privacyCrew: {
+    title: 'Work With MEOCY (freelance crew) form.',
+    text: 'If you send your details through the Work With MEOCY form, we use them (name, email, role, city, portfolio or social links, and any phone number, experience, equipment, availability, languages and message you add) only to contact you about possible freelance opportunities. We do not sell or share them, and we delete them on request.'
+  },
+
   crewPage: {
     title: 'Work With MEOCY',
     intro: 'MEOCY is building a trusted network of freelance creatives in Milan for selected photography and video productions.',
@@ -1129,6 +1134,7 @@ export const en = {
 
   legal: {
     updated: 'Last updated: October 2026',
+    formNotice: 'We use these details only to handle your request, as described in our {link}.',
     bookingPolicy: {
       title: 'Booking Policy',
       intro: 'This policy applies to Milan photoshoot bookings requested through meocy.com/milan-photoshoot.',
@@ -1197,7 +1203,8 @@ export const en = {
         {
           h: 'No advertising or tracking cookies.',
           p: [
-            'This website does not set its own cookies and does not use advertising, analytics or tracking cookies.'
+            'This website does not set its own cookies and does not use advertising, analytics or tracking cookies.',
+            'Pages do not load scripts, fonts, maps, videos or other content from third-party websites. Links to WhatsApp or Instagram only connect to those services if you choose to open them.'
           ]
         },
         {
