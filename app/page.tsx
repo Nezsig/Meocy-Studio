@@ -25,7 +25,7 @@ export default function Page() {
       <div className="sticky top-0 z-50">
         <Nav />
       </div>
-      <main className="pt-0">
+      <main id="main-content" className="pt-0">
         <Hero />
         <WorkTeaser />
         <PackagesTeaser />

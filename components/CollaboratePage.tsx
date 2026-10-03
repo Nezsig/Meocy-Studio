@@ -198,6 +198,7 @@ export function CollaboratePage() {
     </p>
   );
   const invalidProps = (key: string) => ({
+    'aria-required': COLLAB_FIELDS[active].find((f) => f.key === key)?.required || undefined,
     'aria-invalid': !!errs[key],
     'aria-describedby': errs[key] ? errorId(key) : undefined,
   });
@@ -288,7 +289,7 @@ export function CollaboratePage() {
   const info = INFO[active];
 
   return (
-    <main className="py-24 sm:py-32">
+    <main id="main-content" className="py-24 sm:py-32">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate2">
           <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />

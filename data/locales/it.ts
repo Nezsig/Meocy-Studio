@@ -51,6 +51,10 @@ export const it: Dict = {
     }
   },
 
+  a11y: {
+    skipToContent: 'Vai al contenuto principale'
+  },
+
   notFound: {
     title: 'Pagina non trovata.',
     text: 'La pagina che cerchi non esiste o è stata spostata.'

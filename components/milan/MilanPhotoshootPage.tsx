@@ -104,7 +104,7 @@ export function MilanPhotoshootPage() {
   );
 
   return (
-    <main>
+    <main id="main-content">
       {/* 1 — HERO */}
       <section className="relative isolate flex min-h-[clamp(520px,75vh,760px)] items-end overflow-hidden bg-ink text-chalk">
         {/* TODO: Replace /locations/duomo.jpg with real couple photo hero-couple-duomo when available. */}
@@ -174,7 +174,7 @@ export function MilanPhotoshootPage() {
               <p className="mt-3 text-[14px] text-chalk/50">{m.experience.note}</p>
             </div>
           </div>
-          <ul className="-mx-5 mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-5 [&::-webkit-scrollbar]:hidden">
+          <ul tabIndex={0} aria-label={m.experience.title} className="-mx-5 mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-5 [&::-webkit-scrollbar]:hidden">
             {milanLocations.map((loc) => (
               <li key={loc.id} className="w-[72%] shrink-0 snap-start border-t border-chalk/20 pt-4 sm:w-auto">
                 <p className="text-[12px] font-semibold uppercase tracking-[0.14em]">{m.locations[loc.id].name}</p>
@@ -397,7 +397,7 @@ export function MilanPhotoshootPage() {
       <section id="gallery" className="scroll-mt-20 bg-ink py-24 text-chalk sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <h2 className={sectionTitle}>{m.gallery.title}</h2>
-          <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:block md:columns-2 md:gap-4 md:space-y-4 md:overflow-visible md:px-0 lg:columns-3 [&::-webkit-scrollbar]:hidden">
+          <div role="region" tabIndex={0} aria-label={m.gallery.title} className="-mx-5 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:block md:columns-2 md:gap-4 md:space-y-4 md:overflow-visible md:px-0 lg:columns-3 [&::-webkit-scrollbar]:hidden">
             {GALLERY.filter((item) => showGalleryPlaceholders || item.kind === 'photo').map((item, i) => (
               <figure key={i} className="w-[78%] shrink-0 snap-center break-inside-avoid overflow-hidden rounded-2xl md:w-auto">
                 {item.kind === 'photo' ? (

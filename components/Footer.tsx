@@ -84,7 +84,7 @@ export function Footer() {
 
           {/* COLUMN 2: Contact */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Contact</h3>
+            <h2 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Contact</h2>
 
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
@@ -127,7 +127,7 @@ export function Footer() {
 
           {/* COLUMN 3: Navigation */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Navigation</h3>
+            <h2 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Navigation</h2>
 
             <ul className="space-y-3 text-sm">
               {t.footer.navigation.map((link) => (
@@ -145,7 +145,7 @@ export function Footer() {
 
           {/* COLUMN: Tourist Photography (Milan photoshoot landing page) */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">{t.footer.tourist.title}</h3>
+            <h2 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">{t.footer.tourist.title}</h2>
 
             <ul className="space-y-3 text-sm">
               {t.footer.tourist.links.map((link) => (
@@ -163,7 +163,7 @@ export function Footer() {
 
           {/* COLUMN 4: Services */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Services</h3>
+            <h2 className="text-xs font-semibold text-[#9a998f] uppercase tracking-wide mb-6">Services</h2>
 
             <ul className="space-y-3 text-sm">
               {t.footer.services.map((service, idx) => (

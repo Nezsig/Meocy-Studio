@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 export function NotFoundContent() {
   const { t } = useLanguage();
   return (
-    <main className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 sm:py-32">
+    <main id="main-content" className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 sm:py-32">
       <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate2">404</p>
       <h1 className="mt-4 font-display text-[clamp(2.6rem,6vw,4.4rem)] leading-[1.02] tracking-tighter-display">{t.notFound.title}</h1>
       <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-slate2">{t.notFound.text}</p>

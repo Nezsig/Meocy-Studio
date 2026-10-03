@@ -15,7 +15,7 @@ export default function TermsPage() {
   return (
     <div className="min-h-full w-full bg-paper font-sans text-ink">
       <Nav />
-      <main className="py-24 sm:py-32">
+      <main id="main-content" className="py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <div className="max-w-2xl mx-auto">
             <h1 className="font-display text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.02] tracking-tighter-display">

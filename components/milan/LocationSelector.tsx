@@ -87,7 +87,7 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
                     active ? 'bg-ink text-chalk' : 'text-slate2 hover:text-ink'
                   }`}>
                   {m.packages[p.id].name}
-                  <span className={`block text-[11px] font-medium normal-case tracking-normal ${active ? 'text-accent' : 'text-slate2/80'}`}>
+                  <span className={`block text-[11px] font-medium normal-case tracking-normal ${active ? 'text-accent' : 'text-slate2'}`}>
                     {formatPrice(p.price, lang)}
                   </span>
                 </button>

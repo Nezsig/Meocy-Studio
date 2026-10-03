@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { MenuIcon, XIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -22,6 +22,20 @@ export function Nav() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Escape closes the mobile menu and returns focus to its toggle.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -76,8 +90,10 @@ export function Nav() {
             </a>
             <button
               type="button"
+              ref={toggleRef}
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
+              aria-controls="mobile-menu"
               aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
               className="grid h-11 w-11 place-items-center rounded-full border border-mist text-ink xl:hidden">
               
@@ -87,7 +103,7 @@ export function Nav() {
         </nav>
 
         {open &&
-        <div className="max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
+        <div id="mobile-menu" className="max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
             <ul className="grid grid-cols-2 gap-2">
               {linkOrder.map((l) =>
             <li key={l.href}>

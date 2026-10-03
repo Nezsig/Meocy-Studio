@@ -15,8 +15,8 @@ export function ServicesPage() {
   const { t } = useLanguage();
 
   return (
-    <>
-      <main className="py-24 sm:py-32">
+    <main id="main-content">
+      <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate2">
             <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
@@ -51,7 +51,7 @@ export function ServicesPage() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
 
       <section className="bg-ink py-20 text-chalk sm:py-28">
         <div className="mx-auto max-w-[1240px] px-5 text-center sm:px-8">
@@ -65,6 +65,6 @@ export function ServicesPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

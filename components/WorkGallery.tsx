@@ -38,12 +38,35 @@ export function WorkGallery() {
     [photos.length]
   );
 
+  // Element that opened the viewer, so focus can return to it on close.
+  const openerRef = useRef<HTMLElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const isOpen = lightboxIndex !== null;
+
+  useEffect(() => {
+    if (!isOpen) return;
+    openerRef.current = document.activeElement as HTMLElement | null;
+    return () => {
+      openerRef.current?.focus();
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     if (lightboxIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') prev();
       else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'Tab' && dialogRef.current) {
+        // Modal: keep keyboard focus inside the viewer.
+        const items = [...dialogRef.current.querySelectorAll<HTMLElement>('button')];
+        if (!items.length) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        else if (!dialogRef.current.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      }
     };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -58,8 +81,8 @@ export function WorkGallery() {
   const labelFor = (f: Filter) => t.work[f];
 
   return (
-    <>
-      <main className="py-24 sm:py-32">
+    <main id="main-content">
+      <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate2">
             <span className="h-2 w-2 rounded-full bg-accent" />
@@ -77,7 +100,7 @@ export function WorkGallery() {
           ) : (
             <>
               <div
-                role="tablist"
+                role="group"
                 aria-label={t.work.title}
                 className="-mx-5 mt-12 flex gap-2 overflow-x-auto overscroll-x-contain px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 [&::-webkit-scrollbar]:hidden">
                 {tabs.map((tab) => {
@@ -86,8 +109,7 @@ export function WorkGallery() {
                     <button
                       key={tab}
                       type="button"
-                      role="tab"
-                      aria-selected={active}
+                      aria-pressed={active}
                       onClick={() => setFilter(tab)}
                       className={`shrink-0 whitespace-nowrap rounded-full px-5 py-2.5 text-[14px] font-medium transition-colors duration-150 ${
                         active
@@ -158,7 +180,7 @@ export function WorkGallery() {
             </>
           )}
         </div>
-      </main>
+      </div>
 
       <section className="bg-ink py-20 text-chalk sm:py-28">
         <div className="mx-auto max-w-[1240px] px-5 text-center sm:px-8">
@@ -176,6 +198,7 @@ export function WorkGallery() {
 
       {current && (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-label={current.alt}
@@ -231,6 +254,6 @@ export function WorkGallery() {
           </figure>
         </div>
       )}
-    </>
+    </main>
   );
 }

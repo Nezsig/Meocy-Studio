@@ -137,7 +137,7 @@ export function ContactPage() {
 
   return (
     <>
-      <main className="py-24 sm:py-32">
+      <main id="main-content" className="py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate2">
             <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
@@ -174,7 +174,7 @@ export function ContactPage() {
                 <form id="contact-form" ref={formRef} onSubmit={onSubmit} noValidate className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8 space-y-8">
                   {/* Section 1: Service */}
                   <div className="border-b border-ink/10 pb-8">
-                    <h3 className={labelClass}>{c.briefWhat}</h3>
+                    <h2 className={labelClass}>{c.briefWhat}</h2>
                     <div className="flex flex-wrap gap-2">
                       {options.map((opt, i) => (
                         <label key={i} className="cursor-pointer">
@@ -198,7 +198,7 @@ export function ContactPage() {
 
                   {/* Section 2: Location */}
                   <div className="border-b border-ink/10 pb-8">
-                    <h3 className={labelClass}>{c.briefWhere}</h3>
+                    <h2 className={labelClass}>{c.briefWhere}</h2>
                     <div className="grid gap-2 sm:grid-cols-2">
                       {[
                         { id: 'milan', title: c.briefMilan, desc: c.briefMilanDesc },
@@ -224,7 +224,7 @@ export function ContactPage() {
 
                   {/* Section 3: Extras */}
                   <div className="border-b border-ink/10 pb-8">
-                    <h3 className={labelClass}>{c.briefExtras}</h3>
+                    <h2 className={labelClass}>{c.briefExtras}</h2>
                     <div className="space-y-2">
                       {extras.map((extra) => (
                         <label key={extra.id} className="flex items-center gap-3 cursor-pointer min-h-[44px]">

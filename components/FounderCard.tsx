@@ -36,9 +36,9 @@ export function FounderCard() {
         {/* Details column */}
         <div className="flex flex-col">
           {/* Name - bold, dark text */}
-          <h3 className="text-[22px] font-semibold text-[#0b0b0c] leading-tight mb-1">
+          <h2 className="text-[22px] font-semibold text-[#0b0b0c] leading-tight mb-1">
             {t.about.name}
-          </h3>
+          </h2>
           {/* Role - muted gray, NOT lime */}
           <p className="text-[14px] text-[#6b6a66] mb-5">
             {t.about.role}
@@ -121,7 +121,7 @@ export function FounderCard() {
           </div>
 
           {/* Social handles line */}
-          <p className="text-[13px] text-[#9a998f]">{t.about.socialHandles}</p>
+          <p className="text-[13px] text-slate2">{t.about.socialHandles}</p>
         </div>
       </div>
     </div>

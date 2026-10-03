@@ -9,8 +9,8 @@ export function AboutPage() {
   const a = t.aboutPage;
 
   return (
-    <>
-      <main className="py-24 sm:py-32">
+    <main id="main-content">
+      <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-slate2">
             <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
@@ -101,7 +101,7 @@ export function AboutPage() {
             <p className="mt-6 text-[14px] text-slate2">{a.eqNote}</p>
           </section>
         </div>
-      </main>
+      </div>
 
       <section className="border-t border-mist py-20 sm:py-28">
         <div className="mx-auto max-w-[1240px] px-5 text-center sm:px-8">
@@ -116,6 +116,6 @@ export function AboutPage() {
           </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

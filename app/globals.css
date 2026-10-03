@@ -61,8 +61,27 @@ input[type='range']:focus-visible::-webkit-slider-thumb {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
+:where([tabindex='0']):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+/* On dark surfaces the ink outline would be invisible: use white instead. */
+:where(.bg-ink, footer, [role='dialog']) :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: #ffffff;
+}
+/* ...but light cards placed inside dark sections keep the ink outline. */
+:where(.bg-ink, footer, [role='dialog']) :where(.bg-chalk, .bg-paper, .bg-white) :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: var(--ink);
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

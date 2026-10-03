@@ -51,6 +51,10 @@ export const fr: Dict = {
     }
   },
 
+  a11y: {
+    skipToContent: 'Aller au contenu principal'
+  },
+
   notFound: {
     title: 'Page introuvable.',
     text: 'La page que vous cherchez n\'existe pas ou a été déplacée.'

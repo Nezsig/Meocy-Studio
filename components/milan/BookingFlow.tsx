@@ -195,6 +195,8 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     setScreen(s);
     setSubmitError('');
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Move focus to the new step's heading so keyboard and screen-reader users land on the new step.
+    window.requestAnimationFrame(() => document.querySelector<HTMLElement>('#booking h3[tabindex="-1"]')?.focus({ preventScroll: true }));
   };
 
   const choosePackage = (id: MilanPackageId) => {
@@ -345,7 +347,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       {errors[k] ?? ''}
     </p>
   );
-  const inv = (k: keyof typeof errors) => ({ 'aria-invalid': !!errors[k], 'aria-describedby': errors[k] ? `mb-${k}-error` : undefined });
+  const inv = (k: keyof typeof errors) => ({ 'aria-required': true, 'aria-invalid': !!errors[k], 'aria-describedby': errors[k] ? `mb-${k}-error` : undefined });
   const setField = <K extends keyof Details>(k: K, v: Details[K]) => {
     setDetails((d) => ({ ...d, [k]: v }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
