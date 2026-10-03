@@ -11,11 +11,11 @@ export function FounderCard() {
       {/* Logo with lime underline */}
       <div className="mb-8 flex flex-col items-start">
         <img
-          src="/meocy-wordmark.png"
-          width={297}
-          height={91}
+          src="/meocy-logo-wide.png"
+          width={1326}
+          height={320}
           alt="MEOCY"
-          className="h-12 w-auto object-contain mb-3"
+          className="h-[30px] w-auto mb-3"
         />
         <div className="h-1 w-11 bg-accent rounded-full" />
       </div>

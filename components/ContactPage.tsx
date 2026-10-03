@@ -408,11 +408,11 @@ export function ContactPage() {
               <div className="rounded-[20px] border border-[#ecebe6] bg-chalk p-6 sm:p-8">
                 <div className="mb-6">
                   <img
-                    src="/meocy-wordmark.png"
-                    width={297}
-                    height={91}
+                    src="/meocy-logo-wide.png"
+                    width={1326}
+                    height={320}
                     alt="MEOCY"
-                    className="h-8 w-auto object-contain mb-3"
+                    className="h-[22px] w-auto mb-3"
                   />
                   <div className="h-0.5 w-8 bg-accent rounded-full" />
                 </div>

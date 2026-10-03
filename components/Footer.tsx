@@ -14,14 +14,14 @@ export function Footer() {
 
           {/* COLUMN 1: Brand */}
           <div className="flex flex-col">
-            {/* Logo - white version, larger */}
+            {/* Logo - white version of the approved header artwork (dark background) */}
             <div className="mb-4">
               <Image
-                src="/meocy-wordmark-white.png"
+                src="/meocy-logo-wide-white.png"
                 alt="MEOCY Studio"
-                width={197}
-                height={60}
-                className="h-[60px] w-auto object-contain"
+                width={182}
+                height={44}
+                className="h-[40px] w-auto sm:h-[44px]"
               />
             </div>
 
