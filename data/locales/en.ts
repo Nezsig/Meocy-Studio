@@ -352,8 +352,7 @@ export const en = {
       'Video'
     ],
     tagline: 'Photo & video studio in Milan — content that grows your business.',
-    rights: 'All rights reserved.',
-    rebrand: 'Rebranded September 2026'
+    rights: 'All rights reserved.'
   },
 
   work: {

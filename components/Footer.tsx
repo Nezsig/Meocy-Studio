@@ -177,10 +177,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm">
-          <div className="text-[#9a998f]">
-            <p>{t.footer.rights}</p>
-            <p className="text-xs mt-1">{t.footer.rebrand}</p>
-          </div>
+          <p className="text-[#9a998f]">{t.footer.rights}</p>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-[#9a998f]">
             {[

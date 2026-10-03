@@ -355,8 +355,7 @@ export const it: Dict = {
       'Video'
     ],
     tagline: 'Studio foto e video a Milano — contenuti che fanno crescere il tuo business.',
-    rights: 'Tutti i diritti riservati.',
-    rebrand: 'Rinnovamento del brand settembre 2026'
+    rights: 'Tutti i diritti riservati.'
   },
 
   work: {
