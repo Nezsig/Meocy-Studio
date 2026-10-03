@@ -144,11 +144,11 @@ export const fr: Dict = {
       movementAerial: 'Mouvement & aérien'
     },
     items: {
-      camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      camerasLenses: ['Sony Alpha 7 IV', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
       lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
       lightingVideo: ['GVM 300W LED', '150W LED light'],
       supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes'],
-      movementAerial: ['Gimbal DJI RS 4 Mini', 'Drone DJI Mini 3 Pro']
+      movementAerial: ['DJI RS 4 Mini', 'DJI Mini 3 Pro']
     },
     note: "Tout est calibré en interne. Si un brief demande un matériel que nous n'avons pas, nous le louons et l'indiquons clairement avant la séance."
   },
@@ -516,11 +516,11 @@ export const fr: Dict = {
     eqIntro: 'MEOCY travaille avec un équipement professionnel d\'appareils, d\'objectifs et d\'éclairage conçu pour la photographie comme pour la production vidéo.',
     eqNote: 'Les besoins en équipement sont planifiés selon la production spécifique.',
     eq: [
-      { label: 'Appareils', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Appareils', items: ['Sony Alpha 7 IV'] },
       { label: 'Objectifs', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
       { label: 'Éclairage photo', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
       { label: 'Éclairage vidéo', items: ['GVM 300W LED', 'Lumière LED 150W'] },
-      { label: 'Mouvement et aérien', items: ['Stabilisateur DJI RS 4 Mini', 'Drone DJI Mini 3 Pro'] },
+      { label: 'Mouvement et aérien', items: ['DJI RS 4 Mini', 'DJI Mini 3 Pro'] },
       { label: 'Supports', items: ['Trépieds professionnels', 'Pieds d\'éclairage', 'Softbox 120 cm', 'Softbox 85 cm'] }
     ]
   },

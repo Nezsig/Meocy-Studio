@@ -141,11 +141,11 @@ export const en = {
       movementAerial: 'Movement & aerial'
     },
     items: {
-      camerasLenses: ['Sony FX30', 'Sony a6700', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      camerasLenses: ['Sony Alpha 7 IV', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
       lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
       lightingVideo: ['GVM 300W LED', '150W LED light'],
       supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes'],
-      movementAerial: ['DJI RS 4 Mini gimbal', 'DJI Mini 3 Pro drone']
+      movementAerial: ['DJI RS 4 Mini', 'DJI Mini 3 Pro']
     },
     note: 'Everything is colour-calibrated in-house. If a brief needs something we do not own, we rent it and quote it openly before the shoot.'
   },
@@ -513,11 +513,11 @@ export const en = {
     eqIntro: 'MEOCY works with a professional camera, lens and lighting setup designed for both photography and video production.',
     eqNote: 'Equipment requirements are planned according to the specific production.',
     eq: [
-      { label: 'Cameras', items: ['Sony FX30', 'Sony a6700'] },
+      { label: 'Cameras', items: ['Sony Alpha 7 IV'] },
       { label: 'Lenses', items: ['33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
       { label: 'Photo lighting', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
       { label: 'Video lighting', items: ['GVM 300W LED', '150W LED light'] },
-      { label: 'Movement & aerial', items: ['DJI RS 4 Mini gimbal', 'DJI Mini 3 Pro drone'] },
+      { label: 'Movement & aerial', items: ['DJI RS 4 Mini', 'DJI Mini 3 Pro'] },
       { label: 'Support', items: ['Professional tripods', 'Light stands', '120cm softbox', '85cm softbox'] }
     ]
   },
