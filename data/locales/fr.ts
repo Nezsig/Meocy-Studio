@@ -33,6 +33,7 @@ export const fr: Dict = {
     stats: [
     { value: 'Être vu', label: '' },
     { value: 'Être suivi', label: '' },
+    { value: 'Être réservé', label: '' },
     { value: 'Vendre plus', label: '' }],
 
     studioCaption:
@@ -40,9 +41,14 @@ export const fr: Dict = {
 
     rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est une redémarrage sous un nouveau nom. Vous nous trouvez juste au début — donc vous recevez l\'attention d\'un fondateur sur chaque shooting, et les prix d\'introduction pendant que nous accueillons nos premiers brand.',
     noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.',
-    pathsTitle: 'Choisissez votre chemin',
-    pathsCommercial: 'Découvrir les Services Commerciaux',
-    pathsMilan: 'Découvrir le Photoshoot de Milan'
+    positionTitle: 'Photographie et contenu visuel à Milan.',
+    positionText: 'Mode, marques, commerces locaux et particuliers — planifié clairement, photographié de façon professionnelle et livré prêt à l\'emploi.',
+    pathsTitle: 'Choisissez votre shooting',
+    paths: {
+      commercial: { title: 'Shooting commercial', line: 'Marques • Mode • Produits • Restaurants', cta: 'Découvrir la photo commerciale' },
+      milan: { title: 'Shooting à Milan', line: 'Visiteurs • Couples • Solo • Souvenirs', cta: 'Découvrir le shooting à Milan' },
+      collaborate: { title: 'Collaboration mannequins', line: 'Portfolio • Mode • Éditorial • TFP', cta: 'Découvrir les collaborations' }
+    }
   },
 
   clients: { label: 'Clients sélectionnés' },

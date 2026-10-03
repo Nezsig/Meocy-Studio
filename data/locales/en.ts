@@ -31,15 +31,21 @@ export const en = {
     stats: [
     { value: 'Get seen', label: '' },
     { value: 'Get followed', label: '' },
+    { value: 'Get booked', label: '' },
     { value: 'Get sales', label: '' }],
 
     studioCaption: 'Milan-based, working on-location and with shipped products — all angles, all light.',
 
     rebrandCallout: 'Newly rebranded — September 2026. MEOCY is a fresh start under a new name. You\'re catching us right at the beginning — so you get founder-level attention on every shoot, and introductory pricing while we take on our first brands.',
     noPackageNeeded: 'No package needed — tell us what you want and we\'ll shoot it your way.',
-    pathsTitle: 'Pick your path',
-    pathsCommercial: 'Explore Commercial Services',
-    pathsMilan: 'Explore Milan Photoshoot'
+    positionTitle: 'Photography & visual content in Milan.',
+    positionText: 'Fashion, brands, local businesses and people — planned clearly, shot professionally and delivered ready to use.',
+    pathsTitle: 'Choose your shoot',
+    paths: {
+      commercial: { title: 'Commercial shoot', line: 'Brands • Fashion • Products • Restaurants', cta: 'Explore Commercial Photography' },
+      milan: { title: 'Milan photoshoot', line: 'Visitors • Couples • Solo • Memories', cta: 'Explore Milan Photoshoot' },
+      collaborate: { title: 'Model collaboration', line: 'Portfolio • Fashion • Editorial • TFP', cta: 'Explore Collaboration' }
+    }
   },
 
   clients: { label: 'Selected clients' },

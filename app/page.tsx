@@ -15,11 +15,11 @@ export default function Page() {
       </div>
       <main className="pt-0">
         <Hero />
-        <Process />
-        <Equipment />
         <WorkTeaser />
         <PackagesTeaser />
+        <Process />
         <Testimonials />
+        <Equipment />
       </main>
       <Footer />
     </div>

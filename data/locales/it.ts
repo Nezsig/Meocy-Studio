@@ -33,6 +33,7 @@ export const it: Dict = {
     stats: [
     { value: 'Vieni visto', label: '' },
     { value: 'Vieni seguito', label: '' },
+    { value: 'Vieni prenotato', label: '' },
     { value: 'Vendi di più', label: '' }],
 
     studioCaption:
@@ -40,9 +41,14 @@ export const it: Dict = {
 
     rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è una ripartenza sotto un nuovo nome. Ci trovi proprio all\'inizio — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
     noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.',
-    pathsTitle: 'Scegli il tuo percorso',
-    pathsCommercial: 'Scopri i Servizi Commerciali',
-    pathsMilan: 'Scopri il Fotoshoot di Milano'
+    positionTitle: 'Fotografia e contenuti visivi a Milano.',
+    positionText: 'Moda, brand, attività locali e persone — pianificato con chiarezza, scattato in modo professionale e consegnato pronto all\'uso.',
+    pathsTitle: 'Scegli il tuo shooting',
+    paths: {
+      commercial: { title: 'Shooting commerciale', line: 'Brand • Moda • Prodotti • Ristoranti', cta: 'Scopri la fotografia commerciale' },
+      milan: { title: 'Shooting a Milano', line: 'Visitatori • Coppie • Solo • Ricordi', cta: 'Scopri lo shooting a Milano' },
+      collaborate: { title: 'Collaborazione modelle', line: 'Portfolio • Moda • Editoriale • TFP', cta: 'Scopri le collaborazioni' }
+    }
   },
 
   clients: { label: 'Clienti selezionati' },

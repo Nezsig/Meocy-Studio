@@ -6,6 +6,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { images } from '../data/site';
 import { euro } from '../utils/estimate';
 
+// Homepage shoot paths. Text: hero.paths.<key>. Crew recruitment (/work-with-meocy) is deliberately not a path here.
+const paths = [
+  { key: 'commercial', href: '/contact', style: 'bg-ink text-chalk' },
+  { key: 'milan', href: '/milan-photoshoot', style: 'bg-accent text-ink' },
+  { key: 'collaborate', href: '/collaborate', style: 'border border-ink text-ink hover:bg-ink hover:text-chalk' },
+] as const;
+
 export function Hero() {
   const { t, lang } = useLanguage();
   const reduce = useReducedMotion();
@@ -17,7 +24,7 @@ export function Hero() {
   });
 
   return (
-    <section id="top" className="relative overflow-hidden pt-28 sm:pt-36">
+    <section id="top" className="relative overflow-hidden pt-12 sm:pt-24">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-1 lg:items-center lg:gap-16">
           <motion.div {...rise(0)}>
@@ -34,9 +41,9 @@ export function Hero() {
 
             <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-slate2">{t.hero.lead}</p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#estimator"
+                href="/contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[15px] font-medium text-chalk transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
 
                 {t.hero.ctaPrimary}
@@ -47,37 +54,37 @@ export function Hero() {
               </a>
             </div>
 
-            <p className="mt-8 max-w-lg text-[16px] leading-relaxed text-slate2">{t.hero.studioCaption}</p>
-
-            {/* Two-path section */}
-            <div className="mt-16 pt-12 border-t border-mist sm:mt-20">
-              <h2 className="text-[14px] font-semibold uppercase tracking-[0.12em] text-slate2 mb-6">
-                {t.hero.pathsTitle}
+            {/* Positioning + choose your shoot */}
+            <div className="mt-10 border-t border-mist pt-8 sm:mt-14 sm:pt-12">
+              <h2 className="font-display text-[clamp(1.9rem,4.4vw,2.8rem)] leading-[1.05] tracking-tighter-display">
+                {t.hero.positionTitle}
               </h2>
-              <div className="grid gap-4 sm:grid-cols-2 max-w-2xl">
-                {/* Commercial Services Card */}
-                <div className="rounded-xl border-2 border-mist bg-paper p-6 flex flex-col">
-                  <span className="text-[15px] font-medium text-ink mb-auto">{t.hero.pathsCommercial}</span>
-                  <a
-                    href="/services"
-                    className="mt-6 group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border-2 border-ink bg-transparent text-ink font-medium transition-all hover:bg-ink hover:text-chalk focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
-                    {t.hero.pathsCommercial}
-                    <ArrowRightIcon size={17} className="transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
+              <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-slate2">{t.hero.positionText}</p>
 
-                {/* Milan Photoshoot Card */}
-                <div className="relative rounded-xl border-2 border-mist bg-paper p-6 flex flex-col">
-                  <span className="text-[15px] font-medium text-ink mb-auto">{t.hero.pathsMilan}</span>
-                  <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-accent" aria-hidden />
-                  <a
-                    href="/milan-photoshoot"
-                    className="mt-6 group inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-accent px-6 text-ink font-medium transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-                    {t.hero.pathsMilan}
-                    <ArrowRightIcon size={17} className="transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </div>
+              <h3 className="mt-8 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-slate2">
+                <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
+                {t.hero.pathsTitle}
+              </h3>
+              <ul className="mt-5 grid gap-4 lg:grid-cols-3">
+                {paths.map((path) => {
+                  const copy = t.hero.paths[path.key];
+                  return (
+                    <li key={path.key} className="flex flex-col rounded-[20px] border border-mist bg-chalk p-5 sm:p-7 lg:p-5 xl:p-7">
+                      <div className="flex-1">
+                        <p className="font-display text-[1.9rem] leading-[1.05] tracking-tighter-display">{copy.title}</p>
+                        <p className="mt-2 text-[14px] font-medium text-slate2">{copy.line}</p>
+                      </div>
+                      <a
+                        href={path.href}
+                        className={`group mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full px-4 text-center text-[14.5px] font-semibold leading-tight sm:text-[15px] lg:px-3 lg:text-[14px] xl:px-4 xl:text-[15px] transition-transform duration-150 ease-smooth hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${path.style}`}>
+                        {copy.cta}
+                        <ArrowRightIcon size={17} className="shrink-0 transition-transform duration-200 group-hover:translate-x-1 lg:hidden xl:block" aria-hidden />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-slate2">{t.hero.studioCaption}</p>
             </div>
           </motion.div>
 
@@ -85,7 +92,7 @@ export function Hero() {
 
         <motion.dl
           {...rise(0.18)}
-          className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-mist pt-10 lg:grid-cols-4">
+          className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-mist pt-10 sm:mt-16 lg:grid-cols-4">
 
           {t.hero.stats.map((s) =>
           <div key={s.value}>
@@ -104,13 +111,6 @@ export function Hero() {
           )}
         </motion.dl>
 
-        <motion.div
-          {...rise(0.26)}
-          className="mt-12 rounded-lg bg-slate2/5 px-6 py-5 sm:px-8 border-l-4 border-accent">
-          <p className="text-[14px] leading-relaxed text-slate2">
-            {t.hero.rebrandCallout}
-          </p>
-        </motion.div>
       </div>
     </section>);
 
