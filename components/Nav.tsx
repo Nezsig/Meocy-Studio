@@ -83,14 +83,14 @@ export function Nav() {
         </nav>
 
         {open &&
-        <div className="border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
+        <div className="max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain border-t border-mist/70 px-5 pb-5 pt-3 xl:hidden">
             <ul className="grid grid-cols-2 gap-2">
               {linkOrder.map((l) =>
             <li key={l.href}>
                   <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-chalk px-4 py-3 text-[15px] font-medium text-ink">
+                className="flex h-full items-center rounded-xl bg-chalk px-4 py-3 text-[15px] font-medium text-ink">
 
                     {t.nav.links[l.key]}
                   </a>

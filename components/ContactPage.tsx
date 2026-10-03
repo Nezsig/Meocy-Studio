@@ -425,7 +425,7 @@ export function ContactPage() {
                     </p>
                     <a
                       href={studioContact.whatsappHref}
-                      className="inline-flex items-center gap-2 text-[17px] font-medium text-ink hover:text-accent transition-colors"
+                      className="-my-1.5 inline-flex items-center gap-2 py-1.5 text-[17px] font-medium text-ink hover:text-accent transition-colors"
                     >
                       {studioContact.phone}
                     </a>
@@ -438,7 +438,7 @@ export function ContactPage() {
                     </p>
                     <a
                       href={`mailto:${studioContact.email}`}
-                      className="text-[14px] text-ink hover:text-accent transition-colors"
+                      className="-my-1.5 inline-block py-1.5 text-[14px] text-ink hover:text-accent transition-colors"
                     >
                       {studioContact.email}
                     </a>
@@ -459,7 +459,7 @@ export function ContactPage() {
                     </p>
                     <a
                       href="https://meocy.com"
-                      className="text-[14px] text-ink hover:text-accent transition-colors"
+                      className="-my-1.5 inline-block py-1.5 text-[14px] text-ink hover:text-accent transition-colors"
                     >
                       meocy.com
                     </a>

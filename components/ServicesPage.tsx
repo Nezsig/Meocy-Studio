@@ -44,7 +44,7 @@ export function ServicesPage() {
                 <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate2">{t.svcPage[s.desc]}</p>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center gap-1.5 self-start text-[14px] font-medium text-ink underline-offset-4 hover:underline">
+                  className="-mb-2 mt-4 inline-flex items-center gap-1.5 self-start py-2 text-[14px] font-medium text-ink underline-offset-4 hover:underline">
                   {t.svcPage.cta} <span aria-hidden>→</span>
                 </Link>
               </article>

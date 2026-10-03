@@ -398,7 +398,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         {b.progress.map((label, i) => (
           <li key={label} aria-current={i === step ? 'step' : undefined} className="min-w-0">
             <span className={`block h-1 rounded-full ${i <= step ? 'bg-accent' : 'bg-chalk/15'}`} />
-            <span className={`mt-2 hidden truncate text-[11.5px] font-semibold uppercase tracking-[0.12em] sm:block ${i === step ? 'text-chalk' : 'text-chalk/45'}`}>
+            <span className={`mt-2 hidden truncate text-[11.5px] font-semibold uppercase tracking-[0.12em] lg:block ${i === step ? 'text-chalk' : 'text-chalk/45'}`}>
               {i + 1} {label}
             </span>
           </li>
@@ -492,11 +492,11 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                     {pendingExtra && <> {m.selector.limitAdd}</>}
                   </p>
                   {pendingExtra && (
-                    <div className="flex shrink-0 gap-2">
-                      <button type="button" onClick={() => { onLocationsChange([...locations, pendingExtra]); setPendingExtra(null); }} className="min-h-[44px] rounded-full bg-accent px-5 text-[13px] font-semibold">
+                    <div className="grid shrink-0 gap-2 min-[480px]:flex">
+                      <button type="button" onClick={() => { onLocationsChange([...locations, pendingExtra]); setPendingExtra(null); }} className="min-h-[44px] whitespace-nowrap rounded-full bg-accent px-5 text-[13px] font-semibold">
                         {m.selector.addConfirm}
                       </button>
-                      <button type="button" onClick={() => setPendingExtra(null)} className="min-h-[44px] rounded-full px-4 text-[13px] font-medium ring-1 ring-ink/20">
+                      <button type="button" onClick={() => setPendingExtra(null)} className="min-h-[44px] whitespace-nowrap rounded-full px-4 text-[13px] font-medium ring-1 ring-ink/20">
                         {m.selector.dismiss}
                       </button>
                     </div>
@@ -604,7 +604,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             <p className="text-[16px] text-chalk/75">{b.doneText}</p>
             <div className="mt-6 inline-flex flex-col rounded-2xl bg-accent px-6 py-4 text-ink">
               <span className="text-[11.5px] font-semibold uppercase tracking-[0.16em]">{b.reference}</span>
-              <span className="mt-1 font-display text-[2rem] leading-none tracking-tight" data-testid="booking-reference">{result.reference}</span>
+              <span className="mt-1 whitespace-nowrap font-display text-[clamp(1.5rem,7vw,2rem)] leading-none tracking-tight" data-testid="booking-reference">{result.reference}</span>
             </div>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <SummaryTable rows={rowsFor(result.pricing).filter(([k]) => k !== b.sumPackagePrice && k !== b.sumExtra)} />

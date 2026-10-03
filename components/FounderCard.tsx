@@ -43,10 +43,10 @@ export function FounderCard() {
           </p>
 
           {/* Contact info rows */}
-          <div className="space-y-2 mb-5">
+          <div className="mb-5">
             <a
               href="https://wa.me/393791051000"
-              className="flex items-center gap-3 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
+              className="flex items-center gap-3 py-1 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
             >
               <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
                 {t.about.contact.phoneLabel}
@@ -56,7 +56,7 @@ export function FounderCard() {
 
             <a
               href={`mailto:${t.about.contact.email}`}
-              className="flex items-center gap-3 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
+              className="flex items-center gap-3 py-1 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
             >
               <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
                 {t.about.contact.emailLabel}
@@ -66,7 +66,7 @@ export function FounderCard() {
 
             <a
               href={`https://${t.about.contact.website}`}
-              className="flex items-center gap-3 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
+              className="flex items-center gap-3 py-1 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
             >
               <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
                 {t.about.contact.websiteLabel}

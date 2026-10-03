@@ -93,7 +93,7 @@ export function Footer() {
                 </span>
                 <a
                   href="https://wa.me/393791051000"
-                  className="text-chalk hover:text-accent transition-colors duration-150"
+                  className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                 >
                   {t.footer.contact.phone}
                 </a>
@@ -105,7 +105,7 @@ export function Footer() {
                 </span>
                 <a
                   href={`mailto:${t.footer.contact.email}`}
-                  className="text-chalk hover:text-accent transition-colors duration-150"
+                  className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                 >
                   {t.footer.contact.email}
                 </a>
@@ -117,7 +117,7 @@ export function Footer() {
                 </span>
                 <a
                   href={`https://${t.footer.contact.website}`}
-                  className="text-chalk hover:text-accent transition-colors duration-150"
+                  className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                 >
                   {t.footer.contact.website}
                 </a>
@@ -134,7 +134,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-chalk hover:text-accent transition-colors duration-150"
+                    className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -152,7 +152,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-chalk hover:text-accent transition-colors duration-150"
+                    className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -186,7 +186,7 @@ export function Footer() {
               { href: '/booking-policy', label: t.legal.footer.bookingPolicy },
               { href: '/cookie-policy', label: t.legal.footer.cookiePolicy },
             ].map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-chalk transition-colors duration-150">
+              <a key={l.href} href={l.href} className="inline-block -my-1 py-1 hover:text-chalk transition-colors duration-150">
                 {l.label}
               </a>
             ))}

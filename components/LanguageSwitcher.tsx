@@ -37,7 +37,7 @@ export function LanguageSwitcher({ tone = 'light', className = '' }: LanguageSwi
             onClick={() => setLang(code)}
             aria-pressed={isActive}
             title={locales[code].label}
-            className={`rounded-full px-2.5 py-1.5 text-[11.5px] font-semibold uppercase tracking-[0.1em] transition-colors duration-150 ease-smooth ${
+            className={`inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full px-2.5 py-1.5 text-[11.5px] xl:min-h-0 xl:min-w-0 font-semibold uppercase tracking-[0.1em] transition-colors duration-150 ease-smooth ${
             isActive ? activeClass : idleClass}`
             }>
             

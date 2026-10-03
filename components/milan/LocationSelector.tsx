@@ -113,17 +113,17 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
               {pending && <> {m.selector.limitAdd}</>}
             </p>
             {pending && (
-              <div className="flex shrink-0 gap-2">
+              <div className="grid shrink-0 gap-2 min-[480px]:flex">
                 <button
                   type="button"
                   onClick={confirmExtra}
-                  className="min-h-[44px] rounded-full bg-accent px-5 text-[13px] font-semibold text-ink">
+                  className="min-h-[44px] whitespace-nowrap rounded-full bg-accent px-5 text-[13px] font-semibold text-ink">
                   {m.selector.addConfirm}
                 </button>
                 <button
                   type="button"
                   onClick={() => setPending(null)}
-                  className="min-h-[44px] rounded-full px-4 text-[13px] font-medium text-chalk/75 ring-1 ring-chalk/20 hover:text-chalk">
+                  className="min-h-[44px] whitespace-nowrap rounded-full px-4 text-[13px] font-medium text-chalk/75 ring-1 ring-chalk/20 hover:text-chalk">
                   {m.selector.dismiss}
                 </button>
               </div>
