@@ -3,6 +3,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRightIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { HomePhotoStrip } from './HomePhotoStrip';
 import { images } from '../data/site';
 import { euro } from '../utils/estimate';
 
@@ -89,6 +90,8 @@ export function Hero() {
           </motion.div>
 
         </div>
+
+        <HomePhotoStrip />
 
         <motion.dl
           {...rise(0.18)}

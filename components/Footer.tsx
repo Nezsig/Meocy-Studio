@@ -19,9 +19,9 @@ export function Footer() {
               <Image
                 src="/meocy-wordmark-white.png"
                 alt="MEOCY Studio"
-                width={200}
-                height={56}
-                className="w-auto h-auto object-contain"
+                width={197}
+                height={60}
+                className="h-[60px] w-auto object-contain"
               />
             </div>
 

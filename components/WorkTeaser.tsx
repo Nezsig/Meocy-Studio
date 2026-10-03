@@ -11,6 +11,9 @@ const teaseImages = [
   { id: 'portrait-07', src: '/work/portrait-07.jpg', width: 1346, height: 1145, alt: 'MEOCY portrait photography' },
   { id: 'fashion-08', src: '/work/fashion-08.jpg', width: 1358, height: 1147, alt: 'MEOCY fashion photography' },
   { id: 'portrait-08', src: '/work/portrait-08.jpg', width: 1349, height: 1066, alt: 'MEOCY portrait photography' },
+  // Milan street portraits (also used on /milan-photoshoot)
+  { id: 'fashion-03', src: '/work/fashion-03.jpg', width: 1131, height: 1600, alt: 'MEOCY fashion photography' },
+  { id: 'fashion-19', src: '/work/fashion-19.jpg', width: 1127, height: 1600, alt: 'MEOCY fashion photography' },
 ];
 
 export function WorkTeaser() {
@@ -28,7 +31,7 @@ export function WorkTeaser() {
           </h2>
         </div>
 
-        <div className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+        <div className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {teaseImages.map((img) => (
             <Link
               key={img.id}
@@ -41,8 +44,8 @@ export function WorkTeaser() {
                   alt={workItems.find((w) => w.id === img.id)?.alt ?? img.alt}
                   width={img.width}
                   height={img.height}
-                  className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105"
-                  sizes="(min-width: 1240px) 381px, (min-width: 640px) calc((100vw - 96px) / 3), calc((100vw - 52px) / 2)"
+                  className="h-full w-full object-cover object-[50%_8%] transition-transform duration-300 ease-smooth group-hover:scale-105"
+                  sizes="(min-width: 1240px) 282px, (min-width: 640px) calc((100vw - 112px) / 4), calc((100vw - 52px) / 2)"
                 />
               </div>
             </Link>

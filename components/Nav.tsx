@@ -55,15 +55,15 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-20 max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8 sm:h-24">
           
-          <a href="/" aria-label="MEOCY home" className="flex shrink-0 items-center rounded-full p-1 transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-            {/* TODO: Replace with /meocy-mark.png (M letter-mark only) when provided. For now using full logo mark at restored size. */}
+          <a href="/" aria-label="MEOCY home" className="flex shrink-0 items-center rounded-full p-1 transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+                        {/* Trimmed copy of /meocy-logo.png (no transparent padding), so the artwork itself is sized. */}
             <Image
-              src="/meocy-logo.png"
+              src="/meocy-logo-wide.png"
               alt=""
-              width={90}
-              height={90}
+              width={149}
+              height={36}
               loading="eager"
-              className="h-[72px] w-auto object-contain sm:h-[90px]" />
+              className="h-[20px] w-auto min-[360px]:h-[24px] min-[400px]:h-[26px] sm:h-[30px] xl:h-[34px]" />
           </a>
 
           <ul className="hidden items-center gap-0.5 xl:flex">
