@@ -36,6 +36,7 @@ export default function WorkWithMeocyPage() {
   const c = { ...en, ...(t?.crewPage ?? {}) };
 
   const [values, setValues] = useState<Values>(Object.fromEntries(CREW_FIELDS.map((f) => [f.key, f.kind === 'check' ? false : ''])));
+  const [honeypot, setHoneypot] = useState('');
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>('idle');
   const [sentName, setSentName] = useState('');
@@ -85,7 +86,7 @@ export default function WorkWithMeocyPage() {
       const res = await fetch('/api/crew', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ locale: lang, fields }),
+        body: JSON.stringify({ locale: lang, fields, company_website: honeypot }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setSentName(String(values.name ?? '').trim().split(/\s+/)[0] || '');
@@ -299,6 +300,20 @@ export default function WorkWithMeocyPage() {
             ) : (
               <form ref={formRef} onSubmit={onSubmit} noValidate className="space-y-5">
                 {CREW_FIELDS.map(renderField)}
+
+                {/* Honeypot: hidden from people and assistive tech; bots that fill it are silently ignored. */}
+                <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-px w-px overflow-hidden">
+                  <label htmlFor="crew-company-website">Company website</label>
+                  <input
+                    id="crew-company-website"
+                    name="company_website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
 
                 <div aria-live="polite" className="empty:hidden">
                   {status === 'error' && (
