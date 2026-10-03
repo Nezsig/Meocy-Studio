@@ -12,6 +12,8 @@ export function FounderCard() {
       <div className="mb-8 flex flex-col items-start">
         <img
           src="/meocy-wordmark.png"
+          width={297}
+          height={91}
           alt="MEOCY"
           className="h-12 w-auto object-contain mb-3"
         />

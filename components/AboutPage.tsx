@@ -28,7 +28,7 @@ export function AboutPage() {
                 width={1400}
                 height={1400}
                 priority
-                sizes="(min-width: 1024px) 45vw, 100vw"
+                sizes="(min-width: 1240px) 505px, (min-width: 1024px) calc((100vw - 128px) * 0.45), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
                 className="aspect-square w-full rounded-2xl object-cover"
               />
             </div>

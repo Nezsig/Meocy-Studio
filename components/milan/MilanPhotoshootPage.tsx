@@ -311,7 +311,7 @@ export function MilanPhotoshootPage() {
       <section className="bg-chalk py-24 sm:py-32">
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 sm:px-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:items-center lg:gap-20">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[22px]">
-            <Image src={PHOTOS.why.src} alt={m.alt.why} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
+            <Image src={PHOTOS.why.src} alt={m.alt.why} fill sizes="(min-width: 1240px) 498px, (min-width: 1024px) calc((100vw - 144px) * 0.45), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)" className="object-cover" />
           </div>
           <div>
             <h2 className={sectionTitle}>{m.why.title}</h2>
@@ -407,7 +407,7 @@ export function MilanPhotoshootPage() {
                     width={item.width}
                     height={item.height}
                     loading="lazy"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 78vw"
+                    sizes="(min-width: 1240px) 381px, (min-width: 1024px) calc((100vw - 96px) / 3), (min-width: 768px) calc((100vw - 80px) / 2), 78vw"
                     className="h-auto w-full transition-transform duration-700 ease-smooth md:hover:scale-[1.03]"
                   />
                 ) : (

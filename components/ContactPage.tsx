@@ -407,6 +407,8 @@ export function ContactPage() {
                 <div className="mb-6">
                   <img
                     src="/meocy-wordmark.png"
+                    width={297}
+                    height={91}
                     alt="MEOCY"
                     className="h-8 w-auto object-contain mb-3"
                   />

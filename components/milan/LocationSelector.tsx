@@ -151,7 +151,7 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
                       src={loc.image.src}
                       alt={text.name}
                       fill
-                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 112px"
+                      sizes="(min-width: 1240px) 222px, (min-width: 1024px) calc((100vw - 128px) / 5), (min-width: 640px) calc((100vw - 80px) / 2), 112px"
                       className="object-cover"
                     />
                   ) : (

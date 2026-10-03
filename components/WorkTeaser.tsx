@@ -41,7 +41,7 @@ export function WorkTeaser() {
                   width={img.width}
                   height={img.height}
                   className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, 33vw"
+                  sizes="(min-width: 1240px) 381px, (min-width: 640px) calc((100vw - 96px) / 3), calc((100vw - 52px) / 2)"
                 />
               </div>
             </Link>

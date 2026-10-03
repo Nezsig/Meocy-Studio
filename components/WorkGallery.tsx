@@ -101,15 +101,16 @@ export function WorkGallery() {
               </div>
 
               <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
-                {visible.map((item) => {
+                {visible.map((item, index) => {
                   const img = (
                     <Image
                       src={item.src}
                       alt={item.alt}
                       width={item.width}
                       height={item.height}
-                      loading="lazy"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      // The first photo is the page's largest above-the-fold image (LCP); the rest load lazily.
+                      {...(index === 0 ? { priority: true } : { loading: 'lazy' as const })}
+                      sizes="(min-width: 1240px) 379px, (min-width: 1024px) calc((100vw - 104px) / 3), (min-width: 640px) calc((100vw - 84px) / 2), calc(100vw - 40px)"
                       className="h-auto w-full transition-transform duration-500 ease-smooth group-hover:scale-[1.03]"
                     />
                   );
@@ -220,6 +221,7 @@ export function WorkGallery() {
               width={current.width}
               height={current.height}
               sizes="100vw"
+              quality={85}
               loading="eager"
               className="h-auto max-h-[80vh] w-auto max-w-full rounded-xl object-contain"
             />

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { MenuIcon, XIcon } from 'lucide-react';
@@ -42,9 +43,12 @@ export function Nav() {
           
           <a href="/" aria-label="MEOCY home" className="flex shrink-0 items-center rounded-full p-1 transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
             {/* TODO: Replace with /meocy-mark.png (M letter-mark only) when provided. For now using full logo mark at restored size. */}
-            <img
+            <Image
               src="/meocy-logo.png"
               alt=""
+              width={90}
+              height={90}
+              loading="eager"
               className="h-[72px] w-auto object-contain sm:h-[90px]" />
           </a>
 
