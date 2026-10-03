@@ -41,10 +41,10 @@ export const packageMeta: PackageMeta[] = [
 
 
 export const equipmentGroups: EquipmentGroupMeta[] = [
-{ id: 'camerasLenses', items: ['Sony Alpha 7 IV', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'] },
+{ id: 'camerasLenses', items: ['Sony Alpha 7 IV', '33mm f/1.2', '50mm f/1.4', '85mm f/1.4'] },
 { id: 'lightingPhoto', items: ['Godox AD600Pro', 'Godox AD300Pro'] },
 { id: 'lightingVideo', items: ['GVM 300W LED', '150W LED light'] },
-{ id: 'supportGrip', items: ['Tripods', 'Light stands', '120cm & 85cm softboxes'] }];
+{ id: 'supportGrip', items: ['Professional tripods', 'Light stands', '120cm softbox', '85cm softbox'] }];
 
 
 export const testimonialMeta: TestimonialMeta[] = [];

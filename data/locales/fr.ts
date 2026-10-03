@@ -144,10 +144,10 @@ export const fr: Dict = {
       movementAerial: 'Mouvement & aérien'
     },
     items: {
-      camerasLenses: ['Sony Alpha 7 IV', '33mm f/1.2', '85mm f/1.4', '50mm f/1.4'],
+      camerasLenses: ['Sony Alpha 7 IV', '33mm f/1.2', '50mm f/1.4', '85mm f/1.4'],
       lightingPhoto: ['Godox AD600Pro', 'Godox AD300Pro'],
       lightingVideo: ['GVM 300W LED', '150W LED light'],
-      supportGrip: ['Tripods', 'Light stands', '120cm & 85cm softboxes'],
+      supportGrip: ['Professional tripods', 'Light stands', '120cm softbox', '85cm softbox'],
       movementAerial: ['DJI RS 4 Mini', 'DJI Mini 3 Pro']
     },
     note: "Tout est calibré en interne. Si un brief demande un matériel que nous n'avons pas, nous le louons et l'indiquons clairement avant la séance."
