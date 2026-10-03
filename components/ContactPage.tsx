@@ -506,27 +506,28 @@ export function ContactPage() {
         </div>
       </main>
 
-      {/* COLLABORATION SECTION */}
-      <section className="bg-ink py-20 text-chalk sm:py-28">
+      {/* Secondary routing: collaborations and crew have their own forms */}
+      <aside className="bg-paper pb-16 sm:pb-20">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
-          <div className="max-w-3xl">
-            <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-chalk/60">
-              <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
-              {c.collabLabel}
-            </p>
-            <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.04] tracking-tighter-display">
-              {c.collabTitle}
-            </h2>
-            <p className="mt-6 text-[17px] leading-relaxed text-chalk/70">{c.collabText1}</p>
-            <p className="mt-3 text-[17px] leading-relaxed text-chalk/70">{c.collabText2}</p>
-            <a
-              href="/collaborate"
-              className="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent px-7 text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-              {c.collabButton}
-            </a>
+          <div className="border-t border-ink/10 pt-6 text-[14px] leading-relaxed text-slate2">
+            <p className="font-medium text-ink">{c.routeTitle}</p>
+            <ul className="mt-2 space-y-1.5">
+              <li>
+                {c.routeModels}{' '}
+                <a href="/collaborate" className="font-medium text-ink underline underline-offset-4 hover:text-ink/70">
+                  {c.routeModelsCta}
+                </a>
+              </li>
+              <li>
+                {c.routeCrew}{' '}
+                <a href="/work-with-meocy" className="font-medium text-ink underline underline-offset-4 hover:text-ink/70">
+                  {c.routeCrewCta}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </aside>
     </>
   );
 }

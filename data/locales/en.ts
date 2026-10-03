@@ -86,7 +86,7 @@ export const en = {
     {
       title: 'We deliver',
       body: 'Pick your favourites in a private gallery. We retouch them and send every size your channels need.',
-      duration: '4–7 days'
+      duration: 'Photos 7–10 · Video 7–14 working days'
     }]
 
   },
@@ -568,11 +568,11 @@ export const en = {
     detailsTitle: 'Contact details',
     loc: 'Milan & Paris',
     whatsappCta: 'Message on WhatsApp',
-    collabLabel: 'FOR MODELS & CREATIVES',
-    collabTitle: 'Building Your Portfolio in Milan?',
-    collabText1: 'MEOCY collaborates with models and creatives in Milan to create strong fashion, editorial and portfolio imagery.',
-    collabText2: 'If you are a model building your portfolio, an emerging creative or simply looking to create new visual work, get in touch.',
-    collabButton: 'Collaborate with MEOCY',
+    routeTitle: 'Not a commercial project?',
+    routeModels: 'Models, talent and model agencies:',
+    routeModelsCta: 'Collaborate with MEOCY',
+    routeCrew: 'Freelance creative crew:',
+    routeCrewCta: 'Work with MEOCY',
     projectOptions: [
       'Fashion / model shoot',
       'Commercial photography',
@@ -581,7 +581,6 @@ export const en = {
       'Portrait / personal brand',
       'Social media video',
       'Full content production (photo + video)',
-      'Model / creative collaboration',
       'Other'
     ],
     briefWhat: 'What are we photographing?',

@@ -89,7 +89,7 @@ export const it: Dict = {
     {
       title: 'Consegniamo',
       body: 'Scegli le tue preferite in una galleria privata. Ritocchiamo e consegniamo ogni formato di cui i tuoi canali hanno bisogno.',
-      duration: '4–7 giorni'
+      duration: 'Foto 7–10 · Video 7–14 giorni lavorativi'
     }]
 
   },
@@ -571,11 +571,11 @@ export const it: Dict = {
     detailsTitle: 'Contatti',
     loc: 'Milano e Parigi',
     whatsappCta: 'Scrivici su WhatsApp',
-    collabLabel: 'PER MODELLE E CREATIVI',
-    collabTitle: 'Stai costruendo il tuo portfolio a Milano?',
-    collabText1: 'MEOCY collabora con modelle e creativi a Milano per realizzare immagini fashion, editoriali e di portfolio di grande impatto.',
-    collabText2: 'Se sei una modella che costruisce il proprio portfolio, un creativo emergente o semplicemente vuoi realizzare nuovi lavori visivi, contattaci.',
-    collabButton: 'Collabora con MEOCY',
+    routeTitle: 'Non è un progetto commerciale?',
+    routeModels: 'Modelle, talent e agenzie di modelle:',
+    routeModelsCta: 'Collabora con MEOCY',
+    routeCrew: 'Crew creativa freelance:',
+    routeCrewCta: 'Lavora con MEOCY',
     projectOptions: [
       'Shooting moda / modelle',
       'Fotografia commerciale',
@@ -584,7 +584,6 @@ export const it: Dict = {
       'Ritratto / personal brand',
       'Video per i social media',
       'Produzione di contenuti completa (foto + video)',
-      'Collaborazione modelle / creativi',
       'Altro'
     ],
     briefWhat: 'Cosa fotografiamo?',
