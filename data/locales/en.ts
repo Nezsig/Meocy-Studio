@@ -363,7 +363,7 @@ export const en = {
 
   work: {
     title: 'Selected Work',
-    intro: 'A selection of photography and video created for brands, businesses, fashion, products and people in Milan.',
+    intro: 'A selection of photography and video created for brands, businesses, fashion, products and people.',
     all: 'All',
     fashion: 'Fashion',
     portrait: 'Portrait',

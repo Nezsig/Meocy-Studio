@@ -366,7 +366,7 @@ export const fr: Dict = {
 
   work: {
     title: 'Sélection de travaux',
-    intro: 'Une sélection de photographies et de vidéos réalisées pour des marques, des entreprises, la mode, des produits et des personnes à Milan.',
+    intro: 'Une sélection de photographies et de vidéos réalisées pour des marques, des entreprises, la mode, des produits et des personnes.',
     all: 'Tout',
     fashion: 'Mode',
     portrait: 'Portrait',

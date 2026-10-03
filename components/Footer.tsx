@@ -35,6 +35,17 @@ export function Footer() {
 
             {/* Social icons - 40px white containers with dark PNG icons */}
             <div className="flex gap-3 mb-4">
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/meocystudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
+                aria-label="MEOCY Studio on Instagram"
+              >
+                <Image src="/instagram.png" alt="Instagram" width={22} height={22} className="object-contain" />
+              </a>
+
               {/* WhatsApp */}
               <a
                 href="https://wa.me/393791051000"

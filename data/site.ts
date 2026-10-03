@@ -13,7 +13,8 @@ export const studioContact = {
   email: 'hello@meocy.com',
   phone: '+39 379 105 1000',
   phoneHref: 'tel:+393791051000',
-  whatsappHref: 'https://wa.me/393791051000'
+  whatsappHref: 'https://wa.me/393791051000',
+  instagramHref: 'https://www.instagram.com/meocystudio/'
 };
 
 export const projects: ProjectMeta[] = [

@@ -366,7 +366,7 @@ export const it: Dict = {
 
   work: {
     title: 'Lavori selezionati',
-    intro: 'Una selezione di fotografie e video realizzati per brand, aziende, moda, prodotti e persone a Milano.',
+    intro: 'Una selezione di fotografie e video realizzati per brand, aziende, moda, prodotti e persone.',
     all: 'Tutti',
     fashion: 'Moda',
     portrait: 'Ritratti',

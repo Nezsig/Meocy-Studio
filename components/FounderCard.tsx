@@ -80,6 +80,17 @@ export function FounderCard() {
           {/* Social icons row - 36px circles with hosted PNGs */}
           <div className="flex gap-3 items-center mb-3">
             <a
+              href="https://www.instagram.com/meocystudio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
+              title="Instagram"
+              aria-label="MEOCY Studio on Instagram"
+            >
+              <Image src="/ic-instagram.png" alt="Instagram" width={20} height={20} className="object-contain" />
+            </a>
+
+            <a
               href="https://wa.me/393791051000"
               target="_blank"
               rel="noopener noreferrer"
