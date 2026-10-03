@@ -1,20 +1,17 @@
 import { Metadata } from 'next';
+import { pageMetadata, SOCIAL_IMAGES } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
 import { WorkGallery } from '../../components/WorkGallery';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/work',
   title: 'Selected Work — Photography & Video in Milan | MEOCY',
   description:
     'A selection of photography and video created for brands, businesses, fashion, products and people in Milan.',
-  alternates: {
-    canonical: 'https://meocy.com/work',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+  image: SOCIAL_IMAGES.work,
+  indexable: true,
+});
 
 export default function WorkPage() {
   return (

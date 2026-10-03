@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
 import { MilanLegalSection } from '../../components/LegalPolicyPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/terms',
   title: 'Terms & Conditions — MEOCY',
-  description: 'Terms & Conditions for MEOCY Studio services: enquiries and bookings, Milan photoshoot requests, prices, payment, cancellation, portfolio use and liability.',
-  alternates: { canonical: 'https://meocy.com/terms' },
-};
+  description:
+    'Terms & Conditions for MEOCY Studio services: enquiries and bookings, Milan photoshoot requests, prices, payment, cancellation, portfolio use and liability.',
+});
 
 export default function TermsPage() {
   return (

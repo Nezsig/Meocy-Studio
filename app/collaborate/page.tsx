@@ -1,20 +1,16 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
 import { CollaboratePage } from '../../components/CollaboratePage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/collaborate',
   title: 'Collaborate With MEOCY — Models & Model Agencies in Milan',
   description:
     'MEOCY collaborates with models and model agencies in Milan on selected fashion, editorial and portfolio projects. Send your details.',
-  alternates: {
-    canonical: 'https://meocy.com/collaborate',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+  indexable: true,
+});
 
 export default function Collaborate() {
   return (

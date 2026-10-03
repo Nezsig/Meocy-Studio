@@ -8,32 +8,16 @@ import '@fontsource/instrument-serif/400-italic.css';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Providers } from './providers';
+import { DEFAULT_SOCIAL_IMAGE } from '../lib/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://meocy.com'),
   title: 'MEOCY — Photo & Video Studio in Milan',
   description:
     'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
-  openGraph: {
-    url: 'https://meocy.com',
-    type: 'website',
-    title: 'MEOCY — Photo & Video Studio in Milan',
-    description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
-    images: [
-      {
-        url: 'https://meocy.com/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'MEOCY — Photo & video studio in Milan',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'MEOCY — Photo & Video Studio in Milan',
-    description: 'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
-    images: ['https://meocy.com/og-image.png'],
-  },
+  // Site-wide fallbacks only (e.g. the 404 page). Pages set their own URL/title/description via pageMetadata().
+  openGraph: { type: 'website', siteName: 'MEOCY', locale: 'en_US', images: [DEFAULT_SOCIAL_IMAGE] },
+  twitter: { card: 'summary_large_image', images: [{ url: DEFAULT_SOCIAL_IMAGE.url, alt: DEFAULT_SOCIAL_IMAGE.alt }] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

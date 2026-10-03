@@ -1,14 +1,16 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
 import { LegalPolicyPage } from '../../components/LegalPolicyPage';
 import { refundDaysBefore } from '../../lib/milan-shoot-config';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/booking-policy',
   title: 'Booking Policy — MEOCY',
-  description: `Booking Policy for MEOCY Milan photoshoots: €50 deposit, refunded in full if you cancel at least ${refundDaysBefore} days before the shoot, date changes, manual confirmation and photo delivery.`,
-  alternates: { canonical: 'https://meocy.com/booking-policy' },
-};
+  description:
+    `Booking Policy for MEOCY Milan photoshoots: €50 deposit, refunded in full if you cancel at least ${refundDaysBefore} days before the shoot, date changes, manual confirmation and photo delivery.`,
+});
 
 export default function BookingPolicy() {
   return (

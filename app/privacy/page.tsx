@@ -1,14 +1,16 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '../../lib/seo';
 import { Nav } from '../../components/Nav';
 import { Footer } from '../../components/Footer';
 import { PrivacyCollabSection } from '../../components/PrivacyCollabSection';
 import { MilanLegalSection } from '../../components/LegalPolicyPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: '/privacy',
   title: 'Privacy Policy — MEOCY',
-  description: 'How MEOCY Studio collects, uses and keeps personal data from project requests, collaboration forms and Milan photoshoot booking requests, and your rights under GDPR.',
-  alternates: { canonical: 'https://meocy.com/privacy' },
-};
+  description:
+    'How MEOCY Studio collects, uses and keeps personal data from project requests, collaboration forms and Milan photoshoot booking requests, and your rights under GDPR.',
+});
 
 export default function PrivacyPage() {
   return (
