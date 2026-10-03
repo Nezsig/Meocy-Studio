@@ -20,7 +20,7 @@ export function PackagesTeaser() {
             {intro}
           </p>
           <Link
-            href="/packages"
+            href="/contact"
             className="mt-7 inline-flex min-h-[48px] items-center justify-center rounded-full bg-ink px-7 text-[15px] font-semibold text-chalk transition-transform duration-150 ease-smooth hover:-translate-y-0.5"
           >
             {cta}

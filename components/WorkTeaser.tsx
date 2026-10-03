@@ -50,7 +50,7 @@ export function WorkTeaser() {
         </div>
 
         <Link
-          href="/work"
+          href="/contact"
           className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-ink px-7 text-[15px] font-semibold text-chalk transition-transform duration-150 ease-smooth hover:-translate-y-0.5"
         >
           {ctaButton}
