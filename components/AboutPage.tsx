@@ -40,16 +40,6 @@ export function AboutPage() {
                 <p className="text-ink">{a.p3}</p>
               </div>
 
-              <p className="mt-8 rounded-2xl border border-accent px-5 py-4 text-[14px] leading-relaxed text-slate2">
-                {t.hero.rebrandCallout}
-              </p>
-
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-                {a.button}
-              </Link>
-
               <div className="mt-12">
                 <FounderCard />
               </div>

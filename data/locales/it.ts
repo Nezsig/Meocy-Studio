@@ -39,7 +39,6 @@ export const it: Dict = {
     studioCaption:
     'Milano, in location e con prodotti spediti — ogni angolo, ogni luce.',
 
-    rebrandCallout: 'Appena rinominato — settembre 2026. MEOCY è una ripartenza sotto un nuovo nome. Ci trovi proprio all\'inizio — quindi ricevi attenzione da founder su ogni shooting, e prezzi introduttivi mentre accogliamo i nostri primi brand.',
     noPackageNeeded: 'Nessun pacchetto necessario — raccontaci quello che vuoi e lo giriamo a modo tuo.',
     positionTitle: 'Fotografia e contenuti visivi a Milano.',
     positionText: 'Moda, brand, attività locali e persone — pianificato con chiarezza, scattato in modo professionale e consegnato pronto all\'uso.',
@@ -77,8 +76,7 @@ export const it: Dict = {
       email: 'hello@meocy.com',
       websiteLabel: 'W',
       website: 'meocy.com'
-    },
-    socialHandles: '@chamila.it · @chami.eu'
+    }
   },
 
   process: {
@@ -324,8 +322,7 @@ export const it: Dict = {
 
   footer: {
     brand: {
-      blurb: 'Studio foto e video a Milano. Brand di abbigliamento, modelle, moda, food e video.',
-      handles: '@chamila.it · @chami.eu'
+      blurb: 'Studio foto e video a Milano. Brand di abbigliamento, modelle, moda, food e video.'
     },
     contact: {
       phoneLabel: 'T',

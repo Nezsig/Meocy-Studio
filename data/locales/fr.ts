@@ -39,7 +39,6 @@ export const fr: Dict = {
     studioCaption:
     'Milan, en location et avec vos produits expédiés — tous les angles, toutes les lumières.',
 
-    rebrandCallout: 'Récemment rebaptisé — septembre 2026. MEOCY est une redémarrage sous un nouveau nom. Vous nous trouvez juste au début — donc vous recevez l\'attention d\'un fondateur sur chaque shooting, et les prix d\'introduction pendant que nous accueillons nos premiers brand.',
     noPackageNeeded: 'Aucun forfait requis — dites-nous ce que vous voulez et nous le tournerons à votre façon.',
     positionTitle: 'Photographie et contenu visuel à Milan.',
     positionText: 'Mode, marques, commerces locaux et particuliers — planifié clairement, photographié de façon professionnelle et livré prêt à l\'emploi.',
@@ -77,8 +76,7 @@ export const fr: Dict = {
       email: 'hello@meocy.com',
       websiteLabel: 'W',
       website: 'meocy.com'
-    },
-    socialHandles: '@chamila.it · @chami.eu'
+    }
   },
 
   process: {
@@ -324,8 +322,7 @@ export const fr: Dict = {
 
   footer: {
     brand: {
-      blurb: 'Studio photo et vidéo à Milan. Marques de vêtements, mannequins, mode, gastronomie et vidéo.',
-      handles: '@chamila.it · @chami.eu'
+      blurb: 'Studio photo et vidéo à Milan. Marques de vêtements, mannequins, mode, gastronomie et vidéo.'
     },
     contact: {
       phoneLabel: 'T',

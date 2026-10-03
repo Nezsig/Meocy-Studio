@@ -474,26 +474,6 @@ export function ContactPage() {
                 <div className="mt-6 pt-4 border-t border-ink/10">
                   <div className="flex gap-2">
                     <a
-                      href={studioContact.instagram1Href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
-                      title={studioContact.instagram1}
-                    >
-                      <Image src="/ic-instagram.png" alt={studioContact.instagram1} width={18} height={18} className="object-contain" />
-                    </a>
-
-                    <a
-                      href={studioContact.instagram2Href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
-                      title={studioContact.instagram2}
-                    >
-                      <Image src="/ic-instagram.png" alt={studioContact.instagram2} width={18} height={18} className="object-contain" />
-                    </a>
-
-                    <a
                       href={studioContact.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"

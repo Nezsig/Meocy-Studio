@@ -35,26 +35,6 @@ export function Footer() {
 
             {/* Social icons - 40px white containers with dark PNG icons */}
             <div className="flex gap-3 mb-4">
-              {/* Instagram @chamila.it */}
-              <a
-                href="https://instagram.com/chamila.it"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
-              >
-                <Image src="/instagram.png" alt="Instagram @chamila.it" width={22} height={22} className="object-contain" />
-              </a>
-
-              {/* Instagram @chami.eu */}
-              <a
-                href="https://instagram.com/chami.eu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
-              >
-                <Image src="/instagram.png" alt="Instagram @chami.eu" width={22} height={22} className="object-contain" />
-              </a>
-
               {/* WhatsApp */}
               <a
                 href="https://wa.me/393791051000"
@@ -75,11 +55,6 @@ export function Footer() {
                 <Image src="/world-wide-web.png" alt="Website" width={22} height={22} className="object-contain" />
               </a>
             </div>
-
-            {/* Social handles */}
-            <p className="text-xs text-[#9a998f]">
-              {t.footer.brand.handles}
-            </p>
           </div>
 
           {/* COLUMN 2: Contact */}

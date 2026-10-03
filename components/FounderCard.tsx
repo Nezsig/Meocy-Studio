@@ -80,26 +80,6 @@ export function FounderCard() {
           {/* Social icons row - 36px circles with hosted PNGs */}
           <div className="flex gap-3 items-center mb-3">
             <a
-              href="https://instagram.com/chamila.it"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
-              title="Instagram @chamila.it"
-            >
-              <Image src="/ic-instagram.png" alt="Instagram @chamila.it" width={20} height={20} className="object-contain" />
-            </a>
-
-            <a
-              href="https://instagram.com/chami.eu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
-              title="Instagram @chami.eu"
-            >
-              <Image src="/ic-instagram.png" alt="Instagram @chami.eu" width={20} height={20} className="object-contain" />
-            </a>
-
-            <a
               href="https://wa.me/393791051000"
               target="_blank"
               rel="noopener noreferrer"
@@ -119,9 +99,6 @@ export function FounderCard() {
               <Image src="/ic-web.png" alt="Website" width={20} height={20} className="object-contain" />
             </a>
           </div>
-
-          {/* Social handles line */}
-          <p className="text-[13px] text-slate2">{t.about.socialHandles}</p>
         </div>
       </div>
     </div>
