@@ -48,6 +48,11 @@ export const en = {
     }
   },
 
+  notFound: {
+    title: 'Page not found.',
+    text: 'The page you are looking for does not exist or has moved.'
+  },
+
   clients: { label: 'Selected clients' },
 
   about: {

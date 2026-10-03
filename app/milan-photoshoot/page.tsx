@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { MilanPhotoshootPage } from '../../components/milan/MilanPhotoshootPage';
 import { en } from '../../data/locales/en';
 import { currency, milanPackages, visibleFeatures } from '../../lib/milan-shoot-config';
+import { organizationJsonLd } from '../../lib/seo';
 
 const URL = 'https://meocy.com/milan-photoshoot';
 const m = en.milanShoot;
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Offers only — no ratings, reviews or street address.
+// Offers and provider only — no ratings or reviews.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -44,7 +45,7 @@ const jsonLd = {
   url: URL,
   description: m.seo.description,
   areaServed: { '@type': 'City', name: 'Milan' },
-  provider: { '@type': 'ProfessionalService', name: 'MEOCY', url: 'https://meocy.com', email: 'hello@meocy.com', telephone: '+39 379 105 1000' },
+  provider: organizationJsonLd,
   offers: milanPackages.map((p) => ({
     '@type': 'Offer',
     name: m.packages[p.id].name,

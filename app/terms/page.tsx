@@ -5,7 +5,8 @@ import { MilanLegalSection } from '../../components/LegalPolicyPage';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions — MEOCY',
-  description: 'Terms & Conditions for MEOCY Studio',
+  description: 'Terms & Conditions for MEOCY Studio services: enquiries and bookings, Milan photoshoot requests, prices, payment, cancellation, portfolio use and liability.',
+  alternates: { canonical: 'https://meocy.com/terms' },
 };
 
 export default function TermsPage() {

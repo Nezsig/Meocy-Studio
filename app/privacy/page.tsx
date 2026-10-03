@@ -6,7 +6,8 @@ import { MilanLegalSection } from '../../components/LegalPolicyPage';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — MEOCY',
-  description: 'Privacy Policy for MEOCY Studio',
+  description: 'How MEOCY Studio collects, uses and keeps personal data from project requests, collaboration forms and Milan photoshoot booking requests, and your rights under GDPR.',
+  alternates: { canonical: 'https://meocy.com/privacy' },
 };
 
 export default function PrivacyPage() {

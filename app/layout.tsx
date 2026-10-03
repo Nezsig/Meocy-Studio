@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   title: 'MEOCY — Photo & Video Studio in Milan',
   description:
     'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
-  alternates: {
-    canonical: 'https://meocy.com',
-  },
   openGraph: {
     url: 'https://meocy.com',
     type: 'website',

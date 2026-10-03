@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
+import { workItems } from '../data/work';
 
 const teaseImages = [
   { id: 'fashion-06', src: '/work/fashion-06.jpg', width: 1007, height: 857, alt: 'MEOCY fashion photography' },
@@ -37,7 +38,7 @@ export function WorkTeaser() {
               <div className="relative aspect-square overflow-hidden bg-slate1">
                 <Image
                   src={img.src}
-                  alt={img.alt}
+                  alt={workItems.find((w) => w.id === img.id)?.alt ?? img.alt}
                   width={img.width}
                   height={img.height}
                   className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105"

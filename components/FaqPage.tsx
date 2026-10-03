@@ -120,7 +120,7 @@ export function FaqPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[17px] text-slate2">{t.work.ctaText}</p>
           <Link
-            href="/#booking"
+            href="/contact"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
             {t.work.ctaButton}
           </Link>

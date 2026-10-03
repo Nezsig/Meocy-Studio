@@ -1,84 +1,25 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '../lib/seo';
+
+// Canonical, indexable public pages only. No lastModified/changeFrequency/priority:
+// the previous values (build time, guessed frequencies) carried no real information.
+const PATHS = [
+  '/',
+  '/work',
+  '/services',
+  '/packages',
+  '/milan-photoshoot',
+  '/about',
+  '/faq',
+  '/contact',
+  '/collaborate',
+  '/work-with-meocy',
+  '/privacy',
+  '/terms',
+  '/booking-policy',
+  '/cookie-policy',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://meocy.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://meocy.com/work',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://meocy.com/services',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://meocy.com/packages',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://meocy.com/about',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://meocy.com/faq',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://meocy.com/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://meocy.com/collaborate',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://meocy.com/milan-photoshoot',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://meocy.com/privacy',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://meocy.com/terms',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://meocy.com/booking-policy',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://meocy.com/cookie-policy',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-  ];
+  return PATHS.map((path) => ({ url: path === '/' ? SITE_URL : `${SITE_URL}${path}` }));
 }

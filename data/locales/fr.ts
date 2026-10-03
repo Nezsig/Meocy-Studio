@@ -51,6 +51,11 @@ export const fr: Dict = {
     }
   },
 
+  notFound: {
+    title: 'Page introuvable.',
+    text: 'La page que vous cherchez n\'existe pas ou a été déplacée.'
+  },
+
   clients: { label: 'Clients sélectionnés' },
 
   about: {

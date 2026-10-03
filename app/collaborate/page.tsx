@@ -4,9 +4,9 @@ import { Footer } from '../../components/Footer';
 import { CollaboratePage } from '../../components/CollaboratePage';
 
 export const metadata: Metadata = {
-  title: 'Work With MEOCY — Models, Agencies & Photographers in Milan',
+  title: 'Collaborate With MEOCY — Models & Model Agencies in Milan',
   description:
-    'Models, modeling agencies and photographers: see how MEOCY collaborates in Milan and send your details.',
+    'MEOCY collaborates with models and model agencies in Milan on selected fashion, editorial and portfolio projects. Send your details.',
   alternates: {
     canonical: 'https://meocy.com/collaborate',
   },
