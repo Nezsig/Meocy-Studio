@@ -6,7 +6,7 @@ export type { CollabTrack };
 export const COLLAB_TRACKS: CollabTrack[] = ['models', 'agencies'];
 
 type CollabDict = typeof en.collabPage;
-export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'needOptions';
+export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'needOptions' | 'genderOptions' | 'availabilityOptions' | 'shootTypeOptions';
 export type CollabLabelKey = {
   [K in keyof CollabDict]: CollabDict[K] extends string ? K : never;
 }[keyof CollabDict];
@@ -32,18 +32,24 @@ export const englishOptions = (key: CollabOptionsKey): string[] => en.collabPage
 
 export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
   models: [
-    { key: 'name', label: 'name', emailLabel: 'Name', kind: 'name', required: true, autoComplete: 'name' },
-    { key: 'email', label: 'email', emailLabel: 'Email', kind: 'email', required: true, autoComplete: 'email' },
-    { key: 'instagram', label: 'instagram', emailLabel: 'Instagram', kind: 'text', required: true, autoComplete: 'off' },
-    { key: 'portfolio', label: 'portfolio', emailLabel: 'Portfolio / photos link', kind: 'text', autoComplete: 'url' },
-    { key: 'city', label: 'city', emailLabel: 'City', kind: 'text', autoComplete: 'address-level2' },
-    { key: 'experience', label: 'experience', emailLabel: 'Experience', kind: 'select', options: 'experienceOptions' },
-    { key: 'represented', label: 'agencyQ', emailLabel: 'Represented by an agency', kind: 'select', options: 'agencyOptions' },
-    { key: 'agencyName', label: 'agencyName', emailLabel: 'Agency name', kind: 'text', autoComplete: 'off', showIf: { field: 'represented', equals: 'Yes' } },
-    { key: 'availability', label: 'availability', emailLabel: 'Availability', kind: 'text', autoComplete: 'off' },
-    { key: 'message', label: 'message', emailLabel: 'Message', kind: 'message' },
+    // Contact Details
+    { key: 'name', label: 'name', emailLabel: 'Full Name', kind: 'name', required: true, autoComplete: 'name' },
+    { key: 'email', label: 'email', emailLabel: 'Email Address', kind: 'email', required: true, autoComplete: 'email' },
+    { key: 'phone', label: 'phone', emailLabel: 'Phone / WhatsApp Number', kind: 'text', required: true, autoComplete: 'tel' },
+    { key: 'instagram', label: 'instagram', emailLabel: 'Instagram Username or Profile Link', kind: 'text', required: true, autoComplete: 'off' },
+    // Personal / Model Information
+    { key: 'age', label: 'age', emailLabel: 'Age', kind: 'text', required: true, autoComplete: 'off' },
+    { key: 'gender', label: 'gender', emailLabel: 'Gender', kind: 'select', options: 'genderOptions', required: false },
+    { key: 'location', label: 'location', emailLabel: 'Location / Area', kind: 'text', required: true, autoComplete: 'address-level2' },
+    { key: 'experience', label: 'experience', emailLabel: 'Modeling Experience', kind: 'select', options: 'experienceOptions' },
+    { key: 'portfolio', label: 'portfolio', emailLabel: 'Portfolio / Additional Social Link', kind: 'text', autoComplete: 'url' },
+    // Shoot Information
+    { key: 'availability', label: 'availability', emailLabel: 'Availability', kind: 'select', options: 'availabilityOptions', required: true },
+    { key: 'shootType', label: 'shootType', emailLabel: 'Type of Shoot Interested In', kind: 'select', options: 'shootTypeOptions' },
+    { key: 'message', label: 'message', emailLabel: 'Message / Tell Us About Yourself', kind: 'message' },
+    // Consent & Legal
     { key: 'over18', label: 'over18', emailLabel: 'Confirmed 18 or older', kind: 'check', required: true },
-    { key: 'consent', label: 'consent', emailLabel: 'Privacy consent', kind: 'check', required: true },
+    { key: 'consent', label: 'consent', emailLabel: 'Privacy consent and collaboration acknowledgment', kind: 'check', required: true },
   ],
   agencies: [
     { key: 'agencyName', label: 'agencyName', emailLabel: 'Agency name', kind: 'name', required: true, autoComplete: 'organization' },
@@ -65,3 +71,12 @@ export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
 export const greetingField = (track: CollabTrack) => (track === 'agencies' ? 'contactPerson' : 'name');
 /** Name used in the notification subject. */
 export const subjectField = (track: CollabTrack) => (track === 'agencies' ? 'agencyName' : 'name');
+
+// Gender options for models
+export const genderOptions = ['Female', 'Male', 'Prefer not to say'];
+
+// Availability options for models
+export const availabilityOptions = ['Weekdays', 'Weekends', 'Flexible'];
+
+// Type of shoot interested in options for models
+export const shootTypeOptions = ['Fashion', 'Portrait', 'Creative', 'Open to ideas'];

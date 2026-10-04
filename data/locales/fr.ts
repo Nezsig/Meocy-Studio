@@ -659,10 +659,30 @@ export const fr: Dict = {
     ],
     name: 'Nom',
     email: 'Email',
-    instagram: 'Instagram',
+    phone: 'Téléphone / Numéro WhatsApp',
+    instagram: 'Nom d\'utilisateur Instagram ou lien de profil',
+    age: 'Âge',
+    gender: 'Genre',
+    genderOptions: [
+      'Femme',
+      'Homme',
+      'Préfère ne pas dire'
+    ],
+    location: 'Localisation / Zone',
     portfolio: 'Lien portfolio / photos',
-    city: 'Ville',
     availability: 'Disponibilités',
+    availabilityOptions: [
+      'Jours de semaine',
+      'Weekends',
+      'Flexible'
+    ],
+    shootType: 'Type de Shooting qui vous intéresse',
+    shootTypeOptions: [
+      'Mode',
+      'Portrait',
+      'Créatif',
+      'Ouvert aux idées'
+    ],
     message: 'Message (facultatif)',
     experience: 'Expérience',
     experienceOptions: [
@@ -681,6 +701,7 @@ export const fr: Dict = {
     contactPerson: 'Interlocuteur',
     role: 'Votre rôle',
     website: 'Site web ou Instagram',
+    city: 'Ville',
     modelsCount: 'Nombre de mannequins / nouveaux visages',
     need: 'De quoi avez-vous besoin ?',
     needOptions: [

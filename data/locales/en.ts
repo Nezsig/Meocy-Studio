@@ -656,10 +656,30 @@ export const en = {
     ],
     name: 'Name',
     email: 'Email',
-    instagram: 'Instagram',
+    phone: 'Phone / WhatsApp Number',
+    instagram: 'Instagram Username or Profile Link',
+    age: 'Age',
+    gender: 'Gender',
+    genderOptions: [
+      'Female',
+      'Male',
+      'Prefer not to say'
+    ],
+    location: 'Location / Area',
     portfolio: 'Portfolio / photos link',
-    city: 'City',
     availability: 'Availability',
+    availabilityOptions: [
+      'Weekdays',
+      'Weekends',
+      'Flexible'
+    ],
+    shootType: 'Type of Shoot Interested In',
+    shootTypeOptions: [
+      'Fashion',
+      'Portrait',
+      'Creative',
+      'Open to ideas'
+    ],
     message: 'Message (optional)',
     experience: 'Experience',
     experienceOptions: [
@@ -678,6 +698,7 @@ export const en = {
     contactPerson: 'Contact person',
     role: 'Your role',
     website: 'Website or Instagram',
+    city: 'City',
     modelsCount: 'Number of models / new faces',
     need: 'What do you need?',
     needOptions: [
