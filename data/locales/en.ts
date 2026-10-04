@@ -410,7 +410,7 @@ export const en = {
     packageLabel: 'Package',
     includesLabel: 'Includes',
     idealLabel: 'Ideal for',
-    photoTitle: 'Photography Packages',
+    photoTitle: 'Photography & Content Packages',
     videoTitle: 'Video Production',
     videoIntro: 'Short-form commercial video created for social media, websites and digital advertising.',
     extrasTitle: 'Optional Extras',
@@ -427,14 +427,6 @@ export const en = {
       includes: ['Up to 1.5 hours shooting', '1 location', '1 lighting setup', 'Up to 2 outfits or setups', '20 professionally edited photos', 'High-resolution files', 'Web and social media formats', 'Private online gallery'],
       ideal: ['Small businesses', 'Personal brands', 'Professionals', 'Simple product shoots', 'Restaurants and local businesses'],
       button: 'Book Photo Starter'
-    },
-    p2: {
-      name: 'Fashion / Model Shoot',
-      price: '€450',
-      desc: 'A fashion-focused production for models, creatives and fashion brands that need strong editorial or portfolio imagery.',
-      includes: ['Up to 2.5 hours shooting', '1 Milan location', 'Up to 3 outfits', '35 professionally edited photos', 'Professional lighting', 'Creative direction', 'Basic posing direction', 'High-resolution files', 'Social media formats', 'Private online gallery'],
-      ideal: ['Models', 'Fashion brands', 'Editorials', 'Lookbooks', 'Portfolio shoots', 'Fashion campaigns'],
-      button: 'Book Fashion Shoot'
     },
     p3: {
       name: 'Local Business Content',

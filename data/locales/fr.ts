@@ -413,7 +413,7 @@ export const fr: Dict = {
     packageLabel: 'Formule',
     includesLabel: 'Comprend',
     idealLabel: 'Idéal pour',
-    photoTitle: 'Formules photo',
+    photoTitle: 'Formules photo & contenu',
     videoTitle: 'Production vidéo',
     videoIntro: 'Courtes vidéos commerciales créées pour les réseaux sociaux, les sites web et la publicité digitale.',
     extrasTitle: 'Options supplémentaires',
@@ -430,14 +430,6 @@ export const fr: Dict = {
       includes: ['Jusqu\'à 1,5 heure de prise de vue', '1 lieu', '1 configuration d\'éclairage', 'Jusqu\'à 2 tenues ou mises en scène', '20 photos retouchées professionnellement', 'Fichiers haute résolution', 'Formats web et réseaux sociaux', 'Galerie en ligne privée'],
       ideal: ['Petites entreprises', 'Personal brands', 'Professionnels', 'Shootings produit simples', 'Restaurants et commerces locaux'],
       button: 'Réserver Photo Starter'
-    },
-    p2: {
-      name: 'Shooting Mode / Mannequins',
-      price: '€450',
-      desc: 'Une production axée sur la mode pour mannequins, créatifs et marques de mode qui ont besoin d\'images éditoriales ou de portfolio percutantes.',
-      includes: ['Jusqu\'à 2,5 heures de prise de vue', '1 lieu à Milan', 'Jusqu\'à 3 tenues', '35 photos retouchées professionnellement', 'Éclairage professionnel', 'Direction créative', 'Direction de pose de base', 'Fichiers haute résolution', 'Formats réseaux sociaux', 'Galerie en ligne privée'],
-      ideal: ['Mannequins', 'Marques de mode', 'Éditoriaux', 'Lookbooks', 'Shootings portfolio', 'Campagnes de mode'],
-      button: 'Réserver un shooting mode'
     },
     p3: {
       name: 'Contenus pour commerces locaux',

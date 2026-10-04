@@ -95,7 +95,7 @@ export function PackagesPage() {
   const { t } = useLanguage();
   const p = t.pkgPage;
   const labels = { packageLabel: p.packageLabel, includesLabel: p.includesLabel, idealLabel: p.idealLabel };
-  const photoPackages = [p.p1, p.p2, p.p3, p.p4, p.p5];
+  const photoPackages = [p.p1, p.p3, p.p4, p.p5];
   const videoPackages = [p.v1, p.v2, p.v3];
 
   return (
@@ -118,7 +118,7 @@ export function PackagesPage() {
             <SectionHeading title={p.photoTitle} />
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {photoPackages.map((pkg, i) => (
-                <PackageCard key={i} pkg={pkg} number={i + 1} labels={labels} featured={i === 4} />
+                <PackageCard key={i} pkg={pkg} number={i + 1} labels={labels} featured={i === 3} />
               ))}
             </div>
           </section>

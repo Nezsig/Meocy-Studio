@@ -413,7 +413,7 @@ export const it: Dict = {
     packageLabel: 'Pacchetto',
     includesLabel: 'Include',
     idealLabel: 'Ideale per',
-    photoTitle: 'Pacchetti fotografici',
+    photoTitle: 'Pacchetti Fotografia & Contenuti',
     videoTitle: 'Produzione video',
     videoIntro: 'Video commerciali brevi creati per social media, siti web e pubblicità digitale.',
     extrasTitle: 'Extra opzionali',
@@ -430,14 +430,6 @@ export const it: Dict = {
       includes: ['Fino a 1,5 ore di shooting', '1 location', '1 setup luci', 'Fino a 2 outfit o allestimenti', '20 foto professionalmente ritoccate', 'File ad alta risoluzione', 'Formati per web e social media', 'Galleria online privata'],
       ideal: ['Piccole attività', 'Personal brand', 'Professionisti', 'Semplici shooting di prodotto', 'Ristoranti e attività locali'],
       button: 'Prenota Photo Starter'
-    },
-    p2: {
-      name: 'Shooting Moda / Modelle',
-      price: '€450',
-      desc: 'Una produzione dedicata alla moda per modelle, creativi e brand di moda che hanno bisogno di immagini editoriali o di portfolio di grande impatto.',
-      includes: ['Fino a 2,5 ore di shooting', '1 location a Milano', 'Fino a 3 outfit', '35 foto professionalmente ritoccate', 'Illuminazione professionale', 'Direzione creativa', 'Direzione di base delle pose', 'File ad alta risoluzione', 'Formati per i social media', 'Galleria online privata'],
-      ideal: ['Modelle', 'Brand di moda', 'Editoriali', 'Lookbook', 'Shooting per portfolio', 'Campagne moda'],
-      button: 'Prenota shooting moda'
     },
     p3: {
       name: 'Contenuti per attività locali',
