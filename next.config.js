@@ -16,5 +16,20 @@ const nextConfig = {
       },
     ];
   },
+  // Permanent redirects for old Google-indexed URLs
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/booking',
+        destination: '/milan-photoshoot',
+        permanent: true,
+      },
+    ];
+  },
 };
 module.exports = nextConfig;
