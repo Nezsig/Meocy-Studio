@@ -61,7 +61,7 @@ export function buildConfirmationEmail(b: Booking, locale: Locale = 'it'): strin
   <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${t.rea}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${t.reb}</div></td></tr></table></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>
-<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan &amp; Paris<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
+<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
 </td></tr></table></body></html>`;
 }
 
@@ -103,7 +103,7 @@ export function buildCollabConfirmationEmail(name: string, locale: Locale = 'it'
     <p style="margin:20px 0 0;font-family:${sans};font-size:16px;line-height:1.6;color:#3a3a38">${t.body(esc(name))}</p></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>
-<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan &amp; Paris<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
+<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
 </td></tr></table></body></html>`;
 }
 
@@ -206,7 +206,7 @@ export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
   <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${t.depT}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${t.depB}</div></td></tr></table></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>
-<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan &amp; Paris<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
+<table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
 </td></tr></table></body></html>`;
 }
 

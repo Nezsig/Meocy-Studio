@@ -89,7 +89,7 @@ export function Booking() {
           <dl className="mt-10 grid max-w-md grid-cols-2 gap-6 text-[14px]">
             <div>
               <dt className="text-chalk/45">{t.booking.studioLabel}</dt>
-              <dd className="mt-1">Milan & Paris</dd>
+              <dd className="mt-1">Milan</dd>
             </div>
             <div>
               <dt className="text-chalk/45">{t.booking.languagesLabel}</dt>

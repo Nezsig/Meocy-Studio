@@ -133,6 +133,17 @@ export function PackagesPage() {
           </section>
 
           <section className="mt-24">
+            <SectionHeading title={p.monthlyTitle} intro={p.monthlyIntro} />
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <PackageCard pkg={p.monthly} number={photoPackages.length + videoPackages.length + 1} labels={labels} />
+            </div>
+            <div className="mt-10 max-w-3xl rounded-2xl border border-mist bg-chalk p-6 sm:p-8">
+              <p className="text-[15px] leading-relaxed text-slate2">{p.monthlyPayment}</p>
+              <p className="mt-4 text-[14px] leading-relaxed text-slate2">{p.monthlyNote}</p>
+            </div>
+          </section>
+
+          <section className="mt-24">
             <SectionHeading title={p.extrasTitle} intro={p.extrasIntro} />
             <ul className="mt-10 grid grid-cols-1 gap-x-12 md:grid-cols-2">
               {p.extras.map((extra) => (

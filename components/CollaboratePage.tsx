@@ -355,9 +355,11 @@ export function CollaboratePage() {
             {st === 'sent' ? (
               <div className="flex min-h-[320px] flex-col items-start justify-center" role="status">
                 <CheckCircle2Icon size={30} className="text-ink" aria-hidden />
-                <h2 className="mt-4 font-display text-[2.2rem] leading-tight tracking-tighter-display">{c.successTitle}</h2>
+                <h2 className="mt-4 font-display text-[2.2rem] leading-tight tracking-tighter-display">
+                  {active === 'agencies' ? c.successTitleAgency : c.successTitle}
+                </h2>
                 <p className="mt-3 max-w-md text-[15.5px] leading-relaxed text-slate2">
-                  {(c.successBody || '').replace('{name}', sentName[active])}
+                  {active === 'agencies' ? c.successBodyAgency : (c.successBody || '').replace('{name}', sentName[active])}
                 </p>
                 <button
                   type="button"

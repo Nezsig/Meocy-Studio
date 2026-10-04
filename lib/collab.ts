@@ -6,7 +6,7 @@ export type { CollabTrack };
 export const COLLAB_TRACKS: CollabTrack[] = ['models', 'agencies'];
 
 type CollabDict = typeof en.collabPage;
-export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'needOptions' | 'genderOptions' | 'availabilityOptions' | 'shootTypeOptions';
+export type CollabOptionsKey = 'experienceOptions' | 'agencyOptions' | 'needOptions' | 'agencyNeedOptions' | 'genderOptions' | 'availabilityOptions' | 'shootTypeOptions';
 export type CollabLabelKey = {
   [K in keyof CollabDict]: CollabDict[K] extends string ? K : never;
 }[keyof CollabDict];
@@ -52,18 +52,17 @@ export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
     { key: 'consent', label: 'consent', emailLabel: 'Privacy consent and collaboration acknowledgment', kind: 'check', required: true },
   ],
   agencies: [
-    { key: 'agencyName', label: 'agencyName', emailLabel: 'Agency name', kind: 'name', required: true, autoComplete: 'organization' },
-    { key: 'contactPerson', label: 'contactPerson', emailLabel: 'Contact person', kind: 'name', required: true, autoComplete: 'name' },
-    { key: 'role', label: 'role', emailLabel: 'Role', kind: 'text', autoComplete: 'organization-title' },
-    { key: 'email', label: 'email', emailLabel: 'Email', kind: 'email', required: true, autoComplete: 'email' },
-    { key: 'website', label: 'website', emailLabel: 'Website or Instagram', kind: 'text', required: true, autoComplete: 'url' },
-    { key: 'city', label: 'city', emailLabel: 'City', kind: 'text', autoComplete: 'address-level2' },
-    { key: 'modelsCount', label: 'modelsCount', emailLabel: 'Number of models / new faces', kind: 'text', autoComplete: 'off' },
-    { key: 'need', label: 'need', emailLabel: 'Need', kind: 'select', options: 'needOptions' },
-    { key: 'boardLink', label: 'boardLink', emailLabel: 'Model board link', kind: 'text', autoComplete: 'off' },
-    { key: 'timeframe', label: 'timeframe', emailLabel: 'Timeframe / deadline', kind: 'text', autoComplete: 'off' },
-    { key: 'message', label: 'message', emailLabel: 'Message', kind: 'message' },
-    { key: 'consent', label: 'consent', emailLabel: 'Privacy consent', kind: 'check', required: true },
+    { key: 'agencyName', label: 'agencyName', emailLabel: 'Agency Name', kind: 'name', required: true, autoComplete: 'organization' },
+    { key: 'contactPerson', label: 'contactPerson', emailLabel: 'Contact Person', kind: 'name', required: true, autoComplete: 'name' },
+    { key: 'email', label: 'email', emailLabel: 'Email Address', kind: 'email', required: true, autoComplete: 'email' },
+    { key: 'phone', label: 'phone', emailLabel: 'Phone / WhatsApp', kind: 'text', autoComplete: 'tel' },
+    { key: 'website', label: 'website', emailLabel: 'Agency Website', kind: 'text', autoComplete: 'url' },
+    { key: 'instagram', label: 'instagram', emailLabel: 'Agency Instagram', kind: 'text', autoComplete: 'off' },
+    { key: 'need', label: 'need', emailLabel: 'What are you looking for?', kind: 'select', options: 'agencyNeedOptions', required: true },
+    { key: 'modelsCount', label: 'modelsCount', emailLabel: 'Number of Models', kind: 'text', autoComplete: 'off' },
+    { key: 'timeframe', label: 'timeframe', emailLabel: 'Preferred Date / Timeframe', kind: 'text', autoComplete: 'off' },
+    { key: 'message', label: 'message', emailLabel: 'Project Details / Message', kind: 'message', required: true },
+    { key: 'consent', label: 'consent', emailLabel: 'Privacy consent and project inquiry acknowledgment', kind: 'check', required: true },
   ],
 };
 
@@ -80,3 +79,6 @@ export const availabilityOptions = ['Weekdays', 'Weekends', 'Flexible'];
 
 // Type of shoot interested in options for models
 export const shootTypeOptions = ['Fashion', 'Portrait', 'Creative', 'Open to ideas'];
+
+// What agencies are looking for options
+export const agencyNeedOptions = ['Model Test Shoot', 'Portfolio / Book Update', 'Digitals', 'Fashion / Editorial Shoot', 'Photo + Video Content', 'Commercial Project', 'Other'];

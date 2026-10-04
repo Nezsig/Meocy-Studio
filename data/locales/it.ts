@@ -487,6 +487,18 @@ export const it: Dict = {
       ideal: [],
       button: 'Richiedi un preventivo video'
     },
+    monthlyTitle: 'Contenuti Ricorrenti',
+    monthlyIntro: 'Per aziende che hanno bisogno di contenuti visivi professionali freschi ogni mese.',
+    monthly: {
+      name: 'Contenuti Mensili',
+      price: 'Da €550 / mese',
+      desc: 'Pensato per ristoranti, caffetterie, brand di moda/abbigliamento e aziende che hanno bisogno di contenuti visivi professionali freschi ogni mese.',
+      includes: ['2 shooting on-location al mese', 'Fino a 1,5–2 ore per shooting', '30–40 foto professionalmente ritoccate al mese', '6 video brevi verticali al mese', 'Editing e color grading professionali', 'Contenuti adatti a siti web e social media', 'Piano di produzione mensile concordato con il cliente', 'Tipi di contenuti flessibili: prodotti, cibo, interni, staff, lifestyle, atmosfera brand'],
+      ideal: ['Ristoranti', 'Caffetterie', 'Brand di moda', 'Brand di abbigliamento', 'Aziende in crescita', 'Brand focalizzati sui social'],
+      button: 'Discuti Contenuti Mensili →'
+    },
+    monthlyPayment: 'Pagamento: 50% anticipato per confermare la prenotazione mensile, 50% prima della consegna dei contenuti mensili finali',
+    monthlyNote: 'MEOCY fornisce servizi di fotografia e produzione video professionale. Questo pacchetto non include gestione account social media, pubblicazione, scrittura di didascalie, gestione della community o gestione della pubblicità.',
     extras: [
       { label: 'Ora di shooting extra', price: '€150' },
       { label: 'Foto ritoccata extra', price: '€15 / immagine' },
@@ -501,7 +513,7 @@ export const it: Dict = {
     title: 'Chi è MEOCY',
     headline: 'La persona dietro la fotocamera',
     p1: 'MEOCY è stato fondato da Chamila, fotografo originario dello Sri Lanka che ha trascorso otto anni a costruire la sua carriera fotografica prima di trasferirsi in Italia.',
-    p2: 'Dopo un periodo lontano dalla fotocamera, torna alla fotografia a Milano e Parigi con un nuovo nome e un obiettivo chiaro: creare contenuti visivi professionali per brand, aziende, prodotti, modelle e persone.',
+    p2: 'Dopo un periodo lontano dalla fotocamera, torna alla fotografia a Milano con un nuovo nome e un obiettivo chiaro: creare contenuti visivi professionali per brand, aziende, prodotti, modelle e persone.',
     p3: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.',
     button: 'Inizia un progetto',
     whyTitle: 'Perché scegliere MEOCY?',
@@ -509,7 +521,7 @@ export const it: Dict = {
       { t: 'Coinvolgimento diretto del fondatore', d: 'Lavorando con MEOCY, lavori direttamente con il fondatore, dal primo brief alla consegna finale.' },
       { t: 'Pianificato prima dello shooting', d: 'Ogni produzione viene pianificata prima del giorno delle riprese: location, illuminazione, outfit, prodotti, tempistiche e consegne finali.' },
       { t: 'Contenuti pensati per le piattaforme reali', d: 'Foto e video sono creati pensando al loro utilizzo finale: siti web, social media, pubblicità e campagne.' },
-      { t: 'Con base a Milano e Parigi', d: 'Con sede a Milano e Parigi, con produzione on location in entrambe le città e nelle zone limitrofe.' },
+      { t: 'Con base a Milano', d: 'Con sede a Milano, con produzione on location in tutta la città e nelle zone limitrofe.' },
       { t: 'Prezzi chiari', d: 'L\'ambito della produzione e il prezzo finale vengono concordati prima dello shooting, quindi nessun costo di produzione inatteso.' }
     ],
     eqTitle: 'Attrezzatura professionale',
@@ -548,7 +560,7 @@ export const it: Dict = {
       { q: 'Noleggio studio e costi delle location sono inclusi?', a: ['Non automaticamente. Noleggio studio, permessi, location specializzate e altri costi di produzione di terze parti vengono quotati a parte quando necessari.'] },
       { q: 'Quanto tempo richiede la consegna?', a: ['La consegna standard delle foto è di 7–10 giorni lavorativi.', 'La consegna standard dei video è di 7–14 giorni lavorativi.', 'La consegna prioritaria può essere disponibile su richiesta.'] },
       { q: 'In quali lingue lavorate?', a: ['English, Italiano, Français'] },
-      { q: 'Dove ha sede MEOCY?', a: ['Milano e Parigi.'] }
+      { q: 'Dove ha sede MEOCY?', a: ['Milano, Italia.'] }
     ]
   },
 
@@ -580,7 +592,7 @@ export const it: Dict = {
     successBody: 'Grazie {name} — una conferma sta arrivando a {email}. Ti risponderemo entro un giorno lavorativo.',
     another: 'Invia un\'altra richiesta',
     detailsTitle: 'Contatti',
-    loc: 'Milano e Parigi',
+    loc: 'Milano',
     whatsappCta: 'Scrivici su WhatsApp',
     routeTitle: 'Non è un progetto commerciale?',
     routeModels: 'Modelle, talent e agenzie di modelle:',
@@ -644,18 +656,18 @@ export const it: Dict = {
     ],
     mPaidNote: 'Vuoi prenotare uno shooting fotografico privato di portfolio?',
     mPaidLink: 'Scopri i pacchetti fotografici',
-    aIntro: 'Test e collaborazioni editoriali selezionati con modelle. New faces • Sviluppo portfolio • Test creativi',
+    aIntro: 'Stai cercando un fotografo per test modelle, aggiornamenti di portfolio o imminenti contenuti visivi? Raccontaci un po\' della tua agenzia e di cosa stai cercando. Esamineremo la tua richiesta e ti contatteremo per discutere dello shooting, della disponibilità e dei prossimi passi.',
     aOffer: [
-      'Test shoot selezionati e gratuiti per new faces e modelle',
-      'I test shoot sono per uso editoriale e portfolio',
-      'Concept, timing e consegne discussi in anticipo',
-      'Gli shooting commerciali vengono quotati a parte'
+      'MEOCY Studio collabora con agenzie di modelle su test shoot',
+      'Aggiornamenti di portfolio e book per il tuo talento',
+      'Digitals e fotografia di new face',
+      'Contenuti fashion e editoriali a Milano'
     ],
     aNeed: [
-      'Nome dell\'agenzia, referente e sito web o Instagram',
-      'Un link alla vostra model board o alle modelle che avete in mente',
-      'Di cosa avete bisogno: test shoot, digitals, comp card, lookbook o video',
-      'Le vostre tempistiche o scadenze progettuali'
+      'Il nome della tua agenzia e il referente',
+      'Cosa stai cercando e lo scopo',
+      'Numero di modelle e tempistica preferita',
+      'Dettagli sul progetto o concetto dello shooting'
     ],
     name: 'Nome',
     email: 'Email',
@@ -695,14 +707,14 @@ export const it: Dict = {
       'No',
       'Sì'
     ],
-    agencyName: 'Nome dell\'agenzia',
+    agencyName: 'Nome Agenzia',
     over18: 'Confermo di avere almeno 18 anni.',
     consent: 'Accetto che MEOCY utilizzi questi dati per rispondermi, come descritto nell\'Informativa sulla privacy.',
     contactPerson: 'Referente',
     role: 'Il tuo ruolo',
-    website: 'Sito web o Instagram',
+    website: 'Sito Web Agenzia',
     city: 'Città',
-    modelsCount: 'Numero di modelle / new faces',
+    modelsCount: 'Numero di Modelle',
     need: 'Di cosa avete bisogno?',
     needOptions: [
       'Test shoot per new faces',
@@ -712,10 +724,19 @@ export const it: Dict = {
       'Video',
       'Altro'
     ],
+    agencyNeedOptions: [
+      'Test Shoot Modelle',
+      'Aggiornamento Portfolio / Book',
+      'Digitals',
+      'Shooting Fashion / Editoriale',
+      'Contenuti Foto + Video',
+      'Progetto Commerciale',
+      'Altro'
+    ],
     boardLink: 'Link alla model board',
-    timeframe: 'Tempistiche / scadenza',
+    timeframe: 'Data Preferita / Tempistica',
     select: 'Seleziona…',
-    submit: 'Invia',
+    submit: 'Invia Richiesta Agenzia →',
     sending: 'Invio in corso…',
     errRequired: 'Compila i campi obbligatori.',
     errEmail: 'Inserisci un indirizzo email valido.',
@@ -724,6 +745,8 @@ export const it: Dict = {
     errGeneric: 'Qualcosa è andato storto. Riprova o scrivi a hello@meocy.com.',
     successTitle: 'Messaggio ricevuto.',
     successBody: 'Grazie {name} — leggo ogni messaggio personalmente. Se è adatto a un prossimo progetto, ti risponderò.',
+    successTitleAgency: 'Grazie per averci contattato.',
+    successBodyAgency: 'Abbiamo ricevuto la tua richiesta e esamineremo i dettagli. MEOCY Studio ti contatterà per discutere del progetto e dei prossimi passi.',
     another: 'Invia un altro messaggio'
   },
 

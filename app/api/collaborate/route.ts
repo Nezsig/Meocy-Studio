@@ -119,21 +119,23 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     // 1) Notification first (reply goes straight to the applicant). The Resend SDK reports failures in `error`.
+    const notificationSubject = track === 'agencies' ? `New Agency Enquiry — ${subjectName}` : `New collaboration request — ${collabTrackLabels[track]}: ${subjectName}`;
     const notification = await resend.emails.send({
       from: 'MEOCY STUDIO <hello@meocy.com>',
       to: ['hello@meocy.com', 'meocystudio@gmail.com'],
       replyTo: email,
-      subject: `New collaboration request — ${collabTrackLabels[track]}: ${subjectName}`,
+      subject: notificationSubject,
       html: buildCollabNotificationEmail(track, subjectName, rows),
     });
     if (notification.error) throw new Error(`notification failed: ${notification.error.message}`);
 
     // 2) Confirmation to the applicant (in their language). Already received, so a failure here is only logged.
+    const confirmationSubject = track === 'agencies' ? (locale === 'en' ? 'We received your enquiry — MEOCY Studio' : locale === 'it' ? 'Abbiamo ricevuto la tua richiesta — MEOCY STUDIO' : 'Nous avons reçu votre demande — MEOCY STUDIO') : collabSubjects[locale];
     const confirmation = await resend.emails.send({
       from: 'MEOCY STUDIO <hello@meocy.com>',
       to: email,
       replyTo: 'hello@meocy.com',
-      subject: collabSubjects[locale],
+      subject: confirmationSubject,
       html: buildCollabConfirmationEmail(greetingName, locale),
     });
     if (confirmation.error) console.error('collaborate route: confirmation failed', confirmation.error);

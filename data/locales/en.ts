@@ -484,6 +484,18 @@ export const en = {
       ideal: [] as string[],
       button: 'Request a Video Quote'
     },
+    monthlyTitle: 'Recurring Content',
+    monthlyIntro: 'For businesses that need fresh professional visual content every month.',
+    monthly: {
+      name: 'Monthly Content',
+      price: 'From €550 / month',
+      desc: 'Designed for restaurants, cafés, fashion/clothing brands and businesses that need fresh professional visual content every month.',
+      includes: ['2 on-location shoots per month', 'Up to 1.5–2 hours per shoot', '30–40 professionally edited photos per month', '6 short vertical video clips per month', 'Professional editing and colour grading', 'Content suitable for websites and social media', 'Monthly production plan agreed with client', 'Flexible content types: product, food, interiors, staff, lifestyle, brand atmosphere'],
+      ideal: ['Restaurants', 'Cafés', 'Fashion brands', 'Clothing brands', 'Growing businesses', 'Social media-focused brands'],
+      button: 'Discuss Monthly Content →'
+    },
+    monthlyPayment: 'Payment: 50% upfront to confirm monthly booking, 50% before final monthly content delivery',
+    monthlyNote: 'MEOCY provides professional photography and video production. This package does not include social media account management, posting, captions, community management or advertising management.',
     extras: [
       { label: 'Extra shooting hour', price: '€150' },
       { label: 'Extra edited photo', price: '€15 / image' },
@@ -498,7 +510,7 @@ export const en = {
     title: 'About MEOCY',
     headline: 'The Person Behind the Camera',
     p1: 'MEOCY is founded by Chamila, a photographer originally from Sri Lanka who spent eight years building his photography career before relocating to Italy.',
-    p2: 'After time away from the camera, he is returning to photography in Milan and Paris with a new name and a clear focus: creating professional visual content for brands, businesses, products, models and people.',
+    p2: 'After time away from the camera, he is returning to photography in Milan with a new name and a clear focus: creating professional visual content for brands, businesses, products, models and people.',
     p3: 'When you work with MEOCY, you work directly with the founder — from the first brief to the final delivery.',
     button: 'Start a project',
     whyTitle: 'Why Work With MEOCY?',
@@ -506,7 +518,7 @@ export const en = {
       { t: 'Direct founder involvement', d: 'When you work with MEOCY, you work directly with the founder from the first brief to the final delivery.' },
       { t: 'Planned before the shoot', d: 'Every production is planned before the shooting day, including locations, lighting, outfits, products, timing and final deliverables.' },
       { t: 'Content made for real platforms', d: 'Photography and video are created with their final use in mind — websites, social media, advertising and campaigns.' },
-      { t: 'Milan & Paris based', d: 'Based in Milan and Paris, with on-location production available across both cities and surrounding areas.' },
+      { t: 'Milan based', d: 'Based in Milan, Italy, with on-location production available throughout the city and surrounding areas.' },
       { t: 'Clear pricing', d: 'The production scope and final price are agreed before the shoot begins, so there are no unexpected production costs.' }
     ],
     eqTitle: 'Professional Equipment',
@@ -545,7 +557,7 @@ export const en = {
       { q: 'Are studio rental and location fees included?', a: ['Not automatically. Studio rental, permits, specialised locations and other third-party production costs are quoted separately when required.'] },
       { q: 'How long does delivery take?', a: ['Standard photo delivery is 7–10 working days.', 'Standard video delivery is 7–14 working days.', 'Priority delivery may be available on request.'] },
       { q: 'What languages do you work in?', a: ['English, Italiano, Français'] },
-      { q: 'Where is MEOCY based?', a: ['Milan and Paris.'] }
+      { q: 'Where is MEOCY based?', a: ['Milan, Italy.'] }
     ]
   },
 
@@ -577,7 +589,7 @@ export const en = {
     successBody: 'Thank you {name} — a confirmation is on its way to {email}. We\'ll reply within one working day.',
     another: 'Send another request',
     detailsTitle: 'Contact details',
-    loc: 'Milan & Paris',
+    loc: 'Milan',
     whatsappCta: 'Message on WhatsApp',
     routeTitle: 'Not a commercial project?',
     routeModels: 'Models, talent and model agencies:',
@@ -641,18 +653,18 @@ export const en = {
     ],
     mPaidNote: 'Looking to book a private portfolio shoot?',
     mPaidLink: 'View photography packages',
-    aIntro: 'Selected model test and editorial collaborations. New faces • Portfolio development • Creative tests',
+    aIntro: 'Looking for a photographer for model tests, portfolio updates or upcoming visual content? Tell us a little about your agency and what you\'re looking for. We\'ll review your enquiry and get back to you to discuss the shoot, availability and next steps.',
     aOffer: [
-      'Selected complimentary test shoots for new faces and models',
-      'Test shoots are for portfolio and editorial use',
-      'Concept, timing and deliverables discussed in advance',
-      'Commercial shoots quoted separately'
+      'MEOCY Studio works with model agencies on test shoots',
+      'Portfolio and book updates for your talent',
+      'Digitals and new-face photography',
+      'Fashion and editorial content in Milan'
     ],
     aNeed: [
-      'Agency name, contact person and website or Instagram',
-      'A link to your model board or the talent you have in mind',
-      'What you need: test shoots, digitals, comp cards, lookbook or video',
-      'Your timeframe or project deadlines'
+      'Your agency name and contact person',
+      'What you\'re looking for and the purpose',
+      'Number of models and preferred timeframe',
+      'Details about the project or shoot concept'
     ],
     name: 'Name',
     email: 'Email',
@@ -692,15 +704,15 @@ export const en = {
       'No',
       'Yes'
     ],
-    agencyName: 'Agency name',
+    agencyName: 'Agency Name',
     over18: 'I confirm that I am 18 or older.',
     consent: 'I agree that MEOCY may use these details to reply to me, as described in the Privacy Policy.',
-    contactPerson: 'Contact person',
+    contactPerson: 'Contact Person',
     role: 'Your role',
-    website: 'Website or Instagram',
+    website: 'Agency Website',
     city: 'City',
-    modelsCount: 'Number of models / new faces',
-    need: 'What do you need?',
+    modelsCount: 'Number of Models',
+    need: 'What are you looking for?',
     needOptions: [
       'Test shoots for new faces',
       'Digitals & polaroids',
@@ -709,10 +721,19 @@ export const en = {
       'Video',
       'Other'
     ],
+    agencyNeedOptions: [
+      'Model Test Shoot',
+      'Portfolio / Book Update',
+      'Digitals',
+      'Fashion / Editorial Shoot',
+      'Photo + Video Content',
+      'Commercial Project',
+      'Other'
+    ],
     boardLink: 'Link to model board',
-    timeframe: 'Timeframe / deadline',
+    timeframe: 'Preferred Date / Timeframe',
     select: 'Select…',
-    submit: 'Send',
+    submit: 'Send Agency Enquiry →',
     sending: 'Sending…',
     errRequired: 'Please fill in the required fields.',
     errEmail: 'Please enter a valid email address.',
@@ -721,6 +742,8 @@ export const en = {
     errGeneric: 'Something went wrong. Please try again or write to hello@meocy.com.',
     successTitle: 'Message received.',
     successBody: 'Thank you {name} — I read every message personally. If it\'s a good fit for an upcoming project, I\'ll get back to you.',
+    successTitleAgency: 'Thank you for getting in touch.',
+    successBodyAgency: 'We\'ve received your agency enquiry and will review the details. MEOCY Studio will contact you to discuss the project and next steps.',
     another: 'Send another message'
   },
 
