@@ -317,20 +317,28 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         return;
       }
 
-      try {
-        console.log('PayPal SDK ready, attempting to render Hosted Button');
-        console.log('Container ID: paypal-container-RXV8AKE2Q6VZQ exists:', !!container);
+      (async () => {
+        try {
+          console.log('PayPal SDK ready, attempting to render Hosted Button');
+          console.log('Container ID: paypal-container-RXV8AKE2Q6VZQ exists:', !!container);
 
-        window.paypal!.HostedButtons({
-          hostedButtonId: 'RXV8AKE2Q6VZQ',
-        }).render('#paypal-container-RXV8AKE2Q6VZQ');
+          const hostedButtons = window.paypal!.HostedButtons({
+            hostedButtonId: 'RXV8AKE2Q6VZQ',
+          });
 
-        console.log('PayPal HostedButtons.render() call completed');
-        setPaypalStatus('success');
-      } catch (e) {
-        console.error('PayPal HostedButtons.render() failed:', e instanceof Error ? e.message : String(e));
-        setPaypalStatus('error');
-      }
+          console.log('Created HostedButtons instance, calling render()');
+          const renderResult = hostedButtons.render('#paypal-container-RXV8AKE2Q6VZQ');
+
+          // Await the render operation (handle both Promise and potential sync return)
+          await Promise.resolve(renderResult);
+
+          console.log('PayPal HostedButtons.render() resolved successfully');
+          setPaypalStatus('success');
+        } catch (e) {
+          console.error('PayPal HostedButtons.render() rejected:', e instanceof Error ? e.message : String(e));
+          setPaypalStatus('error');
+        }
+      })();
     } else if (screen === 'done' && result && !window.paypal?.HostedButtons && sdkReady) {
       console.warn('Screen is done and result exists, but PayPal SDK HostedButtons not available despite sdkReady=true');
       setPaypalStatus('error');
