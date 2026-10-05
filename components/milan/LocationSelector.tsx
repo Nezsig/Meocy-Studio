@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
   milanLocations,
   milanPackages,
+  maxLocationsFor,
   type MilanLocationId,
   type MilanPackageId,
 } from '../../lib/milan-shoot-config';
@@ -26,6 +27,19 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
   // Location the visitor tried to add beyond what is included (waiting for an explicit "Add for €50").
   const [pending, setPending] = useState<MilanLocationId | null>(null);
   const [limitHit, setLimitHit] = useState(false);
+
+  // When packageId prop changes (e.g., from deep link, parent state, or inter-component navigation),
+  // validate that selected locations are still valid for the new package.
+  // This prevents stale location state when switching between packages via different UI paths.
+  useEffect(() => {
+    const max = maxLocationsFor(packageId);
+    if (selected.length > max) {
+      onSelectedChange(selected.slice(0, max));
+    }
+    // Reset transient UI state that's only meaningful in the context of the old package.
+    setPending(null);
+    setLimitHit(false);
+  }, [packageId, selected, onSelectedChange]);
 
   const extra = Math.max(0, selected.length - pkg.includedLocations);
   const extraTotal = extra * (pkg.extraLocationPrice ?? 0);
