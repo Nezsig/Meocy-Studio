@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description:
     'Photo & video studio in Milan creating content that grows your business. Fashion, product, food, and model shoots in-studio or on-location.',
   // Site-wide fallbacks only (e.g. the 404 page). Pages set their own URL/title/description via pageMetadata().
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
   openGraph: { type: 'website', siteName: 'MEOCY', locale: 'en_US', images: [DEFAULT_SOCIAL_IMAGE] },
   twitter: { card: 'summary_large_image', images: [{ url: DEFAULT_SOCIAL_IMAGE.url, alt: DEFAULT_SOCIAL_IMAGE.alt }] },
 };

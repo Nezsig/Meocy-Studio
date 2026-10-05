@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Light background -->
+  <rect width="256" height="256" fill="#F5F5F0"/>
+  <!-- Bold capital M -->
+  <text x="128" y="195" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="220" font-weight="700" text-anchor="middle" fill="#0B0B0C">M</text>
+</svg>
