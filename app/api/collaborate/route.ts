@@ -94,16 +94,23 @@ export async function POST(req: Request) {
         continue;
       }
 
+      // Normalize URLs: prepend https:// if protocol is missing
+      const normalizedValue =
+        f.kind === 'url' && value && !value.startsWith('http://') && !value.startsWith('https://')
+          ? `https://${value}`
+          : value;
+
       const ok =
         f.kind === 'name' ? value.length >= LIMITS.nameMin && value.length <= LIMITS.nameMax
         : f.kind === 'email' ? value.length <= LIMITS.email && EMAIL_RE.test(value)
         : f.kind === 'message' ? value.length <= LIMITS.message
         : f.kind === 'select' ? englishOptions(f.options!).includes(value)
         : f.kind === 'number' ? /^\d+$/.test(value) && parseInt(value, 10) >= LIMITS.heightMin && parseInt(value, 10) <= LIMITS.heightMax
-        : f.kind === 'url' ? value.length <= LIMITS.url && /^https?:\/\/.+/.test(value)
+        : f.kind === 'url' ? normalizedValue.length <= LIMITS.url && /^https?:\/\/.+/.test(normalizedValue)
         : value.length <= LIMITS.text;
       if (!ok) return bad(`Invalid field: ${f.key}`);
-      clean[f.key] = value;
+      // Store normalized value for URLs, original value for everything else
+      clean[f.key] = f.kind === 'url' ? normalizedValue : value;
     }
 
     const email = clean.email as string;

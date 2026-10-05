@@ -43,7 +43,7 @@ export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
     { key: 'gender', label: 'gender', emailLabel: 'Gender', kind: 'select', options: 'genderOptions', required: true },
     { key: 'location', label: 'location', emailLabel: 'Location / Area', kind: 'text', required: true, autoComplete: 'address-level2' },
     { key: 'experience', label: 'experience', emailLabel: 'Modeling Experience', kind: 'select', options: 'experienceOptions' },
-    { key: 'portfolio', label: 'portfolio', emailLabel: 'Recent Photos / Portfolio Link', kind: 'url', required: true, autoComplete: 'url' },
+    { key: 'portfolio', label: 'portfolio', emailLabel: 'Recent Photos / Portfolio Link', kind: 'url', required: false, autoComplete: 'url' },
     // Shoot Information
     { key: 'availability', label: 'availability', emailLabel: 'Availability', kind: 'select', options: 'availabilityOptions', required: true },
     { key: 'shootType', label: 'shootType', emailLabel: 'Type of Shoot Interested In', kind: 'select', options: 'shootTypeOptions' },

@@ -373,11 +373,11 @@ export function CollaboratePage() {
               <form key={active} ref={formRef} onSubmit={onSubmit} noValidate className="relative space-y-5">
                 {COLLAB_FIELDS[active].map(renderField)}
 
-                {/* Honeypot: hidden from people and assistive tech; bots that fill it are silently ignored. */}
-                <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-px w-px overflow-hidden">
-                  <label htmlFor={`cf-${active}-company-website`}>Company website</label>
+                {/* Honeypot: hidden from people, assistive tech, and autofill; bots that fill it are silently ignored. */}
+                <div aria-hidden="true" style={{ display: 'none' }}>
+                  <label htmlFor={`cf-${active}-website-hp`}>Website field</label>
                   <input
-                    id={`cf-${active}-company-website`}
+                    id={`cf-${active}-website-hp`}
                     name="company_website"
                     type="text"
                     tabIndex={-1}
