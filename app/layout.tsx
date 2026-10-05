@@ -7,6 +7,7 @@ import '@fontsource/instrument-serif/400.css';
 import '@fontsource/instrument-serif/400-italic.css';
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Providers } from './providers';
 import { DEFAULT_SOCIAL_IMAGE } from '../lib/seo';
 
@@ -23,6 +24,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics 4 */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZL81S630JL" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZL81S630JL');`}
+        </Script>
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>
