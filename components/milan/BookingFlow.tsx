@@ -29,6 +29,21 @@ const SCREENS: Screen[] = ['package', 'date', 'time', 'locations', 'details', 's
 // Screen → position in the 6-step progress indicator (Package, Date & Time, Locations, Details, Payment, Confirmation).
 const PROGRESS: Record<Screen, number> = { package: 0, date: 1, time: 1, locations: 2, details: 3, summary: 4, deposit: 4, done: 5 };
 
+// sessionStorage key for persisting booking confirmation across refresh
+const BOOKING_CONFIRMATION_KEY = 'meocy_milan_booking_confirmation';
+
+// Persisted booking confirmation data — includes minimum fields needed to reconstruct Step 6
+interface PersistedBookingConfirmation {
+  reference: string;
+  pricing: MilanPricing;
+  packageId: MilanPackageId;
+  date: string;
+  time: string;
+  locations: MilanLocationId[];
+  details: Details;
+  timestamp: number;
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[\d\s().-]+$/;
 const INTL_LOCALE = { en: 'en-GB', it: 'it-IT', fr: 'fr-FR' } as const;
@@ -68,6 +83,69 @@ const btnPrimary =
   'inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-60';
 const btnGhost =
   'inline-flex min-h-[52px] items-center justify-center gap-1.5 rounded-full px-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-chalk ring-1 ring-chalk/30 transition-colors hover:bg-chalk/10';
+
+// Validate and restore booking confirmation from sessionStorage if still valid (≤24 hours old)
+function getValidBookingConfirmation(): PersistedBookingConfirmation | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const stored = sessionStorage.getItem(BOOKING_CONFIRMATION_KEY);
+    if (!stored) return null;
+    const data = JSON.parse(stored) as unknown;
+    if (!isValidBookingConfirmation(data)) {
+      sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
+      return null;
+    }
+    const now = Date.now();
+    const ageMs = now - data.timestamp;
+    const maxAgeMs = 24 * 60 * 60 * 1000; // 24 hours
+    if (ageMs > maxAgeMs) {
+      sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
+      return null;
+    }
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+// Type guard: validate the stored confirmation has required fields
+function isValidBookingConfirmation(data: unknown): data is PersistedBookingConfirmation {
+  if (typeof data !== 'object' || data === null) return false;
+  const obj = data as Record<string, unknown>;
+  return (
+    typeof obj.reference === 'string' &&
+    obj.reference.length > 0 &&
+    typeof obj.timestamp === 'number' &&
+    typeof obj.packageId === 'string' &&
+    typeof obj.date === 'string' &&
+    typeof obj.time === 'string' &&
+    Array.isArray(obj.locations) &&
+    typeof obj.pricing === 'object' &&
+    obj.pricing !== null &&
+    typeof obj.details === 'object' &&
+    obj.details !== null
+  );
+}
+
+// Persist booking confirmation to sessionStorage
+function saveBookingConfirmation(confirmation: PersistedBookingConfirmation) {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.setItem(BOOKING_CONFIRMATION_KEY, JSON.stringify(confirmation));
+  } catch {
+    // Silently ignore storage errors (e.g., quota exceeded, private browsing)
+  }
+}
+
+// Clear booking confirmation from sessionStorage
+function clearBookingConfirmation() {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
+  } catch {
+    // Silently ignore
+  }
+}
 
 /** Payment-ready deposit block: shows a pay link only when a provider URL is configured. Never reports a payment. */
 function DepositPayment({ url, amount, labels }: { url: string; amount: string; labels: { title: string; currency: string; pending: string; button: string; policy: string; policyLink: string } }) {
@@ -174,6 +252,24 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   // Solution: Use ref to block at function entry before any async operations.
   const submissionLockRef = useRef(false);
   const submissionIdRef = useRef<string>('');
+
+  // On mount, restore booking confirmation from sessionStorage if it exists and is still valid
+  useEffect(() => {
+    const saved = getValidBookingConfirmation();
+    if (saved) {
+      // Restore all state from saved confirmation
+      setScreen('done');
+      setDate(saved.date);
+      setTime(saved.time);
+      setDetails(saved.details);
+      setResult({ reference: saved.reference, pricing: saved.pricing });
+      onLocationsChange(saved.locations);
+      onPackageChange(saved.packageId as MilanPackageId);
+      // Lock submission to prevent re-submission on restored screen
+      submissionLockRef.current = true;
+      setPaypalStatus('loading');
+    }
+  }, [onLocationsChange, onPackageChange]);
 
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
@@ -331,6 +427,17 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.reference) {
+        const confirmation: PersistedBookingConfirmation = {
+          reference: json.reference,
+          pricing: json.pricing,
+          packageId: pkg.id,
+          date,
+          time,
+          locations,
+          details,
+          timestamp: Date.now(),
+        };
+        saveBookingConfirmation(confirmation);
         setResult({ reference: json.reference, pricing: json.pricing });
         go('done');
         // On success, keep lock active (don't reset submissionLockRef).
@@ -361,6 +468,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   };
 
   const restart = () => {
+    clearBookingConfirmation();
     setResult(null);
     setDate('');
     setTime('');
