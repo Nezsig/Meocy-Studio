@@ -819,7 +819,13 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
                   <div className="mt-6 rounded-xl bg-chalk/[0.04] p-4">
                     <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{b.referenceHelper}</p>
-                    <p className="mt-2 font-display text-[1.5rem] leading-none text-accent">{result.reference}</p>
+                    <input
+                      type="text"
+                      readOnly
+                      value={result.reference}
+                      className="mt-2 block w-full rounded-lg bg-white px-3 py-2 text-[16px] font-display text-black placeholder-chalk/40 ring-1 ring-chalk/20 outline-none focus:ring-2 focus:ring-accent"
+                      aria-label="Booking reference"
+                    />
                   </div>
 
                   <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
