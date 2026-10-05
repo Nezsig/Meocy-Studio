@@ -246,6 +246,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const [submitError, setSubmitError] = useState('');
   const [result, setResult] = useState<{ reference: string; pricing: MilanPricing } | null>(null);
   const [paypalStatus, setPaypalStatus] = useState<'loading' | 'success' | 'error'>('loading');
+  const [sdkReady, setSdkReady] = useState(false);
 
   // Immediate synchronous lock to prevent duplicate submission even with rapid clicks.
   // Race: Two renders can execute submit before state setter completes.
@@ -262,6 +263,8 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
     const saved = getValidBookingConfirmation();
     if (saved) {
+      console.log('Restoring booking from sessionStorage:', saved.reference);
+      console.log('SDK ready at restoration time:', !!window.paypal?.HostedButtons);
       // Restore all state from saved confirmation
       setScreen('done');
       setDate(saved.date);
@@ -273,6 +276,8 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       // Lock submission to prevent re-submission on restored screen
       submissionLockRef.current = true;
       setPaypalStatus('loading');
+    } else {
+      console.log('No saved booking confirmation in sessionStorage');
     }
   }, []);
 
@@ -301,22 +306,36 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     }
   }, [pkg, date, locations, onLocationsChange]);
 
-  // Render PayPal Hosted Button when SDK is available and we're on the done screen
+  // Render PayPal Hosted Button when SDK is available and we're on the done screen.
+  // Include sdkReady in dependencies so effect re-runs when SDK loads after restoration.
   useEffect(() => {
-    if (screen === 'done' && result && window.paypal?.HostedButtons) {
+    if (screen === 'done' && result && window.paypal?.HostedButtons && paypalStatus !== 'success') {
+      const container = document.getElementById('paypal-container-RXV8AKE2Q6VZQ');
+      if (!container) {
+        console.warn('PayPal container #paypal-container-RXV8AKE2Q6VZQ not found in DOM');
+        setPaypalStatus('error');
+        return;
+      }
+
       try {
-        window.paypal.HostedButtons({
+        console.log('PayPal SDK ready, attempting to render Hosted Button');
+        console.log('Container ID: paypal-container-RXV8AKE2Q6VZQ exists:', !!container);
+
+        window.paypal!.HostedButtons({
           hostedButtonId: 'RXV8AKE2Q6VZQ',
         }).render('#paypal-container-RXV8AKE2Q6VZQ');
+
+        console.log('PayPal HostedButtons.render() call completed');
         setPaypalStatus('success');
       } catch (e) {
-        console.error('Failed to render PayPal Hosted Button:', e);
+        console.error('PayPal HostedButtons.render() failed:', e instanceof Error ? e.message : String(e));
         setPaypalStatus('error');
       }
-    } else if (screen === 'done' && result && !window.paypal?.HostedButtons) {
+    } else if (screen === 'done' && result && !window.paypal?.HostedButtons && sdkReady) {
+      console.warn('Screen is done and result exists, but PayPal SDK HostedButtons not available despite sdkReady=true');
       setPaypalStatus('error');
     }
-  }, [screen, result]);
+  }, [screen, result, sdkReady, paypalStatus]);
 
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
@@ -545,7 +564,11 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         src="https://www.paypal.com/sdk/js?client-id=BAA5vd5l9W7lC2oPGJeRKCd-W1iQeXDEmnYC8DmTVi9SuKcOeWLCJh_sz0m7YozR4MtdE68XHDJKWzbo04&components=hosted-buttons&disable-funding=venmo&currency=EUR"
         crossOrigin="anonymous"
         onLoad={() => {
-          // PayPal SDK loaded, button will render via useEffect when needed
+          console.log('PayPal SDK script loaded');
+          console.log('window.paypal available:', !!window.paypal);
+          console.log('window.paypal.HostedButtons available:', !!window.paypal?.HostedButtons);
+          // Signal that SDK is ready; PayPal render effect will retry on next dependency change
+          setSdkReady(true);
         }}
       />
 
