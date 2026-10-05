@@ -663,14 +663,16 @@ export const en = {
     phone: 'Phone / WhatsApp Number',
     instagram: 'Instagram Username or Profile Link',
     age: 'Age',
-    gender: 'Gender',
+    height: 'Height (cm) *',
+    gender: 'Gender *',
     genderOptions: [
       'Female',
       'Male',
       'Prefer not to say'
     ],
     location: 'Location / Area',
-    portfolio: 'Portfolio / photos link',
+    portfolio: 'Recent Photos / Portfolio Link *',
+    portfolioHelper: 'Share a link to recent photos, your portfolio, or an accessible online gallery.',
     availability: 'Availability',
     availabilityOptions: [
       'Weekdays',
@@ -725,7 +727,8 @@ export const en = {
     boardLink: 'Link to model board',
     timeframe: 'Preferred Date / Timeframe',
     select: 'Select…',
-    submit: 'Send Agency Enquiry →',
+    submitModels: 'Send Application →',
+    submitAgencies: 'Send Agency Enquiry →',
     sending: 'Sending…',
     errRequired: 'Please fill in the required fields.',
     errEmail: 'Please enter a valid email address.',

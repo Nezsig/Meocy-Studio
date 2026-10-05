@@ -274,13 +274,14 @@ export function CollaboratePage() {
         ) : (
           <input
             {...common}
-            type={f.kind === 'email' ? 'email' : 'text'}
-            inputMode={f.kind === 'email' ? 'email' : undefined}
-            maxLength={f.kind === 'name' ? LIMITS.nameMax : f.kind === 'email' ? LIMITS.email : LIMITS.text}
+            type={f.kind === 'email' ? 'email' : f.kind === 'url' ? 'url' : f.kind === 'number' ? 'number' : 'text'}
+            inputMode={f.kind === 'email' ? 'email' : f.kind === 'number' ? 'numeric' : undefined}
+            maxLength={f.kind === 'name' ? LIMITS.nameMax : f.kind === 'email' ? LIMITS.email : f.kind === 'url' ? LIMITS.url : LIMITS.text}
             onChange={(e) => setField(f.key, e.target.value)}
             className={fieldClass}
           />
         )}
+        {f.key === 'portfolio' && c.portfolioHelper && <p className="mt-1.5 text-[13px] text-slate2">{c.portfolioHelper}</p>}
         {fieldError(f.key)}
       </div>
     );
@@ -404,7 +405,7 @@ export function CollaboratePage() {
                       {c.sending}
                     </>
                   ) : (
-                    c.submit
+                    active === 'models' ? c.submitModels : c.submitAgencies
                   )}
                 </button>
               </form>

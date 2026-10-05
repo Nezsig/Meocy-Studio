@@ -16,7 +16,7 @@ export interface CollabField {
   label: CollabLabelKey;
   /** Label used in the notification email (always English). */
   emailLabel: string;
-  kind: 'name' | 'email' | 'text' | 'message' | 'select' | 'check';
+  kind: 'name' | 'email' | 'text' | 'message' | 'select' | 'check' | 'number' | 'url';
   required?: boolean;
   options?: CollabOptionsKey;
   autoComplete?: string;
@@ -24,7 +24,7 @@ export interface CollabField {
   showIf?: { field: string; equals: string };
 }
 
-export const LIMITS = { nameMin: 2, nameMax: 100, text: 300, message: 2000, email: 254 };
+export const LIMITS = { nameMin: 2, nameMax: 100, text: 300, message: 2000, email: 254, heightMin: 100, heightMax: 250, url: 2048 };
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Select values are exchanged as the English option label, whatever the page language.
@@ -39,10 +39,11 @@ export const COLLAB_FIELDS: Record<CollabTrack, CollabField[]> = {
     { key: 'instagram', label: 'instagram', emailLabel: 'Instagram Username or Profile Link', kind: 'text', required: true, autoComplete: 'off' },
     // Personal / Model Information
     { key: 'age', label: 'age', emailLabel: 'Age', kind: 'text', required: true, autoComplete: 'off' },
-    { key: 'gender', label: 'gender', emailLabel: 'Gender', kind: 'select', options: 'genderOptions', required: false },
+    { key: 'height', label: 'height', emailLabel: 'Height (cm)', kind: 'number', required: true, autoComplete: 'off' },
+    { key: 'gender', label: 'gender', emailLabel: 'Gender', kind: 'select', options: 'genderOptions', required: true },
     { key: 'location', label: 'location', emailLabel: 'Location / Area', kind: 'text', required: true, autoComplete: 'address-level2' },
     { key: 'experience', label: 'experience', emailLabel: 'Modeling Experience', kind: 'select', options: 'experienceOptions' },
-    { key: 'portfolio', label: 'portfolio', emailLabel: 'Portfolio / Additional Social Link', kind: 'text', autoComplete: 'url' },
+    { key: 'portfolio', label: 'portfolio', emailLabel: 'Recent Photos / Portfolio Link', kind: 'url', required: true, autoComplete: 'url' },
     // Shoot Information
     { key: 'availability', label: 'availability', emailLabel: 'Availability', kind: 'select', options: 'availabilityOptions', required: true },
     { key: 'shootType', label: 'shootType', emailLabel: 'Type of Shoot Interested In', kind: 'select', options: 'shootTypeOptions' },

@@ -666,14 +666,16 @@ export const fr: Dict = {
     phone: 'Téléphone / Numéro WhatsApp',
     instagram: 'Nom d\'utilisateur Instagram ou lien de profil',
     age: 'Âge',
-    gender: 'Genre',
+    height: 'Taille (cm) *',
+    gender: 'Genre *',
     genderOptions: [
       'Femme',
       'Homme',
       'Préfère ne pas dire'
     ],
     location: 'Localisation / Zone',
-    portfolio: 'Lien portfolio / photos',
+    portfolio: 'Lien photos récentes / Portfolio *',
+    portfolioHelper: 'Partagez un lien vers vos photos récentes, votre portfolio ou une galerie en ligne accessible.',
     availability: 'Disponibilités',
     availabilityOptions: [
       'Jours de semaine',
@@ -728,7 +730,8 @@ export const fr: Dict = {
     boardLink: 'Lien vers le model board',
     timeframe: 'Date Préférée / Calendrier',
     select: 'Sélectionner…',
-    submit: 'Envoyer la demande d\'Agence →',
+    submitModels: 'Envoyer la candidature →',
+    submitAgencies: 'Envoyer la demande d\'Agence →',
     sending: 'Envoi en cours…',
     errRequired: 'Veuillez remplir les champs obligatoires.',
     errEmail: 'Veuillez saisir une adresse email valide.',

@@ -99,6 +99,8 @@ export async function POST(req: Request) {
         : f.kind === 'email' ? value.length <= LIMITS.email && EMAIL_RE.test(value)
         : f.kind === 'message' ? value.length <= LIMITS.message
         : f.kind === 'select' ? englishOptions(f.options!).includes(value)
+        : f.kind === 'number' ? /^\d+$/.test(value) && parseInt(value, 10) >= LIMITS.heightMin && parseInt(value, 10) <= LIMITS.heightMax
+        : f.kind === 'url' ? value.length <= LIMITS.url && /^https?:\/\/.+/.test(value)
         : value.length <= LIMITS.text;
       if (!ok) return bad(`Invalid field: ${f.key}`);
       clean[f.key] = value;
