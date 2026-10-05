@@ -153,8 +153,8 @@ export const privateGalleryEnabled = false;
 /** Show placeholder tiles in gallery until couple photos arrive. Set to true to render placeholders, false to show only real images. */
 export const showGalleryPlaceholders = false;
 
-/** Link where the €50 deposit is paid (set in Step 2). Empty = not available yet. */
-export const depositPaymentUrl = '';
+/** Link where the €50 deposit is paid (PayPal payment link). */
+export const depositPaymentUrl = 'https://www.paypal.com/ncp/payment/RXV8AKE2Q6VZQ';
 
 /** Working day ends at this time (24h format). Used for duration-aware slot calculation. */
 export const availabilityEndTime = '22:00';

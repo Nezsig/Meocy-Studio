@@ -1,6 +1,7 @@
 'use client';
 import { FormPrivacyNotice } from '../FormPrivacyNotice';
 import React, { useEffect, useRef, useMemo, useState } from 'react';
+import Script from 'next/script';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
@@ -31,6 +32,17 @@ const PROGRESS: Record<Screen, number> = { package: 0, date: 1, time: 1, locatio
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[\d\s().-]+$/;
 const INTL_LOCALE = { en: 'en-GB', it: 'it-IT', fr: 'fr-FR' } as const;
+
+// PayPal Hosted Button type declaration
+declare global {
+  interface Window {
+    paypal?: {
+      HostedButtons: (config: { hostedButtonId: string }) => {
+        render: (selector: string) => void;
+      };
+    };
+  }
+}
 
 interface Details {
   name: string;
@@ -186,6 +198,20 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       }
     }
   }, [pkg, date, locations, onLocationsChange]);
+
+  // Render PayPal Hosted Button when SDK is available and we're on the done screen
+  useEffect(() => {
+    if (screen === 'done' && result && window.paypal?.HostedButtons) {
+      try {
+        window.paypal.HostedButtons({
+          hostedButtonId: 'RXV8AKE2Q6VZQ',
+        }).render('#paypal-container-RXV8AKE2Q6VZQ');
+      } catch (e) {
+        console.error('Failed to render PayPal Hosted Button:', e);
+      }
+    }
+  }, [screen, result]);
+
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
     d ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`)) : '';
@@ -396,6 +422,15 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
   return (
     <div>
+      {/* PayPal SDK - loaded asynchronously */}
+      <Script
+        src="https://www.paypal.com/sdk/js?client-id=BAA5vd5l9W7lC2oPGJeRKCd-W1iQeXDEmnYC8DmTVi9SuKcOeWLCJh_sz0m7YozR4MtdE68XHDJKWzbo04&components=hosted-buttons&disable-funding=venmo&currency=EUR"
+        crossOrigin="anonymous"
+        onLoad={() => {
+          // PayPal SDK loaded, button will render via useEffect when needed
+        }}
+      />
+
       {/* Progress indicator */}
       <ol className="grid grid-cols-6 gap-1.5" aria-label={fmt(b.stepOf, { n: step + 1, total: b.progress.length })}>
         {b.progress.map((label, i) => (
@@ -618,9 +653,41 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
               </div>
             </div>
             <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-chalk/65">{fillRefund(b.payPolicy)}</p>
+
+            {/* Secure Your Booking - PayPal Payment Section */}
+            <div className="mt-10 rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-8">
+              <h3 className="font-display text-[1.85rem] leading-[1.08] tracking-tighter-display">{b.secureBooking}</h3>
+              <p className="mt-4 text-[15px] leading-relaxed text-chalk/85">{b.secureBookingText}</p>
+
+              <div className="mt-6 rounded-xl bg-chalk/[0.04] p-4">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{b.referenceHelper}</p>
+                <p className="mt-2 font-display text-[1.5rem] leading-none text-accent">{result.reference}</p>
+              </div>
+
+              <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
+
+              {/* PayPal Hosted Button Container */}
+              <div className="mt-6 flex justify-center">
+                <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full max-w-md"></div>
+              </div>
+
+              {/* Fallback Button if PayPal SDK fails to load */}
+              {depositPaymentUrl && (
+                <div className="mt-4 flex flex-col">
+                  <a
+                    href={depositPaymentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
+                    {b.paypalFallback}
+                  </a>
+                  <p className="mt-2 text-center text-[12px] text-chalk/55">If the payment button above does not appear, click here to pay via PayPal</p>
+                </div>
+              )}
+            </div>
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waToMeocy} target="_blank" rel="noopener noreferrer" className={btnPrimary}>{b.waCta}</a>
-              {depositPaymentUrl && <a href={depositPaymentUrl} target="_blank" rel="noopener noreferrer" className={btnGhost}>{b.payButton}</a>}
               <button type="button" onClick={restart} className={btnGhost}>{b.another}</button>
             </div>
           </div>
