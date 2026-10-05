@@ -817,8 +817,8 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                   <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
                 </div>
 
-                {/* Right: PayPal Button */}
-                <div className="flex flex-col items-center lg:items-start">
+                {/* Right: PayPal Button - Light Card */}
+                <div className="flex flex-col items-center lg:items-start rounded-2xl bg-[#F2F2EF] p-6 sm:p-8 ring-1 ring-chalk/15">
                   <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full"></div>
 
                   {/* Fallback Button - only show if PayPal rendering failed */}
@@ -831,7 +831,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                         className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
                         {b.paypalFallback}
                       </a>
-                      <p className="text-center text-[12px] text-chalk/55">If the payment button above does not appear, click here to pay via PayPal</p>
+                      <p className="text-center text-[12px] text-ink/60">If the payment button above does not appear, click here to pay via PayPal</p>
                     </div>
                   )}
                 </div>
