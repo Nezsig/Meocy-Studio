@@ -167,6 +167,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const [sending, setSending] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [result, setResult] = useState<{ reference: string; pricing: MilanPricing } | null>(null);
+  const [paypalStatus, setPaypalStatus] = useState<'loading' | 'success' | 'error'>('loading');
 
   // Immediate synchronous lock to prevent duplicate submission even with rapid clicks.
   // Race: Two renders can execute submit before state setter completes.
@@ -206,9 +207,13 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         window.paypal.HostedButtons({
           hostedButtonId: 'RXV8AKE2Q6VZQ',
         }).render('#paypal-container-RXV8AKE2Q6VZQ');
+        setPaypalStatus('success');
       } catch (e) {
         console.error('Failed to render PayPal Hosted Button:', e);
+        setPaypalStatus('error');
       }
+    } else if (screen === 'done' && result && !window.paypal?.HostedButtons) {
+      setPaypalStatus('error');
     }
   }, [screen, result]);
 
@@ -671,13 +676,13 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
               <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
 
-              {/* PayPal Hosted Button Container */}
+              {/* PayPal Hosted Button Container - enlarged to 560px max width */}
               <div className="mt-6 flex justify-center">
-                <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full max-w-md"></div>
+                <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full" style={{ maxWidth: '560px' }}></div>
               </div>
 
-              {/* Fallback Button if PayPal SDK fails to load */}
-              {depositPaymentUrl && (
+              {/* Fallback Button - only show if PayPal rendering failed */}
+              {paypalStatus === 'error' && depositPaymentUrl && (
                 <div className="mt-4 flex flex-col">
                   <a
                     href={depositPaymentUrl}
