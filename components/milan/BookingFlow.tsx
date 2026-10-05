@@ -252,9 +252,14 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   // Solution: Use ref to block at function entry before any async operations.
   const submissionLockRef = useRef(false);
   const submissionIdRef = useRef<string>('');
+  const restorationAttemptedRef = useRef(false);
 
-  // On mount, restore booking confirmation from sessionStorage if it exists and is still valid
+  // On mount, restore booking confirmation from sessionStorage if it exists and is still valid.
+  // Use ref to ensure restoration only happens once, regardless of callback recreations.
   useEffect(() => {
+    if (restorationAttemptedRef.current) return;
+    restorationAttemptedRef.current = true;
+
     const saved = getValidBookingConfirmation();
     if (saved) {
       // Restore all state from saved confirmation
@@ -269,7 +274,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       submissionLockRef.current = true;
       setPaypalStatus('loading');
     }
-  }, [onLocationsChange, onPackageChange]);
+  }, []);
 
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
@@ -775,33 +780,39 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             {/* Secure Your Booking - PayPal Payment Section */}
             <div className="mt-10 rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-8">
               <h3 className="font-display text-[1.85rem] leading-[1.08] tracking-tighter-display">{b.secureBooking}</h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-chalk/85">{b.secureBookingText}</p>
 
-              <div className="mt-6 rounded-xl bg-chalk/[0.04] p-4">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{b.referenceHelper}</p>
-                <p className="mt-2 font-display text-[1.5rem] leading-none text-accent">{result.reference}</p>
-              </div>
+              <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:items-start">
+                {/* Left: Booking info and PayPal */}
+                <div>
+                  <p className="text-[15px] leading-relaxed text-chalk/85">{b.secureBookingText}</p>
 
-              <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
+                  <div className="mt-6 rounded-xl bg-chalk/[0.04] p-4">
+                    <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{b.referenceHelper}</p>
+                    <p className="mt-2 font-display text-[1.5rem] leading-none text-accent">{result.reference}</p>
+                  </div>
 
-              {/* PayPal Hosted Button Container - enlarged to 560px max width */}
-              <div className="mt-6 flex justify-center">
-                <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full" style={{ maxWidth: '560px' }}></div>
-              </div>
-
-              {/* Fallback Button - only show if PayPal rendering failed */}
-              {paypalStatus === 'error' && depositPaymentUrl && (
-                <div className="mt-4 flex flex-col">
-                  <a
-                    href={depositPaymentUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-                    {b.paypalFallback}
-                  </a>
-                  <p className="mt-2 text-center text-[12px] text-chalk/55">If the payment button above does not appear, click here to pay via PayPal</p>
+                  <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
                 </div>
-              )}
+
+                {/* Right: PayPal Button */}
+                <div className="flex flex-col items-center lg:items-start">
+                  <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full"></div>
+
+                  {/* Fallback Button - only show if PayPal rendering failed */}
+                  {paypalStatus === 'error' && depositPaymentUrl && (
+                    <div className="mt-4 w-full flex flex-col gap-2">
+                      <a
+                        href={depositPaymentUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
+                        {b.paypalFallback}
+                      </a>
+                      <p className="text-center text-[12px] text-chalk/55">If the payment button above does not appear, click here to pay via PayPal</p>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
