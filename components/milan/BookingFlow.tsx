@@ -623,11 +623,16 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
         {screen === 'deposit' && pricing && (
           <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
-            <DepositPayment
-              url={depositPaymentUrl}
-              amount={money(depositAmount)}
-              labels={{ title: b.payTitle, currency: b.payCurrency, pending: b.payPending, button: b.payButton, policy: fillRefund(b.payPolicy), policyLink: b.policyLink }}
-            />
+            {/* Deposit information display - NO payment button on Step 5, only after booking submission */}
+            <div className="rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-7">
+              <p className="font-display text-[2.4rem] leading-none tracking-tighter-display text-accent">{money(depositAmount)}</p>
+              <h4 className="mt-3 text-[16px] font-semibold">{b.payTitle}</h4>
+              <p className="mt-1 text-[13.5px] text-chalk/60">{b.payCurrency}</p>
+              <p className="mt-5 text-[13.5px] leading-relaxed text-chalk/65">{fillRefund(b.payPolicy)}</p>
+              <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium text-chalk underline decoration-accent decoration-2 underline-offset-4">
+                {b.policyLink}
+              </a>
+            </div>
             <div className="rounded-2xl bg-chalk/[0.06] p-6 text-[14.5px] ring-1 ring-chalk/15">
               <p className="font-semibold">{m.packages[pkg!.id].name} · {money(pricing.total)}</p>
               <p className="mt-1 text-chalk/65">{longDate(date)} · {time}</p>
