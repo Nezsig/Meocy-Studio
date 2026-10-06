@@ -1158,6 +1158,10 @@ export const fr: Dict = {
         {
           q: 'Puis-je réserver pour une famille ou un groupe plus grand ?',
           a: 'Les expériences sont pensées pour les couples et les duos. Pour une famille ou un groupe plus grand, contactez-nous et nous en parlerons.'
+        },
+        {
+          q: 'Que se passe-t-il s\'il pleut ?',
+          a: 'Si la pluie ou de mauvaises conditions météorologiques rendent la séance impraticable, nous pouvons convenir d\'une nouvelle date sans frais supplémentaires, sous réserve de disponibilité. Une pluie légère ou une météo variable n\'entraîne pas automatiquement l\'annulation de la séance : nous confirmerons avec vous la meilleure option.'
         }
       ]
     },

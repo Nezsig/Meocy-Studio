@@ -1155,6 +1155,10 @@ export const en = {
         {
           q: 'Can I book for a family or larger group?',
           a: 'The experiences are designed for couples and two-person groups. For a family or a larger group, get in touch and we\'ll discuss what\'s possible.'
+        },
+        {
+          q: 'What happens if it rains?',
+          a: 'If rain or severe weather makes the shoot impractical, we can arrange a new date at no extra charge, subject to availability. Light rain or changeable weather does not automatically cancel the shoot — we\'ll confirm the best option with you.'
         }
       ]
     },

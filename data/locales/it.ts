@@ -1158,6 +1158,10 @@ export const it: Dict = {
         {
           q: 'Posso prenotare per una famiglia o un gruppo più numeroso?',
           a: 'Le esperienze sono pensate per coppie e gruppi di due persone. Per una famiglia o un gruppo più numeroso, contattateci e ne parleremo insieme.'
+        },
+        {
+          q: 'Cosa succede se piove?',
+          a: 'Se la pioggia o il maltempo rendono il servizio fotografico impraticabile, possiamo concordare una nuova data senza costi aggiuntivi, in base alla disponibilità. Pioggia leggera o tempo variabile non comportano automaticamente la cancellazione del servizio: valuteremo insieme l\'opzione migliore.'
         }
       ]
     },
