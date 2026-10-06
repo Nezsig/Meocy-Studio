@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useMemo, useState } from 'react';
 import Script from 'next/script';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { trackBookingEvent } from '../../lib/ga-booking';
 import {
   computePricing,
   depositAmount,
@@ -254,6 +255,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const submissionLockRef = useRef(false);
   const submissionIdRef = useRef<string>('');
   const restorationAttemptedRef = useRef(false);
+  const formStartTrackedRef = useRef(false);
 
   // On mount, restore booking confirmation from sessionStorage if it exists and is still valid.
   // Use ref to ensure restoration only happens once, regardless of callback recreations.
@@ -276,10 +278,20 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       // Lock submission to prevent re-submission on restored screen
       submissionLockRef.current = true;
       setPaypalStatus('loading');
+      // Mark form_start as already tracked since this is a restored session
+      formStartTrackedRef.current = true;
     } else {
       console.log('No saved booking confirmation in sessionStorage');
     }
   }, []);
+
+  // Track form_start once on first screen change (not on restoration)
+  useEffect(() => {
+    if (screen !== 'package' && !formStartTrackedRef.current) {
+      formStartTrackedRef.current = true;
+      trackBookingEvent('booking_form_start');
+    }
+  }, [screen]);
 
   const pkg = milanPackages.find((p) => p.id === packageId) ?? null;
   const pricing = pkg ? computePricing(pkg.id, locations.length) : null;
@@ -356,6 +368,19 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     // Move focus to the new step's heading so keyboard and screen-reader users land on the new step.
     window.requestAnimationFrame(() => document.querySelector<HTMLElement>('#booking h3[tabindex="-1"]')?.focus({ preventScroll: true }));
+    // Track step view event
+    const stepNumber = PROGRESS[s];
+    const stepNames: Record<Screen, string> = {
+      package: 'Package Selection',
+      date: 'Date & Time Selection',
+      time: 'Date & Time Selection',
+      locations: 'Location Selection',
+      details: 'Personal Details',
+      summary: 'Review & Payment',
+      deposit: 'Payment Processing',
+      done: 'Booking Confirmation',
+    };
+    trackBookingEvent('booking_step_view', { step_number: stepNumber, step_name: stepNames[s] });
   };
 
   const choosePackage = (id: MilanPackageId) => {
@@ -415,6 +440,9 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (Object.keys(e).length) {
       const first = Object.keys(e)[0];
       document.getElementById(`mb-${first}`)?.focus();
+      // Track validation error
+      const stepNumber = PROGRESS[screen];
+      trackBookingEvent('booking_validation_error', { step_number: stepNumber, field_name: first });
       return;
     }
     go(SCREENS[SCREENS.indexOf(screen) + 1]);
@@ -436,6 +464,9 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (!submissionIdRef.current) {
       submissionIdRef.current = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     }
+
+    // Track submit attempt
+    trackBookingEvent('booking_submit_attempt');
 
     try {
       const res = await fetch('/api/milan/request', {
@@ -471,6 +502,8 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         };
         saveBookingConfirmation(confirmation);
         setResult({ reference: json.reference, pricing: json.pricing });
+        // Track successful submission
+        trackBookingEvent('booking_submit_success');
         go('done');
         // On success, keep lock active (don't reset submissionLockRef).
         // User stays on 'done' screen; they cannot re-submit from there.

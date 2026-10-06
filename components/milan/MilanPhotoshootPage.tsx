@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { trackBookingEvent } from '../../lib/ga-booking';
 import {
   milanLocations,
   milanPackages,
@@ -122,7 +123,13 @@ export function MilanPhotoshootPage() {
           <h1 className="max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">{m.hero.title}</h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-chalk/75 sm:text-[18px]">{m.hero.text}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <button type="button" onClick={() => goToBooking()} className={ctaPrimary}>
+            <button
+              type="button"
+              onClick={() => {
+                trackBookingEvent('booking_cta_click');
+                goToBooking();
+              }}
+              className={ctaPrimary}>
               {m.hero.ctaPrimary}
             </button>
             <a href={`https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(m.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostDark}>
