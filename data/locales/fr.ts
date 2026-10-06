@@ -818,6 +818,8 @@ export const fr: Dict = {
       text: 'Photographie de couple professionnelle à Milan — du Duomo à Brera et au-delà. Choisissez votre expérience, vos lieux, et repartez de Milan avec des photos à garder.',
       ctaPrimary: 'RÉSERVER VOTRE SÉANCE À MILAN',
       ctaSecondary: 'DÉCOUVRIR LES FORMULES',
+      ctaWhatsapp: 'DEMANDER SUR WHATSAPP',
+      whatsappMessage: 'Bonjour MEOCY Studio, je suis intéressé(e) par une séance photo à Milan et j\'aimerais avoir quelques informations.',
       trust: 'Photographie professionnelle • Lieux à Milan • Images retouchées en haute résolution'
     },
     intro: {

@@ -818,6 +818,8 @@ export const it: Dict = {
       text: 'Fotografia di coppia professionale a Milano — dal Duomo a Brera e oltre. Scegliete l\'esperienza, le location e lasciate Milano con fotografie da conservare.',
       ctaPrimary: 'PRENOTA IL TUO SHOOTING A MILANO',
       ctaSecondary: 'SCOPRI I PACCHETTI',
+      ctaWhatsapp: 'CHIEDI SU WHATSAPP',
+      whatsappMessage: 'Ciao MEOCY Studio, sono interessato/a a un servizio fotografico a Milano e vorrei alcune informazioni.',
       trust: 'Fotografia professionale • Location a Milano • Immagini ritoccate ad alta risoluzione'
     },
     intro: {

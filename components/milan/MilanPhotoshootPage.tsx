@@ -7,6 +7,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import {
   milanLocations,
   milanPackages,
+  milanContact,
   visibleFeatures,
   showGalleryPlaceholders,
   type MilanLocationId,
@@ -124,8 +125,8 @@ export function MilanPhotoshootPage() {
             <button type="button" onClick={() => goToBooking()} className={ctaPrimary}>
               {m.hero.ctaPrimary}
             </button>
-            <a href="#packages" className={ctaGhostDark}>
-              {m.hero.ctaSecondary}
+            <a href={`https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(m.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostDark}>
+              {m.hero.ctaWhatsapp}
             </a>
           </div>
           <p className="mt-8 text-[12.5px] tracking-[0.04em] text-chalk/55">{m.hero.trust}</p>

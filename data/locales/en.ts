@@ -815,6 +815,8 @@ export const en = {
       text: 'Professional couple photography in Milan — from the Duomo to Brera and beyond. Choose your experience, pick your locations, and leave Milan with photographs worth keeping.',
       ctaPrimary: 'BOOK YOUR MILAN SHOOT',
       ctaSecondary: 'EXPLORE PACKAGES',
+      ctaWhatsapp: 'ASK ON WHATSAPP',
+      whatsappMessage: 'Hi MEOCY Studio, I\'m interested in a Milan photoshoot and would like some information.',
       trust: 'Professional photography • Milan locations • Edited high-resolution images'
     },
     intro: {
