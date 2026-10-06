@@ -1045,6 +1045,8 @@ export const fr: Dict = {
       sumNone: 'Aucun',
       sumDeposit: 'Acompte de réservation',
       sumRemaining: 'Solde restant',
+      sumDelivery: 'Livraison des photos',
+      deliveryTime: 'Les photos retouchées sont livrées sous 7 à 10 jours ouvrables',
       depositHeadline: 'Acompte de réservation : 50 €',
       remainingLine: 'Solde restant : {amount}',
       payTitle: 'Acompte de réservation de 50 €',

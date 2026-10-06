@@ -1042,6 +1042,8 @@ export const en = {
       sumNone: 'None',
       sumDeposit: 'Booking deposit',
       sumRemaining: 'Remaining balance',
+      sumDelivery: 'Photo delivery',
+      deliveryTime: 'Edited photos delivered within 7–10 working days',
       depositHeadline: 'Booking deposit: €50',
       remainingLine: 'Remaining balance: {amount}',
       payTitle: '€50 booking deposit',

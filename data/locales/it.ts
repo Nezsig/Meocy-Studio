@@ -1045,6 +1045,8 @@ export const it: Dict = {
       sumNone: 'Nessuna',
       sumDeposit: 'Acconto di prenotazione',
       sumRemaining: 'Saldo restante',
+      sumDelivery: 'Consegna foto',
+      deliveryTime: 'Foto modificate consegnate entro 7–10 giorni lavorativi',
       depositHeadline: 'Acconto di prenotazione: €50',
       remainingLine: 'Saldo restante: {amount}',
       payTitle: 'Acconto di prenotazione di €50',

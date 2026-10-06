@@ -537,7 +537,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (pr.extraLocations > 0) {
       rows.push([b.sumExtra, `${pr.extraLocations} × ${money(pr.extraLocationPrice)} = ${money(pr.extraLocationsTotal)}`]);
     }
-    rows.push([b.sumDeposit, money(pr.deposit)], [b.sumRemaining, money(pr.remaining)]);
+    rows.push([b.sumDeposit, money(pr.deposit)], [b.sumRemaining, money(pr.remaining)], [b.sumDelivery, b.deliveryTime]);
     return rows;
   };
   const summaryRows = rowsFor(pricing);
