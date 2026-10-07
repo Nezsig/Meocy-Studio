@@ -16,7 +16,10 @@ const PARIS = {
   arcSunset: { src: '/paris/arc-de-triomphe-sunset.jpg', width: 1500, height: 2000 },
   arcNight: { src: '/paris/arc-de-triomphe-night.jpg', width: 1500, height: 2000 },
   seine: { src: '/paris/pont-alexandre-iii-seine.jpg', width: 1500, height: 2000 },
-  statue: { src: '/paris/pont-alexandre-iii-statue.jpg', width: 1500, height: 2000 },
+  eiffelGardens: { src: '/paris/eiffel-tower-gardens.jpg', width: 1500, height: 2000 },
+  eiffelRain: { src: '/paris/eiffel-tower-rain.jpg', width: 1500, height: 2000 },
+  reflections: { src: '/paris/pont-alexandre-iii-reflections.jpg', width: 1500, height: 2000 },
+  pillars: { src: '/paris/pont-alexandre-iii-pillars.jpg', width: 1500, height: 2000 },
 };
 
 // Real MEOCY portrait / lifestyle work. NOT taken in Paris — captioned as such on the page.
@@ -138,7 +141,13 @@ export function ParisPhotoshootPage() {
           </div>
           <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
             <figure className="relative col-span-2 aspect-[4/5] overflow-hidden rounded-[22px] sm:aspect-[16/12] lg:col-span-2 lg:row-span-2 lg:aspect-auto">
-              <Image src={PARIS.arcSunset.src} alt={p.gallery.arcSunset} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover object-[50%_45%]" />
+              <Image src={PARIS.eiffelGardens.src} alt={p.gallery.eiffelGardens} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover object-[55%_35%]" />
+            </figure>
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
+              <Image src={PARIS.arcSunset.src} alt={p.gallery.arcSunset} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[50%_45%]" />
+            </figure>
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
+              <Image src={PARIS.pillars.src} alt={p.gallery.pillars} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[55%_40%]" />
             </figure>
             <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
               <Image src={PARIS.seine.src} alt={p.gallery.seine} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[45%_50%]" />
@@ -146,10 +155,10 @@ export function ParisPhotoshootPage() {
             <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
               <Image src={PARIS.arcNight.src} alt={p.gallery.arcNight} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[50%_40%]" />
             </figure>
-            <figure className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-[22px] lg:aspect-auto">
-              <Image src={PARIS.statue.src} alt={p.gallery.statue} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover object-[50%_40%]" />
-            </figure>
           </div>
+          <figure className="relative mt-3 aspect-[16/10] overflow-hidden rounded-[22px] sm:mt-4 sm:aspect-[21/9]">
+            <Image src={PARIS.reflections.src} alt={p.gallery.reflections} fill sizes="(min-width: 1240px) 1176px, 100vw" className="object-cover object-[50%_58%]" />
+          </figure>
         </div>
       </section>
 
@@ -326,20 +335,25 @@ export function ParisPhotoshootPage() {
         </div>
       </section>
 
-      {/* 10 — FINAL CTA: real Eiffel Tower photograph */}
+      {/* 10 — FINAL CTA: real Eiffel Tower photograph (full-bleed on mobile, right-hand panel on desktop so the whole tower shows) */}
       <section className="relative isolate overflow-hidden bg-ink text-chalk">
-        <Image src={PARIS.eiffel.src} alt={p.hero.imageAlt} fill sizes="100vw" className="-z-10 object-cover object-[50%_38%]" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/15 sm:from-ink/85 sm:via-ink/40 sm:to-ink/10" />
-        <div className="mx-auto flex min-h-[72svh] max-w-[1240px] flex-col justify-end px-5 py-20 sm:px-8 sm:py-24">
-          <h2 className="max-w-3xl font-display text-[clamp(2.6rem,7vw,5.4rem)] leading-[1] tracking-tighter-display">{p.final.title}</h2>
-          <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-chalk/85">{p.final.text}</p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <button type="button" onClick={() => goToBooking()} className={ctaPrimary}>
-              {p.final.ctaPrimary}
-            </button>
-            <a href="#packages" className={ctaGhostDark}>
-              {p.final.ctaSecondary}
-            </a>
+        <div className="absolute inset-0 -z-10 lg:left-auto lg:w-[46%]">
+          <Image src={PARIS.eiffelRain.src} alt={p.gallery.eiffelRain} fill sizes="(min-width: 1024px) 46vw, 100vw" className="object-cover object-[50%_45%] lg:object-[50%_38%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/15 sm:from-ink/85 sm:via-ink/40 sm:to-ink/10 lg:hidden" />
+          <div className="absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-ink to-transparent lg:block" />
+        </div>
+        <div className="mx-auto flex min-h-[72svh] max-w-[1240px] flex-col justify-end px-5 py-20 sm:px-8 sm:py-24 lg:min-h-[760px] lg:justify-center">
+          <div className="lg:max-w-[52%]">
+            <h2 className="max-w-3xl font-display text-[clamp(2.6rem,6vw,5rem)] leading-[1] tracking-tighter-display">{p.final.title}</h2>
+            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-chalk/85">{p.final.text}</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <button type="button" onClick={() => goToBooking()} className={ctaPrimary}>
+                {p.final.ctaPrimary}
+              </button>
+              <a href="#packages" className={ctaGhostDark}>
+                {p.final.ctaSecondary}
+              </a>
+            </div>
           </div>
         </div>
       </section>

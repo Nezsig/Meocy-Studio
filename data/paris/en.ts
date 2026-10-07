@@ -37,7 +37,10 @@ export const parisEn = {
     arcNight: 'Arc de Triomphe at night, photographed by MEOCY Studio',
     arcSunset: 'Arc de Triomphe at sunset from the Champs-Élysées, photographed by MEOCY Studio',
     seine: 'Pont Alexandre III and the Grand Palais on the Seine, photographed by MEOCY Studio',
-    statue: 'Pont Alexandre III sculptures, photographed by MEOCY Studio'
+    eiffelGardens: 'The Eiffel Tower seen through the trees, photographed by MEOCY Studio',
+    eiffelRain: 'The Eiffel Tower after the rain, photographed by MEOCY Studio',
+    reflections: 'Pont Alexandre III after the rain, photographed by MEOCY Studio',
+    pillars: 'Pont Alexandre III gilded pillars, photographed by MEOCY Studio'
   },
   work: {
     title: 'Portraits by MEOCY Studio',
