@@ -86,12 +86,17 @@ export async function POST(req: Request) {
     const body = await req.json().catch(() => null);
     if (!body || typeof body !== 'object' || Array.isArray(body)) return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
 
-    // Honeypot: pretend success, send nothing.
-    if (typeof body.company_website === 'string' && body.company_website.trim() !== '') return NextResponse.json({ ok: true });
+    // Honeypot: pretend success, send nothing. Logged (no personal data) so a silently dropped request is visible.
+    if (typeof body.company_website === 'string' && body.company_website.trim() !== '') {
+      console.warn('paris request: honeypot field filled — request ignored');
+      return NextResponse.json({ ok: true });
+    }
 
     const parsed = RequestSchema.safeParse(body);
     if (!parsed.success) {
-      return NextResponse.json({ error: 'Invalid request', fields: parsed.error.issues.map((i) => i.path.join('.')) }, { status: 400 });
+      const fields = parsed.error.issues.map((i) => i.path.join('.'));
+      console.warn('paris request: validation failed', fields); // field names only, no values
+      return NextResponse.json({ error: 'Invalid request', fields }, { status: 400 });
     }
     const r = parsed.data;
 
@@ -127,6 +132,11 @@ export async function POST(req: Request) {
       total: pricing.total,
     };
 
+    // Fail loudly in the logs when the email key is not configured for this deployment environment.
+    if (!process.env.RESEND_API_KEY) {
+      console.error('paris request: RESEND_API_KEY is not set for this deployment — request not sent', reference);
+      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
+    }
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     // 1) Notification to MEOCY first. If this fails nothing was received, so report an error.
