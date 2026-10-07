@@ -140,6 +140,7 @@ export function CollaboratePage() {
       }
       if (f.kind === 'name' && (value.length < LIMITS.nameMin || value.length > LIMITS.nameMax)) e[f.key] = c.errRequired;
       if (f.kind === 'email' && !EMAIL_RE.test(value)) e[f.key] = c.errEmail;
+      if (f.kind === 'number' && (!/^\d+$/.test(value) || parseInt(value, 10) < LIMITS.heightMin || parseInt(value, 10) > LIMITS.heightMax)) e[f.key] = c.errRequired;
     }
     return e;
   };
@@ -294,6 +295,8 @@ export function CollaboratePage() {
             type={f.kind === 'email' ? 'email' : f.kind === 'url' ? 'url' : f.kind === 'number' ? 'number' : 'text'}
             inputMode={f.kind === 'email' ? 'email' : f.kind === 'number' ? 'numeric' : undefined}
             maxLength={f.kind === 'name' ? LIMITS.nameMax : f.kind === 'email' ? LIMITS.email : f.kind === 'url' ? LIMITS.url : LIMITS.text}
+            min={f.kind === 'number' ? LIMITS.heightMin : undefined}
+            max={f.kind === 'number' ? LIMITS.heightMax : undefined}
             onChange={(e) => setField(f.key, e.target.value)}
             className={fieldClass}
           />
