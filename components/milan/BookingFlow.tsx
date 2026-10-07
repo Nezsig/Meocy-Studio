@@ -1,14 +1,11 @@
 'use client';
 import { FormPrivacyNotice } from '../FormPrivacyNotice';
 import React, { useEffect, useRef, useMemo, useState } from 'react';
-import Script from 'next/script';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
 import {
   computePricing,
-  depositAmount,
-  depositPaymentUrl,
   isDateSelectable,
   maxLocationsFor,
   maxPeople,
@@ -21,14 +18,13 @@ import {
   type MilanLocationId,
   type MilanPackageId,
   type MilanPricing,
-  fillRefund,
 } from '../../lib/milan-shoot-config';
 import { fmt, formatPrice } from './parts';
 
-type Screen = 'package' | 'date' | 'time' | 'locations' | 'details' | 'summary' | 'deposit' | 'done';
-const SCREENS: Screen[] = ['package', 'date', 'time', 'locations', 'details', 'summary', 'deposit', 'done'];
-// Screen → position in the 6-step progress indicator (Package, Date & Time, Locations, Details, Payment, Confirmation).
-const PROGRESS: Record<Screen, number> = { package: 0, date: 1, time: 1, locations: 2, details: 3, summary: 4, deposit: 4, done: 5 };
+type Screen = 'package' | 'date' | 'time' | 'locations' | 'details' | 'summary' | 'done';
+const SCREENS: Screen[] = ['package', 'date', 'time', 'locations', 'details', 'summary', 'done'];
+// Screen → position in the 6-step progress indicator (Package, Date & Time, Locations, Details, Review, Confirmation).
+const PROGRESS: Record<Screen, number> = { package: 0, date: 1, time: 1, locations: 2, details: 3, summary: 4, done: 5 };
 
 // sessionStorage key for persisting booking confirmation across refresh
 const BOOKING_CONFIRMATION_KEY = 'meocy_milan_booking_confirmation';
@@ -48,17 +44,6 @@ interface PersistedBookingConfirmation {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[\d\s().-]+$/;
 const INTL_LOCALE = { en: 'en-GB', it: 'it-IT', fr: 'fr-FR' } as const;
-
-// PayPal Hosted Button type declaration
-declare global {
-  interface Window {
-    paypal?: {
-      HostedButtons: (config: { hostedButtonId: string }) => {
-        render: (selector: string) => void;
-      };
-    };
-  }
-}
 
 interface Details {
   name: string;
@@ -148,28 +133,6 @@ function clearBookingConfirmation() {
   }
 }
 
-/** Payment-ready deposit block: shows a pay link only when a provider URL is configured. Never reports a payment. */
-function DepositPayment({ url, amount, labels }: { url: string; amount: string; labels: { title: string; currency: string; pending: string; button: string; policy: string; policyLink: string } }) {
-  return (
-    <div className="rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-7">
-      <p className="font-display text-[2.4rem] leading-none tracking-tighter-display text-accent">{amount}</p>
-      <h4 className="mt-3 text-[16px] font-semibold">{labels.title}</h4>
-      <p className="mt-1 text-[13.5px] text-chalk/60">{labels.currency}</p>
-      {url ? (
-        <a href={url} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} mt-5`}>
-          {labels.button}
-        </a>
-      ) : (
-        <p className="mt-5 rounded-xl bg-chalk/10 px-4 py-3 text-[14.5px]">{labels.pending}</p>
-      )}
-      <p className="mt-5 text-[13.5px] leading-relaxed text-chalk/65">{labels.policy}</p>
-      <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium text-chalk underline decoration-accent decoration-2 underline-offset-4">
-        {labels.policyLink}
-      </a>
-    </div>
-  );
-}
-
 function Calendar({ value, onChange, lang, labels }: { value: string; onChange: (d: string) => void; lang: keyof typeof INTL_LOCALE; labels: { prev: string; next: string } }) {
   const today = todayInMilan();
   const [view, setView] = useState(() => {
@@ -246,8 +209,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const [sending, setSending] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [result, setResult] = useState<{ reference: string; pricing: MilanPricing } | null>(null);
-  const [paypalStatus, setPaypalStatus] = useState<'loading' | 'success' | 'error'>('loading');
-  const [sdkReady, setSdkReady] = useState(false);
 
   // Immediate synchronous lock to prevent duplicate submission even with rapid clicks.
   // Race: Two renders can execute submit before state setter completes.
@@ -266,7 +227,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     const saved = getValidBookingConfirmation();
     if (saved) {
       console.log('Restoring booking from sessionStorage:', saved.reference);
-      console.log('SDK ready at restoration time:', !!window.paypal?.HostedButtons);
       // Restore all state from saved confirmation
       setScreen('done');
       setDate(saved.date);
@@ -277,7 +237,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       onPackageChange(saved.packageId as MilanPackageId);
       // Lock submission to prevent re-submission on restored screen
       submissionLockRef.current = true;
-      setPaypalStatus('loading');
       // Mark form_start as already tracked since this is a restored session
       formStartTrackedRef.current = true;
     } else {
@@ -318,45 +277,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     }
   }, [pkg, date, locations, onLocationsChange]);
 
-  // Render PayPal Hosted Button when SDK is available and we're on the done screen.
-  // Include sdkReady in dependencies so effect re-runs when SDK loads after restoration.
-  useEffect(() => {
-    if (screen === 'done' && result && window.paypal?.HostedButtons && paypalStatus !== 'success') {
-      const container = document.getElementById('paypal-container-RXV8AKE2Q6VZQ');
-      if (!container) {
-        console.warn('PayPal container #paypal-container-RXV8AKE2Q6VZQ not found in DOM');
-        setPaypalStatus('error');
-        return;
-      }
-
-      (async () => {
-        try {
-          console.log('PayPal SDK ready, attempting to render Hosted Button');
-          console.log('Container ID: paypal-container-RXV8AKE2Q6VZQ exists:', !!container);
-
-          const hostedButtons = window.paypal!.HostedButtons({
-            hostedButtonId: 'RXV8AKE2Q6VZQ',
-          });
-
-          console.log('Created HostedButtons instance, calling render()');
-          const renderResult = hostedButtons.render('#paypal-container-RXV8AKE2Q6VZQ');
-
-          // Await the render operation (handle both Promise and potential sync return)
-          await Promise.resolve(renderResult);
-
-          console.log('PayPal HostedButtons.render() resolved successfully');
-          setPaypalStatus('success');
-        } catch (e) {
-          console.error('PayPal HostedButtons.render() rejected:', e instanceof Error ? e.message : String(e));
-          setPaypalStatus('error');
-        }
-      })();
-    } else if (screen === 'done' && result && !window.paypal?.HostedButtons && sdkReady) {
-      console.warn('Screen is done and result exists, but PayPal SDK HostedButtons not available despite sdkReady=true');
-      setPaypalStatus('error');
-    }
-  }, [screen, result, sdkReady, paypalStatus]);
-
   const money = (n: number) => formatPrice(n, lang);
   const longDate = (d: string) =>
     d ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`)) : '';
@@ -376,8 +296,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       time: 'Date & Time Selection',
       locations: 'Location Selection',
       details: 'Personal Details',
-      summary: 'Review & Payment',
-      deposit: 'Payment Processing',
+      summary: 'Review',
       done: 'Booking Confirmation',
     };
     trackBookingEvent('booking_step_view', { step_number: stepNumber, step_name: stepNames[s] });
@@ -570,7 +489,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     if (pr.extraLocations > 0) {
       rows.push([b.sumExtra, `${pr.extraLocations} × ${money(pr.extraLocationPrice)} = ${money(pr.extraLocationsTotal)}`]);
     }
-    rows.push([b.sumDeposit, money(pr.deposit)], [b.sumRemaining, money(pr.remaining)], [b.sumDelivery, b.deliveryTime]);
+    rows.push([b.sumTotal, money(pr.total)], [b.sumDelivery, b.deliveryTime]);
     return rows;
   };
   const summaryRows = rowsFor(pricing);
@@ -595,24 +514,11 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const step = PROGRESS[screen];
   const heading: Record<Screen, string> = {
     package: b.pkgTitle, date: b.dateTitle, time: b.timeTitle, locations: b.locTitle, details: b.detailsTitle,
-    summary: b.summaryTitle, deposit: b.payTitle, done: b.doneTitle,
+    summary: b.summaryTitle, done: b.doneTitle,
   };
 
   return (
     <div>
-      {/* PayPal SDK - loaded asynchronously */}
-      <Script
-        src="https://www.paypal.com/sdk/js?client-id=BAA5vd5l9W7lC2oPGJeRKCd-W1iQeXDEmnYC8DmTVi9SuKcOeWLCJh_sz0m7YozR4MtdE68XHDJKWzbo04&components=hosted-buttons&disable-funding=venmo&currency=EUR"
-        crossOrigin="anonymous"
-        onLoad={() => {
-          console.log('PayPal SDK script loaded');
-          console.log('window.paypal available:', !!window.paypal);
-          console.log('window.paypal.HostedButtons available:', !!window.paypal?.HostedButtons);
-          // Signal that SDK is ready; PayPal render effect will retry on next dependency change
-          setSdkReady(true);
-        }}
-      />
-
       {/* Progress indicator */}
       <ol className="grid grid-cols-6 gap-1.5" aria-label={fmt(b.stepOf, { n: step + 1, total: b.progress.length })}>
         {b.progress.map((label, i) => (
@@ -795,32 +701,12 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
           <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
             <SummaryTable rows={summaryRows} />
             <div className="rounded-2xl bg-accent p-6 text-ink">
-              <p className="text-[18px] font-semibold">{b.depositHeadline}</p>
-              <p className="mt-1 text-[15px]">{fmt(b.remainingLine, { amount: money(pricing.remaining) })}</p>
-              <p className="mt-3 text-[13.5px] leading-snug">{fillRefund(b.payPolicy)}</p>
+              <p className="text-[18px] font-semibold">{b.noPaymentTitle}</p>
+              <p className="mt-2 text-[14.5px] leading-snug">{b.noPaymentText}</p>
               {details.people > standardPeople && <p className="mt-3 text-[13.5px] leading-snug">{b.groupNote}</p>}
-            </div>
-          </div>
-        )}
-
-        {screen === 'deposit' && pricing && (
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
-            {/* Deposit information display - NO payment button on Step 5, only after booking submission */}
-            <div className="rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-7">
-              <p className="font-display text-[2.4rem] leading-none tracking-tighter-display text-accent">{money(depositAmount)}</p>
-              <h4 className="mt-3 text-[16px] font-semibold">{b.payTitle}</h4>
-              <p className="mt-1 text-[13.5px] text-chalk/60">{b.payCurrency}</p>
-              <p className="mt-5 text-[13.5px] leading-relaxed text-chalk/65">{fillRefund(b.payPolicy)}</p>
-              <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium text-chalk underline decoration-accent decoration-2 underline-offset-4">
+              <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium underline decoration-2 underline-offset-4">
                 {b.policyLink}
               </a>
-            </div>
-            <div className="rounded-2xl bg-chalk/[0.06] p-6 text-[14.5px] ring-1 ring-chalk/15">
-              <p className="font-semibold">{m.packages[pkg!.id].name} · {money(pricing.total)}</p>
-              <p className="mt-1 text-chalk/65">{longDate(date)} · {time}</p>
-              <p className="mt-1 text-chalk/65">{locationNames.join(', ')}</p>
-              <p className="mt-3">{b.depositHeadline}</p>
-              <p className="text-chalk/65">{fmt(b.remainingLine, { amount: money(pricing.remaining) })}</p>
             </div>
           </div>
         )}
@@ -839,52 +725,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                 <SummaryTable rows={[[b.name, details.name], [b.email, details.email], [b.phone, details.phone], [b.country, details.country], [b.people, String(details.people)], ...(details.notes ? [[b.notes, details.notes] as [string, string]] : [])]} />
               </div>
             </div>
-            <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-chalk/65">{fillRefund(b.payPolicy)}</p>
-
-            {/* Secure Your Booking - PayPal Payment Section */}
-            <div className="mt-10 rounded-2xl bg-chalk/[0.06] p-6 ring-1 ring-chalk/15 sm:p-8">
-              <h3 className="font-display text-[1.85rem] leading-[1.08] tracking-tighter-display">{b.secureBooking}</h3>
-
-              <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:items-start">
-                {/* Left: Booking info and PayPal */}
-                <div>
-                  <p className="text-[15px] leading-relaxed text-chalk/85">{b.secureBookingText}</p>
-
-                  <div className="mt-6 rounded-xl bg-chalk/[0.04] p-4">
-                    <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{b.referenceHelper}</p>
-                    <input
-                      type="text"
-                      readOnly
-                      value={result.reference}
-                      className="mt-2 block w-full rounded-lg bg-white px-3 py-2 text-[16px] font-display text-black placeholder-chalk/40 ring-1 ring-chalk/20 outline-none focus:ring-2 focus:ring-accent"
-                      aria-label="Booking reference"
-                    />
-                  </div>
-
-                  <p className="mt-4 text-[13px] text-chalk/65">{b.paypalNote}</p>
-                </div>
-
-                {/* Right: PayPal Button - Dark Card */}
-                <div className="flex flex-col items-center lg:items-start rounded-2xl bg-[#2A2A2A] p-6 sm:p-8 ring-1 ring-chalk/15">
-                  <div id="paypal-container-RXV8AKE2Q6VZQ" className="w-full"></div>
-
-                  {/* Fallback Button - only show if PayPal rendering failed */}
-                  {paypalStatus === 'error' && depositPaymentUrl && (
-                    <div className="mt-4 w-full flex flex-col gap-2">
-                      <a
-                        href={depositPaymentUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-ink transition-transform duration-150 ease-smooth hover:-translate-y-0.5">
-                        {b.paypalFallback}
-                      </a>
-                      <p className="text-center text-[12px] text-chalk/75">If the payment button above does not appear, click here to pay via PayPal</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waToMeocy} target="_blank" rel="noopener noreferrer" className={btnPrimary}>{b.waCta}</a>
               <button type="button" onClick={restart} className={btnGhost}>{b.another}</button>
@@ -900,7 +740,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
               <ChevronLeft className="h-4 w-4" aria-hidden /> {b.back}
             </button>
           ) : <span />}
-          {screen === 'deposit' ? (
+          {screen === 'summary' ? (
             <button type="button" onClick={submit} disabled={sending} className={btnPrimary}>
               {sending ? <><Loader2Icon className="h-4 w-4 animate-spin" aria-hidden /> {b.sending}</> : b.submit}
             </button>

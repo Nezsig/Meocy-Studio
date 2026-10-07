@@ -808,7 +808,7 @@ export const en = {
   milanShoot: {
     seo: {
       title: 'Milan Photoshoot for Couples | Professional Photography | MEOCY',
-      description: 'Book a professional couple photoshoot in Milan with MEOCY. Choose your package, Milan locations, date and time, and reserve your experience with a €50 booking deposit.'
+      description: 'Book a professional couple photoshoot in Milan with MEOCY. Choose your package, Milan locations, date and time, and send your booking request with no upfront payment.'
     },
     hero: {
       title: 'Your Milan Story, Captured Professionally.',
@@ -992,11 +992,11 @@ export const en = {
           d: 'Select the Milan locations included in your package.'
         },
         {
-          t: 'Reserve With €50',
-          d: 'Pay a €50 booking deposit with your request. Once MEOCY confirms by email or WhatsApp, it holds your date.'
+          t: 'Send Your Request',
+          d: 'Send your booking request: no payment is required. MEOCY reviews your requested date and time and contacts you to confirm availability and the next steps.'
         }
       ],
-      afterPayment: 'After payment, MEOCY manually confirms the booking.',
+      afterPayment: 'No payment is required to send your request.',
       note: 'Your booking is manually confirmed by MEOCY after the reservation request.'
     },
     booking: {
@@ -1007,7 +1007,7 @@ export const en = {
         'Date & Time',
         'Locations',
         'Details',
-        'Payment',
+        'Review',
         'Confirmation'
       ],
       stepOf: 'Step {n} of {total}',
@@ -1042,17 +1042,11 @@ export const en = {
       sumPackagePrice: 'Package price',
       sumExtra: 'Additional locations',
       sumNone: 'None',
-      sumDeposit: 'Booking deposit',
-      sumRemaining: 'Remaining balance',
       sumDelivery: 'Photo delivery',
+      sumTotal: 'Total',
+      noPaymentTitle: 'No payment required now',
+      noPaymentText: 'No payment is required when submitting your booking request. MEOCY will review your requested date and time and contact you to confirm availability and provide the next steps.',
       deliveryTime: 'Edited photos delivered within 7–10 working days',
-      depositHeadline: 'Booking deposit: €50',
-      remainingLine: 'Remaining balance: {amount}',
-      payTitle: '€50 booking deposit',
-      payCurrency: 'Payment currency: EUR (€)',
-      payPending: 'We will send you the deposit link shortly.',
-      payButton: 'Pay the €50 deposit',
-      payPolicy: 'If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than {days} days before, it is not refunded, but you may request a date change instead, subject to availability.',
       policyLink: 'Booking Policy',
       submit: 'Send booking request',
       sending: 'Sending…',
@@ -1066,14 +1060,8 @@ export const en = {
       errUnavailable: 'This date or time can no longer be requested. Please choose another one.',
       errRate: 'Too many requests in a short time. Please wait a few minutes and try again.',
       doneTitle: 'Your booking request has been received.',
-      doneText: 'MEOCY will confirm by email and WhatsApp.',
+      doneText: 'MEOCY will review availability for your requested date and time and contact you by email or WhatsApp with the next steps. This request is not yet a confirmed booking.',
       reference: 'Booking reference',
-      secureBooking: 'Secure Your Booking',
-      secureBookingText: 'Pay the €50 booking deposit to secure your booking request. Your requested date is subject to MEOCY availability confirmation. If the requested date cannot be accommodated, the deposit will be refunded.',
-      referenceHelper: 'Your booking reference:',
-      paypalNote: 'Please include your booking reference with your payment if PayPal provides a customer note field.',
-      payDepositButton: 'Pay €50 Deposit',
-      paypalFallback: 'Pay with PayPal',
       customerTitle: 'Your details',
       waCta: 'Send your request on WhatsApp',
       waIntro: 'Hi MEOCY, this is my Milan photoshoot request.',
@@ -1086,6 +1074,7 @@ export const en = {
     policy: {
       title: 'Booking Policy',
       lines: [
+        'No payment is required when submitting your booking request. MEOCY reviews your requested date and time and contacts you to confirm availability and the next steps.',
         'A €50 deposit is required to reserve your photography date.',
         'If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full.',
         'If you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.',
@@ -1141,6 +1130,10 @@ export const en = {
         {
           q: 'When will we receive our photographs?',
           a: 'Your edited photographs are delivered as high-resolution digital images within 7 to 10 working days.'
+        },
+        {
+          q: 'Do I pay when I send my booking request?',
+          a: 'No. No payment is required when submitting your booking request. MEOCY will review your requested date and time and contact you to confirm availability and provide the next steps.'
         },
         {
           q: 'How does the €50 deposit work?',
@@ -1217,6 +1210,7 @@ export const en = {
           h: 'Booking requests and confirmation.',
           p: [
             'Sending the booking form creates a booking request. MEOCY confirms bookings manually.',
+            'No payment is required when submitting your booking request. MEOCY will review your requested date and time and contact you to confirm availability and provide the next steps.',
             'A pending request is not confirmed until MEOCY confirms it by email or WhatsApp.',
             'Your booking is confirmed manually by MEOCY after the booking request and deposit are received.'
           ]
@@ -1289,7 +1283,7 @@ export const en = {
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',
-      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full; if you cancel later, it is not refunded, but you may request a date change instead, subject to availability. Further conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
+      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. No payment is required when submitting your booking request. If you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full; if you cancel later, it is not refunded, but you may request a date change instead, subject to availability. Further conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
       link: 'Booking Policy'
     },
     footer: {

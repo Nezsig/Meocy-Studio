@@ -136,7 +136,6 @@ export interface MilanRequestEmail {
   locale: Locale;
   submittedAt: string;
   pricing: { packagePrice: number; extraLocations: number; extraLocationsTotal: number; total: number; deposit: number; remaining: number };
-  depositUrl?: string;
 }
 
 const eur = (n: number) => `€${n}`;
@@ -157,7 +156,6 @@ const MT: Record<MilanEmailLang, any> = {
     steps: [['MEOCY reviews your request', 'We check availability for your date and time.'],
             ['You receive the €50 deposit link', 'Once MEOCY confirms availability, pay the €50 deposit to hold your date. Your booking is confirmed after payment is received.'],
             ['MEOCY confirms your session', 'By email and WhatsApp.']],
-    payBtn: 'Pay the €50 deposit',
     depT: `€50 booking deposit: refunded in full if you cancel at least ${refundDaysBefore} days before your shoot.`,
     depB: `If you cancel at least ${refundDaysBefore} days (${refundHoursBefore} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than ${refundDaysBefore} days before, it is not refunded, but you may request a date change instead, subject to availability. The remaining balance is settled separately.`,
     sign: 'Speak soon,',
@@ -174,7 +172,6 @@ const MT: Record<MilanEmailLang, any> = {
     steps: [['MEOCY esamina la tua richiesta', "Verifichiamo la disponibilità per la data e l'orario scelti."],
             ["Ricevi il link per l'acconto di €50", "Quando MEOCY conferma la disponibilità, versa l'acconto di €50 per riservare la data. La prenotazione è confermata dopo la ricezione del pagamento."],
             ['MEOCY conferma la sessione', 'Via email e WhatsApp.']],
-    payBtn: "Paga l'acconto di €50",
     depT: `Acconto di prenotazione di €50: rimborsato per intero se annulli almeno ${refundDaysBefore} giorni prima dello shooting.`,
     depB: `Se annulli almeno ${refundDaysBefore} giorni (${refundHoursBefore} ore) prima dello shooting, l'acconto di €50 viene rimborsato per intero. Se annulli meno di ${refundDaysBefore} giorni prima, l'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Il saldo restante si regola a parte.`,
     sign: 'A presto,',
@@ -190,7 +187,6 @@ export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
     row(t.rLoc, d.locations.join(', ')), row(t.rPeople, String(d.people)), row(t.rPrice, eur(d.pricing.packagePrice)), row(t.rExtra, extra),
     row(t.rDeposit, eur(d.pricing.deposit)), row(t.rRemaining, eur(d.pricing.remaining))].join('');
   const steps = t.steps.map((s: string[], i: number)=>`<tr><td valign="top" width="36" style="padding:0 0 16px 0"><div style="width:26px;height:26px;border-radius:999px;background:${c.ink};color:${c.chalk};font-family:${sans};font-size:12px;font-weight:600;line-height:26px;text-align:center">${i+1}</div></td><td valign="top" style="padding:2px 0 16px 0"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${s[0]}</div><div style="font-family:${sans};font-size:13px;line-height:1.5;color:${c.slate};padding-top:2px">${s[1]}</div></td></tr>`).join('');
-  const pay = d.depositUrl ? `<tr><td class="px" style="padding:4px 40px 0"><a href="${esc(d.depositUrl)}" style="display:inline-block;padding:12px 22px;border-radius:999px;background:${c.ink};color:${c.chalk};font-family:${sans};font-size:14px;font-weight:600;text-decoration:none">${t.payBtn}</a></td></tr>` : '';
   const group = d.largerGroup ? `<p style="margin:14px 0 0;font-family:${sans};font-size:13px;line-height:1.55;color:${c.ink}">${t.group}</p>` : '';
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;padding:0}img{border:0;display:block}@media(max-width:620px){.container{width:100%!important}.px{padding-left:22px!important;padding-right:22px!important}.h1{font-size:34px!important}}</style></head>
 <body style="margin:0;padding:0;background:${c.paper}"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px">
@@ -202,7 +198,6 @@ export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
     <p style="margin:12px 0 0;font-family:${sans};font-size:13px;font-weight:600;color:${c.slate}">${t.status}</p></td></tr>
   <tr><td class="px" style="padding:24px 40px 0"><table role="presentation" width="100%" style="background:${c.paper};border-radius:16px"><tr><td style="padding:8px 22px 14px"><div style="font-family:${sans};font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:${c.slate};padding:12px 0 4px">${t.summary}</div><table role="presentation" width="100%">${summary}</table>${group}</td></tr></table></td></tr>
   <tr><td class="px" style="padding:40px 40px 0"><h2 style="margin:0 0 20px;font-family:${serif};font-weight:400;font-size:30px;color:${c.ink}">${t.nextT}</h2><table role="presentation" width="100%">${steps}</table></td></tr>
-  ${pay}
   <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${t.depT}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${t.depB}</div></td></tr></table></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>

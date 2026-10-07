@@ -811,7 +811,7 @@ export const it: Dict = {
   milanShoot: {
     seo: {
       title: 'Servizio fotografico a Milano per coppie | Fotografia professionale | MEOCY',
-      description: 'Prenota un servizio fotografico professionale di coppia a Milano con MEOCY. Scegli pacchetto, location, data e orario e riserva la tua esperienza con un acconto di €50.'
+      description: 'Prenota un servizio fotografico professionale di coppia a Milano con MEOCY. Scegli pacchetto, location, data e orario e invia la tua richiesta senza alcun pagamento anticipato.'
     },
     hero: {
       title: 'La vostra storia a Milano, fotografata da professionisti.',
@@ -995,11 +995,11 @@ export const it: Dict = {
           d: 'Selezionate le location di Milano incluse nel vostro pacchetto.'
         },
         {
-          t: 'Prenotate con €50',
-          d: 'Versate un acconto di €50 con la vostra richiesta. Dopo la conferma di MEOCY via email o WhatsApp, l\'acconto blocca la vostra data.'
+          t: 'Inviate la richiesta',
+          d: 'Inviate la vostra richiesta di prenotazione: non è richiesto alcun pagamento. MEOCY verifica la data e l\'orario richiesti e vi contatta per confermare la disponibilità e i prossimi passi.'
         }
       ],
-      afterPayment: 'Dopo il pagamento, MEOCY conferma la prenotazione manualmente.',
+      afterPayment: 'Per inviare la richiesta non è richiesto alcun pagamento.',
       note: 'La prenotazione viene confermata manualmente da MEOCY dopo la richiesta.'
     },
     booking: {
@@ -1010,7 +1010,7 @@ export const it: Dict = {
         'Data e orario',
         'Location',
         'Dati',
-        'Pagamento',
+        'Riepilogo',
         'Conferma'
       ],
       stepOf: 'Passo {n} di {total}',
@@ -1045,17 +1045,11 @@ export const it: Dict = {
       sumPackagePrice: 'Prezzo del pacchetto',
       sumExtra: 'Location aggiuntive',
       sumNone: 'Nessuna',
-      sumDeposit: 'Acconto di prenotazione',
-      sumRemaining: 'Saldo restante',
       sumDelivery: 'Consegna foto',
+      sumTotal: 'Totale',
+      noPaymentTitle: 'Nessun pagamento richiesto ora',
+      noPaymentText: 'Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verificherà la data e l\'orario richiesti e ti contatterà per confermare la disponibilità e indicarti i prossimi passi.',
       deliveryTime: 'Foto modificate consegnate entro 7–10 giorni lavorativi',
-      depositHeadline: 'Acconto di prenotazione: €50',
-      remainingLine: 'Saldo restante: {amount}',
-      payTitle: 'Acconto di prenotazione di €50',
-      payCurrency: 'Valuta di pagamento: EUR (€)',
-      payPending: 'Ti invieremo a breve il link per l\'acconto.',
-      payButton: 'Paga l\'acconto di €50',
-      payPolicy: 'Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero. Se annulli meno di {days} giorni prima, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità.',
       policyLink: 'Condizioni di prenotazione',
       submit: 'Invia la richiesta di prenotazione',
       sending: 'Invio in corso…',
@@ -1069,14 +1063,8 @@ export const it: Dict = {
       errUnavailable: 'Questa data o questo orario non si possono più richiedere. Scegline un altro.',
       errRate: 'Troppe richieste in poco tempo. Attendi qualche minuto e riprova.',
       doneTitle: 'La tua richiesta di prenotazione è stata ricevuta.',
-      doneText: 'MEOCY ti darà conferma via email e WhatsApp.',
+      doneText: 'MEOCY verificherà la disponibilità per la data e l\'orario richiesti e ti contatterà via email o WhatsApp con i prossimi passi. Questa richiesta non è ancora una prenotazione confermata.',
       reference: 'Codice di prenotazione',
-      secureBooking: 'Proteggi la Tua Prenotazione',
-      secureBookingText: 'Paga l\'acconto di €50 per proteggere la tua richiesta di prenotazione. La data richiesta è soggetta alla disponibilità di MEOCY. Se la data richiesta non può essere disponibile, l\'acconto sarà rimborsato.',
-      referenceHelper: 'Il tuo codice di prenotazione:',
-      paypalNote: 'Per favore includi il tuo codice di prenotazione con il pagamento se PayPal fornisce un campo per le note del cliente.',
-      payDepositButton: 'Paga €50 Acconto',
-      paypalFallback: 'Paga con PayPal',
       customerTitle: 'I tuoi dati',
       waCta: 'Invia la richiesta su WhatsApp',
       waIntro: 'Ciao MEOCY, questa è la mia richiesta per uno shooting a Milano.',
@@ -1089,6 +1077,7 @@ export const it: Dict = {
     policy: {
       title: 'Condizioni di prenotazione',
       lines: [
+        'Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verifica la data e l\'orario richiesti e vi contatta per confermare la disponibilità e i prossimi passi.',
         'Per riservare la data dello shooting è richiesto un acconto di €50.',
         'Se annullate almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero.',
         'Se annullate meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.',
@@ -1144,6 +1133,10 @@ export const it: Dict = {
         {
           q: 'Quando riceveremo le fotografie?',
           a: 'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7-10 giorni.'
+        },
+        {
+          q: 'Devo pagare quando invio la richiesta di prenotazione?',
+          a: 'No. Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verificherà la data e l\'orario richiesti e vi contatterà per confermare la disponibilità e indicarvi i prossimi passi.'
         },
         {
           q: 'Come funziona l\'acconto di €50?',
@@ -1220,6 +1213,7 @@ export const it: Dict = {
           h: 'Richieste di prenotazione e conferma.',
           p: [
             'Inviando il modulo di prenotazione si crea una richiesta di prenotazione. MEOCY conferma le prenotazioni manualmente.',
+            'Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verificherà la data e l\'orario richiesti e ti contatterà per confermare la disponibilità e indicarti i prossimi passi.',
             'Una richiesta in attesa non è confermata finché MEOCY non la conferma via email o WhatsApp.',
             'La prenotazione viene confermata manualmente da MEOCY dopo aver ricevuto la richiesta e l\'acconto.'
           ]
@@ -1292,7 +1286,7 @@ export const it: Dict = {
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero; se annulli più tardi, non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Le altre condizioni sono indicate nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
+      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. Se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero; se annulli più tardi, non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Le altre condizioni sono indicate nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
       link: 'Condizioni di prenotazione'
     },
     footer: {

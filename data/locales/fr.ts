@@ -811,7 +811,7 @@ export const fr: Dict = {
   milanShoot: {
     seo: {
       title: 'Séance photo à Milan pour couples | Photographie professionnelle | MEOCY',
-      description: 'Réservez une séance photo professionnelle en couple à Milan avec MEOCY. Choisissez votre formule, vos lieux à Milan, la date et l\'heure, et réservez avec un acompte de 50 €.'
+      description: 'Réservez une séance photo professionnelle en couple à Milan avec MEOCY. Choisissez votre formule, vos lieux à Milan, la date et l\'heure, et envoyez votre demande sans aucun paiement à l\'avance.'
     },
     hero: {
       title: 'Votre histoire à Milan, photographiée par un professionnel.',
@@ -995,11 +995,11 @@ export const fr: Dict = {
           d: 'Sélectionnez les lieux de Milan compris dans votre formule.'
         },
         {
-          t: 'Réservez avec 50 €',
-          d: 'Versez un acompte de 50 € avec votre demande. Après la confirmation de MEOCY par email ou WhatsApp, il bloque votre date.'
+          t: 'Envoyez votre demande',
+          d: 'Envoyez votre demande de réservation : aucun paiement n\'est demandé. MEOCY examine la date et l\'heure demandées et vous contacte pour confirmer la disponibilité et les prochaines étapes.'
         }
       ],
-      afterPayment: 'Après le paiement, MEOCY confirme la réservation manuellement.',
+      afterPayment: 'Aucun paiement n\'est demandé pour envoyer votre demande.',
       note: 'Votre réservation est confirmée manuellement par MEOCY après la demande.'
     },
     booking: {
@@ -1010,7 +1010,7 @@ export const fr: Dict = {
         'Date et heure',
         'Lieux',
         'Coordonnées',
-        'Paiement',
+        'Récapitulatif',
         'Confirmation'
       ],
       stepOf: 'Étape {n} sur {total}',
@@ -1045,17 +1045,11 @@ export const fr: Dict = {
       sumPackagePrice: 'Prix de la formule',
       sumExtra: 'Lieux supplémentaires',
       sumNone: 'Aucun',
-      sumDeposit: 'Acompte de réservation',
-      sumRemaining: 'Solde restant',
       sumDelivery: 'Livraison des photos',
+      sumTotal: 'Total',
+      noPaymentTitle: 'Aucun paiement requis maintenant',
+      noPaymentText: 'Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examinera la date et l\'heure demandées et vous contactera pour confirmer la disponibilité et vous indiquer les prochaines étapes.',
       deliveryTime: 'Les photos retouchées sont livrées sous 7 à 10 jours ouvrables',
-      depositHeadline: 'Acompte de réservation : 50 €',
-      remainingLine: 'Solde restant : {amount}',
-      payTitle: 'Acompte de réservation de 50 €',
-      payCurrency: 'Devise de paiement : EUR (€)',
-      payPending: 'Nous vous enverrons très bientôt le lien pour l\'acompte.',
-      payButton: 'Payer l\'acompte de 50 €',
-      payPolicy: 'Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé. Si vous annulez moins de {days} jours avant, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
       policyLink: 'Conditions de réservation',
       submit: 'Envoyer la demande de réservation',
       sending: 'Envoi en cours…',
@@ -1069,14 +1063,8 @@ export const fr: Dict = {
       errUnavailable: 'Cette date ou cet horaire ne peut plus être demandé. Veuillez en choisir un autre.',
       errRate: 'Trop de demandes en peu de temps. Patientez quelques minutes puis réessayez.',
       doneTitle: 'Votre demande de réservation a bien été reçue.',
-      doneText: 'MEOCY vous confirmera par email et WhatsApp.',
+      doneText: 'MEOCY va vérifier la disponibilité pour la date et l\'heure demandées et vous contactera par email ou WhatsApp pour les prochaines étapes. Cette demande n\'est pas encore une réservation confirmée.',
       reference: 'Référence de réservation',
-      secureBooking: 'Sécuriser Votre Réservation',
-      secureBookingText: 'Payez la caution de €50 pour sécuriser votre demande de réservation. La date demandée est soumise à la disponibilité de MEOCY. Si la date demandée ne peut pas être disponible, la caution sera remboursée.',
-      referenceHelper: 'Votre référence de réservation:',
-      paypalNote: 'Veuillez inclure votre référence de réservation avec votre paiement si PayPal fournit un champ de note client.',
-      payDepositButton: 'Payer €50 Caution',
-      paypalFallback: 'Payer avec PayPal',
       customerTitle: 'Vos coordonnées',
       waCta: 'Envoyer votre demande sur WhatsApp',
       waIntro: 'Bonjour MEOCY, voici ma demande de séance photo à Milan.',
@@ -1089,6 +1077,7 @@ export const fr: Dict = {
     policy: {
       title: 'Conditions de réservation',
       lines: [
+        'Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examine la date et l\'heure demandées et vous contacte pour confirmer la disponibilité et les prochaines étapes.',
         'Un acompte de 50 € est demandé pour réserver la date de votre séance.',
         'Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé.',
         'Si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
@@ -1144,6 +1133,10 @@ export const fr: Dict = {
         {
           q: 'Quand recevrons-nous nos photos ?',
           a: 'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours.'
+        },
+        {
+          q: 'Dois-je payer en envoyant ma demande de réservation ?',
+          a: 'Non. Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examinera la date et l\'heure demandées et vous contactera pour confirmer la disponibilité et vous indiquer les prochaines étapes.'
         },
         {
           q: 'Comment fonctionne l\'acompte de 50 € ?',
@@ -1220,6 +1213,7 @@ export const fr: Dict = {
           h: 'Demandes de réservation et confirmation.',
           p: [
             'L\'envoi du formulaire de réservation crée une demande de réservation. MEOCY confirme les réservations manuellement.',
+            'Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examinera la date et l\'heure demandées et vous contactera pour confirmer la disponibilité et vous indiquer les prochaines étapes.',
             'Une demande en attente n\'est pas confirmée tant que MEOCY ne l\'a pas confirmée par email ou WhatsApp.',
             'Votre réservation est confirmée manuellement par MEOCY après réception de la demande et de l\'acompte.'
           ]
@@ -1292,7 +1286,7 @@ export const fr: Dict = {
     },
     milanTerms: {
       title: 'Demandes de réservation de séances photo à Milan.',
-      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé ; si vous annulez plus tard, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités. Les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
+      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. Si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé ; si vous annulez plus tard, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités. Les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
       link: 'Conditions de réservation'
     },
     footer: {

@@ -11,7 +11,6 @@ import {
 import {
   availabilityEndTime,
   computePricing,
-  depositPaymentUrl,
   isDateSelectable,
   isSlotSelectable,
   maxLocationsFor,
@@ -193,7 +192,6 @@ export async function POST(req: Request) {
       locale: r.locale,
       submittedAt: now,
       pricing,
-      depositUrl: depositPaymentUrl || undefined,
     };
 
     const resend = new Resend(process.env.RESEND_API_KEY);
