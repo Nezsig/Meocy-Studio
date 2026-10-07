@@ -12,6 +12,7 @@ const linkOrder = [
 { href: '/services', key: 'services' },
 { href: '/packages', key: 'packages' },
 { href: '/milan-photoshoot', key: 'milan' },
+{ href: '/paris-photoshoot', key: 'paris' },
 { href: '/about', key: 'about' },
 { href: '/faq', key: 'faq' },
 { href: '/collaborate', key: 'collaborate' },

@@ -12,6 +12,7 @@ export const fr: Dict = {
       services: 'Services',
       packages: 'Formules',
       milan: 'Shooting à Milan',
+      paris: 'Shooting à Paris',
       about: 'À propos',
       faq: 'FAQ',
       collaborate: 'Collaborer',

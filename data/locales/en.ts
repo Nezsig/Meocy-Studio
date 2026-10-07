@@ -10,6 +10,7 @@ export const en = {
       services: 'Services',
       packages: 'Packages',
       milan: 'Milan Photoshoot',
+      paris: 'Paris Photoshoot',
       about: 'About',
       faq: 'FAQ',
       collaborate: 'Collaborate',
