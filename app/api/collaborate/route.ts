@@ -57,7 +57,10 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json().catch(() => null);
-    if (!body || typeof body !== 'object' || Array.isArray(body)) return bad('Invalid payload');
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      console.error('[collaborate validation]', { reason: 'invalid_payload_format' });
+      return bad('Invalid payload');
+    }
 
     // Honeypot: real users never fill this hidden field. Pretend success, send nothing.
     if (typeof body.company_website === 'string' && body.company_website.trim() !== '') {
@@ -65,11 +68,17 @@ export async function POST(req: Request) {
     }
 
     const track = body.track as CollabTrack;
-    if (!COLLAB_TRACKS.includes(track)) return bad('Invalid track');
+    if (!COLLAB_TRACKS.includes(track)) {
+      console.error('[collaborate validation]', { reason: 'invalid_track', track });
+      return bad('Invalid track');
+    }
     const locale: Locale = body.locale === 'en' || body.locale === 'fr' || body.locale === 'it' ? body.locale : 'it';
 
     const fields = body.fields;
-    if (!fields || typeof fields !== 'object' || Array.isArray(fields)) return bad('Invalid fields');
+    if (!fields || typeof fields !== 'object' || Array.isArray(fields)) {
+      console.error('[collaborate validation]', { reason: 'invalid_fields_structure' });
+      return bad('Invalid fields');
+    }
 
     // Only whitelisted fields for this track are read; anything else is ignored.
     const clean: Record<string, string | true> = {};
@@ -79,18 +88,30 @@ export async function POST(req: Request) {
 
       if (f.kind === 'check') {
         if (raw === true) clean[f.key] = true;
-        else if (f.required) return bad(`Invalid field: ${f.key}`);
+        else if (f.required) {
+          console.error('[collaborate validation]', { field: f.key, reason: 'required_checkbox_not_checked' });
+          return bad(`Invalid field: ${f.key}`);
+        }
         continue;
       }
 
       if (raw === undefined || raw === null) {
-        if (f.required) return bad(`Invalid field: ${f.key}`);
+        if (f.required) {
+          console.error('[collaborate validation]', { field: f.key, reason: 'required_field_missing' });
+          return bad(`Invalid field: ${f.key}`);
+        }
         continue;
       }
-      if (typeof raw !== 'string') return bad(`Invalid field: ${f.key}`);
+      if (typeof raw !== 'string') {
+        console.error('[collaborate validation]', { field: f.key, reason: 'field_not_string', type: typeof raw });
+        return bad(`Invalid field: ${f.key}`);
+      }
       const value = raw.trim();
       if (!value) {
-        if (f.required) return bad(`Invalid field: ${f.key}`);
+        if (f.required) {
+          console.error('[collaborate validation]', { field: f.key, reason: 'required_field_empty' });
+          return bad(`Invalid field: ${f.key}`);
+        }
         continue;
       }
 
@@ -108,7 +129,18 @@ export async function POST(req: Request) {
         : f.kind === 'number' ? /^\d+$/.test(value) && parseInt(value, 10) >= LIMITS.heightMin && parseInt(value, 10) <= LIMITS.heightMax
         : f.kind === 'url' ? normalizedValue.length <= LIMITS.url && /^https?:\/\/.+/.test(normalizedValue)
         : value.length <= LIMITS.text;
-      if (!ok) return bad(`Invalid field: ${f.key}`);
+      if (!ok) {
+        let reason = 'validation_failed';
+        if (f.kind === 'name') reason = value.length < LIMITS.nameMin ? 'name_too_short' : 'name_too_long';
+        else if (f.kind === 'email') reason = EMAIL_RE.test(value) ? 'email_too_long' : 'email_invalid_format';
+        else if (f.kind === 'message') reason = 'message_too_long';
+        else if (f.kind === 'select') reason = `select_invalid_option_not_in_${f.options}`;
+        else if (f.kind === 'number') reason = /^\d+$/.test(value) ? 'number_out_of_range' : 'number_not_digits';
+        else if (f.kind === 'url') reason = /^https?:\/\/.+/.test(normalizedValue) ? 'url_too_long' : 'url_invalid_format';
+        else reason = 'text_too_long';
+        console.error('[collaborate validation]', { field: f.key, kind: f.kind, reason });
+        return bad(`Invalid field: ${f.key}`);
+      }
       // Store normalized value for URLs, original value for everything else
       clean[f.key] = f.kind === 'url' ? normalizedValue : value;
     }
