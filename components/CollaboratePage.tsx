@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Check, CheckCircle2Icon, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackBookingEvent } from '../lib/ga-booking';
 import { locales } from '../data/locales';
 import {
   COLLAB_FIELDS,
@@ -74,6 +75,7 @@ export function CollaboratePage() {
   const [sentName, setSentName] = useState(() => initial(() => ''));
   const tabRefs = useRef<Partial<Record<CollabTrack, HTMLButtonElement | null>>>({});
   const formRef = useRef<HTMLFormElement>(null);
+  const formStartTrackedRef = useRef(false);
 
   // Deep links: #models, #agencies, #creatives select a tab on load and on hash change.
   useEffect(() => {
@@ -112,6 +114,11 @@ export function CollaboratePage() {
   const visible = (f: CollabField) => !f.showIf || v[f.showIf.field] === f.showIf.equals;
 
   const setField = (key: string, value: string | boolean) => {
+    // Track form_start on first field interaction
+    if (!formStartTrackedRef.current) {
+      formStartTrackedRef.current = true;
+      trackBookingEvent('collaborate_form_start');
+    }
     setValues((all) => ({ ...all, [active]: { ...all[active], [key]: value } }));
     if (errs[key]) setErrors((all) => ({ ...all, [active]: { ...all[active], [key]: undefined } }));
     if (st === 'error') setStatus((all) => ({ ...all, [active]: 'idle' }));
@@ -144,6 +151,8 @@ export function CollaboratePage() {
     const firstInvalid = COLLAB_FIELDS[active].find((f) => e[f.key]);
     if (firstInvalid) {
       formRef.current?.querySelector<HTMLElement>(`#cf-${active}-${firstInvalid.key}`)?.focus();
+      // Track validation error
+      trackBookingEvent('collaborate_validation_error', { field_name: firstInvalid.key });
       return;
     }
 
@@ -154,6 +163,10 @@ export function CollaboratePage() {
       if (!visible(f)) continue;
       fields[f.key] = f.kind === 'check' ? v[f.key] === true : String(v[f.key] ?? '').trim();
     }
+
+    // Track submit attempt
+    trackBookingEvent('collaborate_submit_attempt');
+
     try {
       const res = await fetch('/api/collaborate', {
         method: 'POST',
@@ -161,6 +174,8 @@ export function CollaboratePage() {
         body: JSON.stringify({ track, locale: lang, fields, company_website: v.company_website }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      // Track successful submission
+      trackBookingEvent('collaborate_submit_success');
       const greeting = String(v[greetingField(track)] ?? '').trim().split(/\s+/)[0] || '';
       setSentName((all) => ({ ...all, [track]: greeting }));
       setStatus((all) => ({ ...all, [track]: 'sent' }));
@@ -175,6 +190,8 @@ export function CollaboratePage() {
     setErrors((all) => ({ ...all, [active]: {} }));
     setSentName((all) => ({ ...all, [active]: '' }));
     setStatus((all) => ({ ...all, [active]: 'idle' }));
+    // Reset form_start tracking so next application can track it again
+    formStartTrackedRef.current = false;
   };
 
   const consentLabel = (text: string) => {
