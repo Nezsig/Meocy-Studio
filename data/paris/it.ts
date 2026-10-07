@@ -14,7 +14,9 @@ export const parisIt: ParisCopy = {
     ctaWhatsapp: 'CHIEDI SU WHATSAPP',
     whatsappMessage: 'Ciao MEOCY Studio, sono interessato/a a uno shooting a Parigi alla Torre Eiffel e vorrei qualche informazione.',
     trust: 'Sessione privata • Torre Eiffel / Trocadéro • Immagini ritoccate ad alta risoluzione',
-    datesLabel: 'Date',
+    datesLabel: 'Data',
+    imageAlt: 'La Torre Eiffel vista dal Trocadéro, fotografata da MEOCY Studio',
+    photoCredit: 'Torre Eiffel dal Trocadéro · fotografata da MEOCY Studio',
     datesValue: 'Richiedi la data che preferisci'
   },
   location: {
@@ -31,10 +33,18 @@ export const parisIt: ParisCopy = {
       { t: 'La Torre Eiffel', d: 'Ogni sessione a Parigi viene fotografata intorno alla Torre Eiffel e al Trocadéro.' }
     ]
   },
+  gallery: {
+    title: 'Parigi, attraverso il nostro obiettivo',
+    text: 'Parigi fotografata da MEOCY Studio. La tua sessione si svolge alla Torre Eiffel / Trocadéro.',
+    arcNight: 'Arco di Trionfo di notte, fotografato da MEOCY Studio',
+    arcSunset: 'Arco di Trionfo al tramonto dagli Champs-Élysées, fotografato da MEOCY Studio',
+    seine: 'Pont Alexandre III e il Grand Palais sulla Senna, fotografati da MEOCY Studio',
+    statue: 'Sculture del Pont Alexandre III, fotografate da MEOCY Studio'
+  },
   work: {
     title: 'Ritratti di MEOCY Studio',
-    caption: 'Esempi di ritratti di MEOCY Studio, realizzati a Milano.',
-    alt: 'Ritratto fotografato da MEOCY Studio a Milano'
+    caption: 'Esempi di ritratti e fotografia lifestyle di MEOCY Studio. Questi ritratti non sono stati realizzati a Parigi.',
+    alt: 'Ritratto fotografato da MEOCY Studio (non a Parigi)'
   },
   packages: {
     title: 'Scegli la tua esperienza a Parigi',

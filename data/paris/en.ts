@@ -12,7 +12,9 @@ export const parisEn = {
     ctaWhatsapp: 'ASK ON WHATSAPP',
     whatsappMessage: 'Hi MEOCY Studio, I\'m interested in a Paris photoshoot at the Eiffel Tower and would like some information.',
     trust: 'Private session • Eiffel Tower / Trocadéro • Edited high-resolution images',
-    datesLabel: 'Dates',
+    datesLabel: 'Date',
+    imageAlt: 'The Eiffel Tower seen from Trocadéro, photographed by MEOCY Studio',
+    photoCredit: 'Eiffel Tower from Trocadéro · photographed by MEOCY Studio',
     datesValue: 'Request your preferred date'
   },
   location: {
@@ -29,10 +31,18 @@ export const parisEn = {
       { t: 'The Eiffel Tower', d: 'Every Paris session is photographed around the Eiffel Tower and Trocadéro.' }
     ]
   },
+  gallery: {
+    title: 'Paris, Through Our Lens',
+    text: 'Paris photographed by MEOCY Studio. Your session itself takes place at the Eiffel Tower / Trocadéro.',
+    arcNight: 'Arc de Triomphe at night, photographed by MEOCY Studio',
+    arcSunset: 'Arc de Triomphe at sunset from the Champs-Élysées, photographed by MEOCY Studio',
+    seine: 'Pont Alexandre III and the Grand Palais on the Seine, photographed by MEOCY Studio',
+    statue: 'Pont Alexandre III sculptures, photographed by MEOCY Studio'
+  },
   work: {
     title: 'Portraits by MEOCY Studio',
-    caption: 'Examples of MEOCY Studio portrait photography, taken in Milan.',
-    alt: 'Portrait photographed by MEOCY Studio in Milan'
+    caption: 'Examples of MEOCY Studio portrait and lifestyle photography. These portraits were not taken in Paris.',
+    alt: 'Portrait photographed by MEOCY Studio (not in Paris)'
   },
   packages: {
     title: 'Choose Your Paris Experience',

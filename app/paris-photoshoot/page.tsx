@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer';
 import { ParisPhotoshootPage } from '../../components/paris/ParisPhotoshootPage';
 import { parisEn } from '../../data/paris/en';
 import { parisCurrency, parisPackages } from '../../lib/paris-shoot-config';
-import { organizationJsonLd, pageMetadata } from '../../lib/seo';
+import { organizationJsonLd, pageMetadata, SITE_URL } from '../../lib/seo';
 
 const URL = 'https://meocy.com/paris-photoshoot';
 const p = parisEn;
@@ -14,6 +14,8 @@ export const metadata: Metadata = pageMetadata({
   path: '/paris-photoshoot',
   title: p.seo.title,
   description: p.seo.description,
+  // Real MEOCY photo of the Eiffel Tower from Trocadéro (public/og/paris-photoshoot.jpg, 1200×630).
+  image: { url: `${SITE_URL}/og/paris-photoshoot.jpg`, width: 1200, height: 630, alt: 'Eiffel Tower from Trocadéro, Paris' },
   indexable: true,
 });
 

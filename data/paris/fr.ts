@@ -14,7 +14,9 @@ export const parisFr: ParisCopy = {
     ctaWhatsapp: 'DEMANDER SUR WHATSAPP',
     whatsappMessage: 'Bonjour MEOCY Studio, je suis intéressé(e) par une séance photo à Paris à la tour Eiffel et j\'aimerais avoir des informations.',
     trust: 'Séance privée • Tour Eiffel / Trocadéro • Images retouchées haute résolution',
-    datesLabel: 'Dates',
+    datesLabel: 'Date',
+    imageAlt: 'La tour Eiffel vue du Trocadéro, photographiée par MEOCY Studio',
+    photoCredit: 'Tour Eiffel depuis le Trocadéro · photographiée par MEOCY Studio',
     datesValue: 'Demandez la date de votre choix'
   },
   location: {
@@ -31,10 +33,18 @@ export const parisFr: ParisCopy = {
       { t: 'La tour Eiffel', d: 'Chaque séance à Paris est photographiée autour de la tour Eiffel et du Trocadéro.' }
     ]
   },
+  gallery: {
+    title: 'Paris, à travers notre objectif',
+    text: 'Paris photographié par MEOCY Studio. Votre séance se déroule à la tour Eiffel / Trocadéro.',
+    arcNight: 'Arc de Triomphe de nuit, photographié par MEOCY Studio',
+    arcSunset: 'Arc de Triomphe au coucher du soleil depuis les Champs-Élysées, photographié par MEOCY Studio',
+    seine: 'Pont Alexandre III et le Grand Palais sur la Seine, photographiés par MEOCY Studio',
+    statue: 'Sculptures du pont Alexandre III, photographiées par MEOCY Studio'
+  },
   work: {
     title: 'Portraits par MEOCY Studio',
-    caption: 'Exemples de portraits réalisés par MEOCY Studio à Milan.',
-    alt: 'Portrait photographié par MEOCY Studio à Milan'
+    caption: 'Exemples de portraits et de photographie lifestyle par MEOCY Studio. Ces portraits n\'ont pas été réalisés à Paris.',
+    alt: 'Portrait photographié par MEOCY Studio (pas à Paris)'
   },
   packages: {
     title: 'Choisissez votre expérience à Paris',
