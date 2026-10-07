@@ -518,10 +518,11 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
               <textarea id="pb-notes" rows={4} maxLength={1000} value={details.notes} onChange={(e) => setField('notes', e.target.value)} className={`${fieldClass} resize-y`} />
             </div>
             <FormPrivacyNotice className="text-[13px] leading-snug text-chalk/60 sm:col-span-2" linkClassName="hover:text-chalk" />
-            {/* Honeypot: hidden from people and assistive tech. */}
-            <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-px w-px overflow-hidden">
-              <label htmlFor="pb-company-website">Company website</label>
-              <input id="pb-company-website" type="text" tabIndex={-1} autoComplete="off" value={details.company_website} onChange={(e) => setField('company_website', e.target.value)} />
+            {/* Honeypot: hidden from people, assistive tech and browser autofill (display:none + neutral label, same as the
+                Collaborate form). An off-screen "Company website" field was being autofilled, so real requests were dropped. */}
+            <div aria-hidden="true" style={{ display: 'none' }}>
+              <label htmlFor="pb-website-hp">Website field</label>
+              <input id="pb-website-hp" name="company_website" type="text" tabIndex={-1} autoComplete="off" value={details.company_website} onChange={(e) => setField('company_website', e.target.value)} />
             </div>
           </div>
         )}
