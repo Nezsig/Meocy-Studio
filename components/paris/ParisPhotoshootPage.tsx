@@ -139,9 +139,13 @@ export function ParisPhotoshootPage() {
             <h2 className={sectionTitle}>{p.gallery.title}</h2>
             <p className="max-w-md text-[15px] leading-relaxed text-slate2">{p.gallery.text}</p>
           </div>
+          {/* The Eiffel Tower / Trocadéro photo leads (the product's location); other Paris photos support it. */}
           <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
-            <figure className="relative col-span-2 aspect-[4/5] overflow-hidden rounded-[22px] sm:aspect-[16/12] lg:col-span-2 lg:row-span-2 lg:aspect-auto">
-              <Image src={PARIS.eiffelGardens.src} alt={p.gallery.eiffelGardens} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover object-[55%_35%]" />
+            <figure className="relative col-span-2 aspect-[4/5] overflow-hidden rounded-[22px] sm:aspect-[16/13] lg:col-span-2 lg:row-span-2 lg:aspect-auto">
+              <Image src={PARIS.eiffel.src} alt={p.hero.imageAlt} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover object-[50%_45%]" />
+            </figure>
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
+              <Image src={PARIS.eiffelGardens.src} alt={p.gallery.eiffelGardens} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[58%_40%]" />
             </figure>
             <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
               <Image src={PARIS.arcSunset.src} alt={p.gallery.arcSunset} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[50%_45%]" />
@@ -150,15 +154,17 @@ export function ParisPhotoshootPage() {
               <Image src={PARIS.pillars.src} alt={p.gallery.pillars} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[55%_40%]" />
             </figure>
             <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
-              <Image src={PARIS.seine.src} alt={p.gallery.seine} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[45%_50%]" />
-            </figure>
-            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px]">
               <Image src={PARIS.arcNight.src} alt={p.gallery.arcNight} fill sizes="(min-width: 1024px) 300px, 50vw" className="object-cover object-[50%_40%]" />
             </figure>
           </div>
-          <figure className="relative mt-3 aspect-[16/10] overflow-hidden rounded-[22px] sm:mt-4 sm:aspect-[21/9]">
-            <Image src={PARIS.reflections.src} alt={p.gallery.reflections} fill sizes="(min-width: 1240px) 1176px, 100vw" className="object-cover object-[50%_58%]" />
-          </figure>
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:mt-4 sm:gap-4 lg:grid-cols-3">
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px] lg:aspect-auto lg:h-[440px]">
+              <Image src={PARIS.seine.src} alt={p.gallery.seine} fill sizes="(min-width: 1024px) 390px, 50vw" className="object-cover object-[45%_50%]" />
+            </figure>
+            <figure className="relative aspect-[3/4] overflow-hidden rounded-[22px] lg:col-span-2 lg:aspect-auto lg:h-[440px]">
+              <Image src={PARIS.reflections.src} alt={p.gallery.reflections} fill sizes="(min-width: 1024px) 790px, 50vw" className="object-cover object-[50%_58%]" />
+            </figure>
+          </div>
         </div>
       </section>
 
