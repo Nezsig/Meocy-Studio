@@ -5,12 +5,12 @@ import { z } from 'zod';
 import { buildParisCustomerEmail, buildParisNotificationEmail, parisCustomerSubject, type ParisRequestEmail } from '../../../../lib/paris-emails';
 import {
   computeParisPricing,
+  isParisDateSelectable,
   parisMaxPeople,
   parisNowParts,
   parisPackages,
   parisSlotsFor,
   parisStandardPeople,
-  upcomingParisShootDays,
   type ParisPackageId,
 } from '../../../../lib/paris-shoot-config';
 import { parisEn } from '../../../../data/paris/en';
@@ -100,8 +100,9 @@ export async function POST(req: Request) {
       if (ref) return NextResponse.json({ ok: true, reference: ref, pricing: computeParisPricing(r.packageId) });
     }
 
-    // Only configured, upcoming Paris shoot days and start times that fit the package are accepted.
-    if (!upcomingParisShootDays().some((d) => d.date === r.date) || !parisSlotsFor(r.date, r.packageId).includes(r.time)) {
+    // Preferred date must be today or later (Paris time) and the start time must fit the package.
+    // This is only a request: nothing is reserved or confirmed here.
+    if (!isParisDateSelectable(r.date) || !parisSlotsFor(r.date, r.packageId).includes(r.time)) {
       return NextResponse.json({ error: 'Date or time not available' }, { status: 409 });
     }
 

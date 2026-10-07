@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check, MapPin } from 'lucide-react';
@@ -7,17 +7,17 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { AccordionItem, fmt, formatPrice } from '../milan/parts';
 import { parisCopy } from '../../data/paris';
 import { trackParisBookingEvent } from '../../lib/ga-paris';
-import { fillParisRefund, parisContact, parisPackages, upcomingParisShootDays, type ParisPackageId } from '../../lib/paris-shoot-config';
+import { fillParisRefund, parisContact, parisPackages, type ParisPackageId } from '../../lib/paris-shoot-config';
+import { EiffelTowerArt } from './EiffelTowerArt';
 import { ParisBookingFlow } from './ParisBookingFlow';
 
-// No Paris photographs exist yet: the hero is typographic, and the portrait strip shows real MEOCY
-// portrait work, captioned as taken in Milan. Replace with real Eiffel Tower photos when available.
+// No Paris photographs exist yet: the hero uses an Eiffel Tower line-art illustration (clearly a drawing),
+// and the portrait strip shows real MEOCY portrait work, captioned as taken in Milan.
 const PORTRAITS = [
   { src: '/work/fashion-05.jpg', width: 1130, height: 1600 },
   { src: '/work/fashion-19.jpg', width: 1127, height: 1600 },
   { src: '/work/fashion-01.jpg', width: 1129, height: 1600 },
 ];
-const INTL_LOCALE = { en: 'en-GB', it: 'it-IT', fr: 'fr-FR' } as const;
 
 const sectionTitle = 'font-display text-[clamp(2.2rem,5.4vw,4rem)] leading-[1.02] tracking-tighter-display';
 const ctaPrimary =
@@ -25,24 +25,32 @@ const ctaPrimary =
 const ctaGhostDark =
   'inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-[13px] font-semibold uppercase tracking-[0.1em] text-chalk ring-1 ring-chalk/35 transition-colors hover:bg-chalk/10';
 
+/** Camera-viewfinder frame around the Eiffel Tower illustration (decorative). */
+function Viewfinder({ className, caption }: { className: string; caption: string }) {
+  return (
+    <div className={`relative ${className}`} aria-hidden>
+      <div className="absolute inset-0 rounded-[24px] bg-gradient-to-b from-chalk/[0.03] to-chalk/[0.07] ring-1 ring-chalk/10" />
+      <div className="absolute inset-5 opacity-[0.12] [background-image:linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] [background-size:33.333%_33.333%]" />
+      <span className="absolute left-4 top-4 h-6 w-6 border-l-2 border-t-2 border-accent" />
+      <span className="absolute right-4 top-4 h-6 w-6 border-r-2 border-t-2 border-accent" />
+      <span className="absolute bottom-4 left-4 h-6 w-6 border-b-2 border-l-2 border-accent" />
+      <span className="absolute bottom-4 right-4 h-6 w-6 border-b-2 border-r-2 border-accent" />
+      <span className="absolute left-7 top-7 flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.2em] text-chalk/60">
+        <span className="h-2 w-2 rounded-full bg-accent" />
+        Paris
+      </span>
+      <EiffelTowerArt className="absolute inset-x-0 bottom-14 top-8 mx-auto h-[calc(100%-5.5rem)] w-auto" />
+      <span className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10.5px] font-semibold uppercase tracking-[0.24em] text-chalk/55">{caption}</span>
+    </div>
+  );
+}
+
 export function ParisPhotoshootPage() {
   const { lang } = useLanguage();
   const p = parisCopy[lang];
 
   const [packageId, setPackageId] = useState<ParisPackageId>('experience');
   const [packageChosen, setPackageChosen] = useState(false);
-
-  // The shoot-day date is formatted in the browser only: server and browser Intl output can differ slightly
-  // ("Saturday, 14 November" vs "Saturday 14 November"), which would break hydration.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  // The page is pre-rendered at build time, so "upcoming" is also decided in the browser.
-  const nextDay = mounted ? upcomingParisShootDays()[0] : undefined;
-  const shootDay = !mounted
-    ? '\u00a0'
-    : nextDay
-      ? new Intl.DateTimeFormat(INTL_LOCALE[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${nextDay.date}T00:00:00Z`))
-      : p.hero.shootDayTba;
 
   const goToBooking = useCallback((pkg?: ParisPackageId) => {
     if (pkg) {
@@ -54,44 +62,54 @@ export function ParisPhotoshootPage() {
 
   return (
     <main id="main-content">
-      {/* 1 — HERO */}
-      <section className="relative isolate overflow-hidden bg-ink text-chalk">
-        <div aria-hidden className="pointer-events-none absolute -right-24 top-1/2 -z-10 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-accent/[0.07] blur-3xl" />
-        <div className="mx-auto flex min-h-[clamp(520px,75vh,760px)] w-full max-w-[1240px] flex-col justify-end px-5 pb-12 pt-24 sm:px-8 sm:pb-20">
-          <p className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.22em] text-accent">
-            <span className="h-px w-10 bg-accent" aria-hidden />
-            {p.hero.eyebrow}
-          </p>
-          <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">{p.hero.title}</h1>
-          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-chalk/75 sm:text-[18px]">{p.hero.text}</p>
-          <dl className="mt-8 grid max-w-2xl gap-px overflow-hidden rounded-2xl bg-chalk/15 ring-1 ring-chalk/15 sm:grid-cols-2">
-            <div className="bg-ink px-5 py-4">
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{p.location.label}</dt>
-              <dd className="mt-1 flex items-center gap-2 text-[15px] font-semibold">
-                <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                {p.location.name}
-              </dd>
+      {/* 1 — HERO: Paris night sky + Eiffel Tower illustration in a camera viewfinder */}
+      <section
+        className="relative isolate overflow-hidden bg-ink text-chalk"
+        style={{
+          backgroundImage:
+            'radial-gradient(90% 70% at 78% 105%, rgba(200,241,105,0.10), transparent 60%), radial-gradient(60% 50% at 80% 10%, rgba(120,140,190,0.16), transparent 70%), linear-gradient(180deg, #0b0b0c 0%, #10131b 60%, #161820 100%)',
+        }}>
+        <div className="mx-auto grid min-h-[clamp(560px,82vh,820px)] w-full max-w-[1240px] items-end gap-10 px-5 pb-12 pt-10 sm:px-8 sm:pt-16 sm:pb-20 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center lg:pb-16 lg:pt-20">
+          <div>
+            <Viewfinder className="mb-10 h-[300px] sm:h-[360px] lg:hidden" caption={p.packages.locationValue} />
+            <p className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.22em] text-accent">
+              <span className="h-px w-10 bg-accent" aria-hidden />
+              {p.hero.eyebrow}
+            </p>
+            <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.8rem,7.6vw,6rem)] leading-[0.98] tracking-tighter-display">{p.hero.title}</h1>
+            <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-chalk/75 sm:text-[18px]">{p.hero.text}</p>
+            <dl className="mt-8 grid max-w-2xl gap-px overflow-hidden rounded-2xl bg-chalk/15 ring-1 ring-chalk/15 sm:grid-cols-2">
+              <div className="bg-ink/80 px-5 py-4 backdrop-blur">
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{p.location.label}</dt>
+                <dd className="mt-1 flex items-center gap-2 text-[15px] font-semibold">
+                  <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+                  {p.location.name}
+                </dd>
+              </div>
+              <div className="bg-ink/80 px-5 py-4 backdrop-blur">
+                <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{p.hero.datesLabel}</dt>
+                <dd className="mt-1 text-[15px] font-semibold">{p.hero.datesValue}</dd>
+              </div>
+            </dl>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={() => {
+                  trackParisBookingEvent('booking_cta_click');
+                  goToBooking();
+                }}
+                className={ctaPrimary}>
+                {p.hero.ctaPrimary}
+              </button>
+              <a href={`https://wa.me/${parisContact.whatsappNumber}?text=${encodeURIComponent(p.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostDark}>
+                {p.hero.ctaWhatsapp}
+              </a>
             </div>
-            <div className="bg-ink px-5 py-4">
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-chalk/55">{p.hero.shootDayLabel}</dt>
-              <dd className="mt-1 text-[15px] font-semibold" data-testid="paris-shoot-day">{shootDay}</dd>
-            </div>
-          </dl>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={() => {
-                trackParisBookingEvent('booking_cta_click');
-                goToBooking();
-              }}
-              className={ctaPrimary}>
-              {p.hero.ctaPrimary}
-            </button>
-            <a href={`https://wa.me/${parisContact.whatsappNumber}?text=${encodeURIComponent(p.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostDark}>
-              {p.hero.ctaWhatsapp}
-            </a>
+            <p className="mt-8 text-[12.5px] tracking-[0.04em] text-chalk/55">{p.hero.trust}</p>
           </div>
-          <p className="mt-8 text-[12.5px] tracking-[0.04em] text-chalk/55">{p.hero.trust}</p>
+
+          {/* Desktop: viewfinder frame around the tower */}
+          <Viewfinder className="hidden aspect-[4/5] lg:block" caption={p.packages.locationValue} />
         </div>
       </section>
 
@@ -172,7 +190,15 @@ export function ParisPhotoshootPage() {
                       <dt className={`text-[11px] font-semibold uppercase tracking-[0.16em] ${muted}`}>{p.packages.statPhotos}</dt>
                       <dd className="mt-1 text-[15px] font-semibold">{fmt(p.packages.photosValue, { n: pk.photos })}</dd>
                     </div>
-                    <div className="col-span-2">
+                    {pk.lighting && (
+                      <div>
+                        <dt className={`text-[11px] font-semibold uppercase tracking-[0.16em] ${muted}`}>{p.packages.statLighting}</dt>
+                        <dd className="mt-1">
+                          <span className="inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[13px] font-semibold text-ink">{p.packages.lightingValue}</span>
+                        </dd>
+                      </div>
+                    )}
+                    <div className={pk.lighting ? '' : 'col-span-2'}>
                       <dt className={`text-[11px] font-semibold uppercase tracking-[0.16em] ${muted}`}>{p.packages.statLocation}</dt>
                       <dd className="mt-1 text-[15px] font-semibold">{p.packages.locationValue}</dd>
                     </div>
@@ -278,7 +304,8 @@ export function ParisPhotoshootPage() {
       </section>
 
       {/* 9 — FINAL CTA */}
-      <section className="bg-ink text-chalk">
+      <section className="relative isolate overflow-hidden bg-ink text-chalk" style={{ backgroundImage: 'radial-gradient(70% 60% at 85% 100%, rgba(200,241,105,0.08), transparent 65%), linear-gradient(180deg, #0b0b0c 0%, #12151d 100%)' }}>
+        <EiffelTowerArt beams={false} className="pointer-events-none absolute -right-10 bottom-0 -z-10 h-[90%] w-auto opacity-25 sm:right-6 sm:opacity-40" />
         <div className="mx-auto flex max-w-[1240px] flex-col px-5 py-24 sm:px-8 sm:py-32">
           <h2 className="max-w-3xl font-display text-[clamp(2.6rem,7vw,5.4rem)] leading-[1] tracking-tighter-display">{p.final.title}</h2>
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-chalk/75">{p.final.text}</p>

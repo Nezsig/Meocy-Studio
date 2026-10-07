@@ -13,7 +13,8 @@ import {
   parisPackages,
   parisSlotsFor,
   parisStandardPeople,
-  upcomingParisShootDays,
+  isParisDateSelectable,
+  todayInParis,
   type ParisPackageId,
   type ParisPricing,
 } from '../../lib/paris-shoot-config';
@@ -95,6 +96,75 @@ const clearSaved = () => {
   }
 };
 
+/** Month calendar for the preferred date (same look as the Milan calendar; Paris date rules). */
+function ParisCalendar({ value, onChange, lang, labels }: { value: string; onChange: (d: string) => void; lang: keyof typeof INTL_LOCALE; labels: { prev: string; next: string } }) {
+  const today = todayInParis();
+  const [view, setView] = useState(() => {
+    const base = value || today;
+    return { y: Number(base.slice(0, 4)), m: Number(base.slice(5, 7)) - 1 };
+  });
+  const loc = INTL_LOCALE[lang];
+  const monthLabel = new Intl.DateTimeFormat(loc, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(Date.UTC(view.y, view.m, 1));
+  // Monday-first weekday labels (1 Jan 2024 was a Monday).
+  const weekdays = Array.from({ length: 7 }, (_, i) => new Intl.DateTimeFormat(loc, { weekday: 'short', timeZone: 'UTC' }).format(Date.UTC(2024, 0, 1 + i)));
+  const first = new Date(Date.UTC(view.y, view.m, 1));
+  const offset = (first.getUTCDay() + 6) % 7;
+  const daysInMonth = new Date(Date.UTC(view.y, view.m + 1, 0)).getUTCDate();
+  const iso = (d: number) => `${view.y}-${String(view.m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+  const atCurrentMonth = `${view.y}-${String(view.m + 1).padStart(2, '0')}` <= today.slice(0, 7);
+  const shift = (delta: number) =>
+    setView((v) => {
+      const d = new Date(Date.UTC(v.y, v.m + delta, 1));
+      return { y: d.getUTCFullYear(), m: d.getUTCMonth() };
+    });
+  const fullLabel = (d: string) => new Intl.DateTimeFormat(loc, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`));
+
+  return (
+    <div className="max-w-md rounded-2xl bg-chalk p-4 text-ink sm:p-5">
+      <div className="flex items-center justify-between">
+        <button type="button" onClick={() => shift(-1)} disabled={atCurrentMonth} aria-label={labels.prev} className="grid h-11 w-11 place-items-center rounded-full hover:bg-paper disabled:opacity-30">
+          <ChevronLeft className="h-5 w-5" aria-hidden />
+        </button>
+        <p className="text-[15px] font-semibold capitalize" aria-live="polite">
+          {monthLabel}
+        </p>
+        <button type="button" onClick={() => shift(1)} aria-label={labels.next} className="grid h-11 w-11 place-items-center rounded-full hover:bg-paper">
+          <ChevronRight className="h-5 w-5" aria-hidden />
+        </button>
+      </div>
+      <div className="mt-3 grid grid-cols-7 gap-1 text-center text-[11.5px] font-medium uppercase text-slate2">
+        {weekdays.map((w) => (
+          <span key={w}>{w}</span>
+        ))}
+      </div>
+      <div className="mt-1 grid grid-cols-7 gap-1">
+        {Array.from({ length: offset }, (_, i) => (
+          <span key={`x${i}`} />
+        ))}
+        {Array.from({ length: daysInMonth }, (_, i) => {
+          const d = iso(i + 1);
+          const ok = isParisDateSelectable(d);
+          const selected = d === value;
+          return (
+            <button
+              key={d}
+              type="button"
+              disabled={!ok}
+              aria-pressed={selected}
+              aria-label={fullLabel(d)}
+              onClick={() => onChange(d)}
+              className={`grid aspect-square min-h-[40px] place-items-center rounded-full text-[14px] tabular-nums transition-colors ${
+                selected ? 'bg-ink font-semibold text-chalk' : ok ? 'hover:bg-paper' : 'cursor-not-allowed text-ink/25 line-through'
+              }`}>
+              {i + 1}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 interface Props {
   packageId: ParisPackageId | null;
   onPackageChange: (id: ParisPackageId) => void;
@@ -141,13 +211,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
 
   const pkg = parisPackages.find((x) => x.id === packageId) ?? null;
   const pricing = pkg ? computeParisPricing(pkg.id) : null;
-  const days = useMemo(() => upcomingParisShootDays(), []);
   const slots = useMemo(() => (date && pkg ? parisSlotsFor(date, pkg.id) : []), [date, pkg]);
-
-  // A single shoot day is pre-selected.
-  useEffect(() => {
-    if (!date && days.length === 1) setDate(days[0].date);
-  }, [date, days]);
   // Clear a start time that no longer fits the chosen package or day.
   useEffect(() => {
     if (time && !slots.includes(time)) setTime('');
@@ -179,7 +243,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
     const e: typeof errors = {};
     if (screen === 'package' && !pkg) e.package = b.errRequired;
     if (screen === 'datetime') {
-      if (!date || !days.some((d) => d.date === date)) e.date = b.errDate;
+      if (!date || !isParisDateSelectable(date)) e.date = b.errDate;
       else if (!time || !slots.includes(time)) e.time = b.errTime;
     }
     if (screen === 'details') Object.assign(e, validateDetails());
@@ -362,27 +426,21 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
               </span>
             </p>
 
-            <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-chalk/55">{b.dayLabel}</p>
-            {days.length ? (
-              <div id="pb-date" tabIndex={-1} role="radiogroup" aria-label={b.dayLabel} className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {days.map((d) => (
-                  <button
-                    key={d.date}
-                    type="button"
-                    role="radio"
-                    aria-checked={d.date === date}
-                    onClick={() => {
-                      setDate(d.date);
-                      setErrors((e) => ({ ...e, date: undefined }));
-                    }}
-                    className={`min-h-[52px] rounded-xl px-4 text-left text-[15px] font-semibold ring-1 transition-colors ${d.date === date ? 'bg-chalk text-ink ring-chalk' : 'ring-chalk/25 hover:ring-chalk/60'}`}>
-                    {longDate(d.date)}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <p id="pb-date" tabIndex={-1} className="mt-3 rounded-xl bg-chalk/10 px-4 py-3 text-[14.5px]">
-                {b.noDays}
+            <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-chalk/55">{b.dateLabel}</p>
+            <div id="pb-date" tabIndex={-1} className="mt-3">
+              <ParisCalendar
+                value={date}
+                onChange={(d) => {
+                  setDate(d);
+                  setErrors((e) => ({ ...e, date: undefined }));
+                }}
+                lang={lang}
+                labels={{ prev: b.prevMonth, next: b.nextMonth }}
+              />
+            </div>
+            {date && (
+              <p className="mt-4 text-[14.5px]">
+                <span className="text-chalk/60">{b.dateLabel}:</span> <strong>{longDate(date)}</strong>
               </p>
             )}
             {err('date')}

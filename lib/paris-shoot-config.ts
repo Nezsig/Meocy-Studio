@@ -14,6 +14,7 @@ export type ParisFeatureKey =
   | 'naturalPosing'
   | 'naturalCreative'
   | 'creativePosing'
+  | 'lighting300'
   | 'editing'
   | 'editingGrading'
   | 'highRes';
@@ -24,6 +25,8 @@ export interface ParisPackage {
   price: number;
   durationHours: number;
   photos: number;
+  /** Shows the professional lighting setup (stat + feature line). */
+  lighting: boolean;
   popular?: boolean;
   features: ParisFeatureKey[];
 }
@@ -35,6 +38,7 @@ export const parisPackages: ParisPackage[] = [
     price: 200,
     durationHours: 2,
     photos: 25,
+    lighting: false,
     features: ['photos25', 'location', 'photographer', 'naturalPosing', 'editing', 'highRes'],
   },
   {
@@ -42,38 +46,40 @@ export const parisPackages: ParisPackage[] = [
     price: 300,
     durationHours: 3,
     photos: 50,
+    lighting: true,
     popular: true,
-    features: ['photos50', 'location', 'photographer', 'naturalCreative', 'editing', 'highRes'],
+    features: ['photos50', 'lighting300', 'location', 'photographer', 'naturalCreative', 'editing', 'highRes'],
   },
   {
     id: 'signature',
     price: 600,
     durationHours: 5,
     photos: 75,
-    features: ['photos75', 'location', 'photographer', 'creativePosing', 'editingGrading', 'highRes'],
+    lighting: true,
+    features: ['photos75', 'lighting300', 'location', 'photographer', 'creativePosing', 'editingGrading', 'highRes'],
   },
 ];
 
 // ---------------------------------------------------------------------------------------------
-// PARIS SHOOT DAYS — the only place to set when Paris sessions can be requested.
-//
-// Add one entry per Paris shoot day (Paris time, 24h):
-//   { date: '2026-11-14', firstStart: '08:00', lastEnd: '20:00' }
-// Start times are offered every hour from `firstStart`, as long as start + package duration
-// ends by `lastEnd`. While this list is empty, the page shows "date to be announced" and no
-// request can be sent (the API refuses every date).
+// PARIS DATES — customers request their PREFERRED date and time (not guaranteed).
+// MEOCY reviews every request, agrees the final date/time with the customer (or proposes an
+// alternative), and only then sends the €50 deposit link. Nothing is confirmed automatically.
 // ---------------------------------------------------------------------------------------------
-export interface ParisShootDay {
-  date: string; // YYYY-MM-DD
-  firstStart: string; // HH:MM
-  lastEnd: string; // HH:MM
-}
-export const parisShootDays: ParisShootDay[] = [];
 
-/** Single start times already taken on a shoot day, e.g. { date: '2026-11-14', time: '10:00' }. */
+/** Start times offered in the form (Paris time): hourly from 06:00; a session must end by parisDayEnd. */
+export const parisSlotStartTimes = [
+  '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00',
+  '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00',
+];
+export const parisDayEnd = '22:00';
+
+/** Dates that cannot be requested at all, e.g. ['2026-12-24', '2026-12-25']. */
+export const parisBlockedDates: string[] = [];
+
+/** Single start times already taken, e.g. { date: '2026-11-14', time: '10:00' }. Pending requests do NOT block a slot. */
 export const parisBlockedSlots: { date: string; time: string }[] = [];
 
-/** Deposit requested only AFTER MEOCY confirms availability (same policy as Milan). Not collected on the website. */
+/** Deposit requested only AFTER MEOCY and the customer agree the final date/time (same policy as Milan). Not collected on the website. */
 export const parisDepositAmount = 50;
 /** Cancelling at least this many days (× 24 hours) before the shoot refunds the deposit in full (same rule as Milan). */
 export const parisRefundDaysBefore = 3;
@@ -125,26 +131,29 @@ const toMinutes = (hhmm: string) => {
   const [h, m] = hhmm.split(':').map(Number);
   return h * 60 + m;
 };
-const toHhmm = (minutes: number) => `${String(Math.floor(minutes / 60)).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`;
 
-/** Shoot days that are today or later (Paris time), in date order. */
-export const upcomingParisShootDays = (now = new Date()) => {
-  const today = parisParts(now).date;
-  return parisShootDays.filter((d) => d.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+/** Today's date in Paris as YYYY-MM-DD. */
+export const todayInParis = (now = new Date()) => parisParts(now).date;
+
+/** True for a real calendar date written as YYYY-MM-DD. */
+export const isValidParisIsoDate = (date: string) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+  const d = new Date(`${date}T00:00:00Z`);
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === date;
 };
 
-/** Start times for a shoot day and package: hourly from firstStart, ending by lastEnd, not blocked, not already past. */
+/** A preferred date can be requested when it is today or later (Paris time) and not blocked. */
+export const isParisDateSelectable = (date: string, now = new Date()) =>
+  isValidParisIsoDate(date) && date >= todayInParis(now) && !parisBlockedDates.includes(date);
+
+/** Preferred start times for a date and package: the session must end by parisDayEnd, not blocked, not already past. */
 export const parisSlotsFor = (date: string, packageId: ParisPackageId, now = new Date()): string[] => {
-  const day = upcomingParisShootDays(now).find((d) => d.date === date);
   const pkg = parisPackages.find((p) => p.id === packageId);
-  if (!day || !pkg) return [];
+  if (!pkg || !isParisDateSelectable(date, now)) return [];
   const { date: today, time: nowTime } = parisParts(now);
-  const slots: string[] = [];
-  for (let start = toMinutes(day.firstStart); start + pkg.durationHours * 60 <= toMinutes(day.lastEnd); start += 60) {
-    const time = toHhmm(start);
-    if (parisBlockedSlots.some((s) => s.date === date && s.time === time)) continue;
-    if (date === today && time <= nowTime) continue;
-    slots.push(time);
-  }
-  return slots;
+  return parisSlotStartTimes.filter((time) => {
+    if (toMinutes(time) + pkg.durationHours * 60 > toMinutes(parisDayEnd)) return false;
+    if (parisBlockedSlots.some((s) => s.date === date && s.time === time)) return false;
+    return date > today || time > nowTime;
+  });
 };
