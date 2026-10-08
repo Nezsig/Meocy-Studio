@@ -1180,6 +1180,35 @@ export const en = {
     }
   },
 
+  cookieBanner: {
+    title: 'We respect your privacy',
+    description: 'This website uses analytics to understand how visitors use it, and optional marketing to measure campaign performance. Essential functionality always works. You can change your preferences anytime.',
+    acceptAll: 'Accept all',
+    rejectOptional: 'Reject optional',
+    customize: 'Customize'
+  },
+
+  cookieSettings: {
+    title: 'Cookie Settings',
+    essential: {
+      title: 'Essential',
+      description: 'Required for the website to work. Includes language preference and spam protection.',
+      label: 'Always enabled'
+    },
+    analytics: {
+      title: 'Analytics',
+      description: 'Google Analytics helps us understand how you use the site so we can improve it.',
+      label: 'Enable analytics (Google Analytics 4)'
+    },
+    marketing: {
+      title: 'Marketing',
+      description: 'Meta Pixel helps us measure the performance of our marketing campaigns.',
+      label: 'Enable marketing (Meta Pixel)'
+    },
+    save: 'Save preferences',
+    cancel: 'Cancel'
+  },
+
   legal: {
     updated: 'Last updated: October 2026',
     formNotice: 'We use these details only to handle your request, as described in our {link}.',
@@ -1247,13 +1276,29 @@ export const en = {
     },
     cookiePolicy: {
       title: 'Cookie Policy',
-      intro: 'This page describes what this website stores in your browser.',
+      intro: 'This page describes what this website stores in your browser and how we use analytics and marketing tools.',
       sections: [
         {
-          h: 'No advertising or tracking cookies.',
+          h: 'Essential functionality.',
           p: [
-            'This website does not set its own cookies and does not use advertising, analytics or tracking cookies.',
-            'Pages do not load scripts, fonts, maps, videos or other content from third-party websites. Links to WhatsApp or Instagram only connect to those services if you choose to open them.'
+            'This website stores only essential items in your browser: your language preference (meocy-lang) in local storage, and a short-lived token to prevent spam on forms.',
+            'These are necessary for the site to work correctly and do not require your consent.'
+          ]
+        },
+        {
+          h: 'Analytics (Google Analytics 4).',
+          p: [
+            'If you enable analytics, we use Google Analytics 4 to understand how visitors use the site: which pages you visit, how long you stay, and where you come from.',
+            'Google Analytics uses cookies and identifiers to track your activity across sessions. No personal data (email, phone, name) is sent to Google.',
+            'Analytics is optional and disabled by default. You can enable or disable it anytime using the cookie settings link in the footer.'
+          ]
+        },
+        {
+          h: 'Marketing (Meta Pixel).',
+          p: [
+            'If you enable marketing, we use Meta Pixel to measure the performance of our advertising campaigns and understand which ads bring visitors to our site.',
+            'Meta Pixel uses cookies and identifiers to track actions on the site. No personal data (email, phone, name) is sent to Meta.',
+            'Marketing is optional and disabled by default. You can enable or disable it anytime using the cookie settings link in the footer.'
           ]
         },
         {
@@ -1264,9 +1309,16 @@ export const en = {
           ]
         },
         {
-          h: 'How to remove it.',
+          h: 'How to manage or remove cookies.',
           p: [
-            'You can delete the stored language preference at any time by clearing this site\'s data in your browser settings.'
+            'You can change your consent preferences at any time by clicking the cookie settings link in the website footer. When you withdraw consent, we stop sending new tracking data to Google Analytics or Meta Pixel immediately.',
+            'To remove existing cookies set by these services, you can delete them by clearing your browser\'s site data. Instructions vary by browser — search your browser\'s help section for "clear cookies" or "clear site data". Alternatively, you can opt out of Google Analytics in your Google account settings, or manage Meta tracking through your Meta Ads Preferences.'
+          ]
+        },
+        {
+          h: 'Third-party services.',
+          p: [
+            'Google Analytics and Meta Pixel are operated by third parties. Their own privacy policies and terms apply. You can opt out of Google Analytics at any time by visiting their opt-out page. You can control Meta Pixel tracking in your Meta Ads Settings.'
           ]
         },
         {
@@ -1291,7 +1343,8 @@ export const en = {
       privacy: 'Privacy Policy',
       terms: 'Terms & Conditions',
       bookingPolicy: 'Booking Policy',
-      cookiePolicy: 'Cookie Policy'
+      cookiePolicy: 'Cookie Policy',
+      cookieSettings: 'Cookie Settings'
     }
   }
 };

@@ -1183,6 +1183,35 @@ export const it: Dict = {
     }
   },
 
+  cookieBanner: {
+    title: 'Rispettiamo la tua privacy',
+    description: 'Questo sito web utilizza l\'analisi per capire come i visitatori lo utilizzano e il marketing opzionale per misurare le prestazioni delle campagne. Le funzionalità essenziali funzionano sempre. Puoi modificare le tue preferenze in qualsiasi momento.',
+    acceptAll: 'Accetta tutto',
+    rejectOptional: 'Rifiuta opzionali',
+    customize: 'Personalizza'
+  },
+
+  cookieSettings: {
+    title: 'Impostazioni dei cookie',
+    essential: {
+      title: 'Essenziale',
+      description: 'Necessario per il funzionamento del sito. Include la preferenza di lingua e la protezione da spam.',
+      label: 'Sempre abilitato'
+    },
+    analytics: {
+      title: 'Analisi',
+      description: 'Google Analytics ci aiuta a capire come utilizzi il sito per migliorarlo.',
+      label: 'Abilita analisi (Google Analytics 4)'
+    },
+    marketing: {
+      title: 'Marketing',
+      description: 'Meta Pixel ci aiuta a misurare le prestazioni delle nostre campagne di marketing.',
+      label: 'Abilita marketing (Meta Pixel)'
+    },
+    save: 'Salva preferenze',
+    cancel: 'Annulla'
+  },
+
   legal: {
     updated: 'Ultimo aggiornamento: ottobre 2026',
     formNotice: 'Usiamo questi dati solo per gestire la tua richiesta, come descritto nella nostra {link}.',
@@ -1250,13 +1279,29 @@ export const it: Dict = {
     },
     cookiePolicy: {
       title: 'Cookie Policy',
-      intro: 'Questa pagina descrive cosa memorizza questo sito nel tuo browser.',
+      intro: 'Questa pagina descrive cosa memorizza questo sito nel tuo browser e come usiamo strumenti di analisi e marketing.',
       sections: [
         {
-          h: 'Nessun cookie pubblicitario o di tracciamento.',
+          h: 'Funzionalità essenziale.',
           p: [
-            'Questo sito non imposta cookie propri e non utilizza cookie pubblicitari, di analisi o di tracciamento.',
-            'Le pagine non caricano script, font, mappe, video o altri contenuti da siti di terze parti. I link a WhatsApp o Instagram si collegano a quei servizi solo se scegli di aprirli.'
+            'Questo sito salva nel tuo browser solo elementi essenziali: la preferenza di lingua (meocy-lang) nel local storage e un token di breve durata per prevenire lo spam nei moduli.',
+            'Questi sono necessari per il funzionamento corretto del sito e non richiedono il tuo consenso.'
+          ]
+        },
+        {
+          h: 'Analisi (Google Analytics 4).',
+          p: [
+            'Se abiliti l\'analisi, usiamo Google Analytics 4 per capire come i visitatori utilizzano il sito: quali pagine visiti, quanto tempo rimani e da dove provieni.',
+            'Google Analytics utilizza cookie e identificatori per tracciare la tua attività tra le sessioni. Nessun dato personale (email, telefono, nome) viene inviato a Google.',
+            'L\'analisi è opzionale e disabilitata per impostazione predefinita. Puoi abilitarla o disabilitarla in qualsiasi momento utilizzando il link delle impostazioni dei cookie nel footer.'
+          ]
+        },
+        {
+          h: 'Marketing (Meta Pixel).',
+          p: [
+            'Se abiliti il marketing, utilizziamo Meta Pixel per misurare le prestazioni delle nostre campagne pubblicitarie e capire quali annunci portano visitatori al nostro sito.',
+            'Meta Pixel utilizza cookie e identificatori per tracciare le azioni sul sito. Nessun dato personale (email, telefono, nome) viene inviato a Meta.',
+            'Il marketing è opzionale e disabilitato per impostazione predefinita. Puoi abilitarlo o disabilitarlo in qualsiasi momento utilizzando il link delle impostazioni dei cookie nel footer.'
           ]
         },
         {
@@ -1267,9 +1312,16 @@ export const it: Dict = {
           ]
         },
         {
-          h: 'Come eliminarla.',
+          h: 'Come gestire o rimuovere i cookie.',
           p: [
-            'Puoi eliminare in qualsiasi momento la preferenza di lingua salvata cancellando i dati di questo sito nelle impostazioni del browser.'
+            'Puoi modificare le tue preferenze di consenso in qualsiasi momento facendo clic sul link delle impostazioni dei cookie nel footer del sito. Quando ritiri il consenso, smettiamo di inviare nuovi dati di tracciamento a Google Analytics o Meta Pixel immediatamente.',
+            'Per rimuovere i cookie esistenti impostati da questi servizi, puoi eliminarli cancellando i dati del sito nel tuo browser. Le istruzioni variano a seconda del browser - cerca nella sezione di aiuto del tuo browser "cancella cookie" o "cancella dati del sito". In alternativa, puoi rinunciare a Google Analytics nelle impostazioni del tuo account Google o gestire il tracciamento Meta tramite le tue preferenze Meta Ads.'
+          ]
+        },
+        {
+          h: 'Servizi di terze parti.',
+          p: [
+            'Google Analytics e Meta Pixel sono gestiti da terze parti. Si applicano le loro informative sulla privacy e i loro termini. Puoi disabilitare Google Analytics in qualsiasi momento visitando la loro pagina di opt-out. Puoi controllare il tracciamento di Meta Pixel nelle tue impostazioni Meta Ads.'
           ]
         },
         {
@@ -1294,7 +1346,8 @@ export const it: Dict = {
       privacy: 'Informativa sulla privacy',
       terms: 'Termini e condizioni',
       bookingPolicy: 'Condizioni di prenotazione',
-      cookiePolicy: 'Cookie Policy'
+      cookiePolicy: 'Cookie Policy',
+      cookieSettings: 'Impostazioni cookie'
     }
   }
 };

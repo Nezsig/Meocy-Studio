@@ -73,6 +73,15 @@ export default function PrivacyPage() {
                   hosting), Resend (sending confirmation emails), Zoho Mail and Google (receiving
                   and managing email). They process data only on our behalf.
                 </p>
+                <p className="mt-3">
+                  We also use Google Analytics 4 (if you enable analytics) and Meta Pixel (if you enable marketing)
+                  to track visitor behavior on our website. These are optional and disabled by default. Neither
+                  service receives personal data from the forms or booking pages — only behavioral data such as
+                  page views, clicks, and traffic sources. You can learn more in our{' '}
+                  <Link href="/cookie-policy" className="underline underline-offset-2">
+                    Cookie Policy
+                  </Link>.
+                </p>
               </section>
 
               <section>
@@ -104,11 +113,15 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="font-semibold text-ink">Cookies.</h2>
+                <h2 className="font-semibold text-ink">Cookies and tracking.</h2>
                 <p className="mt-3">
-                  This website does not set its own cookies and does not use advertising, analytics
-                  or tracking cookies. It stores one language preference (meocy-lang) in your
-                  browser&apos;s local storage. See the{' '}
+                  This website stores one language preference (meocy-lang) in your browser's local storage.
+                </p>
+                <p className="mt-3">
+                  We also use Google Analytics 4 (optional) to understand how visitors use the site, and
+                  Meta Pixel (optional) to measure the performance of our marketing campaigns. Both are
+                  disabled by default and only activated if you enable them in our consent preferences.
+                  No personal data (email, phone, name) is sent to these services. See the{' '}
                   <Link href="/cookie-policy" className="underline underline-offset-2">
                     Cookie Policy
                   </Link>{' '}

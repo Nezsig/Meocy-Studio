@@ -1,10 +1,12 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
+import { CookieSettings } from './CookieSettings';
 
 export function Footer() {
   const { t } = useLanguage();
+  const [showCookieSettings, setShowCookieSettings] = useState(false);
 
   return (
     <footer className="bg-ink text-chalk">
@@ -176,9 +178,17 @@ export function Footer() {
                 {l.label}
               </a>
             ))}
+            <button
+              onClick={() => setShowCookieSettings(true)}
+              className="inline-block -my-1 py-1 hover:text-chalk transition-colors duration-150 text-left"
+            >
+              {t.legal.footer.cookieSettings}
+            </button>
           </div>
         </div>
       </div>
+
+      {showCookieSettings && <CookieSettings onClose={() => setShowCookieSettings(false)} />}
     </footer>
   );
 }
