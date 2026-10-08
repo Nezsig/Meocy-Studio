@@ -3,6 +3,7 @@ import { FormPrivacyNotice } from '../FormPrivacyNotice';
 import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useConsent } from '../../contexts/ConsentContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
 import {
   computePricing,
@@ -196,6 +197,7 @@ function Calendar({ value, onChange, lang, labels }: { value: string; onChange: 
 
 export function BookingFlow({ packageId, onPackageChange, locations, onLocationsChange }: Props) {
   const { t, lang } = useLanguage();
+  const { preferences: consentPreferences } = useConsent();
   const m = t.milanShoot;
   const b = m.booking;
 
@@ -217,6 +219,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
   const submissionIdRef = useRef<string>('');
   const restorationAttemptedRef = useRef(false);
   const formStartTrackedRef = useRef(false);
+  const metaPixelLeadTrackedRef = useRef(false);
 
   // On mount, restore booking confirmation from sessionStorage if it exists and is still valid.
   // Use ref to ensure restoration only happens once, regardless of callback recreations.
@@ -423,6 +426,14 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         setResult({ reference: json.reference, pricing: json.pricing });
         // Track successful submission
         trackBookingEvent('booking_submit_success');
+        // Track Lead conversion to Meta Pixel if marketing consent enabled
+        if (consentPreferences?.marketing && !metaPixelLeadTrackedRef.current) {
+          metaPixelLeadTrackedRef.current = true;
+          const fbq = (window as any).fbq as ((cmd: string, event: string) => void) | undefined;
+          if (fbq) {
+            fbq('track', 'Lead');
+          }
+        }
         go('done');
         // On success, keep lock active (don't reset submissionLockRef).
         // User stays on 'done' screen; they cannot re-submit from there.
@@ -462,6 +473,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     // Reset submission lock for new booking attempt.
     submissionLockRef.current = false;
     submissionIdRef.current = '';
+    metaPixelLeadTrackedRef.current = false;
     go('package');
   };
 

@@ -929,6 +929,10 @@ export const it: Dict = {
         cta: 'SCEGLI MILAN SIGNATURE'
       }
     },
+    mobileBookingBar: {
+      packageName: 'MINI PHOTOSHOOT',
+      bookButton: 'PRENOTA ORA'
+    },
     features: {
       photos15: '15 fotografie ritoccate professionalmente',
       photos25: '25 fotografie ritoccate professionalmente',

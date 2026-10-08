@@ -929,6 +929,10 @@ export const fr: Dict = {
         cta: 'CHOISIR MILAN SIGNATURE'
       }
     },
+    mobileBookingBar: {
+      packageName: 'MINI PHOTOSHOOT',
+      bookButton: 'RÉSERVER MAINTENANT'
+    },
     features: {
       photos15: '15 photos retouchées professionnellement',
       photos25: '25 photos retouchées professionnellement',

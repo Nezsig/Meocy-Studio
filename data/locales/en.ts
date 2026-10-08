@@ -947,6 +947,10 @@ export const en = {
       highRes: 'High-resolution digital images',
       privateGallery: 'Private online gallery'
     },
+    mobileBookingBar: {
+      packageName: 'MINI PHOTOSHOOT',
+      bookButton: 'BOOK NOW'
+    },
     selector: {
       title: 'Choose Your Milan Locations',
       text: 'Select the places that fit the story you want to create.',

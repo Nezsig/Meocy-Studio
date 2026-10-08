@@ -18,6 +18,7 @@ import {
 import { AccordionItem, PhotoPlaceholder, fmt, formatPrice } from './parts';
 import { LocationSelector } from './LocationSelector';
 import { BookingFlow } from './BookingFlow';
+import { MobileBookingBar } from './MobileBookingBar';
 
 const PACKAGE_IDS = milanPackages.map((p) => p.id);
 const LOCATION_IDS = milanLocations.map((l) => l.id);
@@ -106,7 +107,8 @@ export function MilanPhotoshootPage() {
   );
 
   return (
-    <main id="main-content">
+    <>
+    <main id="main-content" className="sm:pb-0 pb-[calc(72px+env(safe-area-inset-bottom))]">
       {/* 1 — HERO */}
       <section className="relative isolate flex min-h-[clamp(520px,75vh,760px)] items-end overflow-hidden bg-ink text-chalk">
         {/* TODO: Replace /locations/duomo.jpg with real couple photo hero-couple-duomo when available. */}
@@ -456,6 +458,13 @@ export function MilanPhotoshootPage() {
           </div>
         </div>
       </section>
+
     </main>
+    {/* MOBILE STICKY BOOKING BAR */}
+    <MobileBookingBar
+      packageChosen={packageChosen}
+      onBookingClick={goToBooking}
+    />
+    </>
   );
 }
