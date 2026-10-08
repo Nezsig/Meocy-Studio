@@ -67,12 +67,12 @@ export function Nav() {
               className="h-[20px] w-auto min-[360px]:h-[24px] min-[400px]:h-[26px] sm:h-[30px] xl:h-[34px]" />
           </a>
 
-          <ul className="hidden items-center gap-0.5 xl:flex">
+          <ul className="hidden items-center gap-1 xl:flex">
             {linkOrder.map((l) =>
             <li key={l.href} className="relative">
                 <a
                 href={l.href}
-                className="rounded-full px-3 py-2 text-[13.5px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
+                className="rounded-full px-2.5 py-2 text-[13px] font-medium text-slate2 transition-colors duration-150 ease-smooth hover:text-ink">
 
                   {t.nav.links[l.key]}
                   {l.key === 'milan' && <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />}

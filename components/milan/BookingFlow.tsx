@@ -552,7 +552,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
 
       <div className="mt-6">
         {screen === 'package' && (
-          <div role="radiogroup" aria-label={b.pkgTitle} className="grid gap-3 lg:grid-cols-3">
+          <div role="radiogroup" aria-label={b.pkgTitle} className="grid gap-3 lg:grid-cols-4">
             {milanPackages.map((p) => {
               const on = p.id === packageId;
               return (
