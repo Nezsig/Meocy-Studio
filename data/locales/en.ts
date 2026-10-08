@@ -888,7 +888,7 @@ export const en = {
     },
     packages: {
       title: 'Choose Your Milan Experience',
-      text: 'Three ways to experience Milan through professional photography.',
+      text: 'Four ways to experience Milan through professional photography.',
       label: 'PACKAGE',
       popular: 'POPULAR CHOICE',
       includes: 'Includes',
@@ -905,6 +905,11 @@ export const en = {
       recommended: 'Duomo + surrounding Duomo area',
       signatureIncluded: '4 locations included',
       signatureExtra: 'Additional locations: +€50 each',
+      mini: {
+        name: 'MILAN MINI',
+        duration: '30 MINUTES',
+        cta: 'CHOOSE MILAN MINI'
+      },
       memory: {
         name: 'MILAN MEMORY',
         duration: '2 HOURS',
@@ -922,9 +927,11 @@ export const en = {
       }
     },
     features: {
+      photos15: '15 professionally edited photographs',
       photos25: '25 professionally edited photographs',
       photos50: '50 professionally edited photographs',
       photos75: '75 professionally edited photographs',
+      locations1: '1 selected Milan location',
       locations2: 'Up to 2 selected Milan locations',
       locations3: 'Up to 3 selected Milan locations',
       locations4: 'Up to 4 Milan locations included',

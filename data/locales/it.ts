@@ -891,7 +891,7 @@ export const it: Dict = {
     },
     packages: {
       title: 'Scegliete la vostra esperienza a Milano',
-      text: 'Tre modi di vivere Milano attraverso la fotografia professionale.',
+      text: 'Quattro modi di vivere Milano attraverso la fotografia professionale.',
       label: 'PACCHETTO',
       popular: 'LA PIÙ SCELTA',
       includes: 'Include',
@@ -908,6 +908,11 @@ export const it: Dict = {
       recommended: 'Duomo + area intorno al Duomo',
       signatureIncluded: '4 location incluse',
       signatureExtra: 'Location aggiuntive: +€50 ciascuna',
+      mini: {
+        name: 'MILAN MINI',
+        duration: '30 MINUTI',
+        cta: 'SCEGLI MILAN MINI'
+      },
       memory: {
         name: 'MILAN MEMORY',
         duration: '2 ORE',
@@ -925,9 +930,11 @@ export const it: Dict = {
       }
     },
     features: {
+      photos15: '15 fotografie ritoccate professionalmente',
       photos25: '25 fotografie ritoccate professionalmente',
       photos50: '50 fotografie ritoccate professionalmente',
       photos75: '75 fotografie ritoccate professionalmente',
+      locations1: '1 location di Milano a scelta',
       locations2: 'Fino a 2 location di Milano a scelta',
       locations3: 'Fino a 3 location di Milano a scelta',
       locations4: 'Fino a 4 location di Milano incluse',

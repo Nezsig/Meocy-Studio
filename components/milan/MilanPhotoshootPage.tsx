@@ -200,7 +200,7 @@ export function MilanPhotoshootPage() {
             <h2 className={sectionTitle}>{m.packages.title}</h2>
             <p className="mt-5 text-[17px] leading-relaxed text-slate2">{m.packages.text}</p>
           </div>
-          <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {milanPackages.map((p, i) => {
               const text = m.packages[p.id];
               const dark = p.id === 'signature';

@@ -891,7 +891,7 @@ export const fr: Dict = {
     },
     packages: {
       title: 'Choisissez votre expérience à Milan',
-      text: 'Trois façons de vivre Milan à travers la photographie professionnelle.',
+      text: 'Quatre façons de vivre Milan à travers la photographie professionnelle.',
       label: 'FORMULE',
       popular: 'LA PLUS CHOISIE',
       includes: 'Comprend',
@@ -908,6 +908,11 @@ export const fr: Dict = {
       recommended: 'Duomo + abords du Duomo',
       signatureIncluded: '4 lieux inclus',
       signatureExtra: 'Lieux supplémentaires : +50 € chacun',
+      mini: {
+        name: 'MILAN MINI',
+        duration: '30 MINUTES',
+        cta: 'CHOISIR MILAN MINI'
+      },
       memory: {
         name: 'MILAN MEMORY',
         duration: '2 HEURES',
@@ -925,9 +930,11 @@ export const fr: Dict = {
       }
     },
     features: {
+      photos15: '15 photos retouchées professionnellement',
       photos25: '25 photos retouchées professionnellement',
       photos50: '50 photos retouchées professionnellement',
       photos75: '75 photos retouchées professionnellement',
+      locations1: '1 lieu de Milan au choix',
       locations2: 'Jusqu\'à 2 lieux de Milan au choix',
       locations3: 'Jusqu\'à 3 lieux de Milan au choix',
       locations4: 'Jusqu\'à 4 lieux de Milan inclus',

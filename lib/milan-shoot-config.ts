@@ -2,7 +2,7 @@
 // locations, booking slots and feature flags. All visible text lives in
 // data/locales/{en,it,fr}.ts under `milanShoot`; this file only holds structure, ids and numbers.
 
-export type MilanPackageId = 'memory' | 'experience' | 'signature';
+export type MilanPackageId = 'mini' | 'memory' | 'experience' | 'signature';
 export type MilanLocationId =
   | 'duomo'
   | 'galleria'
@@ -17,9 +17,11 @@ export type MilanLocationId =
 
 /** Feature line keys. Text: milanShoot.features.<key>. */
 export type MilanFeatureKey =
+  | 'photos15'
   | 'photos25'
   | 'photos50'
   | 'photos75'
+  | 'locations1'
   | 'locations2'
   | 'locations3'
   | 'locations4'
@@ -52,6 +54,15 @@ export interface MilanPackage {
 }
 
 export const milanPackages: MilanPackage[] = [
+  {
+    id: 'mini',
+    price: 99,
+    durationHours: 0.5,
+    photos: 15,
+    includedLocations: 1,
+    extraLocationPrice: null,
+    features: ['photos15', 'locations1', 'photographer', 'naturalPosing', 'editing', 'highRes'],
+  },
   {
     id: 'memory',
     price: 200,
