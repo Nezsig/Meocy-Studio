@@ -571,7 +571,9 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
                     {on && <Check className="h-4 w-4 shrink-0" strokeWidth={3} aria-hidden />}
                   </span>
                   <span className={`mt-2 text-[13.5px] ${on ? 'text-slate2' : 'text-chalk/60'}`}>
-                    {fmt(b.pkgLine, { hours: p.durationHours, photos: p.photos, locations: p.includedLocations })}
+                    {p.durationHours < 1
+                      ? fmt(b.pkgLineMinutes, { minutes: Math.round(p.durationHours * 60), photos: p.photos, locations: p.includedLocations })
+                      : fmt(b.pkgLine, { hours: p.durationHours, photos: p.photos, locations: p.includedLocations })}
                   </span>
                 </button>
               );
@@ -626,7 +628,9 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
               {(pendingExtra || limitHit) && (
                 <div className="mt-4 flex flex-col gap-3 rounded-2xl bg-chalk px-5 py-4 text-ink sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-[14.5px]">
-                    {fmt(m.selector.limitIncluded, { n: pkg.includedLocations })}
+                    {pkg.includedLocations === 1
+                      ? m.selector.limitIncludedOne
+                      : fmt(m.selector.limitIncluded, { n: pkg.includedLocations })}
                     {pendingExtra && <> {m.selector.limitAdd}</>}
                   </p>
                   {pendingExtra && (

@@ -960,6 +960,7 @@ export const en = {
       select: 'Select',
       selected: 'Selected',
       limitIncluded: 'Your package includes {n} locations.',
+      limitIncludedOne: 'Your package includes 1 location.',
       limitAdd: 'Add another location for €50.',
       addConfirm: 'Add for €50',
       dismiss: 'Keep my selection',
@@ -1027,6 +1028,7 @@ export const en = {
       next: 'Continue',
       pkgTitle: 'Choose your package',
       pkgLine: '{hours} hours • {photos} photos • up to {locations} locations',
+      pkgLineMinutes: '{minutes} minutes • {photos} photos • {locations} location',
       dateTitle: 'Choose your date',
       prevMonth: 'Previous month',
       nextMonth: 'Next month',
@@ -1117,7 +1119,7 @@ export const en = {
         },
         {
           q: 'How many locations are included?',
-          a: 'Milan Memory includes up to 2 locations (the Duomo and its surrounding area count as one), Milan Experience up to 3, and Milan Signature 4.'
+          a: 'Milan Mini includes 1 location, Milan Memory up to 2 locations (the Duomo and its surrounding area count as one), Milan Experience up to 3, and Milan Signature 4.'
         },
         {
           q: 'What happens if we want another location?',
@@ -1133,11 +1135,11 @@ export const en = {
         },
         {
           q: 'How long does the photoshoot take?',
-          a: 'Milan Memory is 2 hours, Milan Experience 3 hours and Milan Signature 5 hours.'
+          a: 'Milan Mini is 30 minutes, Milan Memory 2 hours, Milan Experience 3 hours and Milan Signature 5 hours.'
         },
         {
           q: 'How many edited photographs will we receive?',
-          a: '25 with Milan Memory, 50 with Milan Experience and 75 with Milan Signature — all professionally edited.'
+          a: '15 with Milan Mini, 25 with Milan Memory, 50 with Milan Experience and 75 with Milan Signature — all professionally edited.'
         },
         {
           q: 'When will we receive our photographs?',

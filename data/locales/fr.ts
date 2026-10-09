@@ -963,6 +963,7 @@ export const fr: Dict = {
       select: 'Choisir',
       selected: 'Choisi',
       limitIncluded: 'Votre formule comprend {n} lieux.',
+      limitIncludedOne: 'Votre formule comprend 1 lieu.',
       limitAdd: 'Ajoutez un autre lieu pour 50 €.',
       addConfirm: 'Ajouter pour 50 €',
       dismiss: 'Garder ma sélection',
@@ -1030,6 +1031,7 @@ export const fr: Dict = {
       next: 'Continuer',
       pkgTitle: 'Choisissez votre formule',
       pkgLine: '{hours} heures • {photos} photos • jusqu\'à {locations} lieux',
+      pkgLineMinutes: '{minutes} minutes • {photos} photos • {locations} lieu',
       dateTitle: 'Choisissez la date',
       prevMonth: 'Mois précédent',
       nextMonth: 'Mois suivant',
@@ -1120,7 +1122,7 @@ export const fr: Dict = {
         },
         {
           q: 'Combien de lieux sont inclus ?',
-          a: 'Milan Memory comprend jusqu\'à 2 lieux (le Duomo et ses abords comptent comme un seul), Milan Experience jusqu\'à 3 et Milan Signature 4.'
+          a: 'Milan Mini comprend 1 lieu, Milan Memory jusqu\'à 2 lieux (le Duomo et ses abords comptent comme un seul), Milan Experience jusqu\'à 3 et Milan Signature 4.'
         },
         {
           q: 'Et si nous voulons un lieu de plus ?',
@@ -1136,11 +1138,11 @@ export const fr: Dict = {
         },
         {
           q: 'Combien de temps dure la séance ?',
-          a: 'Milan Memory dure 2 heures, Milan Experience 3 heures et Milan Signature 5 heures.'
+          a: 'Milan Mini dure 30 minutes, Milan Memory 2 heures, Milan Experience 3 heures et Milan Signature 5 heures.'
         },
         {
           q: 'Combien de photos retouchées recevrons-nous ?',
-          a: '25 avec Milan Memory, 50 avec Milan Experience et 75 avec Milan Signature — toutes retouchées professionnellement.'
+          a: '15 avec Milan Mini, 25 avec Milan Memory, 50 avec Milan Experience et 75 avec Milan Signature — toutes retouchées professionnellement.'
         },
         {
           q: 'Quand recevrons-nous nos photos ?',

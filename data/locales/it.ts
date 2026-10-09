@@ -963,6 +963,7 @@ export const it: Dict = {
       select: 'Seleziona',
       selected: 'Selezionata',
       limitIncluded: 'Il vostro pacchetto include {n} location.',
+      limitIncludedOne: 'Il vostro pacchetto include 1 location.',
       limitAdd: 'Aggiungete un\'altra location per €50.',
       addConfirm: 'Aggiungi per €50',
       dismiss: 'Mantieni la selezione',
@@ -1030,6 +1031,7 @@ export const it: Dict = {
       next: 'Continua',
       pkgTitle: 'Scegli il pacchetto',
       pkgLine: '{hours} ore • {photos} foto • fino a {locations} location',
+      pkgLineMinutes: '{minutes} minuti • {photos} foto • {locations} location',
       dateTitle: 'Scegli la data',
       prevMonth: 'Mese precedente',
       nextMonth: 'Mese successivo',
@@ -1120,7 +1122,7 @@ export const it: Dict = {
         },
         {
           q: 'Quante location sono incluse?',
-          a: 'Milan Memory include fino a 2 location (il Duomo e l\'area circostante contano come una), Milan Experience fino a 3 e Milan Signature 4.'
+          a: 'Milan Mini include 1 location, Milan Memory fino a 2 location (il Duomo e l\'area circostante contano come una), Milan Experience fino a 3 e Milan Signature 4.'
         },
         {
           q: 'E se vogliamo un\'altra location?',
@@ -1136,11 +1138,11 @@ export const it: Dict = {
         },
         {
           q: 'Quanto dura lo shooting?',
-          a: 'Milan Memory dura 2 ore, Milan Experience 3 ore e Milan Signature 5 ore.'
+          a: 'Milan Mini dura 30 minuti, Milan Memory 2 ore, Milan Experience 3 ore e Milan Signature 5 ore.'
         },
         {
           q: 'Quante fotografie ritoccate riceveremo?',
-          a: '25 con Milan Memory, 50 con Milan Experience e 75 con Milan Signature — tutte ritoccate professionalmente.'
+          a: '15 con Milan Mini, 25 con Milan Memory, 50 con Milan Experience e 75 con Milan Signature — tutte ritoccate professionalmente.'
         },
         {
           q: 'Quando riceveremo le fotografie?',

@@ -123,7 +123,9 @@ export function LocationSelector({ packageId, onPackageChange, selected, onSelec
         {showMessage && (
           <div className="mt-5 flex flex-col gap-3 rounded-2xl bg-ink px-5 py-4 text-chalk sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[14.5px]">
-              {fmt(m.selector.limitIncluded, { n: pkg.includedLocations })}
+              {pkg.includedLocations === 1
+                ? m.selector.limitIncludedOne
+                : fmt(m.selector.limitIncluded, { n: pkg.includedLocations })}
               {pending && <> {m.selector.limitAdd}</>}
             </p>
             {pending && (
