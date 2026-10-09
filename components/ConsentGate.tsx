@@ -1,10 +1,12 @@
 'use client';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { useConsent } from '../contexts/ConsentContext';
+import { setAnalyticsEnabled, useConsent } from '../contexts/ConsentContext';
 
-type GtTag = (command: string, ...args: any[]) => void;
 type FbQ = (...args: any[]) => void;
+
+const GA_ID = 'G-ZL81S630JL';
+const META_PIXEL_ID = '962361566323718';
 
 function loadScript(src: string, callback: () => void) {
   const script = document.createElement('script');
@@ -25,38 +27,46 @@ export function ConsentGate() {
   const { preferences } = useConsent();
   const pathname = usePathname();
 
-  // Load GA4 script only when Analytics consent is granted
+  // Analytics: GA4 is loaded once and then kept switched off with its per-property disable flag,
+  // which stops hits and cookie writes without a page reload.
   useEffect(() => {
-    if (preferences?.analytics !== true) return;
+    const analyticsOn = preferences?.analytics === true;
+    setAnalyticsEnabled(analyticsOn);
+    if (!analyticsOn) return;
 
-    // Only load if not already loaded
-    if ((window as any).gtag) return;
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'page_view', { page_location: window.location.href });
+      return;
+    }
 
     const ga4Code = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-ZL81S630JL', {
+      gtag('config', '${GA_ID}', {
         anonymize_ip: true,
         cookie_flags: 'SameSite=None;Secure'
       });
     `;
 
-    loadInlineScript(ga4Code, () => {
-      // GA4 is now initialized
-    });
-
-    loadScript('https://www.googletagmanager.com/gtag/js?id=G-ZL81S630JL', () => {
-      // GA4 script loaded
-    });
+    loadInlineScript(ga4Code, () => {});
+    loadScript(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`, () => {});
   }, [preferences?.analytics]);
 
-  // Load Meta Pixel script only when Marketing consent is granted
+  // Marketing: the Pixel is loaded once; withdrawal pauses it with the consent API and every
+  // PageView/event is also gated on current preferences, so nothing fires while withdrawn.
   useEffect(() => {
-    if (preferences?.marketing !== true) return;
+    const fbq = (window as any).fbq as FbQ | undefined;
 
-    // Only load if not already loaded
-    if ((window as any).fbq) return;
+    if (preferences?.marketing !== true) {
+      fbq?.('consent', 'revoke');
+      return;
+    }
+
+    if (fbq) {
+      fbq('consent', 'grant');
+      return;
+    }
 
     const metaPixelCode = `
       !function(f,b,e,v,n,t,s)
@@ -67,16 +77,14 @@ export function ConsentGate() {
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '962361566323718');
-      fbq('track', 'PageView');
+      fbq('init', '${META_PIXEL_ID}');
     `;
 
-    loadInlineScript(metaPixelCode, () => {
-      // Meta Pixel is now initialized
-    });
+    loadInlineScript(metaPixelCode, () => {});
   }, [preferences?.marketing]);
 
-  // Track PageView on client-side navigation (only if consent is set)
+  // Single PageView per navigation, only while marketing consent is on (effects run in declaration order,
+  // so the Pixel is initialized before this fires).
   useEffect(() => {
     if (!preferences?.marketing) return;
 

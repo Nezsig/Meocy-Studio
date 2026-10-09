@@ -19,29 +19,64 @@ const ConsentContext = createContext<ConsentContextType | undefined>(undefined);
 
 const STORAGE_KEY = 'meocy-consent';
 const BANNER_DISMISSED_KEY = 'meocy-consent-dismissed';
+const GA_MEASUREMENT_ID = 'G-ZL81S630JL';
+
+// Applied synchronously on each consent change so withdrawal takes effect before any later GA4 hit.
+export function setAnalyticsEnabled(enabled: boolean) {
+  (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = !enabled;
+}
+
+// Storage can be blocked or throw. Unreadable or malformed values count as "no choice made",
+// so optional tracking stays off until the visitor chooses.
+function readStoredPreferences(): ConsentPreferences | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (typeof parsed?.analytics === 'boolean' && typeof parsed?.marketing === 'boolean') {
+      return { analytics: parsed.analytics, marketing: parsed.marketing };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function isBannerDismissed(): boolean {
+  try {
+    return localStorage.getItem(BANNER_DISMISSED_KEY) === 'true';
+  } catch {
+    return false;
+  }
+}
+
+function persistConsent(preferences: ConsentPreferences) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+    localStorage.setItem(BANNER_DISMISSED_KEY, 'true');
+  } catch {
+    // Choice still applies for this page session; it just won't be remembered.
+  }
+}
 
 export function ConsentProvider({ children }: { children: React.ReactNode }) {
   const [preferences, setPreferences] = useState<ConsentPreferences | null>(null);
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user has already made a consent choice
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const bannerDismissed = localStorage.getItem(BANNER_DISMISSED_KEY);
-
+    const stored = readStoredPreferences();
     if (stored) {
-      setPreferences(JSON.parse(stored));
-    } else if (!bannerDismissed) {
-      // Show banner only if no preference is set and banner wasn't dismissed
+      setPreferences(stored);
+    } else if (!isBannerDismissed()) {
       setShowBanner(true);
     }
   }, []);
 
   const updateConsent = (newPreferences: ConsentPreferences) => {
+    setAnalyticsEnabled(newPreferences.analytics);
     setPreferences(newPreferences);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newPreferences));
-    localStorage.setItem(BANNER_DISMISSED_KEY, 'true');
     setShowBanner(false);
+    persistConsent(newPreferences);
   };
 
   const acceptAll = () => {
