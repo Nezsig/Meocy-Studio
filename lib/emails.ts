@@ -123,6 +123,8 @@ export const milanEmailLang = (locale?: string): MilanEmailLang => (locale === '
 export interface MilanRequestEmail {
   reference: string;
   packageName: string;
+  durationMinutes: number;
+  photos: number;
   date: string; // YYYY-MM-DD
   time: string; // HH:MM
   locations: string[];
@@ -143,13 +145,18 @@ const milanDate = (date: string, lang: MilanEmailLang) =>
   new Intl.DateTimeFormat(lang === 'it' ? 'it-IT' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
     .format(new Date(`${date}T00:00:00Z`));
 
+const durationLabel = (minutes: number, lang: MilanEmailLang) =>
+  minutes < 60
+    ? `${minutes} ${lang === 'it' ? 'minuti' : 'minutes'}`
+    : `${minutes / 60} ${lang === 'it' ? 'ore' : 'hours'}`;
+
 const MT: Record<MilanEmailLang, any> = {
   en: {
     subject: (ref: string) => `We've received your Milan photoshoot request — ${ref}`,
     badge: 'Request received', h1a: 'Thank you — your request ', h1em: 'is in.',
     intro: (n: string) => `Hi ${n}, thank you for your Milan photoshoot request. Your date is not reserved yet: MEOCY reviews every request personally and will reply by email and WhatsApp to confirm your session.`,
     status: 'Status: Pending', summary: 'Your request',
-    rRef: 'Reference', rPkg: 'Package', rDate: 'Date', rTime: 'Time', rLoc: 'Locations', rPeople: 'Number of people',
+    rRef: 'Reference', rPkg: 'Package', rDate: 'Date', rTime: 'Time', rLoc: 'Locations', rPeople: 'Number of people', rDur: 'Duration', rPhotos: 'Edited photos',
     rPrice: 'Package price', rExtra: 'Additional locations', rNone: 'None', rDeposit: 'Booking deposit', rRemaining: 'Remaining balance',
     group: 'For groups larger than the standard two-person experience, MEOCY will confirm availability and pricing separately.',
     nextT: 'What happens next.',
@@ -158,6 +165,14 @@ const MT: Record<MilanEmailLang, any> = {
             ['MEOCY confirms your session', 'By email and WhatsApp.']],
     depT: `€50 booking deposit: refunded in full if you cancel at least ${refundDaysBefore} days before your shoot.`,
     depB: `If you cancel at least ${refundDaysBefore} days (${refundHoursBefore} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than ${refundDaysBefore} days before, it is not refunded, but you may request a date change instead, subject to availability. The remaining balance is settled separately.`,
+    mini: {
+      rDeposit: 'Advance payment', rRemaining: 'Payable on the photoshoot day', depositValue: 'None — no deposit required',
+      steps: [['MEOCY reviews your request', 'We check availability for your date and time.'],
+              ['MEOCY confirms your session manually', 'By email and WhatsApp. The full €99 is payable on the photoshoot day.']],
+      depT: 'No deposit or advance payment for Milan Mini.',
+      depB: 'You do not pay anything when you send your request, and no deposit is required to reserve your session. The full €99 is payable on the photoshoot day. Date changes must be requested in advance and are subject to availability.',
+      waDeposit: 'No deposit. The full €99 is payable on the photoshoot day.',
+    },
     sign: 'Speak soon,',
   },
   it: {
@@ -165,7 +180,7 @@ const MT: Record<MilanEmailLang, any> = {
     badge: 'Richiesta ricevuta', h1a: 'Grazie — la tua richiesta ', h1em: 'è arrivata.',
     intro: (n: string) => `Ciao ${n}, grazie per la tua richiesta di shooting fotografico a Milano. La data non è ancora riservata: MEOCY esamina personalmente ogni richiesta e ti risponderà via email e WhatsApp per confermare la sessione.`,
     status: 'Stato: In attesa', summary: 'La tua richiesta',
-    rRef: 'Codice', rPkg: 'Pacchetto', rDate: 'Data', rTime: 'Orario', rLoc: 'Location', rPeople: 'Numero di persone',
+    rRef: 'Codice', rPkg: 'Pacchetto', rDate: 'Data', rTime: 'Orario', rLoc: 'Location', rPeople: 'Numero di persone', rDur: 'Durata', rPhotos: 'Foto modificate',
     rPrice: 'Prezzo del pacchetto', rExtra: 'Location aggiuntive', rNone: 'Nessuna', rDeposit: 'Acconto di prenotazione', rRemaining: 'Saldo restante',
     group: "Per gruppi più numerosi rispetto all'esperienza standard per due persone, MEOCY confermerà disponibilità e prezzo separatamente.",
     nextT: 'Cosa succede ora.',
@@ -174,6 +189,14 @@ const MT: Record<MilanEmailLang, any> = {
             ['MEOCY conferma la sessione', 'Via email e WhatsApp.']],
     depT: `Acconto di prenotazione di €50: rimborsato per intero se annulli almeno ${refundDaysBefore} giorni prima dello shooting.`,
     depB: `Se annulli almeno ${refundDaysBefore} giorni (${refundHoursBefore} ore) prima dello shooting, l'acconto di €50 viene rimborsato per intero. Se annulli meno di ${refundDaysBefore} giorni prima, l'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Il saldo restante si regola a parte.`,
+    mini: {
+      rDeposit: 'Pagamento anticipato', rRemaining: 'Da pagare il giorno dello shooting', depositValue: 'Nessuno — nessun acconto richiesto',
+      steps: [['MEOCY esamina la tua richiesta', "Verifichiamo la disponibilità per la data e l'orario scelti."],
+              ['MEOCY conferma la sessione manualmente', "Via email e WhatsApp. L'intero importo di €99 si paga il giorno dello shooting."]],
+      depT: 'Nessun acconto né pagamento anticipato per Milan Mini.',
+      depB: "Non devi pagare nulla quando invii la richiesta e non è richiesto alcun acconto per riservare la sessione. L'intero importo di €99 si paga il giorno dello shooting. Eventuali cambi di data vanno richiesti in anticipo e sono soggetti alla disponibilità.",
+      waDeposit: "Nessun acconto. L'intero importo di €99 si paga il giorno dello shooting.",
+    },
     sign: 'A presto,',
   },
 };
@@ -182,11 +205,13 @@ export const milanCustomerSubject = (ref: string, locale?: string) => MT[milanEm
 
 export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
   const lang = milanEmailLang(d.locale); const t = MT[lang];
+  const noDeposit = d.pricing.deposit === 0; const v = noDeposit ? t.mini : t;
   const extra = d.pricing.extraLocations ? `${d.pricing.extraLocations} × €50 = ${eur(d.pricing.extraLocationsTotal)}` : t.rNone;
   const summary = [row(t.rRef, d.reference), row(t.rPkg, d.packageName), row(t.rDate, milanDate(d.date, lang)), row(t.rTime, d.time),
-    row(t.rLoc, d.locations.join(', ')), row(t.rPeople, String(d.people)), row(t.rPrice, eur(d.pricing.packagePrice)), row(t.rExtra, extra),
-    row(t.rDeposit, eur(d.pricing.deposit)), row(t.rRemaining, eur(d.pricing.remaining))].join('');
-  const steps = t.steps.map((s: string[], i: number)=>`<tr><td valign="top" width="36" style="padding:0 0 16px 0"><div style="width:26px;height:26px;border-radius:999px;background:${c.ink};color:${c.chalk};font-family:${sans};font-size:12px;font-weight:600;line-height:26px;text-align:center">${i+1}</div></td><td valign="top" style="padding:2px 0 16px 0"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${s[0]}</div><div style="font-family:${sans};font-size:13px;line-height:1.5;color:${c.slate};padding-top:2px">${s[1]}</div></td></tr>`).join('');
+    row(t.rLoc, d.locations.join(', ')), row(t.rPeople, String(d.people)), row(t.rDur, durationLabel(d.durationMinutes, lang)), row(t.rPhotos, String(d.photos)),
+    row(t.rPrice, eur(d.pricing.packagePrice)), row(t.rExtra, extra),
+    row(v.rDeposit, noDeposit ? v.depositValue : eur(d.pricing.deposit)), row(v.rRemaining, eur(d.pricing.remaining))].join('');
+  const steps = v.steps.map((s: string[], i: number)=>`<tr><td valign="top" width="36" style="padding:0 0 16px 0"><div style="width:26px;height:26px;border-radius:999px;background:${c.ink};color:${c.chalk};font-family:${sans};font-size:12px;font-weight:600;line-height:26px;text-align:center">${i+1}</div></td><td valign="top" style="padding:2px 0 16px 0"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${s[0]}</div><div style="font-family:${sans};font-size:13px;line-height:1.5;color:${c.slate};padding-top:2px">${s[1]}</div></td></tr>`).join('');
   const group = d.largerGroup ? `<p style="margin:14px 0 0;font-family:${sans};font-size:13px;line-height:1.55;color:${c.ink}">${t.group}</p>` : '';
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;padding:0}img{border:0;display:block}@media(max-width:620px){.container{width:100%!important}.px{padding-left:22px!important;padding-right:22px!important}.h1{font-size:34px!important}}</style></head>
 <body style="margin:0;padding:0;background:${c.paper}"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px">
@@ -198,7 +223,7 @@ export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
     <p style="margin:12px 0 0;font-family:${sans};font-size:13px;font-weight:600;color:${c.slate}">${t.status}</p></td></tr>
   <tr><td class="px" style="padding:24px 40px 0"><table role="presentation" width="100%" style="background:${c.paper};border-radius:16px"><tr><td style="padding:8px 22px 14px"><div style="font-family:${sans};font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:${c.slate};padding:12px 0 4px">${t.summary}</div><table role="presentation" width="100%">${summary}</table>${group}</td></tr></table></td></tr>
   <tr><td class="px" style="padding:40px 40px 0"><h2 style="margin:0 0 20px;font-family:${serif};font-weight:400;font-size:30px;color:${c.ink}">${t.nextT}</h2><table role="presentation" width="100%">${steps}</table></td></tr>
-  <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${t.depT}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${t.depB}</div></td></tr></table></td></tr>
+  <tr><td class="px" style="padding:20px 40px 0"><table role="presentation" width="100%" bgcolor="${c.accent}" style="border-radius:16px"><tr><td style="padding:20px 24px"><div style="font-family:${sans};font-size:15px;font-weight:600;color:${c.ink}">${v.depT}</div><div style="font-family:${sans};font-size:14px;line-height:1.55;color:${c.ink};padding-top:6px">${v.depB}</div></td></tr></table></td></tr>
   <tr><td class="px" style="padding:32px 40px 40px"><p style="margin:0;font-family:${sans};font-size:15px;line-height:1.6;color:${c.ink}">${t.sign}<br><strong>Chamila</strong><br><span style="color:${c.slate}">MEOCY STUDIO &middot; hello@meocy.com &middot; +39 379 105 1000</span></p></td></tr>
 </table>
 <table role="presentation" class="container" width="600" style="width:600px;max-width:600px"><tr><td class="px" style="padding:20px 40px 8px;font-family:${sans};font-size:12px;line-height:1.6;color:${c.slate};text-align:center">MEOCY STUDIO &middot; Milan<br>Instagram <a href="https://www.instagram.com/meocystudio/" style="color:${c.slate};text-decoration:none">@meocystudio</a></td></tr></table>
@@ -208,10 +233,18 @@ export function buildMilanCustomerEmail(d: MilanRequestEmail): string {
 /** Prefilled WhatsApp text MEOCY can send to the customer (same essentials as the emails, in the customer's email language). */
 export function milanWhatsAppToCustomer(d: MilanRequestEmail): string {
   const lang = milanEmailLang(d.locale);
+  const pay = d.pricing.deposit === 0 ? MT[lang].mini.waDeposit
+    : lang === 'it' ? `Acconto €50, saldo restante ${eur(d.pricing.remaining)}.`
+    : `Deposit €50, remaining balance ${eur(d.pricing.remaining)}.`;
   return lang === 'it'
-    ? `Ciao ${d.name}, sono MEOCY: riguardo alla tua richiesta ${d.reference} — ${d.packageName}, ${milanDate(d.date, 'it')} alle ${d.time}, location: ${d.locations.join(', ')}. Acconto €50, saldo restante ${eur(d.pricing.remaining)}.`
-    : `Hi ${d.name}, this is MEOCY about your request ${d.reference} — ${d.packageName}, ${milanDate(d.date, 'en')} at ${d.time}, locations: ${d.locations.join(', ')}. Deposit €50, remaining balance ${eur(d.pricing.remaining)}.`;
+    ? `Ciao ${d.name}, sono MEOCY: riguardo alla tua richiesta ${d.reference} — ${d.packageName}, ${milanDate(d.date, 'it')} alle ${d.time}, location: ${d.locations.join(', ')}. ${pay}`
+    : `Hi ${d.name}, this is MEOCY about your request ${d.reference} — ${d.packageName}, ${milanDate(d.date, 'en')} at ${d.time}, locations: ${d.locations.join(', ')}. ${pay}`;
 }
+
+const payRows = (d: MilanRequestEmail): [string, string][] =>
+  d.pricing.deposit === 0
+    ? [['Advance payment', 'None — no deposit required'], ['Payable on the photoshoot day', eur(d.pricing.remaining)]]
+    : [['Booking deposit', `${eur(d.pricing.deposit)} (not collected online — send the deposit link)`], ['Remaining balance', eur(d.pricing.remaining)]];
 
 export function buildMilanNotificationEmail(d: MilanRequestEmail): string {
   const waDigits = d.phone.replace(/[^\d]/g, '');
@@ -219,12 +252,12 @@ export function buildMilanNotificationEmail(d: MilanRequestEmail): string {
     ['Reference', d.reference], ['Status', 'Pending — waiting for your review'], ['Package', d.packageName],
     ['Date', `${milanDate(d.date, 'en')} (${d.date})`], ['Time', d.time], ['Locations', d.locations.join(', ')],
     ['Number of people', d.largerGroup ? `${d.people} — larger than the standard two-person experience: confirm availability and pricing separately` : String(d.people)],
+    ['Duration', durationLabel(d.durationMinutes, 'en')], ['Edited photos', String(d.photos)],
     ['Full name', d.name], ['Email', d.email], ['WhatsApp / Phone', d.phone], ['Country', d.country],
     ['Site language', d.locale.toUpperCase()], ['Special request / Notes', d.notes || '—'],
     ['Package price', eur(d.pricing.packagePrice)],
     ['Additional locations', d.pricing.extraLocations ? `${d.pricing.extraLocations} × €50 = ${eur(d.pricing.extraLocationsTotal)}` : 'None'],
-    ['Total', eur(d.pricing.total)], ['Booking deposit', `${eur(d.pricing.deposit)} (not collected online — send the deposit link)`],
-    ['Remaining balance', eur(d.pricing.remaining)], ['Submitted', `${d.submittedAt} (Milan time)`],
+    ['Total', eur(d.pricing.total)], ...payRows(d), ['Submitted', `${d.submittedAt} (Milan time)`],
   ] as [string, string][]).map(r=>`<tr><td valign="top" style="padding:8px 12px 8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:13px;color:${c.slate};width:170px">${esc(r[0])}</td><td valign="top" style="padding:8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:14px;color:${c.ink};font-weight:600;white-space:pre-wrap;word-break:break-word">${esc(r[1])}</td></tr>`).join('');
   const wa = waDigits ? `<a href="https://wa.me/${waDigits}?text=${encodeURIComponent(milanWhatsAppToCustomer(d))}" style="display:inline-block;margin:0 8px 8px 0;padding:10px 18px;border-radius:999px;background:${c.accent};color:${c.ink};font-size:13px;font-weight:600;text-decoration:none">Reply on WhatsApp</a>` : '';
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;background:${c.paper};font-family:${sans}"><table role="presentation" width="100%" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px"><table role="presentation" width="560" style="width:560px;max-width:560px;background:${c.chalk};border-radius:16px"><tr><td style="padding:28px 32px"><div style="display:inline-block;padding:4px 10px;border-radius:999px;background:${c.accent};font-size:12px;font-weight:600;color:${c.ink}">Milan photoshoot · ${esc(d.reference)}</div><div style="font-family:${serif};font-size:26px;color:${c.ink};margin-top:10px">New Milan photoshoot request</div><p style="font-size:14px;color:${c.slate};margin:6px 0 18px">Reply to this email to reach ${esc(d.name)}. The request is not in any calendar: review it and reply to the customer.</p><div>${wa}<a href="mailto:${esc(d.email)}?subject=${encodeURIComponent('MEOCY — ' + d.reference)}" style="display:inline-block;margin:0 8px 8px 0;padding:10px 18px;border-radius:999px;background:${c.ink};color:${c.chalk};font-size:13px;font-weight:600;text-decoration:none">Reply by email</a></div><table role="presentation" width="100%" style="margin-top:10px">${rows}</table></td></tr></table></td></tr></table></body></html>`;

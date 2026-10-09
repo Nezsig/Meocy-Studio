@@ -179,6 +179,8 @@ export async function POST(req: Request) {
     const data: MilanRequestEmail = {
       reference,
       packageName: pkgName,
+      durationMinutes: pkg.durationHours * 60,
+      photos: pkg.photos,
       date: r.date,
       time: r.time,
       locations: uniqueLocations.map((id) => m.locations[id].name),

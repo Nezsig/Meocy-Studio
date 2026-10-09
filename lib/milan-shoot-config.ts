@@ -214,6 +214,7 @@ export function computePricing(packageId: MilanPackageId, locationCount: number)
   const extraLocationPrice = pkg.extraLocationPrice ?? 0;
   const extraLocationsTotal = extraLocations * extraLocationPrice;
   const total = pkg.price + extraLocationsTotal;
+  const deposit = pkg.id === 'mini' ? 0 : depositAmount;
   return {
     packagePrice: pkg.price,
     includedLocations: pkg.includedLocations,
@@ -221,8 +222,8 @@ export function computePricing(packageId: MilanPackageId, locationCount: number)
     extraLocationPrice,
     extraLocationsTotal,
     total,
-    deposit: depositAmount,
-    remaining: total - depositAmount,
+    deposit,
+    remaining: total - deposit,
   };
 }
 
