@@ -1094,7 +1094,7 @@ export const it: Dict = {
         'Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verifica la data e l\'orario richiesti e vi contatta per confermare la disponibilità e i prossimi passi.',
         'Milan Mini: nessun acconto; l\'intero importo di €99 si paga il giorno dello shooting. Milan Memory, Experience e Signature: per riservare la data dello shooting è richiesto un acconto di €50.',
         'Per Milan Memory, Experience e Signature: se annullate almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero.',
-        'Se annullate meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.',
+        'Per Milan Memory, Experience e Signature: se annullate meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.',
         'I cambi di data vanno richiesti in anticipo.',
         'Dove previsto, si possono aggiungere location per €50 ciascuna.',
         'La prenotazione viene confermata manualmente da MEOCY dopo aver verificato la disponibilità (e, per Milan Memory, Experience e Signature, dopo aver ricevuto anche l\'acconto).'
@@ -1162,7 +1162,7 @@ export const it: Dict = {
         },
         {
           q: 'L\'acconto è rimborsabile?',
-          a: 'Milan Mini non prevede acconto da rimborsare. Per Milan Memory, Experience e Signature: sì, se annullate almeno {days} giorni ({hours} ore) prima dello shooting: l\'acconto di €50 viene rimborsato per intero. Se annullate meno di {days} giorni prima, non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.'
+          a: 'Milan Mini non prevede acconto da rimborsare. Per Milan Memory, Experience e Signature: sì, se annullate almeno {days} giorni ({hours} ore) prima dello shooting: l\'acconto di €50 viene rimborsato per intero. Se annullate meno di {days} giorni prima, l\'acconto non viene rimborsato, ma potete chiedere un cambio di data, in base alla disponibilità.'
         },
         {
           q: 'Posso prenotare per una famiglia o un gruppo più numeroso?',
@@ -1242,7 +1242,7 @@ export const it: Dict = {
           h: 'Annullamento e rimborso.',
           p: [
             'Per Milan Memory, Experience e Signature: se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero.',
-            'Se annulli meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità.'
+            'Per Milan Memory, Experience e Signature: se annulli meno di {days} giorni prima dello shooting, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità.'
           ]
         },
         {
@@ -1270,7 +1270,7 @@ export const it: Dict = {
         {
           h: 'Pacchetti e location.',
           p: [
-            'Milan Memory — €200, 2 location incluse. Milan Experience — €300, 3 location incluse. Milan Signature — €600, 4 location incluse.',
+            'Milan Mini — €99, 1 location inclusa. Milan Memory — €200, 2 location incluse. Milan Experience — €300, 3 location incluse. Milan Signature — €600, 4 location incluse.',
             'Dove previsto, si possono aggiungere location per €50 ciascuna.'
           ]
         },
@@ -1352,7 +1352,7 @@ export const it: Dict = {
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. Milan Mini non prevede acconto: l\'intero importo di €99 si paga il giorno dello shooting. Per Milan Memory, Experience e Signature, se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero; se annulli più tardi, non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Le altre condizioni sono indicate nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
+      text: 'Una richiesta di prenotazione inviata dalla pagina degli shooting a Milano è una richiesta, non una prenotazione confermata: MEOCY conferma le prenotazioni manualmente via email o WhatsApp. Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. Milan Mini non prevede acconto: l\'intero importo di €99 si paga il giorno dello shooting. Per Milan Memory, Experience e Signature, se annulli almeno {days} giorni ({hours} ore) prima dello shooting, l\'acconto di €50 viene rimborsato per intero; se annulli più tardi, l\'acconto non viene rimborsato, ma puoi chiedere un cambio di data, in base alla disponibilità. Le altre condizioni sono indicate nelle Condizioni di prenotazione. I dati inseriti vengono usati solo per gestire la richiesta e vengono inviati via email a MEOCY; il sito non conserva dati di pagamento.',
       link: 'Condizioni di prenotazione'
     },
     footer: {

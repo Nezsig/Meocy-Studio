@@ -1091,7 +1091,7 @@ export const en = {
         'No payment is required when submitting your booking request. MEOCY reviews your requested date and time and contacts you to confirm availability and the next steps.',
         'Milan Mini: no deposit is required, and the full €99 is payable on the photoshoot day. Milan Memory, Experience and Signature: a €50 deposit is required to reserve your photography date.',
         'For Milan Memory, Experience and Signature: if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full.',
-        'If you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.',
+        'For Milan Memory, Experience and Signature: if you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.',
         'Date changes must be requested in advance.',
         'Additional locations can be added for €50 each where applicable.',
         'Your booking is confirmed manually by MEOCY after checking availability (and, for Milan Memory, Experience and Signature, after the deposit is received).'
@@ -1159,7 +1159,7 @@ export const en = {
         },
         {
           q: 'Is the deposit refundable?',
-          a: 'Milan Mini has no deposit to refund. For Milan Memory, Experience and Signature: yes, if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than {days} days before, it is not refunded, but you may request a date change instead, subject to availability.'
+          a: 'Milan Mini has no deposit to refund. For Milan Memory, Experience and Signature: yes, if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full. If you cancel less than {days} days before, the deposit is not refunded, but you may request a date change instead, subject to availability.'
         },
         {
           q: 'Can I book for a family or larger group?',
@@ -1239,7 +1239,7 @@ export const en = {
           h: 'Cancellation and refund.',
           p: [
             'For Milan Memory, Experience and Signature: if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full.',
-            'If you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.'
+            'For Milan Memory, Experience and Signature: if you cancel less than {days} days before your shoot, the deposit is not refunded, but you may request a date change instead, subject to availability.'
           ]
         },
         {
@@ -1267,7 +1267,7 @@ export const en = {
         {
           h: 'Packages and locations.',
           p: [
-            'Milan Memory — €200, 2 locations included. Milan Experience — €300, 3 locations included. Milan Signature — €600, 4 locations included.',
+            'Milan Mini — €99, 1 location included. Milan Memory — €200, 2 locations included. Milan Experience — €300, 3 locations included. Milan Signature — €600, 4 locations included.',
             'Additional locations can be added for €50 each where applicable.'
           ]
         },
@@ -1349,7 +1349,7 @@ export const en = {
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',
-      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. No payment is required when submitting your booking request. Milan Mini has no deposit: the full €99 is payable on the photoshoot day. For Milan Memory, Experience and Signature, if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full; if you cancel later, it is not refunded, but you may request a date change instead, subject to availability. Further conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
+      text: 'A booking request sent on the Milan photoshoot page is a request, not a confirmed booking: MEOCY confirms bookings manually by email or WhatsApp. No payment is required when submitting your booking request. Milan Mini has no deposit: the full €99 is payable on the photoshoot day. For Milan Memory, Experience and Signature, if you cancel at least {days} days ({hours} hours) before your shoot, the €50 deposit is refunded in full; if you cancel later, the deposit is not refunded, but you may request a date change instead, subject to availability. Further conditions are set out in the Booking Policy. The details you enter are used only to handle your request and are sent by email to MEOCY; the website does not store payment data.',
       link: 'Booking Policy'
     },
     footer: {

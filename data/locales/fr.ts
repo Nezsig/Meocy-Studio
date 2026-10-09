@@ -1094,7 +1094,7 @@ export const fr: Dict = {
         'Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examine la date et l\'heure demandées et vous contacte pour confirmer la disponibilité et les prochaines étapes.',
         'Milan Mini : aucun acompte ; le montant total de 99 € est réglé le jour de la séance. Milan Memory, Experience et Signature : un acompte de 50 € est demandé pour réserver la date de votre séance.',
         'Pour Milan Memory, Experience et Signature : si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé.',
-        'Si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
+        'Pour Milan Memory, Experience et Signature : si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.',
         'Les changements de date doivent être demandés à l\'avance.',
         'Des lieux supplémentaires peuvent être ajoutés pour 50 € chacun lorsque c\'est possible.',
         'Votre réservation est confirmée manuellement par MEOCY après vérification de la disponibilité (et, pour Milan Memory, Experience et Signature, après réception de l\'acompte).'
@@ -1162,7 +1162,7 @@ export const fr: Dict = {
         },
         {
           q: 'L\'acompte est-il remboursable ?',
-          a: 'Milan Mini : pas d\'acompte à rembourser. Pour Milan Memory, Experience et Signature : oui, si vous annulez au moins {days} jours ({hours} heures) avant votre séance : l\'acompte de 50 € est intégralement remboursé. Si vous annulez moins de {days} jours avant, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
+          a: 'Milan Mini : pas d\'acompte à rembourser. Pour Milan Memory, Experience et Signature : oui, si vous annulez au moins {days} jours ({hours} heures) avant votre séance : l\'acompte de 50 € est intégralement remboursé. Si vous annulez moins de {days} jours avant, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
         },
         {
           q: 'Puis-je réserver pour une famille ou un groupe plus grand ?',
@@ -1242,7 +1242,7 @@ export const fr: Dict = {
           h: 'Annulation et remboursement.',
           p: [
             'Pour Milan Memory, Experience et Signature : si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé.',
-            'Si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
+            'Pour Milan Memory, Experience et Signature : si vous annulez moins de {days} jours avant votre séance, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités.'
           ]
         },
         {
@@ -1270,7 +1270,7 @@ export const fr: Dict = {
         {
           h: 'Formules et lieux.',
           p: [
-            'Milan Memory — 200 €, 2 lieux inclus. Milan Experience — 300 €, 3 lieux inclus. Milan Signature — 600 €, 4 lieux inclus.',
+            'Milan Mini — 99 €, 1 lieu inclus. Milan Memory — 200 €, 2 lieux inclus. Milan Experience — 300 €, 3 lieux inclus. Milan Signature — 600 €, 4 lieux inclus.',
             'Des lieux supplémentaires peuvent être ajoutés pour 50 € chacun lorsque c\'est possible.'
           ]
         },
@@ -1352,7 +1352,7 @@ export const fr: Dict = {
     },
     milanTerms: {
       title: 'Demandes de réservation de séances photo à Milan.',
-      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. Milan Mini : pas d\'acompte, le montant total de 99 € est réglé le jour de la séance. Pour Milan Memory, Experience et Signature, si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé ; si vous annulez plus tard, il n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités. Les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
+      text: 'Une demande de réservation envoyée depuis la page des séances photo à Milan est une demande, pas une réservation confirmée : MEOCY confirme les réservations manuellement par email ou WhatsApp. Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. Milan Mini : pas d\'acompte, le montant total de 99 € est réglé le jour de la séance. Pour Milan Memory, Experience et Signature, si vous annulez au moins {days} jours ({hours} heures) avant votre séance, l\'acompte de 50 € est intégralement remboursé ; si vous annulez plus tard, l\'acompte n\'est pas remboursé, mais vous pouvez demander un changement de date, selon les disponibilités. Les autres conditions figurent dans les Conditions de réservation. Les informations saisies servent uniquement à traiter votre demande et sont envoyées par email à MEOCY ; le site ne conserve aucune donnée de paiement.',
       link: 'Conditions de réservation'
     },
     footer: {
