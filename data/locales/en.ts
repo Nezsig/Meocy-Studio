@@ -1059,6 +1059,7 @@ export const en = {
       sumDelivery: 'Photo delivery',
       sumTotal: 'Total',
       noPaymentTitle: 'No payment required now',
+      miniPaymentText: 'No advance payment is required. After MEOCY confirms your booking, the full €99 is payable on the photoshoot day.',
       noPaymentText: 'No payment is required when submitting your booking request. MEOCY will review your requested date and time and contact you to confirm availability and provide the next steps.',
       deliveryTime: 'Edited photos delivered within 7–10 working days',
       policyLink: 'Booking Policy',

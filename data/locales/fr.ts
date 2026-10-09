@@ -1062,8 +1062,9 @@ export const fr: Dict = {
       sumDelivery: 'Livraison des photos',
       sumTotal: 'Total',
       noPaymentTitle: 'Aucun paiement requis maintenant',
+      miniPaymentText: 'Aucun paiement anticipé n\'est requis. Après confirmation de votre réservation par MEOCY, le montant total de 99 € est réglé le jour de la séance.',
       noPaymentText: 'Aucun paiement n\'est demandé lors de l\'envoi de votre demande de réservation. MEOCY examinera la date et l\'heure demandées et vous contactera pour confirmer la disponibilité et vous indiquer les prochaines étapes.',
-      deliveryTime: 'Les photos retouchées sont livrées sous 7 à 10 jours ouvrables',
+      deliveryTime: 'Les photos retouchées sont livrées sous 7 à 10 jours ouvrés',
       policyLink: 'Conditions de réservation',
       submit: 'Envoyer la demande de réservation',
       sending: 'Envoi en cours…',
@@ -1146,7 +1147,7 @@ export const fr: Dict = {
         },
         {
           q: 'Quand recevrons-nous nos photos ?',
-          a: 'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours.'
+          a: 'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours ouvrés.'
         },
         {
           q: 'Dois-je payer en envoyant ma demande de réservation ?',
@@ -1277,7 +1278,7 @@ export const fr: Dict = {
         {
           h: 'Livraison des photos.',
           p: [
-            'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours.'
+            'Vos photos retouchées sont livrées en images numériques haute résolution sous 7 à 10 jours ouvrés.'
           ]
         },
         {

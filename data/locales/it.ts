@@ -1062,6 +1062,7 @@ export const it: Dict = {
       sumDelivery: 'Consegna foto',
       sumTotal: 'Totale',
       noPaymentTitle: 'Nessun pagamento richiesto ora',
+      miniPaymentText: 'Non è richiesto alcun pagamento anticipato. Dopo la conferma della prenotazione da parte di MEOCY, l\'intero importo di €99 si paga il giorno dello shooting.',
       noPaymentText: 'Per inviare la richiesta di prenotazione non è richiesto alcun pagamento. MEOCY verificherà la data e l\'orario richiesti e ti contatterà per confermare la disponibilità e indicarti i prossimi passi.',
       deliveryTime: 'Foto modificate consegnate entro 7–10 giorni lavorativi',
       policyLink: 'Condizioni di prenotazione',
@@ -1146,7 +1147,7 @@ export const it: Dict = {
         },
         {
           q: 'Quando riceveremo le fotografie?',
-          a: 'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7-10 giorni.'
+          a: 'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7–10 giorni lavorativi.'
         },
         {
           q: 'Devo pagare quando invio la richiesta di prenotazione?',
@@ -1277,7 +1278,7 @@ export const it: Dict = {
         {
           h: 'Consegna delle foto.',
           p: [
-            'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7-10 giorni.'
+            'Le fotografie ritoccate vengono consegnate come immagini digitali ad alta risoluzione entro 7–10 giorni lavorativi.'
           ]
         },
         {

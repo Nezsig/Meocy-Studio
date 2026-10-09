@@ -719,6 +719,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             <div className="rounded-2xl bg-accent p-6 text-ink">
               <p className="text-[18px] font-semibold">{b.noPaymentTitle}</p>
               <p className="mt-2 text-[14.5px] leading-snug">{b.noPaymentText}</p>
+              {pricing.deposit === 0 && <p className="mt-2 text-[14.5px] leading-snug">{b.miniPaymentText}</p>}
               {details.people > standardPeople && <p className="mt-3 text-[13.5px] leading-snug">{b.groupNote}</p>}
               <a href="/booking-policy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-[44px] items-center text-[13.5px] font-medium underline decoration-2 underline-offset-4">
                 {b.policyLink}
