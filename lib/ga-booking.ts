@@ -1,6 +1,8 @@
 // GA4 booking funnel event tracking
 // Fails silently if gtag is unavailable
 
+import { ANALYTICS_ENABLED } from './analytics-gate';
+
 type BookingEventName =
   | 'booking_cta_click'
   | 'booking_form_start'
@@ -30,7 +32,7 @@ export function trackBookingEvent<T extends BookingEventName>(
   eventName: T,
   params?: BookingEventParams[T]
 ): void {
-  if (typeof window === 'undefined' || !window.gtag) {
+  if (!ANALYTICS_ENABLED || typeof window === 'undefined' || !window.gtag) {
     return; // Fail silently if gtag unavailable
   }
   try {

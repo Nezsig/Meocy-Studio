@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { setAnalyticsEnabled, useConsent } from '../contexts/ConsentContext';
+import { ANALYTICS_ENABLED } from '../lib/analytics-gate';
 
 type FbQ = (...args: any[]) => void;
 
@@ -30,6 +31,7 @@ export function ConsentGate() {
   // Analytics: GA4 is loaded once and then kept switched off with its per-property disable flag,
   // which stops hits and cookie writes without a page reload.
   useEffect(() => {
+    if (!ANALYTICS_ENABLED) return;
     const analyticsOn = preferences?.analytics === true;
     setAnalyticsEnabled(analyticsOn);
     if (!analyticsOn) return;
@@ -56,6 +58,7 @@ export function ConsentGate() {
   // Marketing: the Pixel is loaded once; withdrawal pauses it with the consent API and every
   // PageView/event is also gated on current preferences, so nothing fires while withdrawn.
   useEffect(() => {
+    if (!ANALYTICS_ENABLED) return;
     const fbq = (window as any).fbq as FbQ | undefined;
 
     if (preferences?.marketing !== true) {
@@ -86,7 +89,7 @@ export function ConsentGate() {
   // Single PageView per navigation, only while marketing consent is on (effects run in declaration order,
   // so the Pixel is initialized before this fires).
   useEffect(() => {
-    if (!preferences?.marketing) return;
+    if (!ANALYTICS_ENABLED || !preferences?.marketing) return;
 
     const fbq = (window as any).fbq as FbQ | undefined;
     if (fbq) {

@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Analytics only in the Vercel production build; Preview, development and unset environments fail closed.
+  env: {
+    NEXT_PUBLIC_ANALYTICS_ENABLED: process.env.VERCEL_ENV === 'production' ? 'true' : 'false',
+  },
   // Low-risk hardening headers. No Content-Security-Policy yet (needs a separately tested rollout).
   async headers() {
     return [

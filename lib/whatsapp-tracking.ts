@@ -4,6 +4,7 @@
 // blocks or delays opening WhatsApp. Analytics errors are swallowed.
 import { useCallback } from 'react';
 import { useConsent } from '../contexts/ConsentContext';
+import { ANALYTICS_ENABLED } from './analytics-gate';
 
 export type WhatsAppCtaLocation =
   | 'milan_hero'
@@ -34,7 +35,7 @@ export function useWhatsAppClickTracking() {
 
   return useCallback(
     (ctaLocation: WhatsAppCtaLocation, shootCity?: ShootCity) => {
-      if (typeof window === 'undefined') return;
+      if (!ANALYTICS_ENABLED || typeof window === 'undefined') return;
 
       const now = Date.now();
       if (lastClick && lastClick.location === ctaLocation && now - lastClick.at < DEDUPE_MS) return;

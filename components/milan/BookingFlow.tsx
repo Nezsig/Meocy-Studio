@@ -7,6 +7,7 @@ import { useConsent } from '../../contexts/ConsentContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
 import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import { getSubmissionAttribution } from '../../lib/attribution-client';
+import { ANALYTICS_ENABLED } from '../../lib/analytics-gate';
 import {
   computePricing,
   isDateSelectable,
@@ -432,7 +433,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
         // Track successful submission
         trackBookingEvent('booking_submit_success');
         // Track Lead conversion to Meta Pixel if marketing consent enabled
-        if (consentPreferences?.marketing && !metaPixelLeadTrackedRef.current) {
+        if (ANALYTICS_ENABLED && consentPreferences?.marketing && !metaPixelLeadTrackedRef.current) {
           metaPixelLeadTrackedRef.current = true;
           const fbq = (window as any).fbq as ((cmd: string, event: string) => void) | undefined;
           if (fbq) {

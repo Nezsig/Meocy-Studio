@@ -9,6 +9,7 @@ import { trackParisBookingEvent } from '../../lib/ga-paris';
 import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import { useConsent } from '../../contexts/ConsentContext';
 import { getSubmissionAttribution } from '../../lib/attribution-client';
+import { ANALYTICS_ENABLED } from '../../lib/analytics-gate';
 import {
   computeParisPricing,
   parisContact,
@@ -213,6 +214,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
   const [result, setResult] = useState<{ reference: string; pricing: ParisPricing } | null>(null);
 
   const lockRef = useRef(false);
+  const metaLeadTrackedRef = useRef(false);
   const submissionIdRef = useRef('');
   const formStartRef = useRef(false);
 
@@ -324,6 +326,11 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
         writeSaved({ reference: json.reference, pricing: json.pricing, packageId: pkg.id, date, time, timestamp: Date.now() });
         setResult({ reference: json.reference, pricing: json.pricing });
         trackParisBookingEvent('booking_submit_success');
+        if (ANALYTICS_ENABLED && consentPreferences?.marketing && !metaLeadTrackedRef.current) {
+          metaLeadTrackedRef.current = true;
+          const fbq = (window as any).fbq as ((cmd: string, event: string) => void) | undefined;
+          if (fbq) fbq('track', 'Lead');
+        }
         go('done');
       } else if (res.status === 409) fail(b.errUnavailable);
       else if (res.status === 429) fail(b.errRate);
@@ -340,6 +347,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
     setDetails(emptyDetails);
     setErrors({});
     lockRef.current = false;
+    metaLeadTrackedRef.current = false;
     submissionIdRef.current = '';
     go('package');
   };
