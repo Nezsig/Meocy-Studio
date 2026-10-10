@@ -1,6 +1,7 @@
 // lib/paris-emails.ts — emails for Paris photoshoot requests (/api/paris/request).
 // Separate from lib/emails.ts so Milan emails are never affected. Same visual style as the Milan emails.
 import { parisDepositAmount, parisRefundDaysBefore, parisRefundHoursBefore } from './paris-shoot-config';
+import { attributionEmailRows, type Attribution } from './attribution';
 
 const c = { ink: '#0b0b0c', paper: '#f6f5f2', chalk: '#ffffff', mist: '#e5e3dd', slate: '#6b6a66', accent: '#c8f169' };
 const sans = "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif";
@@ -27,6 +28,8 @@ export interface ParisRequestEmail {
   locale: 'en' | 'it' | 'fr';
   submittedAt: string;
   total: number;
+  /** Internal notification only; never shown in the customer email. */
+  attribution?: Attribution | null;
 }
 
 const eur = (n: number, lang: ParisEmailLang) => (lang === 'fr' ? `${n} €` : `€${n}`);
@@ -142,6 +145,7 @@ export function buildParisNotificationEmail(d: ParisRequestEmail): string {
     ['Site language', d.locale.toUpperCase()], ['Special request / Notes', d.notes || '—'],
     ['Total', eur(d.total, 'en')], ['Booking deposit', `€${D} only after you and the customer agree the final date (not collected online — send the deposit link)`],
     ['Submitted', `${d.submittedAt} (Paris time)`],
+    ...attributionEmailRows(d.attribution),
   ] as [string, string][])
     .map((r) => `<tr><td valign="top" style="padding:8px 12px 8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:13px;color:${c.slate};width:170px">${esc(r[0])}</td><td valign="top" style="padding:8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:14px;color:${c.ink};font-weight:600;white-space:pre-wrap;word-break:break-word">${esc(r[1])}</td></tr>`)
     .join('');

@@ -14,6 +14,7 @@ import {
   type ParisPackageId,
 } from '../../../../lib/paris-shoot-config';
 import { parisEn } from '../../../../data/paris/en';
+import { parseAttribution } from '../../../../lib/attribution-server';
 
 // Paris photoshoot booking requests. Separate from /api/milan/request (own rate limit, references and emails).
 export const runtime = 'nodejs';
@@ -67,6 +68,7 @@ const RequestSchema = z
     country: text(2, 80),
     notes: z.string().trim().max(1000).optional().default(''),
     locale: z.enum(['en', 'it', 'fr']).catch('en'),
+    attribution: z.unknown().optional(), // Optional marketing attribution; validated separately and never blocks a request
     company_website: z.string().trim().max(500).optional().default(''), // Honeypot
   })
   .strict(); // Unknown fields (price, reference, city…) are rejected
@@ -125,6 +127,7 @@ export async function POST(req: Request) {
       locale: r.locale,
       submittedAt: `${now.date} ${now.time}`,
       total: pricing.total,
+      attribution: parseAttribution(r.attribution),
     };
 
     const resend = new Resend(process.env.RESEND_API_KEY);

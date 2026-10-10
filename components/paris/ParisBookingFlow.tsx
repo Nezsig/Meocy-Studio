@@ -7,6 +7,8 @@ import { fmt, formatPrice } from '../milan/parts';
 import { parisCopy } from '../../data/paris';
 import { trackParisBookingEvent } from '../../lib/ga-paris';
 import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
+import { useConsent } from '../../contexts/ConsentContext';
+import { getSubmissionAttribution } from '../../lib/attribution-client';
 import {
   computeParisPricing,
   parisContact,
@@ -176,6 +178,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
   const p = parisCopy[lang];
   const b = p.booking;
   const trackWhatsApp = useWhatsAppClickTracking();
+  const { preferences: consentPreferences } = useConsent();
 
   const [screen, setScreen] = useState<Screen>('package');
   const [date, setDate] = useState('');
@@ -274,6 +277,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
       setSending(false);
     };
     try {
+      const attribution = getSubmissionAttribution(consentPreferences);
       const res = await fetch('/api/paris/request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -290,6 +294,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
           notes: details.notes.trim(),
           locale: lang,
           company_website: details.company_website,
+          ...(attribution ? { attribution } : {}),
         }),
       });
       const json = await res.json().catch(() => ({}));

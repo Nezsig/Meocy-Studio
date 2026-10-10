@@ -12,6 +12,7 @@ import { Providers } from './providers';
 import { DEFAULT_SOCIAL_IMAGE } from '../lib/seo';
 import { CookieBanner } from '../components/CookieBanner';
 import { ConsentGate } from '../components/ConsentGate';
+import { AttributionCapture } from '../components/AttributionCapture';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://meocy.com'),
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <ConsentGate />
+          <AttributionCapture />
           <CookieBanner />
           {children}
         </Providers>

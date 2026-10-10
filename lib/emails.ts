@@ -1,5 +1,6 @@
 // lib/emails.ts — MEOCY STUDIO transactional emails
 import { refundDaysBefore, refundHoursBefore } from './milan-shoot-config';
+import { attributionEmailRows, type Attribution } from './attribution';
 const c = { ink:'#0b0b0c', paper:'#f6f5f2', chalk:'#ffffff', mist:'#e5e3dd', slate:'#6b6a66', accent:'#c8f169' };
 const sans = "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const serif = "'Instrument Serif', Georgia, 'Times New Roman', serif";
@@ -12,6 +13,8 @@ export interface Booking {
   where?: string; preferredDate?: string; preferredTime?: string; specialRequests?: string; locale?: Locale;
   projectType?: string; projectTypeLabel?: string; contentType?: ContentType; quantity?: string; message?: string;
   phone?: string; extras?: string;
+  /** Internal notification only; never shown in the customer confirmation. */
+  attribution?: Attribution | null;
 }
 export type ContentType = 'photography' | 'video' | 'both';
 
@@ -66,7 +69,7 @@ export function buildConfirmationEmail(b: Booking, locale: Locale = 'it'): strin
 }
 
 export function buildNotificationEmail(b: Booking): string {
-  const rows = ([['Name',b.name],['Email',b.email],['Phone',b.phone],['Brand',b.brand],['Project type',b.projectType],['Content',b.contentType ? T.en.content[b.contentType] : undefined],['Quantity',b.quantity],['Package',b.package],['Shoot',b.shootType],['Where',b.where],['Extras',b.extras],['Date',b.preferredDate],['Time',b.preferredTime],['Notes',b.specialRequests],['Message',b.message]] as [string,string?][])
+  const rows = ([['Name',b.name],['Email',b.email],['Phone',b.phone],['Brand',b.brand],['Project type',b.projectType],['Content',b.contentType ? T.en.content[b.contentType] : undefined],['Quantity',b.quantity],['Package',b.package],['Shoot',b.shootType],['Where',b.where],['Extras',b.extras],['Date',b.preferredDate],['Time',b.preferredTime],['Notes',b.specialRequests],['Message',b.message],...attributionEmailRows(b.attribution)] as [string,string?][])
     .filter(r=>r[1]).map(r=>`<tr><td style="padding:8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:13px;color:${c.slate};width:120px">${r[0]}</td><td style="padding:8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:14px;color:${c.ink};font-weight:600">${esc(r[1])}</td></tr>`).join('');
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;background:${c.paper};font-family:${sans}"><table role="presentation" width="100%" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px"><table role="presentation" width="560" style="width:560px;max-width:560px;background:${c.chalk};border-radius:16px"><tr><td style="padding:28px 32px"><div style="font-family:${serif};font-size:26px;color:${c.ink}">New booking request 🎬</div><p style="font-size:14px;color:${c.slate};margin:6px 0 18px">Reply directly to this email to reach ${esc(b.name)}.</p><table role="presentation" width="100%">${rows}</table></td></tr></table></td></tr></table></body></html>`;
 }
@@ -138,6 +141,8 @@ export interface MilanRequestEmail {
   locale: Locale;
   submittedAt: string;
   pricing: { packagePrice: number; extraLocations: number; extraLocationsTotal: number; total: number; deposit: number; remaining: number };
+  /** Internal notification only; never shown in the customer email. */
+  attribution?: Attribution | null;
 }
 
 const eur = (n: number) => `€${n}`;
@@ -258,6 +263,7 @@ export function buildMilanNotificationEmail(d: MilanRequestEmail): string {
     ['Package price', eur(d.pricing.packagePrice)],
     ['Additional locations', d.pricing.extraLocations ? `${d.pricing.extraLocations} × €50 = ${eur(d.pricing.extraLocationsTotal)}` : 'None'],
     ['Total', eur(d.pricing.total)], ...payRows(d), ['Submitted', `${d.submittedAt} (Milan time)`],
+    ...attributionEmailRows(d.attribution),
   ] as [string, string][]).map(r=>`<tr><td valign="top" style="padding:8px 12px 8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:13px;color:${c.slate};width:170px">${esc(r[0])}</td><td valign="top" style="padding:8px 0;border-bottom:1px solid ${c.mist};font-family:${sans};font-size:14px;color:${c.ink};font-weight:600;white-space:pre-wrap;word-break:break-word">${esc(r[1])}</td></tr>`).join('');
   const wa = waDigits ? `<a href="https://wa.me/${waDigits}?text=${encodeURIComponent(milanWhatsAppToCustomer(d))}" style="display:inline-block;margin:0 8px 8px 0;padding:10px 18px;border-radius:999px;background:${c.accent};color:${c.ink};font-size:13px;font-weight:600;text-decoration:none">Reply on WhatsApp</a>` : '';
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;background:${c.paper};font-family:${sans}"><table role="presentation" width="100%" bgcolor="${c.paper}"><tr><td align="center" style="padding:24px 12px"><table role="presentation" width="560" style="width:560px;max-width:560px;background:${c.chalk};border-radius:16px"><tr><td style="padding:28px 32px"><div style="display:inline-block;padding:4px 10px;border-radius:999px;background:${c.accent};font-size:12px;font-weight:600;color:${c.ink}">Milan photoshoot · ${esc(d.reference)}</div><div style="font-family:${serif};font-size:26px;color:${c.ink};margin-top:10px">New Milan photoshoot request</div><p style="font-size:14px;color:${c.slate};margin:6px 0 18px">Reply to this email to reach ${esc(d.name)}. The request is not in any calendar: review it and reply to the customer.</p><div>${wa}<a href="mailto:${esc(d.email)}?subject=${encodeURIComponent('MEOCY — ' + d.reference)}" style="display:inline-block;margin:0 8px 8px 0;padding:10px 18px;border-radius:999px;background:${c.ink};color:${c.chalk};font-size:13px;font-weight:600;text-decoration:none">Reply by email</a></div><table role="presentation" width="100%" style="margin-top:10px">${rows}</table></td></tr></table></td></tr></table></body></html>`;

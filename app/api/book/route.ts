@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import { buildConfirmationEmail, buildNotificationEmail, subjects, type Locale, type Booking, type ContentType } from '../../../lib/emails';
+import { parseAttribution } from '../../../lib/attribution-server';
 
 export const runtime = 'nodejs';
 
@@ -57,6 +58,7 @@ export async function POST(req: Request) {
       contentType: CONTENT_TYPES.includes(body.contentType) ? body.contentType : undefined,
       quantity: str(body.quantity),
       message,
+      attribution: parseAttribution(body.attribution),
       locale: (body.locale === 'en' || body.locale === 'fr' || body.locale === 'it') ? body.locale : 'it',
     };
     const locale: Locale = booking.locale || 'it';

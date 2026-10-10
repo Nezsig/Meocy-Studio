@@ -23,6 +23,7 @@ import {
   type MilanPackageId,
 } from '../../../../lib/milan-shoot-config';
 import { en } from '../../../../data/locales/en';
+import { parseAttribution } from '../../../../lib/attribution-server';
 
 export const runtime = 'nodejs';
 
@@ -98,6 +99,7 @@ const RequestSchema = z.object({
   country: text(2, 80),
   notes: z.string().trim().max(1000).optional().default(''),
   locale: z.enum(['en', 'it', 'fr']).catch('en'),
+  attribution: z.unknown().optional(), // Optional marketing attribution; validated separately and never blocks a booking
   company_website: z.string().trim().max(500).optional().default(''), // Honeypot field
 }).strict(); // Reject any unknown fields (price, bookingReference, etc.)
 
@@ -194,6 +196,7 @@ export async function POST(req: Request) {
       locale: r.locale,
       submittedAt: now,
       pricing,
+      attribution: parseAttribution(r.attribution),
     };
 
     const resend = new Resend(process.env.RESEND_API_KEY);

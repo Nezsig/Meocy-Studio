@@ -7,6 +7,8 @@ import { locales } from '../data/locales';
 import { studioContact } from '../data/site';
 import { FormPrivacyNotice } from './FormPrivacyNotice';
 import { useWhatsAppClickTracking } from '../lib/whatsapp-tracking';
+import { useConsent } from '../contexts/ConsentContext';
+import { getSubmissionAttribution } from '../lib/attribution-client';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 type FieldErrors = Partial<Record<'name' | 'email' | 'phone' | 'projectType' | 'message', string>>;
@@ -41,6 +43,7 @@ export function ContactPage() {
   const [sentTo, setSentTo] = useState({ name: '', email: '' });
   const formRef = useRef<HTMLFormElement>(null);
   const trackWhatsApp = useWhatsAppClickTracking();
+  const { preferences: consentPreferences } = useConsent();
 
   const set = <K extends keyof typeof emptyForm>(key: K, value: (typeof emptyForm)[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -87,6 +90,7 @@ export function ContactPage() {
     const extrasLabel = form.extras.length > 0 ? form.extras.join(', ') : '';
 
     try {
+      const attribution = getSubmissionAttribution(consentPreferences);
       const res = await fetch('/api/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -101,6 +105,7 @@ export function ContactPage() {
           message: form.message.trim(),
           locale: lang,
           company_website: form.company_website,
+          ...(attribution ? { attribution } : {}),
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);

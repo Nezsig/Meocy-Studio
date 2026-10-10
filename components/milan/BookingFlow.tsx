@@ -6,6 +6,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useConsent } from '../../contexts/ConsentContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
 import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
+import { getSubmissionAttribution } from '../../lib/attribution-client';
 import {
   computePricing,
   isDateSelectable,
@@ -393,6 +394,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
     trackBookingEvent('booking_submit_attempt');
 
     try {
+      const attribution = getSubmissionAttribution(consentPreferences);
       const res = await fetch('/api/milan/request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -410,6 +412,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
           notes: details.notes.trim(),
           locale: lang,
           company_website: details.company_website,
+          ...(attribution ? { attribution } : {}),
         }),
       });
       const json = await res.json().catch(() => ({}));
