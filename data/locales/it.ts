@@ -746,6 +746,53 @@ export const it: Dict = {
     another: 'Invia un altro messaggio'
   },
 
+  privacyPage: {
+    title: 'Informativa sulla privacy',
+    cookieLinkLabel: 'Cookie Policy',
+    sections: [
+      {
+        h: 'Chi siamo.',
+        p: [
+          'MEOCY è uno studio di fotografia e contenuti gestito da Chamila Prasanna, con sede a Milano, Italia. Per qualsiasi domanda sulla privacy, scrivi a hello@meocy.com.'
+        ]
+      },
+      {
+        h: 'Cosa raccogliamo.',
+        p: [
+          'Quando usi il nostro modulo di prenotazione o di contatto, raccogliamo i dati che fornisci: nome, indirizzo email, numero di telefono e informazioni sul tuo progetto. Conserviamo anche le email che ci invii.'
+        ]
+      },
+      {
+        h: 'Come li usiamo.',
+        p: [
+          'Per rispondere alla tua richiesta, preparare preventivi, programmare e realizzare gli shooting, e inviarti email legate alla prenotazione (come la conferma). Non usiamo i tuoi dati per la pubblicità e non li vendiamo mai.'
+        ]
+      },
+      {
+        h: 'Informazioni sulla campagna (solo con il tuo consenso).',
+        p: [
+          'Se hai accettato i cookie di analisi o di marketing, i dati della campagna del link con cui sei arrivato (parametri UTM come source, medium e campaign) vengono collegati alla tua prenotazione o richiesta. Questi dati compaiono solo nella notifica interna via email a MEOCY, così capiamo quali campagne portano richieste. Non vengono mai inclusi nelle email che ti inviamo. Per il clic su un annuncio viene registrato solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato.'
+        ]
+      }
+    ],
+    legalBasisTitle: 'Base giuridica (GDPR).',
+    legalBasisText: 'Trattiamo i tuoi dati per rispondere alla tua richiesta e per compiere passi preliminari verso un possibile contratto, e sulla base del tuo consenso quando ci contatti.',
+    processorsTitle: 'Chi li tratta per noi.',
+    processorsText: 'Ci avvaliamo di fornitori di servizi per gestire il sito e la posta: Vercel (hosting del sito); Resend (invio delle email per le richieste di prenotazione e di contatto, inclusi la tua conferma e le notifiche interne a MEOCY); e Google (Gmail, che riceve le notifiche interne di MEOCY).',
+    analyticsText: 'Usiamo anche Google Analytics 4 (se abiliti l\'analisi) e Meta Pixel (se abiliti il marketing) per misurare le visite e le campagne sul sito. Entrambi sono facoltativi e disattivati per impostazione predefinita. Gli eventi di tracciamento che inviamo a questi servizi non includono nome, email, telefono o dettagli della prenotazione. Dettagli nella nostra {link}.',
+    technicalTitle: 'Dati tecnici.',
+    technicalText: 'Il nostro fornitore di hosting (Vercel) tratta dati tecnici standard, come gli indirizzi IP, per erogare il sito e mantenerlo sicuro. Quando invii il modulo di collaborazione, il modulo Work With MEOCY o il modulo di prenotazione di Milano o Parigi, il tuo indirizzo IP viene anche conservato brevemente nella memoria del server per limitare le richieste ripetute (protezione dallo spam); non viene salvato in un database né incluso nelle email.',
+    retentionTitle: 'Per quanto tempo li conserviamo.',
+    retentionText: 'Le email di prenotazione e di richiesta restano nelle caselle di MEOCY e nei sistemi del nostro fornitore di posta. I periodi di conservazione di queste email non sono ancora indicati in questa informativa e verranno pubblicati qui quando saranno stabiliti. I dati salvati nel tuo browser, descritti nella nostra {link}, vengono rimossi alla chiusura della scheda o come indicato lì.',
+    rightsTitle: 'I tuoi diritti.',
+    rightsText: 'Puoi chiederci in qualsiasi momento di accedere, correggere o cancellare i tuoi dati, o di opporti al loro utilizzo, scrivendo a hello@meocy.com. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali.',
+    cookiesTitle: 'Cookie e tracciamento.',
+    cookiesText: 'Il sito salva nel tuo browser, nel local storage: la preferenza di lingua (meocy-lang) e le tue scelte di consenso (meocy-consent e meocy-consent-dismissed). Per la sola scheda corrente del browser salva i dati di campagna (meocy_attribution, se hai accettato analisi o marketing) e una copia del riepilogo della tua prenotazione dopo una richiesta (meocy_milan_booking_confirmation o meocy_paris_booking_confirmation).',
+    cookiesText2: 'Google Analytics 4 e Meta Pixel funzionano solo se li abiliti nelle tue preferenze di consenso, e sono entrambi disattivati per impostazione predefinita. Dettagli nella nostra {link}.',
+    changesTitle: 'Modifiche.',
+    changesText: 'Possiamo aggiornare questa informativa; la data più recente è indicata sopra.'
+  },
+
   privacyCollab: {
     title: 'Moduli di collaborazione.',
     text: 'Se ci contatti tramite il modulo di collaborazione, utilizziamo i tuoi dati (nome, email, link social o portfolio e le informazioni che fornisci) solo per risponderti e per pianificare eventuali progetti. Non li vendiamo né li condividiamo e li cancelliamo su richiesta.'
@@ -1371,7 +1418,7 @@ export const it: Dict = {
     },
     milanPrivacy: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati solo per gestire la tua richiesta di prenotazione. Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento. Se hai accettato analisi o marketing, anche il link della campagna con cui sei arrivato (i suoi parametri UTM) viene collegato alla tua richiesta, così sappiamo quali campagne portano richieste. Per il clic su un annuncio si registra solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Queste informazioni compaiono solo nella notifica interna a MEOCY, mai nelle email a te. Dettagli nella nostra Cookie Policy.'
+      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati per gestire la tua richiesta di prenotazione. Una copia del riepilogo della prenotazione, con questi dati, viene conservata anche nel session storage del browser per questa scheda (vedi la nostra Cookie Policy). Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento. Se hai accettato analisi o marketing, anche il link della campagna con cui sei arrivato (i suoi parametri UTM) viene collegato alla tua richiesta, così sappiamo quali campagne portano richieste. Per il clic su un annuncio si registra solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Queste informazioni compaiono solo nella notifica interna a MEOCY, mai nelle email a te. Dettagli nella nostra Cookie Policy.'
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',

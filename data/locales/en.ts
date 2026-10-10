@@ -743,6 +743,53 @@ export const en = {
     another: 'Send another message'
   },
 
+  privacyPage: {
+    title: 'Privacy Policy',
+    cookieLinkLabel: 'Cookie Policy',
+    sections: [
+      {
+        h: 'Who we are.',
+        p: [
+          'MEOCY is a photography and content studio run by Chamila Prasanna, based in Milan, Italy. For any privacy question, contact hello@meocy.com.'
+        ]
+      },
+      {
+        h: 'What we collect.',
+        p: [
+          'When you use our booking or contact form, we collect the details you provide — your name, email address, phone number, and information about your project. We also keep the emails you send us.'
+        ]
+      },
+      {
+        h: 'How we use it.',
+        p: [
+          'To reply to your enquiry, prepare quotes, schedule and deliver shoots, and send you booking-related emails (such as your confirmation). We do not use your data for advertising and we never sell it.'
+        ]
+      },
+      {
+        h: 'Campaign information (only with your consent).',
+        p: [
+          'If you have accepted analytics or marketing cookies, the campaign details from the link you arrived through (UTM tags such as source, medium and campaign) are attached to your booking or enquiry. These details appear only in MEOCY\'s internal notification email, so we can see which campaigns bring requests. They are never included in emails sent to you. For an ad click, only a yes/no indicator is recorded; the ad click ID value is never stored or sent.'
+        ]
+      }
+    ],
+    legalBasisTitle: 'Legal basis (GDPR).',
+    legalBasisText: 'We process your data to respond to your request and to take steps toward a possible contract, and on the basis of your consent when you contact us.',
+    processorsTitle: 'Who processes it for us.',
+    processorsText: 'We use service providers to run our website and email: Vercel (website hosting); Resend (sending the emails for booking and enquiry requests, including your confirmation and MEOCY\'s internal notifications); and Google (Gmail, which receives MEOCY\'s internal notifications).',
+    analyticsText: 'We also use Google Analytics 4 (if you enable analytics) and Meta Pixel (if you enable marketing) to measure visits and campaigns on our website. Both are optional and disabled by default. The tracking events we send to these services do not include your name, email, phone number or booking details. See our {link} for details.',
+    technicalTitle: 'Technical data.',
+    technicalText: 'Our hosting provider (Vercel) processes standard technical data, such as IP addresses, to deliver the website and keep it secure. When you send the collaboration, Work With MEOCY, Milan or Paris booking form, your IP address is also held briefly in server memory to limit repeated submissions (spam protection); it is not stored in a database or included in emails.',
+    retentionTitle: 'How long we keep it.',
+    retentionText: 'Booking and enquiry emails are kept in MEOCY\'s mailboxes and in our email provider\'s systems. The retention periods for these emails are not yet set out in this policy and will be published here once they are defined. Data stored in your browser, described in our {link}, is removed when you close the tab or as described there.',
+    rightsTitle: 'Your rights.',
+    rightsText: 'You can ask us to access, correct, or delete your data, or object to its use, at any time — just email hello@meocy.com. You also have the right to complain to the Italian Data Protection Authority (Garante per la protezione dei dati personali).',
+    cookiesTitle: 'Cookies and tracking.',
+    cookiesText: 'This website stores in your browser: your language preference (meocy-lang) and your consent choices (meocy-consent and meocy-consent-dismissed), in local storage. For the current browser tab only, it stores campaign details (meocy_attribution, if you accepted analytics or marketing) and a copy of your booking summary after a booking request (meocy_milan_booking_confirmation or meocy_paris_booking_confirmation).',
+    cookiesText2: 'Google Analytics 4 and Meta Pixel run only if you enable them in our consent preferences, and both are disabled by default. See our {link} for details.',
+    changesTitle: 'Changes.',
+    changesText: 'We may update this policy; the latest date is shown above.'
+  },
+
   privacyCollab: {
     title: 'Collaboration forms.',
     text: 'If you contact us through the collaboration form, we use your details (name, email, social or portfolio links and the information you provide) only to reply to you and to plan possible projects. We do not sell or share them, and we delete them on request.'
@@ -1368,7 +1415,7 @@ export const en = {
     },
     milanPrivacy: {
       title: 'Milan photoshoot booking requests.',
-      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details only to handle your booking request. They are sent by email to MEOCY. The website does not collect or store any payment data. If you have accepted analytics or marketing cookies, the campaign link you arrived through (its UTM tags) is also attached to your request, so we can see which campaigns bring enquiries. For an ad click only a yes/no indicator is recorded; the ad click ID value is never stored or sent. This information appears only in MEOCY\'s internal notification, never in emails to you. See our Cookie Policy for details.'
+      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details to handle your booking request. A copy of your booking summary, including these details, is also kept in your browser\'s session storage for this tab (see our Cookie Policy). They are sent by email to MEOCY. The website does not collect or store any payment data. If you have accepted analytics or marketing cookies, the campaign link you arrived through (its UTM tags) is also attached to your request, so we can see which campaigns bring enquiries. For an ad click only a yes/no indicator is recorded; the ad click ID value is never stored or sent. This information appears only in MEOCY\'s internal notification, never in emails to you. See our Cookie Policy for details.'
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',

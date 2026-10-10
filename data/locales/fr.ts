@@ -746,6 +746,53 @@ export const fr: Dict = {
     another: 'Envoyer un autre message'
   },
 
+  privacyPage: {
+    title: 'Politique de confidentialité',
+    cookieLinkLabel: 'Politique en matière de cookies',
+    sections: [
+      {
+        h: 'Qui nous sommes.',
+        p: [
+          'MEOCY est un studio de photographie et de contenu dirigé par Chamila Prasanna, basé à Milan, en Italie. Pour toute question sur la confidentialité, écrivez à hello@meocy.com.'
+        ]
+      },
+      {
+        h: 'Ce que nous collectons.',
+        p: [
+          'Lorsque vous utilisez notre formulaire de réservation ou de contact, nous collectons les informations que vous fournissez : votre nom, votre adresse email, votre numéro de téléphone et des informations sur votre projet. Nous conservons aussi les emails que vous nous envoyez.'
+        ]
+      },
+      {
+        h: 'Comment nous les utilisons.',
+        p: [
+          'Pour répondre à votre demande, préparer des devis, planifier et réaliser les séances, et vous envoyer des emails liés à votre réservation (comme la confirmation). Nous n\'utilisons pas vos données à des fins publicitaires et ne les vendons jamais.'
+        ]
+      },
+      {
+        h: 'Informations de campagne (uniquement avec votre consentement).',
+        p: [
+          'Si vous avez accepté les cookies d\'analyse ou de marketing, les données de campagne du lien par lequel vous êtes arrivé (paramètres UTM tels que source, medium et campaign) sont rattachées à votre réservation ou demande. Ces données figurent uniquement dans la notification interne envoyée par email à MEOCY, afin de savoir quelles campagnes apportent des demandes. Elles ne sont jamais incluses dans les emails qui vous sont envoyés. Pour un clic sur une publicité, seul un indicateur oui/non est enregistré ; la valeur de l\'identifiant du clic publicitaire n\'est jamais enregistrée ni envoyée.'
+        ]
+      }
+    ],
+    legalBasisTitle: 'Base juridique (RGPD).',
+    legalBasisText: 'Nous traitons vos données pour répondre à votre demande et pour prendre des mesures préalables à la conclusion d\'un éventuel contrat, et sur la base de votre consentement lorsque vous nous contactez.',
+    processorsTitle: 'Qui les traite pour nous.',
+    processorsText: 'Nous faisons appel à des prestataires pour faire fonctionner notre site et notre messagerie : Vercel (hébergement du site) ; Resend (envoi des emails pour les demandes de réservation et de contact, y compris votre confirmation et les notifications internes à MEOCY) ; et Google (Gmail, qui reçoit les notifications internes de MEOCY).',
+    analyticsText: 'Nous utilisons aussi Google Analytics 4 (si vous activez l\'analyse) et Meta Pixel (si vous activez le marketing) pour mesurer les visites et les campagnes sur le site. Ces outils sont facultatifs et désactivés par défaut. Les événements de suivi que nous envoyons à ces services ne comprennent ni votre nom, ni votre email, ni votre téléphone, ni les détails de votre réservation. Pour plus de détails, voir notre {link}.',
+    technicalTitle: 'Données techniques.',
+    technicalText: 'Notre hébergeur (Vercel) traite des données techniques standard, comme les adresses IP, pour fournir le site et en assurer la sécurité. Lorsque vous envoyez le formulaire de collaboration, le formulaire Work With MEOCY ou le formulaire de réservation de Milan ou de Paris, votre adresse IP est aussi conservée brièvement dans la mémoire du serveur pour limiter les envois répétés (protection anti-spam) ; elle n\'est pas enregistrée dans une base de données ni incluse dans les emails.',
+    retentionTitle: 'Combien de temps nous les conservons.',
+    retentionText: 'Les emails de réservation et de demande restent dans les boîtes de MEOCY et chez notre prestataire de messagerie. Les durées de conservation de ces emails ne sont pas encore indiquées dans cette politique et seront publiées ici une fois définies. Les données enregistrées dans votre navigateur, décrites dans notre {link}, sont supprimées à la fermeture de l\'onglet ou selon les modalités indiquées là-bas.',
+    rightsTitle: 'Vos droits.',
+    rightsText: 'Vous pouvez nous demander à tout moment d\'accéder à vos données, de les corriger ou de les supprimer, ou de vous opposer à leur utilisation, en écrivant à hello@meocy.com. Vous avez aussi le droit de déposer une réclamation auprès de l\'autorité italienne de protection des données (Garante per la protezione dei dati personali).',
+    cookiesTitle: 'Cookies et suivi.',
+    cookiesText: 'Le site enregistre dans votre navigateur, dans le stockage local : votre préférence de langue (meocy-lang) et vos choix de consentement (meocy-consent et meocy-consent-dismissed). Pour le seul onglet actuel de votre navigateur, il enregistre les données de campagne (meocy_attribution, si vous avez accepté l\'analyse ou le marketing) et une copie du récapitulatif de votre réservation après une demande (meocy_milan_booking_confirmation ou meocy_paris_booking_confirmation).',
+    cookiesText2: 'Google Analytics 4 et Meta Pixel ne fonctionnent que si vous les activez dans vos préférences de consentement ; ils sont désactivés par défaut. Pour plus de détails, voir notre {link}.',
+    changesTitle: 'Modifications.',
+    changesText: 'Nous pouvons mettre à jour cette politique ; la date la plus récente est indiquée ci-dessus.'
+  },
+
   privacyCollab: {
     title: 'Formulaires de collaboration.',
     text: 'Si vous nous contactez via le formulaire de collaboration, nous utilisons vos données (nom, email, liens de réseaux sociaux ou de portfolio et les informations que vous fournissez) uniquement pour vous répondre et planifier d\'éventuels projets. Nous ne les vendons ni ne les partageons, et nous les supprimons sur demande.'
@@ -1329,7 +1376,7 @@ export const fr: Dict = {
           h: 'Choix de consentement (stockage local).',
           p: [
             'Le site enregistre vos choix concernant l\'analyse et le marketing dans le stockage local de votre navigateur, sous le nom meocy-consent. Il enregistre aussi que vous avez fait un choix (meocy-consent-dismissed), afin que la bannière de cookies ne s\'affiche pas à chaque visite.',
-            'Ces choix restent dans votre navigateur et ne nous sont pas transmis. Ils restent jusqu\'à ce que vous effaciez les données de ce site ou modifiiez vos choix.'
+            'Ces choix restent dans votre navigateur et ne nous sont pas transmis. Ils restent jusqu\'à ce que vous effaciez les données de ce site ou modifiez vos choix.'
           ]
         },
         {
@@ -1371,7 +1418,7 @@ export const fr: Dict = {
     },
     milanPrivacy: {
       title: 'Demandes de réservation de séances photo à Milan.',
-      text: 'Lorsque vous envoyez une demande de réservation depuis la page des séances photo à Milan, nous collectons votre nom, votre email, votre numéro WhatsApp ou de téléphone, votre pays, la formule, la date, l\'heure et les lieux choisis, le nombre de personnes et vos éventuelles remarques. Nous utilisons ces données uniquement pour traiter votre demande de réservation. Elles sont envoyées par email à MEOCY. Le site ne collecte ni ne conserve aucune donnée de paiement. Si vous avez accepté l\'analyse ou le marketing, le lien de campagne par lequel vous êtes arrivé (ses paramètres UTM) est aussi rattaché à votre demande, afin de savoir quelles campagnes apportent des demandes. Pour le clic sur une publicité, seul un indicateur oui/non est enregistré ; la valeur de l\'identifiant du clic publicitaire n\'est jamais enregistrée ni envoyée. Ces informations figurent uniquement dans la notification interne à MEOCY, jamais dans les emails qui vous sont adressés. Voir notre Politique en matière de cookies pour les détails.'
+      text: 'Lorsque vous envoyez une demande de réservation depuis la page des séances photo à Milan, nous collectons votre nom, votre email, votre numéro WhatsApp ou de téléphone, votre pays, la formule, la date, l\'heure et les lieux choisis, le nombre de personnes et vos éventuelles remarques. Nous utilisons ces données pour traiter votre demande de réservation. Une copie du récapitulatif de votre réservation, avec ces données, est aussi conservée dans le stockage de session de votre navigateur pour cet onglet (voir notre Politique en matière de cookies). Elles sont envoyées par email à MEOCY. Le site ne collecte ni ne conserve aucune donnée de paiement. Si vous avez accepté l\'analyse ou le marketing, le lien de campagne par lequel vous êtes arrivé (ses paramètres UTM) est aussi rattaché à votre demande, afin de savoir quelles campagnes apportent des demandes. Pour le clic sur une publicité, seul un indicateur oui/non est enregistré ; la valeur de l\'identifiant du clic publicitaire n\'est jamais enregistrée ni envoyée. Ces informations figurent uniquement dans la notification interne à MEOCY, jamais dans les emails qui vous sont adressés. Voir notre Politique en matière de cookies pour les détails.'
     },
     milanTerms: {
       title: 'Demandes de réservation de séances photo à Milan.',
