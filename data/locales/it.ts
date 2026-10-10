@@ -787,7 +787,7 @@ export const it: Dict = {
     rightsTitle: 'I tuoi diritti.',
     rightsText: 'Puoi chiederci in qualsiasi momento di accedere, correggere o cancellare i tuoi dati, o di opporti al loro utilizzo, scrivendo a hello@meocy.com. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali.',
     cookiesTitle: 'Cookie e tracciamento.',
-    cookiesText: 'Il sito salva nel tuo browser, nel local storage: la preferenza di lingua (meocy-lang) e le tue scelte di consenso (meocy-consent e meocy-consent-dismissed). Per la sola scheda corrente del browser salva i dati di campagna (meocy_attribution, se hai accettato analisi o marketing) e una copia del riepilogo della tua prenotazione dopo una richiesta (meocy_milan_booking_confirmation o meocy_paris_booking_confirmation).',
+    cookiesText: 'Il sito salva nel tuo browser, nel local storage: la preferenza di lingua (meocy-lang) e le tue scelte di consenso (meocy-consent e meocy-consent-dismissed). Per la sola scheda corrente del browser salva i dati di campagna (meocy_attribution, se hai accettato analisi o marketing) e un riepilogo minimo della prenotazione dopo una richiesta (meocy_milan_booking_confirmation o meocy_paris_booking_confirmation), senza dati di contatto.',
     cookiesText2: 'Google Analytics 4 e Meta Pixel funzionano solo se li abiliti nelle tue preferenze di consenso, e sono entrambi disattivati per impostazione predefinita. Dettagli nella nostra {link}.',
     changesTitle: 'Modifiche.',
     changesText: 'Possiamo aggiornare questa informativa; la data più recente è indicata sopra.'
@@ -1390,8 +1390,8 @@ export const it: Dict = {
         {
           h: 'Conferma di prenotazione (session storage).',
           p: [
-            'Dopo l\'invio di una richiesta di prenotazione per Milano o Parigi, il sito conserva una copia del riepilogo inviato, inclusi nome, email, telefono e note, con il nome meocy_milan_booking_confirmation o meocy_paris_booking_confirmation. Così la conferma può essere mostrata di nuovo se ricarichi la pagina. Viene salvata anche se non hai accettato i cookie.',
-            'Resta solo in questa scheda del browser e viene eliminata quando avvii una nuova richiesta o chiudi la scheda. Una copia per Milano viene scartata alla successiva lettura dopo 24 ore, una per Parigi dopo 30 minuti.'
+            'Dopo l\'invio di una richiesta di prenotazione per Milano o Parigi, il sito conserva nel tuo browser un riepilogo minimo della prenotazione, con il nome meocy_milan_booking_confirmation o meocy_paris_booking_confirmation: il codice di prenotazione, il pacchetto, la data, l\'orario, il prezzo e, per Milano, le location scelte. Non conserva nome, email, telefono, paese, numero di persone né note. Così la conferma può essere mostrata di nuovo se ricarichi la pagina. Viene salvato anche se non hai accettato i cookie.',
+            'Resta solo in questa scheda del browser e viene eliminato quando avvii una nuova richiesta o chiudi la scheda. Quando viene verificato dopo un ricaricamento, una voce più vecchia di 30 minuti viene eliminata. Una voce salvata da una versione precedente del sito che contiene ancora dati di contatto viene sostituita con il riepilogo minimo. Le email di prenotazione inviate a te e a MEOCY contengono comunque i dati necessari a gestire la prenotazione.'
           ]
         },
         {
@@ -1418,7 +1418,7 @@ export const it: Dict = {
     },
     milanPrivacy: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati per gestire la tua richiesta di prenotazione. Una copia del riepilogo della prenotazione, con questi dati, viene conservata anche nel session storage del browser per questa scheda (vedi la nostra Cookie Policy). Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento. Se hai accettato analisi o marketing, anche il link della campagna con cui sei arrivato (i suoi parametri UTM) viene collegato alla tua richiesta, così sappiamo quali campagne portano richieste. Per il clic su un annuncio si registra solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Queste informazioni compaiono solo nella notifica interna a MEOCY, mai nelle email a te. Dettagli nella nostra Cookie Policy.'
+      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati per gestire la tua richiesta di prenotazione. Un riepilogo minimo della prenotazione (codice, pacchetto, data, orario, location e prezzo), senza i tuoi dati di contatto, viene conservato anche nel session storage del browser per questa scheda (vedi la nostra Cookie Policy). Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento. Se hai accettato analisi o marketing, anche il link della campagna con cui sei arrivato (i suoi parametri UTM) viene collegato alla tua richiesta, così sappiamo quali campagne portano richieste. Per il clic su un annuncio si registra solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Queste informazioni compaiono solo nella notifica interna a MEOCY, mai nelle email a te. Dettagli nella nostra Cookie Policy.'
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',

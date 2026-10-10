@@ -31,6 +31,7 @@ const PROGRESS: Record<Screen, number> = { package: 0, date: 1, time: 1, locatio
 
 // sessionStorage key for persisting booking confirmation across refresh
 const BOOKING_CONFIRMATION_KEY = 'meocy_milan_booking_confirmation';
+const BOOKING_CONFIRMATION_MAX_AGE_MS = 30 * 60 * 1000;
 
 // Persisted booking confirmation data — includes minimum fields needed to reconstruct Step 6
 interface PersistedBookingConfirmation {
@@ -40,7 +41,6 @@ interface PersistedBookingConfirmation {
   date: string;
   time: string;
   locations: MilanLocationId[];
-  details: Details;
   timestamp: number;
 }
 
@@ -73,28 +73,32 @@ const btnPrimary =
 const btnGhost =
   'inline-flex min-h-[52px] items-center justify-center gap-1.5 rounded-full px-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-chalk ring-1 ring-chalk/30 transition-colors hover:bg-chalk/10';
 
-// Validate and restore booking confirmation from sessionStorage if still valid (≤24 hours old)
+// Restore the minimal booking summary from sessionStorage while it is within the 30-minute limit
 function getValidBookingConfirmation(): PersistedBookingConfirmation | null {
   if (typeof window === 'undefined') return null;
   try {
     const stored = sessionStorage.getItem(BOOKING_CONFIRMATION_KEY);
     if (!stored) return null;
     const data = JSON.parse(stored) as unknown;
-    if (!isValidBookingConfirmation(data)) {
+    if (!isValidBookingConfirmation(data) || Date.now() - data.timestamp > BOOKING_CONFIRMATION_MAX_AGE_MS) {
       sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
       return null;
     }
-    const now = Date.now();
-    const ageMs = now - data.timestamp;
-    const maxAgeMs = 24 * 60 * 60 * 1000; // 24 hours
-    if (ageMs > maxAgeMs) {
-      sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
-      return null;
-    }
-    return data;
+    const minimal = toStoredConfirmation(data);
+    if ((data as unknown as Record<string, unknown>).details !== undefined) saveBookingConfirmation(minimal);
+    return minimal;
   } catch {
+    try {
+      sessionStorage.removeItem(BOOKING_CONFIRMATION_KEY);
+    } catch {
+      // Storage unavailable
+    }
     return null;
   }
+}
+
+function toStoredConfirmation(c: PersistedBookingConfirmation): PersistedBookingConfirmation {
+  return { reference: c.reference, pricing: c.pricing, packageId: c.packageId, date: c.date, time: c.time, locations: c.locations, timestamp: c.timestamp };
 }
 
 // Type guard: validate the stored confirmation has required fields
@@ -110,9 +114,7 @@ function isValidBookingConfirmation(data: unknown): data is PersistedBookingConf
     typeof obj.time === 'string' &&
     Array.isArray(obj.locations) &&
     typeof obj.pricing === 'object' &&
-    obj.pricing !== null &&
-    typeof obj.details === 'object' &&
-    obj.details !== null
+    obj.pricing !== null
   );
 }
 
@@ -237,7 +239,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
       setScreen('done');
       setDate(saved.date);
       setTime(saved.time);
-      setDetails(saved.details);
       setResult({ reference: saved.reference, pricing: saved.pricing });
       onLocationsChange(saved.locations);
       onPackageChange(saved.packageId as MilanPackageId);
@@ -424,7 +425,6 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
           date,
           time,
           locations,
-          details,
           timestamp: Date.now(),
         };
         saveBookingConfirmation(confirmation);
@@ -742,10 +742,12 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
             </div>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <SummaryTable rows={rowsFor(result.pricing).filter(([k]) => k !== b.sumPackagePrice && k !== b.sumExtra)} />
+              {details.name.trim() !== '' && (
               <div>
                 <h4 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-chalk/55">{b.customerTitle}</h4>
                 <SummaryTable rows={[[b.name, details.name], [b.email, details.email], [b.phone, details.phone], [b.country, details.country], [b.people, String(details.people)], ...(details.notes ? [[b.notes, details.notes] as [string, string]] : [])]} />
               </div>
+              )}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waToMeocy} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('milan_booking_confirmation', 'milan')} className={btnPrimary}>{b.waCta}</a>

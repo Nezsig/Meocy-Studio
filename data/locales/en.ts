@@ -784,7 +784,7 @@ export const en = {
     rightsTitle: 'Your rights.',
     rightsText: 'You can ask us to access, correct, or delete your data, or object to its use, at any time — just email hello@meocy.com. You also have the right to complain to the Italian Data Protection Authority (Garante per la protezione dei dati personali).',
     cookiesTitle: 'Cookies and tracking.',
-    cookiesText: 'This website stores in your browser: your language preference (meocy-lang) and your consent choices (meocy-consent and meocy-consent-dismissed), in local storage. For the current browser tab only, it stores campaign details (meocy_attribution, if you accepted analytics or marketing) and a copy of your booking summary after a booking request (meocy_milan_booking_confirmation or meocy_paris_booking_confirmation).',
+    cookiesText: 'This website stores in your browser: your language preference (meocy-lang) and your consent choices (meocy-consent and meocy-consent-dismissed), in local storage. For the current browser tab only, it stores campaign details (meocy_attribution, if you accepted analytics or marketing) and a minimal booking summary after a booking request (meocy_milan_booking_confirmation or meocy_paris_booking_confirmation), with no contact details.',
     cookiesText2: 'Google Analytics 4 and Meta Pixel run only if you enable them in our consent preferences, and both are disabled by default. See our {link} for details.',
     changesTitle: 'Changes.',
     changesText: 'We may update this policy; the latest date is shown above.'
@@ -1387,8 +1387,8 @@ export const en = {
         {
           h: 'Booking confirmation (session storage).',
           p: [
-            'After you send a Milan or Paris booking request, the website keeps a copy of the summary you submitted, including your name, email, phone number and notes, under the names meocy_milan_booking_confirmation or meocy_paris_booking_confirmation. This lets the confirmation be shown again if you reload the page. It is stored whether or not you have accepted cookies.',
-            'It stays in this browser tab only and is removed when you start a new request or close the tab. A Milan copy is also discarded when it is next read after 24 hours, and a Paris copy after 30 minutes.'
+            'After you send a Milan or Paris booking request, the website keeps a minimal booking summary in your browser, under the names meocy_milan_booking_confirmation or meocy_paris_booking_confirmation: the booking reference, package, date, time, price and, for Milan, the selected locations. It does not keep your name, email address, phone number, country, number of people or notes. This lets the confirmation be shown again if you reload the page. It is stored whether or not you have accepted cookies.',
+            'It stays in this browser tab only and is removed when you start a new request or close the tab. When it is checked after a reload, an entry older than 30 minutes is removed. An entry saved by an earlier version of this website that still contains contact details is replaced with the minimal summary. The booking emails sent to you and to MEOCY still contain the details needed to process the booking.'
           ]
         },
         {
@@ -1415,7 +1415,7 @@ export const en = {
     },
     milanPrivacy: {
       title: 'Milan photoshoot booking requests.',
-      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details to handle your booking request. A copy of your booking summary, including these details, is also kept in your browser\'s session storage for this tab (see our Cookie Policy). They are sent by email to MEOCY. The website does not collect or store any payment data. If you have accepted analytics or marketing cookies, the campaign link you arrived through (its UTM tags) is also attached to your request, so we can see which campaigns bring enquiries. For an ad click only a yes/no indicator is recorded; the ad click ID value is never stored or sent. This information appears only in MEOCY\'s internal notification, never in emails to you. See our Cookie Policy for details.'
+      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details to handle your booking request. A minimal booking summary (reference, package, date, time, locations and price) is also kept in your browser\'s session storage for this tab, without your contact details (see our Cookie Policy). They are sent by email to MEOCY. The website does not collect or store any payment data. If you have accepted analytics or marketing cookies, the campaign link you arrived through (its UTM tags) is also attached to your request, so we can see which campaigns bring enquiries. For an ad click only a yes/no indicator is recorded; the ad click ID value is never stored or sent. This information appears only in MEOCY\'s internal notification, never in emails to you. See our Cookie Policy for details.'
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',

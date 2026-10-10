@@ -59,7 +59,6 @@ interface Saved {
   packageId: ParisPackageId;
   date: string;
   time: string;
-  details: Details;
   timestamp: number;
 }
 
@@ -74,13 +73,37 @@ const readSaved = (): Saved | null => {
   try {
     const raw = sessionStorage.getItem(CONFIRMATION_KEY);
     if (!raw) return null;
-    const s = JSON.parse(raw) as Saved;
-    if (!s.reference || Date.now() - s.timestamp > CONFIRMATION_TTL_MS) {
+    const s = JSON.parse(raw) as Partial<Saved> & Record<string, unknown>;
+    const fresh = typeof s.timestamp === 'number' && Date.now() - s.timestamp <= CONFIRMATION_TTL_MS;
+    if (
+      !fresh ||
+      typeof s.reference !== 'string' ||
+      !s.reference ||
+      typeof s.date !== 'string' ||
+      typeof s.time !== 'string' ||
+      typeof s.packageId !== 'string' ||
+      typeof s.pricing !== 'object' ||
+      s.pricing === null
+    ) {
       sessionStorage.removeItem(CONFIRMATION_KEY);
       return null;
     }
-    return s;
+    const minimal: Saved = {
+      reference: s.reference,
+      pricing: s.pricing as ParisPricing,
+      packageId: s.packageId as ParisPackageId,
+      date: s.date,
+      time: s.time,
+      timestamp: s.timestamp as number,
+    };
+    if (s.details !== undefined) writeSaved(minimal);
+    return minimal;
   } catch {
+    try {
+      sessionStorage.removeItem(CONFIRMATION_KEY);
+    } catch {
+      // Storage unavailable
+    }
     return null;
   }
 };
@@ -200,7 +223,6 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
     setScreen('done');
     setDate(saved.date);
     setTime(saved.time);
-    setDetails(saved.details);
     setResult({ reference: saved.reference, pricing: saved.pricing });
     onPackageChange(saved.packageId);
     lockRef.current = true;
@@ -299,7 +321,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.reference) {
-        writeSaved({ reference: json.reference, pricing: json.pricing, packageId: pkg.id, date, time, details, timestamp: Date.now() });
+        writeSaved({ reference: json.reference, pricing: json.pricing, packageId: pkg.id, date, time, timestamp: Date.now() });
         setResult({ reference: json.reference, pricing: json.pricing });
         trackParisBookingEvent('booking_submit_success');
         go('done');
@@ -558,6 +580,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
             </div>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <SummaryTable rows={summaryRows(result.pricing)} />
+              {details.name.trim() !== '' && (
               <div>
                 <h4 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-chalk/55">{b.customerTitle}</h4>
                 <div className="mt-3">
@@ -572,6 +595,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
                   />
                 </div>
               </div>
+              )}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={waToMeocy} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('paris_booking_confirmation', 'paris')} className={btnPrimary}>
