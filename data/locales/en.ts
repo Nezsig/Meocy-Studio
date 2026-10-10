@@ -1295,8 +1295,8 @@ export const en = {
         {
           h: 'Essential functionality.',
           p: [
-            'This website stores only essential items in your browser: your language preference (meocy-lang) in local storage, and a short-lived token to prevent spam on forms.',
-            'These are necessary for the site to work correctly and do not require your consent.'
+            'This website stores only essential items in your browser: your language preference (meocy-lang) in local storage. Spam protection on forms uses a hidden form field and limits on how many requests are accepted; it does not store anything in your browser.',
+            'Your language preference is necessary for the site to work and does not require your consent. The sections below describe the other items the site stores and when your consent is needed.'
           ]
         },
         {
@@ -1323,9 +1323,31 @@ export const en = {
           ]
         },
         {
+          h: 'Consent choices (local storage).',
+          p: [
+            'The website saves your analytics and marketing choices in your browser\'s local storage, under the name meocy-consent. It also records that you have made a choice (meocy-consent-dismissed), so the cookie banner is not shown again on every visit.',
+            'These choices stay in your browser and are not sent to us. They remain until you clear this site\'s data or change your choices.'
+          ]
+        },
+        {
+          h: 'Campaign attribution (session storage, with consent).',
+          p: [
+            'If you have accepted analytics or marketing, the website keeps, for the current browser tab only and under the name meocy_attribution, the campaign details from the link you arrived through: the UTM tags (source, medium, campaign, content and term), the path of the page you landed on, and whether the link came from a Meta or Google ad.',
+            'For an ad click, only a yes/no indicator is kept. The ad click ID value itself is never stored or sent. Accepting only analytics keeps the campaign details; withdrawing marketing removes the ad-click indicator; withdrawing both removes everything.',
+            'When you send a booking request or enquiry, these details appear only in MEOCY\'s internal notification email, so we can see which campaign it came from. They are never included in emails sent to you. The stored details are removed when the tab is closed.'
+          ]
+        },
+        {
+          h: 'Booking confirmation (session storage).',
+          p: [
+            'After you send a Milan or Paris booking request, the website keeps a copy of the summary you submitted, including your name, email, phone number and notes, under the names meocy_milan_booking_confirmation or meocy_paris_booking_confirmation. This lets the confirmation be shown again if you reload the page. It is stored whether or not you have accepted cookies.',
+            'It stays in this browser tab only and is removed when you start a new request or close the tab. A Milan copy is also discarded when it is next read after 24 hours, and a Paris copy after 30 minutes.'
+          ]
+        },
+        {
           h: 'How to manage or remove cookies.',
           p: [
-            'You can change your consent preferences at any time by clicking the cookie settings link in the website footer. When you withdraw consent, we stop sending new tracking data to Google Analytics or Meta Pixel immediately.',
+            'You can change your consent preferences at any time by clicking the cookie settings link in the website footer. When you withdraw consent, the website stops sending new tracking data to Google Analytics or Meta Pixel. Cookies these services have already set remain until they expire or you delete them, as described below.',
             'To remove existing cookies set by these services, you can delete them by clearing your browser\'s site data. Instructions vary by browser — search your browser\'s help section for "clear cookies" or "clear site data". Alternatively, you can opt out of Google Analytics in your Google account settings, or manage Meta tracking through your Meta Ads Preferences.'
           ]
         },
@@ -1346,7 +1368,7 @@ export const en = {
     },
     milanPrivacy: {
       title: 'Milan photoshoot booking requests.',
-      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details only to handle your booking request. They are sent by email to MEOCY. The website does not collect or store any payment data.'
+      text: 'When you send a booking request on the Milan photoshoot page, we collect your name, email, WhatsApp or phone number, country, the package, date, time and locations you choose, the number of people and any notes. We use these details only to handle your booking request. They are sent by email to MEOCY. The website does not collect or store any payment data. If you have accepted analytics or marketing cookies, the campaign link you arrived through (its UTM tags) is also attached to your request, so we can see which campaigns bring enquiries. For an ad click only a yes/no indicator is recorded; the ad click ID value is never stored or sent. This information appears only in MEOCY\'s internal notification, never in emails to you. See our Cookie Policy for details.'
     },
     milanTerms: {
       title: 'Milan photoshoot booking requests.',

@@ -1298,8 +1298,8 @@ export const it: Dict = {
         {
           h: 'Funzionalità essenziale.',
           p: [
-            'Questo sito salva nel tuo browser solo elementi essenziali: la preferenza di lingua (meocy-lang) nel local storage e un token di breve durata per prevenire lo spam nei moduli.',
-            'Questi sono necessari per il funzionamento corretto del sito e non richiedono il tuo consenso.'
+            'Questo sito salva nel tuo browser solo elementi essenziali: la preferenza di lingua (meocy-lang) nel local storage. La protezione dallo spam nei moduli usa un campo nascosto e limiti al numero di richieste accettate; non salva nulla nel tuo browser.',
+            'La preferenza di lingua è necessaria al funzionamento del sito e non richiede il tuo consenso. Le sezioni seguenti descrivono gli altri elementi che il sito salva e quando serve il tuo consenso.'
           ]
         },
         {
@@ -1326,9 +1326,31 @@ export const it: Dict = {
           ]
         },
         {
+          h: 'Scelte di consenso (local storage).',
+          p: [
+            'Il sito salva le tue scelte su analisi e marketing nel local storage del browser, con il nome meocy-consent. Registra anche che hai già fatto una scelta (meocy-consent-dismissed), così il banner dei cookie non viene mostrato a ogni visita.',
+            'Queste scelte restano nel tuo browser e non ci vengono inviate. Restano finché non cancelli i dati di questo sito o non modifichi le tue scelte.'
+          ]
+        },
+        {
+          h: 'Attribuzione della campagna (session storage, con consenso).',
+          p: [
+            'Se hai accettato analisi o marketing, il sito conserva, solo per la scheda corrente del browser e con il nome meocy_attribution, i dati della campagna del link con cui sei arrivato: i parametri UTM (source, medium, campaign, content e term), il percorso della pagina di arrivo e se il link proveniva da un annuncio Meta o Google.',
+            'Per il clic su un annuncio viene conservato solo un indicatore sì/no. Il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Se accetti solo l\'analisi, restano i dati della campagna; se ritiri il marketing, si elimina l\'indicatore del clic; se ritiri entrambi, si eliminano tutti i dati.',
+            'Quando invii una richiesta di prenotazione o un messaggio, questi dati compaiono solo nella notifica interna via email a MEOCY, per capire da quale campagna arriva la richiesta. Non vengono mai inclusi nelle email inviate a te. I dati salvati vengono eliminati alla chiusura della scheda.'
+          ]
+        },
+        {
+          h: 'Conferma di prenotazione (session storage).',
+          p: [
+            'Dopo l\'invio di una richiesta di prenotazione per Milano o Parigi, il sito conserva una copia del riepilogo inviato, inclusi nome, email, telefono e note, con il nome meocy_milan_booking_confirmation o meocy_paris_booking_confirmation. Così la conferma può essere mostrata di nuovo se ricarichi la pagina. Viene salvata anche se non hai accettato i cookie.',
+            'Resta solo in questa scheda del browser e viene eliminata quando avvii una nuova richiesta o chiudi la scheda. Una copia per Milano viene scartata alla successiva lettura dopo 24 ore, una per Parigi dopo 30 minuti.'
+          ]
+        },
+        {
           h: 'Come gestire o rimuovere i cookie.',
           p: [
-            'Puoi modificare le tue preferenze di consenso in qualsiasi momento facendo clic sul link delle impostazioni dei cookie nel footer del sito. Quando ritiri il consenso, smettiamo di inviare nuovi dati di tracciamento a Google Analytics o Meta Pixel immediatamente.',
+            'Puoi modificare le tue preferenze di consenso in qualsiasi momento facendo clic sul link delle impostazioni dei cookie nel footer del sito. Quando ritiri il consenso, il sito smette di inviare nuovi dati di tracciamento a Google Analytics o Meta Pixel. I cookie già impostati da questi servizi restano finché scadono o li cancelli, come descritto sotto.',
             'Per rimuovere i cookie esistenti impostati da questi servizi, puoi eliminarli cancellando i dati del sito nel tuo browser. Le istruzioni variano a seconda del browser - cerca nella sezione di aiuto del tuo browser "cancella cookie" o "cancella dati del sito". In alternativa, puoi rinunciare a Google Analytics nelle impostazioni del tuo account Google o gestire il tracciamento Meta tramite le tue preferenze Meta Ads.'
           ]
         },
@@ -1349,7 +1371,7 @@ export const it: Dict = {
     },
     milanPrivacy: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
-      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati solo per gestire la tua richiesta di prenotazione. Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento.'
+      text: 'Quando invii una richiesta di prenotazione dalla pagina degli shooting a Milano, raccogliamo nome, email, numero WhatsApp o di telefono, paese, il pacchetto, la data, l\'orario e le location che scegli, il numero di persone ed eventuali note. Usiamo questi dati solo per gestire la tua richiesta di prenotazione. Vengono inviati via email a MEOCY. Il sito non raccoglie né conserva dati di pagamento. Se hai accettato analisi o marketing, anche il link della campagna con cui sei arrivato (i suoi parametri UTM) viene collegato alla tua richiesta, così sappiamo quali campagne portano richieste. Per il clic su un annuncio si registra solo un indicatore sì/no; il valore dell\'ID del clic pubblicitario non viene mai salvato né inviato. Queste informazioni compaiono solo nella notifica interna a MEOCY, mai nelle email a te. Dettagli nella nostra Cookie Policy.'
     },
     milanTerms: {
       title: 'Richieste di prenotazione degli shooting a Milano.',
