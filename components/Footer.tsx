@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CookieSettings } from './CookieSettings';
+import { useWhatsAppClickTracking } from '../lib/whatsapp-tracking';
 
 export function Footer() {
   const { t } = useLanguage();
   const [showCookieSettings, setShowCookieSettings] = useState(false);
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   return (
     <footer className="bg-ink text-chalk">
@@ -53,6 +55,7 @@ export function Footer() {
                 href="https://wa.me/393791051000"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsApp('footer_icon')}
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:opacity-80 transition-opacity"
               >
                 <Image src="/whatsapp.png" alt="WhatsApp" width={22} height={22} className="object-contain" />
@@ -81,6 +84,7 @@ export function Footer() {
                 </span>
                 <a
                   href="https://wa.me/393791051000"
+                  onClick={() => trackWhatsApp('footer_phone')}
                   className="inline-block -my-1.5 py-1.5 text-chalk hover:text-accent transition-colors duration-150"
                 >
                   {t.footer.contact.phone}

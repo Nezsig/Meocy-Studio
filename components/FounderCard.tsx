@@ -1,10 +1,12 @@
 'use client';
 import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useWhatsAppClickTracking } from '../lib/whatsapp-tracking';
 
 // Founder signature card (email-signature style), shared by the homepage About and /about.
 export function FounderCard() {
   const { t } = useLanguage();
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   return (
     <div className="bg-white border border-[#ecebe6] rounded-[20px] p-8 sm:p-10">
@@ -48,6 +50,7 @@ export function FounderCard() {
           <div className="mb-5">
             <a
               href="https://wa.me/393791051000"
+              onClick={() => trackWhatsApp('about_phone')}
               className="flex items-center gap-3 py-1 text-[14px] text-[#0b0b0c] hover:text-accent transition-colors"
             >
               <span className="text-[#9a998f] font-medium w-6 flex-shrink-0">
@@ -94,6 +97,7 @@ export function FounderCard() {
               href="https://wa.me/393791051000"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsApp('about_icon')}
               className="flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#0b0b0c]/10 hover:bg-accent transition-all"
               title="WhatsApp"
             >

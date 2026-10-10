@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
+import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import {
   milanLocations,
   milanPackages,
@@ -72,6 +73,7 @@ const ctaGhostDark =
 export function MilanPhotoshootPage() {
   const { t, lang } = useLanguage();
   const m = t.milanShoot;
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   const [packageId, setPackageId] = useState<MilanPackageId>('experience');
   const [packageChosen, setPackageChosen] = useState(false);
@@ -134,7 +136,7 @@ export function MilanPhotoshootPage() {
               className={ctaPrimary}>
               {m.hero.ctaPrimary}
             </button>
-            <a href={`https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(m.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostDark}>
+            <a href={`https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(m.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('milan_hero', 'milan')} className={ctaGhostDark}>
               {m.hero.ctaWhatsapp}
             </a>
           </div>

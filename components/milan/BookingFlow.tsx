@@ -5,6 +5,7 @@ import { Check, ChevronLeft, ChevronRight, Loader2Icon } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useConsent } from '../../contexts/ConsentContext';
 import { trackBookingEvent } from '../../lib/ga-booking';
+import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import {
   computePricing,
   isDateSelectable,
@@ -198,6 +199,7 @@ function Calendar({ value, onChange, lang, labels }: { value: string; onChange: 
 export function BookingFlow({ packageId, onPackageChange, locations, onLocationsChange }: Props) {
   const { t, lang } = useLanguage();
   const { preferences: consentPreferences } = useConsent();
+  const trackWhatsApp = useWhatsAppClickTracking();
   const m = t.milanShoot;
   const b = m.booking;
 
@@ -743,7 +745,7 @@ export function BookingFlow({ packageId, onPackageChange, locations, onLocations
               </div>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={waToMeocy} target="_blank" rel="noopener noreferrer" className={btnPrimary}>{b.waCta}</a>
+              <a href={waToMeocy} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('milan_booking_confirmation', 'milan')} className={btnPrimary}>{b.waCta}</a>
               <button type="button" onClick={restart} className={btnGhost}>{b.another}</button>
             </div>
           </div>

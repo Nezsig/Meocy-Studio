@@ -7,6 +7,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { AccordionItem, fmt, formatPrice } from '../milan/parts';
 import { parisCopy } from '../../data/paris';
 import { trackParisBookingEvent } from '../../lib/ga-paris';
+import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import { fillParisRefund, parisContact, parisPackages, type ParisPackageId } from '../../lib/paris-shoot-config';
 import { ParisBookingFlow } from './ParisBookingFlow';
 
@@ -43,6 +44,7 @@ const ctaGhostLight =
 export function ParisPhotoshootPage() {
   const { lang } = useLanguage();
   const p = parisCopy[lang];
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   const [packageId, setPackageId] = useState<ParisPackageId>('experience');
   const [packageChosen, setPackageChosen] = useState(false);
@@ -101,7 +103,7 @@ export function ParisPhotoshootPage() {
                 className={ctaPrimary}>
                 {p.hero.ctaPrimary}
               </button>
-              <a href={`https://wa.me/${parisContact.whatsappNumber}?text=${encodeURIComponent(p.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className={ctaGhostLight}>
+              <a href={`https://wa.me/${parisContact.whatsappNumber}?text=${encodeURIComponent(p.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('paris_hero', 'paris')} className={ctaGhostLight}>
                 {p.hero.ctaWhatsapp}
               </a>
             </div>

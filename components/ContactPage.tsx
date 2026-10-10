@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { locales } from '../data/locales';
 import { studioContact } from '../data/site';
 import { FormPrivacyNotice } from './FormPrivacyNotice';
+import { useWhatsAppClickTracking } from '../lib/whatsapp-tracking';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 type FieldErrors = Partial<Record<'name' | 'email' | 'phone' | 'projectType' | 'message', string>>;
@@ -39,6 +40,7 @@ export function ContactPage() {
   const [status, setStatus] = useState<Status>('idle');
   const [sentTo, setSentTo] = useState({ name: '', email: '' });
   const formRef = useRef<HTMLFormElement>(null);
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   const set = <K extends keyof typeof emptyForm>(key: K, value: (typeof emptyForm)[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -429,6 +431,7 @@ export function ContactPage() {
                     </p>
                     <a
                       href={studioContact.whatsappHref}
+                      onClick={() => trackWhatsApp('contact_phone')}
                       className="-my-1.5 inline-flex items-center gap-2 py-1.5 text-[17px] font-medium text-ink hover:text-accent transition-colors"
                     >
                       {studioContact.phone}
@@ -488,6 +491,7 @@ export function ContactPage() {
                       href={studioContact.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsApp('contact_icon')}
                       className="flex items-center justify-center w-9 h-9 rounded-full bg-paper border border-ink/10 hover:border-accent hover:bg-accent/10 transition-all"
                       title="WhatsApp"
                     >

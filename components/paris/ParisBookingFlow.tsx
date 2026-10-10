@@ -6,6 +6,7 @@ import { FormPrivacyNotice } from '../FormPrivacyNotice';
 import { fmt, formatPrice } from '../milan/parts';
 import { parisCopy } from '../../data/paris';
 import { trackParisBookingEvent } from '../../lib/ga-paris';
+import { useWhatsAppClickTracking } from '../../lib/whatsapp-tracking';
 import {
   computeParisPricing,
   parisContact,
@@ -174,6 +175,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
   const { lang } = useLanguage();
   const p = parisCopy[lang];
   const b = p.booking;
+  const trackWhatsApp = useWhatsAppClickTracking();
 
   const [screen, setScreen] = useState<Screen>('package');
   const [date, setDate] = useState('');
@@ -567,7 +569,7 @@ export function ParisBookingFlow({ packageId, onPackageChange }: Props) {
               </div>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={waToMeocy} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+              <a href={waToMeocy} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('paris_booking_confirmation', 'paris')} className={btnPrimary}>
                 {b.waCta}
               </a>
               <button type="button" onClick={restart} className={btnGhost}>
