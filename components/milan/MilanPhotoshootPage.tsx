@@ -108,6 +108,15 @@ export function MilanPhotoshootPage() {
     [packageChosen, packageId, locations],
   );
 
+  // Hero offer figures come from the MINI package config so the copy can never drift from the real package.
+  const mini = milanPackages.find((p) => p.id === 'mini')!;
+  const heroVars = {
+    price: formatPrice(mini.price, lang),
+    minutes: mini.durationHours * 60,
+    photos: mini.photos,
+    locations: mini.includedLocations,
+  };
+
   return (
     <>
     <main id="main-content" className="sm:pb-0 pb-[calc(72px+env(safe-area-inset-bottom))]">
@@ -124,17 +133,24 @@ export function MilanPhotoshootPage() {
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-ink/90 to-transparent" />
         <div className="mx-auto w-full max-w-[1240px] px-5 pb-12 pt-20 sm:px-8 sm:pb-20">
-          <h1 className="max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">{m.hero.title}</h1>
-          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-chalk/75 sm:text-[18px]">{m.hero.text}</p>
+          <h1 className="max-w-4xl font-display text-[clamp(2.8rem,8.4vw,6.4rem)] leading-[0.98] tracking-tighter-display">
+            {m.hero.title}{' '}
+            <span className="block text-accent">{fmt(m.hero.titlePrice, heroVars)}</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-[17px] font-medium leading-relaxed text-chalk sm:text-[19px]">{fmt(m.hero.text, heroVars)}</p>
+          <p className="mt-3 flex max-w-2xl items-start gap-2.5 text-[15px] leading-relaxed text-chalk/75 sm:text-[16px]">
+            <span className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+            {fmt(m.hero.payment, heroVars)}
+          </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={() => {
                 trackBookingEvent('booking_cta_click');
-                goToBooking();
+                goToBooking('mini');
               }}
               className={ctaPrimary}>
-              {m.hero.ctaPrimary}
+              {fmt(m.hero.ctaPrimary, heroVars)}
             </button>
             <a href={`https://wa.me/${milanContact.whatsappNumber}?text=${encodeURIComponent(m.hero.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('milan_hero', 'milan')} className={ctaGhostDark}>
               {m.hero.ctaWhatsapp}

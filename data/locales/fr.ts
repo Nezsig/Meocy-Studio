@@ -862,9 +862,11 @@ export const fr: Dict = {
       description: 'Réservez une séance photo professionnelle en couple à Milan avec MEOCY. Choisissez votre formule, vos lieux à Milan, la date et l\'heure, et envoyez votre demande sans aucun paiement à l\'avance.'
     },
     hero: {
-      title: 'Votre histoire à Milan, photographiée par un professionnel.',
-      text: 'Photographie de couple professionnelle à Milan — du Duomo à Brera et au-delà. Choisissez votre expérience, vos lieux, et repartez de Milan avec des photos à garder.',
-      ctaPrimary: 'RÉSERVER VOTRE SÉANCE À MILAN',
+      title: 'Séance photo à Milan',
+      titlePrice: 'Dès {price}',
+      text: '{minutes} minutes · {photos} photos retouchées · {locations} lieu à Milan',
+      payment: 'Aucun paiement à l\'avance pour MINI. Vous réglez {price} le jour de votre séance.',
+      ctaPrimary: 'RÉSERVER MINI — {price}',
       ctaSecondary: 'DÉCOUVRIR LES FORMULES',
       ctaWhatsapp: 'DEMANDER SUR WHATSAPP',
       whatsappMessage: 'Bonjour MEOCY Studio, je suis intéressé(e) par une séance photo à Milan et j\'aimerais avoir quelques informations.',

@@ -862,9 +862,11 @@ export const it: Dict = {
       description: 'Prenota un servizio fotografico professionale di coppia a Milano con MEOCY. Scegli pacchetto, location, data e orario e invia la tua richiesta senza alcun pagamento anticipato.'
     },
     hero: {
-      title: 'La vostra storia a Milano, fotografata da professionisti.',
-      text: 'Fotografia di coppia professionale a Milano — dal Duomo a Brera e oltre. Scegliete l\'esperienza, le location e lasciate Milano con fotografie da conservare.',
-      ctaPrimary: 'PRENOTA IL TUO SHOOTING A MILANO',
+      title: 'Servizio fotografico a Milano',
+      titlePrice: 'Da {price}',
+      text: '{minutes} minuti · {photos} foto ritoccate · {locations} location a Milano',
+      payment: 'Nessun pagamento anticipato per MINI. Pagate {price} il giorno dello shooting.',
+      ctaPrimary: 'PRENOTA MINI — {price}',
       ctaSecondary: 'SCOPRI I PACCHETTI',
       ctaWhatsapp: 'CHIEDI SU WHATSAPP',
       whatsappMessage: 'Ciao MEOCY Studio, sono interessato/a a un servizio fotografico a Milano e vorrei alcune informazioni.',

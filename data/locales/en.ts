@@ -859,9 +859,11 @@ export const en = {
       description: 'Book a professional couple photoshoot in Milan with MEOCY. Choose your package, Milan locations, date and time, and send your booking request with no upfront payment.'
     },
     hero: {
-      title: 'Your Milan Story, Captured Professionally.',
-      text: 'Professional couple photography in Milan — from the Duomo to Brera and beyond. Choose your experience, pick your locations, and leave Milan with photographs worth keeping.',
-      ctaPrimary: 'BOOK YOUR MILAN SHOOT',
+      title: 'Milan Photoshoot',
+      titlePrice: 'From {price}',
+      text: '{minutes} Minutes · {photos} Edited Photos · {locations} Milan Location',
+      payment: 'No advance payment for MINI. Pay {price} on your photoshoot day.',
+      ctaPrimary: 'BOOK MINI — {price}',
       ctaSecondary: 'EXPLORE PACKAGES',
       ctaWhatsapp: 'ASK ON WHATSAPP',
       whatsappMessage: 'Hi MEOCY Studio, I\'m interested in a Milan photoshoot and would like some information.',
